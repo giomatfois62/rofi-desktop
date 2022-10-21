@@ -7,7 +7,7 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 TASK_MANAGER="xterm -e htop"
-SYSTEM_INFO="xterm -e 'inxi -v8; read -n 1'"
+SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p \"System Info\""
  
 entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nAutostart Applications\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
 
@@ -64,7 +64,13 @@ menu_config() {
 }
 
 task_mgr() {
-    eval "$TASK_MANAGER"
+    have_blocks=`rofi -dump-config | grep blocks`
+
+    if [ ${#have_blocks} -gt 0 ]; then
+	$SCRIPT_PATH/rofi-top.sh
+    else
+	eval "$TASK_MANAGER"
+    fi
 }
 
 sys_info() {

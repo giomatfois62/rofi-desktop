@@ -13,7 +13,7 @@ case "$API" in
     *) echo "unrecognized API" && exit 1 ;;
 esac
 
-#API="google" # TODO: implement other APIs for suggestions
+# TODO: implement other APIs for suggestions
 
 #SEARCH_URL="https://www.google.com/search?q="
 #SEARCH_URL=https://en.wikipedia.org/w/index.php?search=
