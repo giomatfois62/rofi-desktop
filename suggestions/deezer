@@ -1,0 +1,18 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/Belkadev
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+# settings
+search=track # options {track,album}
+#######
+
+# read the deezer documentation for more options
+# doc url: https://developers.deezer.com/api
+
+url="https://api.deezer.com/search/$search?q=$(urlencode "$*")"
+res=$(jq '.data[] | "\(.artist.name) - \(.title)"' <<< "$(curl -s "$url" &)" | tr -d '"')
+echo "$res"

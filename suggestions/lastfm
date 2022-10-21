@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# requirements:
+# https://github.com/stedolan/jq
+# lastfm API key
+# Author: https://github.com/Belkadev
+#
+# state: unfinished - dropped
+# feel free to complete
+# API documentation : https://www.last.fm/api/
+
+## settings
+LASTFM_USER="" # useless 
+LASTFM_API_KEY="" # get from here: https://www.last.fm/api/account/create
+search="album" # accepted: {album,track,artist}
+similar=false  # returns recs based on your search
+	          # instead of matching the result (only for artists)
+ 	         # values: {true,false}
+
+catchError() {
+	if [[ $? != 0 ]]; then
+	notify-send "error reaching servers"  ;
+	exit
+fi
+}
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+updateUrl () {
+unset URL
+URL="http://ws.audioscrobbler.com/2.0/?method=$1"; shift
+URL+="&api_key=$API_KEY&format=json"
+URL+="&$@"
+}
+
+[ -z LASTFM_API_KEY ] && echo "please enter your API key first" && exit 1
+######## ARTISTS
+function searchArtist {
+URL= updateUrl "artist.search" "artist=$(urlencode "$1")"
+artists=$(jq '.results.artistmatches.artist[].name' <<< "$(curl -s $URL)" | tr -d '"')
+catchError
+[ -z "$artists" ] && notify-send "nothing found" && exit 1
+echo $artists 
+}
+function getRecs {
+method=$1; shift
+URL= updateUrl "$method.getsimilar" "$method=$(urlencode "$1")"
+recs=$(jq '.similarartists.artist[].name' <<< "$(curl -s $URL)" | tr -d '"')
+catchError
+[ -z "$recs" ] && notify-send "nothing found" && exit 1
+echo $recs 
+}
+######## ALBUMS
+function searchAlbum {
+URL= updateUrl "album.search" "album=$(urlencode "$*")"
+albums=$(jq '.results.albummatches.album[] | "\(.artist) - \(.name)"' <<< "$(curl -s $URL)" | tr -d '"' ) 
+catchError
+[ -z "$albums" ] && notify-send "nothing found" && exit 1
+echo "$albums"
+}
+######## TRACKS
+function searchTrack {
+URL= updateUrl "track.search" "track=$(urlencode "$*")"
+tracks=$(jq '.results.trackmatches.track[] | "\(.artist) - \(.name)\n"' <<< "$(curl -s $URL)" | tr -d '"' ) 
+catchError
+[ -z "$tracks" ] && notify-send "nothing found" && exit 1
+echo $tracks 
+}
+
+input="$*"
+case "$search" in
+"album") res=$(searchAlbum "$search") ;;
+"track") res=$(searchTrack "$search") ;;
+"artist") [[ "$recs" == "true" ]] && res=$(searchArtist "$search") ||  res=$(getRecs "$search") ;;
+
+*) exit 1 ;;
+esac
+
+wait 
+printf "$res"

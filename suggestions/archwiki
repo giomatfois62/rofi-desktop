@@ -1,0 +1,15 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/BelkaDev
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+#settings
+limit=10
+#######
+
+url="https://wiki.archlinux.org/api.php?action=opensearch&format=json&formatversion=2&search=$(urlencode "$*")&namespace=0%7C3000&limit=$limit&suggest=true"
+res=$(jq -r  '.[1][]'  <<< "$(curl -s "$url" &)" | tr -d '"' )
+echo "$res" 

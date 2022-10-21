@@ -1,0 +1,15 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/BelkaDev
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+#settings
+lang="us-en"
+#######
+
+url="https://ac.duckduckgo.com/ac/?q=$(urlencode "$*")&type=list&kl=$lang"
+res=$(jq -r  '.[1][]'  <<< "$(curl -s "$url" &)" | tr -d '"' | sed 's/\(.*\),/\1 /')
+echo "$res" 

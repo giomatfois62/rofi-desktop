@@ -1,0 +1,19 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/Belkadev
+
+# settings
+language="en"
+maxResults=10
+orderBy="relevance" # {relevance,newest}
+
+# doc url https://developers.google.com/books/docs/v1/using
+urlencode() {
+echo ${1// /"%20"}
+}
+
+
+url="https://www.googleapis.com/books/v1/volumes\?q=intitle:$(urlencode "$*")&langRestrict=$lang&gl=$lang&maxResults=$maxResults&orderBy=$orderBy"
+res=$( jq '.items[] | " \(.volumeInfo.authors[0]) \(.volumeInfo.title) "' <<< "$(curl -s "$url" &)" | tr -d '"')
+echo "$res"
+

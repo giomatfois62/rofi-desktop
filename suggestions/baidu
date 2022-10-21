@@ -1,0 +1,11 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/BelkaDev
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+url="http://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=31726,1468,31672,21112,31111,31591,31605,31464,30823&wd=$(urlencode "$*")&csor=4&pwd=isn"
+res=$( jq '.g[]["q"]'   <<< "$(curl -s "$url" &)" | tr -d '"')
+echo "$res"

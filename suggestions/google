@@ -1,0 +1,10 @@
+#!/bin/bash
+
+urlencode() {
+	echo ${1// /"%20"}
+}
+
+url="http://suggestqueries.google.com/complete/search?client=chrome&q=$(urlencode "$*")"
+res=$(jq -r '.[1] | .[]' <<< "$(curl -s "$url" &)" | tr -d '"')
+
+echo "$res"

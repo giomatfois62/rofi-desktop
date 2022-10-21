@@ -1,0 +1,15 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/BelkaDev
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+#settings
+# -
+#######
+
+url="https://completion.amazon.com/search/complete?search-alias=aps&mkt=1&q=$(urlencode "$*")"
+res=$(jq -r  '.[1][]'  <<< "$(curl -s "$url" &)" | tr -d '"' )
+echo "$res" 

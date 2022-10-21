@@ -1,0 +1,15 @@
+#!/bin/bash
+# requires jq
+# Author: https://github.com/BelkaDev
+
+urlencode() {
+echo ${1// /"%20"}
+}
+
+#settings
+lang="en"
+#######
+
+url="http://suggestqueries.google.com/complete/search?client=chrome&hl=$lang&gl=us&ds=yt&q=$(urlencode "$*")"
+res=$(jq -r '.[1] | .[]' <<< "$(curl -s "$url" &)" | tr -d '"')
+echo "$res"
