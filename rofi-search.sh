@@ -4,6 +4,7 @@
 
 SCRIPT_PATH="$HOME/Downloads/rofi-desktop"
 ROFI_CMD="rofi -dmenu -i"
+SHOW_HIDDEN_FILES=false
 
 entries=("All Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
 
@@ -42,7 +43,11 @@ search_command() {
             cmd_extensions=$cmd_extensions" -e $i"
         done
 
-        cmd="cd $folder && fd --type f $cmd_extensions"
+        if [ "$SHOW_HIDDEN_FILES" = true ]; then
+            cmd="cd $folder && fd -H --type f $cmd_extensions"
+        else
+            cmd="cd $folder && fd --type f $cmd_extensions"
+        fi
     else
         count=0
         for i in "${extensions[@]}"; do
@@ -54,7 +59,11 @@ search_command() {
             count=$((count+1))
         done
 
-        cmd="cd $folder && find . -type f $cmd_extensions"
+        if [ "$SHOW_HIDDEN_FILES" = true ]; then
+            cmd="cd $folder && find . -type f $cmd_extensions"
+        else
+            cmd="cd $folder && find . -not -path '*/.*' -type f $cmd_extensions"
+        fi
     fi
 
     echo "$cmd | cut -c 3-"
@@ -138,7 +147,7 @@ search_pics() {
     local selected
     local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$A\n" ; done | $ROFI_CMD -show-icons -theme $SCRIPT_PATH/themes/default.rasi -p "Pictures"`
+    selected=`eval "$(search_command $HOME "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme $SCRIPT_PATH/themes/default.rasi -p "Pictures"`
 
     if [ ${#selected} -gt 0 ]; then
         xdg-open "$HOME/$selected"
