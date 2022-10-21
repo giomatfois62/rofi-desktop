@@ -10,14 +10,14 @@ entries=("All Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPic
 
 declare -A commands=(
     ["All Files"]=search_all
-	["Bookmarks"]=search_bookmarks
+    ["Bookmarks"]=search_bookmarks
     ["Books"]=search_books
     ["Documents"]=search_documents
     ["Desktop"]=search_desktop
     ["Downloads"]=search_downloads
     ["Music"]=search_music
     ["Pictures"]=search_pics
-	["TNT Village"]=search_tnt
+    ["TNT Village"]=search_tnt
     ["Videos"]=search_videos
 )
 

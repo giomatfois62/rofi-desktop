@@ -12,89 +12,89 @@ SYSTEM_INFO="xterm -e 'inxi -v8; read -n 1'"
 entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nAutostart Applications\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
 
 declare -A commands=(
-	["Appearance"]=appearance
+    ["Appearance"]=appearance
     ["Network"]=network
     ["Bluetooth"]=bluetooth
     ["Display"]=display
-	["Volume"]=volume
+    ["Volume"]=volume
     ["Brightness"]=brightness
-	["Default Applications"]=default_apps
-	["Menu Configuration"]=menu_config
-	["Task Manager"]=task_mgr
+    ["Default Applications"]=default_apps
+    ["Menu Configuration"]=menu_config
+    ["Task Manager"]=task_mgr
     ["System Info"]=sys_info
     # Appearance Settings
-	["Qt5 Appearance"]=qt5_app
+    ["Qt5 Appearance"]=qt5_app
     ["GTK Appearance"]=gtk_app
     ["Rofi Style"]=rofi_app
     ["Set Wallpaper"]=wallpaper
 )
 
 appearance() {
-	appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
+    appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
 
-	while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do
-    	if [ ${#selected} -gt 0 ]; then
-    	    ${commands[$selected]};
-    	fi
-	done
+    while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do
+	if [ ${#selected} -gt 0 ]; then
+	    ${commands[$selected]};
+	fi
+    done
 }
 
 network() {
-	$SCRIPT_PATH/rofi-networkmanager.py
+    $SCRIPT_PATH/rofi-networkmanager.py
 }
 
 bluetooth() {
-	$SCRIPT_PATH/rofi-bluetooth.sh
+    $SCRIPT_PATH/rofi-bluetooth.sh
 }
 
 display() {
-	$SCRIPT_PATH/rofi-monitor-layout.sh
+    $SCRIPT_PATH/rofi-monitor-layout.sh
 }
 
 volume() {
-	$SCRIPT_PATH/rofi-volume.sh
+    $SCRIPT_PATH/rofi-volume.sh
 }
 
 menu_config() {
     selected=`find $SCRIPT_PATH -iname '*.sh' -maxdepth 1 -type f | $ROFI_CMD -p Open`
 
-	if [ ${#selected} -gt 0 ]; then
-		xdg-open $selected && exit 0
-	fi
+    if [ ${#selected} -gt 0 ]; then
+	xdg-open $selected && exit 0
+    fi
 }
 
 task_mgr() {
-	eval "$TASK_MANAGER"
+    eval "$TASK_MANAGER"
 }
 
 sys_info() {
-	eval "$SYSTEM_INFO"
+    eval "$SYSTEM_INFO"
 }
 
 default_apps() {
-	rofi -e "Default Applications Menu"
-	# TODO: implement default applications menu
+    rofi -e "Default Applications Menu"
+    # TODO: implement default applications menu
 }
 
 brightness() {
-	rofi -e "Brightness Menu"
-	# TODO: implement brightness controls
+    rofi -e "Brightness Menu"
+    # TODO: implement brightness controls
 }
 
 qt5_app() {
-	qt5ct;
+    qt5ct;
 }
 
 gtk_app() {
-	lxappearance;
+    lxappearance;
 }
 
 rofi_app() {
-	rofi-theme-selector;
+    rofi-theme-selector;
 }
 
 wallpaper() {
-	$SCRIPT_PATH/rofi-wallpaper.sh;
+    $SCRIPT_PATH/rofi-wallpaper.sh;
 }
 
 while choice=`echo -en $entries | $ROFI_CMD -p Settings`; do

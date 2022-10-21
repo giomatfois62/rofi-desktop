@@ -6,11 +6,11 @@ ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 API=$1
 
 case "$API" in
-	"google") api_url="https://www.google.com/search?q=" ;;
-	"youtube") api_url="https://www.youtube.com/results?search_query=" ;;
-	"wikipedia") api_url="https://en.wikipedia.org/?curid=" ;;
-	"archwiki") api_url="https://wiki.archlinux.org/index.php?search=" ;;
-	*) echo "unrecognized API" && exit 1 ;;
+    "google") api_url="https://www.google.com/search?q=" ;;
+    "youtube") api_url="https://www.youtube.com/results?search_query=" ;;
+    "wikipedia") api_url="https://en.wikipedia.org/?curid=" ;;
+    "archwiki") api_url="https://wiki.archlinux.org/index.php?search=" ;;
+    *) echo "unrecognized API" && exit 1 ;;
 esac
 
 #API="google" # TODO: implement other APIs for suggestions
@@ -23,43 +23,43 @@ esac
 have_blocks=`rofi -dump-config | grep blocks`
 
 if [ ${#have_blocks} -gt 0 ]; then
-	logfile="$SCRIPT_PATH/data/suggestions.tmp"
-	blockfile="$SCRIPT_PATH/rofi-web-suggestions.sh"
+    logfile="$SCRIPT_PATH/data/suggestions.tmp"
+    blockfile="$SCRIPT_PATH/rofi-web-suggestions.sh"
 
-	mkdir -p "${logfile%suggestions.tmp}"
+    mkdir -p "${logfile%suggestions.tmp}"
 
-	printf "$API" > "$logfile"
+    printf "$API" > "$logfile"
 
-	rofi -modi blocks -show blocks -blocks-wrap $blockfile -display-blocks $API 2>/dev/null
+    rofi -modi blocks -show blocks -blocks-wrap $blockfile -display-blocks $API 2>/dev/null
 
-	[ -f $logfile ] && query="$(cat "$logfile")" || exit 1
+    [ -f $logfile ] && query="$(cat "$logfile")" || exit 1
 
-	rm $logfile
+    rm $logfile
 
-	if [ ${#query} -gt 0 ]; then
+    if [ ${#query} -gt 0 ]; then
 
-		# extract wikipedia page id from string
-		if [ "$API" = "wikipedia" ]; then
-			word_count=$(echo "$query" | wc -w)
-			if [ $word_count -gt 1 ]; then
-				query=$(echo "$query" | awk '{print $NF}')
-			else
-				api_url="https://en.wikipedia.org/w/index.php?fulltext=1&search="
-			fi
-		fi
+	    # extract wikipedia page id from string
+	    if [ "$API" = "wikipedia" ]; then
+		    word_count=$(echo "$query" | wc -w)
+		    if [ $word_count -gt 1 ]; then
+			    query=$(echo "$query" | awk '{print $NF}')
+		    else
+			    api_url="https://en.wikipedia.org/w/index.php?fulltext=1&search="
+		    fi
+	    fi
 
-		url=$api_url$query
-		xdg-open "$url"
-		exit 0
-	fi
+	    url=$api_url$query
+	    xdg-open "$url"
+	    exit 0
+    fi
 else
-	query=$((echo) | $ROFI_CMD -p $API);
+    query=$((echo) | $ROFI_CMD -p $API);
 
-	if [ ${#query} -gt 0 ]; then
-		url=$api_url$query
-		xdg-open "$url"
-		exit 0
-	fi
+    if [ ${#query} -gt 0 ]; then
+	    url=$api_url$query
+	    xdg-open "$url"
+	    exit 0
+    fi
 fi
 
 exit 1

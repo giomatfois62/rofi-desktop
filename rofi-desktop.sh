@@ -11,55 +11,55 @@ entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\n
 declare -A commands=(
     ["Applications"]=run_app
     ["Run Command"]=run_cmd
-	["Browse Files"]=browse
+    ["Browse Files"]=browse
     ["Search Computer"]=search
     ["Search Web"]=web_search
     ["Calculator"]=calculator
-	["Calendar"]=calendar
+    ["Calendar"]=calendar
     ["Watch TV"]=tv
     ["Web Radio"]=radio
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
-	["To-Do List"]=todo
-	["Notepad"]=notes
-	["Latest News"]=news
-	["Weather Forecast"]=weather
+    ["To-Do List"]=todo
+    ["Notepad"]=notes
+    ["Latest News"]=news
+    ["Weather Forecast"]=weather
     ["System Settings"]=settings
-	["Utilities"]=utilities
+    ["Utilities"]=utilities
     ["Exit"]=session_menu
 )
 
 run_app() {
-	tmp_file=$SCRIPT_PATH/"rofi-drun.log"
-    G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log $tmp_file;
-	
-	# very hacky!!! intercept exit code grepping log file
-	entry_chosen=$(grep "Parsed command:" $tmp_file)
-	rm $tmp_file
+    tmp_file=$SCRIPT_PATH/"rofi-drun.log"
+G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log $tmp_file;
 
-	if [  ${#entry_chosen} -gt 0 ]; then
-		echo "Entry chosen"
-		exit 0;
-	fi
+    # very hacky!!! intercept exit code grepping log file
+    entry_chosen=$(grep "Parsed command:" $tmp_file)
+    rm $tmp_file
+
+    if [  ${#entry_chosen} -gt 0 ]; then
+	echo "Entry chosen"
+	exit 0;
+    fi
 }
 
 run_cmd() {
-	tmp_file=$SCRIPT_PATH/"rofi-run.log"
-    G_MESSAGES_DEBUG=Modes.Run rofi -show run $SHOW_ICONS -log $tmp_file;
-	
-	# very hacky!!! intercept exit code grepping log file
-	entry_chosen=$(grep "Parsed command:" $tmp_file)
-	rm $tmp_file
-	
-	if [  ${#entry_chosen} -gt 0 ]; then
-		echo "Entry chosen"
-		exit 0;
-	fi
+    tmp_file=$SCRIPT_PATH/"rofi-run.log"
+G_MESSAGES_DEBUG=Modes.Run rofi -show run $SHOW_ICONS -log $tmp_file;
+
+    # very hacky!!! intercept exit code grepping log file
+    entry_chosen=$(grep "Parsed command:" $tmp_file)
+    rm $tmp_file
+
+    if [  ${#entry_chosen} -gt 0 ]; then
+	echo "Entry chosen"
+	exit 0;
+    fi
 }
 
 browse() {
-	# TODO: intercept entry chosen to exit
-	rofi $SHOW_ICONS -show filebrowser && exit
+    # TODO: intercept entry chosen to exit
+    rofi $SHOW_ICONS -show filebrowser && exit
 }
 
 search() {
@@ -67,13 +67,13 @@ search() {
 }
 
 web_search() {
-	apis="google\nwikipedia\nyoutube\narchwiki"
+    apis="google\nwikipedia\nyoutube\narchwiki"
 
-	while api=$(echo -e $apis | $ROFI_CMD -p Website); do
-		if [ ${#api} -gt 0 ]; then
-			$SCRIPT_PATH/rofi-web.sh $api && exit
-		fi
-	done
+    while api=$(echo -e $apis | $ROFI_CMD -p Website); do
+	if [ ${#api} -gt 0 ]; then
+	    $SCRIPT_PATH/rofi-web.sh $api && exit
+	fi
+    done
 }
 
 settings() {
@@ -84,9 +84,9 @@ calculator() {
     have_calc=`rofi -dump-config | grep calc`
 
     if [ ${#have_calc} -gt 0 ]; then
-        rofi -show calc
+	rofi -show calc
     else
-        rofi -modi "calc:$SCRIPT_PATH/rofi-calc.sh" -show calc
+	rofi -modi "calc:$SCRIPT_PATH/rofi-calc.sh" -show calc
     fi
 }
 
@@ -111,33 +111,33 @@ session_menu() {
 }
 
 todo() {
-	rofi -modi TODO:$SCRIPT_PATH/rofi-todo.sh -show TODO
+    rofi -modi TODO:$SCRIPT_PATH/rofi-todo.sh -show TODO
 }
 
 notes() {
-	$SCRIPT_PATH/rofi-notes.sh && exit
+    $SCRIPT_PATH/rofi-notes.sh && exit
 }
 
 news() {
-	$SCRIPT_PATH/rofi-news.sh && exit
+    $SCRIPT_PATH/rofi-news.sh && exit
 }
 
 weather() {
-	curl wttr.in/?ATFn | rofi -dmenu -p Weather
+    curl wttr.in/?ATFn | rofi -dmenu -p Weather
 }
 
 calendar() {
-	cal -3 -m | rofi -dmenu -p "$(date)"
+    cal -3 -m | rofi -dmenu -p "$(date)"
 }
 
 utilities() {
-	utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video")
-	
-	while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
-    	if [ ${#selected} -gt 0 ]; then
-    	    ${commands[$selected]};
-    	fi
-	done
+    utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video")
+
+    while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
+	if [ ${#selected} -gt 0 ]; then
+	    ${commands[$selected]};
+	fi
+    done
 }
 
 while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
