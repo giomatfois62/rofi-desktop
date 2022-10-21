@@ -121,8 +121,7 @@ weather() {
 }
 
 calendar() {
-	rofi -e "Calendar"
-	# TODO: implement calendar
+	cal -3 -m | rofi -dmenu -p "$(date)"
 }
 
 utilities() {
