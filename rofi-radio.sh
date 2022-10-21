@@ -3,7 +3,7 @@
 # depends: jq mpv
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-CHANNELS_FILE="$SCRIPT_PATH/radios.json"
+CHANNELS_FILE="$SCRIPT_PATH/data/radios.json"
 CHANNELS_URL="https://de1.api.radio-browser.info/json/stations/search?name="
 PLAYER="mpv --no-resume-playback --force-window=immediate"
 ROFI_CMD="rofi -dmenu -i"

@@ -2,9 +2,11 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 RSS_URL="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
-EXPIRATION_TIME=600 # refresh news file every ten minutes
-RSS_FILE="$SCRIPT_PATH/news"
+RSS_FILE="$SCRIPT_PATH/data/news"
 ROFI_CMD="rofi -dmenu -i"
+EXPIRATION_TIME=600 # refresh news file every ten minutes
+
+mkdir -p "${RSS_FILE%news}"
 
 if [ -f "$RSS_FILE" ]; then
 	# compute time delta between current date and news file date

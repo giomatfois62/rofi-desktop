@@ -43,10 +43,13 @@ search_command() {
             cmd_extensions=$cmd_extensions" -e $i"
         done
 
+        # sort by mtime is very slow with many files
+        #sort_cmd="--exec stat --printf=\"%Y\\t%n\\n\" | sort -nr | cut -f2"
+
         if [ "$SHOW_HIDDEN_FILES" = true ]; then
-            cmd="cd $folder && fd -H --type f $cmd_extensions"
+            cmd="cd $folder && fd -H --ignore --type f $cmd_extensions"
         else
-            cmd="cd $folder && fd --type f $cmd_extensions"
+            cmd="cd $folder && fd --ignore --type f $cmd_extensions"
         fi
     else
         count=0
@@ -156,7 +159,6 @@ search_pics() {
 }
 
 search_tnt() {
-	# TODO: understand why it always exit
 	$SCRIPT_PATH/rofi-tnt.sh && exit 0
 }
 

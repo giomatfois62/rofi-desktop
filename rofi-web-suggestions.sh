@@ -5,15 +5,14 @@ LANG="en"
 
 refreshrate=2 # refresh suggestions every n characters hit 
 
-logfile="$SCRIPT_PATH/suggestions.tmp"
+logfile="$SCRIPT_PATH/data/suggestions.tmp"
 
 [ ! -f "$logfile" ] && echo "run the wrapper script instead" && exit 1
 
-# TODO: use API to switch suggestions source
 API=$(cat $logfile)
 rm "$logfile"
 
-get_suggestions="$SCRIPT_PATH/suggestions/google"
+get_suggestions="$SCRIPT_PATH/suggestions/$API"
 allowExcess=true
 
 suggestions=""

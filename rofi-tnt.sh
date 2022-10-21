@@ -2,8 +2,10 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 TNT_URL="https://raw.githubusercontent.com/edoardopigaiani/tntvillage-release-dump/master/tntvillage-release-dump.csv"
-TNT_FILE=$SCRIPT_PATH/tntvillage-release-dump.csv
+TNT_FILE=$SCRIPT_PATH/data/tntvillage-release-dump.csv
 ROFI_CMD="rofi -dmenu -i"
+
+mkdir -p "${TNT_FILE%tntvillage-release-dump.csv}"
 
 if [[ ! -f "$TNT_FILE" ]];then
     printf "Downloading torrent list...\n";

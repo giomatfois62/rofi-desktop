@@ -3,7 +3,7 @@
 # depends: jq mpv
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-CHANNELS_FILE="$SCRIPT_PATH/channels.json"
+CHANNELS_FILE="$SCRIPT_PATH/data/channels.json"
 CHANNELS_URL="https://iptv-org.github.io/iptv/channels.json"
 PLAYER="mpv --no-resume-playback --force-window=immediate"
 ROFI_CMD="rofi -dmenu -i"

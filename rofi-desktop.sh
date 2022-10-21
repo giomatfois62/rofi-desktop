@@ -3,7 +3,7 @@
 # optional: rofi-calc
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-ROFI_CMD="rofi -dmenu -i -matching fuzzy -p Menu"
+ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 SHOW_ICONS="-show-icons"
  
 entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWeb Radio\nUtilities\nSystem Settings\nExit")
@@ -67,7 +67,13 @@ search() {
 }
 
 web_search() {
-    $SCRIPT_PATH/rofi-web.sh && exit
+	apis="google\nwikipedia\nyoutube\narchwiki"
+
+	while api=$(echo -e $apis | $ROFI_CMD -p Website); do
+		if [ ${#api} -gt 0 ]; then
+			$SCRIPT_PATH/rofi-web.sh $api && exit
+		fi
+	done
 }
 
 settings() {
@@ -127,14 +133,14 @@ calendar() {
 utilities() {
 	utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video")
 	
-	while selected=`echo -en $utils | $ROFI_CMD`; do
+	while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
     	if [ ${#selected} -gt 0 ]; then
     	    ${commands[$selected]};
     	fi
 	done
 }
 
-while choice=`echo -en $entries | $ROFI_CMD`; do
+while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
     if [ ${#choice} -gt 0 ]; then
         ${commands[$choice]};
     fi

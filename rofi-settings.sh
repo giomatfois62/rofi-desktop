@@ -30,10 +30,9 @@ declare -A commands=(
 )
 
 appearance() {
-	#$SCRIPT_PATH/rofi-appearance.sh
-	settings=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
+	appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
 
-	while selected=`echo -en $settings | $ROFI_CMD -p Appearance`; do
+	while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do
     	if [ ${#selected} -gt 0 ]; then
     	    ${commands[$selected]};
     	fi
