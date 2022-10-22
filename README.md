@@ -42,6 +42,7 @@ Currently implemented functionalities are:
   - Network (networkmanager_dmenu)
   - Bluetooth (rofi-bluetooth)
   - Display (rofi-monitor-layout.sh)
+  - Default Applications (audio/video/images viewer and file manager)
   - Volume (uses pactl and pavucontrol)
   - Menu Configuration (edit all rofi-desktop scripts)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
