@@ -8,8 +8,6 @@ SHOW_HIDDEN_FILES=false
 HISTORY_FILE="$SCRIPT_PATH/data/history"
 MAX_ENTRIES=100
 
-entries=("All Files\nRecent Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
-
 declare -A commands=(
     ["All Files"]=search_all
     ["Recent Files"]=search_recent
@@ -24,10 +22,19 @@ declare -A commands=(
     ["Videos"]=search_videos
 )
 
-mkdir -p "$SCRIPT_PATH/data/"
-
 # TODO: add more file extensions
-# TODO: order results by date 
+# TODO: order results by date
+entries=("All Files\nRecent Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
+
+search_menu() {
+    while choice=`echo -en $entries | $ROFI_CMD -matching fuzzy -p Search`; do
+        if [ ${#choice} -gt 0 ]; then
+            ${commands[$choice]};
+        fi
+    done
+
+    exit 1
+}
 
 has_fd() {
     if command -v fd &> /dev/null; then
@@ -212,10 +219,6 @@ search_videos() {
     fi
 }
 
-while choice=`echo -en $entries | $ROFI_CMD -matching fuzzy -p Search`; do
-    if [ ${#choice} -gt 0 ]; then
-        ${commands[$choice]};
-    fi
-done
+mkdir -p "$SCRIPT_PATH/data/"
 
-exit 1
+search_menu

@@ -10,7 +10,7 @@ TASK_MANAGER="xterm -e htop"
 SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
  
 declare -A commands=(
-    ["Appearance"]=appearance
+    ["Appearance"]=appearance_menu
     ["Network"]=network
     ["Bluetooth"]=bluetooth
     ["Display"]=display
@@ -39,7 +39,7 @@ settings_menu() {
     exit 1
 }
 
-appearance() {
+appearance_menu() {
     appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
 
     while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do

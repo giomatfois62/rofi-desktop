@@ -4,8 +4,6 @@ SCRIPT_PATH="$HOME/Downloads/rofi-desktop"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 MIME_FILE="$HOME/.config/mimeapps.list"
 
-categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player"
-
 declare -A actions=(
     ["Web Browser"]=set_browser
     ["File Manager"]=set_fm
@@ -16,6 +14,17 @@ declare -A actions=(
     ["Video Player"]=set_video_player
 )
 
+mime_menu() {
+    categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player"
+
+    while choice=`echo -en $categories | $ROFI_CMD -p "Default Applications"`; do
+        if [ ${#choice} -gt 0 ]; then
+            ${actions[$choice]};
+        fi
+    done
+
+}
+
 seach_applications() {
     grep $1 -H -l /usr/share/applications/* $HOME/.local/share/applications/* | xargs -I {} basename {} .desktop
 }
@@ -25,7 +34,7 @@ set_application() {
 
     # delete previous mimetype association
     if [ ${#line_exists} -gt 0 ]; then
-        tmp_file="$SCRIPT_PATH/mimeapps"
+        tmp_file="$SCRIPT_PATH/data/mimeapps"
         escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
         sed "/^$escaped_mimetype=/d" $MIME_FILE > $tmp_file
         mv $tmp_file $MIME_FILE
@@ -117,8 +126,6 @@ set_video_player() {
     fi
 }
 
-while choice=`echo -en $categories | $ROFI_CMD -p "Default Applications"`; do
-    if [ ${#choice} -gt 0 ]; then
-        ${actions[$choice]};
-    fi
-done
+mkdir -p "$SCRIPT_PATH/data/"
+
+mime_menu
