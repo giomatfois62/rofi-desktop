@@ -4,11 +4,12 @@ SCRIPT_PATH="$HOME/Downloads/rofi-desktop"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 MIME_FILE="$HOME/.config/mimeapps.list"
 
-categories="Web Browser\nFile Manager\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player"
+categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player"
 
 declare -A actions=(
     ["Web Browser"]=set_browser
     ["File Manager"]=set_fm
+    ["Text Editor"]=set_txt
     ["Image Viewer"]=set_image_viewer
     ["PDF Reader"]=set_pdf
     ["Audio Player"]=set_audio_player
@@ -38,8 +39,15 @@ set_application() {
 set_browser() {
     selected=$(seach_applications "WebBrowser" | $ROFI_CMD -p "Web Browser")
 
-    echo $selected
-    # TODO: implement web browser selection
+    if [ ${#selected} -gt 0 ]; then
+        set_application "application/x-extension-htm" $selected;
+        set_application "application/x-extension-html" $selected;
+        set_application "application/x-extension-shtml" $selected;
+        set_application "application/x-extension-xht" $selected;
+        set_application "application/x-extension-xhtml" $selected;
+        set_application "application/xhtml+xml" $selected;
+        set_application "text/html" $selected;
+    fi
 }
 
 set_fm() {
@@ -50,15 +58,25 @@ set_fm() {
     fi
 }
 
+set_txt() {
+    selected=$(seach_applications 'TextEditor;' | $ROFI_CMD -p "Text Editor")
+
+    if [ ${#selected} -gt 0 ]; then
+        set_application "text/plain" $selected;
+        set_application "text/markdown" $selected;
+    fi
+}
+
 set_pdf() {
     selected=$(seach_applications 'PDF' | $ROFI_CMD -p "PDF Reader")
 
-    echo $selected
-    # TODO: implement pdf viewer selection
+    if [ ${#selected} -gt 0 ]; then
+        set_application "application/pdf" $selected;
+    fi
 }
 
 set_image_viewer() {
-    selected=$(seach_applications 'image/tif' | $ROFI_CMD -p "Image Viewer")
+    selected=$(seach_applications 'Image Viewer' | $ROFI_CMD -p "Image Viewer")
 
     if [ ${#selected} -gt 0 ]; then
         set_application "image/bmp" $selected;
@@ -71,7 +89,7 @@ set_image_viewer() {
 }
 
 set_audio_player() {
-    selected=$(seach_applications 'Audio;' | $ROFI_CMD -p "Audio Player")
+    selected=$(seach_applications 'Player;' | $ROFI_CMD -p "Audio Player")
 
     if [ ${#selected} -gt 0 ]; then
         set_application "audio/aac" $selected;
@@ -86,7 +104,7 @@ set_audio_player() {
 }
 
 set_video_player() {
-    selected=$(seach_applications 'Video;' | $ROFI_CMD -p "Video Player")
+    selected=$(seach_applications 'Player;' | $ROFI_CMD -p "Video Player")
 
     if [ ${#selected} -gt 0 ]; then
         set_application "video/webm" $selected;
