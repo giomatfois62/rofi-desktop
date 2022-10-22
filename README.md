@@ -49,7 +49,7 @@ Currently implemented functionalities are:
   - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
 
 
-![](https://github.com/giomatfois62/rofi-desktop/blob/main/demo.webm)
+![](https://github.com/giomatfois62/rofi-desktop/blob/main/demo.mov)
 
 ## Dependencies
 The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead.  
