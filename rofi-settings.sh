@@ -28,12 +28,12 @@ declare -A commands=(
 )
 
 settings_menu() {
-    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nAutostart Applications\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
+    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
 
     while choice=`echo -en $entries | $ROFI_CMD -p Settings`; do
-	if [ ${#choice} -gt 0 ]; then
-	    ${commands[$choice]};
-	fi
+        if [ ${#choice} -gt 0 ]; then
+            ${commands[$choice]};
+        fi
     done
 
     exit 1
@@ -43,9 +43,9 @@ appearance() {
     appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
 
     while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do
-	if [ ${#selected} -gt 0 ]; then
-	    ${commands[$selected]};
-	fi
+        if [ ${#selected} -gt 0 ]; then
+            ${commands[$selected]};
+        fi
     done
 }
 
@@ -69,7 +69,7 @@ menu_config() {
     selected=`find $SCRIPT_PATH -iname '*.sh' -maxdepth 1 -type f | $ROFI_CMD -p Open`
 
     if [ ${#selected} -gt 0 ]; then
-	xdg-open $selected && exit 0
+        xdg-open $selected && exit 0
     fi
 }
 
@@ -77,9 +77,9 @@ task_mgr() {
     have_blocks=`rofi -dump-config | grep blocks`
 
     if [ ${#have_blocks} -gt 0 ]; then
-	$SCRIPT_PATH/rofi-top.sh
+        $SCRIPT_PATH/rofi-top.sh
     else
-	eval "$TASK_MANAGER"
+        eval "$TASK_MANAGER"
     fi
 }
 
@@ -88,8 +88,7 @@ sys_info() {
 }
 
 default_apps() {
-    rofi -e "Default Applications Menu"
-    # TODO: implement default applications menu
+    $SCRIPT_PATH/rofi-mime.sh
 }
 
 brightness() {

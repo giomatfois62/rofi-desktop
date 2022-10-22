@@ -32,9 +32,9 @@ utilities() {
     utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video\nSSH")
 
     while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
-	if [ ${#selected} -gt 0 ]; then
-	    ${commands[$selected]};
-	fi
+        if [ ${#selected} -gt 0 ]; then
+            ${commands[$selected]};
+        fi
     done
 }
 
@@ -42,9 +42,9 @@ main_menu() {
     entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWeb Radio\nUtilities\nSystem Settings\nExit")
 
     while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
-	if [ ${#choice} -gt 0 ]; then
-	    ${commands[$choice]};
-	fi
+        if [ ${#choice} -gt 0 ]; then
+            ${commands[$choice]};
+        fi
     done
 }
 
@@ -57,8 +57,8 @@ run_app() {
     rm $logfile
 
     if [  ${#entry_chosen} -gt 0 ]; then
-	echo "Entry chosen"
-	exit 0;
+        echo "Entry chosen"
+        exit 0;
     fi
 }
 
@@ -71,8 +71,8 @@ run_cmd() {
     rm $logfile
 
     if [  ${#entry_chosen} -gt 0 ]; then
-	echo "Entry chosen"
-	exit 0;
+        echo "Entry chosen"
+        exit 0;
     fi
 }
 
@@ -95,9 +95,9 @@ web_search() {
     apis="google\nwikipedia\nyoutube\narchwiki"
 
     while api=$(echo -e $apis | $ROFI_CMD -p Website); do
-	if [ ${#api} -gt 0 ]; then
-	    $SCRIPT_PATH/rofi-web-search.sh $api && exit
-	fi
+        if [ ${#api} -gt 0 ]; then
+            $SCRIPT_PATH/rofi-web-search.sh $api && exit
+        fi
     done
 }
 
@@ -109,9 +109,9 @@ calculator() {
     have_calc=`rofi -dump-config | grep calc`
 
     if [ ${#have_calc} -gt 0 ]; then
-	rofi -show calc
+        rofi -show calc
     else
-	rofi -modi "calc:$SCRIPT_PATH/rofi-calc.sh" -show calc
+        rofi -modi "calc:$SCRIPT_PATH/rofi-calc.sh" -show calc
     fi
 }
 
@@ -152,7 +152,6 @@ weather() {
 }
 
 calendar() {
-    #cal -3 -m | rofi -dmenu -p "$(date)"
     $SCRIPT_PATH/rofi-calendar.sh
 }
 
