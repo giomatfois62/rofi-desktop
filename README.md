@@ -8,7 +8,7 @@ Currently implemented functionalities are:
 - Applications Menu (drun modi)
 - Run Command (run modi)
 - Browse Files (filebrowser modi)
-- Search Computer (search files in home directory, using find or fd if available)
+- Search Computer (rofi-search, search files in home directory using find or fd if available)
   - All Files 
   - Bookmarks (from firefox default profile)
   - Books
@@ -18,15 +18,15 @@ Currently implemented functionalities are:
   - Music
   - Pictures (with big thumbnails preview)
   - Videos
-- Search Web (with real time search suggestions when modi blocks is available)
+- Search Web (rofi-web-search, gives real time search suggestions when modi blocks is available)
   - Google
   - Wikipedia
   - Youtube
   - Archwiki
-- Latest News (rss from bbc international)
+- Latest News (rofi-news, rss news from bbc international)
 - Weather Forecast (curl wttr.in piped to rofi)
-- Watch TV (stream TV channels with mpv)
-- Web Radio (stream Radios with mpv)
+- Watch TV (rofi-tv, stream TV channels with mpv)
+- Web Radio (rofi-radio, stream Radios with mpv)
 - Utilities
   - Calculator (rofi-calc, optionally uses the libqalc based modi calc when available)
   - Calendar (rofi-calendar)
@@ -36,7 +36,7 @@ Currently implemented functionalities are:
   - Record Audio/Video (rofi-ffmpeg)
   - SSH (ssh modi)
 - System Settings
-  - Appearance (Qt,GTK,rofi style and wallpaper setter with big thumbnails)
+  - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu)
   - Bluetooth (rofi-bluetooth)
   - Display (rofi-monitor-layout.sh)
@@ -45,11 +45,7 @@ Currently implemented functionalities are:
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
   - System Info (inxi piped to rofi)
 - Session Menu (uses loginctl and optional custom lock command)
-  - Lock Screen
-  - Log Out
-  - Reboot
-  - Shutdown
-  - Hybernate
+  - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
 
 All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify. 
 
