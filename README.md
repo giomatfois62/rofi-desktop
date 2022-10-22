@@ -4,13 +4,14 @@ rofi-desktop is a collection of scripts launching interactive [rofi](https://git
 
 The main desktop menu is accessed with *rofi-desktop.sh*, while *rofi-settings.sh* contains a comprehensive system settings menu. 
 
+All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify.  
 Currently implemented functionalities are:
 - Applications Menu (drun modi)
 - Run Command (run modi)
 - Browse Files (filebrowser modi)
 - Search Computer (rofi-search, search files in home directory using find or fd if available)
   - All Files 
-  - Bookmarks (from firefox default profile)
+  - Bookmarks (rofi-firefox, search bookmarks from firefox default profile)
   - Books
   - Desktop
   - Documents
@@ -47,10 +48,18 @@ Currently implemented functionalities are:
 - Session Menu (uses loginctl and optional custom lock command)
   - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
 
-All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify. 
-
-The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead. 
-Optional dependencies for some of the tools are: jq mpv rofi-blocks rofi-calc ffmpeg pactl fd htop inxi
+## Dependencies
+The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead.  
+Optional dependencies for some of the tools are: 
+- jq 
+- mpv 
+- rofi-blocks
+- rofi-calc 
+- ffmpeg 
+- pactl 
+- fd 
+- htop 
+- inxi
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
@@ -62,3 +71,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [claudiodangelis](https://github.com/claudiodangelis/rofi-todo)
 - [christianholman](https://github.com/christianholman/rofi_notes)
 - [luiscrjunior](https://github.com/luiscrjunior/rofi-json)
+- [lamarios](https://github.com/lamarios/dotfiles/blob/master/scripts/rofi-firefox)
