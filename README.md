@@ -48,8 +48,7 @@ Currently implemented functionalities are:
 - Session Menu (uses loginctl and optional custom lock command)
   - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
 
-
-![](https://github.com/giomatfois62/rofi-desktop/blob/main/demo.mov)
+[gif of the menus](https://github.com/giomatfois62/rofi-desktop/blob/main/demo.webm)
 
 ## Dependencies
 The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead.  
