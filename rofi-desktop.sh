@@ -127,7 +127,8 @@ weather() {
 }
 
 calendar() {
-    cal -3 -m | rofi -dmenu -p "$(date)"
+    #cal -3 -m | rofi -dmenu -p "$(date)"
+    $SCRIPT_PATH/rofi-calendar.sh
 }
 
 utilities() {
