@@ -11,6 +11,7 @@ Currently implemented functionalities are:
 - Browse Files (filebrowser modi)
 - Search Computer (rofi-search, search files in home directory using find or fd if available)
   - All Files 
+  - Recent Files
   - Bookmarks (rofi-firefox, search bookmarks from firefox default profile)
   - Books
   - Desktop
