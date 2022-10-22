@@ -15,7 +15,9 @@ fi
 
 PROFILE_DB=~/.mozilla/firefox/${FIREFOX_PROFILE}/places.sqlite
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-TMP_PLACES=$SCRIPT_PATH/firefox-places
+TMP_PLACES=$SCRIPT_PATH/data/firefox-places
+
+mkdir -p "$SCRIPT_PATH/data"
 
 #avoiding db lock
 cp -f ${PROFILE_DB} ${TMP_PLACES}
