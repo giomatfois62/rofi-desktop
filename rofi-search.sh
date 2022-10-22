@@ -145,12 +145,20 @@ search_music() {
     fi
 }
 
+build_theme() {
+    rows=$1
+    cols=$2
+    icon_size=$3
+
+    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$2;}"
+}
+
 search_pics() {
     # TODO: change theme with keybind
     local selected
     local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme $SCRIPT_PATH/themes/default.rasi -p "Pictures"`
+    selected=`eval "$(search_command $HOME "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str $(build_theme 3 4 10) -p "Pictures"`
 
     if [ ${#selected} -gt 0 ]; then
         xdg-open "$HOME/$selected"

@@ -2,11 +2,19 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 WALLPAPERS_DIR="$HOME/Pictures"
-ROFI_CMD="rofi -dmenu -i -show-icons -theme $SCRIPT_PATH/themes/default.rasi"
 KDE=true
 
 # find image size to display (very slow)
 #echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
+build_theme() {
+    rows=$1
+    cols=$2
+    icon_size=$3
+
+    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$2;}"
+}
+
+ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 4 10)"
 
 choice=$(\
     ls --escape $WALLPAPERS_DIR | \
