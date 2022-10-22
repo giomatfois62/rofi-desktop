@@ -17,7 +17,7 @@ declare -A actions=(
 )
 
 seach_applications() {
-    grep $1 -H -l /usr/share/applications/* $HOME/.local/share/applications/* | xargs -I {} basename {}
+    grep $1 -H -l /usr/share/applications/* $HOME/.local/share/applications/* | xargs -I {} basename {} .desktop
 }
 
 set_application() {
@@ -33,7 +33,7 @@ set_application() {
 
     # add new mimetype association
     #app="$(basename ${2})"
-    echo "$1=$2" >> $MIME_FILE
+    echo "$1=$2"".desktop" >> $MIME_FILE
 }
 
 set_browser() {
