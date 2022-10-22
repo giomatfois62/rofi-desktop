@@ -5,11 +5,14 @@
 SCRIPT_PATH="$HOME/Downloads/rofi-desktop"
 ROFI_CMD="rofi -dmenu -i"
 SHOW_HIDDEN_FILES=false
+HISTORY_FILE="$SCRIPT_PATH/data/history"
+MAX_ENTRIES=100
 
-entries=("All Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
+entries=("All Files\nRecent Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
 
 declare -A commands=(
     ["All Files"]=search_all
+    ["Recent Files"]=search_recent
     ["Bookmarks"]=search_bookmarks
     ["Books"]=search_books
     ["Documents"]=search_documents
@@ -20,6 +23,8 @@ declare -A commands=(
     ["TNT Village"]=search_tnt
     ["Videos"]=search_videos
 )
+
+mkdir -p "$SCRIPT_PATH/data/"
 
 # TODO: add more file extensions
 # TODO: order results by date 
@@ -72,13 +77,38 @@ search_command() {
     echo "$cmd | cut -c 3-"
 }
 
+add_to_history() {
+    touch $HISTORY_FILE
+    grep -Fxq "$1" $HISTORY_FILE || echo $1 >> $HISTORY_FILE
+
+    if [ $(wc -l $HISTORY_FILE | awk '{ print $1 }') -gt $MAX_ENTRIES ]; then
+        tmp_file="$HISTORY_FILE"".tmp"
+        tail -n +2 $HISTORY_FILE > $tmp_file
+        mv $tmp_file $HISTORY_FILE
+    fi
+}
+
+open_file() {
+    add_to_history "$@"
+    xdg-open "$@"
+}
+
 search_all() {
     local selected
 
     selected=`eval "$(search_command $HOME)" | $ROFI_CMD -p "All Files"`
 
 	if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/$selected"
+        open_file "$HOME/$selected"
+        exit 0
+    fi
+}
+
+search_recent() {
+    selected=`tac $HISTORY_FILE | $ROFI_CMD -p "Recent Files"`
+
+	if [ ${#selected} -gt 0 ]; then
+        open_file "$selected"
         exit 0
     fi
 }
@@ -90,7 +120,7 @@ search_books() {
     selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Books"`
 
     if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/$selected"
+        open_file "$HOME/$selected"
         exit 0
     fi
 }
@@ -106,7 +136,7 @@ search_documents() {
     selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Documents"`
 
     if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/$selected"
+        open_file "$HOME/$selected"
         exit 0
     fi
 }
@@ -117,7 +147,7 @@ search_downloads() {
     selected=`eval "$(search_command $HOME/Downloads)" | $ROFI_CMD -p "Downloads"`
 
 	if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/Downloads/$selected"
+        open_file "$HOME/Downloads/$selected"
         exit 0
     fi
 }
@@ -128,7 +158,7 @@ search_desktop() {
     selected=`eval "$(search_command $HOME/Desktop)" | $ROFI_CMD -p "Desktop"`
 
 	if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/Desktop/$selected"
+        open_file "$HOME/Desktop/$selected"
         exit 0
     fi
 }
@@ -140,7 +170,7 @@ search_music() {
     selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Music"`
 
     if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/$selected"
+        open_file "$HOME/$selected"
         exit 0
     fi
 }
@@ -161,7 +191,7 @@ search_pics() {
     selected=`eval "$(search_command $HOME "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str $(build_theme 3 4 10) -p "Pictures"`
 
     if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/$selected"
+        open_file "$HOME/$selected"
         exit 0
     fi
 }
@@ -177,7 +207,7 @@ search_videos() {
     selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Videos"`
 
     if [ ${#selected} -gt 0 ]; then
-        xdg-open "$HOME/$selected"
+        open_file "$HOME/$selected"
         exit 0
     fi
 }
