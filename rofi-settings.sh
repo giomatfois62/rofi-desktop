@@ -40,7 +40,7 @@ appearance() {
 }
 
 network() {
-    $SCRIPT_PATH/rofi-networkmanager.py
+    $SCRIPT_PATH/networkmanager_dmenu
 }
 
 bluetooth() {

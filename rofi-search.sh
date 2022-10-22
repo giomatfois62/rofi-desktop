@@ -167,7 +167,7 @@ search_pics() {
 }
 
 search_tnt() {
-	$SCRIPT_PATH/rofi-tnt.sh && exit 0
+    $SCRIPT_PATH/rofi-tnt.sh && exit 0
 }
 
 search_videos() {
