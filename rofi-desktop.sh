@@ -29,13 +29,15 @@ declare -A commands=(
     ["Exit"]=session_menu
 )
 
+mkdir -p "$SCRIPT_PATH/data/"
+
 run_app() {
-    tmp_file=$SCRIPT_PATH/"rofi-drun.log"
-G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log $tmp_file;
+    logfile="$SCRIPT_PATH/data/rofi-drun.log"
+    G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log $logfile;
 
     # very hacky!!! intercept exit code grepping log file
-    entry_chosen=$(grep "Parsed command:" $tmp_file)
-    rm $tmp_file
+    entry_chosen=$(grep "Parsed command:" $logfile)
+    rm $logfile
 
     if [  ${#entry_chosen} -gt 0 ]; then
 	echo "Entry chosen"
@@ -44,12 +46,12 @@ G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log $tmp_file;
 }
 
 run_cmd() {
-    tmp_file=$SCRIPT_PATH/"rofi-run.log"
-G_MESSAGES_DEBUG=Modes.Run rofi -show run $SHOW_ICONS -log $tmp_file;
+    logfile="$SCRIPT_PATH/data/rofi-run.log"
+    G_MESSAGES_DEBUG=Modes.Run rofi -show run $SHOW_ICONS -log $logfile;
 
     # very hacky!!! intercept exit code grepping log file
-    entry_chosen=$(grep "Parsed command:" $tmp_file)
-    rm $tmp_file
+    entry_chosen=$(grep "Parsed command:" $logfile)
+    rm $logfile
 
     if [  ${#entry_chosen} -gt 0 ]; then
 	echo "Entry chosen"
@@ -71,7 +73,7 @@ web_search() {
 
     while api=$(echo -e $apis | $ROFI_CMD -p Website); do
 	if [ ${#api} -gt 0 ]; then
-	    $SCRIPT_PATH/rofi-web.sh $api && exit
+	    $SCRIPT_PATH/rofi-web-search.sh $api && exit
 	fi
     done
 }
