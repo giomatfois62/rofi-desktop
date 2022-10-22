@@ -4,9 +4,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
-SHOW_ICONS="-show-icons"
- 
-entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWeb Radio\nUtilities\nSystem Settings\nExit")
+SHOW_ICONS="-show-icons" #""
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -26,10 +24,29 @@ declare -A commands=(
     ["Weather Forecast"]=weather
     ["System Settings"]=settings
     ["Utilities"]=utilities
+    ["SSH"]=ssh_menu
     ["Exit"]=session_menu
 )
 
-mkdir -p "$SCRIPT_PATH/data/"
+utilities() {
+    utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video\nSSH")
+
+    while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
+	if [ ${#selected} -gt 0 ]; then
+	    ${commands[$selected]};
+	fi
+    done
+}
+
+main_menu() {
+    entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWeb Radio\nUtilities\nSystem Settings\nExit")
+
+    while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
+	if [ ${#choice} -gt 0 ]; then
+	    ${commands[$choice]};
+	fi
+    done
+}
 
 run_app() {
     logfile="$SCRIPT_PATH/data/rofi-drun.log"
@@ -62,6 +79,12 @@ run_cmd() {
 browse() {
     # TODO: intercept entry chosen to exit
     rofi $SHOW_ICONS -show filebrowser && exit
+}
+
+
+ssh_menu() {
+    # TODO: intercept entry chosen to exit
+    rofi -show ssh
 }
 
 search() {
@@ -133,19 +156,8 @@ calendar() {
     $SCRIPT_PATH/rofi-calendar.sh
 }
 
-utilities() {
-    utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video")
+# run
+mkdir -p "$SCRIPT_PATH/data/"
 
-    while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
-	if [ ${#selected} -gt 0 ]; then
-	    ${commands[$selected]};
-	fi
-    done
-}
-
-while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
-    if [ ${#choice} -gt 0 ]; then
-        ${commands[$choice]};
-    fi
-done
+main_menu
 

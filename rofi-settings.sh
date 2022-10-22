@@ -7,10 +7,8 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 TASK_MANAGER="xterm -e htop"
-SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p \"System Info\""
+SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
  
-entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nAutostart Applications\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
-
 declare -A commands=(
     ["Appearance"]=appearance
     ["Network"]=network
@@ -28,6 +26,18 @@ declare -A commands=(
     ["Rofi Style"]=rofi_app
     ["Set Wallpaper"]=wallpaper
 )
+
+settings_menu() {
+    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nAutostart Applications\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
+
+    while choice=`echo -en $entries | $ROFI_CMD -p Settings`; do
+	if [ ${#choice} -gt 0 ]; then
+	    ${commands[$choice]};
+	fi
+    done
+
+    exit 1
+}
 
 appearance() {
     appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
@@ -103,11 +113,5 @@ wallpaper() {
     $SCRIPT_PATH/rofi-wallpaper.sh;
 }
 
-while choice=`echo -en $entries | $ROFI_CMD -p Settings`; do
-    if [ ${#choice} -gt 0 ]; then
-        ${commands[$choice]};
-    fi
-done
-
-exit 1
+settings_menu
 

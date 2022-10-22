@@ -3,10 +3,10 @@
 # depends: jq mpv
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+ROFI_CMD="rofi -dmenu -i -p Channel"
 CHANNELS_FILE="$SCRIPT_PATH/data/channels.json"
 CHANNELS_URL="https://iptv-org.github.io/iptv/channels.json"
 PLAYER="mpv --no-resume-playback --force-window=immediate"
-ROFI_CMD="rofi -dmenu -i"
 
 play(){
     if [ -n "$1" ]; then
@@ -19,7 +19,7 @@ select_channel(){
     local name var
 
     while name=$(cat "$CHANNELS_FILE" | jq ".[].name" | tr -d '"' |\
-                 sort | $ROFI_CMD -p "TV" ); do
+                 sort | $ROFI_CMD); do
         var=".[] | select(.name==\"$name\") | .url"
         play "$(cat $CHANNELS_FILE | jq "$var" | tr -d '"')"
 

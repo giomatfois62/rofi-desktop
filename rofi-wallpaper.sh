@@ -2,10 +2,10 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 WALLPAPERS_DIR="$HOME/Pictures"
-KDE=true
 
 # find image size to display (very slow)
 #echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
+
 build_theme() {
     rows=$1
     cols=$2

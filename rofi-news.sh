@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+ROFI_CMD="rofi -dmenu -i -p News"
 RSS_URL="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
 RSS_FILE="$SCRIPT_PATH/data/news"
-ROFI_CMD="rofi -dmenu -i"
 EXPIRATION_TIME=600 # refresh news file every ten minutes
 
 mkdir -p "${RSS_FILE%news}"
@@ -28,7 +28,7 @@ selected=$(cat "$RSS_FILE" |\
 	sed -e 's/<title>//' -e 's/<\/title>//' -e 's/<description>/  /' -e 's/<\/description>//' -e 's/\!\[CDATA\[//' -e 's/\]\]//' |\
 	tr -d '<>,' |\
 	awk '$1=$1' |\
-	$ROFI_CMD -p "News")
+	$ROFI_CMD)
 
 # get selected news and open corresponding link in browser
 if [  ${#selected} -gt 0 ]; then

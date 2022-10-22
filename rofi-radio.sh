@@ -3,10 +3,10 @@
 # depends: jq mpv
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+ROFI_CMD="rofi -dmenu -i -p Radio"
 CHANNELS_FILE="$SCRIPT_PATH/data/radios.json"
 CHANNELS_URL="https://de1.api.radio-browser.info/json/stations/search?name="
 PLAYER="mpv --no-resume-playback --force-window=immediate"
-ROFI_CMD="rofi -dmenu -i"
 
 play(){
     if [ -n "$1" ]; then
@@ -19,7 +19,7 @@ select_channel(){
     local name var
 
     while name=$(cat "$CHANNELS_FILE" | jq ".[].name" | tr -d '"' |\
-                 sort | $ROFI_CMD -p "Radio" ); do
+                 sort | $ROFI_CMD ); do
         var=".[] | select(.name==\"$name\") | .url"
         play "$(cat $CHANNELS_FILE | jq "$var" | tr -d '"')"
 

@@ -164,7 +164,12 @@ function startrecord() {
     ]
     '''
     select=$(echo $OPTIONS | jq -r ".[][0]" | $DMENU -p "Record" -theme-str 'window {width: 30%;} listview {lines: 8;}')
-    eval $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$select\") | .[1]")
+
+    if [ ${#select} -gt 0 ]; then
+        eval $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$select\") | .[1]")
+    else
+        exit 1
+    fi
 }
 
 function createSaveFolder() {
