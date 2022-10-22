@@ -61,3 +61,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [mnabila](https://github.com/mnabila/dotfiles/blob/master/scripts/dmenu_ffmpeg)
 - [claudiodangelis](https://github.com/claudiodangelis/rofi-todo)
 - [christianholman](https://github.com/christianholman/rofi_notes)
+- [luiscrjunior](https://github.com/luiscrjunior/rofi-json)
