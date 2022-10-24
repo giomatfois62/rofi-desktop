@@ -25,6 +25,7 @@ Currently implemented functionalities are:
   - Wikipedia
   - Youtube
   - Archwiki
+  - Reddit (filter subreddits and display search results)
 - Latest News (rofi-news, rss news from bbc international)
 - Weather Forecast (curl wttr.in piped to rofi)
 - Watch TV (rofi-tv, stream TV channels with mpv)
