@@ -16,6 +16,7 @@ declare -A commands=(
     ["Display"]=display
     ["Volume"]=volume
     ["Brightness"]=brightness
+    ["Keyboard Layout"]=kb_layout
     ["Default Applications"]=default_apps
     ["Menu Configuration"]=menu_config
     ["Task Manager"]=task_mgr
@@ -28,8 +29,9 @@ declare -A commands=(
 )
 
 settings_menu() {
-    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
+    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
 
+    # TODO: remember last entry chosen
     while choice=`echo -en $entries | $ROFI_CMD -p Settings`; do
         if [ ${#choice} -gt 0 ]; then
             ${commands[$choice]};
@@ -42,6 +44,7 @@ settings_menu() {
 appearance_menu() {
     appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
 
+    # TODO: remember last entry chosen
     while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do
         if [ ${#selected} -gt 0 ]; then
             ${commands[$selected]};
@@ -94,6 +97,12 @@ default_apps() {
 brightness() {
     rofi -e "Brightness Menu"
     # TODO: implement brightness controls
+}
+
+kb_layout() {
+    kb_file="/usr/share/X11/xkb/rules/evdev.lst"
+    cat $kb_file | grep -o -P '(?<=! layout).*(?=! variant)'
+    # TODO: finish implementation
 }
 
 qt5_app() {

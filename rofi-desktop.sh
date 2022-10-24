@@ -31,6 +31,7 @@ declare -A commands=(
 utilities() {
     utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video\nSSH")
 
+    # TODO: remember last entry chosen
     while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
         if [ ${#selected} -gt 0 ]; then
             ${commands[$selected]};
@@ -41,6 +42,7 @@ utilities() {
 main_menu() {
     entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWeb Radio\nUtilities\nSystem Settings\nExit")
 
+    # TODO: remember last entry chosen
     while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
         if [ ${#choice} -gt 0 ]; then
             ${commands[$choice]};
