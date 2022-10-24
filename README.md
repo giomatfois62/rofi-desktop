@@ -35,7 +35,7 @@ Currently implemented functionalities are:
   - Calendar (rofi-calendar.sh)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
-  - Take Screenshot (autodetects and uses various screenshot programs)
+  - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH (ssh modi)
 - System Settings
