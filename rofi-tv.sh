@@ -6,6 +6,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -p Channel"
 CHANNELS_FILE="$SCRIPT_PATH/data/channels.json"
 CHANNELS_URL="https://iptv-org.github.io/iptv/channels.json"
+CACHE_FILE="$HOME/.cache/rofi-tv"
 PLAYER="mpv --no-resume-playback --force-window=immediate"
 
 play(){
@@ -17,10 +18,16 @@ play(){
 
 select_channel(){
     local name var
+    local selected_row=$(cat $CACHE_FILE)
 
     while name=$(cat "$CHANNELS_FILE" | jq ".[].name" | tr -d '"' |\
-                 sort | $ROFI_CMD); do
-        var=".[] | select(.name==\"$name\") | .url"
+                 sort | $ROFI_CMD -selected-row ${selected_row} -format 'i s'); do
+        index=$(echo $name | awk '{print $1;}')
+        echo $index > $CACHE_FILE
+
+        name_str=$(echo $name | cut -d' ' -f2-)
+
+        var=".[] | select(.name==\"$name_str\") | .url"
         play "$(cat $CHANNELS_FILE | jq "$var" | tr -d '"')"
 
         exit 0
