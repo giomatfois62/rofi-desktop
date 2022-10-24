@@ -9,10 +9,10 @@ Currently implemented functionalities are:
 - Applications Menu (drun modi)
 - Run Command (run modi)
 - Browse Files (filebrowser modi)
-- Search Computer (rofi-search, search files in home directory using find or fd if available)
+- Search Computer (rofi-search.sh, search files in home directory using find or fd if available)
   - All Files 
   - Recent Files
-  - Bookmarks (rofi-firefox, search bookmarks from firefox default profile)
+  - Bookmarks (rofi-firefox.sh, search bookmarks from firefox default profile)
   - Books
   - Desktop
   - Documents
@@ -20,30 +20,31 @@ Currently implemented functionalities are:
   - Music
   - Pictures (with big thumbnails preview)
   - Videos
-- Search Web (rofi-web-search, gives real time search suggestions when modi blocks is available)
+- Search Web (rofi-web-search.sh, gives real time search suggestions when modi blocks is available)
   - Google
   - Wikipedia
   - Youtube
   - Archwiki
-  - Reddit (filter subreddits and display search results)
-- Latest News (rofi-news, rss news from bbc international)
+  - Reddit (rofi-reddit.sh, filter subreddits and display search results)
+- Latest News (rofi-news.sh, rss news from bbc international)
 - Weather Forecast (curl wttr.in piped to rofi)
-- Watch TV (rofi-tv, stream TV channels with mpv)
-- Web Radio (rofi-radio, stream Radios with mpv)
+- Watch TV (rofi-tv.sh, stream TV channels with mpv)
+- Web Radio (rofi-radio.sh, stream Radios with mpv)
 - Utilities
-  - Calculator (rofi-calc, optionally uses the libqalc based modi calc when available)
-  - Calendar (rofi-calendar)
-  - Notepad (rofi-notes)
-  - To-Do List (rofi-todo)
+  - Calculator (rofi-calc.sh, optionally uses the libqalc based modi calc when available)
+  - Calendar (rofi-calendar.sh)
+  - Notepad (rofi-notes.sh)
+  - To-Do List (rofi-todo.sh)
   - Take Screenshot (autodetects and uses various screenshot programs)
-  - Record Audio/Video (rofi-ffmpeg)
+  - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH (ssh modi)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
-  - Network (networkmanager_dmenu)
-  - Bluetooth (rofi-bluetooth)
+  - Network (networkmanager_dmenu.sh)
+  - Bluetooth (rofi-bluetooth.sh)
   - Display (rofi-monitor-layout.sh)
-  - Default Applications (audio/video/images viewer and file manager)
+  - Default Applications (rofi-mime.sh, set audio/video/images/PDF viewers and file manager)
+  - Keyboard Layout
   - Volume (uses pactl and pavucontrol)
   - Menu Configuration (edit all rofi-desktop scripts)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
