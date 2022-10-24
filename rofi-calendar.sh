@@ -92,7 +92,6 @@ selected="$(echo $month_page \
 | rofi \
 	-dmenu \
 	-markup-rows \
-	-width -22 \
 	-theme-str 'entry { enabled: false;} inputbar { children: [prompt];} listview { columns: 7; lines: '$(echo $month_page | wc -l)'; width: 22; }' \
 	-hide-scrollbar \
 	-p "$header")"

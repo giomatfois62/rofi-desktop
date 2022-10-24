@@ -31,7 +31,7 @@ declare -A commands=(
 utilities() {
     utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video\nSSH")
 
-    # TODO: remember last entry chosen
+    # TODO: remember last entry chosen (-format 'i s' then use i as selected index and s for command selection
     while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
         if [ ${#selected} -gt 0 ]; then
             ${commands[$selected]};
@@ -94,11 +94,15 @@ search() {
 }
 
 web_search() {
-    apis="google\nwikipedia\nyoutube\narchwiki"
+    apis="google\nwikipedia\nyoutube\nreddit\narchwiki"
 
     while api=$(echo -e $apis | $ROFI_CMD -p Website); do
         if [ ${#api} -gt 0 ]; then
-            $SCRIPT_PATH/rofi-web-search.sh $api && exit
+			if [ "$api" = "reddit" ]; then
+				$SCRIPT_PATH/rofi-reddit.sh && exit
+            else
+				$SCRIPT_PATH/rofi-web-search.sh $api && exit
+			fi
         fi
     done
 }

@@ -100,9 +100,12 @@ brightness() {
 }
 
 kb_layout() {
-    kb_file="/usr/share/X11/xkb/rules/evdev.lst"
-    cat $kb_file | grep -o -P '(?<=! layout).*(?=! variant)'
-    # TODO: finish implementation
+    kbd_file="/usr/share/X11/xkb/rules/evdev.lst"
+	selected=$(cat $kbd_file | grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' | head -n -2 | rofi -dmenu -i -p Layout | awk '{print $1;}')
+
+	if [ ${#selected} -gt 0 ]; then
+        setxkbmap $selected
+    fi
 }
 
 qt5_app() {
