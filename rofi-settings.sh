@@ -2,8 +2,6 @@
 
 # depends: xterm inxi htop
 
-# TODO: remember selected items
-
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 TASK_MANAGER="xterm -e htop"
@@ -31,10 +29,16 @@ declare -A commands=(
 settings_menu() {
     entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
 
-    # TODO: remember last entry chosen
-    while choice=`echo -en $entries | $ROFI_CMD -p Settings`; do
+    # remember last entry chosen
+    local choice_row=0
+    local choice_text
+
+    while choice=`echo -en $entries | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p Settings`; do
         if [ ${#choice} -gt 0 ]; then
-            ${commands[$choice]};
+            choice_row=$(echo $choice | awk '{print $1;}')
+            choice_text=$(echo $choice | cut -d' ' -f2-)
+
+            ${commands[$choice_text]};
         fi
     done
 
@@ -44,10 +48,16 @@ settings_menu() {
 appearance_menu() {
     appearance_entries=("Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper")
 
-    # TODO: remember last entry chosen
-    while selected=`echo -en $appearance_entries | $ROFI_CMD -p Appearance`; do
+    # remember last entry chosen
+    local selected_row=0
+    local selected_text
+
+    while selected=`echo -en $appearance_entries | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p Appearance`; do
         if [ ${#selected} -gt 0 ]; then
-            ${commands[$selected]};
+            selected_row=$(echo $selected | awk '{print $1;}')
+            selected_text=$(echo $selected | cut -d' ' -f2-)
+
+            ${commands[$selected_text]};
         fi
     done
 }

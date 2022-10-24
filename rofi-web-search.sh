@@ -5,7 +5,6 @@ ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 
 API=$1
 
-# TODO: add reddit API
 case "$API" in
     "google") api_url="https://www.google.com/search?q=" ;;
     "youtube") api_url="https://www.youtube.com/results?search_query=" ;;

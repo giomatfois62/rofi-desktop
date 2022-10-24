@@ -15,7 +15,7 @@ declare -A commands=(
     ["Calculator"]=calculator
     ["Calendar"]=calendar
     ["Watch TV"]=tv
-    ["Web Radio"]=radio
+    ["Radio Stations"]=radio
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["To-Do List"]=todo
@@ -31,21 +31,33 @@ declare -A commands=(
 utilities() {
     utils=("Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video\nSSH")
 
-    # TODO: remember last entry chosen (-format 'i s' then use i as selected index and s for command selection
-    while selected=`echo -en $utils | $ROFI_CMD -p Utilities`; do
+    # remember last entry chosen
+    local selected_row=0
+    local selected_text
+
+    while selected=`echo -en $utils | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p Utilities`; do
         if [ ${#selected} -gt 0 ]; then
-            ${commands[$selected]};
+            selected_row=$(echo $selected | awk '{print $1;}')
+            selected_text=$(echo $selected | cut -d' ' -f2-)
+
+            ${commands[$selected_text]};
         fi
     done
 }
 
 main_menu() {
-    entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWeb Radio\nUtilities\nSystem Settings\nExit")
+    entries=("Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nSystem Settings\nExit")
 
-    # TODO: remember last entry chosen
-    while choice=`echo -en $entries | $ROFI_CMD -p Menu`; do
+    # remember last entry chosen
+    local choice_row=0
+    local choice_text
+
+    while choice=`echo -en $entries | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p Menu`; do
         if [ ${#choice} -gt 0 ]; then
-            ${commands[$choice]};
+            choice_row=$(echo $choice | awk '{print $1;}')
+            choice_text=$(echo $choice | cut -d' ' -f2-)
+
+            ${commands[$choice_text]};
         fi
     done
 }
@@ -96,13 +108,20 @@ search() {
 web_search() {
     apis="google\nwikipedia\nyoutube\nreddit\narchwiki"
 
-    while api=$(echo -e $apis | $ROFI_CMD -p Website); do
+    # remember last entry chosen
+    local api_row=0
+    local api_text
+
+    while api=$(echo -e $apis | $ROFI_CMD -selected-row ${api_row} -format 'i s' -p Website); do
         if [ ${#api} -gt 0 ]; then
-			if [ "$api" = "reddit" ]; then
-				$SCRIPT_PATH/rofi-reddit.sh && exit
+            api_row=$(echo $api | awk '{print $1;}')
+            api_text=$(echo $api | cut -d' ' -f2-)
+
+            if [ "$api_text" = "reddit" ]; then
+                $SCRIPT_PATH/rofi-reddit.sh && exit
             else
-				$SCRIPT_PATH/rofi-web-search.sh $api && exit
-			fi
+                $SCRIPT_PATH/rofi-web-search.sh $api_text && exit
+            fi
         fi
     done
 }
