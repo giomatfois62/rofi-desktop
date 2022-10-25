@@ -11,6 +11,7 @@ MAX_ENTRIES=100
 declare -A commands=(
     ["All Files"]=search_all
     ["Recent Files"]=search_recent
+	["File Contents"]=search_contents
     ["Bookmarks"]=search_bookmarks
     ["Books"]=search_books
     ["Documents"]=search_documents
@@ -24,7 +25,7 @@ declare -A commands=(
 
 # TODO: add more file extensions
 # TODO: order results by date
-entries=("All Files\nRecent Files\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
+entries=("All Files\nRecent Files\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
 
 search_menu() {
     # remember last entry chosen
@@ -45,6 +46,12 @@ search_menu() {
 
 has_fd() {
     if command -v fd &> /dev/null; then
+        echo "yes"
+    fi
+}
+
+has_rg() {
+    if command -v rg &> /dev/null; then
         echo "yes"
     fi
 }
@@ -125,6 +132,25 @@ search_recent() {
         open_file "$selected"
         exit 0
     fi
+}
+
+search_contents() {
+	# use a while loop to keep searching
+	while query=$(echo | $ROFI_CMD -p "String to Match"); do
+		if [ ${#query} -gt 0 ]; then
+			if command -v rg &> /dev/null; then
+		    	selected=$(rg -i -l "${query}" $HOME | $ROFI_CMD -p "Matches")
+			else
+				# warning! it's slow and blocks opening file until search is finished
+				selected=$(grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" $HOME | $ROFI_CMD -p "Matches")	
+			fi
+		    
+			if [ ${#selected} -gt 0 ]; then
+				open_file "$selected"
+				exit 0
+			fi
+		fi
+	done
 }
 
 search_books() {
