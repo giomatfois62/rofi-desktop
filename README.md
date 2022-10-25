@@ -12,6 +12,7 @@ Currently implemented functionalities are:
 - Search Computer (rofi-search.sh, search files in home directory using find or fd if available)
   - All Files 
   - Recent Files
+  - File Contents (search file contents with grep or ripgrep if available)
   - Bookmarks (rofi-firefox.sh, search bookmarks from firefox default profile)
   - Books
   - Desktop
