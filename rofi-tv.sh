@@ -38,6 +38,7 @@ select_channel(){
 
 mkdir -p "${CHANNELS_FILE%channels.json}"
 
+# TODO: do this job in background and display message
 if [[ ! -f "$CHANNELS_FILE" ]]; then
     printf "Downloading channel list...\n";
 

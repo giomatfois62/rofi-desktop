@@ -7,6 +7,7 @@ TNT_FILE=$SCRIPT_PATH/data/tntvillage-release-dump.csv
 
 mkdir -p "${TNT_FILE%tntvillage-release-dump.csv}"
 
+# TODO: do this job in background and display message
 if [[ ! -f "$TNT_FILE" ]];then
     printf "Downloading torrent list...\n";
 

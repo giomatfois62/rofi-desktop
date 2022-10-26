@@ -24,10 +24,11 @@ declare -A commands=(
     ["GTK Appearance"]=gtk_app
     ["Rofi Style"]=rofi_app
     ["Set Wallpaper"]=wallpaper
+    ["Rofi Shortcuts"]=shortcuts
 )
 
 settings_menu() {
-    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
+    entries=("Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info")
 
     # remember last entry chosen
     local choice_row=0
@@ -60,6 +61,10 @@ appearance_menu() {
             ${commands[$selected_text]};
         fi
     done
+}
+
+shortcuts() {
+    rofi -show keys
 }
 
 network() {
@@ -111,9 +116,9 @@ brightness() {
 
 kb_layout() {
     kbd_file="/usr/share/X11/xkb/rules/evdev.lst"
-	selected=$(cat $kbd_file | grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' | head -n -2 | rofi -dmenu -i -p Layout | awk '{print $1;}')
+    selected=$(cat $kbd_file | grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' | head -n -2 | rofi -dmenu -i -p Layout | awk '{print $1;}')
 
-	if [ ${#selected} -gt 0 ]; then
+    if [ ${#selected} -gt 0 ]; then
         setxkbmap $selected
     fi
 }

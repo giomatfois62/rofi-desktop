@@ -8,6 +8,7 @@ EXPIRATION_TIME=600 # refresh news file every ten minutes
 
 mkdir -p "${RSS_FILE%news}"
 
+# TODO: do this job in background and display message
 if [ -f "$RSS_FILE" ]; then
 	# compute time delta between current date and news file date
 	newsdate=$(date -r $RSS_FILE +%s)

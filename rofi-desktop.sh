@@ -119,8 +119,8 @@ web_search() {
 
             if [ "$api_text" = "reddit" ]; then
                 $SCRIPT_PATH/rofi-reddit.sh && exit
-			elif [ "$api_text" = "flathub" ]; then
-                $SCRIPT_PATH/search_flathub.sh && exit
+            elif [ "$api_text" = "flathub" ]; then
+                $SCRIPT_PATH/rofi-flathub.sh && exit
             else
                 $SCRIPT_PATH/rofi-web-search.sh $api_text && exit
             fi
