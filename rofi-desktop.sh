@@ -106,7 +106,7 @@ search() {
 }
 
 web_search() {
-    apis="google\nwikipedia\nyoutube\nreddit\narchwiki"
+    apis="google\nwikipedia\nyoutube\nreddit\narchwiki\nflathub"
 
     # remember last entry chosen
     local api_row=0
@@ -119,6 +119,8 @@ web_search() {
 
             if [ "$api_text" = "reddit" ]; then
                 $SCRIPT_PATH/rofi-reddit.sh && exit
+			elif [ "$api_text" = "flathub" ]; then
+                $SCRIPT_PATH/search_flathub.sh && exit
             else
                 $SCRIPT_PATH/rofi-web-search.sh $api_text && exit
             fi
