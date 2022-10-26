@@ -27,6 +27,7 @@ Currently implemented functionalities are:
   - Youtube
   - Archwiki
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
+  - Flathub (rofi-flathub.sh, filter applications list and install selected)
 - Latest News (rofi-news.sh, rss news from bbc international)
 - Weather Forecast (curl wttr.in piped to rofi)
 - Watch TV (rofi-tv.sh, stream TV channels with mpv)
