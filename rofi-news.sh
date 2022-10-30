@@ -1,14 +1,13 @@
 #!/bin/bash
 
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -p News"
 RSS_URL="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
-RSS_FILE="$SCRIPT_PATH/data/news"
+RSS_FILE="$HOME/.cache/news"
 EXPIRATION_TIME=600 # refresh news file every ten minutes
 
 mkdir -p "${RSS_FILE%news}"
 
-# TODO: do this job in background and display message
+# TODO: do this job in background and display message+
 if [ -f "$RSS_FILE" ]; then
 	# compute time delta between current date and news file date
 	newsdate=$(date -r $RSS_FILE +%s)

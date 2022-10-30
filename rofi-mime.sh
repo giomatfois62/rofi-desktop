@@ -1,6 +1,5 @@
 #!/bin/bash
 
-SCRIPT_PATH="$HOME/Downloads/rofi-desktop"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 MIME_FILE="$HOME/.config/mimeapps.list"
 
@@ -34,7 +33,7 @@ set_application() {
 
     # delete previous mimetype association
     if [ ${#line_exists} -gt 0 ]; then
-        tmp_file="$SCRIPT_PATH/data/mimeapps"
+        tmp_file="$HOME/.cache/mimeapps"
         escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
         sed "/^$escaped_mimetype=/d" $MIME_FILE > $tmp_file
         mv $tmp_file $MIME_FILE
@@ -125,7 +124,5 @@ set_video_player() {
         set_application "video/x-msvideo" $selected;
     fi
 }
-
-mkdir -p "$SCRIPT_PATH/data/"
 
 mime_menu

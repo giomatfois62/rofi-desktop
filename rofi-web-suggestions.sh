@@ -4,7 +4,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 refreshrate=2 # refresh suggestions every n characters hit 
 
-logfile="$SCRIPT_PATH/data/suggestions.tmp"
+logfile="$HOME/.cache/suggestions.tmp"
 
 [ ! -f "$logfile" ] && echo "run the wrapper script instead" && exit 1
 

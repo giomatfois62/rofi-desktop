@@ -23,7 +23,7 @@ esac
 have_blocks=`rofi -dump-config | grep blocks`
 
 if [ ${#have_blocks} -gt 0 ]; then
-    logfile="$SCRIPT_PATH/data/suggestions.tmp"
+    logfile="$HOME/.cache/suggestions.tmp"
     blockfile="$SCRIPT_PATH/rofi-web-suggestions.sh"
 
     mkdir -p "${logfile%suggestions.tmp}"

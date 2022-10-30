@@ -2,10 +2,10 @@
 
 # optional: fd
 
-SCRIPT_PATH="$HOME/Downloads/rofi-desktop"
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROFI_CMD="rofi -dmenu -i"
 SHOW_HIDDEN_FILES=false
-HISTORY_FILE="$SCRIPT_PATH/data/history"
+HISTORY_FILE="$HOME/.cache/rofi-search-history"
 MAX_ENTRIES=100
 
 declare -A commands=(
@@ -251,7 +251,5 @@ search_videos() {
         exit 0
     fi
 }
-
-mkdir -p "$SCRIPT_PATH/data/"
 
 search_menu

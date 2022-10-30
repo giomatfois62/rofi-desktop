@@ -63,7 +63,7 @@ main_menu() {
 }
 
 run_app() {
-    logfile="$SCRIPT_PATH/data/rofi-drun.log"
+    logfile="$HOME/.cache/rofi-drun.log"
     G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log $logfile;
 
     # very hacky!!! intercept exit code grepping log file
@@ -77,7 +77,7 @@ run_app() {
 }
 
 run_cmd() {
-    logfile="$SCRIPT_PATH/data/rofi-run.log"
+    logfile="$HOME/.cache/rofi-run.log"
     G_MESSAGES_DEBUG=Modes.Run rofi -show run $SHOW_ICONS -log $logfile;
 
     # very hacky!!! intercept exit code grepping log file
@@ -183,7 +183,5 @@ calendar() {
 }
 
 # run
-mkdir -p "$SCRIPT_PATH/data/"
-
 main_menu
 
