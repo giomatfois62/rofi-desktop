@@ -11,7 +11,7 @@ MAX_ENTRIES=100
 declare -A commands=(
     ["All Files"]=search_all
     ["Recent Files"]=search_recent
-	["File Contents"]=search_contents
+    ["File Contents"]=search_contents
     ["Bookmarks"]=search_bookmarks
     ["Books"]=search_books
     ["Documents"]=search_documents
@@ -25,9 +25,10 @@ declare -A commands=(
 
 # TODO: add more file extensions
 # TODO: order results by date
-entries=("All Files\nRecent Files\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
 
 search_menu() {
+    entries=("All Files\nRecent Files\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
+
     # remember last entry chosen
     local choice_row=0
     local choice_text

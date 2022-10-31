@@ -40,7 +40,6 @@ set_application() {
     fi
 
     # add new mimetype association
-    #app="$(basename ${2})"
     echo "$1=$2"".desktop" >> $MIME_FILE
 }
 

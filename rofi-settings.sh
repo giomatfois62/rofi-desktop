@@ -115,12 +115,7 @@ brightness() {
 }
 
 kb_layout() {
-    kbd_file="/usr/share/X11/xkb/rules/evdev.lst"
-    selected=$(cat $kbd_file | grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' | head -n -2 | rofi -dmenu -i -p Layout | awk '{print $1;}')
-
-    if [ ${#selected} -gt 0 ]; then
-        setxkbmap $selected
-    fi
+    $SCRIPT_PATH/rofi-keyboard-layout.sh
 }
 
 qt5_app() {
