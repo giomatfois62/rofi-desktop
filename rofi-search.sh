@@ -2,7 +2,7 @@
 
 # optional: fd
 
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i"
 SHOW_HIDDEN_FILES=false
 HISTORY_FILE="$HOME/.cache/rofi-search-history"
@@ -27,16 +27,16 @@ declare -A commands=(
 # TODO: order results by date
 
 search_menu() {
-    entries=("All Files\nRecent Files\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village")
+    entries="All Files\nRecent Files\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
     # remember last entry chosen
     local choice_row=0
     local choice_text
 
-    while choice=`echo -en $entries | $ROFI_CMD -matching fuzzy -selected-row ${choice_row} -format 'i s' -p Search`; do
+    while choice=$(echo -en "$entries" | $ROFI_CMD -matching fuzzy -selected-row ${choice_row} -format 'i s' -p "Search"); do
         if [ ${#choice} -gt 0 ]; then
-            choice_row=$(echo $choice | awk '{print $1;}')
-            choice_text=$(echo $choice | cut -d' ' -f2-)
+            choice_row=$(echo "$choice" | awk '{print $1;}')
+            choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
             ${commands[$choice_text]};
         fi
@@ -100,13 +100,13 @@ search_command() {
 }
 
 add_to_history() {
-    touch $HISTORY_FILE
-    grep -Fxq "$1" $HISTORY_FILE || echo $1 >> $HISTORY_FILE
+    touch "$HISTORY_FILE"
+    grep -Fxq "$1" "$HISTORY_FILE" || echo "$1" >> "$HISTORY_FILE"
 
-    if [ $(wc -l $HISTORY_FILE | awk '{ print $1 }') -gt $MAX_ENTRIES ]; then
+    if [ "$(wc -l "$HISTORY_FILE" | awk '{ print $1 }')" -gt $MAX_ENTRIES ]; then
         tmp_file="$HISTORY_FILE"".tmp"
-        tail -n +2 $HISTORY_FILE > $tmp_file
-        mv $tmp_file $HISTORY_FILE
+        tail -n +2 "$HISTORY_FILE" > "$tmp_file"
+        mv "$tmp_file" "$HISTORY_FILE"
     fi
 }
 
@@ -118,7 +118,7 @@ open_file() {
 search_all() {
     local selected
 
-    selected=`eval "$(search_command $HOME)" | $ROFI_CMD -p "All Files"`
+    selected=$(eval "$(search_command "$HOME")" | $ROFI_CMD -p "All Files")
 
 	if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"
@@ -127,7 +127,7 @@ search_all() {
 }
 
 search_recent() {
-    selected=`tac $HISTORY_FILE | $ROFI_CMD -p "Recent Files"`
+    selected=$(tac "$HISTORY_FILE" | $ROFI_CMD -p "Recent Files")
 
 	if [ ${#selected} -gt 0 ]; then
         open_file "$selected"
@@ -140,10 +140,10 @@ search_contents() {
 	while query=$(echo | $ROFI_CMD -p "String to Match"); do
 		if [ ${#query} -gt 0 ]; then
 			if command -v rg &> /dev/null; then
-		    	selected=$(rg -i -l "${query}" $HOME | $ROFI_CMD -p "Matches")
+		    	selected=$(rg -i -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
 			else
 				# warning! it's slow and blocks opening file until search is finished
-				selected=$(grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" $HOME | $ROFI_CMD -p "Matches")	
+				selected=$(grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
 			fi
 		    
 			if [ ${#selected} -gt 0 ]; then
@@ -158,7 +158,7 @@ search_books() {
     local selected
     local extensions=("djvu" "epub" "mobi")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Books"`
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Books")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"
@@ -167,14 +167,14 @@ search_books() {
 }
 
 search_bookmarks() {
-	$SCRIPT_PATH/rofi-firefox.sh && exit 0
+    "$SCRIPT_PATH"/rofi-firefox.sh && exit 0
 }
 
 search_documents() {
     local selected
     local extensions=("pdf" "txt" "md" "xlsx" "doc" "docx")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Documents"`
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Documents")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"
@@ -185,7 +185,7 @@ search_documents() {
 search_downloads() {
     local selected
 
-    selected=`eval "$(search_command $HOME/Downloads)" | $ROFI_CMD -p "Downloads"`
+    selected=$(eval "$(search_command "$HOME"/Downloads)" | $ROFI_CMD -p "Downloads")
 
 	if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/Downloads/$selected"
@@ -196,7 +196,7 @@ search_downloads() {
 search_desktop() {
     local selected
 
-    selected=`eval "$(search_command $HOME/Desktop)" | $ROFI_CMD -p "Desktop"`
+    selected=$(eval "$(search_command "$HOME"/Desktop)" | $ROFI_CMD -p "Desktop")
 
 	if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/Desktop/$selected"
@@ -208,7 +208,7 @@ search_music() {
     local selected
     local extensions=("mp3" "wav" "m3u" "aac" "flac" "ogg")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Music"`
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Music")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"
@@ -221,7 +221,7 @@ build_theme() {
     cols=$2
     icon_size=$3
 
-    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$2;}"
+    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
 }
 
 search_pics() {
@@ -229,7 +229,7 @@ search_pics() {
     local selected
     local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str $(build_theme 3 4 10) -p "Pictures"`
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme 3 4 10)" -p "Pictures")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"
@@ -238,14 +238,14 @@ search_pics() {
 }
 
 search_tnt() {
-    $SCRIPT_PATH/rofi-tnt.sh && exit 0
+    "$SCRIPT_PATH"/rofi-tnt.sh && exit 0
 }
 
 search_videos() {
     local selected
     local extensions=("mkv" "mp4")
 
-    selected=`eval "$(search_command $HOME "${extensions[@]}")" | $ROFI_CMD -p "Videos"`
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Videos")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"

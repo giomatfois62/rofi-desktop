@@ -9,7 +9,7 @@ EXPIRATION_TIME=3600 # refresh applications list every hour
 # TODO: do this job in background and display message
 if [ -f "$CACHE_FILE" ]; then
     # compute time delta between current date and news file date
-    filedate=$(date -r $CACHE_FILE +%s)
+    filedate=$(date -r "$CACHE_FILE" +%s)
     currentdate=$(date +%s)
     delta=$((currentdate - filedate))
 
@@ -21,11 +21,11 @@ else
     curl --silent "$URL" -o "$CACHE_FILE"
 fi
 
-selected=$(cat $CACHE_FILE | jq '.[] | .name + " - " + .summary'  | tr -d '"' | $ROFI_CMD -p Flatpak)
+selected=$(jq '.[] | .name + " - " + .summary' "$CACHE_FILE" | tr -d '"' | $ROFI_CMD -p "Flatpak")
 
 if [ ${#selected} -gt 0 ]; then
-    appname=$(echo $selected | awk '{print $1;}')
-    appid=$(cat $CACHE_FILE | jq ".[] | select(.name==\"$appname\") | .flatpakAppId" | tr -d '"')
+    appname=$(echo "$selected" | awk '{print $1;}')
+    appid=$(jq ".[] | select(.name==\"$appname\") | .flatpakAppId" "$CACHE_FILE" | tr -d '"')
     $TERMINAL -e "flatpak install $appid"
     exit 0;
 fi

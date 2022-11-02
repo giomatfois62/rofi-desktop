@@ -10,7 +10,7 @@ mkdir -p "${RSS_FILE%news}"
 # TODO: do this job in background and display message+
 if [ -f "$RSS_FILE" ]; then
 	# compute time delta between current date and news file date
-	newsdate=$(date -r $RSS_FILE +%s)
+	newsdate=$(date -r "$RSS_FILE" +%s)
 	currentdate=$(date +%s)
 	delta=$((currentdate - newsdate))
 
@@ -22,8 +22,7 @@ else
 	curl --silent "$RSS_URL" -o "$RSS_FILE"
 fi
 
-selected=$(cat "$RSS_FILE" |\
-	grep -E '(title>|/title>)' |\
+selected=$(grep -E '(title>|/title>)' "$RSS_FILE" |\
 	tail -n +4 | sed -e 's/^[ \t]*//' |\
 	sed -e 's/<title>//' -e 's/<\/title>//' -e 's/<description>/  /' -e 's/<\/description>//' -e 's/\!\[CDATA\[//' -e 's/\]\]//' |\
 	tr -d '<>,' |\
@@ -32,8 +31,8 @@ selected=$(cat "$RSS_FILE" |\
 
 # get selected news and open corresponding link in browser
 if [  ${#selected} -gt 0 ]; then
-	link=$(awk "/$selected/{getline;getline; print}" $RSS_FILE)
-	echo $link | sed -e 's/<link>//' -e 's/<\/link>//' | xargs -I {} xdg-open {}
+	link=$(awk "/$selected/{getline;getline; print}" "$RSS_FILE")
+	echo "$link" | sed -e 's/<link>//' -e 's/<\/link>//' | xargs -I {} xdg-open {}
 
 	exit 0;
 fi

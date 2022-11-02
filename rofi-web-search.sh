@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 
 API=$1
@@ -20,7 +20,7 @@ esac
 #SEARCH_URL=https://www.youtube.com/results?search_query=
 
 # detect rofi-blocks and integrate suggestions
-have_blocks=`rofi -dump-config | grep blocks`
+have_blocks=$(rofi -dump-config | grep blocks)
 
 if [ ${#have_blocks} -gt 0 ]; then
     logfile="$HOME/.cache/suggestions.tmp"
@@ -28,20 +28,20 @@ if [ ${#have_blocks} -gt 0 ]; then
 
     mkdir -p "${logfile%suggestions.tmp}"
 
-    printf "$API" > "$logfile"
+    echo "$API" > "$logfile"
 
-    rofi -modi blocks -show blocks -blocks-wrap $blockfile -display-blocks $API 2>/dev/null
+    rofi -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$API" 2>/dev/null
 
-    [ -f $logfile ] && query="$(cat "$logfile")" || exit 1
+    [ -f "$logfile" ] && query="$(cat "$logfile")" || exit 1
 
-    rm $logfile
+    rm "$logfile"
 
     if [ ${#query} -gt 0 ]; then
 
 	    # extract wikipedia page id from string
 	    if [ "$API" = "wikipedia" ]; then
 		    word_count=$(echo "$query" | wc -w)
-		    if [ $word_count -gt 1 ]; then
+		    if [ "$word_count" -gt 1 ]; then
 			    query=$(echo "$query" | awk '{print $NF}')
 		    else
 			    api_url="https://en.wikipedia.org/w/index.php?fulltext=1&search="
@@ -53,7 +53,7 @@ if [ ${#have_blocks} -gt 0 ]; then
 	    exit 0
     fi
 else
-    query=$((echo) | $ROFI_CMD -p $API);
+    query=$((echo) | $ROFI_CMD -p "$API");
 
     if [ ${#query} -gt 0 ]; then
 	    url=$api_url$query

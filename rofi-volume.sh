@@ -6,10 +6,10 @@
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 
 gen_menu() {
-    is_muted=`pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }'`
+    is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')
 
     echo -ne "Up\nDown"
-    if [ $is_muted == "yes" ]; then
+    if [ "$is_muted" == "yes" ]; then
         echo -ne "\nUnmute"
     else
         echo -ne "\nMute"
@@ -38,7 +38,7 @@ vol_config() {
     fi
 }
 
-while choice=`gen_menu | $ROFI_CMD -p "Volume $(get_volume)"`; do
+while choice=$(gen_menu | $ROFI_CMD -p "Volume $(get_volume)"); do
     if [ ${#choice} -gt 0 ]; then
         ${commands[$choice]};
     fi

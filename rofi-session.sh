@@ -18,22 +18,24 @@ declare -A commands=(
 )
 
 confirm_action() {
-    local choice=$(echo -e "Yes\nNo" |\
+    local choice
+
+    choice=$(echo -e "Yes\nNo" |\
         rofi -p "Are you sure?" -dmenu -a 0 -u 1 -selected-row 1)
 
-    if [ $choice == "Yes" ]; then
-        echo $choice
+    if [ "$choice" == "Yes" ]; then
+        echo "$choice"
     fi
 }
 
-lock_screen() { loginctl lock-session ${XDG_SESSION_ID-}; }
-logout_user() { loginctl terminate-session ${XDG_SESSION_ID-}; }
+lock_screen() { loginctl lock-session "${XDG_SESSION_ID-}"; }
+logout_user() { loginctl terminate-session "${XDG_SESSION_ID-}"; }
 reboot_sys() { [ "$(confirm_action)" = "Yes" ] && loginctl reboot; }
 shutdown_sys() { [ "$(confirm_action)" = "Yes" ] && loginctl poweroff; }
 suspend_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl suspend; }
 hibernate_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl hibernate; }
 
-while choice=`echo -en $entries | $ROFI_CMD -p Session`; do
+while choice=$(echo -en "$entries" | $ROFI_CMD -p "Session"); do
     if [ ${#choice} -gt 0 ]; then
         ${commands[$choice]};
 

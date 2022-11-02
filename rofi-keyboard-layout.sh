@@ -11,5 +11,5 @@ selected=$(cat $LAYOUT_FILE |\
 )
 
 if [ ${#selected} -gt 0 ]; then
-    setxkbmap $selected
+    setxkbmap "$selected"
 fi

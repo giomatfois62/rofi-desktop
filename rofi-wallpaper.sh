@@ -1,6 +1,5 @@
 #!/bin/bash
 
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 WALLPAPERS_DIR="$HOME/Pictures"
 
 # find image size to display (very slow)
@@ -11,13 +10,13 @@ build_theme() {
     cols=$2
     icon_size=$3
 
-    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$2;}"
+    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
 }
 
 ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 4 10)"
 
 choice=$(\
-    ls --escape $WALLPAPERS_DIR | \
+    ls --escape "$WALLPAPERS_DIR" | \
     while read A; do echo -en "$A\x00icon\x1f$WALLPAPERS_DIR/$A\n"; done | \
     $ROFI_CMD -p "Wallpaper" \
 )
@@ -25,7 +24,7 @@ choice=$(\
 wallpaper="$WALLPAPERS_DIR/$choice"
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-    echo $wallpaper
+    echo "$wallpaper"
     qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = \"org.kde.image\";d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");d.writeConfig(\"Image\", \"file:$wallpaper\")}"
 
     qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = \"org.kde.image\";d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");d.writeConfig(\"Image\", \"file:$wallpaper\")}"
@@ -47,7 +46,7 @@ else
         exit 1
     fi
 
-    feh --bg-scale $wallpaper
+    feh --bg-scale "$wallpaper"
 
     exit 0
 fi

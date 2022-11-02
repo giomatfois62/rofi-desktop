@@ -10,9 +10,9 @@ declare -a programs=("flameshot launcher" "spectacle" "xfce4-screenshooter")
 
 # launch program if found on system
 for i in "${programs[@]}"; do
-	cmd=$(echo $i | awk '{print $1;}')
+    cmd=$(echo "$i" | awk '{print $1;}')
 
-    if command -v $cmd &> /dev/null; then
+    if command -v "$cmd" &> /dev/null; then
         $i
         exit 0
     fi

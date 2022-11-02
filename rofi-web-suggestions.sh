@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 
 refreshrate=2 # refresh suggestions every n characters hit 
 
@@ -8,7 +8,7 @@ logfile="$HOME/.cache/suggestions.tmp"
 
 [ ! -f "$logfile" ] && echo "run the wrapper script instead" && exit 1
 
-API=$(cat $logfile)
+API=$(cat "$logfile")
 rm "$logfile"
 
 get_suggestions="$SCRIPT_PATH/suggestions/$API"

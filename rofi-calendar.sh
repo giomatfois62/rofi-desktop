@@ -11,16 +11,14 @@ NEXT_MONTH_TEXT="${NEXT_MONTH_TEXT:-» next month »}"
 ROFI_CONFIG_FILE="${ROFI_CONFIG_FILE:-/dev/null}"
 BAR_POSITION="${BAR_POSITION:-bottom}"
 WEEK_START="${WEEK_START:-monday}"
-###### Variables ######
 
-
-###### Functions ######
 # get current date and set today header
 get_current_date() {
   year=$(date '+%Y')
   month=$(date '+%m')
-  day=$(date '+%d')
+  #day=$(date '+%d')
 }
+
 # print the selected month
 print_month() {
   mnt=$1
@@ -30,8 +28,9 @@ print_month() {
           -e 's/\x1b\[[27;]*m/\<\/u\>\<\/b\>/g' \
           -e '/^ *$/d' \
     | tail -n +2
-  echo $PREV_MONTH_TEXT$'\n'$NEXT_MONTH_TEXT
+  echo "$PREV_MONTH_TEXT"$'\n'"$NEXT_MONTH_TEXT"
 }
+
 # increment year and/or month appropriately based on month increment
 increment_month() {
   # pick increment and define/update delta
@@ -62,41 +61,29 @@ increment_month() {
     header=$(cal $month $year | sed -n '1s/^ *\(.*[^ ]\) *$/\1/p')
   fi
 }
-###### Functions ######
-
 
 ###### Main body ######
 get_current_date
 
-header=$(date "$DATEFTM")
-
 # rofi pop up
 IFS=
 month_page=$(print_month $month $year)
-if [[ "${current_row+xxx}" = "xxx" ]]; then
-current_row=$(( $(echo $month_page | grep -n ${day#0} | head -n 1 | cut -d: -f1) - 1 ))
-else
-current_row=$(( $(echo $month_page | wc -l) - 1))
-fi
+header=$(date "$DATEFTM")
 
-# check bar position and adjust anchor accordingly
-if [[ $BAR_POSITION = "top" ]]; then
-anchor="northeast"
-else
-anchor="southeast"
-fi
+#lines:'"$(echo "$month_page" | wc -l)"';width:22;
 
-# open rofi and read the selected row
-# (add the following option to rofi command with proper config file, if needed)
-selected="$(echo $month_page \
+while selected="$(echo "$month_page" \
 | rofi \
 	-dmenu \
 	-markup-rows \
-	-theme-str 'entry { enabled: false;} inputbar { children: [prompt];} listview { columns: 7; lines: '$(echo $month_page | wc -l)'; width: 22; }' \
+	-theme-str 'entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}' \
 	-hide-scrollbar \
-	-p "$header")"
-
-# print blocklet text
-echo $LABEL$(date "$DATEFTM")
-echo $LABEL$(date "$SHORTFMT")
-###### Main body ######
+	-p "$header")"; do
+  if [ $(echo "$selected" | grep "next") ]; then
+    increment_month 1
+    month_page=$(print_month $month $year)
+  elif [ $(echo "$selected" | grep "previous") ]; then
+    increment_month -1
+    month_page=$(print_month $month $year)
+  fi
+done
