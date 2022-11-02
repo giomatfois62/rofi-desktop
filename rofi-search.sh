@@ -229,7 +229,7 @@ search_pics() {
     local selected
     local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme 3 4 10)" -p "Pictures")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme 3 4 8)" -p "Pictures")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"

@@ -48,4 +48,12 @@ if [ ! -f "$CHANNELS_FILE" ]; then
         print_error "Cannot download channel list" 
 fi
 
+#bash -c "sleep 2 && killall rofi" &
+#pid=$!
+
+#while kill -0 $pid 2>/dev/null
+#do
+#    rofi -e "Downloading channel list..." -normal-window
+#done
+
 select_channel

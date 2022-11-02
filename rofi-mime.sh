@@ -25,7 +25,7 @@ mime_menu() {
 }
 
 seach_applications() {
-    grep "$1" -H -l "/usr/share/applications/*" "$HOME/.local/share/applications/*" | xargs -I {} basename {} .desktop
+    grep "$1" -H -l /usr/share/applications/* $HOME/.local/share/applications/* | xargs -I {} basename {} .desktop
 }
 
 set_application() {
