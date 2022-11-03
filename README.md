@@ -37,9 +37,10 @@ Currently implemented functionalities are:
   - Calendar (rofi-calendar.sh)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
+  - Set Timer (rofi-timer.sh)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
-  - SSH (ssh modi)
+  - SSH Sessions(ssh modi)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)
@@ -80,3 +81,5 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [christianholman](https://github.com/christianholman/rofi_notes)
 - [luiscrjunior](https://github.com/luiscrjunior/rofi-json)
 - [lamarios](https://github.com/lamarios/dotfiles/blob/master/scripts/rofi-firefox)
+- [emmanuelrosa](https://gist.github.com/emmanuelrosa/1f913b267d03df9826c36202cf8b1c4e)
+

@@ -24,12 +24,13 @@ declare -A commands=(
     ["Weather Forecast"]=weather
     ["System Settings"]=settings
     ["Utilities"]=utilities
-    ["SSH"]=ssh_menu
+	["Set Timer"]=set_timer
+    ["SSH Sessions"]=ssh_menu
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nTake Screenshot\nRecord Audio/Video\nSSH"
+    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions"
 
     # remember last entry chosen
     local selected_row=0
@@ -126,6 +127,10 @@ web_search() {
             fi
         fi
     done
+}
+
+set_timer() {
+	rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh && exit
 }
 
 settings() {
