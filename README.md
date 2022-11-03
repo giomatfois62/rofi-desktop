@@ -41,6 +41,7 @@ Currently implemented functionalities are:
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH Sessions(ssh modi)
+  - Tmux Sessions (rofi-tmux.sh)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)

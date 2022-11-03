@@ -26,11 +26,12 @@ declare -A commands=(
     ["Utilities"]=utilities
 	["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
+	["Tmux Sessions"]=tmux_menu
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions"
+    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions"
 
     # remember last entry chosen
     local selected_row=0
@@ -177,6 +178,10 @@ notes() {
 
 news() {
     "$SCRIPT_PATH"/rofi-news.sh && exit
+}
+
+tmux_menu() {
+	"$SCRIPT_PATH"/rofi-tmux.sh && exit
 }
 
 weather() {
