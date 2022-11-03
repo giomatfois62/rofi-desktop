@@ -12,6 +12,7 @@ declare -A commands=(
     ["Browse Files"]=browse
     ["Search Computer"]=search
     ["Search Web"]=web_search
+    ["Steam Games"]=steam_games
     ["Calculator"]=calculator
     ["Calendar"]=calendar
     ["Watch TV"]=tv
@@ -24,9 +25,9 @@ declare -A commands=(
     ["Weather Forecast"]=weather
     ["System Settings"]=settings
     ["Utilities"]=utilities
-	["Set Timer"]=set_timer
+    ["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
-	["Tmux Sessions"]=tmux_menu
+    ["Tmux Sessions"]=tmux_menu
     ["Exit"]=session_menu
 )
 
@@ -48,7 +49,7 @@ utilities() {
 }
 
 main_menu() {
-    entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nSystem Settings\nExit"
+    entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nSystem Settings\nExit"
 
     # remember last entry chosen
     local choice_row=0
@@ -97,10 +98,13 @@ browse() {
     rofi $SHOW_ICONS -show filebrowser && exit
 }
 
-
 ssh_menu() {
     # TODO: intercept entry chosen to exit
     rofi -show ssh
+}
+
+steam_games() {
+    "$SCRIPT_PATH"/rofi-steam.sh && exit
 }
 
 search() {

@@ -28,6 +28,7 @@ Currently implemented functionalities are:
   - Archwiki
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
+- Steam Games (rofi-steam.sh)
 - Latest News (rofi-news.sh, rss news from bbc international)
 - Weather Forecast (curl wttr.in piped to rofi)
 - Watch TV (rofi-tv.sh, stream TV channels with mpv)
@@ -87,4 +88,5 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [lamarios](https://github.com/lamarios/dotfiles/blob/master/scripts/rofi-firefox)
 - [emmanuelrosa](https://gist.github.com/emmanuelrosa/1f913b267d03df9826c36202cf8b1c4e)
 - [adi1090x](https://gitee.com/zhenruyan/rofi/blob/master/scripts/menu_backlight.sh)
+- [ntcarlson](https://github.com/ntcarlson/dotfiles/tree/delta/config/rofi)
 
