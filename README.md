@@ -48,8 +48,9 @@ Currently implemented functionalities are:
   - Bluetooth (rofi-bluetooth.sh)
   - Display (rofi-monitor-layout.sh)
   - Default Applications (rofi-mime.sh, set audio/video/images/PDF viewers and file manager)
-  - Keyboard Layout
-  - Volume (uses pactl and pavucontrol)
+  - Keyboard Layout (rofi-keyboard-layout.sh)
+  - Brightness (rofi-brightness.sh, uses xbacklight)
+  - Volume (rofi-volume.sh, uses pactl and pavucontrol)
   - Menu Configuration (edit all rofi-desktop scripts)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
   - System Info (inxi piped to rofi)
@@ -83,4 +84,5 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [luiscrjunior](https://github.com/luiscrjunior/rofi-json)
 - [lamarios](https://github.com/lamarios/dotfiles/blob/master/scripts/rofi-firefox)
 - [emmanuelrosa](https://gist.github.com/emmanuelrosa/1f913b267d03df9826c36202cf8b1c4e)
+- [adi1090x](https://gitee.com/zhenruyan/rofi/blob/master/scripts/menu_backlight.sh)
 
