@@ -71,6 +71,8 @@ Optional dependencies for some of the tools are:
 - fd 
 - htop 
 - inxi
+- xbacklight
+- at
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
