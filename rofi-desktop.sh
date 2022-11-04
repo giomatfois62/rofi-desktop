@@ -28,11 +28,12 @@ declare -A commands=(
     ["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
+    ["Password Manager"]=passwd_mgr
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions"
+    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager"
 
     # remember last entry chosen
     local selected_row=0
@@ -186,6 +187,10 @@ news() {
 
 tmux_menu() {
 	"$SCRIPT_PATH"/rofi-tmux.sh && exit
+}
+
+passwd_mgr() {
+	"$SCRIPT_PATH"/rofi-passmenu.sh && exit
 }
 
 weather() {
