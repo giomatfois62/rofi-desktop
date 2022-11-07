@@ -16,6 +16,7 @@ declare -A commands=(
     ["Brightness"]=brightness
     ["Keyboard Layout"]=kb_layout
     ["Default Applications"]=default_apps
+	["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
     ["Task Manager"]=task_mgr
     ["System Info"]=sys_info
@@ -28,7 +29,7 @@ declare -A commands=(
 )
 
 settings_menu() {
-    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nMenu Configuration\nTask Manager\nSystem Info"
+    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nTask Manager\nSystem Info"
 
     # remember last entry chosen
     local choice_row=0
@@ -107,6 +108,10 @@ sys_info() {
 
 default_apps() {
     "$SCRIPT_PATH"/rofi-mime.sh
+}
+
+autostart_apps() {
+	"$SCRIPT_PATH"/rofi-autostart.sh && exit
 }
 
 brightness() {
