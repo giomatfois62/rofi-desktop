@@ -36,6 +36,7 @@ Currently implemented functionalities are:
 - Utilities
   - Calculator (rofi-calc.sh, optionally uses the libqalc based modi calc when available)
   - Calendar (rofi-calendar.sh)
+  - Translate Text (rofi-translate.sh, uses translate-cli)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
   - Set Timer (rofi-timer.sh)

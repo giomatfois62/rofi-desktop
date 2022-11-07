@@ -30,11 +30,12 @@ declare -A commands=(
     ["Tmux Sessions"]=tmux_menu
     ["Password Manager"]=passwd_mgr
 	["Clipboard"]=clipboard
+	["Translate Text"]=translate
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard"
+    utils="Calculator\nCalendar\nTranslate Text\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard"
 
     # remember last entry chosen
     local selected_row=0
@@ -200,6 +201,10 @@ weather() {
 
 calendar() {
     "$SCRIPT_PATH"/rofi-calendar.sh
+}
+
+translate() {
+	"$SCRIPT_PATH"/rofi-translate.sh
 }
 
 clipboard() {
