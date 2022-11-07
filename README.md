@@ -44,12 +44,14 @@ Currently implemented functionalities are:
   - SSH Sessions(ssh modi)
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
+  - Clipboard (uses greenclip)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)
   - Bluetooth (rofi-bluetooth.sh)
   - Display (rofi-monitor-layout.sh)
   - Default Applications (rofi-mime.sh, set audio/video/images/PDF viewers and file manager)
+  - Autostart Applications (rofi-autostart.sh, manage xdg/autostart desktop files)
   - Keyboard Layout (rofi-keyboard-layout.sh)
   - Brightness (rofi-brightness.sh, uses xbacklight)
   - Volume (rofi-volume.sh, uses pactl and pavucontrol)
@@ -76,6 +78,7 @@ Optional dependencies for some of the tools are:
 - xbacklight
 - at
 - pass
+- greenclip
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
