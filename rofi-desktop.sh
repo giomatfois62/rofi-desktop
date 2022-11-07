@@ -29,11 +29,12 @@ declare -A commands=(
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
     ["Password Manager"]=passwd_mgr
+	["Clipboard"]=clipboard
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager"
+    utils="Calculator\nCalendar\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard"
 
     # remember last entry chosen
     local selected_row=0
@@ -199,6 +200,16 @@ weather() {
 
 calendar() {
     "$SCRIPT_PATH"/rofi-calendar.sh
+}
+
+clipboard() {
+	if command -v greenclip &> /dev/null; then
+		rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+	elif [ -f "$SCRIPT_PATH/greenclip" ]; then
+		rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
+	else
+		rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run './greenclip daemon &' to enable the clipboard's daemon and menu"
+	fi
 }
 
 # run
