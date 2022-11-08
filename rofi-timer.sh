@@ -13,35 +13,35 @@ TIMERS="1 hour\n45 minutes\n30 minutes\n20 minutes\n15 minutes\n10 minutes\n5 mi
 
 # TODO: add a custom timer entry and read desired duration from prompt
 declare -A SECONDS=(
-	["1 hour"]=3600 
-	["45 minutes"]=2700
-	["30 minutes"]=1800 
-	["20 minutes"]=1200 
-	["15 minutes"]=900 
-	["10 minutes"]=600 
-	["5 minutes"]=300 
-	["4 minutes"]=240 
-	["3 minutes"]=180
-	["2 minutes"]=120 
-	["1 minute"]=60
-	["45 seconds"]=45
-	["30 seconds"]=30
+    ["1 hour"]=3600
+    ["45 minutes"]=2700
+    ["30 minutes"]=1800
+    ["20 minutes"]=1200
+    ["15 minutes"]=900
+    ["10 minutes"]=600
+    ["5 minutes"]=300
+    ["4 minutes"]=240
+    ["3 minutes"]=180
+    ["2 minutes"]=120
+    ["1 minute"]=60
+    ["45 seconds"]=45
+    ["30 seconds"]=30
 )
 
 function startTimer {
-	notify-send "$1 timer started" && paplay $TIMER_START_AUDIO
+    notify-send "$1 timer started" && paplay $TIMER_START_AUDIO
 
-	if command -v systemd-run &> /dev/null; then
-		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_AUDIO
-	elif command -v at &> /dev/null; then
-		echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_AUDIO" | at now
-	fi
+    if command -v systemd-run &> /dev/null; then
+	systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_AUDIO
+    elif command -v at &> /dev/null; then
+	echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_AUDIO" | at now
+    fi
 }
 
 if [ "$@" ]
 then
     startTimer "$@" ${SECONDS["$@"]}
-	exit 0
+    exit 0
 else
     echo -e "$TIMERS"
 fi
