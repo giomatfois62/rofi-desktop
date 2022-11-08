@@ -16,11 +16,10 @@ declare -A commands=(
     ["Brightness"]=brightness
     ["Keyboard Layout"]=kb_layout
     ["Default Applications"]=default_apps
-	["Autostart Applications"]=autostart_apps
+    ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
     ["Task Manager"]=task_mgr
     ["System Info"]=sys_info
-    # Appearance Settings
     ["Qt5 Appearance"]=qt5_app
     ["GTK Appearance"]=gtk_app
     ["Rofi Style"]=rofi_app
