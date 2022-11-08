@@ -4,7 +4,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
-SHOW_ICONS="-show-icons" #""
+SHOW_ICONS="-show-icons"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -29,8 +29,8 @@ declare -A commands=(
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
     ["Password Manager"]=passwd_mgr
-	["Clipboard"]=clipboard
-	["Translate Text"]=translate
+    ["Clipboard"]=clipboard
+    ["Translate Text"]=translate
     ["Exit"]=session_menu
 )
 
@@ -138,7 +138,7 @@ web_search() {
 }
 
 set_timer() {
-	rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh && exit
+	rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh
 }
 
 settings() {
@@ -188,11 +188,11 @@ news() {
 }
 
 tmux_menu() {
-	"$SCRIPT_PATH"/rofi-tmux.sh && exit
+    "$SCRIPT_PATH"/rofi-tmux.sh && exit
 }
 
 passwd_mgr() {
-	"$SCRIPT_PATH"/rofi-passmenu.sh && exit
+    "$SCRIPT_PATH"/rofi-passmenu.sh && exit
 }
 
 weather() {
@@ -204,17 +204,17 @@ calendar() {
 }
 
 translate() {
-	"$SCRIPT_PATH"/rofi-translate.sh
+    "$SCRIPT_PATH"/rofi-translate.sh
 }
 
 clipboard() {
-	if command -v greenclip &> /dev/null; then
-		rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-	elif [ -f "$SCRIPT_PATH/greenclip" ]; then
-		rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
-	else
-		rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run './greenclip daemon &' to enable the clipboard's daemon and menu"
-	fi
+    if command -v greenclip &> /dev/null; then
+        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+    elif [ -f "$SCRIPT_PATH/greenclip" ]; then
+        rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
+    else
+        rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run './greenclip daemon &' to enable the clipboard's daemon and menu"
+    fi
 }
 
 # run
