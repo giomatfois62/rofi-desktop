@@ -10,7 +10,7 @@ MAX_ENTRIES=100
 
 declare -A commands=(
     ["All Files"]=search_all
-    ["Recent Files"]=search_recent
+    ["Recently Used"]=search_recent
     ["File Contents"]=search_contents
     ["Bookmarks"]=search_bookmarks
     ["Books"]=search_books
@@ -27,7 +27,7 @@ declare -A commands=(
 # TODO: order results by date
 
 search_menu() {
-    entries="All Files\nRecent Files\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
+    entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
     # remember last entry chosen
     local choice_row=0
@@ -129,12 +129,17 @@ search_all() {
 }
 
 search_recent() {
-	recently_used_file="$HOME/.local/share/recently-used.xbel"
-	recently_used=$(grep -oP '(?<=href=").*?(?=")' "$recently_used_file" | sort -r)
+    recently_used_file="$HOME/.local/share/recently-used.xbel"
+    recently_used=$(grep -oP '(?<=href=").*?(?=")' "$recently_used_file" | sort -r | sed 's/file:\/\///')
 
-    selected=$(tac "$HISTORY_FILE" | $ROFI_CMD -p "Recent Files")
+    list_recent() {
+        tac "$HISTORY_FILE"
+        echo -e "$recently_used"
+    }
 
-	if [ ${#selected} -gt 0 ]; then
+    selected=$(list_recent | $ROFI_CMD -p "Recent Files")
+
+    if [ ${#selected} -gt 0 ]; then
         open_file "$selected"
         exit 0
     fi
