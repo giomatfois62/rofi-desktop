@@ -25,7 +25,7 @@ declare -A commands=(
     ["Rofi Style"]=rofi_app
     ["Set Wallpaper"]=wallpaper
     ["Rofi Shortcuts"]=shortcuts
-	["Change Language"]=set_lang
+    ["Change Language"]=set_lang
 )
 
 settings_menu() {
@@ -103,7 +103,7 @@ task_mgr() {
 }
 
 set_lang() {
-	"$SCRIPT_PATH"/rofi-locale.sh
+    "$SCRIPT_PATH"/rofi-locale.sh
 }
 
 sys_info() {
