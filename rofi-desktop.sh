@@ -138,7 +138,8 @@ web_search() {
 }
 
 set_timer() {
-	rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh
+	rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
+		-theme-str 'entry{placeholder:"Type <hours>h <minutes>m <seconds>s to set a custom timer";'}
 }
 
 settings() {

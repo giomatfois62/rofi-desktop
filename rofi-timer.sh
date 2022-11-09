@@ -8,10 +8,10 @@
 # Sounds effects from soundbible.com
 TIMER_START_AUDIO="$HOME/Media/sounds/sms-alert-1-daniel_simon.wav"
 TIMER_STOP_AUDIO="$HOME/Media/sounds/service-bell_daniel_simion.wav"
+NOTIFICATION_TIMEOUT=2000
 
 TIMERS="1 hour\n45 minutes\n30 minutes\n20 minutes\n15 minutes\n10 minutes\n5 minutes\n4 minutes\n3 minutes\n2 minutes\n1 minute\n45 seconds\n30 seconds"
 
-# TODO: add a custom timer entry and read desired duration from prompt
 declare -A SECONDS=(
     ["1 hour"]=3600
     ["45 minutes"]=2700
@@ -28,20 +28,42 @@ declare -A SECONDS=(
     ["30 seconds"]=30
 )
 
-function startTimer {
-    notify-send "$1 timer started" && paplay $TIMER_START_AUDIO
+startTimer() {
+    notify-send -t $NOTIFICATION_TIMEOUT "$1 timer started" && paplay $TIMER_START_AUDIO
 
     if command -v systemd-run &> /dev/null; then
-	systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_AUDIO
+		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_AUDIO
     elif command -v at &> /dev/null; then
-	echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_AUDIO" | at now
+		echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_AUDIO" | at now
     fi
+}
+
+custom_timer() {
+	seconds=$(echo "$@" | grep -o '[^ ]*s[^ ]*')
+	minutes=$(echo "$@" | grep -o '[^ ]*m[^ ]*')
+	hours=$(echo "$@" | grep -o '[^ ]*h[^ ]*')
+
+	seconds=${seconds/s/}
+	minutes=${minutes/m/}
+	hours=${hours/h/}
+
+	total_time=0
+
+	[[ ${#seconds} -gt 0 ]] && total_time=$(($total_time + $seconds))
+	[[ ${#minutes} -gt 0 ]] && total_time=$(($total_time + 60*$minutes))
+	[[ ${#hours} -gt 0 ]] && total_time=$(($total_time + 3600*$hours))
+
+	startTimer "$@" $total_time
 }
 
 if [ "$@" ]
 then
-    startTimer "$@" ${SECONDS["$@"]}
-    exit 0
+	if [[ -v SECONDS["$@"] ]]; then
+    	startTimer "$@" ${SECONDS["$@"]}
+    	exit 0
+	else
+		custom_timer "$@"
+	fi
 else
     echo -e "$TIMERS"
 fi
