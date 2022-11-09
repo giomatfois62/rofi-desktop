@@ -26,10 +26,11 @@ declare -A commands=(
     ["Set Wallpaper"]=wallpaper
     ["Rofi Shortcuts"]=shortcuts
     ["Change Language"]=set_lang
+    ["Update System"]=update_sys
 )
 
 settings_menu() {
-    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nChange Language\nTask Manager\nSystem Info"
+    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nChange Language\nTask Manager\nUpdate System\nSystem Info"
 
     # remember last entry chosen
     local choice_row=0
@@ -140,6 +141,10 @@ rofi_app() {
 
 wallpaper() {
     "$SCRIPT_PATH"/rofi-wallpaper.sh;
+}
+
+update_sys() {
+    "$SCRIPT_PATH"/update-system.sh;
 }
 
 settings_menu
