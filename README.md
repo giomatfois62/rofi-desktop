@@ -59,6 +59,7 @@ Currently implemented functionalities are:
   - Menu Configuration (edit all rofi-desktop scripts)
   - Language (rofi-locale.sh, set LC_ALL for user session)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
+  - Update System (update-system.sh)
   - System Info (inxi piped to rofi)
 - Session Menu (uses loginctl and optional custom lock command)
   - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
