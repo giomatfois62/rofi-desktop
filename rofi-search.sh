@@ -74,10 +74,12 @@ search_command() {
         #sort_cmd="--exec stat --printf=\"%Y\\t%n\\n\" | sort -nr | cut -f2"
 
         if [ "$SHOW_HIDDEN_FILES" = true ]; then
-            cmd="cd $folder && fd -H --ignore --type f $cmd_extensions"
+            cmd="cd $folder && fd -H --type f $cmd_extensions"
         else
-            cmd="cd $folder && fd --ignore --type f $cmd_extensions"
+            cmd="cd $folder && fd --type f $cmd_extensions"
         fi
+
+		echo "$cmd"
     else
         count=0
         for i in "${extensions[@]}"; do
@@ -94,9 +96,9 @@ search_command() {
         else
             cmd="cd $folder && find . -not -path '*/.*' -type f $cmd_extensions"
         fi
-    fi
 
-    echo "$cmd | cut -c 3-"
+		echo "$cmd | cut -c 3-"
+    fi
 }
 
 add_to_history() {
@@ -127,6 +129,9 @@ search_all() {
 }
 
 search_recent() {
+	recently_used_file="$HOME/.local/share/recently-used.xbel"
+	recently_used=$(grep -oP '(?<=href=").*?(?=")' "$recently_used_file" | sort -r)
+
     selected=$(tac "$HISTORY_FILE" | $ROFI_CMD -p "Recent Files")
 
 	if [ ${#selected} -gt 0 ]; then
