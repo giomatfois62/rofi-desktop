@@ -57,6 +57,7 @@ Currently implemented functionalities are:
   - Brightness (rofi-brightness.sh, uses xbacklight)
   - Volume (rofi-volume.sh, uses pactl and pavucontrol)
   - Menu Configuration (edit all rofi-desktop scripts)
+  - Language (rofi-locale.sh, set LC_ALL for user session)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
   - System Info (inxi piped to rofi)
 - Session Menu (uses loginctl and optional custom lock command)
