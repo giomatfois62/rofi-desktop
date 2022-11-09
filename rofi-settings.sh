@@ -4,7 +4,6 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
-TASK_MANAGER="xterm -e htop"
 SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
  
 declare -A commands=(
@@ -18,19 +17,18 @@ declare -A commands=(
     ["Default Applications"]=default_apps
     ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
-    ["Task Manager"]=task_mgr
     ["System Info"]=sys_info
     ["Qt5 Appearance"]=qt5_app
     ["GTK Appearance"]=gtk_app
     ["Rofi Style"]=rofi_app
     ["Set Wallpaper"]=wallpaper
     ["Rofi Shortcuts"]=shortcuts
-    ["Change Language"]=set_lang
-    ["Update System"]=update_sys
+    ["Language"]=set_lang
+    ["Updates"]=update_sys
 )
 
 settings_menu() {
-    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nChange Language\nTask Manager\nUpdate System\nSystem Info"
+    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nUpdates\nSystem Info"
 
     # remember last entry chosen
     local choice_row=0
@@ -86,20 +84,10 @@ volume() {
 }
 
 menu_config() {
-    selected=$(find "$SCRIPT_PATH" -iname '*.sh' -maxdepth 1 -type f | $ROFI_CMD -p "Open File")
+    selected=$(find "$SCRIPT_PATH" -iname '*.sh' -maxdepth 1 -type f | sort | $ROFI_CMD -p "Open File")
 
     if [ ${#selected} -gt 0 ]; then
         xdg-open "$selected" && exit 0
-    fi
-}
-
-task_mgr() {
-    have_blocks=$(rofi -dump-config | grep blocks)
-
-    if [ ${#have_blocks} -gt 0 ]; then
-        "$SCRIPT_PATH"/rofi-top.sh
-    else
-        eval "$TASK_MANAGER"
     fi
 }
 

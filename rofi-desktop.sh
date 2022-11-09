@@ -5,6 +5,7 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 SHOW_ICONS="-show-icons"
+TASK_MANAGER="xterm -e htop"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -31,11 +32,12 @@ declare -A commands=(
     ["Password Manager"]=passwd_mgr
     ["Clipboard"]=clipboard
     ["Translate Text"]=translate
+    ["Task Manager"]=task_mgr
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nTranslate Text\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard"
+    utils="Calculator\nCalendar\nTranslate Text\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
 
     # remember last entry chosen
     local selected_row=0
@@ -206,6 +208,16 @@ calendar() {
 
 translate() {
     "$SCRIPT_PATH"/rofi-translate.sh
+}
+
+task_mgr() {
+    have_blocks=$(rofi -dump-config | grep blocks)
+
+    if [ ${#have_blocks} -gt 0 ]; then
+        "$SCRIPT_PATH"/rofi-top.sh
+    else
+        eval "$TASK_MANAGER"
+    fi
 }
 
 clipboard() {
