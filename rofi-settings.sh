@@ -25,10 +25,11 @@ declare -A commands=(
     ["Rofi Style"]=rofi_app
     ["Set Wallpaper"]=wallpaper
     ["Rofi Shortcuts"]=shortcuts
+	["Change Language"]=set_lang
 )
 
 settings_menu() {
-    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nTask Manager\nSystem Info"
+    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nChange Language\nTask Manager\nSystem Info"
 
     # remember last entry chosen
     local choice_row=0
@@ -99,6 +100,10 @@ task_mgr() {
     else
         eval "$TASK_MANAGER"
     fi
+}
+
+set_lang() {
+	"$SCRIPT_PATH"/rofi-locale.sh
 }
 
 sys_info() {
