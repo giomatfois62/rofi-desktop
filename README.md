@@ -46,6 +46,7 @@ Currently implemented functionalities are:
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - Clipboard (uses greenclip)
+- Notifications (uses rofication-daemon.py and rofication-gui.py)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)
@@ -83,6 +84,7 @@ Optional dependencies for some of the tools are:
 - pass
 - greenclip
 - translate-shell
+- jsonpickle
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:

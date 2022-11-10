@@ -33,7 +33,7 @@ declare -A commands=(
     ["Clipboard"]=clipboard
     ["Translate Text"]=translate
     ["Task Manager"]=task_mgr
-	["Notifications"]=notifications
+    ["Notifications"]=notifications
     ["Exit"]=session_menu
 )
 
@@ -141,8 +141,8 @@ web_search() {
 }
 
 set_timer() {
-	rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
-		-theme-str 'entry{placeholder:"Type <hours>h <minutes>m <seconds>s to set a custom timer";'}
+    rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
+        -theme-str 'entry{placeholder:"Type <hours>h <minutes>m <seconds>s to set a custom timer";'}
 }
 
 settings() {
@@ -212,13 +212,13 @@ translate() {
 }
 
 notifications() {
-	daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
+        daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
 
-	if [ ${daemon_running} -gt 1 ]; then
-		"$SCRIPT_PATH"/rofication-gui.py
-	else
-		rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable notifications' daemon and menu"
-	fi
+        if [ ${daemon_running} -gt 1 ]; then
+                "$SCRIPT_PATH"/rofication-gui.py
+        else
+                rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable notifications' daemon and menu"
+        fi
 }
 
 task_mgr() {
@@ -235,13 +235,13 @@ clipboard() {
     if command -v greenclip &> /dev/null; then
         rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
     elif [ -f "$SCRIPT_PATH/greenclip" ]; then
-		daemon_running=$(ps aux | grep 'greenclip' | wc -l)
-		
-		if [ ${daemon_running} -gt 1 ]; then
-        	rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
-		else
-			rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable clipboard's daemon and menu"
-		fi
+        daemon_running=$(ps aux | grep 'greenclip' | wc -l)
+
+        if [ ${daemon_running} -gt 1 ]; then
+            rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
+        else
+                rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable clipboard's daemon and menu"
+        fi
     else
         rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard's daemon and menu"
     fi
