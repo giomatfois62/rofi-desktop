@@ -157,6 +157,7 @@ game_menu() {
     }
 
     SELECTION=$(list-icons | rofi -dmenu -i -p "Action")
+
     if [ ${#SELECTION} -gt 0 ]; then
         handle-option $SELECTION &
     else

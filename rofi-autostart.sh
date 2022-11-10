@@ -6,17 +6,19 @@ ROFI_CMD="rofi -dmenu -i -markup-rows"
 # TODO: display a "new entry" field to create .desktop files
 list_entries() {
     # handle empty XDG_CURRENT_DESKTOP env var
-    current_desktop="$XDG_CURRENT_DESKTOP"
-    if [ ${#current_desktop} -eq 0 ]; then
-	    current_desktop="asdasdasd"
+    desktop="$XDG_CURRENT_DESKTOP"
+
+    if [ $desktop -eq 0 ]; then
+	    desktop="asdasdasd"
     fi
 
     all_files=$(find "$AUTOSTART_DIR" -type f -iname "*.desktop")
-    only_show=$(grep "OnlyShowIn" "$AUTOSTART_DIR"/*.desktop | grep -v "$current_desktop" | cut -f1 -d":")
-    not_show=$(grep -E -H -l "NotShowIn.*$current_desktop" "$AUTOSTART_DIR"/*.desktop)
+    only_show=$(grep "OnlyShowIn" "$AUTOSTART_DIR"/*.desktop | grep -v "$desktop" | cut -f1 -d":")
+    not_show=$(grep -E -H -l "NotShowIn.*$desktop" "$AUTOSTART_DIR"/*.desktop)
 
     # filter out entries that should not be shown in current environment
     common_files=$(comm -13 <(echo "$not_show" | sort) <(echo "$all_files" | sort))
+
     # filter out entries that should be shown only in other environments
     common_files=$(comm -13 <(echo "$only_show" | sort) <(echo "$common_files" | sort))
 
@@ -25,25 +27,26 @@ list_entries() {
 
 print_entry() {
     if [ $(grep -i "hidden=true" "$1") ]; then
-	echo $(basename "$1" .desktop) " " "Disabled"
+        echo $(basename "$1" .desktop) " " "Disabled"
     else
-	echo $(basename "$1" .desktop) " " "<b>Enabled</b>"
+        echo $(basename "$1" .desktop) " " "<b>Enabled</b>"
     fi
 }
 
 gen_entry_menu() {
     is_enabled=$(echo "$@" | grep "Enabled")
+
     if [ ${#is_enabled} -gt 0 ]; then
 	    echo "Disable"
     else
 	    echo "Enable"
     fi
 
-    filename=$(echo "$1" | cut -f1 -d" ")
-    desktop_file="$AUTOSTART_DIR/$filename".desktop
-    cmd=$(grep "Exec=" $desktop_file | cut -f2 -d"=" | head -n 1)
+    file_name=$(echo "$1" | cut -f1 -d" ")
+    file_path="$AUTOSTART_DIR/$file_name".desktop
+    proc_name=$(grep "Exec=" $file_path | cut -f2 -d"=" | head -n 1)
 
-    if [ $(pgrep -f "$cmd") ]; then
+    if [ $(pgrep -f "$proc_name") ]; then
 	    echo "Stop"
     else
 	    echo "Start"
@@ -100,6 +103,7 @@ edit_app() {
     xdg-open $dst_file
 
     rm -rf "$AUTOSTART_DIR"
+
     exit 0
 }
 
@@ -117,15 +121,16 @@ add_entry() {
     entry_name=$((echo) | rofi -dmenu -p "Entry Name")
 
     if [ ${#entry_name} -gt 0 ]; then
-	dst_file="$HOME/.config/autostart/$entry_name".desktop
+        dst_file="$HOME/.config/autostart/$entry_name".desktop
 
-	if [ ! -f "$dst_file" ]; then
-	    desktop-entry "$entry_name" > "$dst_file"
-	fi
+        if [ ! -f "$dst_file" ]; then
+            desktop-entry "$entry_name" > "$dst_file"
+        fi
 
-	xdg-open "$dst_file"
-	rm -rf "$AUTOSTART_DIR"
-	exit 0
+        xdg-open "$dst_file"
+        rm -rf "$AUTOSTART_DIR"
+
+        exit 0
     fi
 }
 
@@ -151,15 +156,16 @@ while selected=$(gen_menu | $ROFI_CMD -p "Autostart" -selected-row ${selected_ro
     selected_entry=$(echo $selected_text | cut -f1 -d" ")
 
     if [ "$selected_text" == "+New Entry" ]; then
-	add_entry
+        add_entry
     else
-	action=$(gen_entry_menu "$selected_text" | $ROFI_CMD -p "$selected_entry")
+        action=$(gen_entry_menu "$selected_text" | $ROFI_CMD -p "$selected_entry")
 
-	if [ ${#action} -gt 0 ]; then
-	    ${actions[$action]} "$selected_entry";
-	fi
+        if [ ${#action} -gt 0 ]; then
+            ${actions[$action]} "$selected_entry";
+        fi
     fi
 done
 
 rm -rf "$AUTOSTART_DIR"
+
 exit 1

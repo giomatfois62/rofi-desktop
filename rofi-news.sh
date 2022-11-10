@@ -10,9 +10,10 @@ mkdir -p "${RSS_FILE%news}"
 # TODO: do this job in background and display message+
 if [ -f "$RSS_FILE" ]; then
 	# compute time delta between current date and news file date
-	newsdate=$(date -r "$RSS_FILE" +%s)
-	currentdate=$(date +%s)
-	delta=$((currentdate - newsdate))
+	news_date=$(date -r "$RSS_FILE" +%s)
+	current_date=$(date +%s)
+
+	delta=$((current_date - news_date))
 
 	# refresh news file if it's too old
 	if [ $delta -gt $EXPIRATION_TIME ]; then
@@ -24,14 +25,16 @@ fi
 
 selected=$(grep -E '(title>|/title>)' "$RSS_FILE" |\
 	tail -n +4 | sed -e 's/^[ \t]*//' |\
-	sed -e 's/<title>//' -e 's/<\/title>//' -e 's/<description>/  /' -e 's/<\/description>//' -e 's/\!\[CDATA\[//' -e 's/\]\]//' |\
+	sed -e 's/<title>//' -e 's/<\/title>//' -e 's/<description>/  /'\
+		-e 's/<\/description>//' -e 's/\!\[CDATA\[//' -e 's/\]\]//' |\
 	tr -d '<>,' |\
 	awk '$1=$1' |\
 	$ROFI_CMD)
 
 # get selected news and open corresponding link in browser
-if [  ${#selected} -gt 0 ]; then
+if [ ${#selected} -gt 0 ]; then
 	link=$(awk "/$selected/{getline;getline; print}" "$RSS_FILE")
+
 	echo "$link" | sed -e 's/<link>//' -e 's/<\/link>//' | xargs -I {} xdg-open {}
 
 	exit 0;

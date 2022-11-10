@@ -45,12 +45,10 @@ utilities() {
     local selected_text
 
     while selected=$(echo -en "$utils" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "Utilities"); do
-        if [ ${#selected} -gt 0 ]; then
-            selected_row=$(echo "$selected" | awk '{print $1;}')
-            selected_text=$(echo "$selected" | cut -d' ' -f2-)
+        selected_row=$(echo "$selected" | awk '{print $1;}')
+        selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
-            ${commands[$selected_text]};
-        fi
+        ${commands[$selected_text]};
     done
 }
 
@@ -62,12 +60,10 @@ main_menu() {
     local choice_text
 
     while choice=$(echo -en "$entries" | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p "Menu"); do
-        if [ ${#choice} -gt 0 ]; then
-            choice_row=$(echo "$choice" | awk '{print $1;}')
-            choice_text=$(echo "$choice" | cut -d' ' -f2-)
+        choice_row=$(echo "$choice" | awk '{print $1;}')
+        choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
-            ${commands[$choice_text]};
-        fi
+        ${commands[$choice_text]};
     done
 }
 
@@ -125,17 +121,15 @@ web_search() {
     local api_text
 
     while api=$(echo -e $apis | $ROFI_CMD -selected-row ${api_row} -format 'i s' -p "Website"); do
-        if [ ${#api} -gt 0 ]; then
-            api_row=$(echo "$api" | awk '{print $1;}')
-            api_text=$(echo "$api" | cut -d' ' -f2-)
+        api_row=$(echo "$api" | awk '{print $1;}')
+        api_text=$(echo "$api" | cut -d' ' -f2-)
 
-            if [ "$api_text" = "reddit" ]; then
-                "$SCRIPT_PATH"/rofi-reddit.sh && exit
-            elif [ "$api_text" = "flathub" ]; then
-                "$SCRIPT_PATH"/rofi-flathub.sh && exit
-            else
-                "$SCRIPT_PATH"/rofi-web-search.sh "$api_text" && exit
-            fi
+        if [ "$api_text" = "reddit" ]; then
+            "$SCRIPT_PATH"/rofi-reddit.sh && exit
+        elif [ "$api_text" = "flathub" ]; then
+            "$SCRIPT_PATH"/rofi-flathub.sh && exit
+        else
+            "$SCRIPT_PATH"/rofi-web-search.sh "$api_text" && exit
         fi
     done
 }
@@ -212,13 +206,13 @@ translate() {
 }
 
 notifications() {
-        daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
+    daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
 
-        if [ ${daemon_running} -gt 1 ]; then
-                "$SCRIPT_PATH"/rofication-gui.py
-        else
-                rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable notifications' daemon and menu"
-        fi
+    if [ ${daemon_running} -gt 1 ]; then
+        "$SCRIPT_PATH"/rofication-gui.py
+    else
+        rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable notifications menu"
+    fi
 }
 
 task_mgr() {
@@ -240,10 +234,10 @@ clipboard() {
         if [ ${daemon_running} -gt 1 ]; then
             rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
         else
-                rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable clipboard's daemon and menu"
+                rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
         fi
     else
-        rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard's daemon and menu"
+        rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
     fi
 }
 

@@ -36,11 +36,9 @@ suspend_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl suspend; }
 hibernate_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl hibernate; }
 
 while choice=$(echo -en "$entries" | $ROFI_CMD -p "Session"); do
-    if [ ${#choice} -gt 0 ]; then
-        ${commands[$choice]};
+    ${commands[$choice]};
 
-        exit 0
-    fi
+    exit 0
 done
 
 exit 1

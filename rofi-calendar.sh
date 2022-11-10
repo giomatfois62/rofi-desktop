@@ -115,9 +115,7 @@ header=$(date "$DATEFTM")
 
 #lines:'"$(echo "$month_page" | wc -l)"';width:22;
 
-while selected="$(echo "$month_page" \
-| rofi \
-	-dmenu \
+while selected="$(echo "$month_page" | rofi -dmenu \
 	-markup-rows \
 	-theme-str 'entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}' \
 	-hide-scrollbar \

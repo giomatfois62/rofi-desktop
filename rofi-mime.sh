@@ -17,9 +17,7 @@ mime_menu() {
     categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player"
 
     while choice=$(echo -en "$categories" | $ROFI_CMD -p "Default Applications"); do
-        if [ ${#choice} -gt 0 ]; then
-            ${actions[$choice]};
-        fi
+        ${actions[$choice]};
     done
 
 }
@@ -35,6 +33,7 @@ set_application() {
     if [ ${#line_exists} -gt 0 ]; then
         tmp_file="$HOME/.cache/mimeapps"
         escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
+
         sed "/^$escaped_mimetype=/d" "$MIME_FILE" > "$tmp_file"
         mv "$tmp_file" "$MIME_FILE"
     fi

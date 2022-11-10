@@ -17,8 +17,8 @@ ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 4 8)"
 
 choice=$(\
     ls --escape "$WALLPAPERS_DIR" | \
-    while read A; do echo -en "$A\x00icon\x1f$WALLPAPERS_DIR/$A\n"; done | \
-    $ROFI_CMD -p "Wallpaper" \
+        while read A; do echo -en "$A\x00icon\x1f$WALLPAPERS_DIR/$A\n"; done | \
+        $ROFI_CMD -p "Wallpaper" \
 )
 
 wallpaper="$WALLPAPERS_DIR/$choice"

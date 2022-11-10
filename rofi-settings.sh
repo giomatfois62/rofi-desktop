@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# depends: xterm inxi htop
+# depends: inxi
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
@@ -35,12 +35,10 @@ settings_menu() {
     local choice_text
 
     while choice=$(echo -en "$entries" | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p "Settings"); do
-        if [ ${#choice} -gt 0 ]; then
-            choice_row=$(echo "$choice" | awk '{print $1;}')
-            choice_text=$(echo "$choice" | cut -d' ' -f2-)
+        choice_row=$(echo "$choice" | awk '{print $1;}')
+        choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
-            ${commands[$choice_text]};
-        fi
+        ${commands[$choice_text]};
     done
 
     exit 1
@@ -54,12 +52,10 @@ appearance_menu() {
     local selected_text
 
     while selected=$(echo -en "$appearance_entries" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "Appearance"); do
-        if [ ${#selected} -gt 0 ]; then
-            selected_row=$(echo "$selected" | awk '{print $1;}')
-            selected_text=$(echo "$selected" | cut -d' ' -f2-)
+        selected_row=$(echo "$selected" | awk '{print $1;}')
+        selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
-            ${commands[$selected_text]};
-        fi
+        ${commands[$selected_text]};
     done
 }
 

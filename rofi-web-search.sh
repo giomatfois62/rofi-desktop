@@ -27,7 +27,6 @@ if [ ${#have_blocks} -gt 0 ]; then
     blockfile="$SCRIPT_PATH/rofi-web-suggestions.sh"
 
     mkdir -p "${logfile%suggestions.tmp}"
-
     echo "$API" > "$logfile"
 
     rofi -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$API" 2>/dev/null
@@ -37,10 +36,10 @@ if [ ${#have_blocks} -gt 0 ]; then
     rm "$logfile"
 
     if [ ${#query} -gt 0 ]; then
-
 	    # extract wikipedia page id from string
 	    if [ "$API" = "wikipedia" ]; then
 		    word_count=$(echo "$query" | wc -w)
+
 		    if [ "$word_count" -gt 1 ]; then
 			    query=$(echo "$query" | awk '{print $NF}')
 		    else
@@ -50,6 +49,7 @@ if [ ${#have_blocks} -gt 0 ]; then
 
 	    url=$api_url$query
 	    xdg-open "$url"
+
 	    exit 0
     fi
 else
@@ -58,6 +58,7 @@ else
     if [ ${#query} -gt 0 ]; then
 	    url=$api_url$query
 	    xdg-open "$url"
+
 	    exit 0
     fi
 fi

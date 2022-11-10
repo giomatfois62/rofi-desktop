@@ -9,11 +9,13 @@ gen_menu() {
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')
 
     echo -ne "Up\nDown"
+
     if [ "$is_muted" == "yes" ]; then
         echo -ne "\nUnmute"
     else
         echo -ne "\nMute"
     fi
+
     echo -ne "\nVolume Configuration"
 }
 

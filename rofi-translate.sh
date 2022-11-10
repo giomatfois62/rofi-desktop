@@ -10,6 +10,7 @@ MESG="Type or paste the text to translate and press \"Enter\".&#x0a;Specify a la
 
 while text=$((echo) | $ROFI_CMD -p "Translate" -mesg "$MESG"); do
 	lang=""
+
 	if [[ $text == :* ]]; then
 		lang=$(echo "$text" | cut -d " " -f1)
 		text=$(echo "$text" | cut -d' ' -f2-)

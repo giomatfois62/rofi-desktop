@@ -34,12 +34,10 @@ search_menu() {
     local choice_text
 
     while choice=$(echo -en "$entries" | $ROFI_CMD -matching fuzzy -selected-row ${choice_row} -format 'i s' -p "Search"); do
-        if [ ${#choice} -gt 0 ]; then
-            choice_row=$(echo "$choice" | awk '{print $1;}')
-            choice_text=$(echo "$choice" | cut -d' ' -f2-)
+        choice_row=$(echo "$choice" | awk '{print $1;}')
+        choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
-            ${commands[$choice_text]};
-        fi
+        ${commands[$choice_text]};
     done
 
     exit 1
