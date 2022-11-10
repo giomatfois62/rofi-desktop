@@ -113,7 +113,7 @@ select_game() {
             -drun-categories SteamLibrary \
             -log "$logfile"\
             -cache-dir $GAME_LAUNCHER_CACHE \
-            -theme-str "$(build_theme 3 4 8)"
+            -theme-str "$(build_theme 3 4 7)"
 
         # very hacky!!! intercept exit code grepping log file
         entry_chosen=$(grep "Parsed command:" "$logfile")

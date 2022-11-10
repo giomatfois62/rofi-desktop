@@ -6,7 +6,7 @@ if ! command -v trans &> /dev/null; then
 	rofi -e "Install translate-cli to enable the translation menu"
 fi
 
-MESG="Type or paste the text to translate and press \"Enter\".&#x0a;Specify a language by prefixing the query with \":lang\" (default is english), for example:&#x0a;:fr Hello World"
+MESG="<span font-size='small'>Type or paste the text to translate and press \"Enter\".&#x0a;Specify a language by prefixing the query with \":lang\" (default is english), for example \":fr Hello World\"</span>"
 
 while text=$((echo) | $ROFI_CMD -p "Translate" -mesg "$MESG"); do
 	lang=""
