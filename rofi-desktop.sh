@@ -33,6 +33,7 @@ declare -A commands=(
     ["Clipboard"]=clipboard
     ["Translate Text"]=translate
     ["Task Manager"]=task_mgr
+	["Notifications"]=notifications
     ["Exit"]=session_menu
 )
 
@@ -54,7 +55,7 @@ utilities() {
 }
 
 main_menu() {
-    entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nSystem Settings\nExit"
+    entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
 
     # remember last entry chosen
     local choice_row=0
@@ -210,6 +211,16 @@ translate() {
     "$SCRIPT_PATH"/rofi-translate.sh
 }
 
+notifications() {
+	daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
+
+	if [ ${daemon_running} -gt 1 ]; then
+		"$SCRIPT_PATH"/rofication-gui.py
+	else
+		rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable notifications' daemon and menu"
+	fi
+}
+
 task_mgr() {
     have_blocks=$(rofi -dump-config | grep blocks)
 
@@ -224,9 +235,15 @@ clipboard() {
     if command -v greenclip &> /dev/null; then
         rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
     elif [ -f "$SCRIPT_PATH/greenclip" ]; then
-        rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
+		daemon_running=$(ps aux | grep 'greenclip' | wc -l)
+		
+		if [ ${daemon_running} -gt 1 ]; then
+        	rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
+		else
+			rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable clipboard's daemon and menu"
+		fi
     else
-        rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run './greenclip daemon &' to enable the clipboard's daemon and menu"
+        rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard's daemon and menu"
     fi
 }
 
