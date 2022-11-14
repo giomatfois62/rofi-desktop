@@ -9,25 +9,25 @@ HISTORY_FILE="$HOME/.cache/rofi-search-history"
 MAX_ENTRIES=100
 
 declare -A commands=(
-    ["All Files"]=search_all
-    ["Recently Used"]=search_recent
-    ["File Contents"]=search_contents
-    ["Bookmarks"]=search_bookmarks
-    ["Books"]=search_books
-    ["Documents"]=search_documents
-    ["Desktop"]=search_desktop
-    ["Downloads"]=search_downloads
-    ["Music"]=search_music
-    ["Pictures"]=search_pics
-    ["TNT Village"]=search_tnt
-    ["Videos"]=search_videos
+    ["💻 All Files"]=search_all
+    ["🕐 Recently Used"]=search_recent
+    ["🗊 File Contents"]=search_contents
+    ["🏷 Bookmarks"]=search_bookmarks
+    ["🕮 Books"]=search_books
+    ["🗊 Documents"]=search_documents
+    ["🗔 Desktop"]=search_desktop
+    ["🡇 Downloads"]=search_downloads
+    ["🎜 Music"]=search_music
+    ["🖼 Pictures"]=search_pics
+    ["💣 TNT Village"]=search_tnt
+    ["🎞 Videos"]=search_videos
 )
 
 # TODO: add more file extensions
 # TODO: order results by date
 
 search_menu() {
-    entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
+    entries="💻 All Files\n🕐 Recently Used\n🗊 File Contents\n🏷 Bookmarks\n🕮 Books\n🗔 Desktop\n🗊 Documents\n🡇 Downloads\n🎜 Music\n🖼 Pictures\n🎞 Videos\n💣 TNT Village"
 
     # remember last entry chosen
     local choice_row=0

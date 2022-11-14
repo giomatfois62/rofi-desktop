@@ -8,38 +8,38 @@ SHOW_ICONS="-show-icons"
 TASK_MANAGER="xterm -e htop"
 
 declare -A commands=(
-    ["Applications"]=run_app
-    ["Run Command"]=run_cmd
-    ["Browse Files"]=browse
-    ["Search Computer"]=search
-    ["Search Web"]=web_search
-    ["Steam Games"]=steam_games
-    ["Calculator"]=calculator
-    ["Calendar"]=calendar
-    ["Watch TV"]=tv
-    ["Radio Stations"]=radio
-    ["Take Screenshot"]=screenshot
-    ["Record Audio/Video"]=record
-    ["To-Do List"]=todo
-    ["Notepad"]=notes
-    ["Latest News"]=news
-    ["Weather Forecast"]=weather
-    ["System Settings"]=settings
-    ["Utilities"]=utilities
-    ["Set Timer"]=set_timer
-    ["SSH Sessions"]=ssh_menu
-    ["Tmux Sessions"]=tmux_menu
-    ["Password Manager"]=passwd_mgr
-    ["Clipboard"]=clipboard
-    ["Translate Text"]=translate
-    ["Task Manager"]=task_mgr
-    ["Notifications"]=notifications
+    ["💿 Applications"]=run_app
+    ["💻 Run Command"]=run_cmd
+    ["🖿 Browse Files"]=browse
+    ["🔍 Search Computer"]=search
+    ["🕸 Search Web"]=web_search
+    ["🎮 Steam Games"]=steam_games
+    ["🖩 Calculator"]=calculator
+    ["🗓 Calendar"]=calendar
+    ["📺 Watch TV"]=tv
+    ["📻 Radio Stations"]=radio
+    ["📷 Take Screenshot"]=screenshot
+    ["⏺ Record Audio/Video"]=record
+    ["🗹 To-Do List"]=todo
+    ["🗒 Notepad"]=notes
+    ["🌍 Latest News"]=news
+    ["🌦 Weather Forecast"]=weather
+    ["🛠 System Settings"]=settings
+    ["🗃 Utilities"]=utilities
+    ["⏱ Set Timer"]=set_timer
+    ["🖧 SSH Sessions"]=ssh_menu
+    ["🗗 Tmux Sessions"]=tmux_menu
+    ["⚿ Password Manager"]=passwd_mgr
+    ["📋 Clipboard"]=clipboard
+    ["⽀ Translate Text"]=translate
+    ["📊 Task Manager"]=task_mgr
+    ["！ Notifications"]=notifications
     ["Characters"]=char_picker
-    ["Exit"]=session_menu
+    ["❌ Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nTranslate Text\nNotepad\nTo-Do List\nSet Timer\nCharacters\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+    utils="🖩 Calculator\n🗓 Calendar\n⽀ Translate Text\n🗒 Notepad\n🗹 To-Do List\n⏱ Set Timer\nCharacters\n📷 Take Screenshot\n⏺ Record Audio/Video\n🖧 SSH Sessions\n🗗 Tmux Sessions\n🗝 Password Manager\n📋 Clipboard\n📊 Task Manager"
 
     # remember last entry chosen
     local selected_row=0
@@ -54,7 +54,7 @@ utilities() {
 }
 
 main_menu() {
-    entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
+    entries="💿 Applications\n💻 Run Command\n🖿 Browse Files\n🔍 Search Computer\n🕸 Search Web\n🎮 Steam Games\n🌍 Latest News\n🌦 Weather Forecast\n📺 Watch TV\n📻 Radio Stations\n🗃 Utilities\n！ Notifications\n🛠 System Settings\n❌ Exit"
 
     # remember last entry chosen
     local choice_row=0
