@@ -22,13 +22,14 @@ select_channel(){
 
     selected_row=$(cat "$CACHE_FILE")
 
-    while name=$(jq ".[].name" "$CHANNELS_FILE" | tr -d '"' |\
+    while name=$(jq '.[] | "\(.name) [\(.countries[0].name)]"' "$CHANNELS_FILE" | tr -d '"' |\
         sort | $ROFI_CMD -selected-row "${selected_row}" -format 'i s'); do
 
         index=$(echo "$name" | awk '{print $1;}')
         echo "$index" > "$CACHE_FILE"
 
-        name_str=$(echo "$name" | cut -d' ' -f2-)
+        name_str=$(echo "$name" | cut -d' ' -f2- | cut -d"[" -f1 | sed 's/ *$//g')
+        echo $name_str
         var=".[] | select(.name==\"$name_str\") | .url"
 
         play "$(jq "$var" "$CHANNELS_FILE" | tr -d '"')"
