@@ -34,11 +34,12 @@ declare -A commands=(
     ["Translate Text"]=translate
     ["Task Manager"]=task_mgr
     ["Notifications"]=notifications
+    ["Characters"]=char_picker
     ["Exit"]=session_menu
 )
 
 utilities() {
-    utils="Calculator\nCalendar\nTranslate Text\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+    utils="Calculator\nCalendar\nTranslate Text\nNotepad\nTo-Do List\nSet Timer\nCharacters\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
 
     # remember last entry chosen
     local selected_row=0
@@ -203,6 +204,10 @@ calendar() {
 
 translate() {
     "$SCRIPT_PATH"/rofi-translate.sh
+}
+
+char_picker() {
+    "$SCRIPT_PATH"/rofi-characters.sh
 }
 
 notifications() {
