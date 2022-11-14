@@ -207,7 +207,7 @@ translate() {
 }
 
 char_picker() {
-    "$SCRIPT_PATH"/rofi-characters.sh
+    "$SCRIPT_PATH"/rofi-characters.sh && exit
 }
 
 notifications() {
