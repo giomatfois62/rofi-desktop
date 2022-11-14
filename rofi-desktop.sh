@@ -34,12 +34,12 @@ declare -A commands=(
     ["⽀ Translate Text"]=translate
     ["📊 Task Manager"]=task_mgr
     ["！ Notifications"]=notifications
-    ["Characters"]=char_picker
+    ["🐵 Characters"]=char_picker
     ["❌ Exit"]=session_menu
 )
 
 utilities() {
-    utils="🖩 Calculator\n🗓 Calendar\n⽀ Translate Text\n🗒 Notepad\n🗹 To-Do List\n⏱ Set Timer\nCharacters\n📷 Take Screenshot\n⏺ Record Audio/Video\n🖧 SSH Sessions\n🗗 Tmux Sessions\n🗝 Password Manager\n📋 Clipboard\n📊 Task Manager"
+    utils="🖩 Calculator\n🗓 Calendar\n⽀ Translate Text\n🗒 Notepad\n🗹 To-Do List\n⏱ Set Timer\n🐵 Characters\n📷 Take Screenshot\n⏺ Record Audio/Video\n🖧 SSH Sessions\n🗗 Tmux Sessions\n🗝 Password Manager\n📋 Clipboard\n📊 Task Manager"
 
     # remember last entry chosen
     local selected_row=0
