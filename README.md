@@ -40,6 +40,7 @@ Currently implemented functionalities are:
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
   - Set Timer (rofi-timer.sh)
+  - Characters (rofi-characters.sh, utf-8 char and emoji picker)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH Sessions(ssh modi)
