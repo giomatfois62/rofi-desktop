@@ -7,28 +7,28 @@ ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
  
 declare -A commands=(
-    ["🖌 Appearance"]=appearance_menu
-    ["🖧 Network"]=network
-    ["🖧 Bluetooth"]=bluetooth
-    ["🖵 Display"]=display
-    ["🔊 Volume"]=volume
-    ["🌣 Brightness"]=brightness
-    ["🖮 Keyboard Layout"]=kb_layout
-    ["💿 Default Applications"]=default_apps
-    ["💿 Autostart Applications"]=autostart_apps
-    ["🗊 Menu Configuration"]=menu_config
-    ["🛈 System Info"]=sys_info
-    ["🖌 Qt5 Appearance"]=qt5_app
-    ["🖌 GTK Appearance"]=gtk_app
-    ["🖌 Rofi Style"]=rofi_app
-    ["🖼 Set Wallpaper"]=wallpaper
-    ["🖮 Rofi Shortcuts"]=shortcuts
-    ["🗣 Language"]=set_lang
-    ["🗘 Updates"]=update_sys
+    ["Appearance"]=appearance_menu
+    ["Network"]=network
+    ["Bluetooth"]=bluetooth
+    ["Display"]=display
+    ["Volume"]=volume
+    ["Brightness"]=brightness
+    ["Keyboard Layout"]=kb_layout
+    ["Default Applications"]=default_apps
+    ["Autostart Applications"]=autostart_apps
+    ["Menu Configuration"]=menu_config
+    ["System Info"]=sys_info
+    ["Qt5 Appearance"]=qt5_app
+    ["GTK Appearance"]=gtk_app
+    ["Rofi Style"]=rofi_app
+    ["Set Wallpaper"]=wallpaper
+    ["Rofi Shortcuts"]=shortcuts
+    ["Language"]=set_lang
+    ["Updates"]=update_sys
 )
 
 settings_menu() {
-    entries="🖌 Appearance\n🖧 Network\n🖧 Bluetooth\n🖵 Display\n🔊 Volume\n🌣 Brightness\n🖮 Keyboard Layout\n🖮 Rofi Shortcuts\n💿 Default Applications\n💿 Autostart Applications\n🗊 Menu Configuration\n🗣 Language\n🗘 Updates\n🛈 System Info"
+    entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nUpdates\nSystem Info"
 
     # remember last entry chosen
     local choice_row=0
@@ -45,7 +45,7 @@ settings_menu() {
 }
 
 appearance_menu() {
-    appearance_entries="🖌 Qt5 Appearance\n🖌 GTK Appearance\n🖌 Rofi Style\n🖼 Set Wallpaper"
+    appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
     # remember last entry chosen
     local selected_row=0
