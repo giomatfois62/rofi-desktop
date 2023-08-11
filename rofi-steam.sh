@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-
+#
 # https://github.com/ntcarlson/dotfiles/tree/delta/config/rofi
-
+#
 # Generates .desktop entries for all installed Steam games with box art for
 # the icons to be used with a specifically configured Rofi launcher
+#
+# dependencies: rofi, steam
 
 SCRIPT_DIR=$(dirname $(realpath $0))
 

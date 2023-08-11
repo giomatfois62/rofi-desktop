@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+# this script fetches and search torrents inside the tntvillage csv archive
+# selecting an entry will generate the magnet link and open it
+#
+# dependencies: rofi
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -p Torrent"

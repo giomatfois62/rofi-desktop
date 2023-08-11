@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
-# optional: scrot
+#
+# this script allows taking screenshots of the desktop
+#
+# dependencies: rofi
+# optional: scrot, flameshot, spectacle, xfce4-screenshooter
 
 ROFI_CMD="rofi -dmenu -i"
 SCREENSHOT_NAME="Screenshot_%Y-%m-%d-%S-%H%M%S.png"

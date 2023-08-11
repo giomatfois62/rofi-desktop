@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# this script fetches and show the latest news from bbc internationals rss
+# selecting an entry will open the corresponding web page
+#
+# dependencies: rofi, curl
 
 ROFI_CMD="rofi -dmenu -i -p News"
 RSS_URL="http://feeds.bbci.co.uk/news/rss.xml?edition=int"

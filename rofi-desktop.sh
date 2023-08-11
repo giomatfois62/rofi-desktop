@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-
-# optional: rofi-calc
+#
+# this script contains the main rofi-desktop menu and the utilities menu
+# add custom entries in the "commands" array and in the "utils" and "entries" variables
+#
+# dependencies: rofi
+# optional: rofi-calc (for better calculator), curl (for weather), greenclip (for clipboard), rofication (for notifications), htop (task manager)
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"

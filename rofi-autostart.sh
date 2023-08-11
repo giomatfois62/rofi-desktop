@@ -1,20 +1,28 @@
 #!/usr/bin/env bash
 
+# this script manages autostart ".desktop" files in /etc/xdg/autostart/ and $HOME/.config/autostart
+# it presents a list of all the files it finds, and an option to create a new autostart file
+# selecting an entry opens a submenu to start/stop the program, enable/disable the entry and edit the corresponding file
+#
+# dependencies: rofi
+
+# temporary dir to collect desktop files
 AUTOSTART_DIR="$HOME/.cache/autostart"
+
+# rofi command
 ROFI_CMD="rofi -dmenu -i -markup-rows"
 
-# TODO: display a "new entry" field to create .desktop files
 list_entries() {
     # handle empty XDG_CURRENT_DESKTOP env var
     desktop="$XDG_CURRENT_DESKTOP"
 
-    if [ $desktop -eq 0 ]; then
-	    desktop="asdasdasd"
+    if [ -z "$desktop" ]; then
+	    desktop="unknown"
     fi
 
     all_files=$(find "$AUTOSTART_DIR" -type f -iname "*.desktop")
-    only_show=$(grep "OnlyShowIn" "$AUTOSTART_DIR"/*.desktop | grep -v "$desktop" | cut -f1 -d":")
-    not_show=$(grep -E -H -l "NotShowIn.*$desktop" "$AUTOSTART_DIR"/*.desktop)
+    only_show=$(grep -r "OnlyShowIn" "$AUTOSTART_DIR" | grep -v "$desktop" | cut -f1 -d":")
+    not_show=$(grep -r -E -H -l "NotShowIn.*$desktop" "$AUTOSTART_DIR")
 
     # filter out entries that should not be shown in current environment
     common_files=$(comm -13 <(echo "$not_show" | sort) <(echo "$all_files" | sort))
@@ -36,7 +44,7 @@ print_entry() {
 gen_entry_menu() {
     is_enabled=$(echo "$@" | grep "Enabled")
 
-    if [ ${#is_enabled} -gt 0 ]; then
+    if [ -n "$is_enabled" ]; then
 	    echo "Disable"
     else
 	    echo "Enable"
@@ -45,11 +53,12 @@ gen_entry_menu() {
     file_name=$(echo "$1" | cut -f1 -d" ")
     file_path="$AUTOSTART_DIR/$file_name".desktop
     proc_name=$(grep "Exec=" $file_path | cut -f2 -d"=" | head -n 1)
+    proc_running=$(pgrep -f "$proc_name")
 
-    if [ $(pgrep -f "$proc_name") ]; then
-	    echo "Stop"
+    if [ -n "$proc_running" ]; then
+	    echo "Stop" " " "$proc_name"
     else
-	    echo "Start"
+	    echo "Start" " " "($proc_name)"
     fi
 
     echo "Edit"
@@ -120,7 +129,7 @@ EOF
 add_entry() {
     entry_name=$((echo) | rofi -dmenu -p "Entry Name")
 
-    if [ ${#entry_name} -gt 0 ]; then
+    if [ -n "$entry_name" ]; then
         dst_file="$HOME/.config/autostart/$entry_name".desktop
 
         if [ ! -f "$dst_file" ]; then
@@ -135,7 +144,7 @@ add_entry() {
 }
 
 gen_menu() {
-    echo "+New Entry"
+    echo "Add Entry"
     echo "$(list_entries | xargs -I {} bash -c "print_entry {}" | column -t)"
 }
 
@@ -143,8 +152,8 @@ gen_menu() {
 # sort -k2 (-r)
 
 mkdir -p "$AUTOSTART_DIR"
-cp -r /etc/xdg/autostart/*.desktop "$AUTOSTART_DIR"
-cp -r "$HOME"/.config/autostart/*.desktop "$AUTOSTART_DIR"
+cp /etc/xdg/autostart/*.desktop "$AUTOSTART_DIR/"
+cp "$HOME"/.config/autostart/*.desktop "$AUTOSTART_DIR/"
 export -f print_entry
 
 # remember last selected entry
@@ -155,12 +164,12 @@ while selected=$(gen_menu | $ROFI_CMD -p "Autostart" -selected-row ${selected_ro
     selected_text=$(echo "$selected" | cut -d' ' -f2-)
     selected_entry=$(echo $selected_text | cut -f1 -d" ")
 
-    if [ "$selected_text" == "+New Entry" ]; then
+    if [ "$selected_text" == "Add Entry" ]; then
         add_entry
     else
         action=$(gen_entry_menu "$selected_text" | $ROFI_CMD -p "$selected_entry")
 
-        if [ ${#action} -gt 0 ]; then
+        if [ -n "$action" ]; then
             ${actions[$action]} "$selected_entry";
         fi
     fi

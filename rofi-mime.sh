@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# this script manages mime-type associations of files, editing "mimeapps.list"
+# it allows to choose default applications to open audiu/video/text files and more
+#
+# dependencies: rofi
+
 
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
 MIME_FILE="$HOME/.config/mimeapps.list"

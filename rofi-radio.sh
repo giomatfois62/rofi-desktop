@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
-# depends: jq mpv
+#
+# this script fetches and shows a list of radio stations
+# selecting an entry will open the radio stream with mpv
+#
+# dependencies: rofi, wget, jq, mpv
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -p Radio"
@@ -22,7 +25,7 @@ select_channel(){
 
     selected_row=$(cat "$CACHE_FILE")
 
-    while name=$(jq '.[] | "\(.name) {\(.country)}"' ".[].name" "$CHANNELS_FILE" | tr -d '"' |\
+    while name=$(jq '.[] | "\(.name) {\(.country)}"' "$CHANNELS_FILE" | tr -d '"' |\
         sort | $ROFI_CMD -selected-row "${selected_row}" -format 'i s'); do
 
         index=$(echo "$name" | awk '{print $1;}')

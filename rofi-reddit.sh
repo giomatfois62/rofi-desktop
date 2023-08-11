@@ -1,4 +1,9 @@
 #! /usr/bin/env bash
+#
+# this script displays a list of all subreddits
+# selecting an entry will open a search dialog to search posts in the subreddit
+#
+# dependencies: rofi, curl, jq
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i"

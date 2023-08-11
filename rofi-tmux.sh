@@ -1,4 +1,8 @@
 #! /usr/bin/env bash
+#
+# this script manages tmux sessions
+#
+# dependencies: rofi, tmux
 
 TERMINAL="xterm"
 

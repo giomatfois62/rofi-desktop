@@ -1,6 +1,11 @@
 #!/bin/bash
-
+#
 # https://github.com/claudiodangelis/rofi-todo
+#
+# this script manages a simple to-do list stored locally
+# it allows adding and removing to-do entries
+#
+# dependencies: rofi
 
 TODO_FILE=~/.rofi_todos
 
@@ -20,6 +25,7 @@ function remove_todo() {
 }
 
 function get_todos() {
+    echo "Refresh List"
     echo "$(cat "${TODO_FILE}")"
 }
 

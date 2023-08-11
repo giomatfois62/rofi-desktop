@@ -1,6 +1,10 @@
 #!/bin/bash
-
+#
 # https://github.com/davatorium/rofi-scripts/blob/master/monitor_layout.sh
+#
+# this controls the monitor layout using xrand
+#
+# dependencies: rofi, xrand
 
 XRANDR=$(which xrandr)
 

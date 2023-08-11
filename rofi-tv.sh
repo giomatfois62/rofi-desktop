@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
-# depends: jq mpv
+#
+# this script fetches and show a list of tv stations
+# selecting an entry will open the tv stream with mpv
+#
+# dependencies: rofi, jq, mpv
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -p Channel"

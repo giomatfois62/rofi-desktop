@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# this script translates text written in the prompt using translate-cli
+#
+# dependencies: rofi, translate-cli
 
 ROFI_CMD="rofi -dmenu -i"
 

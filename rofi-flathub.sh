@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#
+# this script downloads and shows the list of flatpaks on flathub
+# selecting an entry will launch a terminal with the command to install the flatpak
+#
+# dependencies: rofi, flatpak, jq
+
 
 URL="https://flathub.org/api/v1/apps"
 ROFI_CMD="rofi -dmenu -i"

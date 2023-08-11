@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# this script manages the desktop wallpaper, allowing to choose from a thumbnail's
+# grid of images found in the wallpapers directory (default to "$HOME/Pictures")
+#
+# dependencies: rofi
+# optional: feh
 
 WALLPAPERS_DIR="$HOME/Pictures"
 

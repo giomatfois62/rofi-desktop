@@ -1,4 +1,9 @@
 #! /usr/bin/env bash
+#
+# a simple calendar and agenda inside a rofi menu
+# allows adding and displaying events and reminders stored locally in $EVENTS_FILE
+#
+# dependencies: rofi
 
 ###### Variables ######
 DATEFTM="${DATEFTM:-+%a %d %b %Y}"

@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# this script manages the current system language, writing the corresponding
+# entry either in "$HOME/.profile" (for slackware) or in "$HOME/.i18n"
+#
+# dependencies: rofi
 
 CURRENT_LOCALE=$(locale | head -n1)
 ROFI_CMD="rofi -dmenu -i -no-custom"

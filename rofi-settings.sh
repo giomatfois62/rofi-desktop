@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
-# depends: inxi
+#
+# this script contains the system settings menu and the appearance menu
+# add custom entries in the "commands" array and "entries" and "appearance_entries" variable
+#
+# dependencies: rofi, inxi, qt5ct, lxappearance
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-
+#
+# this script contains many searching functions for files in the computer
+# it remembers recently used files and diplays images in a grid of thumbnails
+#
+# dependencies: rofi
 # optional: fd
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"

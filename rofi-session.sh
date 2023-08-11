@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-
+#
+# this script manages the user session using loginctl and an optional screen locker
+#
+# dependencies: rofi
 # optional: i3lock
 
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"

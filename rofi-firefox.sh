@@ -1,6 +1,10 @@
 #!/bin/bash
-
+#
 # https://github.com/lamarios/dotfiles/blob/master/scripts/rofi-firefox
+#
+# this script displays firefox bookmarks
+#
+# dependencies: rofi, firefox, sqlite
 
 # TODO: fix this query to return all bookmarks
 SQL="SELECT b.title || \" | \" ||  p.url  FROM moz_bookmarks b JOIN moz_places p ON b.fk = p.id WHERE b.fk is not null AND b.title <> '' AND url <> '' AND url NOT LIKE 'place:%'"

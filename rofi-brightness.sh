@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 # Original Author : Aditya Shakya (adi1090x)
+#
+# this script manages backlight brightness control for monitors that supports it, using xbacklight
+#
+# dependencies: rofi, xbacklight
 
 ROFI_CMD="rofi -dmenu -i"
 

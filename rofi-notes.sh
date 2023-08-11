@@ -1,6 +1,10 @@
 #!/bin/bash
-
+#
 # https://github.com/christianholman/rofi_notes
+#
+# this script allows writing and reading simple notes that are stored locally
+#
+# dependencies: rofi
 
 # default values
 AUTHOR=$(whoami)

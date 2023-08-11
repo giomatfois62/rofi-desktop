@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-
-# depends: pactl
+#
+# this script manages audio volume using pulseaudio interface (pactl)
+#
+# dependencies: rofi, pactl
 # optional: pavucontrol
 
 ROFI_CMD="rofi -dmenu -i -matching fuzzy"
