@@ -5,8 +5,8 @@
 # dependencies: rofi
 # optional: scrot, flameshot, spectacle, xfce4-screenshooter
 
-ROFI_CMD="rofi -dmenu -i"
-SCREENSHOT_NAME="Screenshot_%Y-%m-%d-%S-%H%M%S.png"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+SCREENSHOT_NAME="${SCREENSHOT_NAME:-Screenshot_%Y-%m-%d-%S-%H%M%S.png}"
 
 # check for available programs
 declare -a programs=("flameshot launcher" "spectacle" "xfce4-screenshooter")

@@ -4,7 +4,7 @@
 #
 # dependencies: rofi, translate-cli
 
-ROFI_CMD="rofi -dmenu -i"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 if ! command -v trans &> /dev/null; then
 	rofi -e "Install translate-cli to enable the translation menu"

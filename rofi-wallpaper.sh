@@ -6,10 +6,11 @@
 # dependencies: rofi
 # optional: feh
 
-WALLPAPERS_DIR="$HOME/Pictures"
-
-# find image size to display (very slow)
-#echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
+GRID_ROWS=${GRID_ROWS:-3}
+GRID_COLS=${GRID_COLS:-5}
+ICON_SIZE=${ICON_SIZE:-6}
 
 build_theme() {
     rows=$1
@@ -19,12 +20,13 @@ build_theme() {
     echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
 }
 
-ROFI_CMD="rofi -dmenu -i -show-icons -theme-str $(build_theme 3 5 6)"
+# find image size to display (very slow)
+#echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
 
 choice=$(\
     ls --escape "$WALLPAPERS_DIR" | \
         while read A; do echo -en "$A\x00icon\x1f$WALLPAPERS_DIR/$A\n"; done | \
-        $ROFI_CMD -p "Wallpaper" \
+        $ROFI_CMD -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
 )
 
 wallpaper="$WALLPAPERS_DIR/$choice"

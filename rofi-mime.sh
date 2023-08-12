@@ -5,8 +5,7 @@
 #
 # dependencies: rofi
 
-
-ROFI_CMD="rofi -dmenu -i -matching fuzzy"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 MIME_FILE="$HOME/.config/mimeapps.list"
 
 declare -A actions=(

@@ -6,9 +6,9 @@
 
 # TODO: find nice sound effects
 # Sounds effects from soundbible.com
-TIMER_START_AUDIO="$HOME/Media/sounds/sms-alert-1-daniel_simon.wav"
-TIMER_STOP_AUDIO="$HOME/Media/sounds/service-bell_daniel_simion.wav"
-NOTIFICATION_TIMEOUT=2000
+TIMER_START_AUDIO="${TIMER_START_AUDIO:-$HOME/Media/sounds/sms-alert-1-daniel_simon.wav}"
+TIMER_STOP_AUDIO="${TIMER_STOP_AUDIO:-$HOME/Media/sounds/service-bell_daniel_simion.wav}"
+TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-2000}
 
 TIMERS="1 hour\n45 minutes\n30 minutes\n20 minutes\n15 minutes\n10 minutes\n5 minutes\n4 minutes\n3 minutes\n2 minutes\n1 minute\n45 seconds\n30 seconds"
 
@@ -29,7 +29,7 @@ declare -A SECONDS=(
 )
 
 startTimer() {
-    notify-send -t $NOTIFICATION_TIMEOUT "$1 timer started" && paplay $TIMER_START_AUDIO
+    notify-send -t $TIMER_NOTIFICATION_TIMEOUT "$1 timer started" && paplay $TIMER_START_AUDIO
 
     if command -v systemd-run &> /dev/null; then
 		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_AUDIO

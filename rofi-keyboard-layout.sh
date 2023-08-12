@@ -4,14 +4,13 @@
 #
 # dependencies: rofi, setxkbmap
 
-
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 LAYOUT_FILE="/usr/share/X11/xkb/rules/evdev.lst"
-ROFI_CMD="rofi -dmenu -i -p Layout"
 
 selected=$(cat $LAYOUT_FILE |\
     grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' |\
     head -n -2 |\
-    $ROFI_CMD  |\
+    $ROFI_CMD - p "Layout"  |\
     awk '{print $1;}'
 )
 

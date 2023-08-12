@@ -5,9 +5,9 @@
 # dependencies: rofi
 # optional: i3lock
 
-ROFI_CMD="rofi -dmenu -i -matching fuzzy"
-USE_LOCKER="false"
-LOCKER="i3lock"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+USE_LOCKER="${USE_LOCKER:-false}"
+LOCKER="${LOCKER:-i3lock}"
 
 entries="Lock Screen\nLog Out\nReboot\nShutdown\nSuspend\nHibernate"
 

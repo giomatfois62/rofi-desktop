@@ -4,13 +4,14 @@
 #
 # dependencies: rofi, tmux
 
-TERMINAL="xterm"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+TERMINAL="${TERMINAL:-xterm}"
 
 function tmux_sessions() {
     tmux list-session -F '#S'
 }
 
-TMUX_SESSION=$( (echo new; tmux_sessions) | rofi -dmenu -p "Session")
+TMUX_SESSION=$( (echo new; tmux_sessions) | $ROFI_CMD -p "Session")
 
 if [[ x"new" = x"${TMUX_SESSION}" ]]; then
     $TERMINAL -e tmux new-session &

@@ -2,15 +2,12 @@
 
 # this script manages autostart ".desktop" files in /etc/xdg/autostart/ and $HOME/.config/autostart
 # it presents a list of all the files it finds, and an option to create a new autostart file
-# selecting an entry opens a submenu to start/stop the program, enable/disable the entry and edit the corresponding file
+# selecting an entry will open a submenu to start/stop the program, enable/disable the entry and edit the corresponding file
 #
 # dependencies: rofi
 
-# temporary dir to collect desktop files
-AUTOSTART_DIR="$HOME/.cache/autostart"
-
-# rofi command
-ROFI_CMD="rofi -dmenu -i -markup-rows"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+AUTOSTART_DIR="${AUTOSTART_DIR:-$HOME/.cache/autostart}"
 
 list_entries() {
     # handle empty XDG_CURRENT_DESKTOP env var
@@ -127,7 +124,7 @@ EOF
 }
 
 add_entry() {
-    entry_name=$((echo) | rofi -dmenu -p "Entry Name")
+    entry_name=$((echo) | $ROFI_CMD -p "Entry Name")
 
     if [ -n "$entry_name" ]; then
         dst_file="$HOME/.config/autostart/$entry_name".desktop
@@ -159,7 +156,7 @@ export -f print_entry
 # remember last selected entry
 selected_row=0
 
-while selected=$(gen_menu | $ROFI_CMD -p "Autostart" -selected-row ${selected_row} -format 'i s'); do
+while selected=$(gen_menu | $ROFI_CMD -markup-rows -p "Autostart" -selected-row ${selected_row} -format 'i s'); do
     selected_row=$(echo "$selected" | awk '{print $1;}')
     selected_text=$(echo "$selected" | cut -d' ' -f2-)
     selected_entry=$(echo $selected_text | cut -f1 -d" ")

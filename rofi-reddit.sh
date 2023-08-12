@@ -6,7 +6,8 @@
 # dependencies: rofi, curl, jq
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
-ROFI_CMD="rofi -dmenu -i"
+
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 BASE_URL="https://www.reddit.com"
 SUB_FILE="$SCRIPT_PATH/data/subreddits"
 

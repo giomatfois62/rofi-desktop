@@ -5,7 +5,7 @@
 # dependencies: rofi, pactl
 # optional: pavucontrol
 
-ROFI_CMD="rofi -dmenu -i -matching fuzzy"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 gen_menu() {
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')

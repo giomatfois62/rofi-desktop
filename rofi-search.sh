@@ -7,10 +7,14 @@
 # optional: fd
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
-ROFI_CMD="rofi -dmenu -i"
-SHOW_HIDDEN_FILES=false
-HISTORY_FILE="$HOME/.cache/rofi-search-history"
-MAX_ENTRIES=100
+
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+SHOW_HIDDEN_FILES=${SHOW_HIDDEN_FILES:-false}
+HISTORY_FILE="${HISTORY_FILE:-$HOME/.cache/rofi-search-history}"
+MAX_HISTORY_ENTRIES=${MAX_HISTORY_ENTRIES:-100}
+GRID_ROWS=${GRID_ROWS:-3}
+GRID_COLS=${GRID_COLS:-5}
+ICON_SIZE=${ICON_SIZE:-6}
 
 declare -A commands=(
     ["All Files"]=search_all
@@ -107,7 +111,7 @@ add_to_history() {
     touch "$HISTORY_FILE"
     grep -Fxq "$1" "$HISTORY_FILE" || echo "$1" >> "$HISTORY_FILE"
 
-    if [ "$(wc -l "$HISTORY_FILE" | awk '{ print $1 }')" -gt $MAX_ENTRIES ]; then
+    if [ "$(wc -l "$HISTORY_FILE" | awk '{ print $1 }')" -gt $MAX_HISTORY_ENTRIES ]; then
         tmp_file="$HISTORY_FILE"".tmp"
         tail -n +2 "$HISTORY_FILE" > "$tmp_file"
         mv "$tmp_file" "$HISTORY_FILE"
@@ -241,7 +245,7 @@ search_pics() {
     local selected
     local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme 3 5 6)" -p "Pictures")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" -p "Pictures")
 
     if [ ${#selected} -gt 0 ]; then
         open_file "$HOME/$selected"

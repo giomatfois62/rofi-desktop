@@ -9,8 +9,8 @@
 DATEFTM="${DATEFTM:-+%a %d %b %Y}"
 SHORTFMT="${SHORTFMT:-+%d/%m/%Y}"
 EVENTFMT="${EVENTFMT:-+%Y.%m.%d}"
-LABEL="${LABEL:- }"
-FONT="${FONT:-Monospace 10}"
+DATELABEL="${DATELABEL:- }"
+DATEFONT="${DATEFONT:-Monospace 10}"
 LEFTCLICK_PREV_MONTH=${LEFTCLICK_PREV_MONTH:-false}
 PREV_MONTH_TEXT="${PREV_MONTH_TEXT:-« previous month «}"
 NEXT_MONTH_TEXT="${NEXT_MONTH_TEXT:-» next month »}"
@@ -18,7 +18,7 @@ CREATE_EVENT_TEXT="${CREATE_EVENT_TEXT:-! add reminder !}"
 ROFI_CONFIG_FILE="${ROFI_CONFIG_FILE:-/dev/null}"
 BAR_POSITION="${BAR_POSITION:-bottom}"
 WEEK_START="${WEEK_START:-monday}"
-EVENTS_FILE="$HOME/.local/share/calendar_events"
+EVENTS_FILE="${EVENTS_FILE:-$HOME/.local/share/calendar_events}"
 
 # get current date and set today header
 get_current_date() {

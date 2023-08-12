@@ -9,9 +9,9 @@
 
 SCRIPT_DIR=$(dirname $(realpath $0))
 
-STEAM_ROOT=$HOME/.local/share/Steam
-APP_PATH=$HOME/.cache/rofi-game-launcher/applications
-GAME_LAUNCHER_CACHE=$HOME/.cache/rofi-game-launcher
+STEAM_ROOT="${STEAM_ROOT:-$HOME/.local/share/Steam}"
+GAME_APP_PATH="${GAME_APP_PATH:-$HOME/.cache/rofi-game-launcher/applications}"
+GAME_LAUNCHER_CACHE="${GAME_LAUNCHER_CACHE:-$HOME/.cache/rofi-game-launcher}"
 
 # Fetch all Steam library folders.
 steam-libraries() {
@@ -55,7 +55,7 @@ update-game-entries() {
         esac
     done
 
-    mkdir -p "$APP_PATH"
+    mkdir -p "$GAME_APP_PATH"
     for library in $(steam-libraries); do
         # All installed Steam games correspond with an appmanifest_<appid>.acf file
         if [ -z "$(shopt -s nullglob; echo "$library"/steamapps/appmanifest_*.acf)" ]; then
@@ -65,7 +65,7 @@ update-game-entries() {
 
         for manifest in "$library"/steamapps/appmanifest_*.acf; do
             appid=$(basename "$manifest" | tr -dc "[0-9]")
-            entry=$APP_PATH/${appid}.desktop
+            entry=$GAME_APP_PATH/${appid}.desktop
 
             # Don't update existing entries unless doing a full refresh
             if [ -z $update ] && [ -f "$entry" ]; then

@@ -6,8 +6,9 @@
 # dependencies: rofi, xdotool/ydotool
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 CHAR_FILE="$SCRIPT_PATH"/data/unicode.txt
-ROFI_CMD="rofi -dmenu -i -p Characters"
 
 # to use xclip instead of xdotool
 #xclip -selection clipboard
@@ -21,7 +22,7 @@ else
     exit 1
 fi
 
-selected=$(cat "$CHAR_FILE" | $ROFI_CMD)
+selected=$(cat "$CHAR_FILE" | $ROFI_CMD -p "Characters")
 
 if [ -n "$selected" ]; then
     echo "$selected" | awk '{print $1;}' | $xdotool

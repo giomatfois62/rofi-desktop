@@ -6,7 +6,7 @@
 #
 # dependencies: rofi, xbacklight
 
-ROFI_CMD="rofi -dmenu -i"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 ## Get Brightness
 CURRENT="$(xbacklight -get)"

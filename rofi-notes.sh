@@ -7,9 +7,10 @@
 # dependencies: rofi
 
 # default values
-AUTHOR=$(whoami)
-NOTES_FOLDER="$HOME/.notes"
-NOTES_EDITOR=xdg-open
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+NOTES_AUTHOR="${NOTES_AUTOR:-$(whoami)}"
+NOTES_FOLDER="${NOTES_FOLDER:-$HOME/.notes}"
+NOTES_EDITOR="${NOTES_EDITOR:-xdg-open}"
 
 if [[ ! -d "${NOTES_FOLDER}" ]]; then
     mkdir -p "$NOTES_FOLDER"
@@ -67,7 +68,7 @@ new_note() {
 ---
 title: $title
 date: $(date --rfc-3339=seconds)
-author: $AUTHOR
+author: $NOTES_AUTHOR
 ---
 
 # $title
@@ -92,7 +93,7 @@ main()
         first_menu="New\n${all_notes}"
     fi
 
-    local note=$(echo -e "$first_menu"  | rofi -dmenu -p "Note: ")
+    local note=$(echo -e "$first_menu"  | $ROFI_CMD -p "Note: ")
 
     case $note in
         "New")

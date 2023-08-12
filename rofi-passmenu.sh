@@ -4,7 +4,7 @@
 
 shopt -s nullglob globstar
 
-ROFI_CMD="rofi -dmenu -i -p Password"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 typeit=0
 if [[ $1 == "--type" ]]; then
@@ -26,7 +26,7 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | $ROFI_CMD "$@")
+password=$(printf '%s\n' "${password_files[@]}" | $ROFI_CMD -p "Passwords" "$@")
 
 [[ -n $password ]] || exit 1
 

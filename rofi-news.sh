@@ -5,10 +5,10 @@
 #
 # dependencies: rofi, curl
 
-ROFI_CMD="rofi -dmenu -i -p News"
-RSS_URL="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
-RSS_FILE="$HOME/.cache/news"
-EXPIRATION_TIME=600 # refresh news file every ten minutes
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+RSS_URL="${RSS_URL:-http://feeds.bbci.co.uk/news/rss.xml?edition=int}"
+RSS_FILE="${RSS_FILE:-$HOME/.cache/news}"
+RSS_EXPIRATION_TIME=${RSS_EXPIRATION_TIME:-600} # refresh news file every ten minutes
 
 mkdir -p "${RSS_FILE%news}"
 
@@ -21,7 +21,7 @@ if [ -f "$RSS_FILE" ]; then
 	delta=$((current_date - news_date))
 
 	# refresh news file if it's too old
-	if [ $delta -gt $EXPIRATION_TIME ]; then
+	if [ $delta -gt $RSS_EXPIRATION_TIME ]; then
 		curl --silent "$RSS_URL" -o "$RSS_FILE"
 	fi
 else
@@ -34,7 +34,7 @@ selected=$(grep -E '(title>|/title>)' "$RSS_FILE" |\
 		-e 's/<\/description>//' -e 's/\!\[CDATA\[//' -e 's/\]\]//' |\
 	tr -d '<>,' |\
 	awk '$1=$1' |\
-	$ROFI_CMD)
+	$ROFI_CMD -p "News")
 
 # get selected news and open corresponding link in browser
 if [ ${#selected} -gt 0 ]; then

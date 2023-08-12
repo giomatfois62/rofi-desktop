@@ -6,7 +6,8 @@
 # dependencies: rofi, inxi, qt5ct, lxappearance
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
-ROFI_CMD="rofi -dmenu -i -matching fuzzy"
+
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
  
 declare -A commands=(

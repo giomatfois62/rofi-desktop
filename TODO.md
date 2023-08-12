@@ -1,0 +1,19 @@
+- Enhance Search (search tags metadata, add tags to files, remove files, preview files)
+- Replace command outputs tests with "-n"
+- Add option to browse files in grid view with big thumbnails
+- Use xdg-mime default to set default applications
+- Debug rofi-autostart script and make it work reliably
+- Add a menu entry to open a text editor quickly
+- Make some variables configurable from file
+- Add default rofi config and themes
+- Make thumbnails grid size configurable
+- Streamline ROFI_CMD variables usage
+- Implement or find global menu dbus service
+- Add more news providers and implement a menu to choose provider
+- Implement or facilitate menus translation
+- Add icons to main menus with fontawesome
+- Test ffmpeg menu for videos, try output to webm
+- Document scripts working only in x11 and try to support Wayland where possible
+- Integrate a chatgpt or other language model dialogs (bashgpt, shell_gpt)
+- Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
+- Integrate rofi-ytm for youtube music with search suggestions (NO multiple script files)

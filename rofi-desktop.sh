@@ -7,9 +7,10 @@
 # optional: rofi-calc (for better calculator), curl (for weather), greenclip (for clipboard), rofication (for notifications), htop (task manager)
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
-ROFI_CMD="rofi -dmenu -i -matching fuzzy"
-SHOW_ICONS="-show-icons"
-TASK_MANAGER="xterm -e htop"
+
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+SHOW_ICONS="${SHOW_ICONS:--show-icons}"
+TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -101,7 +102,7 @@ run_cmd() {
 }
 
 browse() {
-    # TODO: intercept entry chosen to exit
+    # TODO: intercept entry chosen to exit (fixed in git)
     rofi $SHOW_ICONS -show filebrowser && exit
 }
 
@@ -220,7 +221,7 @@ notifications() {
     if [ ${daemon_running} -gt 1 ]; then
         "$SCRIPT_PATH"/rofication-gui.py
     else
-        rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable notifications menu"
+        rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
     fi
 }
 

@@ -28,17 +28,18 @@
 # - jq
 # - pulseaudo/pipewire-pulse
 
-DMENU="rofi -dmenu -i"
-VIDEO="$HOME/Videos/record"
-AUDIO="$HOME/Music/record"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+VIDEO_OUTPUT="${VIDEO_OUTPUT:-$HOME/Videos/record}"
+AUDIO_OUTPUT="${AUDIO_OUTPUT:-$HOME/Music/record}"
+
 recordid="/tmp/recordid"
 
 function getInputAudio() {
-    pactl list | grep "Name" | grep "alsa" | awk '{print $2}' | $DMENU -p "Input Audio " -theme-str 'window {width: 30%;} listview {lines: 5;}'
+    pactl list | grep "Name" | grep "alsa" | awk '{print $2}' | $ROFI_CMD -p "Input Audio " -theme-str 'window {width: 30%;} listview {lines: 5;}'
 }
 
 function audioVideo() {
-    filename="$VIDEO/video-$(date '+%y%m%d-%H%M-%S').mp4"
+    filename="$VIDEO_OUTPUT/video-$(date '+%y%m%d-%H%M-%S').mp4"
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
     audio=$(getInputAudio)
 
@@ -54,7 +55,7 @@ function audioVideo() {
 }
 
 function video() {
-    filename="$VIDEO/video-$(date '+%y%m%d-%H%M-%S').mp4"
+    filename="$VIDEO_OUTPUT/video-$(date '+%y%m%d-%H%M-%S').mp4"
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 
     notify-send "Start Recording" "With:\nVideo On\nAudio Off"
@@ -66,7 +67,7 @@ function video() {
 }
 
 function audio() {
-    filename="$AUDIO/audio-$(date '+%y%m%d-%H%M-%S').mp3"
+    filename="$AUDIO_OUTPUT/audio-$(date '+%y%m%d-%H%M-%S').mp3"
     audio=$(getInputAudio)
 
     if [ -n "$audio" ]; then
@@ -97,7 +98,7 @@ function stream() {
 }
 
 function getStreamToken() {
-    $DMENU -p "Stream" -mesg "Insert $1 Token" -lines 0
+    $ROFI_CMD -p "Stream" -mesg "Insert $1 Token" -lines 0
 }
 
 function startStreaming() {
@@ -146,7 +147,7 @@ function stoprecord() {
 
 function endrecord() {
     OPTIONS='["Yes", "No"]'
-    select=$(echo $OPTIONS | jq -r ".[]" | $DMENU -p "Record" -mesg "Stop Recording" -theme-str 'window {width: 30%;} listview {lines: 2;}')
+    select=$(echo $OPTIONS | jq -r ".[]" | $ROFI_CMD -p "Record" -mesg "Stop Recording" -theme-str 'window {width: 30%;} listview {lines: 2;}')
     [ "$select" == "Yes" ] && stoprecord
 }
 
@@ -163,7 +164,7 @@ function startrecord() {
         ["Stream On Vimeo",    "streamOnVimeo"]
     ]
     '''
-    select=$(echo $OPTIONS | jq -r ".[][0]" | $DMENU -p "Record" -theme-str 'window {width: 30%;} listview {lines: 8;}')
+    select=$(echo $OPTIONS | jq -r ".[][0]" | $ROFI_CMD -p "Record" -theme-str 'window {width: 30%;} listview {lines: 8;}')
 
     if [ ${#select} -gt 0 ]; then
         eval $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$select\") | .[1]")
@@ -173,11 +174,11 @@ function startrecord() {
 }
 
 function createSaveFolder() {
-    if [ ! -d $VIDEO ]; then
-        mkdir -p $VIDEO
+    if [ ! -d $VIDEO_OUTPUT ]; then
+        mkdir -p $VIDEO_OUTPUT
     fi
-    if [ ! -d $AUDIO ]; then
-        mkdir -p $AUDIO
+    if [ ! -d $AUDIO_OUTPUT ]; then
+        mkdir -p $AUDIO_OUTPUT
     fi
 }
 
