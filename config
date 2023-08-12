@@ -13,10 +13,8 @@
 # task manager command
 #TASK_MANAGER="xterm -e htop"
 
-# output folder of video recording
+# output folders of video and audio recordings
 #VIDEO_OUTPUT="$HOME/Videos/record"
-
-# output folder of audio recording
 #AUDIO_OUTPUT="$HOME/Music/record"
 
 # flathub cache file and expiration time to refresh it
