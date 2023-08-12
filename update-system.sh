@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TERMINAL="xterm -e"
+TERMINAL="${TERMINAL:-xterm}"
 
 distro=$(grep "^NAME=" /etc/os-release | sed 's/NAME=//')
 update_cmd=""
@@ -29,4 +29,4 @@ else
     exit 1
 fi
 
-$TERMINAL "su -c '$update_cmd && $update_flatpak'; read -n1"
+$TERMINAL -e "su -c '$update_cmd && $update_flatpak'; read -n1"
