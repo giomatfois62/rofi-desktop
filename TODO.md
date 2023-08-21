@@ -6,7 +6,6 @@
 - Implement or facilitate menus translation
 - Add icons to main menus with fontawesome
 - Test ffmpeg menu for videos, try output to webm/mkv
-- Document scripts working only in x11 and try to support Wayland where possible
 
 - Make some variables configurable from file (DONE)
 - Make thumbnails grid size configurable (DONE)
@@ -18,6 +17,7 @@
 - Integrate a chatgpt or other language model dialog (DONE)
 - Replace command outputs tests with "-n" (DONE)
 - Use xdg-mime default to set default applications (DONE)
+- Document scripts working only in x11 and try to support Wayland where possible (DONE)
 
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO multiple script files)
