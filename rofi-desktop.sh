@@ -12,8 +12,8 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2 | $ROFI_CMD -p Info}"
-PROJECTS_DIRECTORY="~/Programs"
-PROJECTS_EDITOR="qtcreator"
+PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
+PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
 
 declare -A commands=(
     ["Applications"]=run_app

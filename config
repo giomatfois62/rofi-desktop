@@ -16,6 +16,10 @@
 # system info command
 #SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
 
+# code projects folder and preferred editor
+#PROJECTS_DIRECTORY="~/Programs"
+#PROJECTS_EDITOR="qtcreator"
+
 # output folders of video and audio recordings
 #VIDEO_FOLDER="$HOME/Videos/record"
 #AUDIO_FOLDER="$HOME/Music/record"
