@@ -38,6 +38,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 - Utilities
   - Calculator (rofi-calc.sh, optionally uses the libqalc based modi calc when available)
   - Calendar (rofi-calendar.sh)
+  - ChatGPT (rofi-gpt.sh)
   - Translate Text (rofi-translate.sh, uses translate-shell)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)

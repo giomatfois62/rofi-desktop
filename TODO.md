@@ -10,8 +10,6 @@
 - Add icons to main menus with fontawesome
 - Test ffmpeg menu for videos, try output to webm/mkv
 - Document scripts working only in x11 and try to support Wayland where possible
-- Integrate a chatgpt or other language model dialog (bashgpt, shell_gpt)
-- Add a random wallpaper choice
 
 - Make some variables configurable from file (DONE)
 - Make thumbnails grid size configurable (DONE)
@@ -20,6 +18,7 @@
 - Merge settings menu in main desktop menu and use flags to show (DONE)
 - Add default rofi config and themes (DONE)
 - Implement a projects module to manage code projects (DONE)
+- Integrate a chatgpt or other language model dialog (DONE)
 
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO multiple script files)
