@@ -36,6 +36,7 @@ declare -A commands=(
     ["Exit"]=session_menu
     ["System Settings"]=settings_menu
     ["Utilities"]=utilities_menu
+    ["ChatGPT"]=chat_gpt
     ["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
@@ -69,7 +70,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+utilities_entries="Calculator\nCalendar\nChatGPT\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
 
 show_menu() {
     local menu_entries="$1"
@@ -213,6 +214,10 @@ session_menu() {
 
 todo() {
     rofi -modi TODO:"$SCRIPT_PATH"/rofi-todo.sh -show TODO
+}
+
+chat_gpt() {
+    "$SCRIPT_PATH"/rofi-gpt.sh && exit
 }
 
 notes() {
