@@ -29,6 +29,10 @@ choice=$(\
         $ROFI_CMD -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
 )
 
+if [ -z "$choice" ]; then
+    exit 1;
+fi
+
 wallpaper="$WALLPAPERS_DIR/$choice"
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then

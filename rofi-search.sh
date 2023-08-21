@@ -128,7 +128,7 @@ search_all() {
 
     selected=$(eval "$(search_command "$HOME")" | $ROFI_CMD -p "All Files")
 
-	if [ ${#selected} -gt 0 ]; then
+	if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
         exit 0
     fi
@@ -145,7 +145,7 @@ search_recent() {
 
     selected=$(list_recent | $ROFI_CMD -p "Recent Files")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         open_file "$selected"
         exit 0
     fi
@@ -154,7 +154,7 @@ search_recent() {
 search_contents() {
 	# use a while loop to keep searching
 	while query=$(echo | $ROFI_CMD -p "String to Match"); do
-		if [ ${#query} -gt 0 ]; then
+		if [ -n "$query" ]; then
 			if command -v rg &> /dev/null; then
 		    	selected=$(rg -i -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
 			else
@@ -162,7 +162,7 @@ search_contents() {
 				selected=$(grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
 			fi
 		    
-			if [ ${#selected} -gt 0 ]; then
+			if [ -n "$selected"]; then
 				open_file "$selected"
 				exit 0
 			fi
@@ -176,7 +176,7 @@ search_books() {
 
     selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Books")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
         exit 0
     fi
@@ -192,7 +192,7 @@ search_documents() {
 
     selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Documents")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
         exit 0
     fi
@@ -203,7 +203,7 @@ search_downloads() {
 
     selected=$(eval "$(search_command "$HOME"/Downloads)" | $ROFI_CMD -p "Downloads")
 
-	if [ ${#selected} -gt 0 ]; then
+	if [ -n "$selected" ]; then
         open_file "$HOME/Downloads/$selected"
         exit 0
     fi
@@ -214,7 +214,7 @@ search_desktop() {
 
     selected=$(eval "$(search_command "$HOME"/Desktop)" | $ROFI_CMD -p "Desktop")
 
-	if [ ${#selected} -gt 0 ]; then
+	if [ -n "$selected" ]; then
         open_file "$HOME/Desktop/$selected"
         exit 0
     fi
@@ -226,7 +226,7 @@ search_music() {
 
     selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Music")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
         exit 0
     fi
@@ -247,7 +247,7 @@ search_pics() {
 
     selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" -p "Pictures")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
         exit 0
     fi
@@ -263,7 +263,7 @@ search_videos() {
 
     selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Videos")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
         exit 0
     fi

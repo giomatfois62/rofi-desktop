@@ -27,7 +27,7 @@ esac
 # detect rofi-blocks and integrate suggestions
 have_blocks=$(rofi -dump-config | grep blocks)
 
-if [ ${#have_blocks} -gt 0 ]; then
+if [ -n "$have_blocks" ]; then
     logfile="$HOME/.cache/suggestions.tmp"
     blockfile="$SCRIPT_PATH/rofi-web-suggestions.sh"
 
@@ -40,7 +40,7 @@ if [ ${#have_blocks} -gt 0 ]; then
 
     rm "$logfile"
 
-    if [ ${#query} -gt 0 ]; then
+    if [ -n "$query" ]; then
 	    # extract wikipedia page id from string
 	    if [ "$API" = "wikipedia" ]; then
 		    word_count=$(echo "$query" | wc -w)
@@ -60,7 +60,7 @@ if [ ${#have_blocks} -gt 0 ]; then
 else
     query=$((echo) | $ROFI_CMD -p "$API");
 
-    if [ ${#query} -gt 0 ]; then
+    if [ -n "$query" ]; then
 	    url=$api_url$query
 	    xdg-open "$url"
 

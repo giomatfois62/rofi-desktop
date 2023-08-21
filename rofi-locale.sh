@@ -10,7 +10,7 @@ CURRENT_LOCALE=$(locale | head -n1)
 
 selected_locale=$(locale -a | $ROFI_CMD -no-custom -p "Language")
 
-if [ ${#selected_locale} -gt 0 ]; then
+if [ -n "$selected_locale" ]; then
     distro=$(grep "^NAME=" /etc/os-release | sed 's/NAME=//')
 
     if [ $(echo $distro | grep -i "slackware") ]; then

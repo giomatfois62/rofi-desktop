@@ -30,7 +30,7 @@ fi
 selected=$(jq '.[] | .name + " - " + .summary' "$FLATHUB_CACHE" | tr -d '"' | $ROFI_CMD -p "Flatpak")
 
 # TODO: check flatpak is installed
-if [ ${#selected} -gt 0 ]; then
+if [ -n "$selected" ]; then
     app_name=$(echo "$selected" | awk '{print $1;}')
     app_id=$(jq ".[] | select(.name==\"$app_name\") | .flatpakAppId" "$FLATHUB_CACHE" | tr -d '"')
 

@@ -14,6 +14,6 @@ selected=$(cat $LAYOUT_FILE |\
     awk '{print $1;}'
 )
 
-if [ ${#selected} -gt 0 ]; then
+if [ -n "$selected" ]; then
     setxkbmap "$selected"
 fi

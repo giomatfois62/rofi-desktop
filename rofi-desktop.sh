@@ -108,7 +108,7 @@ run_app() {
     entry_chosen=$(grep "Parsed command:" "$logfile")
     rm "$logfile"
 
-    if [  ${#entry_chosen} -gt 0 ]; then
+    if [ -n "$entry_chosen" ]; then
         echo "Entry chosen"
         exit 0;
     fi
@@ -122,7 +122,7 @@ run_cmd() {
     entry_chosen=$(grep "Parsed command:" "$logfile")
     rm "$logfile"
 
-    if [  ${#entry_chosen} -gt 0 ]; then
+    if [ -n "$entry_chosen" ]; then
         echo "Entry chosen"
         exit 0;
     fi
@@ -185,7 +185,7 @@ settings() {
 calculator() {
     have_calc=$(rofi -dump-config | grep calc)
 
-    if [ ${#have_calc} -gt 0 ]; then
+    if [ -n "$have_calc" ]; then
         rofi -show calc
     else
         rofi -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
@@ -265,7 +265,7 @@ notifications() {
 task_mgr() {
     have_blocks=$(rofi -dump-config | grep blocks)
 
-    if [ ${#have_blocks} -gt 0 ]; then
+    if [ -n "$have_blocks" ]; then
         "$SCRIPT_PATH"/rofi-top.sh
     else
         eval "$TASK_MANAGER"
@@ -281,7 +281,7 @@ clipboard() {
         if [ ${daemon_running} -gt 1 ]; then
             rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
         else
-                rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
+            rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
         fi
     else
         rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
@@ -326,7 +326,7 @@ volume() {
 menu_config() {
     selected=$(find "$SCRIPT_PATH" -iname '*.sh' -maxdepth 1 -type f | sort | $ROFI_CMD -p "Open File")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         xdg-open "$selected" && exit 0
     fi
 }

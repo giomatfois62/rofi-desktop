@@ -37,7 +37,7 @@ selected=$(grep -E '(title>|/title>)' "$RSS_FILE" |\
 	$ROFI_CMD -p "News")
 
 # get selected news and open corresponding link in browser
-if [ ${#selected} -gt 0 ]; then
+if [ -n "$selected" ]; then
 	link=$(awk "/$selected/{getline;getline; print}" "$RSS_FILE")
 
 	echo "$link" | sed -e 's/<link>//' -e 's/<\/link>//' | xargs -I {} xdg-open {}

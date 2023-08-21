@@ -35,7 +35,7 @@ set_application() {
     line_exists=$(grep -F "$1" "$MIME_FILE")
 
     # delete previous mimetype association
-    if [ ${#line_exists} -gt 0 ]; then
+    if [ -n "$line_exists" ]; then
         tmp_file="$HOME/.cache/mimeapps"
         escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
 
@@ -50,7 +50,7 @@ set_application() {
 set_browser() {
     selected=$(seach_applications "WebBrowser" | $ROFI_CMD -p "Web Browser")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "application/x-extension-htm" "$selected";
         set_application "application/x-extension-html" "$selected";
         set_application "application/x-extension-shtml" "$selected";
@@ -64,7 +64,7 @@ set_browser() {
 set_fm() {
     selected=$(seach_applications 'FileManager' | $ROFI_CMD -p "File Manager")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "inode/directory" "$selected";
     fi
 }
@@ -72,7 +72,7 @@ set_fm() {
 set_txt() {
     selected=$(seach_applications 'TextEditor;' | $ROFI_CMD -p "Text Editor")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "text/plain" "$selected";
         set_application "text/markdown" "$selected";
     fi
@@ -81,7 +81,7 @@ set_txt() {
 set_pdf() {
     selected=$(seach_applications 'PDF' | $ROFI_CMD -p "PDF Reader")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "application/pdf" "$selected";
     fi
 }
@@ -89,7 +89,7 @@ set_pdf() {
 set_image_viewer() {
     selected=$(seach_applications 'Image Viewer' | $ROFI_CMD -p "Image Viewer")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "image/bmp" "$selected";
         set_application "image/gif" "$selected";
         set_application "image/png" "$selected";
@@ -102,7 +102,7 @@ set_image_viewer() {
 set_audio_player() {
     selected=$(seach_applications 'Player;' | $ROFI_CMD -p "Audio Player")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "audio/aac" "$selected";
         set_application "audio/mp4" "$selected";
         set_application "audio/mpeg" "$selected";
@@ -117,7 +117,7 @@ set_audio_player() {
 set_video_player() {
     selected=$(seach_applications 'Player;' | $ROFI_CMD -p "Video Player")
 
-    if [ ${#selected} -gt 0 ]; then
+    if [ -n "$selected" ]; then
         set_application "video/webm" "$selected";
         set_application "video/x-matroska" "$selected";
         set_application "video/mp4" "$selected";

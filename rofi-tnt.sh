@@ -27,7 +27,7 @@ selected=$(\
     awk '{print "magnet:?xt=urn:btih:"$1"&dn=&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopentor.org%3A2710&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Ftracker.blackunicorn.xyz%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969"}'\
 )
 
-if [ ${#selected} -gt 0 ]; then
+if [ -n "$selected" ]; then
     xdg-open "$selected"
     exit 0
 fi
