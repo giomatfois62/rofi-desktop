@@ -27,6 +27,7 @@
 # - xorg-xdpyinfo
 # - jq
 # - pulseaudo/pipewire-pulse
+# - x264
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 VIDEO_FOLDER="${VIDEO_FOLDER:-$HOME/Videos/record}"
