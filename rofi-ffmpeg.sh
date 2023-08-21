@@ -29,8 +29,8 @@
 # - pulseaudo/pipewire-pulse
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-VIDEO_OUTPUT="${VIDEO_OUTPUT:-$HOME/Videos/record}"
-AUDIO_OUTPUT="${AUDIO_OUTPUT:-$HOME/Music/record}"
+VIDEO_FOLDER="${VIDEO_FOLDER:-$HOME/Videos/record}"
+AUDIO_FOLDER="${AUDIO_FOLDER:-$HOME/Music/record}"
 
 recordid="/tmp/recordid"
 
@@ -39,7 +39,7 @@ function getInputAudio() {
 }
 
 function audioVideo() {
-    filename="$VIDEO_OUTPUT/video-$(date '+%y%m%d-%H%M-%S').mp4"
+    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S').mp4"
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
     audio=$(getInputAudio)
 
@@ -55,7 +55,7 @@ function audioVideo() {
 }
 
 function video() {
-    filename="$VIDEO_OUTPUT/video-$(date '+%y%m%d-%H%M-%S').mp4"
+    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S').mp4"
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 
     notify-send "Start Recording" "With:\nVideo On\nAudio Off"
@@ -67,7 +67,7 @@ function video() {
 }
 
 function audio() {
-    filename="$AUDIO_OUTPUT/audio-$(date '+%y%m%d-%H%M-%S').mp3"
+    filename="$AUDIO_FOLDER/audio-$(date '+%y%m%d-%H%M-%S').mp3"
     audio=$(getInputAudio)
 
     if [ -n "$audio" ]; then
@@ -174,11 +174,11 @@ function startrecord() {
 }
 
 function createSaveFolder() {
-    if [ ! -d $VIDEO_OUTPUT ]; then
-        mkdir -p $VIDEO_OUTPUT
+    if [ ! -d $VIDEO_FOLDER ]; then
+        mkdir -p $VIDEO_FOLDER
     fi
-    if [ ! -d $AUDIO_OUTPUT ]; then
-        mkdir -p $AUDIO_OUTPUT
+    if [ ! -d $AUDIO_FOLDER ]; then
+        mkdir -p $AUDIO_FOLDER
     fi
 }
 
