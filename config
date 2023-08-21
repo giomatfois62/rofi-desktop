@@ -13,9 +13,12 @@
 # task manager command
 #TASK_MANAGER="xterm -e htop"
 
+# system info command
+#SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
+
 # output folders of video and audio recordings
-#VIDEO_OUTPUT="$HOME/Videos/record"
-#AUDIO_OUTPUT="$HOME/Music/record"
+#VIDEO_FOLDER="$HOME/Videos/record"
+#AUDIO_FOLDER="$HOME/Music/record"
 
 # flathub cache file and expiration time to refresh it
 #FLATHUB_CACHE="$HOME/.cache/flathub.json"
@@ -44,8 +47,10 @@
 # screenshots filename template (used by scrot)
 #SCREENSHOT_NAME="Screenshot_%Y-%m-%d-%S-%H%M%S.png"
 
-# file search and search history options
+# search for hidden files
 #SHOW_HIDDEN_FILES=false
+
+# search history file path and max size
 #HISTORY_FILE="$HOME/.cache/rofi-search-history"
 #MAX_HISTORY_ENTRIES=100
 
@@ -66,7 +71,7 @@
 # timer audio effects and notification timeout
 #TIMER_START_AUDIO="path/to/start_audio"
 #TIMER_STOP_AUDIO="path/to/stop-audio"
-#TIMER_NOTIFICATION_TIMEOUT=2000
+#TIMER_NOTIFICATION_TIMEOUT=5000
 
 # path to file containing TODOs
 #TODO_FILE="$HOME/.rofi_todos"
