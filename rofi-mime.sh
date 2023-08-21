@@ -32,19 +32,22 @@ seach_applications() {
 }
 
 set_application() {
-    line_exists=$(grep -F "$1" "$MIME_FILE")
+    xdg-mime default $2".desktop" $1
+
+    # hacky!!! modify mimeapps file manually
+    #line_exists=$(grep -F "$1" "$MIME_FILE")
 
     # delete previous mimetype association
-    if [ -n "$line_exists" ]; then
-        tmp_file="$HOME/.cache/mimeapps"
-        escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
+    #if [ -n "$line_exists" ]; then
+    #    tmp_file="$HOME/.cache/mimeapps"
+    #    escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
 
-        sed "/^$escaped_mimetype=/d" "$MIME_FILE" > "$tmp_file"
-        mv "$tmp_file" "$MIME_FILE"
-    fi
+    #    sed "/^$escaped_mimetype=/d" "$MIME_FILE" > "$tmp_file"
+    #    mv "$tmp_file" "$MIME_FILE"
+    #fi
 
     # add new mimetype association
-    echo "$1=$2"".desktop" >> "$MIME_FILE"
+    #echo "$1=$2"".desktop" >> "$MIME_FILE"
 }
 
 set_browser() {
