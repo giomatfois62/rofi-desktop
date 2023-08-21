@@ -2,7 +2,7 @@
 
 # Original Author : Aditya Shakya (adi1090x)
 #
-# this script manages backlight brightness control for monitors that supports it, using xbacklight
+# this script manages backlight brightness control for monitors that supports it, using xbacklight (X11)
 #
 # dependencies: rofi, xbacklight
 
