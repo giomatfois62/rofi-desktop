@@ -3,7 +3,6 @@
 - Add option to browse files in grid view with big thumbnails
 - Use xdg-mime default to set default applications
 - Debug rofi-autostart script and make it work reliably
-- Add a menu entry to open a text editor quickly
 - Implement or find global menu dbus service
 - Add more news providers and implement a menu to choose provider
 - Implement or facilitate menus translation

@@ -89,6 +89,8 @@ Optional dependencies for some of the tools are:
 - greenclip
 - translate-shell
 - jsonpickle
+- zenity
+- shell_gpt
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
@@ -106,4 +108,5 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [ntcarlson](https://github.com/ntcarlson/dotfiles/tree/delta/config/rofi)
 - [zx2c4](https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu)
 - [Bavuett](https://github.com/Bavuett/rofi-dev-launcher)
+- [haxguru](https://www.reddit.com/r/unixporn/comments/10w7p5z/rofi_chatgpt_rofi/)
 
