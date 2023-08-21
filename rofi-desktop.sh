@@ -12,6 +12,8 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2 | $ROFI_CMD -p Info}"
+PROJECTS_DIRECTORY="~/Programs"
+PROJECTS_EDITOR="qtcreator"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -26,6 +28,7 @@ declare -A commands=(
     ["Radio Stations"]=radio
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
+    ["Code Projects"]=code_projects
     ["To-Do List"]=todo
     ["Notepad"]=notes
     ["Latest News"]=news
@@ -62,7 +65,7 @@ declare -A commands=(
     ["Updates"]=update_sys
 )
 
-main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
+main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nCode Projects\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nUpdates\nSystem Info"
 
@@ -140,6 +143,12 @@ steam_games() {
 
 search() {
     "$SCRIPT_PATH"/rofi-search.sh && exit
+}
+
+code_projects() {
+    export PROJECTS_DIRECTORY
+    export PROJECTS_EDITOR
+    rofi -show Projects -modi Projects:"$SCRIPT_PATH"/rofi-dev-launcher.py && exit
 }
 
 web_search() {

@@ -30,6 +30,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
 - Steam Games (rofi-steam.sh)
+- Code Projects (rofi-dev-launcher.py, browse code projects directory and open projects with preferred editor)
 - Latest News (rofi-news.sh, rss news from bbc international)
 - Weather Forecast (curl wttr.in piped to rofi)
 - Watch TV (rofi-tv.sh, stream TV channels with mpv)
@@ -103,4 +104,5 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [adi1090x](https://gitee.com/zhenruyan/rofi/blob/master/scripts/menu_backlight.sh)
 - [ntcarlson](https://github.com/ntcarlson/dotfiles/tree/delta/config/rofi)
 - [zx2c4](https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu)
+- [Bavuett](https://github.com/Bavuett/rofi-dev-launcher)
 
