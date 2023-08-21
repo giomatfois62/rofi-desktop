@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 #
-# this script contains the main rofi-desktop menu and the utilities menu
-# add custom entries in the "commands" array and in the "utils" and "entries" variables
+# this script contains the main rofi-desktop menu, the system settings menu and the utilities menu
+# add custom entries in the "commands" array and in the "utils", "main_entries" and "settings_entries" variables
 #
-# dependencies: rofi
-# optional: rofi-calc (for better calculator), curl (for weather), greenclip (for clipboard), rofication (for notifications), htop (task manager)
+# dependencies: rofi, inxi, qt5ct, lxappearance
+# optional: rofi-calc, curl, greenclip, htop, at
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
+SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2 | $ROFI_CMD -p Info}"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -29,8 +30,9 @@ declare -A commands=(
     ["Notepad"]=notes
     ["Latest News"]=news
     ["Weather Forecast"]=weather
-    ["System Settings"]=settings
-    ["Utilities"]=utilities
+    ["Exit"]=session_menu
+    ["System Settings"]=settings_menu
+    ["Utilities"]=utilities_menu
     ["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
@@ -40,17 +42,41 @@ declare -A commands=(
     ["Task Manager"]=task_mgr
     ["Notifications"]=notifications
     ["Characters"]=char_picker
-    ["Exit"]=session_menu
+    ["Appearance"]=appearance_menu
+    ["Network"]=network
+    ["Bluetooth"]=bluetooth
+    ["Display"]=display
+    ["Volume"]=volume
+    ["Brightness"]=brightness
+    ["Keyboard Layout"]=kb_layout
+    ["Default Applications"]=default_apps
+    ["Autostart Applications"]=autostart_apps
+    ["Menu Configuration"]=menu_config
+    ["System Info"]=sys_info
+    ["Qt5 Appearance"]=qt5_app
+    ["GTK Appearance"]=gtk_app
+    ["Rofi Style"]=rofi_app
+    ["Set Wallpaper"]=wallpaper
+    ["Rofi Shortcuts"]=shortcuts
+    ["Language"]=set_lang
+    ["Updates"]=update_sys
 )
 
-utilities() {
-    utils="Calculator\nCalendar\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
+
+settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nUpdates\nSystem Info"
+
+utilities_entries="Calculator\nCalendar\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+
+show_menu() {
+    local menu_entries="$1"
+    local menu_prompt="$2"
 
     # remember last entry chosen
     local selected_row=0
     local selected_text
 
-    while selected=$(echo -en "$utils" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "Utilities"); do
+    while selected=$(echo -en "$menu_entries" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "$menu_prompt"); do
         selected_row=$(echo "$selected" | awk '{print $1;}')
         selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
@@ -58,19 +84,16 @@ utilities() {
     done
 }
 
+utilities_menu() {
+    show_menu "$utilities_entries" "Utilities"
+}
+
 main_menu() {
-    entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
+    show_menu "$main_entries" "Main Menu"
+}
 
-    # remember last entry chosen
-    local choice_row=0
-    local choice_text
-
-    while choice=$(echo -en "$entries" | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p "Menu"); do
-        choice_row=$(echo "$choice" | awk '{print $1;}')
-        choice_text=$(echo "$choice" | cut -d' ' -f2-)
-
-        ${commands[$choice_text]};
-    done
+settings_menu() {
+    show_menu "$settings_entries" "Settings"
 }
 
 run_app() {
@@ -251,6 +274,120 @@ clipboard() {
     fi
 }
 
-# run
-main_menu
+appearance_menu() {
+    appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
+    # remember last entry chosen
+    local selected_row=0
+    local selected_text
+
+    while selected=$(echo -en "$appearance_entries" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "Appearance"); do
+        selected_row=$(echo "$selected" | awk '{print $1;}')
+        selected_text=$(echo "$selected" | cut -d' ' -f2-)
+
+        ${commands[$selected_text]};
+    done
+}
+
+shortcuts() {
+    rofi -show keys
+}
+
+network() {
+    "$SCRIPT_PATH"/networkmanager_dmenu
+}
+
+bluetooth() {
+    "$SCRIPT_PATH"/rofi-bluetooth.sh
+}
+
+display() {
+    "$SCRIPT_PATH"/rofi-monitor-layout.sh
+}
+
+volume() {
+    "$SCRIPT_PATH"/rofi-volume.sh
+}
+
+menu_config() {
+    selected=$(find "$SCRIPT_PATH" -iname '*.sh' -maxdepth 1 -type f | sort | $ROFI_CMD -p "Open File")
+
+    if [ ${#selected} -gt 0 ]; then
+        xdg-open "$selected" && exit 0
+    fi
+}
+
+set_lang() {
+    "$SCRIPT_PATH"/rofi-locale.sh
+}
+
+sys_info() {
+    eval "$SYSTEM_INFO"
+}
+
+default_apps() {
+    "$SCRIPT_PATH"/rofi-mime.sh
+}
+
+autostart_apps() {
+	"$SCRIPT_PATH"/rofi-autostart.sh && exit
+}
+
+brightness() {
+    "$SCRIPT_PATH"/rofi-brightness.sh
+}
+
+kb_layout() {
+    "$SCRIPT_PATH"/rofi-keyboard-layout.sh
+}
+
+qt5_app() {
+    qt5ct;
+}
+
+gtk_app() {
+    lxappearance;
+}
+
+rofi_app() {
+    rofi-theme-selector;
+}
+
+wallpaper() {
+    "$SCRIPT_PATH"/rofi-wallpaper.sh;
+}
+
+update_sys() {
+    "$SCRIPT_PATH"/update-system.sh;
+}
+
+print_help() {
+    echo "Available options: [-d|h|s|u]"
+    echo
+    echo "d     Show the main desktop menu."
+    echo "h     Print this Help."
+    echo "s     Show the system settings menu."
+    echo "u     Show the utilities menu."
+    echo
+}
+
+# run
+while getopts ":hdsu" option; do
+    case $option in
+        h) # display help
+            print_help;;
+        d) # display main menu
+            main_menu;;
+        s) # display settings menu
+            settings_menu;;
+        u) # display utilities menu
+            utilities_menu;;
+        \?) # display main menu
+            echo "Invalid option:" $1
+            print_help;;
+    esac
+    exit
+done
+
+# show main menu if no args provided
+main_menu
