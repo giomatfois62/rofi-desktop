@@ -36,23 +36,23 @@ while chosen="$(echo -e "$options" | $ROFI_CMD -show -p "${status^}" -selected-r
     selected_row=$(echo "$chosen" | awk '{print $1;}')
     selected_text=$(echo "$chosen" | cut -d' ' -f2-)
 
-    case $selected_text in
-        $toggle)
+    case "$selected_text" in
+        "$toggle")
             playerctl play-pause
             ;;
-        $next)
+        "$next")
             playerctl next
             ;;
-        $prev)
+        "$prev")
             playerctl previous
             ;;
-        $seekminus)
+        "$seekminus")
             playerctl position 15-
             ;;
-        $seekplus)
+        "$seekplus")
             playerctl position 15+
             ;;
-        $switch)
+        "$switch")
             playerctld shift
             ;;
     esac
