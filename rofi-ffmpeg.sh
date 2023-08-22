@@ -32,6 +32,14 @@
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 VIDEO_FOLDER="${VIDEO_FOLDER:-$HOME/Videos/record}"
 AUDIO_FOLDER="${AUDIO_FOLDER:-$HOME/Music/record}"
+VIDEO_CODEC="${VIDEO_CODEC:-libvpx}" # h264
+
+VIDEO_EXTENSION=".webm"
+
+if [ "$VIDEO_CODEC" = "h264" ]; then
+    VIDEO_EXTENSION=".mp4"
+fi
+
 
 recordid="/tmp/recordid"
 
@@ -40,7 +48,7 @@ function getInputAudio() {
 }
 
 function audioVideo() {
-    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S').webm"
+    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S')"$VIDEO_EXTENSION
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
     audio=$(getInputAudio)
 
@@ -48,21 +56,21 @@ function audioVideo() {
         notify-send "Start Recording" "With:\nVideo On\nAudio On"
         ffmpeg -y -f x11grab -framerate 30 -s $dimensions \
             -i :0.0 -f pulse -i $audio -ac 1 \
-            -c:v libvpx -pix_fmt yuv420p -preset veryfast -q:v 1 \
-            -c:a aac $filename &
+            -c:v $VIDEO_CODEC -pix_fmt yuv420p -preset veryfast -q:v 1 \
+            -c:a libvorbis $filename &
 
         echo $! >$recordid
     fi
 }
 
 function video() {
-    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S').webm"
+    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S')"$VIDEO_EXTENSION
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 
     notify-send "Start Recording" "With:\nVideo On\nAudio Off"
     ffmpeg -y -f x11grab -framerate 30 -s $dimensions \
         -i :0.0 -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 \
-        -c:v libvpx -pix_fmt yuv420p -preset veryfast -q:v 1 $filename &
+        -c:v $VIDEO_CODEC -pix_fmt yuv420p -preset veryfast -q:v 1 $filename &
 
     echo $! >$recordid
 }
@@ -89,7 +97,7 @@ function stream() {
         notify-send "Start Streaming On $platform" "With:\nVideo On\nAudio On"
         ffmpeg -y -f x11grab -framerate 23 -s $dimensions \
             -i :0.0 -f pulse -i $audio -ac 1 \
-            -c:v libx264 -pix_fmt yuv420p -preset veryfast -q:v 1 \
+            -c:v $VIDEO_CODEC -pix_fmt yuv420p -preset veryfast -q:v 1 \
             -b:v 500k -b:a 128k \
             -vf scale=854x480 \
             -f flv $output &
