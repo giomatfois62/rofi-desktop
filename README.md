@@ -4,7 +4,7 @@ rofi-desktop is a collection of scripts launching interactive [rofi](https://git
 
 The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive system settings menu and a menu of simple utilities.
 
-The *config* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
+The *config.env* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
 
 All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify. Currently implemented functionalities are:
 - Applications Menu (drun modi)
