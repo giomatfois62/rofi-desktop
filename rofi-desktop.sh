@@ -30,6 +30,7 @@ declare -A commands=(
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
     ["To-Do List"]=todo
+    ["Color Picker"]=color_picker
     ["Notepad"]=notes
     ["Latest News"]=news
     ["Weather Forecast"]=weather
@@ -56,6 +57,7 @@ declare -A commands=(
     ["Default Applications"]=default_apps
     ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
+    ["Systemd Configuration"]=systemd_config
     ["System Info"]=sys_info
     ["Qt5 Appearance"]=qt5_app
     ["GTK Appearance"]=gtk_app
@@ -68,9 +70,11 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nCode Projects\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nChatGPT\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+utilities_entries="Calculator\nCalendar\nColor Picker\nChatGPT\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+
+appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 show_menu() {
     local menu_entries="$1"
@@ -152,6 +156,10 @@ code_projects() {
     rofi -show Projects -modi Projects:"$SCRIPT_PATH"/rofi-dev-launcher.py && exit
 }
 
+color_picker() {
+    "$SCRIPT_PATH"/rofi-color-picker.sh && exit
+}
+
 web_search() {
     apis="google\nwikipedia\nyoutube\nreddit\narchwiki\nflathub"
 
@@ -210,6 +218,10 @@ record() {
 
 session_menu() {
     "$SCRIPT_PATH"/rofi-session.sh && exit
+}
+
+systemd_config() {
+    "$SCRIPT_PATH"/rofi-systemd.sh && exit
 }
 
 todo() {
@@ -289,8 +301,6 @@ clipboard() {
 }
 
 appearance_menu() {
-    appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
-
     # remember last entry chosen
     local selected_row=0
     local selected_text
