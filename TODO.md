@@ -1,12 +1,23 @@
-- Enhance Search (search tags metadata, add tags to files, remove files, preview files)
-- Debug rofi-autostart script and make it work reliably
+# TODOs
 - Implement or find global menu dbus service
-- Add more news providers and implement a menu to choose provider
 - Implement or facilitate menus translation
-- Add icons to main menus with fontawesome or bundled resources
-- Integrate rofi-polkit-agent (needs cmd-polkit project)
-- Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
 
+# ADDITIONS
+- Integrate rofi-polkit-agent (needs cmd-polkit project)
+
+# ENHANCEMENTS
+- Enhance Search (search tags metadata, add tags to files, remove files, preview files)
+- Add more news providers and implement a menu to choose provider
+- Add icons to main menus with fontawesome or bundled resources
+- Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
+- Consider rofi-checkbox as alternative to rofi-todo.sh
+
+# BUFIX
+- Debug rofi-autostart script and make it work reliably
+- Fix urbandictionary scraping
+- Fix player selection in rofi-playerctl
+
+# COMPLETED
 - Make some variables configurable from file (DONE)
 - Make thumbnails grid size configurable (DONE)
 - Streamline ROFI_CMD variables usage (DONE)
@@ -23,7 +34,9 @@
 - Test ffmpeg menu for videos output to webm (DONE)
 - Make ffmpeg video codec configurable (DONE)
 - Implement a dictionary module (DONE)
+- Integrate rofi-playerctl (DONE)
 
+# DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO needs api key)
 - Add option to browse files in grid view with big thumbnails (NO does not display mimetype icons and thumbs)

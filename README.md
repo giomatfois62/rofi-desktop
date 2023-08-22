@@ -41,6 +41,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Color Picker (rofi-color-picker.sh)
   - ChatGPT (rofi-gpt.sh)
   - Dictionary (rofi-dict.sh)
+  - Media Player (rofi-playerctl.sh)
   - Translate Text (rofi-translate.sh, uses translate-shell)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
@@ -98,6 +99,7 @@ Optional dependencies for some of the tools are:
 - sdcv
 - xclip
 - xdotool
+- playerctl
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
@@ -118,4 +120,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [haxguru](https://www.reddit.com/r/unixporn/comments/10w7p5z/rofi_chatgpt_rofi/)
 - [windwp](https://github.com/windwp/rofi-color-picker)
 - [colonelpanic8](https://github.com/colonelpanic8/rofi-systemd)
-
+- [mrHeavenli](https://github.com/mrHeavenli/rofi-playerctl)
