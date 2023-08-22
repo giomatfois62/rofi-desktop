@@ -38,6 +38,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 - Utilities
   - Calculator (rofi-calc.sh, optionally uses the libqalc based modi calc when available)
   - Calendar (rofi-calendar.sh)
+  - Color Picker (rofi-color-picker.sh)
   - ChatGPT (rofi-gpt.sh)
   - Translate Text (rofi-translate.sh, uses translate-shell)
   - Notepad (rofi-notes.sh)
@@ -64,6 +65,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Menu Configuration (edit all rofi-desktop scripts)
   - Language (rofi-locale.sh, set LC_ALL for user session)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
+  - Systemd Configuration (rofi-systemd.sh)
   - Update System (update-system.sh)
   - System Info (inxi piped to rofi)
 - Session Menu (uses loginctl and optional custom lock command)
@@ -91,6 +93,7 @@ Optional dependencies for some of the tools are:
 - jsonpickle
 - zenity
 - shell_gpt
+- FontAwesome
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
@@ -109,4 +112,6 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [zx2c4](https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu)
 - [Bavuett](https://github.com/Bavuett/rofi-dev-launcher)
 - [haxguru](https://www.reddit.com/r/unixporn/comments/10w7p5z/rofi_chatgpt_rofi/)
+- [windwp](https://github.com/windwp/rofi-color-picker)
+- [colonelpanic8](https://github.com/colonelpanic8/rofi-systemd)
 
