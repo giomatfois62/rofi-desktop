@@ -1,5 +1,4 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
-- Add option to browse files in grid view with big thumbnails
 - Debug rofi-autostart script and make it work reliably
 - Implement or find global menu dbus service
 - Add more news providers and implement a menu to choose provider
@@ -7,7 +6,6 @@
 - Add icons to main menus with fontawesome or bundled resources
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
-- Integrate rofi-ytm for youtube music with search suggestions (!multiple script files!)
 
 - Make some variables configurable from file (DONE)
 - Make thumbnails grid size configurable (DONE)
@@ -26,3 +24,5 @@
 - Make ffmpeg video codec configurable (DONE)
 
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
+- Integrate rofi-ytm for youtube music with search suggestions (NO needs api key)
+- Add option to browse files in grid view with big thumbnails (NO does not display mimetype icons and thumbs)
