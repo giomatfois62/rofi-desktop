@@ -4,8 +4,9 @@
 - Implement or find global menu dbus service
 - Add more news providers and implement a menu to choose provider
 - Implement or facilitate menus translation
-- Add icons to main menus with fontawesome
-- Test ffmpeg menu for videos, try output to webm/mkv
+- Add icons to main menus with fontawesome or bundled resources
+- Integrate rofi-polkit-agent
+- Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
 
 - Make some variables configurable from file (DONE)
 - Make thumbnails grid size configurable (DONE)
@@ -18,6 +19,9 @@
 - Replace command outputs tests with "-n" (DONE)
 - Use xdg-mime default to set default applications (DONE)
 - Document scripts working only in x11 and try to support Wayland where possible (DONE)
+- Integrate rofi-color-picker (DONE)
+- Integrate rofi-systemd (DONE)
+- Test ffmpeg menu for videos output to webm (DONE)
 
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO multiple script files)
