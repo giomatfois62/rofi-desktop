@@ -96,6 +96,8 @@ Optional dependencies for some of the tools are:
 - shell_gpt
 - FontAwesome
 - sdcv
+- xclip
+- xdotool
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
