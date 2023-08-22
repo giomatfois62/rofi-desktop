@@ -40,7 +40,6 @@ if [ "$VIDEO_CODEC" = "h264" ]; then
     VIDEO_EXTENSION=".mp4"
 fi
 
-
 recordid="/tmp/recordid"
 
 function getInputAudio() {
