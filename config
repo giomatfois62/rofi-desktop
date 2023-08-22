@@ -83,3 +83,6 @@
 
 # path to wallpapers directory
 #WALLPAPERS_DIR=$HOME/Pictures
+
+# systemd unit default action
+#SYSTEMD_DEFAULT_ACTION="list_actions" # enable/disable/stop/restart/tail
