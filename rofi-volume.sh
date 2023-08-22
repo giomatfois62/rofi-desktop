@@ -50,7 +50,7 @@ while choice=$(gen_menu | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p
     choice_row=$(echo "$choice" | awk '{print $1;}')
     choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
-    if [ ${#choice_text} -gt 0 ]; then
+    if [ -n "$choice_text" ]; then
         ${commands[$choice_text]};
     fi
 done
