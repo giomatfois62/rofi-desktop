@@ -5,8 +5,9 @@
 - Add more news providers and implement a menu to choose provider
 - Implement or facilitate menus translation
 - Add icons to main menus with fontawesome or bundled resources
-- Integrate rofi-polkit-agent
+- Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
+- Integrate rofi-ytm for youtube music with search suggestions (!multiple script files!)
 
 - Make some variables configurable from file (DONE)
 - Make thumbnails grid size configurable (DONE)
@@ -22,6 +23,6 @@
 - Integrate rofi-color-picker (DONE)
 - Integrate rofi-systemd (DONE)
 - Test ffmpeg menu for videos output to webm (DONE)
+- Make ffmpeg video codec configurable (DONE)
 
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
-- Integrate rofi-ytm for youtube music with search suggestions (NO multiple script files)
