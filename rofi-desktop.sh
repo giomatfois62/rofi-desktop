@@ -323,7 +323,7 @@ shortcuts() {
 }
 
 network() {
-    "$SCRIPT_PATH"/networkmanager_dmenu
+    "$SCRIPT_PATH"/rofi-network.py
 }
 
 bluetooth() {
