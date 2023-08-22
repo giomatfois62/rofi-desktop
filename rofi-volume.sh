@@ -43,8 +43,7 @@ vol_config() {
 }
 
 # remember last entry chosen
-local choice_row=0
-local choice_text
+choice_row=0
 
 while choice=$(gen_menu | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p "Volume $(get_volume)"); do
     choice_row=$(echo "$choice" | awk '{print $1;}')
