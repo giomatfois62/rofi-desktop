@@ -38,6 +38,7 @@ declare -A commands=(
     ["System Settings"]=settings_menu
     ["Utilities"]=utilities_menu
     ["ChatGPT"]=chat_gpt
+    ["Dictionary"]=dictionary
     ["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
@@ -72,7 +73,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nColor Picker\nChatGPT\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+utilities_entries="Calculator\nCalendar\nColor Picker\nChatGPT\nDictionary\nTranslate Text\nCharacters\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -184,6 +185,10 @@ web_search() {
 set_timer() {
     rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
         -theme-str 'entry{placeholder:"Type <hours>h <minutes>m <seconds>s to set a custom timer";'}
+}
+
+dictionary() {
+    "$SCRIPT_PATH"/rofi-dict.sh && exit
 }
 
 settings() {
