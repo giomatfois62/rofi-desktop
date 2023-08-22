@@ -22,6 +22,7 @@
 - Integrate rofi-systemd (DONE)
 - Test ffmpeg menu for videos output to webm (DONE)
 - Make ffmpeg video codec configurable (DONE)
+- Implement a dictionary module (DONE)
 
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO needs api key)

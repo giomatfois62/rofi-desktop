@@ -40,6 +40,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Calendar (rofi-calendar.sh)
   - Color Picker (rofi-color-picker.sh)
   - ChatGPT (rofi-gpt.sh)
+  - Dictionary (rofi-dict.sh)
   - Translate Text (rofi-translate.sh, uses translate-shell)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
@@ -94,6 +95,7 @@ Optional dependencies for some of the tools are:
 - zenity
 - shell_gpt
 - FontAwesome
+- sdcv
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
