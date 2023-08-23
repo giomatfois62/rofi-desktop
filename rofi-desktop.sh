@@ -349,7 +349,7 @@ volume() {
 }
 
 menu_config() {
-    selected=$(find "$SCRIPT_PATH" -iname '*.sh' -maxdepth 1 -type f | sort | $ROFI_CMD -p "Open File")
+    selected=$(find "$SCRIPT_PATH" -iname 'rofi*' -maxdepth 1 -type f | sort | $ROFI_CMD -p "Open File")
 
     if [ -n "$selected" ]; then
         xdg-open "$selected" && exit 0
