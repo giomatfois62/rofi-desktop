@@ -13,7 +13,6 @@
 
 # BUFIX
 - Debug rofi-autostart script and make it work reliably
-- Fix urbandictionary scraping
 - Fix player selection in rofi-playerctl
 
 # COMPLETED
@@ -34,6 +33,7 @@
 - Make ffmpeg video codec configurable (DONE)
 - Implement a dictionary module (DONE)
 - Integrate rofi-playerctl (DONE)
+- Fix urbandictionary scraping (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
