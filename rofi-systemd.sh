@@ -67,7 +67,7 @@ boot_logs
 list_actions"
 
 function select_service_and_act {
-	result=$($rofi_command -p "Unit: " \
+	result=$($rofi_command -p "Unit" \
 	              -kb-custom-1 "${enable}" \
 	              -kb-custom-2 "${disable}" \
 	              -kb-custom-3 "${stop}" \
