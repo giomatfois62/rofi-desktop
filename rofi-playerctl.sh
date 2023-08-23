@@ -56,6 +56,8 @@ while chosen="$(echo -e "$options" | $ROFI_CMD -show -p "${status^}" -selected-r
             playerctld shift
             ;;
     esac
+
+    status=$(status_function)
 done
 
 exit 1
