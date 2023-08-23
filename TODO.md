@@ -1,5 +1,4 @@
 # GENERAL
-- Implement or find global menu dbus service
 - Implement or facilitate menus translation
 - Add icons to main menus with fontawesome or bundled resources
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
@@ -13,7 +12,6 @@
 
 # BUFIX
 - Debug rofi-autostart script and make it work reliably
-- Fix player selection in rofi-playerctl
 
 # COMPLETED
 - Make some variables configurable from file (DONE)
@@ -34,6 +32,8 @@
 - Implement a dictionary module (DONE)
 - Integrate rofi-playerctl (DONE)
 - Fix urbandictionary scraping (DONE)
+- Fix player selection in rofi-playerctl (DONE)
+- Implement or find global menu dbus service (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
