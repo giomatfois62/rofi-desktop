@@ -106,6 +106,11 @@ settings_menu() {
     show_menu "$settings_entries" "Settings"
 }
 
+combi_menu() {
+    local menu_entries="$main_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
+    show_menu "$menu_entries" "All"
+}
+
 run_app() {
     logfile="$HOME/.cache/rofi-drun.log"
     G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log "$logfile";
@@ -402,11 +407,12 @@ print_help() {
     echo "h     Print this Help."
     echo "s     Show the system settings menu."
     echo "u     Show the utilities menu."
+    echo "a     Show all menu entries"
     echo
 }
 
 # run
-while getopts ":hdsu" option; do
+while getopts ":hdsua" option; do
     case $option in
         h) # display help
             print_help;;
@@ -416,6 +422,8 @@ while getopts ":hdsu" option; do
             settings_menu;;
         u) # display utilities menu
             utilities_menu;;
+        a) # display utilities menu
+            combi_menu;;
         \?) # display main menu
             echo "Invalid option:" $1
             print_help;;
