@@ -121,3 +121,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [windwp](https://github.com/windwp/rofi-color-picker)
 - [colonelpanic8](https://github.com/colonelpanic8/rofi-systemd)
 - [mrHeavenli](https://github.com/mrHeavenli/rofi-playerctl)
+- [RafaelBocquet](https://github.com/RafaelBocquet/i3-hud-menu)
