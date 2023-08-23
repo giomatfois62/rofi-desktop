@@ -12,6 +12,7 @@
 
 # BUFIX
 - Debug rofi-autostart script and make it work reliably
+- Add exit code 1 to rofi-dev-launcher if nothing is selected
 
 # COMPLETED
 - Make some variables configurable from file (DONE)
