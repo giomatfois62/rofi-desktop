@@ -12,16 +12,15 @@
 
 # BUFIX
 - Debug rofi-autostart script and make it work reliably
-- Add exit code 1 to rofi-dev-launcher if nothing is selected
 
 # WAYLAND COMPAT
-rofi-brightness.sh (gammastep, ddc, wlr-randr)
-rofi-color-picker.sh (uses xclip)
-rofi-ffmpeg.sh (need to use obs or native screen recording utilities)
-rofi-hud.py (need porting away from xlib)
-rofi-keyboard-layout.sh (must be done by the compositor)
-rofi-monitor-layout.sh (wlr-randr, way-displays)
-rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fallback on maim/slurp in wayland)
+- rofi-brightness.sh (gammastep, ddc, wlr-randr)
+- rofi-color-picker.sh (uses xclip)
+- rofi-ffmpeg.sh (need to use obs or native screen recording utilities)
+- rofi-hud.py (need porting away from xlib)
+- rofi-keyboard-layout.sh (must be done by the compositor)
+- rofi-monitor-layout.sh (wlr-randr, way-displays)
+- rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fallback on maim/slurp in wayland)
 
 # COMPLETED
 - Make some variables configurable from file (DONE)
@@ -44,6 +43,7 @@ rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fal
 - Fix urbandictionary scraping (DONE)
 - Fix player selection in rofi-playerctl (DONE)
 - Implement or find global menu dbus service (DONE)
+- Add exit code 1 to rofi-dev-launcher if nothing is selected (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

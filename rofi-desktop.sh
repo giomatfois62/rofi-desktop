@@ -160,7 +160,7 @@ search() {
 code_projects() {
     export PROJECTS_DIRECTORY
     export PROJECTS_EDITOR
-    rofi -show Projects -modi Projects:"$SCRIPT_PATH"/rofi-dev-launcher.py && exit
+    rofi -show Projects -modi Projects:"$SCRIPT_PATH"/rofi-dev-launcher.py
 }
 
 color_picker() {
