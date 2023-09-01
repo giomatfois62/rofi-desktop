@@ -1,5 +1,6 @@
 # GENERAL
 - Implement or facilitate menus translation
+- Implement menu history in all scripts
 - Add icons to main menus with fontawesome or bundled resources
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
 
