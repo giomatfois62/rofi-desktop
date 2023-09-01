@@ -44,6 +44,7 @@
 - Fix player selection in rofi-playerctl (DONE)
 - Implement or find global menu dbus service (DONE)
 - Add exit code 1 to rofi-dev-launcher if nothing is selected (DONE)
+- Rewrite rofi-dev-launcher in bash and fix exit code issue (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
