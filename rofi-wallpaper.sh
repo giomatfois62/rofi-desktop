@@ -11,6 +11,7 @@ WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
+SORT_WALLPAPERS_BY_TIME=${SORT_WALLPAPERS_BY_TIME:-false}
 
 build_theme() {
     rows=$1
@@ -23,8 +24,14 @@ build_theme() {
 # find image size to display (very slow)
 #echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
 
+if [ "$SORT_WALLPAPERS_BY_TIME" = true ] ; then
+    sort_by_time="-t"
+else
+    sort_by_time=""
+fi
+
 choice=$(\
-    ls --escape "$WALLPAPERS_DIR" | \
+    ls $sort_by_time --escape "$WALLPAPERS_DIR" | \
         while read A; do echo -en "$A\x00icon\x1f$WALLPAPERS_DIR/$A\n"; done | \
         $ROFI_CMD -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
 )
