@@ -18,12 +18,12 @@ if [ -f "$LIVETV_FILE" ]; then
 	if [ $delta -gt $LIVETV_EXPIRATION_TIME ]; then
         # TODO: call python script
 		echo "Refreshing livetv file"
-		"$SCRIPT_PATH"/scrape-livetv.py
+		"$SCRIPT_PATH"/scrape_livetv.py
 	fi
 else
     # TODO: call python script
 	echo "Creating livetv file"
-	"$SCRIPT_PATH"/scrape-livetv.py
+	"$SCRIPT_PATH"/scrape_livetv.py
 fi
 
 while name=$(jq '.[] | "\(.name) {\(.time)} \(.category)"' "$LIVETV_FILE" | tr -d '"' |\
