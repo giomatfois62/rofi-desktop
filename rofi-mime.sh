@@ -6,7 +6,6 @@
 # dependencies: rofi
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-MIME_FILE="$HOME/.config/mimeapps.list"
 
 declare -A actions=(
     ["Web Browser"]=set_browser
@@ -35,6 +34,7 @@ set_application() {
     xdg-mime default $2".desktop" $1
 
     # hacky!!! modify mimeapps file manually
+    #MIME_FILE="$HOME/.config/mimeapps.list"
     #line_exists=$(grep -F "$1" "$MIME_FILE")
 
     # delete previous mimetype association
