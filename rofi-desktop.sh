@@ -250,7 +250,25 @@ notes() {
 }
 
 news() {
-    "$SCRIPT_PATH"/rofi-news.sh && exit
+    declare -A rss_urls=(
+        ["BBC"]="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
+        ["AP"]="https://rsshub.app/apnews/topics/apf-topnews"
+        ["ANSA"]="https://www.ansa.it/sito/ansait_rss.xml"
+        ["AlJazeera"]="https://www.aljazeera.com/xml/rss/all.xml"
+    )
+
+    local providers="BBC\nAP\nAlJazeera\nANSA"
+
+    # remember last entry chosen
+    local provider_row=0
+    local provider_text
+
+    while provider=$(echo -en "$providers" | $ROFI_CMD -selected-row ${provider_row} -format 'i s' -p "Provider"); do
+        provider_row=$(echo "$provider" | awk '{print $1;}')
+        provider_text=$(echo "$provider" | cut -d' ' -f2-)
+
+        RSS_URL=${rss_urls[$provider_text]} RSS_FILE="$HOME/.cache/$provider_text.news"  "$SCRIPT_PATH"/rofi-news.sh && exit
+    done
 }
 
 tmux_menu() {

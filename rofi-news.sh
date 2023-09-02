@@ -10,7 +10,7 @@ RSS_URL="${RSS_URL:-http://feeds.bbci.co.uk/news/rss.xml?edition=int}"
 RSS_FILE="${RSS_FILE:-$HOME/.cache/news}"
 RSS_EXPIRATION_TIME=${RSS_EXPIRATION_TIME:-600} # refresh news file every ten minutes
 
-mkdir -p "${RSS_FILE%news}"
+#mkdir -p "${RSS_FILE%news}"
 
 # TODO: do this job in background and display message+
 if [ -f "$RSS_FILE" ]; then
