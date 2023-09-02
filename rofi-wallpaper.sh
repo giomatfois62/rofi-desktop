@@ -11,7 +11,6 @@ WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
-SORT_WALLPAPERS_BY_TIME=${SORT_WALLPAPERS_BY_TIME:-false}
 
 build_theme() {
     rows=$1
@@ -24,15 +23,12 @@ build_theme() {
 # find image size to display (very slow)
 #echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
 
-if [ "$SORT_WALLPAPERS_BY_TIME" = true ] ; then
-    sort_by_time="-t"
-else
-    sort_by_time=""
-fi
+images=$(find "$WALLPAPERS_DIR" -type f -maxdepth 1 -printf "%f\x00icon\x1f$WALLPAPERS_DIR/%f\n")
+
+#ls $sort_by_time --escape "$WALLPAPERS_DIR"
 
 choice=$(\
-    ls $sort_by_time --escape "$WALLPAPERS_DIR" | \
-        while read A; do echo -en "$A\x00icon\x1f$WALLPAPERS_DIR/$A\n"; done | \
+    echo -en "Random Choice\n""$images" | \
         $ROFI_CMD -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
 )
 
@@ -40,7 +36,17 @@ if [ -z "$choice" ]; then
     exit 1;
 fi
 
+if [ "$choice" = "Random Choice" ]; then
+    choice=$(find "$WALLPAPERS_DIR" -type f -maxdepth 1 -printf "%f\n" | shuf -n1)
+
+    if [ -z "$choice" ]; then
+        exit 1;
+    fi
+fi
+
 wallpaper="$WALLPAPERS_DIR/$choice"
+
+echo "Setting wallpaper " "$wallpaper"
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
     echo "$wallpaper"

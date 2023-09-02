@@ -10,7 +10,6 @@
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
-- Add random wallpaper option
 - Show context in file contents search
 
 # BUFIX
@@ -49,12 +48,13 @@
 - Implement or find global menu dbus service (DONE)
 - Add exit code 1 to rofi-dev-launcher if nothing is selected (DONE)
 - Rewrite rofi-dev-launcher in bash and fix exit code issue (DONE)
-- Add option to sort wallpapers by creation/modification date (DONE)
 - Add more news providers and implement a menu to choose provider (DONE)
+- Add random wallpaper option (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO needs api key)
 - Add option to browse files in grid view with big thumbnails (NO does not display mimetype icons and thumbs)
 - Consider rofi-checklist as alternative to rofi-todo.sh (NO too complicated)
+- Add option to sort wallpapers by creation/modification date (MAYBE difficult using current implementation)
 
