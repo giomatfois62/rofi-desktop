@@ -251,13 +251,14 @@ notes() {
 
 news() {
     declare -A rss_urls=(
-        ["BBC"]="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
-        ["AP"]="https://rsshub.app/apnews/topics/apf-topnews"
-        ["ANSA"]="https://www.ansa.it/sito/ansait_rss.xml"
-        ["AlJazeera"]="https://www.aljazeera.com/xml/rss/all.xml"
+        ["BBC World"]="http://feeds.bbci.co.uk/news/rss.xml?edition=int"
+        ["AP News"]="https://rsshub.app/apnews/topics/apf-topnews"
+        ["ANSA.it"]="https://www.ansa.it/sito/ansait_rss.xml"
+        ["Al Jazeera"]="https://www.aljazeera.com/xml/rss/all.xml"
+        ["BuzzFeed"]="https://www.buzzfeed.com/index.xml"
     )
 
-    local providers="BBC\nAP\nAlJazeera\nANSA"
+    local providers="BBC World\nAP News\nAl Jazeera\nANSA.it\nBuzzFeed"
 
     # remember last entry chosen
     local provider_row=0
