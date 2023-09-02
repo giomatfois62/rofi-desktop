@@ -9,7 +9,10 @@
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
+- Add option to sort search by creation/modification date
+- Add random wallpaper option
 - Add more news providers and implement a menu to choose provider
+- Show context in file contents search
 
 # BUFIX
 - Debug rofi-autostart script and make it work reliably
@@ -46,6 +49,7 @@
 - Implement or find global menu dbus service (DONE)
 - Add exit code 1 to rofi-dev-launcher if nothing is selected (DONE)
 - Rewrite rofi-dev-launcher in bash and fix exit code issue (DONE)
+- Add option to sort wallpapers by creation/modification date (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
