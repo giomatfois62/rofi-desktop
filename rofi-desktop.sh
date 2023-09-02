@@ -25,6 +25,7 @@ declare -A commands=(
     ["Calculator"]=calculator
     ["Calendar"]=calendar
     ["Watch TV"]=tv
+    ["Sport Events"]=livetv
     ["Radio Stations"]=radio
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
@@ -70,7 +71,7 @@ declare -A commands=(
     ["Updates"]=update_sys
 )
 
-main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nCode Projects\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nUtilities\nNotifications\nSystem Settings\nExit"
+main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nCode Projects\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nUtilities\nNotifications\nSystem Settings\nExit"
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSystemd Configuration\nUpdates\nSystem Info"
 
@@ -163,6 +164,10 @@ code_projects() {
 
 color_picker() {
     "$SCRIPT_PATH"/rofi-color-picker.sh && exit
+}
+
+livetv() {
+    "$SCRIPT_PATH"/rofi-livetv.sh && exit
 }
 
 web_search() {

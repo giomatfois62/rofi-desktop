@@ -5,6 +5,7 @@
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
 
 # ADDITIONS
+- Integrate snippy (paste snippets stored in folder)
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 
 # ENHANCEMENTS
