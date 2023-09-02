@@ -7,7 +7,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
-gpt_input=$(rofi -dmenu -p "ChatGPT")
+gpt_input=$($ROFI_CMD -p "ChatGPT")
 
 if [[ -z $gpt_input ]]; then
     exit 1
