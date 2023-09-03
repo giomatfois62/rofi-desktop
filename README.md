@@ -50,6 +50,8 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH Sessions(ssh modi)
+  - Snipptes (snippy)
+  - Sport Events (rofi-livetv.sh)
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - Clipboard (uses greenclip)
@@ -122,3 +124,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [colonelpanic8](https://github.com/colonelpanic8/rofi-systemd)
 - [mrHeavenli](https://github.com/mrHeavenli/rofi-playerctl)
 - [RafaelBocquet](https://github.com/RafaelBocquet/i3-hud-menu)
+- [BarbUk](https://github.com/BarbUk/snippy)
