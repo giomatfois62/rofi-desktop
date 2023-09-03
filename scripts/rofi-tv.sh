@@ -9,7 +9,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 TV_PLAYER="${TV_PLAYER:-mpv --no-resume-playback --force-window=immediate}"
-TV_FILE="${TV_FILE:-$SCRIPT_PATH/data/channels.json}"
+TV_FILE="${TV_FILE:-$SCRIPT_PATH/../data/channels.json}"
 TV_CACHE="${TV_CACHE:-$HOME/.cache/rofi-tv}"
 TV_URL="https://iptv-org.github.io/iptv/channels.json"
 

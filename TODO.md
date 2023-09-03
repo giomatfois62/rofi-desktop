@@ -3,6 +3,7 @@
 - Implement menu history in all scripts
 - Add icons to main menus with fontawesome or bundled resources
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
+- Move all scripts to script directory
 
 # ADDITIONS
 - Integrate snippy (paste snippets stored in folder)
@@ -51,6 +52,8 @@
 - Rewrite rofi-dev-launcher in bash and fix exit code issue (DONE)
 - Add more news providers and implement a menu to choose provider (DONE)
 - Add random wallpaper option (DONE)
+- Add livetv.sx events menu (DONE)
+- Add configurable options to rofi-livetv (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

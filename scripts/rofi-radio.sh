@@ -9,7 +9,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 RADIO_PLAYER="${RADIO_PLAYER:-mpv --no-resume-playback --force-window=immediate}"
-RADIO_FILE="${RADIO_FILE:-$SCRIPT_PATH/data/radios.json}"
+RADIO_FILE="${RADIO_FILE:-$SCRIPT_PATH/../data/radios.json}"
 RADIO_CACHE="${RADIO_CACHE:-$HOME/.cache/rofi-radio}"
 RADIO_URL="https://de1.api.radio-browser.info/json/stations/search?name="
 

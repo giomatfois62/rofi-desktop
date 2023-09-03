@@ -8,7 +8,7 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-CHAR_FILE="$SCRIPT_PATH"/data/unicode.txt
+CHAR_FILE="$SCRIPT_PATH"/../data/unicode.txt
 
 # to use xclip instead of xdotool
 #xclip -selection clipboard

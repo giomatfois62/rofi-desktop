@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
+#
+# this script scrape and show the list of upcoming sport events streamed on livetv.sx
+#
+# dependencies: rofi, python3-lxml, python3-requests
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-# TODO: make file path configurable and use it in python script
-LIVETV_FILE="$HOME/.cache/livetv.json"
+LIVETV_FILE=${LIVETV_FILE:-"$HOME/.cache/livetv.json"}
 LIVETV_EXPIRATION_TIME=${LIVETV_EXPIRATION_TIME:-3600} # refresh livetv file every hour
 
 if [ -f "$LIVETV_FILE" ]; then
@@ -16,14 +19,10 @@ if [ -f "$LIVETV_FILE" ]; then
 
 	# refresh livetv file if it's too old
 	if [ $delta -gt $LIVETV_EXPIRATION_TIME ]; then
-        # TODO: call python script
-		echo "Refreshing livetv file"
-		"$SCRIPT_PATH"/scrape_livetv.py
+		"$SCRIPT_PATH"/scrape_livetv.py "$LIVETV_FILE"
 	fi
 else
-    # TODO: call python script
-	echo "Creating livetv file"
-	"$SCRIPT_PATH"/scrape_livetv.py
+	"$SCRIPT_PATH"/scrape_livetv.py "$LIVETV_FILE"
 fi
 
 while name=$(jq '.[] | "\(.name) {\(.time)} \(.category)"' "$LIVETV_FILE" | tr -d '"' |\

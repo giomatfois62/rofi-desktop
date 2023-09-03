@@ -3,10 +3,16 @@ import requests
 from lxml import html
 import json
 import os
+import sys
 
 base_url = "http://livetv.sx"
 url = "http://www.livetv.sx/en/allupcoming"
-filename = os.path.expanduser('~') + "/.cache/livetv.json"
+
+if (len(sys.argv) > 1):
+    filename = sys.argv[1]
+else:
+    print("no file name provided")
+    filename = os.path.expanduser('~') + "/.cache/livetv.json"
 
 r = requests.get(url)
 

@@ -21,7 +21,7 @@ main(){
     esac
   done
 
-  COLORS_FILE="$DIR/data/colors-name.txt"
+  COLORS_FILE="$DIR/../data/colors-name.txt"
 
   LISTFILE="${LISTFILE:-$COLORS_FILE}"
   ROFI_PROMPT="${ROFI_PROMPT:-""}"

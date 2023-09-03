@@ -9,7 +9,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 BASE_URL="https://www.reddit.com"
-SUB_FILE="$SCRIPT_PATH/data/subreddits"
+SUB_FILE="$SCRIPT_PATH/../data/subreddits"
 
 search_subreddit() {
     subreddit_name="$1"

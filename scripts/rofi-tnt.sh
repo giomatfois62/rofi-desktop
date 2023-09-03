@@ -9,7 +9,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 TNT_URL="https://raw.githubusercontent.com/edoardopigaiani/tntvillage-release-dump/master/tntvillage-release-dump.csv"
-TNT_FILE="$SCRIPT_PATH"/data/tntvillage-release-dump.csv
+TNT_FILE="$SCRIPT_PATH"/../data/tntvillage-release-dump.csv
 
 mkdir -p "${TNT_FILE%tntvillage-release-dump.csv}"
 
