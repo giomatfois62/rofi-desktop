@@ -17,24 +17,22 @@ import struct
 import configparser
 import locale
 import os
-from os.path import expanduser
+from os.path import basename, expanduser
 import shlex
 from shutil import which
 import sys
+from time import sleep
 import uuid
 import subprocess
 
+# pylint: disable=import-error
 import gi
 gi.require_version('NM', '1.0')
 from gi.repository import GLib, NM  # noqa pylint: disable=wrong-import-position
+# pylint: enable=import-error
 
 ENV = os.environ.copy()
-ENV['LC_ALL'] = 'C'
 ENC = locale.getpreferredencoding()
-
-CLIENT = NM.Client.new(None)
-LOOP = GLib.MainLoop()
-CONNS = CLIENT.get_connections()
 
 CONF = configparser.ConfigParser()
 CONF.read(expanduser("~/.config/networkmanager-dmenu/config.ini"))
@@ -51,7 +49,7 @@ def cli_args():
 
     """
     args = sys.argv[1:]
-    cmd = CONF.get('dmenu', 'dmenu_command', fallback=False)
+    cmd = CONF.get('dmenu', 'dmenu_command', fallback="rofi -dmenu -i")
     if "-l" in args or "-p" in args:
         for nope in ['-l', '-p'] if cmd is not False else ['-p']:
             try:
@@ -96,25 +94,28 @@ def dmenu_cmd(num_lines, prompt="Networks", active_lines=None):
     """
     # Create command string
     commands = {"dmenu": ["-p", str(prompt)],
-                "rofi": ["-dmenu", "-p", str(prompt), "-l", str(num_lines)],
+                "rofi": ["-dmenu", "-p", str(prompt)],
                 "bemenu": ["-p", str(prompt)],
-                "wofi": ["-p", str(prompt)]}
-    command = shlex.split(CONF.get('dmenu', 'dmenu_command', fallback="rofi -dmenu -i"))
+                "wofi": ["-p", str(prompt)],
+                "fuzzel": ["-p", str(prompt), "-l", str(num_lines), "--log-level", "none"]}
+    command = shlex.split(CONF.get('dmenu', 'dmenu_command', fallback="rofi"))
+    cmd_base = basename(command[0])
     command.extend(cli_args())
-    command.extend(commands.get(command[0], []))
+    command.extend(commands.get(cmd_base, []))
     # Rofi Highlighting
     rofi_highlight = CONF.getboolean('dmenu', 'rofi_highlight', fallback=False)
-    if rofi_highlight is True and command[0] == "rofi" and active_lines:
+    if rofi_highlight is True and cmd_base == "rofi" and active_lines:
         command.extend(["-a", ",".join([str(num) for num in active_lines])])
     # Passphrase prompts
     obscure = CONF.getboolean('dmenu_passphrase', 'obscure', fallback=False)
     if prompt == "Passphrase" and obscure is True:
         obscure_color = CONF.get('dmenu_passphrase', 'obscure_color', fallback='#222222')
-        pass_prompts = {"dmenu": dmenu_pass(command[0], obscure_color),
+        pass_prompts = {"dmenu": dmenu_pass(cmd_base, obscure_color),
                         "rofi": ['-password'],
                         "bemenu": ['-x'],
-                        "wofi": ['-P']}
-        command.extend(pass_prompts.get(command[0], []))
+                        "wofi": ['-P'],
+                        "fuzzel": ['--password']}
+        command.extend(pass_prompts.get(cmd_base, []))
     return command
 
 
@@ -138,7 +139,8 @@ def choose_adapter(client):
     if not sel.strip():
         sys.exit()
     devices = [i for i in devices if i.get_iface() == sel.strip()]
-    assert len(devices) == 1
+    if len(devices) != 1:
+        raise ValueError(f"Selection was ambiguous: '{str(sel.strip())}'")
     return devices[0]
 
 
@@ -190,11 +192,15 @@ def rescan_wifi():
     """
     Rescan Wifi Access Points
     """
+    delay = CONF.getint('nmdm', 'rescan_delay', fallback=5)
     for dev in CLIENT.get_devices():
         if gi.repository.NM.DeviceWifi == type(dev):
             try:
                 dev.request_scan_async(None, rescan_cb, None)
                 LOOP.run()
+                sleep(delay)
+                notify("Wifi scan complete")
+                main()
             except gi.repository.GLib.Error as err:
                 # Too frequent rescan error
                 notify("Wifi rescan failed", urgency="critical")
@@ -207,7 +213,7 @@ def rescan_cb(dev, res, data):
 
     """
     if dev.request_scan_finish(res) is True:
-        notify("Wifi scan complete")
+        notify("Wifi scan running...")
     else:
         notify("Wifi scan failed", urgency="critical")
     LOOP.quit()
@@ -237,14 +243,19 @@ def ap_security(nm_ap):
     sec_str = ""
     if ((flags & getattr(NM, '80211ApFlags').PRIVACY) and
             (wpa_flags == 0) and (rsn_flags == 0)):
-        sec_str += " WEP"
-    if wpa_flags != 0:
-        sec_str += " WPA1"
-    if rsn_flags != 0:
+        sec_str = " WEP"
+    if wpa_flags:
+        sec_str = " WPA1"
+    if rsn_flags & getattr(NM, '80211ApSecurityFlags').KEY_MGMT_PSK:
         sec_str += " WPA2"
+    if rsn_flags & getattr(NM, '80211ApSecurityFlags').KEY_MGMT_SAE:
+        sec_str += " WPA3"
     if ((wpa_flags & getattr(NM, '80211ApSecurityFlags').KEY_MGMT_802_1X) or
             (rsn_flags & getattr(NM, '80211ApSecurityFlags').KEY_MGMT_802_1X)):
         sec_str += " 802.1X"
+    if ((wpa_flags & getattr(NM, '80211ApSecurityFlags').KEY_MGMT_OWE) or
+            (rsn_flags & getattr(NM, '80211ApSecurityFlags').KEY_MGMT_OWE)):
+        sec_str += " OWE"
 
     # If there is no security use "--"
     if sec_str == "":
@@ -367,6 +378,20 @@ def process_vpngsm(con, activate):
         CLIENT.deactivate_connection_async(con, None, deactivate_cb, con)
     LOOP.run()
 
+def strength_bars(signal_strength):
+    bars = NM.utils_wifi_strength_bars(signal_strength)
+    wifi_chars = CONF.get("dmenu", "wifi_chars", fallback=False)
+    if wifi_chars:
+        bars = "".join([wifi_chars[i] for i, j in enumerate(bars) if j == '*'])
+    return bars
+
+
+def strength_icon(signal_strength):
+    wifi_icons = CONF.get("dmenu", "wifi_icons", fallback=False)
+    if wifi_icons:
+        return wifi_icons[round(signal_strength / 100 * (len(wifi_icons) - 1))]
+    return ""
+
 
 def create_ap_actions(aps, active_ap, active_connection, adapter):  # noqa pylint: disable=too-many-locals,line-too-long
     """For each AP in a list, create the string and its attached function
@@ -382,17 +407,18 @@ def create_ap_actions(aps, active_ap, active_connection, adapter):  # noqa pylin
 
     ap_actions = []
 
+    if CONF.getboolean("dmenu", "compact", fallback=False):
+        format = CONF.get("dmenu", "format", fallback="{name}  {sec}  {bars}")
+    else:
+        format = CONF.get("dmenu", "format", fallback="{name:<{max_len_name}s}  {sec:<{max_len_sec}s} {bars:>4}")
+
     for nm_ap, name, sec in zip(aps, names, secs):
-        bars = NM.utils_wifi_strength_bars(nm_ap.get_strength())
-        wifi_chars = CONF.get("dmenu", "wifi_chars", fallback=False)
-        if wifi_chars:
-            bars = "".join([wifi_chars[i] for i, j in enumerate(bars) if j == '*'])
         is_active = nm_ap.get_bssid() == active_ap_bssid
-        compact = CONF.getboolean("dmenu", "compact", fallback=False)
-        if compact:
-            action_name = f"{name}  {sec}  {bars}"
-        else:
-            action_name = f"{name:<{max_len_name}s}  {sec:<{max_len_sec}s} {bars:>4}"
+        signal_strength = nm_ap.get_strength()
+        bars = strength_bars(signal_strength)
+        icon = strength_icon(signal_strength)
+        action_name = format.format(name=name, sec=sec, signal=signal_strength, bars=bars, icon=icon,
+                                    max_len_name=max_len_name, max_len_sec=max_len_sec)
         if is_active:
             ap_actions.append(Action(action_name, process_ap,
                                      [active_connection, True, adapter],
@@ -545,7 +571,8 @@ def get_selection(all_actions):
                        and i.is_active))]
     else:
         action = [i for i in all_actions if str(i).strip() == sel.strip()]
-    assert len(action) == 1, f"Selection was ambiguous: '{str(sel.strip())}'"
+    if len(action) != 1:
+        raise ValueError(f"Selection was ambiguous: '{str(sel.strip())}'")
     return action[0]
 
 
@@ -634,7 +661,7 @@ def launch_connection_editor():
     """
     terminal = CONF.get("editor", "terminal", fallback="xterm")
     gui_if_available = CONF.getboolean("editor", "gui_if_available", fallback=True)
-    guis = ["gnome-continue-center", "nm-connection-editor"]
+    guis = ["gnome-control-center", "nm-connection-editor"]
     if gui_if_available is True:
         for gui in guis:
             if is_installed(gui):
@@ -654,18 +681,21 @@ def get_passphrase():
     """
     pinentry = CONF.get("dmenu", "pinentry", fallback=None)
     if pinentry:
+        description = CONF.get("pinentry", "description", fallback="Get network password")
+        prompt = CONF.get("pinentry", "prompt", fallback="Password: ")
         pin = ""
         out = subprocess.run(pinentry,
                              capture_output=True,
                              check=False,
                              encoding=ENC,
-                             input='setdesc Get network password\ngetpin\n').stdout
+                             input=f"setdesc {description}\nsetprompt {prompt}\ngetpin\n").stdout
         if out:
-            res = out.split("\n")[2]
-            if res.startswith("D "):
-                pin = res.split("D ")[1]
+            res = [i for i in out.split("\n") if i.startswith("D ")]
+            if res and res[0].startswith("D "):
+                pin = res[0].split("D ")[1]
         return pin
     return subprocess.run(dmenu_cmd(0, "Passphrase"),
+                          stdin=subprocess.DEVNULL,
                           capture_output=True,
                           check=False,
                           encoding=ENC).stdout
@@ -686,7 +716,8 @@ def delete_connection():
     if not sel.strip():
         sys.exit()
     action = [i for i in conn_acts if str(i) == sel.rstrip("\n")]
-    assert len(action) == 1, f"Selection was ambiguous: {str(sel)}"
+    if len(action) != 1:
+        raise ValueError(f"Selection was ambiguous: {str(sel)}")
     action[0]()
     LOOP.run()
 
@@ -718,8 +749,8 @@ def set_new_connection(nm_ap, nm_pw, adapter):
 
 def create_wifi_profile(nm_ap, password, adapter):
     # pylint: disable=line-too-long
-    # From https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/examples/python/gi/add_connection.py
-    # and https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/examples/python/dbus/add-wifi-psk-connection.py
+    # noqa From https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/examples/python/gi/add_connection.py
+    # noqa and https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/examples/python/dbus/add-wifi-psk-connection.py
     # pylint: enable=line-too-long
     """Create the NM profile given the AP and passphrase"""
     ap_sec = ap_security(nm_ap)
@@ -748,8 +779,12 @@ def create_wifi_profile(nm_ap, password, adapter):
     if ap_sec != "--":
         s_wifi_sec = NM.SettingWirelessSecurity.new()
         if "WPA" in ap_sec:
-            s_wifi_sec.set_property(NM.SETTING_WIRELESS_SECURITY_KEY_MGMT,
-                                    "wpa-psk")
+            if "WPA3" in ap_sec:
+                s_wifi_sec.set_property(NM.SETTING_WIRELESS_SECURITY_KEY_MGMT,
+                                        "sae")
+            else:
+                s_wifi_sec.set_property(NM.SETTING_WIRELESS_SECURITY_KEY_MGMT,
+                                        "wpa-psk")
             s_wifi_sec.set_property(NM.SETTING_WIRELESS_SECURITY_AUTH_ALG,
                                     "open")
             s_wifi_sec.set_property(NM.SETTING_WIRELESS_SECURITY_PSK, password)
@@ -838,7 +873,9 @@ def notify(message, details=None, urgency="low"):
     """Use notify-send if available for notifications
 
     """
-    args = ["-u", urgency, "-a", "networkmanager-dmenu", message]
+    delay = CONF.getint('nmdm', 'rescan_delay', fallback=5)
+    args = ["-u", urgency, "-a", "networkmanager-dmenu",
+            "-t", str(delay * 1000), message]
     if details is not None:
         args.append(details)
     if is_installed("notify-send"):
@@ -847,6 +884,11 @@ def notify(message, details=None, urgency="low"):
 
 def run():  # pylint: disable=too-many-locals
     """Main script entrypoint"""
+    try:
+        subprocess.check_output(["pidof", "NetworkManager"])
+    except subprocess.CalledProcessError:
+        notify("WARNING: NetworkManager don't seems to be running")
+        print("WARNING: NetworkManager don't seems to be running")
     active = CLIENT.get_active_connections()
     adapter = choose_adapter(CLIENT)
     if adapter:
@@ -891,7 +933,19 @@ def run():  # pylint: disable=too-many-locals
     sel()
 
 
-if __name__ == '__main__':
+def main():
+    """Main. Enables script to be re-run after a wifi rescan
+
+    """
+    global CLIENT, CONNS, LOOP  # noqa pylint: disable=global-variable-undefined
+    CLIENT = NM.Client.new(None)
+    LOOP = GLib.MainLoop()
+    CONNS = CLIENT.get_connections()
+
     run()
+
+
+if __name__ == '__main__':
+    main()
 
 # vim: set et ts=4 sw=4 :
