@@ -17,6 +17,7 @@
 - Fix link extraction for some rss feed providers
 
 # WAYLAND COMPAT
+- clipboard (greenclip x11 only)
 - rofi-brightness.sh (gammastep, ddc, wlr-randr)
 - rofi-color-picker.sh (uses xclip)
 - rofi-ffmpeg.sh (need to use obs or native screen recording utilities)
@@ -24,6 +25,7 @@
 - rofi-keyboard-layout.sh (must be done by the compositor)
 - rofi-monitor-layout.sh (wlr-randr, way-displays)
 - rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fallback on maim/slurp in wayland)
+- snippy (requires xclip,xsel,xdotool)
 
 # COMPLETED
 - Make some variables configurable from file (DONE)

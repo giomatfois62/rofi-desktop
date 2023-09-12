@@ -76,7 +76,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nColor Picker\nChatGPT\nDictionary\nTranslate Text\nCharacters\nMedia Player\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
+utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
