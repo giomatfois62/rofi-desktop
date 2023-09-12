@@ -12,7 +12,7 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 
-# BUFIX
+# BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
 
