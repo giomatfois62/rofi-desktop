@@ -8,6 +8,7 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
 TNT_URL="https://raw.githubusercontent.com/edoardopigaiani/tntvillage-release-dump/master/tntvillage-release-dump.csv"
 TNT_FILE="$SCRIPT_PATH"/../data/tntvillage-release-dump.csv
 
@@ -28,7 +29,7 @@ selected=$(\
 )
 
 if [ -n "$selected" ]; then
-    xdg-open "$selected"
+    $TORRENT_CLIENT "$selected"
     exit 0
 fi
 
