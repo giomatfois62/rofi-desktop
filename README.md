@@ -29,6 +29,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Archwiki
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
+  - 1377x.to (rofi-torrent.sh, show available torrents and scrape magnet links to download)
 - Steam Games (rofi-steam.sh)
 - Sport Events (rofi-livetv.sh)
 - Latest News (rofi-news.sh, rss news from bbc international)
@@ -125,3 +126,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [mrHeavenli](https://github.com/mrHeavenli/rofi-playerctl)
 - [RafaelBocquet](https://github.com/RafaelBocquet/i3-hud-menu)
 - [BarbUk](https://github.com/BarbUk/snippy)
+- [Bugswriter](https://github.com/Bugswriter/pirokit)
