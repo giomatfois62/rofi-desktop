@@ -108,6 +108,10 @@ settings_menu() {
     show_menu "$settings_entries" "Settings"
 }
 
+appearance_menu() {
+    show_menu "$appearance_entries" "Appearance"
+}
+
 combi_menu() {
     local menu_entries="$main_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
     show_menu "$menu_entries" "All"
@@ -197,8 +201,9 @@ web_search() {
 }
 
 set_timer() {
+    local placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
     rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
-        -theme-str 'entry{placeholder:"Type <hours>h <minutes>m <seconds>s to set a custom timer";'}
+        -theme-str "entry{placeholder:\"$placeholder\";"}
 }
 
 dictionary() {
@@ -268,7 +273,7 @@ news() {
         ["BuzzFeed"]="https://www.buzzfeed.com/index.xml"
     )
 
-    local providers="BBC World\nAP News\nAl Jazeera\nANSA.it\nBuzzFeed"
+    local providers="BBC World\nAP News\nAl Jazeera\nANSA.it"
 
     # remember last entry chosen
     local provider_row=0
@@ -340,19 +345,6 @@ clipboard() {
     else
         rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
     fi
-}
-
-appearance_menu() {
-    # remember last entry chosen
-    local selected_row=0
-    local selected_text
-
-    while selected=$(echo -en "$appearance_entries" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "Appearance"); do
-        selected_row=$(echo "$selected" | awk '{print $1;}')
-        selected_text=$(echo "$selected" | cut -d' ' -f2-)
-
-        ${commands[$selected_text]};
-    done
 }
 
 shortcuts() {
