@@ -6,13 +6,15 @@
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
+- Create a podcast script
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
+- Scrape and show links in rofi-livetv, open selected with mpv to bypasse website miniplayer
 
-# BUFIX
+# BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
 
