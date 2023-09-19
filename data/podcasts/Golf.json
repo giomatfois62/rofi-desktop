@@ -1,0 +1,542 @@
+[
+    {
+        "podcast_id": 14106,
+        "title": "The Long and Short of It Golf Podcast",
+        "description": "In - depth conversations with some of golf's biggest names hosted by Simon Hill, Dylan Rogers and Dale Hayes. ",
+        "language": "en",
+        "author_name": "Simon Hill",
+        "slug": "thelongandshortofitgolf",
+        "cover": "20201102_155837_5032f6a466daf5c74f774c5b9868a0ea.jpg"
+    },
+    {
+        "podcast_id": 18128,
+        "title": "Be Under Par Podcast",
+        "description": "An all encompassing golf podcast covering not only the events of the golf world but the events of our world as well. At the end of the day our goal stays, Be Under Par on and off the course. ",
+        "language": "en",
+        "author_name": "Be Under Par Productions",
+        "slug": "beunderpar",
+        "cover": "20210119_031411_a118f8eb9d485d2617f50918b8a96e32.jpg"
+    },
+    {
+        "podcast_id": 18784,
+        "title": "Driving Rangen",
+        "description": "En podd om golf och lite d\u00e4r till.\n/ Martin & Olle\n\u00d6ster\u00e5kers GK\n\n\nStort tack till NCS f\u00f6r intro och outro!\nhttp://bit.ly/NCShouse\nSong: Ikson - New Day (Vlog No Copyright Music) \nMusic provided by Vlog No Copyright Music. \nVideo Link: https://youtu.be/cVA-9JHwbFY",
+        "language": "sv",
+        "author_name": "Martin Westerlund & Olle Ryberg",
+        "slug": "drivingrange",
+        "cover": "20211010_101535_c5265a94dafc01c3cdcfe1aad26b32ba.jpg"
+    },
+    {
+        "podcast_id": 33977,
+        "title": "The Golf Burrito Podcast",
+        "description": "The Golf Burrito Podcast is all things golf wrapped up in a tortilla. Here at TGB we hope to ensure every flavor-filled bite you take leaves you wanting more. As we say here at TGB Enterprises, Let it Grow and Let it Flow!",
+        "language": "en",
+        "author_name": "Mitchell Gore and Ryan Boitz",
+        "slug": "thegolfburrito",
+        "cover": "20210218_201330_67d26dc73ca731b1973d1965cfaec49c.jpg"
+    },
+    {
+        "podcast_id": 41712,
+        "title": "Jodie Jenkins the Golf Guy",
+        "description": "Are all those \u2018same old, same old\u2019 golf shows getting a little boring? We promise you JJ The Golf Guy is NOT your typical golf podcast! Ridiculously entertaining, highly controversial, and always in your face, JJ The Golf Guy is celebrating 20 years on-air! One listen, and you\u2019ll hear why.",
+        "language": "en",
+        "author_name": "Jodie Jenkins",
+        "slug": "jjthegolfguy",
+        "cover": "20210315_183215_a07532e6824af6ea32683651b255d961.jpg"
+    },
+    {
+        "podcast_id": 60687,
+        "title": "Hitting the Line",
+        "description": "The first ever daily fantasy disc golf podcast. ",
+        "language": "en",
+        "author_name": "Nasser Rihan",
+        "slug": "hittingtheline",
+        "cover": "20210610_024331_6119f86dcf6d34b886e45e5c754354ac.jpg"
+    },
+    {
+        "podcast_id": 64531,
+        "title": "Podcast Ve H\u0159e",
+        "description": "Zku\u0161enosti ze sv\u011bta sportu a podnik\u00e1n\u00ed. Host\u00e9 jsou p\u0159edn\u00ed osobnosti z \u010desk\u00e9ho businessu, sportu a mimo jin\u00e9 i golfov\u00ed nad\u0161enci.",
+        "language": "cs",
+        "author_name": "Podcast Ve H\u0159e",
+        "slug": "vehre",
+        "cover": "20210623_093450_d15a342935154993e5f8f7e47903d13e.jpg"
+    },
+    {
+        "podcast_id": 66450,
+        "title": "Faults to Fixes",
+        "description": "Tune in each week as Kelley Brooke and the coaches from The Golf Institute discuss\u00a0the pillars of player development;\u00a0Instruction, Coaching, Physical Conditioning,\u00a0Equipment and Mental Training.\u00a0",
+        "language": "en",
+        "author_name": "Kelley Brooke",
+        "slug": "faultstofixes",
+        "cover": "20210704_135051_3281be5b451971cd1c39a1c4c3e9a8d6.jpg"
+    },
+    {
+        "podcast_id": 70740,
+        "title": "Golfcultuur Podcast \u26f3\ufe0f",
+        "description": "<p>De golfcultuur podcast focust zich op de sportieve hoogtepunten in het mannen- en vrouwengolf. De episodes worden aangevuld met leuke gasten in Vlaanderen en Nederland.</p><p>De podcast is Nederlandstalig en wordt gehost door Carl Dieryckx, Frederick Morel en Jean-Charles Debel.</p>",
+        "language": "nl",
+        "author_name": "Golfcultuur",
+        "slug": "golfcultuur",
+        "cover": "20210729_170841_b0f8084d5b8125d08eb06e1c4dd8e58d.jpg"
+    },
+    {
+        "podcast_id": 79593,
+        "title": "Valley Golf Guys Podcast",
+        "description": "The Valley Golf Guys talk anything and everything golf in the Phoenix area.",
+        "language": "en",
+        "author_name": "Valley Golf Guys",
+        "slug": "valleygolfguys",
+        "cover": "20210916_180204_4ea5fa99fba0c76a8f8a4ee995fc527b.jpg"
+    },
+    {
+        "podcast_id": 95609,
+        "title": "Golf. Life. Faith. Podcast",
+        "description": "College Golf Fellowship Staffers Toby Ragland and Jayce Barber sit down with many different PGA Partners of CGF and talk all things golf, life and faith.",
+        "language": "en",
+        "author_name": "College Golf Fellowship",
+        "slug": "golflifefaith",
+        "cover": "20211213_041214_c0eece576b43e199200f00ff4885811b.jpg"
+    },
+    {
+        "podcast_id": 99057,
+        "title": "Take Your Pick",
+        "description": "Take Your Pick is where Philadelphia Sports fans can come for some interesting takes and get some sharp plays to beat the books.",
+        "language": "en",
+        "author_name": "Rob, Sean, and Mike",
+        "slug": "takeyourpick",
+        "cover": "20220105_060130_1aa80ae1efda77793b8fab77c1d3585e.jpg"
+    },
+    {
+        "podcast_id": 101730,
+        "title": "The Scramble Podcast - Presented by Hedgebettor",
+        "description": "average golfers bringing you above average takes on all the latest in golf news, betting, entertainment, upcoming tournaments, and match details.  ",
+        "language": "en",
+        "author_name": "Andrew Rogantino",
+        "slug": "thescramblepod",
+        "cover": "20220118_070134_b597f90d47cd7b4f39811abbf399d9a9.jpg"
+    },
+    {
+        "podcast_id": 104072,
+        "title": "Fairway Doc Podcast",
+        "description": "Golf Fitness, Performance & Wellness with Noah Hendrixson, CSCS & Dr. Michael Hendrixson, DO",
+        "language": "en",
+        "author_name": "Fairway Doc",
+        "slug": "fairwaydoc",
+        "cover": "20220207_040254_d209cab7141c07f0c11e1fbcd218e29d.jpg"
+    },
+    {
+        "podcast_id": 105473,
+        "title": "USGA Golf Journal",
+        "description": "The USGA\u2019s Golf Journal podcast features conversations with prominent people, from major champions to renowned architects and celebrities who are obsessed with the game. \n\nFor more exclusive Golf Journal content and to give back to the game, become a USGA member today: https://support.usga.org/ ",
+        "language": "en",
+        "author_name": "United States Golf Association",
+        "slug": "usgagolfjournal",
+        "cover": "20220218_040244_1061c4daf1d7e56aea6e7e97fd07d950.jpg"
+    },
+    {
+        "podcast_id": 106126,
+        "title": "Big Players Only",
+        "description": "<p>Welcome to The Big Players Only podcast, we talk all things golf, and interview personalities from all around the golf world. Expect a heavy dose of I Think You Should Leave jokes, hot takes and interesting facts with the Big Players: Ben, Josh, Tyler, Tully, Collin and Kenny One-Putt.</p>",
+        "language": "en",
+        "author_name": "Big Players Group",
+        "slug": "bigplayersonly",
+        "cover": "20220309_040335_eef442e02df238158182cfc94629ae53.jpg"
+    },
+    {
+        "podcast_id": 119979,
+        "title": "Fanspert",
+        "description": "Your Podcast for biased sports takes, good laughter, and here to make it way better to be a couch fan of your favorite sports!",
+        "language": "en",
+        "author_name": "Jake Anderson",
+        "slug": "fanspert",
+        "cover": "20220404_080406_ee2f1aa1c06f5b5c59444aa71e984b61.jpg"
+    },
+    {
+        "podcast_id": 120039,
+        "title": "The Rough Life",
+        "description": "A golf podcast unlike any other! In your life, have you ever heard a better golf podcast? Logan and Norman share a glimpse into their golf journey and cover the latest happenings around the sport! ",
+        "language": "en",
+        "author_name": "The Scuttlebutt Sports Network",
+        "slug": "theroughlife",
+        "cover": "20220428_040435_d4b205da7e14f3602615b0cd0e632c55.jpg"
+    },
+    {
+        "podcast_id": 120593,
+        "title": "View from The Loch",
+        "description": "<p>Short conversations surrounding the world of Golf, uploaded weekly.</p><p>Be sure to follow me on Twitter <a href=\"https://twitter.com/billdonald1\">@billdonald1</a></p><p>Any comments and queries please direct them to <a href=\"mailto:bill.donald@lochlomond.com\">bill.donald@lochlomond.com</a></p>",
+        "language": "en",
+        "author_name": "Bill Donald",
+        "slug": "lochlomondgolfclub",
+        "cover": "20230605_010647_f469a88469fdf0b6a2d6ac4aa728f756.jpg"
+    },
+    {
+        "podcast_id": 122955,
+        "title": "Average Golfers Only ",
+        "description": "To most of us golf can bring many emotions to the surface. It can be frustrating, challenging, epic, and exciting all in a 4 hour stretch of 18 holes, which drives most of us to drink. Average Golfers Only aims to build a community of golfers, friends, family, and enemies alike. We discuss golf faux pas, the PGA tour, local course reviews, booze, and all of the tom foolery that comes with it. Join the Average Golfers Only movement and Listen, Subscribe, Like, Comment & Share.",
+        "language": "en",
+        "author_name": "Wyatt Hilderbrand & Edwin Velez",
+        "slug": "agopc",
+        "cover": "20220418_090432_72c19c558d683bb9d03e8553f67625da.jpg"
+    },
+    {
+        "podcast_id": 130186,
+        "title": "The Tournament Code",
+        "description": "<p>The Tournament Code breaks down what it takes to play elite tournament golf. Our guests include players on the PGA Tour, Champions Tour, Korn Ferry Tour, Latin America Tour, Forme Tour, and other various mini-tours, as well as college golf coaches, swing coaches, strategists, and sports psychologists.</p>",
+        "language": "en",
+        "author_name": "Cooper Collins & Daniel Hamrin",
+        "slug": "thetournamentcode",
+        "cover": "20220528_100517_284543e067722879f9ac381a806655c7.jpg"
+    },
+    {
+        "podcast_id": 135288,
+        "title": "Clubhouse VIP",
+        "description": "Clubhouse VIP discusses NFL and Golf topics including honest and unapologetic opinions belonging solely to the hosts and their guests. This is not a safe place for those who offend easily. Listener discretion is highly advised.",
+        "language": "en",
+        "author_name": "Woody & Pro-k",
+        "slug": "clubhousevip",
+        "cover": "20220701_100707_a31f35633a2caf857eee8b8d29b607c9.jpg"
+    },
+    {
+        "podcast_id": 137262,
+        "title": "ON THE ROAD WITH IONA",
+        "description": "Iona Stephen explores extraordinary places and people in golf! ",
+        "language": "en",
+        "author_name": "On the road with Iona",
+        "slug": "ontheroadwithiona",
+        "cover": "20221107_041107_67f537459bb3d79153f8745e61e25ca2.jpg"
+    },
+    {
+        "podcast_id": 139873,
+        "title": "Tru-Turf ",
+        "description": "Tru-Turf has started a podcast series where we catch up with various Superintendents or Course Managers from around the globe.",
+        "language": "en",
+        "author_name": "Tru-Turf Golf & Sports Turf Rollers",
+        "slug": "truturf-superseries-ep1",
+        "cover": "20220713_010747_ae20f4165585e22d255ae070b6ea452d.jpg"
+    },
+    {
+        "podcast_id": 145381,
+        "title": "Taking It To The Max. ",
+        "description": "A North Dakota kid who goes to Syracuse University and talks a lot about sports, mainly professional golf, SU sports, Minnesota Vikings, and Minnesota Twins. ",
+        "language": "en",
+        "author_name": "Max Murphy-Schumacher",
+        "slug": "pg-315",
+        "cover": "20220816_050811_bf6743de9ca58d9395bb38938fb44045.jpg"
+    },
+    {
+        "podcast_id": 149501,
+        "title": "THE GIMMES PODCAST",
+        "description": "Professional Golf Enthusiast\n\n\ud83d\udce7 thegimmespodcast@gmail.com\n\nhttps://linktr.ee/thegimmespodcast\n\nTwo dudes are making sense of the golf world in entertaining 20-minute intervals. The Gimmes Podcast was founded in August of 2022 and had been taking off since then. \n",
+        "language": "en",
+        "author_name": "The Gimmes Podcast",
+        "slug": "thegimmespodcast",
+        "cover": "20220828_070852_e5eecc892aa3c8715c3ccb89a9ff2ed9.jpg"
+    },
+    {
+        "podcast_id": 150288,
+        "title": "LineSight 2020 Podcast",
+        "description": "LineSight 2020 comes to you with all of the greatest sports information, Mystery Top 5, and general hilarity.",
+        "language": "en",
+        "author_name": "LineSight 2020",
+        "slug": "linesight2020",
+        "cover": "20220901_110916_42b5c48a28cd4a7268a6e57824412d7a.jpg"
+    },
+    {
+        "podcast_id": 151099,
+        "title": "Rough Golf Podcast",
+        "description": "The Rough Golf Podcast is a podcast for the everyday average golfer who is looking to better their golf game and have a good laugh. This podcast will address some of the biggest issues with the sport of golf and how that affects new and beginner golfers getting into the game. If you have ever felt like you would love to try golf but the game feels beyond your reach then this podcast is for you.  The podcast will include news of the golfing world, helpful tips and tricks for your golf game, and stories collected from golfers I have met during my personal golf journey. This podcast will address some of the biggest issues with the game of golf and how that affects new and beginner golfers getting into the game. Join in on the conversation and let's get golfing. ",
+        "language": "en",
+        "author_name": "Jacob Harris",
+        "slug": "roughgolfpodcast",
+        "cover": "20220905_060919_e7f26dc0369a4490fce815e2a108dacd.jpg"
+    },
+    {
+        "podcast_id": 152406,
+        "title": "Future Champions Golf Podcast",
+        "description": "Future Champions Golf is a weekly podcast for Junior Golfers, their parents, and any golfer to learn about the ins and outs of golf and tournament play. Join Chris and Connor and their guests as they discuss the realities of competitive golf in a laid back atmosphere.",
+        "language": "en",
+        "author_name": "Future Champions Golf Inc.",
+        "slug": "futurechampionsgolfpodcast",
+        "cover": "20220910_120926_98600f8a539903c74282fcec3530d791.jpg"
+    },
+    {
+        "podcast_id": 153301,
+        "title": "Tee Minus 72: A Golf Podcast",
+        "description": "Ones lanky, ones lefty, and one can\u2019t reach the top shelf. 3 washed up best friends with the same goal: To shoot under par in a year. \n\nJoin our golf journey to go from decent golfers at best to being able to shoot under par. Everything from swing thoughts, range sessions, and live course recordings will be talked about and picked apart in each episode of Tee Minus 72",
+        "language": "en",
+        "author_name": "Tee Minus 72",
+        "slug": "teeminus72",
+        "cover": "20220914_010946_532caaa121518ac298564795e5da257f.jpg"
+    },
+    {
+        "podcast_id": 154518,
+        "title": "The Bogey Train",
+        "description": "Golf Podcast discussing all things golf including current events and news in the world of golf, golf gaming, and our own golf games.",
+        "language": "en",
+        "author_name": "Nick Mahowald",
+        "slug": "thebogeytrain",
+        "cover": "20220919_030911_15d6377df7909fbc3b5b479dafa8e385.jpg"
+    },
+    {
+        "podcast_id": 157394,
+        "title": "Sports with the Beattys ",
+        "description": "A father/son podcast focused on all sports and the history of sports along with memorabilia and autograph collecting.",
+        "language": "en",
+        "author_name": "Jason and Pierce Beatty",
+        "slug": "sportswiththebeattys",
+        "cover": "20221002_011001_a6c44465c85021148833b5c6fb18849e.jpg"
+    },
+    {
+        "podcast_id": 159237,
+        "title": "Covered It - Weekly Golf Podcast",
+        "description": "<p>Your weekly non-golfing golf update as brought to you by Kwack Golf.</p>",
+        "language": "en",
+        "author_name": "Kwack Golf",
+        "slug": "covered-it",
+        "cover": "20221010_091037_61d5243b929836c89f51075dc58bd1cc.jpg"
+    },
+    {
+        "podcast_id": 159281,
+        "title": "Golf Trip",
+        "description": "Le podcast golf qui couvre aussi bien l'actualit\u00e9 du golf professionnel et amateur que les diff\u00e9rents parcours, les \"golf trips\" \u00e0 faire entre amis, les nouveaut\u00e9s mat\u00e9riels et les diff\u00e9rentes actus.\nCo-pr\u00e9sent\u00e9 par Philippe Jost et Stanislas D\u00e9bit, sur un ton amical et plut\u00f4t irr\u00e9v\u00e9rencieux !\nVenez nous \u00e9couter !\n",
+        "language": "fr",
+        "author_name": "Philippe Jost",
+        "slug": "golftrip",
+        "cover": "20221010_021021_705fe14e5bf7521768d9e6367bb44bf7.jpg"
+    },
+    {
+        "podcast_id": 160117,
+        "title": "GolfBrain",
+        "description": "Two College Golfers explaining how to create a successful golf game!",
+        "language": "en",
+        "author_name": "Nick Zaller & Blake Ring-Fish",
+        "slug": "golfbrain",
+        "cover": "20221013_031036_fd3001db5739ccbb7b770067421488dd.jpg"
+    },
+    {
+        "podcast_id": 171581,
+        "title": "The Bad Bounce Podcast",
+        "description": "<p>The Bad Bounce Podcast is hosted by four former collegiate golfers who make bad golf bets and think they're just unlucky. Listen to us discuss all things regarding the swing, golf analytics, sports gambling, and a little bit of everything!</p>",
+        "language": "en",
+        "author_name": "Josh Park & Kyle DeSilva",
+        "slug": "badbouncegolf",
+        "cover": "20221130_041156_19f4c2b0bfaf5283355a59bb9732efc5.jpg"
+    },
+    {
+        "podcast_id": 179316,
+        "title": "Food | Fore | Golf : The Podcast",
+        "description": "'Food | Fore | Golf' is a show dedicated to exploring the stories and characters that are contributing to the greater golf community.",
+        "language": "en",
+        "author_name": "Donovan Service",
+        "slug": "food-fore-golf",
+        "cover": "20230109_070158_c456f7cd1dcc9312bfce08e76b8ba92a.jpg"
+    },
+    {
+        "podcast_id": 179870,
+        "title": "MuckinFiddleGolf",
+        "description": "Just hit it down the MuckinFiddle!  This is a weekly show built by friends who play a lot of golf and do a lot of gambling.  We'll make weekly golf, basketball, football picks with guests. And we keep score.  Lots of lively discussion around random twitter topics and Iowa Hawkeyes Sports. ",
+        "language": "en",
+        "author_name": "Brian Huff",
+        "slug": "muckinfiddlegolf",
+        "cover": "20230111_080140_bc3a1c30ea1284ea570315cda427dda5.jpg"
+    },
+    {
+        "podcast_id": 184542,
+        "title": "Three Beers Down",
+        "description": "<p>We are three blokes who think we have funny conversations, so we thought we would start a pod. We will have guests stars (our mates) and will enjoy a beer whilst recording our conversations. Send us a message or funny story to feature on the show! </p><p>Our show is supported by Zierholz Brewery. Established in 2005, Zierholz has supplied the Canberra market and beyond with superbly drinkable beer brewed with loyal adherence to the German Beer Purity Law (Reinheitsgebot anno 1516). </p>",
+        "language": "en",
+        "author_name": "Dylan, Anthony and Brett",
+        "slug": "threebeersdownpod",
+        "cover": "20230221_100207_b04524aa6186a6b3e25d48504fa10457.jpg"
+    },
+    {
+        "podcast_id": 190161,
+        "title": "Swamp Men Golf Podcast",
+        "description": "<p>Everything Golf including full swing netflix reviews, majors coverage, random golf chat and golf holidays.</p>",
+        "language": "en",
+        "author_name": "Woody/Stick/Jack",
+        "slug": "swampmengolfpodcast",
+        "cover": "20230216_100230_69e3072fb478b1288ff0d568cb628924.jpg"
+    },
+    {
+        "podcast_id": 191262,
+        "title": "TGI Golf Pod",
+        "description": "<p>TGI Golf's Eddie Reid, Adele McLean and Matt Millard discuss the latest news from the group and the golf industry.</p>",
+        "language": "en",
+        "author_name": "TGI Golf Partnership",
+        "slug": "tgigolf2023ep1",
+        "cover": "20230221_120242_618f34a1a95c49452be7a930d468031c.jpg"
+    },
+    {
+        "podcast_id": 191892,
+        "title": "Tip It Out Golf",
+        "description": "<p>We are couple of golf sickos pursuing the ever elusive perfect golf. During the journey we hope to not only improve our game, but yours as well! Lets TIP IT OUT!</p>",
+        "language": "en",
+        "author_name": "Tip It Out Golf",
+        "slug": "tipitoutgolf",
+        "cover": "20230223_050202_c3ce26aafe7d2f460f16aca3fcfbc4a4.jpg"
+    },
+    {
+        "podcast_id": 192613,
+        "title": "Par 4 the Course",
+        "description": "<p>Two totally average golfers discuss the ups and downs of the golf world and their own golf game. The good and the bad, they are all Par 4 the Course!</p><p>Subscribe today for all new episodes!</p>",
+        "language": "en",
+        "author_name": "Par 4 The Course",
+        "slug": "par4thecourse",
+        "cover": "20230307_080301_0c8670dcbb89487d62576f5cfc9ac430.jpg"
+    },
+    {
+        "podcast_id": 194341,
+        "title": "The FFP Pod",
+        "description": "<p>Amateur golf, professional craic.</p><p>Hosted by Dan &amp; Matt.</p>",
+        "language": "en",
+        "author_name": "Far From Par Golf",
+        "slug": "ffp-pod",
+        "cover": "20230811_070802_816297c8bd7463acc2c513ac0d8d0ea2.jpg"
+    },
+    {
+        "podcast_id": 195532,
+        "title": "Golf Beans",
+        "description": "<p>Scott McGavick and CJ Johnson bring you Golf Beans - Good for your heart! This is the \"Full Swing\" equivalent of a suburban golf club going through a year long tournament.</p>",
+        "language": "en",
+        "author_name": "Scott McGavick & CJ Johnson",
+        "slug": "golfbeans",
+        "cover": "20230309_030350_77927ea5130db085969e3bee4959cf48.jpg"
+    },
+    {
+        "podcast_id": 197131,
+        "title": "The Jeremy Callahan Show",
+        "description": "<p>The Jeremy Callahan podcast takes you inside the world of golf with expert analysis, exclusive interviews, and insightful commentary. I'm your host, Jeremy Callahan, a lifelong golfer, and golf enthusiast who's passionate about the game and everything that goes with it.</p><p>Each week, we'll explore the latest news and trends in the golf world, from the PGA Tour to the amateur ranks and everything in between. We'll dive into the history of the game and take a closer look at some of golf's most iconic players, courses, and moments.</p><p>But we won't just talk about the pros - we'll also cover the game from the perspective of the everyday golfer, sharing tips and tricks to help you improve your game and enjoy the sport even more.</p><p></p><p>And of course, we'll have plenty of guests on the show, including top players, coaches, course designers, and other experts in the field. They'll share their insights and stories with us, giving us an inside look at what it's really like to play and work in the world of golf.</p><p></p><p>So, if you're a fan of golf - whether you're a seasoned pro or a casual player - \"The Jeremy Callahan Show\" is the podcast for you. Tune in each week for a lively and informative conversation about all things golf.</p>",
+        "language": "en",
+        "author_name": "Jeremy Callahan",
+        "slug": "jeremycallahan",
+        "cover": "20230315_080339_afc06f97805c57ab1bf4028521eaa47e.jpg"
+    },
+    {
+        "podcast_id": 197466,
+        "title": "Divot Toolz ",
+        "description": "<p>The Boys Chat the recent week in golf, PGA / LIV and beyond! Local CT golf and Jmillz rants followed by the sensible Big Cat's Hot takes!</p>",
+        "language": "en",
+        "author_name": "Divot Toolz Studioz",
+        "slug": "divottoolz",
+        "cover": "20230320_010327_a5d97d9650c02de0e14fe6015f0fd252.jpg"
+    },
+    {
+        "podcast_id": 201526,
+        "title": "Spirit of the Game- Colorado Golf Association",
+        "description": "<p>A spirited discussion about the Rules of Golf and the players who break them with CGA Executive Director Ed Mate and Director of Rules and Competition Lewis Harry</p>",
+        "language": "en",
+        "author_name": "CGA",
+        "slug": "cologolfpodcasts",
+        "cover": "20230405_040402_67bb2b720e78e8490ac852338cb9224a.jpg"
+    },
+    {
+        "podcast_id": 202343,
+        "title": "Vardon",
+        "description": "<p>Where We Talk About Drifting From Tradition</p>",
+        "language": "en",
+        "author_name": "Vardon",
+        "slug": "vardon",
+        "cover": "20230503_050557_f893f917cae434ce3688669d8bba31b0.jpg"
+    },
+    {
+        "podcast_id": 204412,
+        "title": "Left Hand Back Hand",
+        "description": "<p>Welcome to the Left Hand Back Hand where hosts, Michael and Lincoln, talk about all things disc golf. We are two lefties that love the game and like to take an hour or two out of our week to talk about any and all things happening in disc golf, new and exciting discs we are trying, and miscellaneous hypotheticals we can come up with.</p><p>Join us weekly on YouTube or wherever you listen to your podcasts!</p>",
+        "language": "en",
+        "author_name": "Michael & Lincoln",
+        "slug": "lefthandbackhand",
+        "cover": "20230420_010403_f7029dac06000e4868817d46c2e0eff5.jpg"
+    },
+    {
+        "podcast_id": 206035,
+        "title": "Bogey Boyz BACC9 PodCast",
+        "description": "<p>Just a couple of dudes talking...</p><p>thebogeyboyz@gmail.com</p>",
+        "language": "en",
+        "author_name": "Rob, James and Blake ",
+        "slug": "bogeyboyzbacc9",
+        "cover": "20230709_080738_015b7cbcf0d7d1dfdc63cfb577a609bd.jpg"
+    },
+    {
+        "podcast_id": 212713,
+        "title": "From the Fringe",
+        "description": "<p>Golf is an addiction, there is no other way to say it. Either you eat, sleep and breathe golf, or there is a very good chance you know someone who does. Take a journey with me as I set out to improve a mediocre golf game and engage in solid 19th Hole banter.</p><p>IG: @from_the_fringe</p><p>Threads: @from_the_fringe</p><p>X: :@frmthefringe</p><p>\ud83c\udf35Scottsdale AZ\ud83c\udf35</p>",
+        "language": "en",
+        "author_name": "J. Thomas",
+        "slug": "from-the-frin",
+        "cover": "20230624_020613_ce2745451b28ba804fc106baffad5b90.jpg"
+    },
+    {
+        "podcast_id": 213443,
+        "title": "Cart Buddies Podcast",
+        "description": "<p>The Cart Buddies Podcast by Rivalry Golf is a bi-weekly podcast hosted by Matt Funk (@mattyfunkster on IG). Featured guests include Rivalry Golf team members, local and national golf personalities, and the close friends we share the course with.</p>",
+        "language": "en",
+        "author_name": "Matthew Funk",
+        "slug": "cartbuddiespod",
+        "cover": "20230606_030609_1d4d87a488418b3918ec122387376558.jpg"
+    },
+    {
+        "podcast_id": 219899,
+        "title": "Slice Indoor Golf Podcast",
+        "description": "<p>Test 1</p>",
+        "language": "en",
+        "author_name": "Slice Indoor Golf Podcast",
+        "slug": "sliceindoorgolfpod",
+        "cover": "20230717_080751_a0f39783b9ebe542d2f24838dc28d25b.jpg"
+    },
+    {
+        "podcast_id": 220115,
+        "title": "The Golf Report",
+        "description": "<p>Weekly golf news, interviews, and content.</p><p>New episodes Wednesdays</p>",
+        "language": "en",
+        "author_name": "Logan Lerew",
+        "slug": "thegolfreport",
+        "cover": "20230731_120705_22dcc21e6249083c2f68fba26367ccd5.jpg"
+    },
+    {
+        "podcast_id": 226542,
+        "title": "Tee Times & Tackles",
+        "description": "<p>Taylor Price &amp; Ejodamen Ejiya conquer the world of Golf and Football while bringing interesting perspectives, funny stories, and great (and not so great) predictions for the biggest events of the year!</p>",
+        "language": "en",
+        "author_name": "Taylor Price & Ejodamen Ejiya",
+        "slug": "teetimesandtackles",
+        "cover": "20230830_020827_c9cb7ee9bb97a6ba11b8fecd700fc827.jpg"
+    },
+    {
+        "podcast_id": 227255,
+        "title": "The Lij Wychers Show",
+        "description": "<p>Golf, football, and fights with a side of entertainment. The Lij Wychers Show offers a unique sports perspective while bringing together an audience from all different walks of life.</p>",
+        "language": "en",
+        "author_name": "Elijah Wychers",
+        "slug": "thelijwychersshow2",
+        "cover": "20230905_030930_8670d1e1536b38e7393854c965cdc513.jpg"
+    },
+    {
+        "podcast_id": 228176,
+        "title": "The 2-Ball Golf Show",
+        "description": "<p>PGA Professional &amp; YouTuber 'Dan Hendriksen' and YouTuber 'Lester Barnes' talk about all things Golf and YouTube related!</p>",
+        "language": "en",
+        "author_name": "Dan Hendriksen Golf & Lester 'Bernie' Barnes",
+        "slug": "the2ballgolfshow",
+        "cover": "20230911_010938_39ba48384acdc3f6f390fb592dd355c5.jpg"
+    },
+    {
+        "podcast_id": 228271,
+        "title": "Boston Golf Pod ",
+        "description": "<p>Welcome to the Boston Golf Pod! This is the newest podcast in the golf industry, solely focused on the golf in the Greater Boston, MA area. We will be providing you with up to date information on all the Greater Boston golf courses, information about the course, our points of view, taking on what Google Reviews have to say and much more!</p>",
+        "language": "en",
+        "author_name": "Boston Golf Pod",
+        "slug": "bostongolfpod",
+        "cover": "20230912_010914_bacaf871616678c316b6c04b1a705aae.jpg"
+    },
+    {
+        "podcast_id": 228469,
+        "title": "Behind Golf with Dan Hendriksen",
+        "description": "<p>Dan Hendriksen meets with many interesting people in the golf industry to find out how they have fallen into the job that they currently do. From Tour Pro's to leading manufacturer owners, this podcast has it all.</p>",
+        "language": "en",
+        "author_name": "Dan Hendriksen",
+        "slug": "behindgolf",
+        "cover": "20230915_020915_82f2428b10eba021e414761af00a4316.jpg"
+    }
+]
