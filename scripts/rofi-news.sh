@@ -32,7 +32,7 @@ while provider=$(echo -en "$providers" | $ROFI_CMD -selected-row ${provider_row}
 	RSS_URL=${rss_urls[$provider_text]}
 	RSS_FILE="$RSS_CACHE/$provider_text.news"
 
-	# TODO: do this job in background and display message+
+	# TODO: do this job in background and display message
 	if [ -f "$RSS_FILE" ]; then
 		# compute time delta between current date and news file date
 		news_date=$(date -r "$RSS_FILE" +%s)
