@@ -11,7 +11,7 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 TV_PLAYER="${TV_PLAYER:-mpv --no-resume-playback --force-window=immediate}"
 TV_FILE="${TV_FILE:-$SCRIPT_PATH/../data/channels.m3u}" # ../data/channels.m3u
 TV_CACHE="${TV_CACHE:-$HOME/.cache/rofi-tv}"
-TV_URL="https://iptv-org.github.io/iptv/index.nsfw.m3u"
+TV_URL="https://iptv-org.github.io/iptv/index.m3u"
 
 if [ ! -f "$TV_FILE" ]; then
     printf "Downloading channel list...\n";
