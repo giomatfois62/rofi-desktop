@@ -11,6 +11,7 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
+- Make rofi-news easier to confiure with external file
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably

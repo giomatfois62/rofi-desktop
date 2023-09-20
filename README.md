@@ -32,6 +32,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - 1377x.to (rofi-torrent.sh, show available torrents and scrape magnet links to download)
 - Steam Games (rofi-steam.sh)
 - Sport Events (rofi-livetv.sh)
+- Podcasts (rofi-podcast.sh, browse and play podcasts from rss.com)
 - Latest News (rofi-news.sh, rss news from bbc international and other providers)
 - Weather Forecast (curl wttr.in piped to rofi)
 - Watch TV (rofi-tv.sh, stream TV channels with mpv)
