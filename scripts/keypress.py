@@ -8,7 +8,7 @@ from pynput.keyboard import Key, Listener
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 cmd_command = script_dir+"/rofi-desktop.sh -a"
-alt_command = script_dir+"/hud.py"
+alt_command = script_dir+"/rofi-hud.py"
 
 cmd_pressed = False
 alt_pressed = False
