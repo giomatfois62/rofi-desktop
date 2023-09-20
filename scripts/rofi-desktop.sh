@@ -28,6 +28,15 @@ declare -A commands=(
     ["Sport Events"]=livetv
     ["Radio Stations"]=radio
     ["Podcasts"]=podcasts
+    ["Reddit"]=browse_reddit
+    ["Install Programs"]=browse_flathub
+    ["Flathub"]=browse_flathub
+    ["Torrents"]=search_torrent
+    ["Google"]=search_google
+    ["YouTube"]=search_youtube
+    ["Wikipedia"]=search_wikipedia
+    ["ArchWiki"]=search_archwiki
+    ["Torrents"]=search_torrent
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
@@ -75,13 +84,15 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSystemd Configuration\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
 
 utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
-all_entries="$main_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
+web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nTorrents\nFlathub"
+
+all_entries="$main_entries\n$web_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
 
 show_menu() {
     local menu_entries="$1"
@@ -117,6 +128,10 @@ appearance_menu() {
 
 combi_menu() {
     show_menu "$all_entries" "All"
+}
+
+web_search() {
+    show_menu "$web_entries" "Website"
 }
 
 run_app() {
@@ -185,27 +200,32 @@ livetv() {
     "$SCRIPT_PATH"/rofi-livetv.sh && exit
 }
 
-web_search() {
-    apis="google\nwikipedia\nyoutube\nreddit\narchwiki\nflathub\n1377x.to"
+browse_flathub() {
+    "$SCRIPT_PATH"/rofi-flathub.sh && exit
+}
 
-    # remember last entry chosen
-    local api_row=0
-    local api_text
+browse_reddit() {
+    "$SCRIPT_PATH"/rofi-reddit.sh && exit
+}
 
-    while api=$(echo -e $apis | $ROFI_CMD -selected-row ${api_row} -format 'i s' -p "Website"); do
-        api_row=$(echo "$api" | awk '{print $1;}')
-        api_text=$(echo "$api" | cut -d' ' -f2-)
+search_torrent() {
+    "$SCRIPT_PATH"/rofi-torrent.sh && exit
+}
 
-        if [ "$api_text" = "reddit" ]; then
-            "$SCRIPT_PATH"/rofi-reddit.sh && exit
-        elif [ "$api_text" = "flathub" ]; then
-            "$SCRIPT_PATH"/rofi-flathub.sh && exit
-        elif [ "$api_text" = "1377x.to" ]; then
-            "$SCRIPT_PATH"/rofi-torrent.sh && exit
-        else
-            "$SCRIPT_PATH"/rofi-web-search.sh "$api_text" && exit
-        fi
-    done
+search_google() {
+    "$SCRIPT_PATH"/rofi-web-search.sh "google" && exit
+}
+
+search_youtube() {
+    "$SCRIPT_PATH"/rofi-web-search.sh "youtube" && exit
+}
+
+search_wikipedia() {
+    "$SCRIPT_PATH"/rofi-web-search.sh "wikipedia" && exit
+}
+
+search_archwiki() {
+    "$SCRIPT_PATH"/rofi-web-search.sh "archwiki" && exit
 }
 
 set_timer() {
@@ -433,7 +453,7 @@ while getopts ":hdsua" option; do
         a) # display utilities menu
             combi_menu;;
         \?) # display main menu
-            echo "Invalid option:" $1
+            echo "Invalid option:" "$1"
             print_help;;
     esac
     exit
