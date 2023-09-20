@@ -18,7 +18,7 @@ PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
 declare -A commands=(
     ["Applications"]=run_app
     ["Run Command"]=run_cmd
-    ["Browse Files"]=browse
+    ["Browse Files"]=browse_files
     ["Search Computer"]=search
     ["Search Web"]=web_search
     ["Steam Games"]=steam_games
@@ -162,7 +162,7 @@ run_cmd() {
     fi
 }
 
-browse() {
+browse_files() {
     # TODO: intercept entry chosen to exit (fixed in git)
     rofi $SHOW_ICONS -show filebrowser && exit
 }
@@ -242,16 +242,6 @@ settings() {
     "$SCRIPT_PATH"/rofi-settings.sh && exit
 }
 
-calculator() {
-    have_calc=$(rofi -dump-config | grep calc)
-
-    if [ -n "$have_calc" ]; then
-        rofi -show calc
-    else
-        rofi -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
-    fi
-}
-
 tv() {
     "$SCRIPT_PATH"/rofi-tv.sh && exit
 }
@@ -320,13 +310,13 @@ char_picker() {
     "$SCRIPT_PATH"/rofi-characters.sh && exit
 }
 
-notifications() {
-    daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
+calculator() {
+    have_calc=$(rofi -dump-config | grep calc)
 
-    if [ ${daemon_running} -gt 1 ]; then
-        "$SCRIPT_PATH"/rofication-gui.py
+    if [ -n "$have_calc" ]; then
+        rofi -show calc
     else
-        rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
+        rofi -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
     fi
 }
 
@@ -337,6 +327,16 @@ task_mgr() {
         "$SCRIPT_PATH"/rofi-top.sh
     else
         eval "$TASK_MANAGER"
+    fi
+}
+
+notifications() {
+    daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
+
+    if [ ${daemon_running} -gt 1 ]; then
+        "$SCRIPT_PATH"/rofication-gui.py
+    else
+        rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
     fi
 }
 
@@ -353,6 +353,14 @@ clipboard() {
         fi
     else
         rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
+    fi
+}
+
+menu_config() {
+    selected=$(find "$SCRIPT_PATH" -maxdepth 2 -type f | sort | $ROFI_CMD -p "Open File")
+
+    if [ -n "$selected" ]; then
+        xdg-open "$selected" && exit 0
     fi
 }
 
@@ -374,14 +382,6 @@ display() {
 
 volume() {
     "$SCRIPT_PATH"/rofi-volume.sh
-}
-
-menu_config() {
-    selected=$(find "$SCRIPT_PATH" -maxdepth 2 -type f | sort | $ROFI_CMD -p "Open File")
-
-    if [ -n "$selected" ]; then
-        xdg-open "$selected" && exit 0
-    fi
 }
 
 set_lang() {
@@ -408,16 +408,24 @@ kb_layout() {
     "$SCRIPT_PATH"/rofi-keyboard-layout.sh
 }
 
+check_program() {
+    if ! command -v $1 &> /dev/null; then
+        rofi -e "Install $1"
+    else
+        $1
+    fi
+}
+
 qt5_app() {
-    qt5ct;
+    check_program qt5ct;
 }
 
 gtk_app() {
-    lxappearance;
+    check_program lxappearance;
 }
 
 rofi_app() {
-    rofi-theme-selector;
+    check_program rofi-theme-selector;
 }
 
 wallpaper() {
