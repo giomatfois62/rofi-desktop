@@ -52,8 +52,14 @@ show_episodes() {
 
     episodes=$(jq -r ".episodes | .[] | .title" "$episodes_file")
     header="<b>$title</b> ($author)""&#x0a;""&#x0a;""$desc"
+    episodes_count=$(echo "$episodes" | wc -l)
 
-    while episode=$(echo -en "$episodes\nMore..." | rofi -dmenu -i -mesg "$header" -p "Episode"); do
+    if [ $episodes_count -gt 9 ]; then
+        episodes="$episodes\nMore..."
+    fi
+
+
+    while episode=$(echo -en "$episodes" | rofi -dmenu -i -mesg "$header" -p "Episode"); do
         if [ "$episode" = "More..." ]; then
             counter=$((counter+1))
             series_url="https://apollo.rss.com/podcasts/$slug/episodes?limit=10&page="$counter
