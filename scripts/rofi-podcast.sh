@@ -9,11 +9,11 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
 PODCAST_FOLDER=${PODCAST_FOLDER:-"$SCRIPT_PATH/../data/podcasts"}
 PODCAST_CACHE=${PODCAST_CACHE:-"$HOME/.cache/podcasts"}
 PODCAST_HISTORY=${PODCAST_HISTORY:-"$PODCAST_CACHE/recents"}
 PODCAST_EXPIRATION_TIME=${PODCAST_EXPIRATION_TIME:-3600} # refresh episodes files every hour
-PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
 
 mkdir -p $PODCAST_CACHE
 
