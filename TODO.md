@@ -6,17 +6,18 @@
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
-- Add a create custom menu module using rofi-json
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Make rofi-news easier to configure with external file
+- Document custom menu usage in readme
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
+- Fix rofi-json exit code
 
 # WAYLAND COMPAT
 - clipboard (greenclip x11 only)
@@ -59,6 +60,7 @@
 - Move all scripts to script directory (DONE)
 - Integrate snippy (paste snippets stored in folder) (DONE)
 - Fix rofi-tv json link or convert script to use m3u playlist file (DONE)
+- Add a create custom menu module using rofi-json (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
