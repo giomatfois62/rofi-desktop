@@ -440,24 +440,30 @@ print_help() {
     echo "Available options: [-d|h|s|u]"
     echo
     echo "d     Show the main desktop menu."
+    echo "f     Show the file search menu"
     echo "h     Print this Help."
     echo "s     Show the system settings menu."
     echo "u     Show the utilities menu."
+    echo "w     Show the web search menu"
     echo "a     Show all menu entries"
     echo
 }
 
 # run
-while getopts ":hdsua" option; do
+while getopts ":hdfsuwa" option; do
     case $option in
         h) # display help
             print_help;;
         d) # display main menu
             main_menu;;
+        f) # display file search menu
+            search;;
         s) # display settings menu
             settings_menu;;
         u) # display utilities menu
             utilities_menu;;
+        w) # display web search menu
+            web_search;;
         a) # display utilities menu
             combi_menu;;
         \?) # display main menu
