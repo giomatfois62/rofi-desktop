@@ -464,7 +464,7 @@ while getopts ":hdfsuwa" option; do
             utilities_menu;;
         w) # display web search menu
             web_search;;
-        a) # display utilities menu
+        a) # display all menus
             combi_menu;;
         \?) # display main menu
             echo "Invalid option:" "$1"
