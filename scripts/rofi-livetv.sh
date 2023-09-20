@@ -30,10 +30,24 @@ while name=$(jq '.[] | "\(.name) {\(.time)} \(.category)"' "$LIVETV_FILE" | tr -
 
     name_str=$(echo "$name" | cut -d' ' -f2- | cut -d"{" -f1 | sed 's/ *$//g')
     link_sel=".[] | select(.name==\"$name_str\") | .link"
+    event_link=$(jq "$link_sel" "$LIVETV_FILE" | tr -d '"')
 
-    xdg-open "$(jq "$link_sel" "$LIVETV_FILE" | tr -d '"')"
+    # follow redirect with curl using -L
+    streams=$(curl -L "$event_link" | grep "OnClick=\"show_webplayer" |\
+		sed -E 's/^.*href/href/; s/>.*//' | sed -r 's/.*href="([^"]+).*/\1/g')
 
-    exit 0
+	if [ -z "$streams" ]; then
+		rofi -e "No stream links available, retry later."
+	else
+		selected_stream=$(echo -en "$streams" | $ROFI_CMD -p "Link")
+
+		if [ -n "$selected_stream" ]; then
+
+			xdg-open https:"$selected_stream"
+
+			exit 0
+		fi
+	fi
 done
 
 exit 1
