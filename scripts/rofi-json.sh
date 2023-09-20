@@ -12,10 +12,10 @@ else
   config_file="${cwd}/${user_file}"
 fi
 
-json=$(cat ${config_file})
+json=$(cat "$config_file")
 
 if [ $# -eq 1 ]; then
-  echo $json | jq -cr '.[] | "\(.name)|\(.command)|\(.icon)"' |
+  echo "$json" | jq -cr '.[] | "\(.name)|\(.command)|\(.icon)"' |
   while IFS="|" read -r name command icon
   do
     if [[ $name == "null" ]]; then
@@ -25,12 +25,10 @@ if [ $# -eq 1 ]; then
       icon="system-run"
     fi      
     echo -en "${name}\0icon\x1f${icon}\n"
-  done  
-  exit 1
+  done
 fi
 
 if [ $# -eq 2 ]; then
-
   selected=$2
   task=$(echo $json | jq ".[] | select(.name == \"$selected\")")
 
@@ -45,6 +43,7 @@ if [ $# -eq 2 ]; then
   fi
 
   coproc bash -c "$command"
-  exit
-
+  exit 0
 fi
+
+exit 1
