@@ -6,7 +6,6 @@
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
-- Fix rofi-tv json link or convert script to use m3u playlist file
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -57,6 +56,7 @@
 - Add configurable options to rofi-livetv (DONE)
 - Move all scripts to script directory (DONE)
 - Integrate snippy (paste snippets stored in folder) (DONE)
+- Fix rofi-tv json link or convert script to use m3u playlist file (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
