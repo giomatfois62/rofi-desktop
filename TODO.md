@@ -6,7 +6,8 @@
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
-- Create a podcast script
+- Add podcast script to main menu
+- Fix rofi-tv json link or convert script to use m3u playlist file
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
