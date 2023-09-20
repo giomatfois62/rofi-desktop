@@ -147,7 +147,7 @@ web_search() {
 }
 
 custom_menu() {
-    show_menu "$custom_entries" "Custom"
+    show_menu "$custom_entries" "Menu"
 }
 
 run_app() {
