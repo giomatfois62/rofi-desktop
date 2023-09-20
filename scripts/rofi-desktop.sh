@@ -81,6 +81,8 @@ utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Tex
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
+all_entries="$main_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
+
 show_menu() {
     local menu_entries="$1"
     local menu_prompt="$2"
@@ -114,8 +116,7 @@ appearance_menu() {
 }
 
 combi_menu() {
-    local menu_entries="$main_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
-    show_menu "$menu_entries" "All"
+    show_menu "$all_entries" "All"
 }
 
 run_app() {
@@ -153,7 +154,7 @@ browse() {
 
 ssh_menu() {
     # TODO: intercept entry chosen to exit
-    rofi -show ssh
+    rofi -show ssh && exit
 }
 
 steam_games() {
