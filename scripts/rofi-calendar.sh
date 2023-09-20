@@ -37,7 +37,7 @@ print_month() {
 
   cal --color=always --$WEEK_START $mnt $yr \
     | sed -e 's/\x1b\[[7;]*m/\<b\>\<u\>/g' \
-          -e 's/\x1b\[[0;]*m/\<\/u\>\<\/b\>/g' \
+          -e 's/\x1b\[[27;]*m/\<\/u\>\<\/b\>/g' \
           -e '/^ *$/d' \
     | tail -n +2
 
