@@ -14,6 +14,7 @@ TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2 | $ROFI_CMD -p Info}"
 PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
 PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
+CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -93,7 +94,9 @@ appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nTorrents\nFlathub"
 
-all_entries="$main_entries\n$web_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
+custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
+
+all_entries="$main_entries\n$custom_entries\n$web_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
 
 show_menu() {
     local menu_entries="$1"
@@ -107,7 +110,15 @@ show_menu() {
         selected_row=$(echo "$selected" | awk '{print $1;}')
         selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
-        ${commands[$selected_text]};
+        if [ "${commands[$selected_text]+abc}" ]; then
+            ${commands[$selected_text]};
+        else
+            custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
+
+            if [ -f "$custom_menu_file" ]; then
+                rofi -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text" && exit
+            fi
+        fi
     done
 }
 
@@ -133,6 +144,10 @@ combi_menu() {
 
 web_search() {
     show_menu "$web_entries" "Website"
+}
+
+custom_menu() {
+    show_menu "$custom_entries" "Custom"
 }
 
 run_app() {
@@ -444,6 +459,7 @@ update_sys() {
 print_help() {
     echo "Available options: [-d|h|s|u]"
     echo
+    echo "c     Show custom menus"
     echo "d     Show the main desktop menu."
     echo "f     Show the file search menu"
     echo "h     Print this Help."
@@ -455,10 +471,12 @@ print_help() {
 }
 
 # run
-while getopts ":hdfsuwa" option; do
+while getopts ":hcdfsuwa" option; do
     case $option in
         h) # display help
             print_help;;
+        c) # display custom menus
+            custom_menu;;
         d) # display main menu
             main_menu;;
         f) # display file search menu
