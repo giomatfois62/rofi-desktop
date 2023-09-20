@@ -48,6 +48,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
   - Set Timer (rofi-timer.sh)
+  - Pomodoro Timer (pomo)
   - Characters (rofi-characters.sh, utf-8 char and emoji picker)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
@@ -128,3 +129,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [RafaelBocquet](https://github.com/RafaelBocquet/i3-hud-menu)
 - [BarbUk](https://github.com/BarbUk/snippy)
 - [Bugswriter](https://github.com/Bugswriter/pirokit)
+- [Prayag2](https://github.com/Prayag2/pomo)

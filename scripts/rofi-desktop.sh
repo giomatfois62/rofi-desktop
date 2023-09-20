@@ -53,6 +53,7 @@ declare -A commands=(
     ["Dictionary"]=dictionary
     ["Snippets"]=snippets
     ["Set Timer"]=set_timer
+    ["Pomodoro Timer"]=pomodoro
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
     ["Password Manager"]=passwd_mgr
@@ -86,7 +87,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nNotepad\nTo-Do List\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -232,6 +233,10 @@ set_timer() {
     local placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
     rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
         -theme-str "entry{placeholder:\"$placeholder\";"}
+}
+
+pomodoro() {
+    "$SCRIPT_PATH"/pomo && exit
 }
 
 dictionary() {
