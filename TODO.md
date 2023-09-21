@@ -13,6 +13,7 @@
 - Show context in file contents search
 - Make rofi-news easier to configure with external file
 - Document custom menu usage in readme
+- Add entry to search more torrents incrementing counter
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
