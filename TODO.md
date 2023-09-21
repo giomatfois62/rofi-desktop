@@ -6,6 +6,7 @@
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
+- Add window menu and experiment with alt-tab binding (https://github.com/davatorium/rofi/issues/1867)
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
