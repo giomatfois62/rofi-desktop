@@ -18,7 +18,6 @@
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
-- Fix rofi-json exit code
 
 # WAYLAND COMPAT
 - clipboard (greenclip x11 only)
