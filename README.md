@@ -29,7 +29,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Archwiki
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
-  - 1377x.to (rofi-torrent.sh, show available torrents and scrape magnet links to download)
+  - 1377x.to (rofi-torrent.sh, search torrents and open selected magnet links)
 - Steam Games (rofi-steam.sh)
 - Sport Events (rofi-livetv.sh)
 - Podcasts (rofi-podcast.sh, browse and play podcasts from rss.com)
@@ -54,7 +54,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH Sessions(ssh modi)
   - Snippets (snippy)
-  - Code Projects (rofi-projects.py, browse code projects directory and open projects with preferred editor)
+  - Code Projects (rofi-projects.sh, browse code projects directory and open projects with preferred editor)
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - Clipboard (uses greenclip)
@@ -83,7 +83,8 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 ## Dependencies
 The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead.  
 Optional dependencies for some of the tools are: 
-- jq 
+- jq
+- curl
 - mpv 
 - rofi-blocks
 - rofi-calc 
