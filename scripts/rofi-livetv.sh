@@ -2,7 +2,7 @@
 #
 # this script scrape and show the list of upcoming sport events streamed on livetv.sx
 #
-# dependencies: rofi, python3-lxml, python3-requests
+# dependencies: rofi, jq, python3-lxml, python3-requests
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
