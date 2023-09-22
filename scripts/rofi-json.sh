@@ -2,6 +2,8 @@
 
 # https://github.com/luiscrjunior/rofi-json
 
+CACHE="$HOME/.cache/rofi-json"
+
 user_file="$(eval echo ${1})"
 
 if [[ "$user_file" = /* ]]
@@ -13,6 +15,9 @@ else
 fi
 
 json=$(cat "$config_file")
+
+rm "$CACHE"
+touch "$CACHE"
 
 if [ $# -eq 1 ]; then
   echo "$json" | jq -cr '.[] | "\(.name)|\(.command)|\(.icon)"' |
@@ -41,6 +46,8 @@ if [ $# -eq 2 ]; then
   if [[ $command == "null" ]]; then
     command=$(echo $task | jq -j ".name")
   fi
+
+  echo "$2" > "$CACHE"
 
   coproc bash -c "$command"
   exit 0
