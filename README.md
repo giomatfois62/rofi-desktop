@@ -92,7 +92,19 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 - Session Menu (uses loginctl and optional custom lock command)
   - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
 
+## Gallery
 [gif of the menus](https://github.com/giomatfois62/rofi-desktop/blob/main/demo.webm)
+
+Main Menu
+![Main Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/screenshots/rofi_all.png)
+Settings Menu
+![Settings Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/screenshots/rofi_settings.png)
+Utilities Menu
+![Utilities Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/screenshots/rofi_utils.png)
+File Search Menu
+![File Search Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/screenshots/rofi_search.png)
+Web Search Menu
+![Web Search Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/screenshots/rofi_web.png)
 
 ## Global Menu
 The script *script/rofi-hud.py* shows a rofi menu containing the application menu entries of the currently focused window, in a style similar to Ubuntu Unity's HUD or [plasma-hud](https://github.com/Zren/plasma-hud).  
