@@ -4,13 +4,13 @@ rofi-desktop is a collection of scripts launching interactive [rofi](https://git
 
 The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive system settings menu and a menu of simple utilities. This script supports an optional argument to determine which enties to show:
 ```
-./rofi-desktop -d # shows main menu entries
-./rofi-desktop -c # shows custom user menus
-./rofi-desktop -s # shows file search menu
-./rofi-desktop -s # shows settings menu
-./rofi-desktop -u # shows utilities menu
-./rofi-desktop -w # shows web search menu
-./rofi-desktop -a # shows all the menu entries
+./scripts/rofi-desktop.sh -d # shows main menu entries
+./scripts/rofi-desktop.sh -c # shows custom user menus
+./scripts/rofi-desktop.sh -s # shows file search menu
+./scripts/rofi-desktop.sh -s # shows settings menu
+./scripts/rofi-desktop.sh -u # shows utilities menu
+./scripts/rofi-desktop.sh -w # shows web search menu
+./scripts/rofi-desktop.sh -a # shows all the menu entries
 ```
 
 The *config/config.env* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
