@@ -116,7 +116,10 @@ show_menu() {
             custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
 
             if [ -f "$custom_menu_file" ]; then
-                rofi -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text" && exit
+                rofi -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
+		if [ -n "$(cat $HOME/.cache/rofi-json)" ]; then
+                    exit
+                fi
             fi
         fi
     done
