@@ -15,7 +15,7 @@ The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive 
 
 The *config/config.env* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
 
-Users can easily create custom menus editing the *rofi-desktop.sh* script or by putting simple json files in the *scripts/menus* folder.  
+Users can easily create custom menus editing the *rofi-desktop.sh* script or by putting simple json files, containing the list of entries with corresponding commands to run and optional icons to show, in the *scripts/menus* folder.  
 Visit the [rofi-json](https://github.com/luiscrjunior/rofi-json) repo for details on the syntax to use for custom entries.
 
 All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify. Currently implemented functionalities are:
