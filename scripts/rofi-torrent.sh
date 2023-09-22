@@ -25,9 +25,10 @@ fi
 
 baseurl="https://1337x.to"
 query="$(sed 's/ /+/g' <<<$query)"
+counter=1
 
 #curl -s https://1337x.to/category-search/$query/Movies/1/ > $TORRENT_CACHE/tmp.html
-curl -s https://1337x.to/search/$query/1/ > $TORRENT_CACHE/tmp.html
+curl -s https://1337x.to/search/$query/$counter/ > $TORRENT_CACHE/tmp.html
 
 # Get Titles
 grep -o '<a href="/torrent/.*</a>' $TORRENT_CACHE/tmp.html |
@@ -40,45 +41,65 @@ if [ "$result_count" -lt 1 ]; then
   exit 1
 fi
 
-# Seeders and Leechers
-grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' $TORRENT_CACHE/tmp.html |
-  sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' > $TORRENT_CACHE/seedleech.bw
+scrape_torrents() {
+  # Get Titles
+  grep -o '<a href="/torrent/.*</a>' $TORRENT_CACHE/tmp.html |
+  sed 's/<[^>]*>//g' > $TORRENT_CACHE/titles.bw
 
-# Size
-grep -o '<td class="coll-4 size.*</td>' $TORRENT_CACHE/tmp.html |
-  sed 's/<span class="seeds">.*<\/span>//g' |
-  sed -e 's/<[^>]*>//g' > $TORRENT_CACHE/size.bw
+  # Seeders and Leechers
+  grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' $TORRENT_CACHE/tmp.html |
+    sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' > $TORRENT_CACHE/seedleech.bw
 
-# Links
-grep -E '/torrent/' $TORRENT_CACHE/tmp.html |
-  sed -E 's#.*(/torrent/.*)/">.*/#\1#' |
-  sed 's/td>//g' > $TORRENT_CACHE/links.bw
+  # Size
+  grep -o '<td class="coll-4 size.*</td>' $TORRENT_CACHE/tmp.html |
+    sed 's/<span class="seeds">.*<\/span>//g' |
+    sed -e 's/<[^>]*>//g' > $TORRENT_CACHE/size.bw
 
-# Clearning up some data to display
-sed 's/\./ /g; s/\-/ /g' $TORRENT_CACHE/titles.bw |
-  sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/titles.bw
+  # Links
+  grep -E '/torrent/' $TORRENT_CACHE/tmp.html |
+    sed -E 's#.*(/torrent/.*)/">.*/#\1#' |
+    sed 's/td>//g' > $TORRENT_CACHE/links.bw
 
-awk '{print NR " - ["$0"]"}' $TORRENT_CACHE/size.bw > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/size.bw
-awk '{print "[S:"$1 ", L:"$2"]" }' $TORRENT_CACHE/seedleech.bw > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/seedleech.bw
+  # Clearning up some data to display
+  sed 's/\./ /g; s/\-/ /g' $TORRENT_CACHE/titles.bw |
+    sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/titles.bw
+
+  awk '{print NR " - ["$0"]"}' $TORRENT_CACHE/size.bw > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/size.bw
+  awk '{print "[S:"$1 ", L:"$2"]" }' $TORRENT_CACHE/seedleech.bw > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/seedleech.bw
+}
+
+scrape_torrents
+
+torrents=$(paste -d\   $TORRENT_CACHE/size.bw $TORRENT_CACHE/seedleech.bw $TORRENT_CACHE/titles.bw)
+torrents="$torrents\nMore..."
 
 # Getting the line number
-LINE=$(paste -d\   $TORRENT_CACHE/size.bw $TORRENT_CACHE/seedleech.bw $TORRENT_CACHE/titles.bw |
-  $ROFI_CMD |
-  cut -d\- -f1 |
-  awk '{$1=$1; print}')
+while torrent=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" | cut -d\- -f1 | awk '{$1=$1; print}'); do
+  if [ -z "$torrent" ]; then
+    exit 1
+  fi
 
-if [ -z "$LINE" ]; then
-  exit 1
-fi
+  if [ "$torrent" = "More..." ]; then
+    counter=$((counter+1))
+    curl -s https://1337x.to/search/$query/$counter/ >> $TORRENT_CACHE/tmp.html
 
-# Building the url to scrape
-url=$(head -n $LINE $TORRENT_CACHE/links.bw | tail -n +$LINE)
-fullURL="${baseurl}${url}/"
+    scrape_torrents
 
-# Requesting page for magnet link
-curl -s $fullURL > $TORRENT_CACHE/tmp.html
-magnet=$(grep -Po "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" $TORRENT_CACHE/tmp.html | head -n 1)
+    torrents=$(paste -d\   $TORRENT_CACHE/size.bw $TORRENT_CACHE/seedleech.bw $TORRENT_CACHE/titles.bw)
+    torrents="$torrents\nMore..."
+  else
+    # Building the url to scrape
+    url=$(head -n $torrent $TORRENT_CACHE/links.bw | tail -n +$torrent)
+    fullURL="${baseurl}${url}/"
 
-$TORRENT_CLIENT "$magnet"
+    # Requesting page for magnet link
+    curl -s $fullURL > $TORRENT_CACHE/tmp.html
+    magnet=$(grep -Po "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" $TORRENT_CACHE/tmp.html | head -n 1)
 
-exit 0
+    $TORRENT_CLIENT "$magnet" & disown
+
+    exit 0
+  fi
+done
+
+exit 1
