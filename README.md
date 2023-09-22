@@ -2,9 +2,21 @@
 
 rofi-desktop is a collection of scripts launching interactive [rofi](https://github.com/davatorium/rofi) menus, aiming to provide the functionalities of a complete desktop environment. 
 
-The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive system settings menu and a menu of simple utilities.
+The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive system settings menu and a menu of simple utilities. This script supports an optional argument to determine which enties to show:
+```
+./rofi-desktop -d # shows main menu entries
+./rofi-desktop -c # shows custom user menus
+./rofi-desktop -s # shows file search menu
+./rofi-desktop -s # shows settings menu
+./rofi-desktop -u # shows utilities menu
+./rofi-desktop -w # shows web search menu
+./rofi-desktop -a # shows all the menu entries
+```
 
-The *config.env* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
+The *config/config.env* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
+
+Users can easily create custom menus editing the *rofi-desktop.sh* script or by putting simple json files in the *scripts/menus* folder.  
+Visit the [rofi-json](https://github.com/luiscrjunior/rofi-json) repo for details on the syntax to use for custom entries.
 
 All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify. Currently implemented functionalities are:
 - Applications Menu (drun modi)
@@ -31,9 +43,9 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
   - 1377x.to (rofi-torrent.sh, search torrents and open selected magnet links)
 - Steam Games (rofi-steam.sh)
-- Sport Events (rofi-livetv.sh)
+- Sport Events (rofi-livetv.sh, show current and upcoming sport events with relative streaming links)
 - Podcasts (rofi-podcast.sh, browse and play podcasts from rss.com)
-- Latest News (rofi-news.sh, rss news from bbc international and other providers)
+- Latest News (rofi-news.sh, fetch rss news from bbc international and other providers)
 - Weather Forecast (curl wttr.in piped to rofi)
 - Watch TV (rofi-tv.sh, stream TV channels with mpv)
 - Web Radio (rofi-radio.sh, stream Radios with mpv)
@@ -58,7 +70,8 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - Clipboard (uses greenclip)
-- Notifications (uses rofication-daemon.py and rofication-gui.py)
+  - Notifications (uses rofication-daemon.py and rofication-gui.py)
+  - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)
@@ -71,10 +84,11 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Volume (rofi-volume.sh, uses pactl and pavucontrol)
   - Menu Configuration (edit all rofi-desktop scripts)
   - Language (rofi-locale.sh, set LC_ALL for user session)
-  - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
   - Systemd Configuration (rofi-systemd.sh)
   - Update System (update-system.sh)
   - System Info (inxi piped to rofi)
+  - Install Programs (rofi-flathub.sh)
+  - Rofi Shortcuts (keys modi)
 - Session Menu (uses loginctl and optional custom lock command)
   - Lock Screen, Log Out, Suspend, Reboot, Shutdown, Hibernate
 
@@ -85,12 +99,15 @@ The only mandatory dependency is rofi, but it's easy to convert most of the scri
 Optional dependencies for some of the tools are: 
 - jq
 - curl
+- wget
 - mpv 
 - rofi-blocks
-- rofi-calc 
+- rofi-calc
+- xrandr
 - ffmpeg 
 - pactl 
-- fd 
+- fd
+- ripgrep
 - htop 
 - inxi
 - xbacklight
@@ -104,8 +121,20 @@ Optional dependencies for some of the tools are:
 - FontAwesome
 - sdcv
 - xclip
+- xsel
 - xdotool
 - playerctl
+- python3-xlib
+- python3-lxml
+- python3-requests
+- steam
+- qt5ct
+- lxappearance
+- setxkbmap
+- tmux
+- sqlite
+- firefox
+- links
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
