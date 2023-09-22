@@ -2,6 +2,7 @@
 #
 # this script fetches and show the latest news from bbc internationals rss
 # selecting an entry will open the corresponding web page
+# add other sources in the "../data/news" file using the format "PROVIDER_NAME=RSS_URL"
 #
 # dependencies: rofi, curl
 
