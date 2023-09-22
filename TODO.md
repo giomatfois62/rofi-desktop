@@ -12,7 +12,6 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
-- Make rofi-news easier to configure with external file
 - Document custom menu usage in readme
 
 # BUGFIX
@@ -61,6 +60,7 @@
 - Integrate snippy (paste snippets stored in folder) (DONE)
 - Fix rofi-tv json link or convert script to use m3u playlist file (DONE)
 - Add a create custom menu module using rofi-json (DONE)
+- Make rofi-news easier to configure with external file (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
