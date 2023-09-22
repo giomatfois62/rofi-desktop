@@ -59,7 +59,7 @@ show_episodes() {
     fi
 
 
-    while episode=$(echo -en "$episodes" | rofi -dmenu -i -mesg "$header" -p "Episode"); do
+    while episode=$(echo -en "$episodes" | $ROFI_CMD -mesg "$header" -p "Episode"); do
         if [ "$episode" = "More..." ]; then
             counter=$((counter+1))
             series_url="https://apollo.rss.com/podcasts/$slug/episodes?limit=10&page="$counter
