@@ -105,7 +105,7 @@ while category=$(echo -en "Recently Played\n$categories" | $ROFI_CMD -p "Categor
     else
         podcast_file="$PODCAST_FOLDER/$category.json"
 
-        while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}"' "$podcast_file" | tr -d '"' | $ROFI_CMD -p "Podcast"); do
+        while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}"' "$podcast_file" | tr -d '"' | $ROFI_CMD -p "$category"); do
             title=$(echo "$podcast" | cut -d"{" -f1 | sed 's/ *$//g')
 
             show_episodes "$title" "$podcast_file"
