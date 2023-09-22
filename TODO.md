@@ -12,7 +12,6 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
-- Document custom menu usage in readme
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
