@@ -70,12 +70,14 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Code Projects (rofi-projects.sh, browse code projects directory and open projects with preferred editor)
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
+  - KeePassXC (rofi-keepassxc.sh)
   - Clipboard (uses greenclip)
   - Notifications (uses rofication-daemon.py and rofication-gui.py)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)
+  - VPN (wireguard-rofi.sh, manages wireguard connections)
   - Bluetooth (rofi-bluetooth.sh)
   - Display (rofi-monitor-layout.sh)
   - Default Applications (rofi-mime.sh, set audio/video/images/PDF viewers and file manager)
@@ -165,6 +167,10 @@ Optional dependencies for some of the tools are:
 - links
 - mpd
 - mpc
+- keepassxc-cli
+- wireguard
+- nmcli
+- bluetoothctl
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
@@ -191,3 +197,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [Bugswriter](https://github.com/Bugswriter/pirokit)
 - [Prayag2](https://github.com/Prayag2/pomo)
 - [wzykubek](https://github.com/wzykubek/rofi-mpd)
+- [HarHarLinks](https://github.com/HarHarLinks/wireguard-rofi-waybar)
