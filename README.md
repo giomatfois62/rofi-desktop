@@ -52,6 +52,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 - Utilities
   - Calculator (rofi-calc.sh, optionally uses the libqalc based modi calc when available)
   - Calendar (rofi-calendar.sh)
+  - World Clocks (show current date-time in system timezones)
   - Color Picker (rofi-color-picker.sh)
   - ChatGPT (rofi-gpt.sh)
   - Dictionary (rofi-dict.sh)

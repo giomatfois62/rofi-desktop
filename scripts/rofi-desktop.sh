@@ -26,6 +26,7 @@ declare -A commands=(
     ["Steam Games"]=steam_games
     ["Calculator"]=calculator
     ["Calendar"]=calendar
+    ["World Clocks"]=world_clocks
     ["Watch TV"]=tv
     ["Sport Events"]=livetv
     ["Radio Stations"]=radio
@@ -92,7 +93,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -331,6 +332,10 @@ weather() {
 
 calendar() {
     "$SCRIPT_PATH"/rofi-calendar.sh
+}
+
+world_clocks() {
+    cd /usr/share/zoneinfo/posix && find * -type f -or -type l | sort | xargs -I{} sh -c "echo -n {}': ' && TZ={} date \"+%H:%M, %a %d %b %Y\"" | $ROFI_CMD -p "Time Zone"
 }
 
 translate() {
