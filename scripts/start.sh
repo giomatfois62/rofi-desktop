@@ -26,10 +26,10 @@ if [ -f "$WALLPAPER_CACHE" ]; then
 fi
 
 # set keyboard layout
-KEYMAP_CACHE=${KEYMAP_CACHE:-"$HOME/.cache/keymap"}
+KEYMAP_CACHE=${KEYMAP_CACHE:-"$HOME/.cache/keyboard-layout"}
 
 if [ -f "$KEYMAP_CACHE" ]; then
-    echo "Setting keymap" "$(cat "$KEYMAP_CACHE")"
+    echo "Setting keyboard layout" "$(cat "$KEYMAP_CACHE")"
     setxkbmap "$(cat "$KEYMAP_CACHE")"
 fi
 
