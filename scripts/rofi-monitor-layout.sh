@@ -6,16 +6,18 @@
 #
 # dependencies: rofi, xrand
 
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+
+MONITORS_CACHE=${MONITORS_CACHE:-"$HOME/.cache/monitor-layout"}
+
 XRANDR=$(which xrandr)
 
 MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
-
 
 NUM_MONITORS=${#MONITORS[@]}
 
 TITLES=()
 COMMANDS=()
-
 
 function gen_xrandr_only()
 {
@@ -34,13 +36,10 @@ function gen_xrandr_only()
     echo $cmd
 }
 
-
-
 declare -i index=0
 TILES[$index]="Cancel"
 COMMANDS[$index]="true"
 index+=1
-
 
 for entry in $(seq 0 $((${NUM_MONITORS}-1)))
 do
@@ -67,7 +66,6 @@ do
     done
 done
 
-
 ##
 # Clone monitors
 ##
@@ -86,7 +84,6 @@ do
     done
 done
 
-
 ##
 #  Generate entries, where first is key.
 ##
@@ -99,7 +96,14 @@ function gen_entries()
 }
 
 # Call menu
-SEL=$( gen_entries | rofi -dmenu -p "Monitor Setup" | awk '{print $1}' )
+SEL=$( gen_entries | $ROFI_CMD -p "Monitor Setup" | awk '{print $1}' )
 
 # Call xrandr
-$( ${COMMANDS[$SEL]} )
+if [ "${COMMANDS[$SEL]}" != "true" ]; then
+    $( ${COMMANDS[$SEL]} )
+
+    # Save command to cache
+    echo "${COMMANDS[$SEL]}" > "$MONITORS_CACHE"
+else
+    echo "Cancel"
+fi
