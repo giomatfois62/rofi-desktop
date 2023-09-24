@@ -107,7 +107,7 @@ Web Search Menu
 ![Web Search Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/screenshots/rofi_web.png)
 
 ## Global Menu
-The script *script/rofi-hud.py* shows a rofi menu containing the application menu entries of the currently focused window, in a style similar to Ubuntu Unity's HUD or [plasma-hud](https://github.com/Zren/plasma-hud).  
+The script *scripts/rofi-hud.py* shows a rofi menu containing the application menu entries of the currently focused window, in a style similar to Ubuntu Unity's HUD or [plasma-hud](https://github.com/Zren/plasma-hud).  
 
 In order for it to work, applications menus first need to be exported via dbus by a special service. The KDE desktop automatically launch such service when the global menu plugin is added to a panel. [vala-panel](https://github.com/rilian-la-te/vala-panel-appmenu) also contains a similar plugin, which can be used with Mate and Xfce panels.  
 
@@ -119,8 +119,7 @@ These simple shortcuts are very useful to quickly summon the menus of rofi-deskt
 
 A nice little utility that can be used to bind the Meta key to a shortcut of choice is [superkey-launch](https://github.com/ryanpcmcquen/superkey-launch), which by default converts Meta key presses to the "Alt+F2" shortcut.  
 
-Alternatively, run the script *scripts/keypress.py* bundled with rofi-desktop. It will listen for single key presses of the Meta key and the Alt key, calling respectively the all-in-one menu *scripts/rofi-desktop.sh -a* and the application menu *scripts/rofi-hud.py*.  
-Edit the script variables *cmd_command* and *alt_command* to change this behaviour.
+Alternatively, run the script *scripts/keypress.py* bundled with rofi-desktop. It will listen for single key presses of the Meta key and the Alt key, calling respectively the all-in-one menu *scripts/rofi-desktop.sh -a* and the application menu *scripts/rofi-hud.py*. Edit the script variables *cmd_command* and *alt_command* to change this behaviour.
 
 ## Dependencies
 The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead.  
