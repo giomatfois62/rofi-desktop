@@ -8,6 +8,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
+WALLPAPER_CACHE="${WALLPAPER_CACHE:-$HOME/.cache/wallpaper}"
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
@@ -47,9 +48,9 @@ fi
 wallpaper="$WALLPAPERS_DIR/$choice"
 
 echo "Setting wallpaper " "$wallpaper"
+cp "$wallpaper" "$WALLPAPER_CACHE"
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-    echo "$wallpaper"
     qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = \"org.kde.image\";d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");d.writeConfig(\"Image\", \"file:$wallpaper\")}"
 
     qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = \"org.kde.image\";d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");d.writeConfig(\"Image\", \"file:$wallpaper\")}"
