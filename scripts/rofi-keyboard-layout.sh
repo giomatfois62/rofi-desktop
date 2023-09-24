@@ -5,6 +5,7 @@
 # dependencies: rofi, setxkbmap
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+KEYMAP_CACHE=${KEYMAP_CACHE:-"$HOME/.cache/keymap"}
 LAYOUT_FILE="/usr/share/X11/xkb/rules/evdev.lst"
 
 selected=$(cat $LAYOUT_FILE |\
@@ -16,4 +17,5 @@ selected=$(cat $LAYOUT_FILE |\
 
 if [ -n "$selected" ]; then
     setxkbmap "$selected"
+    echo "$selected" > "$KEYMAP_CACHE"
 fi
