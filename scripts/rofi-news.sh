@@ -13,16 +13,8 @@ RSS_FILE=${RSS_FILE:-"$SCRIPT_PATH/../data/news"}
 RSS_CACHE="${RSS_CACHE:-$HOME/.cache/news}"
 RSS_EXPIRATION_TIME=${RSS_EXPIRATION_TIME:-600} # refresh news file every ten minutes
 
-providers=$(cat "$RSS_FILE" | cut -d'=' -f1)
-
-mkdir -p "$RSS_CACHE"
-
-# remember last entry chosen
-provider_row=0
-
-while provider=$(echo -en "$providers" | $ROFI_CMD -selected-row ${provider_row} -format 'i s' -p "News"); do
-	provider_row=$(echo "$provider" | awk '{print $1;}')
-	provider_name=$(echo "$provider" | cut -d' ' -f2-)
+show_news() {
+	local provider_name="$1"
 
 	rss_url=$(grep "$provider_name=" "$RSS_FILE" | cut -d'=' -f2-)
 	rss_cache_file="$RSS_CACHE/$provider_name.news"
@@ -59,6 +51,28 @@ while provider=$(echo -en "$providers" | $ROFI_CMD -selected-row ${provider_row}
 
 		exit 0;
 	fi
-done
+
+	exit 1
+}
+
+mkdir -p "$RSS_CACHE"
+
+providers=$(cat "$RSS_FILE" | cut -d'=' -f1)
+providers_count=$(cat "$RSS_FILE" | wc -l)
+
+if [ $providers_count -gt 1 ]; then
+	# remember last entry chosen
+	provider_row=0
+
+	while provider=$(echo -en "$providers" | $ROFI_CMD -selected-row ${provider_row} -format 'i s' -p "News"); do
+		provider_row=$(echo "$provider" | awk '{print $1;}')
+		provider_name=$(echo "$provider" | cut -d' ' -f2-)
+
+		$(show_news "$provider_name") && exit 0
+	done
+else
+	provider_name=$(head -n 1 "$RSS_FILE" | cut -d'=' -f1)
+	$(show_news "$provider_name") && exit 0
+fi
 
 exit 1
