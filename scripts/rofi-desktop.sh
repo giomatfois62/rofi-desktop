@@ -50,6 +50,7 @@ declare -A commands=(
     ["System Settings"]=settings_menu
     ["Utilities"]=utilities_menu
     ["Media Player"]=media_player
+    ["MPD Controls"]=mpd_controls
     ["ChatGPT"]=chat_gpt
     ["Dictionary"]=dictionary
     ["Snippets"]=snippets
@@ -88,7 +89,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -217,6 +218,10 @@ color_picker() {
 
 livetv() {
     "$SCRIPT_PATH"/rofi-livetv.sh && exit
+}
+
+mpd_controls() {
+    "$SCRIPT_PATH"/rofi-mpd.sh -a && exit
 }
 
 browse_flathub() {

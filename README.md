@@ -56,6 +56,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - ChatGPT (rofi-gpt.sh)
   - Dictionary (rofi-dict.sh)
   - Media Player (rofi-playerctl.sh)
+  - MPD Controls (rofi-mpd.sh, controls mpd using mpc commands)
   - Translate Text (rofi-translate.sh, uses translate-shell)
   - Notepad (rofi-notes.sh)
   - To-Do List (rofi-todo.sh)
@@ -162,6 +163,8 @@ Optional dependencies for some of the tools are:
 - sqlite
 - firefox
 - links
+- mpd
+- mpc
 
 ## Credits
 Some of the scripts in rofi-desktop where adapted from the work of the following people:
@@ -187,3 +190,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [BarbUk](https://github.com/BarbUk/snippy)
 - [Bugswriter](https://github.com/Bugswriter/pirokit)
 - [Prayag2](https://github.com/Prayag2/pomo)
+- [wzykubek](https://github.com/wzykubek/rofi-mpd)
