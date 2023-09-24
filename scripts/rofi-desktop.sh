@@ -14,6 +14,7 @@ TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2 | $ROFI_CMD -p Info}"
 PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
 PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
+KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
 declare -A commands=(
@@ -59,6 +60,7 @@ declare -A commands=(
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
     ["Password Manager"]=passwd_mgr
+    ["KeePassXC"]=keepassxc
     ["Clipboard"]=clipboard
     ["Translate Text"]=translate
     ["Task Manager"]=task_mgr
@@ -66,6 +68,7 @@ declare -A commands=(
     ["Characters"]=char_picker
     ["Appearance"]=appearance_menu
     ["Network"]=network
+    ["VPN"]=wireguard
     ["Bluetooth"]=bluetooth
     ["Display"]=display
     ["Volume"]=volume
@@ -87,9 +90,9 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -336,6 +339,14 @@ translate() {
 
 char_picker() {
     "$SCRIPT_PATH"/rofi-characters.sh && exit
+}
+
+keepassxc() {
+    "$SCRIPT_PATH"/rofi-keepassxc.sh -d "$KEEPASSXC_DATABASE" && exit
+}
+
+wireguard() {
+    rofi -modi VPN:"$SCRIPT_PATH"/wireguard-rofi.sh -show VPN
 }
 
 calculator() {
