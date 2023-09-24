@@ -7,6 +7,7 @@
 
 ###### Variables ######
 DATEFTM="${DATEFTM:-+%a %d %b %Y}"
+TIMEFMT="${TIMEFMT:-+%H:%M}"
 SHORTFMT="${SHORTFMT:-+%d/%m/%Y}"
 EVENTFMT="${EVENTFMT:-+%Y.%m.%d}"
 DATELABEL="${DATELABEL:- }"
@@ -116,7 +117,7 @@ get_current_date
 # rofi pop up
 IFS=
 month_page=$(print_month $month $year)
-header=$(date "$DATEFTM")
+header=$(date "$DATEFTM")", "$(date "$TIMEFMT")
 
 #lines:'"$(echo "$month_page" | wc -l)"';width:22;
 
