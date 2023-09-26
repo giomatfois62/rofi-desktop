@@ -14,7 +14,6 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Allow local timezone change in world clocks menu
-- Show current keyboard layout in rofi-keyboard-layout
 - Implement multiple lists of todo files
 - Implement changing timezone in world_clocks function or make a separate file (better)
 - Improve weather module supporting custom location
@@ -71,6 +70,7 @@
 - Add a create custom menu module using rofi-json (DONE)
 - Make rofi-news easier to configure with external file (DONE)
 - Add world clock module (DONE)
+- Show current keyboard layout in rofi-keyboard-layout (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

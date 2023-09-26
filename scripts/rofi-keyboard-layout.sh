@@ -8,10 +8,12 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 KEYMAP_CACHE=${KEYMAP_CACHE:-"$HOME/.cache/keyboard-layout"}
 LAYOUT_FILE="/usr/share/X11/xkb/rules/evdev.lst"
 
+msg="current "$(setxkbmap -query | grep layout)
+
 selected=$(cat $LAYOUT_FILE |\
     grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' |\
     head -n -2 |\
-    $ROFI_CMD - p "Layout"  |\
+    $ROFI_CMD - p "Layout" -mesg "$msg" |\
     awk '{print $1;}'
 )
 
