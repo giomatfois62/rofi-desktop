@@ -46,7 +46,7 @@ declare -A commands=(
     ["Code Projects"]=code_projects
     ["TODO Lists"]=todo
     ["Color Picker"]=color_picker
-    ["Notepad"]=notes
+    ["Notes"]=notes
     ["Latest News"]=news
     ["Weather Forecast"]=weather
     ["Exit"]=session_menu
@@ -57,9 +57,7 @@ declare -A commands=(
     ["ChatGPT"]=chat_gpt
     ["Dictionary"]=dictionary
     ["Cheat Sheets"]=cheat_sh
-    ["Snippets"]=snippets
     ["Set Timer"]=set_timer
-    ["Pomodoro Timer"]=pomodoro
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
     ["Password Manager"]=passwd_mgr
@@ -96,7 +94,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSet Timezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotepad\nTODO Lists\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotes\nTODO Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -219,10 +217,6 @@ code_projects() {
     "$SCRIPT_PATH"/rofi-projects.sh && exit
 }
 
-snippets() {
-    "$SCRIPT_PATH"/snippy && exit
-}
-
 color_picker() {
     "$SCRIPT_PATH"/rofi-color-picker.sh && exit
 }
@@ -291,10 +285,6 @@ todo() {
 
         TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODO $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODO $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
     done
-}
-
-pomodoro() {
-    "$SCRIPT_PATH"/pomo && exit
 }
 
 dictionary() {
