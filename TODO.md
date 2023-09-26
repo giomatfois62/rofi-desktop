@@ -16,7 +16,6 @@
 - Allow local timezone change in world clocks menu
 - Implement multiple lists of todo files
 - Implement changing timezone in world_clocks function or make a separate file (better)
-- Improve weather module supporting custom location
 - Show error messages for dependencies not found
 - Source the config.env file in the start.sh script
 - Add more menu instructions using -mesg or placeholders
@@ -71,6 +70,7 @@
 - Make rofi-news easier to configure with external file (DONE)
 - Add world clock module (DONE)
 - Show current keyboard layout in rofi-keyboard-layout (DONE)
+- Improve weather module supporting custom location (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

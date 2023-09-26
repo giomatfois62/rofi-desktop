@@ -333,7 +333,10 @@ passwd_mgr() {
 }
 
 weather() {
-    curl wttr.in/?ATFn | rofi -dmenu -p "Weather"
+    local placeholder="Type the name of a city and press \"Enter\" to show weather from another location"
+    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$placeholder\";"}); do
+        echo "Showing weather for" "$city"
+    done
 }
 
 calendar() {
