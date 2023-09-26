@@ -44,7 +44,7 @@ declare -A commands=(
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
-    ["TODO Lists"]=todo
+    ["TODOs"]=todo
     ["Color Picker"]=color_picker
     ["Notes"]=notes
     ["Latest News"]=news
@@ -75,7 +75,7 @@ declare -A commands=(
     ["Volume"]=volume
     ["Brightness"]=brightness
     ["Keyboard Layout"]=kb_layout
-    ["Set Timezone"]=world_clocks
+    ["Timezone"]=world_clocks
     ["Default Applications"]=default_apps
     ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
@@ -92,9 +92,9 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSet Timezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotes\nTODO Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotes\nTODOs\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -278,12 +278,12 @@ todo() {
     local list_placeholder="Type something with a \"+\" prefix to create a new TODO list"
     local todo_placeholder="Type something with a \"+\" prefix to add a new TODO item"
 
-    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODO Lists" -theme-str "entry{placeholder:\"$list_placeholder\";"}); do
+    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$list_placeholder\";"}); do
         if [[ $todo_file == +* ]];then
             todo_file=$(echo "$todo_file" | sed s/^+//g |sed s/^\s+//g)
         fi
 
-        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODO $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODO $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
+        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODO $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
     done
 }
 

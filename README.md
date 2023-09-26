@@ -60,7 +60,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - MPD Controls (rofi-mpd.sh, controls mpd using mpc commands)
   - Translate Text (rofi-translate.sh, uses translate-shell)
   - Notes (rofi-notes.sh)
-  - TODO Lists (rofi-todo.sh)
+  - TODOs (rofi-todo.sh)
   - Set Timer (rofi-timer.sh)
   - Characters (rofi-characters.sh, utf-8 char and emoji picker)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
