@@ -5,6 +5,9 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
+# export env vars
+source "$SCRIPT_PATH/config/config.env"
+
 # set monitor layout
 MONITORS_CACHE=${MONITORS_CACHE:-"$HOME/.cache/monitor-layout"}
 
@@ -22,7 +25,7 @@ WALLPAPER_CACHE=${WALLPAPER_CACHE:-"$HOME/.cache/wallpaper"}
 
 if [ -f "$WALLPAPER_CACHE" ]; then
     echo "Setting wallpaper"
-    "$SCRIPT_PATH/set-wallpaper.sh" "$WALLPAPER_CACHE"
+    "$SCRIPT_PATH/scripts/set-wallpaper.sh" "$WALLPAPER_CACHE"
 fi
 
 # set keyboard layout
@@ -32,8 +35,6 @@ if [ -f "$KEYMAP_CACHE" ]; then
     echo "Setting keyboard layout" "$(cat "$KEYMAP_CACHE")"
     setxkbmap "$(cat "$KEYMAP_CACHE")"
 fi
-
-# TODO: export env vars
 
 run_program() {
     is_running=$(ps aux | grep "$1" | wc -l)
@@ -46,8 +47,8 @@ run_program() {
     fi
 }
 
-run_program "$SCRIPT_PATH/appmenu-service.py"
-run_program "$SCRIPT_PATH/keypress.py"
+run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
+run_program "$SCRIPT_PATH/scripts/keypress.py"
 
 # TODO: run greenclip
 # TODO: run rofication-daemon
