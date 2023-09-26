@@ -76,7 +76,7 @@ declare -A commands=(
     ["Volume"]=volume
     ["Brightness"]=brightness
     ["Keyboard Layout"]=kb_layout
-    ["Timezone"]=world_clocks
+    ["Set Timezone"]=world_clocks
     ["Default Applications"]=default_apps
     ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
@@ -93,7 +93,7 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSet Timezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
 utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotepad\nToDo List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
@@ -344,11 +344,7 @@ calendar() {
 }
 
 world_clocks() {
-    #https://stackoverflow.com/questions/12521114/getting-the-canonical-time-zone-name-in-shell-script
-    current_timezone="Current Time Zone: "$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
-    current_time=$(date "+%H:%M, %a %d %b %Y")
-    cd /usr/share/zoneinfo/posix && find * -type f -or -type l | sort | xargs -I{} sh -c "echo -n {}': ' && TZ={} date \"+%H:%M, %a %d %b %Y\"" | $ROFI_CMD -p "Time Zone" -mesg "$current_timezone&#x0a;$current_time"
-    # TODO: to set local time, copy selected timezone file to /etc/localtime using 'pkexec sh -c "command"' to prompt for root password
+    "$SCRIPT_PATH"/rofi-clocks.sh && exit
 }
 
 translate() {
