@@ -79,7 +79,7 @@ declare -A commands=(
     ["Default Applications"]=default_apps
     ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
-    ["Systemd Configuration"]=systemd_config
+    ["System Services"]=systemd_config
     ["System Info"]=sys_info
     ["Qt5 Appearance"]=qt5_app
     ["GTK Appearance"]=gtk_app
@@ -92,7 +92,7 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystemd Configuration\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
 utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
