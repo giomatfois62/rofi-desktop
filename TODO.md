@@ -7,16 +7,25 @@
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Add window menu and experiment with alt-tab binding (https://github.com/davatorium/rofi/issues/1867)
+- Implement a wizard to show on first run and ask basic stuff (layout, timezone, language etc.)
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Allow local timezone change in world clocks menu
+- Show current keyboard layout in rofi-keyboard-layout
+- Implement multiple lists of todo files
+- Implement changing timezone in world_clocks function or make a separate file (better)
+- Improve weather module supporting custom location
+- Show error messages for dependencies not found
+- Source the config.env file in the start.sh script
+- Add more menu instructions using -mesg or placeholders
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
+- Fix rofi-calendar current day format in fedora
 
 # WAYLAND COMPAT
 - clipboard (greenclip)
