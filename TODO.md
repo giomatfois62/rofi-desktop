@@ -13,7 +13,6 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
-- Allow local timezone change in world clocks menu
 - Implement multiple lists of todo files
 - Implement changing timezone in world_clocks function or make a separate file (better)
 - Show error messages for dependencies not found
