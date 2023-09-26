@@ -15,7 +15,6 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
-- Implement multiple lists of todo files
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -70,6 +69,7 @@
 - Improve weather module supporting custom location (DONE)
 - Implement changing timezone in world_clocks function or make a separate file (DONE)
 - Source the config.env file in the start.sh script (DONE)
+- Implement multiple lists of todo files (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
