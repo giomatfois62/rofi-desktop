@@ -3,6 +3,8 @@
 - Implement menu history in all scripts
 - Add icons to main menus with fontawesome or bundled resources
 - Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
+- Show error messages for dependencies not found
+- Add more menu instructions using -mesg or placeholders
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
@@ -14,9 +16,6 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Implement multiple lists of todo files
-- Show error messages for dependencies not found
-- Source the config.env file in the start.sh script
-- Add more menu instructions using -mesg or placeholders
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -70,6 +69,7 @@
 - Show current keyboard layout in rofi-keyboard-layout (DONE)
 - Improve weather module supporting custom location (DONE)
 - Implement changing timezone in world_clocks function or make a separate file (DONE)
+- Source the config.env file in the start.sh script (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
