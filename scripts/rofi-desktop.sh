@@ -43,7 +43,7 @@ declare -A commands=(
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
-    ["To-Do List"]=todo
+    ["ToDo List"]=todo
     ["Color Picker"]=color_picker
     ["Notepad"]=notes
     ["Latest News"]=news
@@ -95,7 +95,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nTo-Do List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nMPD Controls\nNotepad\nToDo List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
