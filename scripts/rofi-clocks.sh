@@ -11,7 +11,7 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 # TODO: copy selected timezone file to /etc/localtime using 'pkexec sh -c "command"' to prompt for root password
 
 #https://stackoverflow.com/questions/12521114/getting-the-canonical-time-zone-name-in-shell-script
-current_timezone="Current Time Zone: "$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
+current_timezone="Current time zone: "$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
 current_time=$(date "+%H:%M, %a %d %b %Y")
 msg="$current_timezone&#x0a;$current_time"
 
@@ -20,7 +20,7 @@ while timezone=$(cd /usr/share/zoneinfo/posix && find * -type f -or -type l |\
     $ROFI_CMD -p "Time Zone" -mesg "$msg"); do
     timezone_text=$(echo "$timezone" | cut -d':' -f1)
 
-    choice=$(echo -e "Yes\nNo" | $ROFI_CMD -p "Set timezone to $timezone_text?")
+    choice=$(echo -e "Yes\nNo" | $ROFI_CMD -p "Set time zone to $timezone_text?")
 
     if [ "$choice" = "Yes" ]; then
         if command -v timedatectl &> /dev/null; then

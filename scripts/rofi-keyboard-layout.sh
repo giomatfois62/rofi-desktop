@@ -13,7 +13,7 @@ msg="current "$(setxkbmap -query | grep layout)
 selected=$(cat $LAYOUT_FILE |\
     grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' |\
     head -n -2 |\
-    $ROFI_CMD - p "Layout" -mesg "$msg" |\
+    $ROFI_CMD - p "Keyboard Layout" -mesg "$msg" |\
     awk '{print $1;}'
 )
 
