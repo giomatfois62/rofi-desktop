@@ -7,9 +7,6 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
-# TODO: to set local time without timedatectl
-# TODO: copy selected timezone file to /etc/localtime using 'pkexec sh -c "command"' to prompt for root password
-
 #https://stackoverflow.com/questions/12521114/getting-the-canonical-time-zone-name-in-shell-script
 current_timezone="Current time zone: "$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
 current_time=$(date "+%H:%M, %a %d %b %Y")
@@ -27,7 +24,7 @@ while timezone=$(cd /usr/share/zoneinfo/posix && find * -type f -or -type l |\
             timedatectl set-timezone "$timezone_text"
             exit 0
         else
-            rofi -e "Not supported yet"
+            pkexec sh -c "ln -sf /usr/share/zoneinfo/$timezone_text /etc/localtime"
         fi
     fi
 done
