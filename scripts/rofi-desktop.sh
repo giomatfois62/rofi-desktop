@@ -15,6 +15,7 @@ SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2 | $ROFI_CMD -p Info}"
 PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
 PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
+TODO_FOLDER="${TODO_FOLDER:-$HOME/.todo}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
 declare -A commands=(
@@ -43,7 +44,7 @@ declare -A commands=(
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
-    ["ToDo List"]=todo
+    ["TODO Lists"]=todo
     ["Color Picker"]=color_picker
     ["Notepad"]=notes
     ["Latest News"]=news
@@ -95,7 +96,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nSet Timezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotepad\nToDo List\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotepad\nTODO Lists\nSet Timer\nPomodoro Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSnippets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -264,8 +265,32 @@ search_archwiki() {
 
 set_timer() {
     local placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
+
     rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
         -theme-str "entry{placeholder:\"$placeholder\";"}
+}
+
+weather() {
+    local placeholder="Type the name of a city and press \"Enter\" to show weather from another location"
+
+    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$placeholder\";"}); do
+        echo "Showing weather for" "$city"
+    done
+}
+
+todo() {
+    mkdir -p $TODO_FOLDER
+
+    local list_placeholder="Type something with a \"+\" prefix to create a new TODO list"
+    local todo_placeholder="Type something with a \"+\" prefix to add a new TODO item"
+
+    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODO Lists" -theme-str "entry{placeholder:\"$list_placeholder\";"}); do
+        if [[ $todo_file == +* ]];then
+            todo_file=$(echo "$todo_file" | sed s/^+//g |sed s/^\s+//g)
+        fi
+
+        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODO $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODO $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
+    done
 }
 
 pomodoro() {
@@ -308,10 +333,6 @@ systemd_config() {
     "$SCRIPT_PATH"/rofi-systemd.sh && exit
 }
 
-todo() {
-    rofi -modi TODO:"$SCRIPT_PATH"/rofi-todo.sh -show TODO
-}
-
 chat_gpt() {
     "$SCRIPT_PATH"/rofi-gpt.sh && exit
 }
@@ -330,13 +351,6 @@ tmux_menu() {
 
 passwd_mgr() {
     "$SCRIPT_PATH"/rofi-passmenu.sh && exit
-}
-
-weather() {
-    local placeholder="Type the name of a city and press \"Enter\" to show weather from another location"
-    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$placeholder\";"}); do
-        echo "Showing weather for" "$city"
-    done
 }
 
 calendar() {
