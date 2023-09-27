@@ -32,6 +32,18 @@ declare -A commands=(
     ["Sport Events"]=livetv
     ["Radio Stations"]=radio
     ["Podcasts"]=podcasts
+    ["All Files"]=search_all
+    ["Recently Used"]=search_recent
+    ["File Contents"]=search_contents
+    ["Bookmarks"]=search_bookmarks
+    ["Books"]=search_books
+    ["Documents"]=search_documents
+    ["Desktop"]=search_desktop
+    ["Downloads"]=search_downloads
+    ["Music"]=search_music
+    ["Pictures"]=search_pics
+    ["TNT Village"]=search_tnt
+    ["Videos"]=search_videos
     ["Reddit"]=browse_reddit
     ["Install Programs"]=browse_flathub
     ["Flathub"]=browse_flathub
@@ -52,8 +64,8 @@ declare -A commands=(
     ["Exit"]=session_menu
     ["System Settings"]=settings_menu
     ["Utilities"]=utilities_menu
-    ["Media Player"]=media_player
-    ["Play Music"]=mpd_controls
+    ["Media Controls"]=media_player
+    ["Music Player"]=mpd_controls
     ["ChatGPT"]=chat_gpt
     ["Dictionary"]=dictionary
     ["Cheat Sheets"]=cheat_sh
@@ -94,15 +106,17 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Player\nPlay Music\nNotes\nTODOs\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nTODOs\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
+
+search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
 web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nTorrents\nFlathub"
 
 custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
-all_entries="$main_entries\n$custom_entries\n$web_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
+all_entries="$main_entries\n$custom_entries\n$search_entries\n$web_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
 
 show_menu() {
     local menu_entries="$1"
@@ -195,6 +209,54 @@ browse_files() {
 ssh_menu() {
     # TODO: intercept entry chosen to exit
     rofi -show ssh && exit
+}
+
+search_all() {
+    "$SCRIPT_PATH"/rofi-search.sh "All Files" && exit
+}
+
+search_recent() {
+    "$SCRIPT_PATH"/rofi-search.sh "Recently Used" && exit
+}
+
+search_contents() {
+    "$SCRIPT_PATH"/rofi-search.sh "File Contents" && exit
+}
+
+search_bookmarks() {
+    "$SCRIPT_PATH"/rofi-search.sh "Bookmarks" && exit
+}
+
+search_books() {
+    "$SCRIPT_PATH"/rofi-search.sh "Books" && exit
+}
+
+search_documents() {
+    "$SCRIPT_PATH"/rofi-search.sh "Documents" && exit
+}
+
+search_downloads() {
+    "$SCRIPT_PATH"/rofi-search.sh "Downloads" && exit
+}
+
+search_desktop() {
+    "$SCRIPT_PATH"/rofi-search.sh "Desktop" && exit
+}
+
+search_music() {
+    "$SCRIPT_PATH"/rofi-search.sh "Music" && exit
+}
+
+search_pics() {
+    "$SCRIPT_PATH"/rofi-search.sh "Pictures" && exit
+}
+
+search_tnt() {
+    "$SCRIPT_PATH"/rofi-search.sh "TNT Village" && exit
+}
+
+search_videos() {
+    "$SCRIPT_PATH"/rofi-search.sh "Videos" && exit
 }
 
 cheat_sh() {

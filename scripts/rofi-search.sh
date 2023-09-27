@@ -35,18 +35,22 @@ declare -A commands=(
 # TODO: order results by date
 
 search_menu() {
-    entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
+    if [ -n "$1" ]; then
+         ${commands["$1"]}
+    else
+        entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
-    # remember last entry chosen
-    local choice_row=0
-    local choice_text
+        # remember last entry chosen
+        local choice_row=0
+        local choice_text
 
-    while choice=$(echo -en "$entries" | $ROFI_CMD -matching fuzzy -selected-row ${choice_row} -format 'i s' -p "Search"); do
-        choice_row=$(echo "$choice" | awk '{print $1;}')
-        choice_text=$(echo "$choice" | cut -d' ' -f2-)
+        while choice=$(echo -en "$entries" | $ROFI_CMD -matching fuzzy -selected-row ${choice_row} -format 'i s' -p "Search"); do
+            choice_row=$(echo "$choice" | awk '{print $1;}')
+            choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
-        ${commands[$choice_text]};
-    done
+            ${commands[$choice_text]};
+        done
+    fi
 
     exit 1
 }
@@ -269,4 +273,4 @@ search_videos() {
     fi
 }
 
-search_menu
+search_menu "$1"
