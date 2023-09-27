@@ -193,8 +193,6 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [colonelpanic8](https://github.com/colonelpanic8/rofi-systemd)
 - [mrHeavenli](https://github.com/mrHeavenli/rofi-playerctl)
 - [RafaelBocquet](https://github.com/RafaelBocquet/i3-hud-menu)
-- [BarbUk](https://github.com/BarbUk/snippy)
 - [Bugswriter](https://github.com/Bugswriter/pirokit)
-- [Prayag2](https://github.com/Prayag2/pomo)
 - [wzykubek](https://github.com/wzykubek/rofi-mpd)
 - [HarHarLinks](https://github.com/HarHarLinks/wireguard-rofi-waybar)
