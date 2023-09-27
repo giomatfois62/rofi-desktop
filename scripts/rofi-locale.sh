@@ -6,9 +6,9 @@
 # dependencies: rofi
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-CURRENT_LOCALE=$(locale | head -n1)
 
-selected_locale=$(locale -a | $ROFI_CMD -no-custom -p "Language")
+current_locale=$(locale | head -n1)
+selected_locale=$(locale -a | $ROFI_CMD -no-custom -p "Language" -mesg "Current Language: $current_locale")
 
 if [ -n "$selected_locale" ]; then
     distro=$(grep "^NAME=" /etc/os-release | sed 's/NAME=//')
