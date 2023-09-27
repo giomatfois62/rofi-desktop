@@ -8,7 +8,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
-MONITORS_CACHE=${MONITORS_CACHE:-"$HOME/.cache/monitor-layout"}
+MONITORS_CACHE=${MONITORS_CACHE:-"$SCRIPT_PATH/../config/monitor-layout"}
 
 XRANDR=$(which xrandr)
 

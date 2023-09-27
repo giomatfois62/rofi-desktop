@@ -5,7 +5,7 @@
 # dependencies: rofi, setxkbmap
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-KEYMAP_CACHE=${KEYMAP_CACHE:-"$HOME/.cache/keyboard-layout"}
+KEYMAP_CACHE=${KEYMAP_CACHE:-"$SCRIPT_PATH/../config/keyboard-layout"}
 LAYOUT_FILE="/usr/share/X11/xkb/rules/evdev.lst"
 
 msg="Current Layout: "$(setxkbmap -query | grep layout | cut -d':' -f2 | sed 's/ //g')
@@ -19,5 +19,6 @@ selected=$(cat $LAYOUT_FILE |\
 
 if [ -n "$selected" ]; then
     setxkbmap "$selected"
+
     echo "$selected" > "$KEYMAP_CACHE"
 fi

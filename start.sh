@@ -5,8 +5,13 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
+CONFIG_DIR="$SCRIPT_PATH/config"
+STARTUP_FILE="$SCRIPT_PATH/autostart"
+
 # export env vars
-source "$SCRIPT_PATH/config/config.env"
+set -a
+source "$CONFIG_DIR/environment"
+set +a
 
 run_program() {
     is_running=$(ps aux | grep -c "$1")
@@ -49,7 +54,7 @@ wizard() {
 startup() {
 
     # set monitor layout
-    MONITORS_CACHE=${MONITORS_CACHE:-"$HOME/.cache/monitor-layout"}
+    MONITORS_CACHE=${MONITORS_CACHE:-"$CONFIG_DIR/monitor-layout"}
 
     if [ -f "$MONITORS_CACHE" ]; then
         connected_screens=$(xrandr | awk '( $2 == "connected" ){ print $1 }' | wc -l)
@@ -62,7 +67,7 @@ startup() {
     fi
 
     # set wallpaper
-    WALLPAPER_CACHE=${WALLPAPER_CACHE:-"$HOME/.cache/wallpaper"}
+    WALLPAPER_CACHE=${WALLPAPER_CACHE:-"$CONFIG_DIR/wallpaper"}
 
     if [ -f "$WALLPAPER_CACHE" ]; then
         echo "Setting wallpaper"
@@ -70,7 +75,7 @@ startup() {
     fi
 
     # set keyboard layout
-    KEYMAP_CACHE=${KEYMAP_CACHE:-"$HOME/.cache/keyboard-layout"}
+    KEYMAP_CACHE=${KEYMAP_CACHE:-"$CONFIG_DIR/keyboard-layout"}
 
     if [ -f "$KEYMAP_CACHE" ]; then
         echo "Setting keyboard layout" "$(cat "$KEYMAP_CACHE")"

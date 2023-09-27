@@ -1,5 +1,5 @@
 # rofi command used in most of the scripts
-#ROFI_CMD="rofi -dmenu -i"
+ROFI_CMD="rofi -dmenu -i"
 
 # default terminal emulator
 #TERMINAL="xterm"

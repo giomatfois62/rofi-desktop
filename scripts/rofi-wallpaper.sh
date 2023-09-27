@@ -6,9 +6,11 @@
 # dependencies: rofi
 # optional: feh
 
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
-WALLPAPER_CACHE="${WALLPAPER_CACHE:-$HOME/.cache/wallpaper}"
+WALLPAPER_CACHE="${WALLPAPER_CACHE:-$SCRIPT_PATH/../config/wallpaper}"
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
