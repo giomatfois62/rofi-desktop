@@ -36,7 +36,8 @@ startup() {
 
         if [ "$connected_screens" -gt 1 ]; then
             echo "Setting display layout"
-            $(cat "$MONITORS_CACHE")
+            xrandr_cmd=$(cat "$MONITORS_CACHE")
+            eval "$xrandr_cmd"
         fi
     fi
 
@@ -57,9 +58,9 @@ startup() {
     fi
 
     run_program() {
-        is_running=$(ps aux | grep "$1" | wc -l)
+        is_running=$(pgrep -c "$1")
 
-        if [ ${is_running} -lt 2 ]; then
+        if [ "${is_running}" -lt 1 ]; then
             echo "running" "$1"
             "$1" & disown
         else
