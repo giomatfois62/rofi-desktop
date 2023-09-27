@@ -8,7 +8,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
-MPD_SHORTCUTS_HELP="Press \"Alt+q\" to add the entry to the queue&#x0a;Press \"Alt+p\" to play/pause player&#x0a;Press \"Alt+j\" to play previous entry in queue&#x0a;Press \"Alt+k\" to play next entry in queue"
+MPD_SHORTCUTS_HELP="Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"Alt+P\" to play/pause player&#x0a;Press \"Alt+J\" to play previous entry in queue&#x0a;Press \"Alt+K\" to play next entry in queue"
 
 call_rofi() { $ROFI_CMD -kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j" -mesg "$(mpc status)&#x0a;&#x0a;$MPD_SHORTCUTS_HELP" "$@" ;}
 
