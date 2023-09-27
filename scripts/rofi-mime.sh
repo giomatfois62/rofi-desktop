@@ -5,7 +5,10 @@
 #
 # dependencies: rofi, xdg-mime
 
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+MIMETYPES_DIR=${MIMETYPES_DIR:-"$SCRIPT_PATH/../data/mimetypes"}
 
 declare -A actions=(
     ["Web Browser"]=set_browser
@@ -15,10 +18,11 @@ declare -A actions=(
     ["PDF Reader"]=set_pdf
     ["Audio Player"]=set_audio_player
     ["Video Player"]=set_video_player
+    ["Choose File Type"]=set_mimetype
 )
 
 mime_menu() {
-    categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player"
+    categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player\nChoose File Type"
 
     while choice=$(echo -en "$categories" | $ROFI_CMD -p "Default Applications"); do
         ${actions[$choice]};
@@ -127,6 +131,18 @@ set_video_player() {
         set_application "video/ogg" "$selected";
         set_application "video/quicktime" "$selected";
         set_application "video/x-msvideo" "$selected";
+    fi
+}
+
+set_mimetype() {
+    selected_type=$(cat "$MIMETYPES_DIR/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2 | rofi -dmenu -i | cut -d',' -f2)
+
+    if [ -n "$selected_type" ]; then
+        selected_app=$(seach_applications "" | $ROFI_CMD -p "Applications")
+
+        if [ -n "$selected_type" ]; then
+            set_application "$selected_type" "$selected_app";
+        fi
     fi
 }
 

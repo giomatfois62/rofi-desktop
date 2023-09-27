@@ -70,6 +70,7 @@
 - Implement changing timezone in world_clocks function or make a separate file (DONE)
 - Source the config.env file in the start.sh script (DONE)
 - Implement multiple lists of todo files (DONE)
+- Add a single mimetype editor to rofi-mime (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
