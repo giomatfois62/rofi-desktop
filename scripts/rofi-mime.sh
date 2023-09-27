@@ -3,7 +3,7 @@
 # this script manages mime-type associations of files, editing "mimeapps.list"
 # it allows to choose default applications to open audiu/video/text files and more
 #
-# dependencies: rofi
+# dependencies: rofi, xdg-mime
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
@@ -23,7 +23,6 @@ mime_menu() {
     while choice=$(echo -en "$categories" | $ROFI_CMD -p "Default Applications"); do
         ${actions[$choice]};
     done
-
 }
 
 seach_applications() {
