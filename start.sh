@@ -9,16 +9,22 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 source "$SCRIPT_PATH/config/config.env"
 
 wizard() {
+    WELCOME_MSG=${WELCOME_MSG:-"Welcome to rofi-desktop! &#x0a;Press any key to continue with the setup."}
+
+    rofi -markup -e "$WELCOME_MSG"
+
+    # show monitor layout menu only if more than one screen is connected
     connected_screens=$(xrandr | awk '( $2 == "connected" ){ print $1 }' | wc -l)
 
     if [ "$connected_screens" -gt 1 ]; then
-        "$SCRIPT_PATH"/rofi-monitor-layout.sh
+        "$SCRIPT_PATH"/scripts/rofi-monitor-layout.sh
     fi
 
-    "$SCRIPT_PATH"/rofi-keyboard-layout.sh
-    "$SCRIPT_PATH"/rofi-locale.sh
-    "$SCRIPT_PATH"/rofi-clocks.sh
-    "$SCRIPT_PATH"/rofi-wallpaper.sh;
+    "$SCRIPT_PATH"/scripts/rofi-keyboard-layout.sh
+    "$SCRIPT_PATH"/scripts/rofi-locale.sh
+    "$SCRIPT_PATH"/scripts/rofi-clocks.sh
+    "$SCRIPT_PATH"/scripts/rofi-mime.sh;
+    "$SCRIPT_PATH"/scripts/rofi-wallpaper.sh;
 }
 
 # set monitor layout
