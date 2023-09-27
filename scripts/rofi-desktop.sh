@@ -388,9 +388,9 @@ task_mgr() {
 }
 
 notifications() {
-    daemon_running=$(ps aux | grep 'rofication-daemon' | wc -l)
+    daemon_running=$(ps aux | grep -c "rofication-daemon")
 
-    if [ ${daemon_running} -gt 1 ]; then
+    if [ "${daemon_running}" -gt 1 ]; then
         "$SCRIPT_PATH"/rofication-gui.py
     else
         rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
@@ -401,15 +401,15 @@ clipboard() {
     if command -v greenclip &> /dev/null; then
         rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
     elif [ -f "$SCRIPT_PATH/greenclip" ]; then
-        daemon_running=$(ps aux | grep 'greenclip' | wc -l)
+        daemon_running=$(ps aux | grep -c "greenclip")
 
-        if [ ${daemon_running} -gt 1 ]; then
+        if [ "${daemon_running}" -gt 1 ]; then
             rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
         else
             rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
         fi
     else
-        rofi -e "Download greenclip, place it inside $SCRIPT_PATH and run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
+        rofi -e "Download greenclip and place it inside \"$SCRIPT_PATH\" to enable the clipboard menu"
     fi
 }
 
