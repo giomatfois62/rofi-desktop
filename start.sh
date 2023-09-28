@@ -7,6 +7,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 CONFIG_DIR="$SCRIPT_PATH/config"
 STARTUP_FILE="$SCRIPT_PATH/autostart"
+FIRST_RUN_FILE="$CONFIG_DIR/first-run"
 
 # export env vars
 set -a
@@ -44,12 +45,14 @@ wizard() {
 
     "$SCRIPT_PATH"/scripts/rofi-wallpaper.sh;
 
-    # TODO: ask programs to run on startup
+    # TODO: ask programs to run on startup and add entries to autostart file
     run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
     run_program "$SCRIPT_PATH/scripts/keypress.py"
 
     # TODO: run greenclip
     # TODO: run rofication-daemon
+
+    touch "$FIRST_RUN_FILE"
 }
 
 startup() {
@@ -83,6 +86,7 @@ startup() {
         setxkbmap "$(cat "$KEYMAP_CACHE")"
     fi
 
+    # TODO: check entries in autostart file
     run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
     run_program "$SCRIPT_PATH/scripts/keypress.py"
 
@@ -90,5 +94,8 @@ startup() {
     # TODO: run rofication-daemon
 }
 
-# TODO: launch wizard and create first run file
-startup
+if [ -f "$FIRST_RUN_FILE" ]; then
+    startup
+else
+    wizard
+fi
