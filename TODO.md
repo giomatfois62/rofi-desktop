@@ -9,7 +9,6 @@
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Add window menu and experiment with alt-tab binding (https://github.com/davatorium/rofi/issues/1867)
-- Implement a wizard to show on first run and ask basic stuff (layout, timezone, language etc.)
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -72,6 +71,7 @@
 - Source the config.env file in the start.sh script (DONE)
 - Implement multiple lists of todo files (DONE)
 - Add a single mimetype editor to rofi-mime (DONE)
+- Implement a wizard to show on first run and ask basic stuff (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
