@@ -6,12 +6,12 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 CONFIG_DIR="$SCRIPT_PATH/config"
-STARTUP_FILE="$SCRIPT_PATH/autostart"
+STARTUP_FILE="$CONFIG_DIR/autostart"
 FIRST_RUN_FILE="$CONFIG_DIR/first-run"
 
 # export env vars
 set -a
-source "$CONFIG_DIR/environment"
+source "$SCRIPT_PATH/config/environment"
 set +a
 
 run_program() {
@@ -22,6 +22,16 @@ run_program() {
         "$1" & disown
     else
         echo "$1" "already running"
+    fi
+}
+
+ask_user() {
+    prompt="$1"
+
+    choice=$(echo -e "Yes\nNo" | $ROFI_CMD -p "$prompt")
+
+    if [ "$choice" = "Yes" ]; then
+        echo "$choice"
     fi
 }
 
@@ -45,9 +55,21 @@ wizard() {
 
     "$SCRIPT_PATH"/scripts/rofi-wallpaper.sh;
 
-    # TODO: ask programs to run on startup and add entries to autostart file
-    run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
-    run_program "$SCRIPT_PATH/scripts/keypress.py"
+    RUN_APPMENU_PROMPT=${RUN_APPMENU_PROMPT:-"Run appmenu-service.py on startup?"}
+    RUN_KEYPRESS_PROMPT=${RUN_APPMENU_PROMPT:-"Run keypress.py on startup?"}
+
+    # ask programs to run on startup and add entries to autostart file
+    truncate -s 0 "$STARTUP_FILE"
+
+    if [ -n "$(ask_user "$RUN_APPMENU_PROMPT")" ] ; then
+        echo "appmenu-service" >> "$STARTUP_FILE"
+        run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
+    fi
+
+    if [ -n "$(ask_user "$RUN_KEYPRESS_PROMPT")" ]; then
+        echo "keypress" >> "$STARTUP_FILE"
+        run_program "$SCRIPT_PATH/scripts/keypress.py"
+    fi
 
     # TODO: run greenclip
     # TODO: run rofication-daemon
@@ -56,7 +78,6 @@ wizard() {
 }
 
 startup() {
-
     # set monitor layout
     MONITORS_CACHE=${MONITORS_CACHE:-"$CONFIG_DIR/monitor-layout"}
 
@@ -86,9 +107,14 @@ startup() {
         setxkbmap "$(cat "$KEYMAP_CACHE")"
     fi
 
-    # TODO: check entries in autostart file
-    run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
-    run_program "$SCRIPT_PATH/scripts/keypress.py"
+    # check entries in autostart file
+    if [ -n "$(grep appmenu-service "$STARTUP_FILE")" ]; then
+        run_program "$SCRIPT_PATH/scripts/appmenu-service.py"
+    fi
+
+    if [ -n "$(grep keypress "$STARTUP_FILE")" ]; then
+        run_program "$SCRIPT_PATH/scripts/keypress.py"
+    fi
 
     # TODO: run greenclip
     # TODO: run rofication-daemon
