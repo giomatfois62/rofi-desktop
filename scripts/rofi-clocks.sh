@@ -22,10 +22,11 @@ while timezone=$(cd /usr/share/zoneinfo/posix && find * -type f -or -type l |\
     if [ "$choice" = "Yes" ]; then
         if command -v timedatectl &> /dev/null; then
             timedatectl set-timezone "$timezone_text"
-            exit 0
         else
             pkexec sh -c "ln -sf /usr/share/zoneinfo/$timezone_text /etc/localtime"
         fi
+
+        exit 0
     fi
 done
 
