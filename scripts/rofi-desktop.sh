@@ -93,7 +93,7 @@ declare -A commands=(
     ["Autostart Applications"]=autostart_apps
     ["Menu Configuration"]=menu_config
     ["System Services"]=systemd_config
-    ["System Info"]=sys_info
+    ["System Info"]=system_info
     ["Qt5 Appearance"]=qt5_app
     ["GTK Appearance"]=gtk_app
     ["Rofi Style"]=rofi_app
@@ -215,6 +215,10 @@ ssh_menu() {
 window_menu() {
     # TODO: intercept entry chosen to exit
     rofi -show-icons -show window && exit
+}
+
+shortcuts() {
+    rofi -show keys
 }
 
 search_all() {
@@ -452,9 +456,7 @@ task_mgr() {
 }
 
 notifications() {
-    daemon_running=$(ps aux | grep -c "rofication-daemon")
-
-    if [ "${daemon_running}" -gt 1 ]; then
+    if [ "$(ps aux | grep -c rofication-daemon)" -gt 1 ]; then
         "$SCRIPT_PATH"/rofication-gui.py
     else
         rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
@@ -465,9 +467,7 @@ clipboard() {
     if command -v greenclip &> /dev/null; then
         rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
     elif [ -f "$SCRIPT_PATH/greenclip" ]; then
-        daemon_running=$(ps aux | grep -c "greenclip")
-
-        if [ "${daemon_running}" -gt 1 ]; then
+        if [ "$(ps aux | grep -c "greenclip")" -gt 1 ]; then
             rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
         else
             rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
@@ -483,10 +483,6 @@ menu_config() {
     if [ -n "$menu_file" ]; then
         xdg-open "$menu_file" && exit 0
     fi
-}
-
-shortcuts() {
-    rofi -show keys
 }
 
 network() {
@@ -509,10 +505,6 @@ set_lang() {
     "$SCRIPT_PATH"/rofi-locale.sh
 }
 
-sys_info() {
-    eval "$SYSTEM_INFO"
-}
-
 default_apps() {
     "$SCRIPT_PATH"/rofi-mime.sh
 }
@@ -527,6 +519,18 @@ brightness() {
 
 kb_layout() {
     "$SCRIPT_PATH"/rofi-keyboard-layout.sh
+}
+
+wallpaper() {
+    "$SCRIPT_PATH"/rofi-wallpaper.sh;
+}
+
+update_sys() {
+    "$SCRIPT_PATH"/update-system.sh;
+}
+
+system_info() {
+    eval "$SYSTEM_INFO"
 }
 
 check_program() {
@@ -547,14 +551,6 @@ gtk_app() {
 
 rofi_app() {
     check_program rofi-theme-selector;
-}
-
-wallpaper() {
-    "$SCRIPT_PATH"/rofi-wallpaper.sh;
-}
-
-update_sys() {
-    "$SCRIPT_PATH"/update-system.sh;
 }
 
 print_help() {
