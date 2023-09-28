@@ -14,7 +14,7 @@ ROFI_CMD="rofi -dmenu -i"
 #TASK_MANAGER="xterm -e htop"
 
 # system info command
-#SYSTEM_INFO="inxi -c0 -v2 | $ROFI_CMD -p Info"
+#SYSTEM_INFO="inxi -c0 -v2"  # neofetch --stdout --color_blocks off
 
 # code projects folder and preferred editor
 #PROJECTS_DIRECTORY="~/Programs"
