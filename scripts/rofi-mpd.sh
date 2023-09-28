@@ -12,6 +12,7 @@ MPD_SHORTCUTS_HELP="Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"A
 
 call_rofi() {
   # escape song name string
+  # https://stackoverflow.com/questions/12873682/short-way-to-escape-html-in-bash
   player_status=$(mpc status | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
 
   $ROFI_CMD -kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j" -mesg "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP" "$@" ;
