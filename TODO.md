@@ -16,7 +16,6 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Optionally show window thumbnails in a grid
-- Move calendar events, notes, todos to data dir
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -78,6 +77,7 @@
 - Fix rofi-mpd current song format breaking markup (DONE)
 - Fix rofi-calendar current day format in fedora (DONE)
 - Add window menu (DONE)
+- Move calendar events, notes, todos to data dir (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
