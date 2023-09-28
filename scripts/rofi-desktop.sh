@@ -137,7 +137,7 @@ show_menu() {
             custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
 
             if [ -f "$custom_menu_file" ]; then
-                rofi -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
+                rofi -show-icons -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
 		if [ -n "$(cat $HOME/.cache/rofi-json)" ]; then
                     exit
                 fi
@@ -214,7 +214,7 @@ ssh_menu() {
 
 window_menu() {
     # TODO: intercept entry chosen to exit
-    rofi -show window && exit
+    rofi -show-icons -show window && exit
 }
 
 search_all() {
