@@ -214,7 +214,8 @@ browse_files() {
 
 window_menu() {
     # TODO: intercept entry chosen to exit
-    rofi $SHOW_ICONS -show window && exit
+    # TODO: optionally show in grid
+    rofi $SHOW_ICONS -window-thumbnail -show window && exit
 }
 
 shortcuts() {
