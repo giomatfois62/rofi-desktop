@@ -18,7 +18,7 @@
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
-- Fix rofi-calendar current day format in fedora
+- Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts
 
 # WAYLAND COMPAT
 - clipboard (greenclip)
@@ -72,6 +72,7 @@
 - Add a single mimetype editor to rofi-mime (DONE)
 - Implement a wizard to show on first run and ask basic stuff (DONE)
 - Fix rofi-mpd current song format breaking markup (DONE)
+- Fix rofi-calendar current day format in fedora (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

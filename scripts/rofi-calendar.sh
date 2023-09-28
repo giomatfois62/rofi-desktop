@@ -36,8 +36,10 @@ print_month() {
   echo "$PREV_MONTH_TEXT"$'\n'"$NEXT_MONTH_TEXT"$'\n'"$CREATE_EVENT_TEXT"
   echo ""
 
+  # in slackware, closing escape sequence is \e[0m, in fedora is \e[27m
   cal --color=always --$WEEK_START $mnt $yr \
     | sed -e 's/\x1b\[[7;]*m/\<b\>\<u\>/g' \
+          -e 's/\x1b\[[27;]*m/\<\/u\>\<\/b\>/g' \
           -e 's/\x1b\[[0;]*m/\<\/u\>\<\/b\>/g' \
           -e '/^ *$/d' \
     | tail -n +2
