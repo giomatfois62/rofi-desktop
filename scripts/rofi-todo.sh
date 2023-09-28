@@ -7,7 +7,7 @@
 #
 # dependencies: rofi
 
-TODO_FILE="${TODO_FILE:-$HOME/.rofi_todos}"
+TODO_FILE="${TODO_FILE:-$HOME/.todos}"
 
 if [[ ! -a "${TODO_FILE}" ]]; then
     touch "${TODO_FILE}"
