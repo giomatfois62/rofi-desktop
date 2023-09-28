@@ -16,6 +16,7 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Optionally show window thumbnails in a grid
+- Move calendar events, notes, todos to data dir
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
