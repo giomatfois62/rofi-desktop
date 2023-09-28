@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 # rofi-desktop startup script
-#
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
@@ -9,10 +8,13 @@ CONFIG_DIR="$SCRIPT_PATH/config"
 STARTUP_FILE="$CONFIG_DIR/autostart"
 FIRST_RUN_FILE="$CONFIG_DIR/first-run"
 
-# export env vars
-set -a
-source "$SCRIPT_PATH/config/environment"
-set +a
+MONITORS_CACHE=${MONITORS_CACHE:-"$CONFIG_DIR/monitor-layout"}
+WALLPAPER_CACHE=${WALLPAPER_CACHE:-"$CONFIG_DIR/wallpaper"}
+KEYMAP_CACHE=${KEYMAP_CACHE:-"$CONFIG_DIR/keyboard-layout"}
+
+WELCOME_MSG=${WELCOME_MSG:-"Welcome to rofi-desktop! &#x0a;Press any key to continue with the setup."}
+RUN_APPMENU_PROMPT=${RUN_APPMENU_PROMPT:-"Run appmenu-service.py on startup?"}
+RUN_KEYPRESS_PROMPT=${RUN_APPMENU_PROMPT:-"Run keypress.py on startup?"}
 
 run_program() {
     is_running=$(ps aux | grep -c "$1")
@@ -36,8 +38,6 @@ ask_user() {
 }
 
 wizard() {
-    WELCOME_MSG=${WELCOME_MSG:-"Welcome to rofi-desktop! &#x0a;Press any key to continue with the setup."}
-
     rofi -markup -e "$WELCOME_MSG"
 
     # TODO: set menu language
@@ -55,9 +55,6 @@ wizard() {
 
     "$SCRIPT_PATH"/scripts/rofi-wallpaper.sh;
 
-    RUN_APPMENU_PROMPT=${RUN_APPMENU_PROMPT:-"Run appmenu-service.py on startup?"}
-    RUN_KEYPRESS_PROMPT=${RUN_APPMENU_PROMPT:-"Run keypress.py on startup?"}
-
     # ask programs to run on startup and add entries to autostart file
     truncate -s 0 "$STARTUP_FILE"
 
@@ -73,14 +70,10 @@ wizard() {
 
     # TODO: run greenclip
     # TODO: run rofication-daemon
-
-    touch "$FIRST_RUN_FILE"
 }
 
 startup() {
     # set monitor layout
-    MONITORS_CACHE=${MONITORS_CACHE:-"$CONFIG_DIR/monitor-layout"}
-
     if [ -f "$MONITORS_CACHE" ]; then
         connected_screens=$(xrandr | awk '( $2 == "connected" ){ print $1 }' | wc -l)
 
@@ -92,16 +85,12 @@ startup() {
     fi
 
     # set wallpaper
-    WALLPAPER_CACHE=${WALLPAPER_CACHE:-"$CONFIG_DIR/wallpaper"}
-
     if [ -f "$WALLPAPER_CACHE" ]; then
         echo "Setting wallpaper"
         "$SCRIPT_PATH/scripts/set-wallpaper.sh" "$WALLPAPER_CACHE"
     fi
 
     # set keyboard layout
-    KEYMAP_CACHE=${KEYMAP_CACHE:-"$CONFIG_DIR/keyboard-layout"}
-
     if [ -f "$KEYMAP_CACHE" ]; then
         echo "Setting keyboard layout" "$(cat "$KEYMAP_CACHE")"
         setxkbmap "$(cat "$KEYMAP_CACHE")"
@@ -120,8 +109,15 @@ startup() {
     # TODO: run rofication-daemon
 }
 
+# export env vars
+set -a
+source "$SCRIPT_PATH/config/environment"
+set +a
+
+# show wizard if first run
 if [ -f "$FIRST_RUN_FILE" ]; then
     startup
 else
     wizard
+    touch "$FIRST_RUN_FILE"
 fi
