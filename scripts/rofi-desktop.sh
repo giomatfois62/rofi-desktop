@@ -202,19 +202,19 @@ run_cmd() {
     fi
 }
 
-browse_files() {
-    # TODO: intercept entry chosen to exit (fixed in git)
-    rofi $SHOW_ICONS -show filebrowser && exit
-}
-
 ssh_menu() {
     # TODO: intercept entry chosen to exit
     rofi -show ssh && exit
 }
 
+browse_files() {
+    # TODO: intercept entry chosen to exit (fixed in git)
+    rofi $SHOW_ICONS -show filebrowser && exit
+}
+
 window_menu() {
     # TODO: intercept entry chosen to exit
-    rofi -show-icons -show window && exit
+    rofi $SHOW_ICONS -show window && exit
 }
 
 shortcuts() {
