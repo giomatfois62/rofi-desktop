@@ -23,6 +23,7 @@
 # WAYLAND COMPAT
 - clipboard (greenclip)
 - rofi-brightness.sh (must use gammastep, ddc, wlr-randr)
+- rofi-cheat.sh (xclip)
 - rofi-color-picker.sh (xclip)
 - rofi-ffmpeg.sh (must use obs or native screen recording utilities)
 - rofi-hud.py (need porting away from xlib)
