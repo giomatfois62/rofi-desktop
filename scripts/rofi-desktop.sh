@@ -430,9 +430,7 @@ wireguard() {
 }
 
 calculator() {
-    have_calc=$(rofi -dump-config | grep calc)
-
-    if [ -n "$have_calc" ]; then
+    if [ -n "$(rofi -dump-config | grep calc)" ]; then
         rofi -show calc
     else
         rofi -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
@@ -440,9 +438,7 @@ calculator() {
 }
 
 task_mgr() {
-    have_blocks=$(rofi -dump-config | grep blocks)
-
-    if [ -n "$have_blocks" ]; then
+    if [ -n "$(rofi -dump-config | grep blocks)" ]; then
         "$SCRIPT_PATH"/rofi-top.sh
     else
         eval "$TASK_MANAGER"
