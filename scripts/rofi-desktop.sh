@@ -16,7 +16,7 @@ SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks of
 PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
 PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
-TODO_FOLDER="${TODO_FOLDER:-$HOME/.todo}"
+TODO_FOLDER="${TODO_FOLDER:-$SCRIPT_PATH/../data/todo}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
 declare -A commands=(
@@ -353,11 +353,11 @@ todo() {
     local todo_placeholder="Type something with a \"+\" prefix to add a new TODO item"
 
     while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$list_placeholder\";"}); do
-        if [[ $todo_file == +* ]];then
-            todo_file=$(echo "$todo_file" | sed s/^+//g |sed s/^\s+//g)
+        if [[ "$todo_file" = "+"* ]]; then
+            todo_file=$(echo "$todo_file" | sed s/^+//g | sed s/^\s+//g)
         fi
 
-        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODO $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
+        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
     done
 }
 

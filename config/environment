@@ -5,7 +5,7 @@ ROFI_CMD="rofi -dmenu -i"
 #TERMINAL="xterm"
 
 # path to file containing calendar events
-#EVENTS_FILE="$HOME/.local/share/calendar_events"
+#EVENTS_FILE="path/to/events"
 
 # show icons in rofi-filebrowser, window switcher and custom menus, set empty to disable icons
 #SHOW_ICONS="-show-icons"
@@ -39,7 +39,7 @@ ROFI_CMD="rofi -dmenu -i"
 
 # notes author, path to file and default editor
 #NOTES_AUTHOR="$(whoami)"
-#NOTES_FOLDER="$HOME/.notes"
+#NOTES_FOLDER="path/to/notes"
 #NOTES_EDITOR="xdg-open"
 
 # radio stations file, cache file and player command
@@ -81,8 +81,9 @@ ROFI_CMD="rofi -dmenu -i"
 #TIMER_STOP_AUDIO="path/to/stop-audio"
 #TIMER_NOTIFICATION_TIMEOUT=5000
 
-# path to file containing TODOs
-#TODO_FILE="$HOME/.rofi_todos"
+# path to folder containing TODOs and default standalone todo file
+#TODO_FOLDER=path/to/todos
+#TODO_FILE="$HOME/.todos"
 
 # path to wallpapers directory
 #WALLPAPERS_DIR=$HOME/Pictures

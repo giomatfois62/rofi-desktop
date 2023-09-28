@@ -6,6 +6,8 @@
 # dependencies: rofi
 
 ###### Variables ######
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 DATEFTM="${DATEFTM:-+%a %d %b %Y}"
 TIMEFMT="${TIMEFMT:-+%H:%M}"
 SHORTFMT="${SHORTFMT:-+%d/%m/%Y}"
@@ -19,7 +21,7 @@ CREATE_EVENT_TEXT="${CREATE_EVENT_TEXT:-! add reminder !}"
 ROFI_CONFIG_FILE="${ROFI_CONFIG_FILE:-/dev/null}"
 BAR_POSITION="${BAR_POSITION:-bottom}"
 WEEK_START="${WEEK_START:-monday}"
-EVENTS_FILE="${EVENTS_FILE:-$HOME/.local/share/calendar_events}"
+EVENTS_FILE="${EVENTS_FILE:-$SCRIPT_PATH/../data/events}"
 
 # get current date and set today header
 get_current_date() {

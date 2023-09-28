@@ -6,10 +6,11 @@
 #
 # dependencies: rofi
 
-# default values
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 NOTES_AUTHOR="${NOTES_AUTOR:-$(whoami)}"
-NOTES_FOLDER="${NOTES_FOLDER:-$HOME/.notes}"
+NOTES_FOLDER="${NOTES_FOLDER:-$SCRIPT_PATH/../data/notes}"
 NOTES_EDITOR="${NOTES_EDITOR:-xdg-open}"
 
 if [[ ! -d "${NOTES_FOLDER}" ]]; then
