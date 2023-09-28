@@ -77,6 +77,7 @@ declare -A commands=(
     ["Clipboard"]=clipboard
     ["Translate Text"]=translate
     ["Task Manager"]=task_mgr
+    ["Switch Window"]=window_menu
     ["Notifications"]=notifications
     ["Characters"]=char_picker
     ["Appearance"]=appearance_menu
@@ -106,7 +107,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nTODOs\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nTODOs\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -209,6 +210,11 @@ browse_files() {
 ssh_menu() {
     # TODO: intercept entry chosen to exit
     rofi -show ssh && exit
+}
+
+window_menu() {
+    # TODO: intercept entry chosen to exit
+    rofi -show window && exit
 }
 
 search_all() {
@@ -335,7 +341,7 @@ weather() {
 }
 
 todo() {
-    mkdir -p $TODO_FOLDER
+    mkdir -p "$TODO_FOLDER"
 
     local list_placeholder="Type something with a \"+\" prefix to create a new TODO list"
     local todo_placeholder="Type something with a \"+\" prefix to add a new TODO item"

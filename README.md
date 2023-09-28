@@ -73,6 +73,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - KeePassXC (rofi-keepassxc.sh)
   - Clipboard (uses greenclip)
   - Notifications (uses rofication-daemon.py and rofication-gui.py)
+  - Switch Window (window modi)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)

@@ -8,7 +8,7 @@
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
-- Add window menu and experiment with alt-tab binding (https://github.com/davatorium/rofi/issues/1867)
+- Experiment with alt-tab binding to show window menu (https://github.com/davatorium/rofi/issues/1867)
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -74,6 +74,7 @@
 - Implement a wizard to show on first run and ask basic stuff (DONE)
 - Fix rofi-mpd current song format breaking markup (DONE)
 - Fix rofi-calendar current day format in fedora (DONE)
+- Add window menu (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
