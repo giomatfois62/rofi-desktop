@@ -4,6 +4,8 @@
 #
 # dependencies: rofi, setxkbmap
 
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 KEYMAP_CACHE=${KEYMAP_CACHE:-"$SCRIPT_PATH/../config/keyboard-layout"}
 LAYOUT_FILE="/usr/share/X11/xkb/rules/evdev.lst"

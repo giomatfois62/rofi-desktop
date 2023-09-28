@@ -51,6 +51,7 @@ wizard() {
     # TODO: run greenclip
     # TODO: run rofication-daemon
 }
+
 startup() {
 
     # set monitor layout
