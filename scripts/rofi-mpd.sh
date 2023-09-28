@@ -10,7 +10,12 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 MPD_SHORTCUTS_HELP="Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"Alt+P\" to play/pause player&#x0a;Press \"Alt+J\" to play previous entry in queue&#x0a;Press \"Alt+K\" to play next entry in queue"
 
-call_rofi() { $ROFI_CMD -kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j" -mesg "$(mpc status)&#x0a;&#x0a;$MPD_SHORTCUTS_HELP" "$@" ;}
+call_rofi() {
+  # escape song name string
+  player_status=$(mpc status | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
+
+  $ROFI_CMD -kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j" -mesg "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP" "$@" ;
+}
 
 artist() {
   mpc list artist | sort -f | call_rofi -p "Artists"
@@ -45,20 +50,8 @@ check_exit_code() {
   [ "$1" -eq 13 ] && mpc prev
 }
 
-get_mode() {
-  case "$1" in
-    -l | --library) mode=Library ;;
-    -A | --album) mode=Album ;;
-    -s | --song) mode=Song ;;
-    -f | --files) mode=Files ;;
-    -a | --ask)
-      MODE=$(printf "Library\nAlbum\nSong\nFiles" | call_rofi -p "Choose Mode")
-      cod=$?
-      check_exit_code $cod
-      mode=$MODE
-      ;;
-    -h | --help)
-      echo "
+print_help() {
+   echo "
     usage: rofi-mpd [-h] [-l] [-s] [-a]
 
     arguments:
@@ -75,6 +68,26 @@ get_mode() {
     Alt+j             previous entry in queue
     Alt+k             next entry in queue
       "
+}
+
+get_mode() {
+  case "$1" in
+    -l | --library) mode=Library ;;
+    -A | --album) mode=Album ;;
+    -s | --song) mode=Song ;;
+    -f | --files) mode=Files ;;
+    -a | --ask)
+      MODE=$(printf "Library\nAlbum\nSong\nFiles" | call_rofi -p "Choose Mode")
+      cod=$?
+      check_exit_code $cod
+      mode=$MODE
+      ;;
+    -h | --help)
+      print_help
+      exit
+      ;;
+    *)
+      print_help
       exit
       ;;
   esac
