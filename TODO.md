@@ -20,6 +20,7 @@
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
 - Fix rofi-calendar current day format in fedora
+- Fix rofi-mpd current song format breaking markup
 
 # WAYLAND COMPAT
 - clipboard (greenclip)
