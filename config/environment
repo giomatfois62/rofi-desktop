@@ -23,7 +23,7 @@ ROFI_CMD="rofi -dmenu -i"
 # output folders of video and audio recordings
 #VIDEO_FOLDER="$HOME/Videos/record"
 #AUDIO_FOLDER="$HOME/Music/record"
-#VIDEO_CODEC="libpx" # h264
+#VIDEO_CODEC="libvpx" # h264
 
 # flathub cache file and expiration time to refresh it
 #FLATHUB_CACHE="$HOME/.cache/flathub.json"
