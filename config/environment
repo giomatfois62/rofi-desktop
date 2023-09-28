@@ -7,8 +7,11 @@ ROFI_CMD="rofi -dmenu -i"
 # path to file containing calendar events
 #EVENTS_FILE="$HOME/.local/share/calendar_events"
 
-# show icons in rofi-filebrowser, set empty to disable icons
+# show icons in rofi-filebrowser, window switcher and custom menus, set empty to disable icons
 #SHOW_ICONS="-show-icons"
+
+# show thumbnails in window switcher, set empty to disable thumbnails
+#SHOW_WINDOW_THUMBS="-window-thumbnail"
 
 # task manager command
 #TASK_MANAGER="xterm -e htop"

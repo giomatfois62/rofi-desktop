@@ -10,6 +10,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
+SHOW_WINDOW_THUMBS="${SHOW_WINDOW_THUMBS:--window-thumbnail}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks off
 PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
@@ -137,7 +138,7 @@ show_menu() {
             custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
 
             if [ -f "$custom_menu_file" ]; then
-                rofi -show-icons -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
+                rofi "$SHOW_ICONS" -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
 		if [ -n "$(cat $HOME/.cache/rofi-json)" ]; then
                     exit
                 fi
@@ -215,7 +216,7 @@ browse_files() {
 window_menu() {
     # TODO: intercept entry chosen to exit
     # TODO: optionally show in grid
-    rofi $SHOW_ICONS -window-thumbnail -show window && exit
+    rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window && exit
 }
 
 shortcuts() {
