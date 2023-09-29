@@ -9,14 +9,16 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SCREENSHOT_NAME="${SCREENSHOT_NAME:-Screenshot_%Y-%m-%d-%S-%H%M%S.png}"
 
 # check for available programs
-declare -a programs=("flameshot launcher" "spectacle" "xfce4-screenshooter")
+declare -a programs=("flameshot" "spectacle" "xfce4-screenshooter")
 
 # launch program if found on system
-for i in "${programs[@]}"; do
-    cmd=$(echo "$i" | awk '{print $1;}')
-
+for cmd in "${programs[@]}"; do
     if command -v "$cmd" &> /dev/null; then
-        $i
+        if [ "$cmd" = "flameshot" ]; then
+            flameshot launcher
+        else
+            $cmd
+        fi
         exit 0
     fi
 done
@@ -40,7 +42,7 @@ case $chosen in
         scrot -s $SCREENSHOT_NAME -e 'mv $f $$(xdg-user-dir PICTURES) ; xdg-open $$(xdg-user-dir PICTURES)/$f'
         exit 0;;
     "Window")
-        scrot -s $SCREENSHOT_NAME  -e 'mv $f $$(xdg-user-dir PICTURES) ; xdg-open $$(xdg-user-dir PICTURES)/$f'
+        scrot -s $SCREENSHOT_NAME -e 'mv $f $$(xdg-user-dir PICTURES) ; xdg-open $$(xdg-user-dir PICTURES)/$f'
         exit 0;;
 esac
 
