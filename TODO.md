@@ -9,6 +9,7 @@
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Experiment with alt-tab binding to show window menu (https://github.com/davatorium/rofi/issues/1867)
+- Integrate a local LLM model menu instead of chatgpt
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -36,7 +37,6 @@
 - Merge settings menu in main desktop menu and use flags to show (DONE)
 - Add default rofi config and themes (DONE)
 - Implement a projects module to manage code projects (DONE)
-- Integrate a chatgpt or other language model dialog (DONE)
 - Replace command outputs tests with "-n" (DONE)
 - Use xdg-mime default to set default applications (DONE)
 - Document scripts working only in x11 and try to support Wayland where possible (DONE)

@@ -54,7 +54,6 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Calendar (rofi-calendar.sh)
   - World Clocks (show current date-time in system timezones)
   - Color Picker (rofi-color-picker.sh)
-  - ChatGPT (rofi-gpt.sh)
   - Dictionary (rofi-dict.sh)
   - Media Controls (rofi-playerctl.sh)
   - Music Player (rofi-mpd.sh, controls mpd using mpc commands)
@@ -147,7 +146,6 @@ Optional dependencies for some of the tools are:
 - translate-shell
 - jsonpickle
 - zenity
-- shell_gpt
 - FontAwesome
 - sdcv
 - xclip
@@ -188,7 +186,6 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [ntcarlson](https://github.com/ntcarlson/dotfiles/tree/delta/config/rofi)
 - [zx2c4](https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu)
 - [Bavuett](https://github.com/Bavuett/rofi-dev-launcher)
-- [haxguru](https://www.reddit.com/r/unixporn/comments/10w7p5z/rofi_chatgpt_rofi/)
 - [windwp](https://github.com/windwp/rofi-color-picker)
 - [colonelpanic8](https://github.com/colonelpanic8/rofi-systemd)
 - [mrHeavenli](https://github.com/mrHeavenli/rofi-playerctl)
