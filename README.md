@@ -145,12 +145,10 @@ Optional dependencies for some of the tools are:
 - greenclip
 - translate-shell
 - jsonpickle
-- zenity
 - FontAwesome
 - sdcv
-- xclip
-- xsel
-- xdotool
+- xclip/wl-clipboard
+- xdotool/ydotool
 - playerctl
 - python3-xlib
 - python3-lxml
