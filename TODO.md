@@ -28,7 +28,7 @@
 - rofi-hud.py (need porting away from xlib)
 - rofi-keyboard-layout.sh (must be done by the compositor)
 - rofi-monitor-layout.sh (must use wlr-randr, way-displays)
-- rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fallback on maim/slurp in wayland)
+- rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fallback on grim/slurp in wayland)
 
 # COMPLETED
 - Make some variables configurable from file (DONE)
