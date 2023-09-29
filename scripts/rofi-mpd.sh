@@ -8,7 +8,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
-MPD_SHORTCUTS_HELP="Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"Alt+P\" to play/pause player&#x0a;Press \"Alt+J\" to play previous entry in queue&#x0a;Press \"Alt+K\" to play next entry in queue"
+MPD_SHORTCUTS_HELP=${MPD_SHORTCUTS_HELP:-"Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"Alt+P\" to play/pause player&#x0a;Press \"Alt+J\" to play previous entry in queue&#x0a;Press \"Alt+K\" to play next entry in queue"}
 
 call_rofi() {
   # escape song name string
