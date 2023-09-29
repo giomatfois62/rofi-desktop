@@ -3,8 +3,8 @@
 # this script contains the main rofi-desktop menu, the system settings menu and the utilities menu
 # add custom entries in the "commands" array and in the "utils", "main_entries" and "settings_entries" variables
 #
-# dependencies: rofi, inxi, qt5ct, lxappearance
-# optional: rofi-calc, curl, greenclip, htop, at
+# dependencies: rofi
+# optional: inxi, rofi-calc, rofi-blocks, curl, greenclip, htop, at, qt5ct, lxappearance
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
