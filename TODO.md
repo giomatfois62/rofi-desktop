@@ -14,7 +14,6 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
-- Optionally show window thumbnails in a grid
 - Remember last selected rows in rofi-mpd
 
 # BUGFIX

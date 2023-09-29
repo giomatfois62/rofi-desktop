@@ -11,10 +11,9 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 SHOW_WINDOW_THUMBS="${SHOW_WINDOW_THUMBS:--window-thumbnail}"
+SHOW_THUMBNAILS_GRID="${SHOW_THUMBNAILS_GRID:-yes}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks off
-PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
-PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
 TODO_FOLDER="${TODO_FOLDER:-$SCRIPT_PATH/../data/todo}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
@@ -215,8 +214,22 @@ browse_files() {
 
 window_menu() {
     # TODO: intercept entry chosen to exit
-    # TODO: optionally show in grid
-    rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window && exit
+    if [ "$SHOW_THUMBNAILS_GRID" = "yes" ]; then
+        THUMB_GRID_ROWS=${THUMB_GRID_ROWS:-2}
+        THUMB_GRID_COLS=${THUMB_GRID_COLS:-3}
+        THUMB_ICON_SIZE=${THUMB_ICON_SIZE:-10}
+
+        build_theme() {
+            rows=$1
+            cols=$2
+            icon_size=$3
+
+            echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
+        }
+        rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window -theme-str $(build_theme $THUMB_GRID_ROWS $THUMB_GRID_COLS $THUMB_ICON_SIZE) && exit
+    else
+        rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window && exit
+    fi
 }
 
 shortcuts() {
