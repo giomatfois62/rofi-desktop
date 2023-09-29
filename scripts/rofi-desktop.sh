@@ -362,7 +362,10 @@ weather() {
 
 todo() {
     mkdir -p "$TODO_FOLDER"
-    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
+
+    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | xargs -I{} wc -l {} |  $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
+        todo_file=$(echo "$todo_file" | cut -d' ' -f2-) # remove items count
+
         if [[ "$todo_file" = "+"* ]]; then
             todo_file=$(echo "$todo_file" | sed s/^+//g | sed s/^\s+//g)
         fi
