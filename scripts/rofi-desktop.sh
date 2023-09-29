@@ -132,7 +132,8 @@ show_menu() {
     local selected_row=0
     local selected_text
 
-    while selected=$(echo -en "$menu_entries" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "$menu_prompt" -kb-screenshot "Alt+s"); do
+    while selected=$(echo -en "$menu_entries" |\
+            $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "$menu_prompt"); do
         selected_row=$(echo "$selected" | awk '{print $1;}')
         selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
@@ -142,8 +143,9 @@ show_menu() {
             custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
 
             if [ -f "$custom_menu_file" ]; then
-                rofi "$SHOW_ICONS" -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
-		if [ -n "$(cat $HOME/.cache/rofi-json)" ]; then
+                rofi "$SHOW_ICONS" -modi "$selected_text:$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
+
+                if [ -n "$(cat "$HOME"/.cache/rofi-json)" ]; then
                     exit
                 fi
             fi
@@ -355,7 +357,8 @@ set_timer() {
 }
 
 weather() {
-    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
+    while city=$(curl wttr.in/"$city"?ATFn |\
+            rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
         echo "Showing weather for" "$city"
     done
 }
@@ -363,14 +366,15 @@ weather() {
 todo() {
     mkdir -p "$TODO_FOLDER"
 
-    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | xargs -I{} wc -l {} |  $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
+    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | xargs -I{} wc -l {} |\
+            $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
         todo_file=$(echo "$todo_file" | cut -d' ' -f2-) # remove items count
 
         if [[ "$todo_file" = "+"* ]]; then
             todo_file=$(echo "$todo_file" | sed s/^+//g | sed s/^\s+//g)
         fi
 
-        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";"}
+        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file:$SCRIPT_PATH/rofi-todo.sh" -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";"}
     done
 }
 
