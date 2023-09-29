@@ -18,6 +18,11 @@ KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
 TODO_FOLDER="${TODO_FOLDER:-$SCRIPT_PATH/../data/todo}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
+TIMER_PLACEHOLDER="${TIMER_PLACEHOLDER:-Type <hours>h <minutes>m <seconds>s to set a custom timer}"
+WEATHER_PLACEHOLDER="${WEATHER_PLACEHOLDER:-Type the name of a city and press \"Enter\" to its weather}"
+TODO_LISTS_PLACEHOLDER="${TODO_LISTS_PLACEHOLDER:-Type something with a \"+\" prefix to create a new TODO list}"
+TODO_PLACEHOLDER="${TODO_PLACEHOLDER:-Type something with a \"+\" prefix to create a new TODO item}"
+
 declare -A commands=(
     ["Applications"]=run_app
     ["Run Command"]=run_cmd
@@ -345,32 +350,24 @@ search_archwiki() {
 }
 
 set_timer() {
-    local placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
-
     rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
-        -theme-str "entry{placeholder:\"$placeholder\";"}
+        -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
 }
 
 weather() {
-    local placeholder="Type the name of a city and press \"Enter\" to show weather from another location"
-
-    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$placeholder\";"}); do
+    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
         echo "Showing weather for" "$city"
     done
 }
 
 todo() {
     mkdir -p "$TODO_FOLDER"
-
-    local list_placeholder="Type something with a \"+\" prefix to create a new TODO list"
-    local todo_placeholder="Type something with a \"+\" prefix to add a new TODO item"
-
-    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$list_placeholder\";"}); do
+    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
         if [[ "$todo_file" = "+"* ]]; then
             todo_file=$(echo "$todo_file" | sed s/^+//g | sed s/^\s+//g)
         fi
 
-        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
+        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";"}
     done
 }
 
