@@ -81,7 +81,11 @@ get_mode() {
       MODE=$(printf "Library\nAlbum\nSong\nFiles" | call_rofi -p "Choose Mode")
       cod=$?
       check_exit_code $cod
-      mode=$MODE
+      if [ "$cod" -eq 0 ]; then
+        mode=$MODE
+      elif [ "$cod" -eq 1 ]; then
+        mode=""
+      fi
       ;;
     -h | --help)
       print_help
