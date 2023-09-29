@@ -46,11 +46,6 @@ else
 	URL="https://www.google.com/search?client=firefox-b-d&q=${ENTRIES}"
 fi
 
-DEV_EDITION=$(ps aux | grep '[f]irefox-developer-edition' | wc -l)
-if [ ${DEV_EDITION} -eq 0 ]; then
-	firefox "$URL"
-else
-	firefox-developer-edition "$URL"
-fi
+xdg-open "$URL"
 
 rm ${TMP_PLACES}
