@@ -133,9 +133,12 @@ Optional dependencies for some of the tools are:
 - mpv 
 - rofi-blocks
 - rofi-calc
+- bc
+- cal
 - xrandr
 - ffmpeg 
-- pactl 
+- pactl
+- paplay
 - fd
 - ripgrep
 - htop 

@@ -2,7 +2,7 @@
 #
 # this script manages the user session using loginctl and an optional screen locker
 #
-# dependencies: rofi
+# dependencies: rofi, systemd/elogind
 # optional: i3lock
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
