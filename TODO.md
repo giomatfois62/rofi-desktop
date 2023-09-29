@@ -15,11 +15,11 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Optionally show window thumbnails in a grid
+- Remember last selected rows in rofi-mpd
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
-- Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts
 
 # WAYLAND COMPAT
 - clipboard (greenclip)
@@ -74,6 +74,7 @@
 - Fix rofi-calendar current day format in fedora (DONE)
 - Add window menu (DONE)
 - Move calendar events, notes, todos to data dir (DONE)
+- Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
