@@ -7,6 +7,15 @@ CREATED="2020-06-01"
 UPDATED="2020-06-01"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+if [ -n "$WAYLAND_DISPLAY" ]; then
+    clip_cmd="wl-copy"
+elif [ -n "$DISPLAY" ]; then
+    clip_cmd="xclip -sel clip"
+else
+    echo "Error: No Wayland or X11 display detected" >&2
+    exit 1
+fi
+
 main(){
   while getopts :vhf:o:p: option; do
     case "${option}" in
@@ -46,7 +55,7 @@ main(){
   # get first xml tag
   echo -n "$(echo "$selected" \
     | cut -d\' -f2)" \
-    | xclip -selection clipboard
+    | $clip_cmd
 
 }
 
@@ -95,7 +104,7 @@ ${AUTHOR} <${CONTACT}>
 SEE ALSO
 --------
 
-rofi(1), xclip(1)
+rofi(1), xclip(1) or wl-clipboard(1)
 <https://raw.githubusercontent.com/wstam88/rofi-fontawesome/>,
 <http://fontawesome.io>
 "
@@ -152,7 +161,7 @@ DEPENDENCIES
 
 rofi
 fontawesome
-xclip
+xclip/wl-clipboard
 '
 
 
