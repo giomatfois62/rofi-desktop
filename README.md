@@ -84,7 +84,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Default Applications (rofi-mime.sh, set audio/video/images/PDF viewers and file manager)
   - Autostart Applications (rofi-autostart.sh, manage xdg/autostart desktop files)
   - Keyboard Layout (rofi-keyboard-layout.sh)
-  - Brightness (rofi-brightness.sh, uses xbacklight)
+  - Brightness (rofi-brightness.sh, uses xrandr)
   - Volume (rofi-volume.sh, uses pactl and pavucontrol)
   - Menu Configuration (edit all rofi-desktop scripts)
   - Language (rofi-locale.sh, set LC_ALL for user session)
@@ -141,7 +141,6 @@ Optional dependencies for some of the tools are:
 - ripgrep
 - htop 
 - inxi
-- xbacklight
 - at
 - pass
 - greenclip
