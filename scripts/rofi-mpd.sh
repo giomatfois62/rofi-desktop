@@ -4,38 +4,17 @@
 #
 # dependencies: rofi, mpd, mpc
 
-# TODO: remember last row
-
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 MPD_SHORTCUTS_HELP=${MPD_SHORTCUTS_HELP:-"Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"Alt+P\" to play/pause player&#x0a;Press \"Alt+J\" to play previous entry in queue&#x0a;Press \"Alt+K\" to play next entry in queue"}
 
-call_rofi() {
+mpd_shortcuts="-kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j""
+
+player_mesg() {
   # escape song name string
   # https://stackoverflow.com/questions/12873682/short-way-to-escape-html-in-bash
   player_status=$(mpc status | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
-
-  $ROFI_CMD -kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j" -mesg "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP" "$@" ;
-}
-
-artist() {
-  mpc list artist | sort -f | call_rofi -p "Artists"
-}
-
-a_album() {
-  mpc list album artist "$1" | sort -f | call_rofi -p "Albums"
-}
-
-album() {
-  mpc list album | sort -f | call_rofi -p "Album"
-}
-
-song() {
-  mpc list title | sort -f | call_rofi -p "Song"
-}
-
-files() {
-  mpc listall | sort -f | call_rofi -p "File"
+  echo "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP"
 }
 
 toggle_player() {
@@ -45,10 +24,137 @@ toggle_player() {
   [ -z "$is_playing" ] && mpc play
 }
 
-check_exit_code() {
+check_shortcuts() {
   [ "$1" -eq 11 ] && toggle_player
   [ "$1" -eq 12 ] && mpc next
   [ "$1" -eq 13 ] && mpc prev
+}
+
+search_music() {
+  case "$1" in
+    "File") mpc listall ;;
+    "Album") mpc list album ;;
+    "Song") mpc list title ;;
+  esac
+}
+
+add_entry() {
+  entry_type="$1"
+  entry="$2"
+
+  case "$entry_type" in
+    "File") mpc add "$entry" ;;
+    "Album") mpc find album "$album" | mpc add ;;
+    "Song") mpc search "(title==\"$entry\")" | mpc add ;;
+  esac
+}
+
+select_entry() {
+  entry_type="$1"
+  selected_row=0
+
+  while :
+  do
+    entry_chosen=$(search_music "$entry_type" | sort -f |\
+        $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "$entry_type")
+
+    exit_code=$?
+    check_shortcuts $exit_code
+
+    selected_row=$(echo "$entry_chosen" | cut -d' ' -f1)
+    entry_chosen=$(echo "$entry_chosen" | cut -d' ' -f2-)
+
+    if [ ! "$entry_chosen" ]; then
+      break
+    elif [ "$exit_code" -eq 10 ]; then
+      add_entry "$1" "$entry_chosen"
+    elif [ "$exit_code" -eq 0 ]; then
+      mpc clear
+      add_entry "$1" "$entry_chosen"
+      mpc play >/dev/null
+    fi
+  done
+}
+
+search_library() {
+  selected_artist=0
+
+  while :
+  do
+    artist=$(mpc list artist | sort -f |\
+        $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_artist -mesg "$(player_mesg)" -p "Artist")
+
+    exit_code=$?
+    check_shortcuts $exit_code
+
+    selected_artist=$(echo "$artist" | cut -d' ' -f1)
+    artist=$(echo "$artist" | cut -d' ' -f2-)
+
+    [ ! "$artist" ] && break
+
+    selected_row=0
+
+    while :
+    do
+      album=$(mpc list album artist "$artist" | sort -f |\
+          $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Album")
+
+      exit_code=$?
+      check_shortcuts $exit_code
+
+      selected_row=$(echo "$album" | cut -d' ' -f1)
+      album=$(echo "$album" | cut -d' ' -f2-)
+
+      if [ ! "$album" ]; then
+        break
+      elif [ "$exit_code" -eq 10 ]; then
+        mpc find artist "$artist" album "$album" | mpc add
+      elif [ "$exit_code" -eq 0 ]; then
+        mpc clear
+        mpc find artist "$artist" album "$album" | mpc add
+        mpc play >/dev/null
+      fi
+    done
+  done
+}
+
+search_albums() {
+  select_entry "Album"
+}
+
+search_songs() {
+  select_entry "Song"
+}
+
+search_files() {
+  select_entry "File"
+}
+
+select_mode() {
+  selected_row=0
+
+  while :
+  do
+    entry_chosen=$(printf "Library\nAlbum\nSong\nFiles" |\
+        $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Music")
+
+    exit_code=$?
+    check_shortcuts $exit_code
+
+    selected_row=$(echo "$entry_chosen" | cut -d' ' -f1)
+    entry_chosen=$(echo "$entry_chosen" | cut -d' ' -f2-)
+
+    if [ ! "$entry_chosen" ]; then
+      break
+    elif [ "$exit_code" -eq 0 ]; then
+      case "$entry_chosen" in
+        "Files") search_files ;;
+        "Album") search_albums ;;
+        "Song") search_songs ;;
+        "Library") search_library ;;
+      esac
+    fi
+  done
 }
 
 print_help() {
@@ -71,30 +177,14 @@ print_help() {
       "
 }
 
-get_mode() {
+main() {
   case "$1" in
-    -l | --library) mode=Library ;;
-    -A | --album) mode=Album ;;
-    -s | --song) mode=Song ;;
-    -f | --files) mode=Files ;;
-    -a | --ask)
-      MODE=$(printf "Library\nAlbum\nSong\nFiles" | call_rofi -p "Choose Mode")
-      cod=$?
-      check_exit_code $cod
-      if [ "$cod" -eq 0 ]; then
-        mode=$MODE
-      elif [ "$cod" -eq 1 ]; then
-        mode=""
-      fi
-      ;;
-    -h | --help)
-      print_help
-      exit
-      ;;
-    *)
-      print_help
-      exit
-      ;;
+    -l | --library) search_library ;;
+    -A | --album) search_albums ;;
+    -s | --song) search_songs ;;
+    -f | --files) search_files ;;
+    -a | --ask) select_mode ;;
+    -h | --help) print_help && exit ;;
   esac
 }
 
@@ -104,91 +194,6 @@ if [ -z "$(pidof mpd)" ]; then
     exit 1
 fi
 
-while :
-do
-  get_mode "$1"
-
-  case "$mode" in
-    Library)
-      while :
-      do
-        artist=$(artist)
-        cod=$?
-        check_exit_code $cod
-        [ ! "$artist" ] && break
-
-        while :
-        do
-          album=$(a_album "$artist")
-          cod=$?
-          check_exit_code $cod
-          [ ! "$album" ] && break
-
-          [ "$cod" -eq 10 ] && mpc find artist "$artist" album "$album" | mpc add
-
-          if [ "$cod" -eq 0 ]; then
-              mpc clear
-              mpc find artist "$artist" album "$album" | mpc add
-              mpc play >/dev/null
-          fi
-        done
-      done
-      ;;
-    Song)
-      while :
-      do
-        song=$(song)
-        cod=$?
-        check_exit_code $cod
-        [ ! "$song" ] && break
-
-        [ "$cod" -eq 10 ] && mpc search "(title==\"$song\")" | mpc add
-
-        if [ "$cod" -eq 0 ]; then
-            mpc clear
-            mpc search "(title==\"$song\")" | mpc add
-            mpc play >/dev/null
-        fi
-      done
-      ;;
-    Album)
-      while :
-      do
-        album=$(album)
-        cod=$?
-        check_exit_code $cod
-        [ ! "$album" ] && break
-
-        [ "$cod" -eq 10 ] && mpc find album "$album" | mpc add
-
-        if [ "$cod" -eq 0 ]; then
-          mpc clear
-          mpc find album "$album" | mpc add
-          mpc play >/dev/null
-        fi
-      done
-      ;;
-    Files)
-      while :
-      do
-        file=$(files)
-        cod=$?
-        check_exit_code $cod
-        [ ! "$file" ] && break
-
-        [ "$cod" -eq 10 ] && mpc add "$file"
-
-        if [ "$cod" -eq 0 ]; then
-          mpc clear
-          mpc add "$file"
-          mpc play >/dev/null
-        fi
-      done
-      ;;
-    *)
-      exit 1
-      ;;
-  esac
-done
+main "$1"
 
 exit 1
