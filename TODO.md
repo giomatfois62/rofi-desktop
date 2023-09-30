@@ -9,29 +9,25 @@
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Experiment with alt-tab binding to show window menu (https://github.com/davatorium/rofi/issues/1867)
+- Integrate a local LLM model menu instead of chatgpt
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
-- Optionally show window thumbnails in a grid
+- Remember last selected rows in rofi-mpd
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
-- Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts
 
 # WAYLAND COMPAT
 - clipboard (greenclip)
 - rofi-brightness.sh (must use gammastep, ddc, wlr-randr)
-- rofi-cheat.sh (xclip)
-- rofi-color-picker.sh (xclip)
 - rofi-ffmpeg.sh (must use obs or native screen recording utilities)
 - rofi-hud.py (need porting away from xlib)
-- rofi-keypassxc.sh (xclip)
 - rofi-keyboard-layout.sh (must be done by the compositor)
 - rofi-monitor-layout.sh (must use wlr-randr, way-displays)
-- rofi-screenshot.sh (partially, scrot/xfce-screenshooter are x11 only, should fallback on maim/slurp in wayland)
 
 # COMPLETED
 - Make some variables configurable from file (DONE)
@@ -41,7 +37,6 @@
 - Merge settings menu in main desktop menu and use flags to show (DONE)
 - Add default rofi config and themes (DONE)
 - Implement a projects module to manage code projects (DONE)
-- Integrate a chatgpt or other language model dialog (DONE)
 - Replace command outputs tests with "-n" (DONE)
 - Use xdg-mime default to set default applications (DONE)
 - Document scripts working only in x11 and try to support Wayland where possible (DONE)
@@ -77,6 +72,7 @@
 - Fix rofi-calendar current day format in fedora (DONE)
 - Add window menu (DONE)
 - Move calendar events, notes, todos to data dir (DONE)
+- Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

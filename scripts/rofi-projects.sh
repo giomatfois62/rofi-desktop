@@ -8,7 +8,6 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 PROJECTS_EDITOR="${PROJECTS_EDITOR:-"$HOME"/Programs/qtcreator/bin/qtcreator}"
 PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-"$HOME"/Projects}"
 
-
 choice=$(ls "$PROJECTS_DIRECTORY" | $ROFI_CMD -p "Project")
 
 if [ -n "$choice" ]; then

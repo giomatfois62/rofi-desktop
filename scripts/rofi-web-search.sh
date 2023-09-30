@@ -2,7 +2,8 @@
 #
 # this script allows searching from various web sources with real time suggestions
 #
-# dependencies: rofi, rofi-blocks
+# dependencies: rofi
+# optional: rofi-blocks
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 

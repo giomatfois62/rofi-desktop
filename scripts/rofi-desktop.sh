@@ -3,21 +3,25 @@
 # this script contains the main rofi-desktop menu, the system settings menu and the utilities menu
 # add custom entries in the "commands" array and in the "utils", "main_entries" and "settings_entries" variables
 #
-# dependencies: rofi, inxi, qt5ct, lxappearance
-# optional: rofi-calc, curl, greenclip, htop, at
+# dependencies: rofi
+# optional: inxi, rofi-calc, rofi-blocks, curl, greenclip, htop, at, qt5ct, lxappearance
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 SHOW_WINDOW_THUMBS="${SHOW_WINDOW_THUMBS:--window-thumbnail}"
+SHOW_THUMBNAILS_GRID="${SHOW_THUMBNAILS_GRID:-yes}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks off
-PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-~/Programs}"
-PROJECTS_EDITOR="${PROJECTS_EDITOR:-qtcreator}"
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
 TODO_FOLDER="${TODO_FOLDER:-$SCRIPT_PATH/../data/todo}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
+
+TIMER_PLACEHOLDER="${TIMER_PLACEHOLDER:-Type <hours>h <minutes>m <seconds>s to set a custom timer}"
+WEATHER_PLACEHOLDER="${WEATHER_PLACEHOLDER:-Type the name of a city and press \"Enter\" to its weather}"
+TODO_LISTS_PLACEHOLDER="${TODO_LISTS_PLACEHOLDER:-Type something with a \"+\" prefix to create a new TODO list}"
+TODO_PLACEHOLDER="${TODO_PLACEHOLDER:-Type something with a \"+\" prefix to create a new TODO item}"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -128,7 +132,8 @@ show_menu() {
     local selected_row=0
     local selected_text
 
-    while selected=$(echo -en "$menu_entries" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "$menu_prompt" -kb-screenshot "Alt+s"); do
+    while selected=$(echo -en "$menu_entries" |\
+            $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "$menu_prompt"); do
         selected_row=$(echo "$selected" | awk '{print $1;}')
         selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
@@ -138,8 +143,9 @@ show_menu() {
             custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
 
             if [ -f "$custom_menu_file" ]; then
-                rofi "$SHOW_ICONS" -modi "$selected_text":"$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
-		if [ -n "$(cat $HOME/.cache/rofi-json)" ]; then
+                rofi "$SHOW_ICONS" -modi "$selected_text:$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
+
+                if [ -n "$(cat "$HOME"/.cache/rofi-json)" ]; then
                     exit
                 fi
             fi
@@ -215,8 +221,22 @@ browse_files() {
 
 window_menu() {
     # TODO: intercept entry chosen to exit
-    # TODO: optionally show in grid
-    rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window && exit
+    if [ "$SHOW_THUMBNAILS_GRID" = "yes" ]; then
+        THUMB_GRID_ROWS=${THUMB_GRID_ROWS:-2}
+        THUMB_GRID_COLS=${THUMB_GRID_COLS:-3}
+        THUMB_ICON_SIZE=${THUMB_ICON_SIZE:-10}
+
+        build_theme() {
+            rows=$1
+            cols=$2
+            icon_size=$3
+
+            echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
+        }
+        rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window -theme-str $(build_theme $THUMB_GRID_ROWS $THUMB_GRID_COLS $THUMB_ICON_SIZE) && exit
+    else
+        rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window && exit
+    fi
 }
 
 shortcuts() {
@@ -332,16 +352,13 @@ search_archwiki() {
 }
 
 set_timer() {
-    local placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
-
     rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
-        -theme-str "entry{placeholder:\"$placeholder\";"}
+        -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
 }
 
 weather() {
-    local placeholder="Type the name of a city and press \"Enter\" to show weather from another location"
-
-    while city=$(curl wttr.in/"$city"?ATFn | rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$placeholder\";"}); do
+    while city=$(curl wttr.in/"$city"?ATFn |\
+            rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
         echo "Showing weather for" "$city"
     done
 }
@@ -349,15 +366,15 @@ weather() {
 todo() {
     mkdir -p "$TODO_FOLDER"
 
-    local list_placeholder="Type something with a \"+\" prefix to create a new TODO list"
-    local todo_placeholder="Type something with a \"+\" prefix to add a new TODO item"
+    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | xargs -I{} wc -l {} |\
+            $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
+        todo_file=$(echo "$todo_file" | cut -d' ' -f2-) # remove items count
 
-    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$list_placeholder\";"}); do
         if [[ "$todo_file" = "+"* ]]; then
             todo_file=$(echo "$todo_file" | sed s/^+//g | sed s/^\s+//g)
         fi
 
-        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file":"$SCRIPT_PATH"/rofi-todo.sh -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$todo_placeholder\";"}
+        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file:$SCRIPT_PATH/rofi-todo.sh" -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";"}
     done
 }
 

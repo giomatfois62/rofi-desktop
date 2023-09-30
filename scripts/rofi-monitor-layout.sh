@@ -4,7 +4,7 @@
 #
 # this controls the monitor layout using xrand
 #
-# dependencies: rofi, xrand
+# dependencies: rofi, xrandr
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
