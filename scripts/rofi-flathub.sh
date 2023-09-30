@@ -29,13 +29,13 @@ fi
 
 selected=$(jq '.[] | .name + " - " + .summary' "$FLATHUB_CACHE" | tr -d '"' | $ROFI_CMD -p "Flatpak")
 
-if ! command -v flatpak &> /dev/null; then
-    rofi -e "Install flatpak first"
-    exit 1
-fi
-
-# TODO: check flatpak is installed
 if [ -n "$selected" ]; then
+    # check flatpak cmd
+    if ! command -v flatpak &> /dev/null; then
+        rofi -e "Install flatpak first"
+        exit 1
+    fi
+
     app_name=$(echo "$selected" | awk '{print $1;}')
     app_id=$(jq ".[] | select(.name==\"$app_name\") | .flatpakAppId" "$FLATHUB_CACHE" | tr -d '"')
 
