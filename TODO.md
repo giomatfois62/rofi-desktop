@@ -14,7 +14,6 @@
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
-- Show context in file contents search
 - Add custom keybindings to copy/paste/delete files in rofi-search
 - Source config file in all scripts
 
@@ -76,6 +75,7 @@
 - Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts (DONE)
 - Add xkdc comics viewer (DONE)
 - Fix ambiguos grep in rofi-xkcd (DONE)
+- Show context in file contents search (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
