@@ -450,17 +450,7 @@ notifications() {
 }
 
 clipboard() {
-    if command -v greenclip &> /dev/null; then
-        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-    elif [ -f "$SCRIPT_PATH/greenclip" ]; then
-        if [ "$(ps aux | grep -c "greenclip")" -gt 1 ]; then
-            rofi -modi "clipboard:$SCRIPT_PATH/greenclip print" -show clipboard -run-command '{cmd}'
-        else
-            rofi -e "Run \"$SCRIPT_PATH/greenclip daemon &\" to enable the clipboard menu"
-        fi
-    else
-        rofi -e "Download greenclip and place it inside \"$SCRIPT_PATH\" to enable the clipboard menu"
-    fi
+    "$SCRIPT_PATH"/rofi-clip.sh
 }
 
 menu_config() {

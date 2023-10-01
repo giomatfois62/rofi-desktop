@@ -9,7 +9,6 @@
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Experiment with alt-tab binding to show window menu (https://github.com/davatorium/rofi/issues/1867)
 - Integrate a local LLM model menu instead of chatgpt
-- Use cliphist to support clipboard in wayland
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -22,7 +21,6 @@
 - Fix link extraction for some rss feed providers
 
 # WAYLAND COMPAT
-- clipboard (greenclip)
 - rofi-brightness.sh (must use gammastep, ddc, wlr-randr)
 - rofi-ffmpeg.sh (must use obs or native screen recording utilities)
 - rofi-hud.py (need porting away from xlib)
@@ -77,6 +75,7 @@
 - Fix ambiguos grep in rofi-xkcd (DONE)
 - Show context in file contents search (DONE)
 - Add a random option to rofi-xkcd (DONE)
+- Use cliphist to support clipboard in wayland (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

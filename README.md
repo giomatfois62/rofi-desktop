@@ -71,7 +71,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - KeePassXC (rofi-keepassxc.sh)
-  - Clipboard (uses greenclip)
+  - Clipboard (rofi-clip.sh, uses greenclip in x11 or cliphist in wayland)
   - Notifications (uses rofication-daemon.py and rofication-gui.py)
   - Switch Window (window modi)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
@@ -146,7 +146,7 @@ Optional dependencies for some of the tools are:
 - inxi
 - at
 - pass
-- greenclip
+- greenclip/cliphist
 - translate-shell
 - jsonpickle
 - FontAwesome
