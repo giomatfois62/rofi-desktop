@@ -17,6 +17,7 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_HIDDEN_FILES=${SHOW_HIDDEN_FILES:-false}
 HISTORY_FILE="${HISTORY_FILE:-$HOME/.cache/rofi-search-history}"
 MAX_HISTORY_ENTRIES=${MAX_HISTORY_ENTRIES:-100}
+SHOW_CONTEXT=${SHOW_CONTEXT:-}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
@@ -143,22 +144,32 @@ search_recent() {
     fi
 }
 
+# show multiline context
+# grep -ri -E -o ".{0,40}hello.{0,40}" | sed 's/$/|/' | sed 's/:/\n/' | sed '/|$/{N;s/\n//}' | rofi -dmenu -i -eh 2 -sep "|" | head -n 1
+
 search_contents() {
 	# use a while loop to keep searching
 	while query=$(echo | $ROFI_CMD -p "String to Match"); do
-		if [ -n "$query" ]; then
-			if command -v rg &> /dev/null; then
-		    	selected=$(cd "$HOME" && rg -i -l "${query}" | $ROFI_CMD -p "Matches")
-			else
-				# warning! it's slow and blocks opening file until search is finished
-				selected=$(cd "$HOME" && grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" | $ROFI_CMD -p "Matches")
-			fi
-		    
-			if [ -n "$selected" ]; then
-				open_file "$HOME/$selected"
-				exit 0
-			fi
-		fi
+        [ -z "$query" ] && break
+
+        if command -v rg &> /dev/null; then
+            if [ -n "$SHOW_CONTEXT" ]; then
+                selected=$(cd "$HOME" && rg -i -e ".{0,30}${query}.{0,30}" | $ROFI_CMD -p "Matches" | cut -d':' -f1)
+            else
+                selected=$(cd "$HOME" && rg -i -l "${query}" | $ROFI_CMD -p "Matches")
+            fi
+        else
+            if [ -n "$SHOW_CONTEXT" ]; then
+                selected=$(cd "$HOME" && grep -ri --exclude-dir='.*' -E -o ".{0,30}${query}.{0,30}" | $ROFI_CMD -p "Matches" | cut -d':' -f1)
+            else
+                selected=$(cd "$HOME" && grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" | $ROFI_CMD -p "Matches")
+            fi
+        fi
+
+        if [ -n "$selected" ]; then
+            open_file "$HOME/$selected"
+            exit 0
+        fi
 	done
 }
 
