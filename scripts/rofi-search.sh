@@ -166,7 +166,7 @@ search_contents() {
 				selected=$(grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
 			fi
 		    
-			if [ -n "$selected"]; then
+			if [ -n "$selected" ]; then
 				open_file "$selected"
 				exit 0
 			fi
