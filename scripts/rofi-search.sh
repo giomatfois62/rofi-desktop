@@ -4,7 +4,7 @@
 # it remembers recently used files and diplays images in a grid of thumbnails
 #
 # dependencies: rofi, find, grep
-# optional: fd, ripgrep
+# optional: fd, ripgrep, xlip/wl-clipboard
 
 # TODO: add more file extensions
 # TODO: order results by date
@@ -20,7 +20,7 @@ GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
 
-SEARCH_SHORTCUTS_HELP="Press \"Enter\" to open selected file&#x0a;Press \"Alt+C\" to copy selected file to clipboard&#x0a;Press \"Alt+D\" to remove selected file"
+SEARCH_SHORTCUTS_HELP=${SEARCH_SHORTCUTS_HELP:-"Press \"Enter\" to open selected file&#x0a;Press \"Alt+C\" to copy selected file to clipboard&#x0a;Press \"Alt+D\" to remove selected file"}
 
 search_shortcuts="-kb-custom-1 "Alt+c" -kb-custom-2 "Alt+d""
 
