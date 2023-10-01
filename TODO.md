@@ -73,6 +73,7 @@
 - Add window menu (DONE)
 - Move calendar events, notes, todos to data dir (DONE)
 - Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts (DONE)
+- Add xkdc comics viewer (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

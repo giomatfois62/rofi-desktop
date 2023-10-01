@@ -52,6 +52,7 @@ declare -A commands=(
     ["YouTube"]=search_youtube
     ["Wikipedia"]=search_wikipedia
     ["ArchWiki"]=search_archwiki
+    ["XKCD"]=xkcd
     ["Torrents"]=search_torrent
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
@@ -66,7 +67,6 @@ declare -A commands=(
     ["Utilities"]=utilities_menu
     ["Media Controls"]=media_player
     ["Music Player"]=mpd_controls
-    ["ChatGPT"]=chat_gpt
     ["Dictionary"]=dictionary
     ["Cheat Sheets"]=cheat_sh
     ["Set Timer"]=set_timer
@@ -113,7 +113,7 @@ appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
-web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nTorrents\nFlathub"
+web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nXKCD\nTorrents\nFlathub"
 
 custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
@@ -295,6 +295,10 @@ color_picker() {
     "$SCRIPT_PATH"/rofi-color-picker.sh && exit
 }
 
+xkcd() {
+    "$SCRIPT_PATH"/rofi-xkcd.sh
+}
+
 livetv() {
     "$SCRIPT_PATH"/rofi-livetv.sh && exit
 }
@@ -379,10 +383,6 @@ media_player() {
 
 systemd_config() {
     "$SCRIPT_PATH"/rofi-systemd.sh && exit
-}
-
-chat_gpt() {
-    "$SCRIPT_PATH"/rofi-gpt.sh && exit
 }
 
 notes() {

@@ -42,6 +42,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
   - 1377x.to (rofi-torrent.sh, search torrents and open selected magnet links)
+  - xkcd (rofi-xkcd.sh, browse and view xkcd comics in rofi)
 - Steam Games (rofi-steam.sh)
 - Sport Events (rofi-livetv.sh, show current and upcoming sport events with relative streaming links)
 - Podcasts (rofi-podcast.sh, browse and play podcasts from rss.com)
@@ -130,18 +131,18 @@ Optional dependencies for some of the tools are:
 - jq
 - curl
 - wget
-- mpv 
+- mpv
 - rofi-blocks
 - rofi-calc
 - bc
 - cal
 - xrandr
-- ffmpeg 
+- ffmpeg
 - pactl
 - paplay
 - fd
 - ripgrep
-- htop 
+- htop
 - inxi
 - at
 - pass
