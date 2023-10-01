@@ -13,13 +13,10 @@ SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks off
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
-TODO_FOLDER="${TODO_FOLDER:-$SCRIPT_PATH/../data/todo}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
 TIMER_PLACEHOLDER="${TIMER_PLACEHOLDER:-Type <hours>h <minutes>m <seconds>s to set a custom timer}"
 WEATHER_PLACEHOLDER="${WEATHER_PLACEHOLDER:-Type the name of a city and press \"Enter\" to its weather}"
-TODO_LISTS_PLACEHOLDER="${TODO_LISTS_PLACEHOLDER:-Type something with a \"+\" prefix to create a new TODO list}"
-TODO_PLACEHOLDER="${TODO_PLACEHOLDER:-Type something with a \"+\" prefix to create a new TODO item}"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -59,7 +56,7 @@ declare -A commands=(
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
-    ["TODOs"]=todo
+    ["ToDo Lists"]=todo
     ["Color Picker"]=color_picker
     ["Notes"]=notes
     ["Latest News"]=news
@@ -110,7 +107,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nTODOs\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
+utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -335,7 +332,7 @@ search_archwiki() {
 }
 
 set_timer() {
-    rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
+    rofi -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh" -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
 }
 
 weather() {
@@ -345,18 +342,7 @@ weather() {
 }
 
 todo() {
-    mkdir -p "$TODO_FOLDER"
-
-    while todo_file=$(cd "$TODO_FOLDER" && find * -type f | xargs -I{} wc -l {} |\
-            $ROFI_CMD -p "TODOs" -theme-str "entry{placeholder:\"$TODO_LISTS_PLACEHOLDER\";"}); do
-        todo_file=$(echo "$todo_file" | cut -d' ' -f2-) # remove items count
-
-        if [[ "$todo_file" = "+"* ]]; then
-            todo_file=$(echo "$todo_file" | sed s/^+//g | sed s/^\s+//g)
-        fi
-
-        TODO_FILE="$TODO_FOLDER/$todo_file" rofi -modi "TODOs $todo_file:$SCRIPT_PATH/rofi-todo.sh" -show "TODOs $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";"}
-    done
+    "$SCRIPT_PATH"/rofi-todo-list.sh
 }
 
 dictionary() {
