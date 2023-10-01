@@ -51,5 +51,9 @@ while comic=$(cat "$XKCD_FILE" | $ROFI_CMD -p "XKCD"); do
         echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}"
     }
 
-    echo -en "\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_theme $XKCD_ICON_SIZE) -p "$comic_title" -mesg "($comic_date) $comic_alt"
+    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_theme $XKCD_ICON_SIZE) -p "$comic_title" -mesg "($comic_date) $comic_alt"
+
+    [ "$?" -eq 0 ] && xdg-open "https://xkcd.com/$comic_id" && exit 0
 done
+
+exit 1

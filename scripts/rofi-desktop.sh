@@ -296,7 +296,7 @@ color_picker() {
 }
 
 xkcd() {
-    "$SCRIPT_PATH"/rofi-xkcd.sh
+    "$SCRIPT_PATH"/rofi-xkcd.sh && exit
 }
 
 livetv() {
