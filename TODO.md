@@ -14,7 +14,6 @@
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Add custom keybindings to copy/paste/delete files in rofi-search
-- Source config file in all scripts
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
