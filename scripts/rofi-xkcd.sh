@@ -7,8 +7,8 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-XKCD_FILE=${LIVETV_FILE:-"$HOME/.cache/xkcd"}
-XKCD_CACHE=${LIVETV_FILE:-"$HOME/.cache/xkcd_cache"}
+XKCD_FILE=${XKCD_FILE:-"$HOME/.cache/xkcd"}
+XKCD_CACHE=${XKCD_CACHE:-"$HOME/.cache/xkcd_cache"}
 XKCD_EXPIRATION_TIME=${XKCD_EXPIRATION_TIME:-86400} # refresh xkcd file every day
 XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-35}
 
