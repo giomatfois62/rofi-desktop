@@ -8,8 +8,6 @@
 
 # TODO: add more file extensions
 # TODO: order results by date
-# TODO: show context of grep and ripgrep
-# TODO: add custom keybindings to copy/paste/delete selected files
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
@@ -21,6 +19,10 @@ SHOW_CONTEXT=${SHOW_CONTEXT:-}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
+
+SEARCH_SHORTCUTS_HELP="Press \"Enter\" to open selected file&#x0a;Press \"Alt+C\" to copy selected file to clipboard&#x0a;Press \"Alt+D\" to remove selected file"
+
+search_shortcuts="-kb-custom-1 "Alt+c" -kb-custom-2 "Alt+d""
 
 declare -A commands=(
     ["All Files"]=search_all
@@ -111,18 +113,41 @@ add_to_history() {
     fi
 }
 
+copy_cmd() {
+    if [ -n "$WAYLAND_DISPLAY" ]; then
+        wl-copy "$1"
+    elif [ -n "$DISPLAY" ]; then
+        echo "$1" | xclip -selection clipboard
+    fi
+}
+
+trash_cmd() {
+    if command -v kioclient5 &> /dev/null; then
+        kioclient5 move "$1" trash:/
+    elif command -v gio &> /dev/null; then
+        gio trash "$1"
+    fi
+}
+
 open_file() {
-    add_to_history "$@"
-    xdg-open "$@"
+    exit_code="$1"
+    filename="$2"
+
+    add_to_history "$filename"
+
+    [ "$exit_code" -eq 0 ] && xdg-open "$filename"
+    [ "$exit_code" -eq 10 ] && copy_cmd "$filename"
+    [ "$exit_code" -eq 11 ] && trash_cmd "$filename"
 }
 
 search_all() {
     local selected
 
-    selected=$(eval "$(search_command "$HOME")" | $ROFI_CMD -p "All Files")
+    selected=$(eval "$(search_command "$HOME")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "All Files")
+    exit_code="$?"
 
 	if [ -n "$selected" ]; then
-        open_file "$HOME/$selected"
+        open_file "$exit_code" "$HOME/$selected"
         exit 0
     fi
 }
@@ -136,10 +161,11 @@ search_recent() {
         echo -e "$recently_used"
     }
 
-    selected=$(list_recent | $ROFI_CMD -p "Recent Files")
+    selected=$(list_recent | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP"  -p "Recent Files")
+    exit_code="$?"
 
     if [ -n "$selected" ]; then
-        open_file "$selected"
+        open_file "$exit_code" "$selected"
         exit 0
     fi
 }
@@ -166,8 +192,10 @@ search_contents() {
             fi
         fi
 
+        exit_code="$?"
+
         if [ -n "$selected" ]; then
-            open_file "$HOME/$selected"
+            open_file "$exit_code" "$HOME/$selected"
             exit 0
         fi
 	done
@@ -177,10 +205,11 @@ search_books() {
     local selected
     local extensions=("djvu" "epub" "mobi")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Books")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Books")
+    exit_code="$?"
 
     if [ -n "$selected" ]; then
-        open_file "$HOME/$selected"
+        open_file "$exit_code" "$HOME/$selected"
         exit 0
     fi
 }
@@ -193,7 +222,7 @@ search_documents() {
     local selected
     local extensions=("pdf" "txt" "md" "xlsx" "doc" "docx")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Documents")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Documents")
 
     if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
@@ -204,10 +233,11 @@ search_documents() {
 search_downloads() {
     local selected
 
-    selected=$(eval "$(search_command "$HOME"/Downloads)" | $ROFI_CMD -p "Downloads")
+    selected=$(eval "$(search_command "$HOME"/Downloads)" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Downloads")
+    exit_code="$?"
 
 	if [ -n "$selected" ]; then
-        open_file "$HOME/Downloads/$selected"
+        open_file "$exit_code"  "$HOME/Downloads/$selected"
         exit 0
     fi
 }
@@ -215,10 +245,11 @@ search_downloads() {
 search_desktop() {
     local selected
 
-    selected=$(eval "$(search_command "$HOME"/Desktop)" | $ROFI_CMD -p "Desktop")
+    selected=$(eval "$(search_command "$HOME"/Desktop)" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Desktop")
+    exit_code="$?"
 
 	if [ -n "$selected" ]; then
-        open_file "$HOME/Desktop/$selected"
+        open_file "$exit_code" "$HOME/Desktop/$selected"
         exit 0
     fi
 }
@@ -227,10 +258,11 @@ search_music() {
     local selected
     local extensions=("mp3" "wav" "m3u" "aac" "flac" "ogg")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Music")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Music")
+    exit_code="$?"
 
     if [ -n "$selected" ]; then
-        open_file "$HOME/$selected"
+        open_file "$exit_code" "$HOME/$selected"
         exit 0
     fi
 }
@@ -248,10 +280,11 @@ search_pics() {
     local selected
     local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" -p "Pictures")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Pictures")
+    exit_code="$?"
 
     if [ -n "$selected" ]; then
-        open_file "$HOME/$selected"
+        open_file "$exit_code" "$HOME/$selected"
         exit 0
     fi
 }
@@ -264,10 +297,11 @@ search_videos() {
     local selected
     local extensions=("mkv" "mp4")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD -p "Videos")
+    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Videos")
+    exit_code="$?"
 
     if [ -n "$selected" ]; then
-        open_file "$HOME/$selected"
+        open_file "$exit_code" "$HOME/$selected"
         exit 0
     fi
 }

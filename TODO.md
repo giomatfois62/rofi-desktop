@@ -13,7 +13,6 @@
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
-- Add custom keybindings to copy/paste/delete files in rofi-search
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -75,6 +74,7 @@
 - Show context in file contents search (DONE)
 - Add a random option to rofi-xkcd (DONE)
 - Use cliphist to support clipboard in wayland (DONE)
+- Add custom keybindings to copy/paste/delete files in rofi-search (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
