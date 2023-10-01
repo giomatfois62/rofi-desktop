@@ -10,8 +10,6 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
-SHOW_WINDOW_THUMBS="${SHOW_WINDOW_THUMBS:--window-thumbnail}"
-SHOW_THUMBNAILS_GRID="${SHOW_THUMBNAILS_GRID:-yes}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks off
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
@@ -221,22 +219,7 @@ browse_files() {
 
 window_menu() {
     # TODO: intercept entry chosen to exit
-    if [ "$SHOW_THUMBNAILS_GRID" = "yes" ]; then
-        THUMB_GRID_ROWS=${THUMB_GRID_ROWS:-2}
-        THUMB_GRID_COLS=${THUMB_GRID_COLS:-3}
-        THUMB_ICON_SIZE=${THUMB_ICON_SIZE:-10}
-
-        build_theme() {
-            rows=$1
-            cols=$2
-            icon_size=$3
-
-            echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
-        }
-        rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window -theme-str $(build_theme $THUMB_GRID_ROWS $THUMB_GRID_COLS $THUMB_ICON_SIZE) && exit
-    else
-        rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window && exit
-    fi
+    "$SCRIPT_PATH"/rofi-window.sh && exit
 }
 
 shortcuts() {
@@ -352,13 +335,11 @@ search_archwiki() {
 }
 
 set_timer() {
-    rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh \
-        -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
+    rofi -show Timer -modi Timer:"$SCRIPT_PATH"/rofi-timer.sh -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
 }
 
 weather() {
-    while city=$(curl wttr.in/"$city"?ATFn |\
-            rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
+    while city=$(curl wttr.in/"$city"?ATFn |rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
         echo "Showing weather for" "$city"
     done
 }
