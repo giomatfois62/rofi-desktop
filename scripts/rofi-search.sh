@@ -6,6 +6,11 @@
 # dependencies: rofi, find, grep
 # optional: fd, ripgrep
 
+# TODO: add more file extensions
+# TODO: order results by date
+# TODO: show context of grep and ripgrep
+# TODO: add custom keybindings to copy/paste/delete selected files
+
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
@@ -31,39 +36,22 @@ declare -A commands=(
     ["Videos"]=search_videos
 )
 
-# TODO: add more file extensions
-# TODO: order results by date
+search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
 search_menu() {
     if [ -n "$1" ]; then
          ${commands["$1"]}
     else
-        entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
-
         # remember last entry chosen
-        local choice_row=0
-        local choice_text
+        local selected_text=0
+        local selected_text
 
-        while choice=$(echo -en "$entries" | $ROFI_CMD -matching fuzzy -selected-row ${choice_row} -format 'i s' -p "Search"); do
-            choice_row=$(echo "$choice" | awk '{print $1;}')
-            choice_text=$(echo "$choice" | cut -d' ' -f2-)
+        while choice=$(echo -en "$search_entries" | $ROFI_CMD -matching fuzzy -selected-row ${selected_text} -format 'i s' -p "Search"); do
+            selected_text=$(echo "$choice" | awk '{print $1;}')
+            selected_text=$(echo "$choice" | cut -d' ' -f2-)
 
-            ${commands[$choice_text]};
+            ${commands[$selected_text]};
         done
-    fi
-
-    exit 1
-}
-
-has_fd() {
-    if command -v fd &> /dev/null; then
-        echo "yes"
-    fi
-}
-
-has_rg() {
-    if command -v rg &> /dev/null; then
-        echo "yes"
     fi
 }
 
@@ -75,7 +63,7 @@ search_command() {
     local cmd
     local cmd_extensions
 
-    if [ "$(has_fd)" == "yes" ]; then
+    if command -v fd &> /dev/null; then
         for i in "${extensions[@]}"; do
             cmd_extensions=$cmd_extensions" -e $i"
         done
@@ -274,3 +262,5 @@ search_videos() {
 }
 
 search_menu "$1"
+
+exit 1
