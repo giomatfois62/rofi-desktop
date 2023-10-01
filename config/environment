@@ -65,6 +65,9 @@ ROFI_CMD="rofi -dmenu -i"
 #HISTORY_FILE="$HOME/.cache/rofi-search-history"
 #MAX_HISTORY_ENTRIES=100
 
+# show context characters in file contents search, set empty to show only filename
+#SHOW_CONTEXT="yes"
+
 # image thumbnails grid size options
 #GRID_ROWS=3
 #GRID_COLS=5
@@ -114,6 +117,15 @@ ROFI_CMD="rofi -dmenu -i"
 
 # keypassxc database file
 #KEEPASSXC_DATABASE=path/to/database
+
+# xkcd comics cache locations and expiration time
+XKCD_FILE=${LIVETV_FILE:-"$HOME/.cache/xkcd"}
+XKCD_CACHE=${LIVETV_FILE:-"$HOME/.cache/xkcd_cache"}
+XKCD_EXPIRATION_TIME=${XKCD_EXPIRATION_TIME:-86400} # refresh xkcd file every day
+
+# xkcd comics preview size
+XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-35}
+
 
 # custom menus location
 #CUSTOM_FOLDER=path/to/menus
