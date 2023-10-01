@@ -2,7 +2,6 @@
 - Implement or facilitate menus translation
 - Implement menu history in all scripts
 - Add icons to main menus with fontawesome or bundled resources
-- Look at code of rofi-systemd and rofi-emoji for examples on custom keybindings
 - Show error messages for dependencies not found
 - Add more menu instructions using -mesg or placeholders
 
@@ -10,11 +9,13 @@
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Experiment with alt-tab binding to show window menu (https://github.com/davatorium/rofi/issues/1867)
 - Integrate a local LLM model menu instead of chatgpt
+- Use cliphist to support clipboard in wayland
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
 - Show context in file contents search
+- Add custom keybindings to copy/paste/delete files in rofi-search
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
