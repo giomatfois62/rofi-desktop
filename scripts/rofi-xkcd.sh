@@ -29,8 +29,9 @@ else
 	"$SCRIPT_PATH"/scrape_xkcd.py "$XKCD_FILE"
 fi
 
-while comic=$(cat "$XKCD_FILE" | cut -d' ' -f2- | $ROFI_CMD -p "XKCD"); do
-    comic_id=$(grep -m 1 "$comic" "$XKCD_FILE" | cut -d' ' -f1)
+while comic=$(cat "$XKCD_FILE" | $ROFI_CMD -p "XKCD"); do
+    comic_id=$(echo "$comic" | cut -d' ' -f1)
+    comic_title=$(echo "$comic" | cut -d' ' -f2-)
     comic_url="https://xkcd.com/$comic_id/info.0.json"
     comic_file="$XKCD_CACHE/$comic_id"
 
@@ -50,5 +51,5 @@ while comic=$(cat "$XKCD_FILE" | cut -d' ' -f2- | $ROFI_CMD -p "XKCD"); do
         echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}"
     }
 
-    echo -en "\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_theme $XKCD_ICON_SIZE) -p "$comic" -mesg "($comic_date) $comic_alt"
+    echo -en "\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_theme $XKCD_ICON_SIZE) -p "$comic_title" -mesg "($comic_date) $comic_alt"
 done

@@ -16,6 +16,7 @@
 - Add option to sort search by creation/modification date
 - Show context in file contents search
 - Add custom keybindings to copy/paste/delete files in rofi-search
+- Source config file in all scripts
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -74,6 +75,7 @@
 - Move calendar events, notes, todos to data dir (DONE)
 - Improve rofi-mpd menu code to avoid bugs with custom keyboard shortcuts (DONE)
 - Add xkdc comics viewer (DONE)
+- Fix ambiguos grep in rofi-xkcd (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
