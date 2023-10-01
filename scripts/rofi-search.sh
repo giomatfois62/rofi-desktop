@@ -160,14 +160,14 @@ search_contents() {
 	while query=$(echo | $ROFI_CMD -p "String to Match"); do
 		if [ -n "$query" ]; then
 			if command -v rg &> /dev/null; then
-		    	selected=$(rg -i -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
+		    	selected=$(cd "$HOME" && rg -i -l "${query}" | $ROFI_CMD -p "Matches")
 			else
 				# warning! it's slow and blocks opening file until search is finished
-				selected=$(grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" "$HOME" | $ROFI_CMD -p "Matches")
+				selected=$(cd "$HOME" && grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" | $ROFI_CMD -p "Matches")
 			fi
 		    
 			if [ -n "$selected" ]; then
-				open_file "$selected"
+				open_file "$HOME/$selected"
 				exit 0
 			fi
 		fi
