@@ -76,6 +76,7 @@
 - Add xkdc comics viewer (DONE)
 - Fix ambiguos grep in rofi-xkcd (DONE)
 - Show context in file contents search (DONE)
+- Add a random option to rofi-xkcd (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)

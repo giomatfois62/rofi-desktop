@@ -19,6 +19,8 @@ tree = html.fromstring(r.content)
 comics = tree.xpath('//div[@id="middleContainer"]/a')
 
 with open(filename, 'w') as f:
+    f.write("Random\n")
+
     for ele in comics:
         name = ele.text
         href = ele.attrib['href'].replace("/","")

@@ -30,6 +30,10 @@ else
 fi
 
 while comic=$(cat "$XKCD_FILE" | $ROFI_CMD -p "XKCD"); do
+    if [ "$comic" = "Random" ]; then
+        comic=$(shuf -n 1 "$XKCD_FILE")
+    fi
+
     comic_id=$(echo "$comic" | cut -d' ' -f1)
     comic_title=$(echo "$comic" | cut -d' ' -f2-)
     comic_url="https://xkcd.com/$comic_id/info.0.json"
@@ -48,10 +52,10 @@ while comic=$(cat "$XKCD_FILE" | $ROFI_CMD -p "XKCD"); do
     build_theme() {
         icon_size=$1
 
-        echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}"
+        echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
     }
 
-    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_theme $XKCD_ICON_SIZE) -p "$comic_title" -mesg "($comic_date) $comic_alt"
+    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_theme $XKCD_ICON_SIZE) -mesg "$comic_title ($comic_date)&#x0a;$comic_alt"
 
     [ "$?" -eq 0 ] && xdg-open "https://xkcd.com/$comic_id" && exit 0
 done
