@@ -3,7 +3,6 @@
 - Implement menu history in all scripts
 - Add icons to main menus with fontawesome or bundled resources
 - Show error messages for dependencies not found
-- Add more menu instructions using -mesg or placeholders
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
@@ -75,6 +74,7 @@
 - Add a random option to rofi-xkcd (DONE)
 - Use cliphist to support clipboard in wayland (DONE)
 - Add custom keybindings to copy/paste/delete files in rofi-search (DONE)
+- Add more menu instructions using -mesg or placeholders (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
