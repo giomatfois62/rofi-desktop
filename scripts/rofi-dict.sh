@@ -8,6 +8,8 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
+DICT_PLACEHOLDER=${DICT_PLACEHOLDER:-"Type a word and press \"Enter\" to lookup in dictionary"}
+
 pag() {                                                 \
     sed -e 1d                                           \
         -e 's; _\([A-Z]\); \1;p'                        \
@@ -15,7 +17,7 @@ pag() {                                                 \
     | eval "$ROFI_CMD" -p 'Done'
 }
 
-while phrase="$(echo $src | eval "$ROFI_CMD" -markup -p 'Lookup: ')"; do
+while phrase="$(echo $src | $ROFI_CMD -theme-str "entry{placeholder:\"$DICT_PLACEHOLDER\";}" -markup -p 'Lookup')"; do
     {
         sdcv -n --utf8-input --utf8-output "$phrase"
         printf "Urban\n"

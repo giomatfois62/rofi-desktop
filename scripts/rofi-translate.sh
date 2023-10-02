@@ -6,13 +6,16 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
+TRANSLATE_PLACEHOLDER=${TRANSLATE_PLACEHOLDER:-"Type something and press \"Enter\" to translate"}
+
 if ! command -v trans &> /dev/null; then
 	rofi -e "Install translate-cli to enable the translation menu"
 fi
 
-MESG="<span font-size='small'>Type or paste the text to translate and press \"Enter\".&#x0a;Specify a language by prefixing the query with \":lang\" (default is english), for example \":fr Hello World\"</span>"
+# <span font-size='small'>
+MESG="Type or paste the text to translate and press \"Enter\".&#x0a;Specify a language by prefixing the query with \":lang\" (default is english), for example&#x0a;\":fr Hello World\""
 
-while text=$((echo) | $ROFI_CMD -p "Translate" -mesg "$MESG"); do
+while text=$((echo) | $ROFI_CMD -p "Translate" -theme-str "entry{placeholder:\"$TRANSLATE_PLACEHOLDER\";"} -mesg "$MESG"); do
 	lang=""
 
 	if [[ $text == :* ]]; then

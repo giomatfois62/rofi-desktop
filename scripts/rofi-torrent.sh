@@ -10,11 +10,12 @@
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 TORRENT_CACHE=${TORRENT_CACHE:-"$HOME/.cache/torrents"}
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
+TORRENT_PLACEHOLDER=${TORRENT_PLACEHOLDER:-"Type something and press \"Enter\" to search"}
 
 mkdir -p "$TORRENT_CACHE"
 
 if [ -z $1 ]; then
-  query=$(echo "" | $ROFI_CMD -p "Search Torrent: ")
+  query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrent")
 else
   query=$1
 fi

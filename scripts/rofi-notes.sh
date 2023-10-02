@@ -88,16 +88,16 @@ END
 main()
 {
     local all_notes="$(get_notes)"
-    local first_menu="New"
+    local first_menu="New Note"
 
     if [ "$all_notes" ];then
-        first_menu="New\n${all_notes}"
+        first_menu="New Note\n${all_notes}"
     fi
 
     local note=$(echo -e "$first_menu"  | $ROFI_CMD -p "Note: ")
 
     case $note in
-        "New")
+        "New Note")
             new_note
             ;;
         "")
