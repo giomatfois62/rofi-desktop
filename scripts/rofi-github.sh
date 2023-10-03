@@ -25,14 +25,14 @@ urlencode() {
 }
 
 counter=1
-per_page=100
+per_page=50
 search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$counter"
 
 curl "$search_url" -o "$GITHUB_CACHE"
 
 repos_count=$(jq '.total_count' "$GITHUB_CACHE")
 
-repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) (\(.description))"' "$GITHUB_CACHE")
+repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)](\(.description))"' "$GITHUB_CACHE")
 
 if [ "$repos_count" -gt $per_page ]; then
     repos="$repos\nMore..."
@@ -54,7 +54,7 @@ while repo=$(echo -en "$repos" | tr -d '"' |  $ROFI_CMD -format 'i s' -selected-
         echo "$new_repos" > "$GITHUB_CACHE"
         rm "$GITHUB_CACHE"$counter
 
-        repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) (\(.description))"' "$GITHUB_CACHE")
+        repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)](\(.description))"' "$GITHUB_CACHE")
         new_count=$(jq '.items | length' "$GITHUB_CACHE")
 
         if [ "$new_count" -lt $repos_count ]; then
