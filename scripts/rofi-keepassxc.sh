@@ -8,6 +8,11 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
+if ! command -v keypassxc-cli &> /dev/null; then
+	rofi -e "Install keypassxc-cli to enable the keypassxc menu"
+	exit 1
+fi
+
 m() { $ROFI_CMD "$@" ;}
 
 if [ -n "$WAYLAND_DISPLAY" ]; then

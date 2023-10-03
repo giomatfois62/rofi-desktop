@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 #
-# this script translates text written in the prompt using translate-cli
+# this script translates text written in the prompt using translate-shell
 #
-# dependencies: rofi, translate-cli
+# dependencies: rofi, translate-shell
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 TRANSLATE_PLACEHOLDER=${TRANSLATE_PLACEHOLDER:-"Type something and press \"Enter\" to translate"}
 
 if ! command -v trans &> /dev/null; then
-	rofi -e "Install translate-cli to enable the translation menu"
+	rofi -e "Install translate-shell to enable the translation menu"
+	exit 1
 fi
 
 # <span font-size='small'>

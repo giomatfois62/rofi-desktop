@@ -10,6 +10,11 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
 DICT_PLACEHOLDER=${DICT_PLACEHOLDER:-"Type a word and press \"Enter\" to lookup in dictionary"}
 
+if ! command -v sdcv &> /dev/null; then
+	rofi -e "Install sdcv to enable the dictionary menu"
+	exit 1
+fi
+
 pag() {                                                 \
     sed -e 1d                                           \
         -e 's; _\([A-Z]\); \1;p'                        \

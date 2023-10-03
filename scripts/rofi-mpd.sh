@@ -188,6 +188,11 @@ main() {
   esac
 }
 
+if ! command -v mpc &> /dev/null; then
+	rofi -e "Install mpd and mpc to enable the music player menu"
+	exit 1
+fi
+
 # check mpd is running
 if [ -z "$(pidof mpd)" ]; then
     rofi -e "MPD is not running."

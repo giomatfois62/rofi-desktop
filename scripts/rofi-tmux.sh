@@ -7,6 +7,11 @@
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 TERMINAL="${TERMINAL:-xterm}"
 
+if ! command -v tmux &> /dev/null; then
+	rofi -e "Install tmux to enable the tmux sessions menu"
+	exit 1
+fi
+
 function tmux_sessions() {
     tmux list-session -F '#S'
 }

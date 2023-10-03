@@ -8,6 +8,11 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
+if ! command -v playerctl &> /dev/null; then
+	rofi -e "Install playerctl to enable the media player controls menu"
+	exit 1
+fi
+
 status_function () {
 	if playerctl status > /dev/null; then
 			echo "$(playerctl status -f "{{playerName}}"): $(playerctl metadata -f "{{trunc(default(title, \"[Unknown]\"), 25)}} by {{trunc(default(artist, \"[Unknown]\"), 25)}}") ($(playerctl status))"
@@ -15,6 +20,7 @@ status_function () {
 		echo "Nothing is playing"
 	fi
 }
+
 status=$(status_function)
 
 # Options
