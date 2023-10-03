@@ -52,6 +52,7 @@ declare -A commands=(
     ["YouTube"]=search_youtube
     ["Wikipedia"]=search_wikipedia
     ["ArchWiki"]=search_archwiki
+    ["GitHub"]=search_github
     ["XKCD"]=xkcd
     ["Torrents"]=search_torrent
     ["Take Screenshot"]=screenshot
@@ -113,7 +114,7 @@ appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
-web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nXKCD\nTorrents\nFlathub"
+web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents\nFlathub"
 
 custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
@@ -297,6 +298,10 @@ color_picker() {
 
 xkcd() {
     "$SCRIPT_PATH"/rofi-xkcd.sh && exit
+}
+
+search_github() {
+    "$SCRIPT_PATH"/rofi-github.sh && exit
 }
 
 livetv() {

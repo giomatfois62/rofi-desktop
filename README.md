@@ -39,6 +39,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Wikipedia
   - Youtube
   - Archwiki
+  - GitHub (rofi-github.sh, search github and clone or open repositories)
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
   - 1377x.to (rofi-torrent.sh, search torrents and open selected magnet links)
