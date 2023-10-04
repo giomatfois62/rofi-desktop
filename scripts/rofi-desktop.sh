@@ -27,6 +27,7 @@ declare -A commands=(
     ["Steam Games"]=steam_games
     ["Calculator"]=calculator
     ["Calendar"]=calendar
+    ["Contacts"]=contacts
     ["World Clocks"]=world_clocks
     ["Watch TV"]=tv
     ["Sport Events"]=livetv
@@ -108,7 +109,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
+utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -408,6 +409,10 @@ passwd_mgr() {
 
 calendar() {
     "$SCRIPT_PATH"/rofi-calendar.sh
+}
+
+contacts() {
+    "$SCRIPT_PATH"/rofi-contacts.sh
 }
 
 world_clocks() {

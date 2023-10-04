@@ -1,21 +1,43 @@
 #!/usr/bin/env bash
 #
-# this script scrape and show xkcd comics
+# this script scrapes a list of contacts from a .vcf file and shows it in rofi
+# selecting a contact opens a menu to copy numbers/mails to clipboard or send an email
 #
-# dependencies: rofi, jq, python3-lxml, python3-requests
+# dependencies: rofi, jq
+# optional: xclip/wl-clipboard
+
+# TODO: implement remove contact from vcf file
+# TODO: if multiple email addresses, ask user the one to send the mail
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-CONTACTS_FILE=${CONTACTS_FILE:-"all_contacts.json"}
+CONTACTS_FILE=${CONTACTS_FILE:-"$SCRIPT_PATH/../data/contacts.vcf"}
+CONTACTS_CACHE=${CONTACTS_CACHE:-"$HOME/.cache/contacts.json"}
 
-if [ ! -f "$CONTACTS_FILE" ]; then
-    echo "no contacts file found"
+# refresh contacts cache
+rm "$CONTACTS_CACHE"
+
+"$SCRIPT_PATH/scrape_vcf.py" "$CONTACTS_FILE" "$CONTACTS_CACHE"
+
+if [ ! -f "$CONTACTS_CACHE" ]; then
+    echo "Failed to scrape contacts list, check $CONTACTS_FILE exists and is valid"
+    exit 1
 fi
 
+# set clipboard commad to use
+if [ -n "$WAYLAND_DISPLAY" ]; then
+    clip_cmd="wl-copy"
+elif [ -n "$DISPLAY" ]; then
+    clip_cmd="xclip -sel clip"
+else
+    echo "Error: No Wayland or X11 display detected. Clipboard actions will not work" >&2
+fi
+
+# show menu
 selected_row=0
 
-while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_FILE" |\
+while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_CACHE" |\
         tr -d '",\\' |\
         sort --ignore-case |\
         $ROFI_CMD -format 'i s' -selected-row "$selected_row" -p Contacts); do
@@ -23,8 +45,8 @@ while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_FILE" |\
     selected_row=$(echo "$contact" | cut -d' ' -f1)
     contact=$(echo "$contact" | cut -d' ' -f2-)
 
-    numbers=$(jq --compact-output ".[] | select(.name==\"$contact\") | .num" "$CONTACTS_FILE" | tr -d '",[,]')
-    mails=$(jq --compact-output ".[] | select(.name==\"$contact\") | .mail" "$CONTACTS_FILE" | tr -d '",[,]')
+    numbers=$(jq --compact-output ".[] | select(.name==\"$contact\") | .num" "$CONTACTS_CACHE" | tr -d '",[,]')
+    mails=$(jq --compact-output ".[] | select(.name==\"$contact\") | .mail" "$CONTACTS_CACHE" | tr -d '",[,]')
 
     mesg="<b>$contact</b>&#x0a;Numbers: $numbers&#x0a;Email: $mails"
 
@@ -35,11 +57,11 @@ while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_FILE" |\
 
     while action=$(echo -en "$all_actions" | $ROFI_CMD -p Action -mesg "$mesg"); do
         if [ "$action" = "Copy Numbers" ]; then
-            echo "$numbers"
+            echo "$numbers" | $clip_cmd
         elif [ "$action" = "Copy Emails" ]; then
-            echo "$mails"
+            echo "$mails" | $clip_cmd
         elif [ "$action" = "Write Email" ]; then
-            echo "mail to $mails"
+            xdg-email mailto:$mails
         elif [ "$action" = "Remove Contact" ]; then
             echo "remove $contact"
         fi

@@ -3,10 +3,11 @@ import os
 import sys
 import json
 
-if (len(sys.argv) > 1):
+if (len(sys.argv) > 2):
     filename = sys.argv[1]
+    output = sys.argv[2]
 else:
-    sys.exit("provide a vcf file as argument")
+    sys.exit("provide a vcf file and an output path as arguments")
 
 all_contacts = []
 contact = {"name":"", "num":[], "mail":[]}
@@ -29,8 +30,6 @@ with open(filename, 'r') as f:
             if mail not in contact["mail"]:
                 contact["mail"].append(mail)
 
-filename="all_contacts.json"
-
 if len(all_contacts) > 0:
-    with open(filename, 'w') as f:
+    with open(output, 'w') as f:
         f.write(json.dumps(all_contacts, indent=4))
