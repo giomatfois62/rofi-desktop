@@ -121,11 +121,18 @@ ROFI_CMD="rofi -dmenu -i"
 # xkcd comics cache locations and expiration time
 XKCD_FILE=${LIVETV_FILE:-"$HOME/.cache/xkcd"}
 XKCD_CACHE=${LIVETV_FILE:-"$HOME/.cache/xkcd_cache"}
-XKCD_EXPIRATION_TIME=${XKCD_EXPIRATION_TIME:-86400} # refresh xkcd file every day
+XKCD_EXPIRATION_TIME=86400 # refresh xkcd file every day
 
 # xkcd comics preview size
 XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-35}
 
+# github search cache and default clone folder
+#GITHUB_CACHE="$HOME/.cache/github.json"
+#CLONE_FOLDER="$HOME/Downloads/"
+
+# contacts vcf file and cache location
+#CONTACTS_FILE=/path/to/contacts.vcf
+#CONTACTS_CACHE="$HOME/.cache/contacts.json"
 
 # custom menus location
 #CUSTOM_FOLDER=path/to/menus
