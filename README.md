@@ -54,7 +54,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 - Utilities
   - Calculator (rofi-calc.sh, optionally uses the libqalc based modi calc when available)
   - Calendar (rofi-calendar.sh)
-  - Contacts (rofi-contacts.sh, scrap .vcf files and shows list of contacts with emails and phone numbers)
+  - Contacts (rofi-contacts.sh, read .vcf files and shows list of contacts with emails and phone numbers)
   - World Clocks (show current date-time in system timezones)
   - Color Picker (rofi-color-picker.sh)
   - Dictionary (rofi-dict.sh)
