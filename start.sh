@@ -14,7 +14,7 @@ KEYMAP_CACHE=${KEYMAP_CACHE:-"$CONFIG_DIR/keyboard-layout"}
 
 WELCOME_MSG=${WELCOME_MSG:-"Welcome to rofi-desktop! &#x0a;Press any key to continue with the setup."}
 RUN_APPMENU_PROMPT=${RUN_APPMENU_PROMPT:-"Run appmenu-service.py on startup?"}
-RUN_KEYPRESS_PROMPT=${RUN_APPMENU_PROMPT:-"Run keypress.py on startup?"}
+RUN_KEYPRESS_PROMPT=${RUN_KEYPRESS_PROMPT:-"Run keypress.py on startup?"}
 
 run_program() {
     is_running=$(ps aux | grep -c "$1")
