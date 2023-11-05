@@ -125,7 +125,11 @@ These simple shortcuts are very useful to quickly summon the menus of rofi-deskt
 
 A nice little utility that can be used to bind the Meta key to a shortcut of choice is [superkey-launch](https://github.com/ryanpcmcquen/superkey-launch), which by default converts Meta key presses to the "Alt+F2" shortcut.  
 
-Alternatively, run the script *scripts/keypress.py* bundled with rofi-desktop. It will listen for single key presses of the Meta key and the Alt key, calling respectively the all-in-one menu *scripts/rofi-desktop.sh -a* and the application menu *scripts/rofi-hud.py*. Edit the script variables *cmd_command* and *alt_command* to change this behaviour.
+Alternatively, run the script *scripts/keypress.py* bundled with rofi-desktop. It will listen for single key presses of the Meta key and the Alt key, calling respectively the all-in-one menu *scripts/rofi-desktop.sh -a* and the application menu *scripts/rofi-hud.py*. Edit the script variables *cmd_command* and *alt_command* to change this behaviour.  
+
+## Monitor Hot-Plugging
+The script *scripts/x11_device_watcher.sh* can be used to handle external display connections/disconnections.  
+When it detects that a display has been disconnected, it will run "xrandr --auto" on the remaining connected output. When a display is connected, it will either execute the script *scripts/rofi-monitor-layout.sh*, to let the user choose the display configuration to apply, or run the last xrandr command saved by *rofi-monitor-layout.sh*.  
 
 ## Dependencies
 The only mandatory dependency is rofi, but it's easy to convert most of the scripts to use fzf instead.  
@@ -159,6 +163,7 @@ Optional dependencies for some of the tools are:
 - python3-xlib
 - python3-lxml
 - python3-requests
+- python3-xcffib
 - steam
 - qt5ct
 - lxappearance
@@ -197,3 +202,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [Bugswriter](https://github.com/Bugswriter/pirokit)
 - [wzykubek](https://github.com/wzykubek/rofi-mpd)
 - [HarHarLinks](https://github.com/HarHarLinks/wireguard-rofi-waybar)
+- [kriansa](https://github.com/kriansa/wmcompanion)

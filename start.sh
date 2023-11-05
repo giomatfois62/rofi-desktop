@@ -15,6 +15,10 @@ KEYMAP_CACHE=${KEYMAP_CACHE:-"$CONFIG_DIR/keyboard-layout"}
 WELCOME_MSG=${WELCOME_MSG:-"Welcome to rofi-desktop! &#x0a;Press any key to continue with the setup."}
 RUN_APPMENU_PROMPT=${RUN_APPMENU_PROMPT:-"Run appmenu-service.py on startup?"}
 RUN_KEYPRESS_PROMPT=${RUN_KEYPRESS_PROMPT:-"Run keypress.py on startup?"}
+RUN_MONITOR_PROMPT=${RUN_MONITOR_PROMPT:-"Run x11_device_watcher.py on startup?"}
+
+export MONITORS_CACHE
+export WALLPAPER_CACHE
 
 run_program() {
     is_running=$(ps aux | grep -c "$1")
@@ -68,22 +72,16 @@ wizard() {
         run_program "$SCRIPT_PATH/scripts/keypress.py"
     fi
 
+    if [ -n "$(ask_user "$RUN_MONITOR_PROMPT")" ]; then
+        echo "x11_device_watcher" >> "$STARTUP_FILE"
+        run_program "$SCRIPT_PATH/scripts/x11_device_watcher.py"
+    fi
+
     # TODO: run greenclip
     # TODO: run rofication-daemon
 }
 
 startup() {
-    # set monitor layout
-    if [ -f "$MONITORS_CACHE" ]; then
-        connected_screens=$(xrandr | awk '( $2 == "connected" ){ print $1 }' | wc -l)
-
-        if [ "$connected_screens" -gt 1 ]; then
-            echo "Setting display layout"
-            xrandr_cmd=$(cat "$MONITORS_CACHE")
-            eval "$xrandr_cmd"
-        fi
-    fi
-
     # set wallpaper
     if [ -f "$WALLPAPER_CACHE" ]; then
         echo "Setting wallpaper"
@@ -103,6 +101,10 @@ startup() {
 
     if [ -n "$(grep keypress "$STARTUP_FILE")" ]; then
         run_program "$SCRIPT_PATH/scripts/keypress.py"
+    fi
+
+    if [ -n "$(grep x11_device_watcher "$STARTUP_FILE")" ]; then
+        run_program "$SCRIPT_PATH/scripts/x11_device_watcher.py"
     fi
 
     # TODO: run greenclip
