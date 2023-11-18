@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import os
+import sys
+import signal
 import psutil
 import subprocess
 from pynput.keyboard import Key, Listener
@@ -12,6 +14,9 @@ alt_command = script_dir+"/rofi-hud.py"
 
 cmd_pressed = False
 alt_pressed = False
+
+def exit_script(signal, frame):
+	sys.exit()
 
 def on_press(key):
 	global cmd_pressed
@@ -48,5 +53,9 @@ def on_release(key):
 
 		os.system("{} & disown".format(alt_command))
 
-with Listener(on_press=on_press, on_release=on_release) as listener:
-	listener.join()
+if __name__ == '__main__':
+	with Listener(on_press=on_press, on_release=on_release) as listener:
+		signal.signal(signal.SIGINT, exit_script)
+		signal.signal(signal.SIGTERM, exit_script)
+		
+		listener.join()

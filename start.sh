@@ -25,7 +25,7 @@ run_program() {
 
     if [ "${is_running}" -lt 2 ]; then
         echo "running" "$1"
-        "$1" & disown
+        "$1" &
     else
         echo "$1" "already running"
     fi
