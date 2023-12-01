@@ -6,7 +6,7 @@ The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive 
 ```
 ./scripts/rofi-desktop.sh -d # shows main menu entries
 ./scripts/rofi-desktop.sh -c # shows custom user menus
-./scripts/rofi-desktop.sh -s # shows file search menu
+./scripts/rofi-desktop.sh -f # shows file search menu
 ./scripts/rofi-desktop.sh -s # shows settings menu
 ./scripts/rofi-desktop.sh -u # shows utilities menu
 ./scripts/rofi-desktop.sh -w # shows web search menu
