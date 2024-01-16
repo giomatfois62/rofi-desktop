@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-mime
+Name=Default Applications
 Comment=
 Exec=rofi-mime.sh
-Icon=applications-accessories
+Icon=preferences-desktop-default-applications
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Settings;

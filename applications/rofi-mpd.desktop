@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-mpd
+Name=Music Player
 Comment=
 Exec=rofi-mpd.sh
-Icon=applications-accessories
+Icon=mplayer
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;AudioVideo;Audio;Music;

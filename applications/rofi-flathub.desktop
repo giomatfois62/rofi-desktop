@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-flathub
+Name=FlatHub
 Comment=
 Exec=rofi-flathub.sh
-Icon=applications-accessories
+Icon=system-installer
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Search;Network;System;

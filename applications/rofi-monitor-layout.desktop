@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-monitor-layout
+Name=Display Layout
 Comment=
 Exec=rofi-monitor-layout.sh
-Icon=applications-accessories
+Icon=video-display
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Settings;

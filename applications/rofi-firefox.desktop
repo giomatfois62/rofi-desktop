@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-firefox
+Name=Bookmarks
 Comment=
 Exec=rofi-firefox.sh
-Icon=applications-accessories
+Icon=firefox
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Search;Network;

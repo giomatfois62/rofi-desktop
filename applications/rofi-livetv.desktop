@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-livetv
+Name=Sport Events
 Comment=
 Exec=rofi-livetv.sh
-Icon=applications-accessories
+Icon=video-television
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Utility;

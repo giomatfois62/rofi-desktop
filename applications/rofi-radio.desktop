@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-radio
+Name=Radio Stations
 Comment=
 Exec=rofi-radio.sh
-Icon=applications-accessories
+Icon=radio
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;AudioVideo;Audio;

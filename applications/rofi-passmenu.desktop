@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-passmenu
+Name=Passwords
 Comment=
 Exec=rofi-passmenu.sh
-Icon=applications-accessories
+Icon=edit-paste
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Utility;

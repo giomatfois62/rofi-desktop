@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-notes
+Name=Notes
 Comment=
 Exec=rofi-notes.sh
-Icon=applications-accessories
+Icon=basket
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Utility;
