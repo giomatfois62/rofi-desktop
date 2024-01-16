@@ -11,6 +11,8 @@
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
 - Add option to sort search by creation/modification date
+- Experiment with dynamic themes and transparency (https://davatorium.github.io/rofi/guides/DynamicThemes/dynamic_themes/)
+- Experiment with columns and tabs
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
