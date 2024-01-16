@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-firefox
+Comment=
+Exec=rofi-firefox.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

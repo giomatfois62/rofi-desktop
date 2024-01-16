@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-screenshot
+Comment=
+Exec=rofi-screenshot.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-reddit
+Comment=
+Exec=rofi-reddit.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

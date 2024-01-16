@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-radio
+Comment=
+Exec=rofi-radio.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

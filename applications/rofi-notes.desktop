@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-notes
+Comment=
+Exec=rofi-notes.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

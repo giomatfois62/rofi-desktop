@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-locale
+Comment=
+Exec=rofi-locale.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

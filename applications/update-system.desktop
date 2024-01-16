@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=update-system
+Comment=
+Exec=update-system.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

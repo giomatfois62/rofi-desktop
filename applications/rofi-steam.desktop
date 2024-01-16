@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-steam
+Comment=
+Exec=rofi-steam.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

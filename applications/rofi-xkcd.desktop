@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-xkcd
+Comment=
+Exec=rofi-xkcd.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

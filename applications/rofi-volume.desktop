@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-volume
+Comment=
+Exec=rofi-volume.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

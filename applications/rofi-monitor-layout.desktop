@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-monitor-layout
+Comment=
+Exec=rofi-monitor-layout.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

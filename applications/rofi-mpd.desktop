@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-mpd
+Comment=
+Exec=rofi-mpd.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

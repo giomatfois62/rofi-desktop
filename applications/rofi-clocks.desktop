@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-clocks
+Comment=
+Exec=rofi-clocks.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

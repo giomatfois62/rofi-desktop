@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=set-wallpaper
+Comment=
+Exec=set-wallpaper.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

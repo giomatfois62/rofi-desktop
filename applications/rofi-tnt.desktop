@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rofi-tnt
+Comment=
+Exec=rofi-tnt.sh
+Icon=applications-accessories
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Rofi;Desktop;
+Comment=
+Exec=rofi-autostart.sh
+Icon=applications-games
+MimeType=
+Name=rofi-autostart
+Path=
+StartupNotify=true
+Terminal=false
+Type=Application
