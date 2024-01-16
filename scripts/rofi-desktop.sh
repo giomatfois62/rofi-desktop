@@ -15,9 +15,6 @@ SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks of
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
-TIMER_PLACEHOLDER="${TIMER_PLACEHOLDER:-Type <hours>h <minutes>m <seconds>s to set a custom timer}"
-WEATHER_PLACEHOLDER="${WEATHER_PLACEHOLDER:-Type the name of a city and press \"Enter\" to its weather}"
-
 declare -A commands=(
     ["Applications"]=run_app
     ["Run Command"]=run_cmd
@@ -342,13 +339,11 @@ search_archwiki() {
 }
 
 set_timer() {
-    rofi -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh" -theme-str "entry{placeholder:\"$TIMER_PLACEHOLDER\";"}
+    rofi -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh"
 }
 
 weather() {
-    while city=$(curl wttr.in/"$city"?ATFn |rofi -dmenu -p "Weather" -theme-str "entry{placeholder:\"$WEATHER_PLACEHOLDER\";"}); do
-        echo "Showing weather for" "$city"
-    done
+    "$SCRIPT_PATH"/rofi-weather.sh
 }
 
 todo() {

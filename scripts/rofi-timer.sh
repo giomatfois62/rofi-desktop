@@ -10,6 +10,8 @@ TIMER_START_AUDIO="${TIMER_START_AUDIO:-$HOME/Media/sounds/sms-alert-1-daniel_si
 TIMER_STOP_AUDIO="${TIMER_STOP_AUDIO:-$HOME/Media/sounds/service-bell_daniel_simion.wav}"
 TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-5000}
 
+TIMER_PLACEHOLDER="${TIMER_PLACEHOLDER:-Type <hours>h <minutes>m <seconds>s to set a custom timer}"
+
 TIMERS="1 hour\n45 minutes\n30 minutes\n20 minutes\n15 minutes\n10 minutes\n5 minutes\n4 minutes\n3 minutes\n2 minutes\n1 minute\n45 seconds\n30 seconds"
 
 declare -A SECONDS=(
@@ -65,6 +67,8 @@ then
 		custom_timer "$@"
 	fi
 else
+	#
+	echo -en "\0theme\x1fentry{placeholder:\"$TIMER_PLACEHOLDER\";}\n"
     echo -e "$TIMERS"
 fi
 

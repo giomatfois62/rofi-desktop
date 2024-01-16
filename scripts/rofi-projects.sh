@@ -11,7 +11,7 @@ PROJECTS_DIRECTORY="${PROJECTS_DIRECTORY:-"$HOME"/Projects}"
 choice=$(ls "$PROJECTS_DIRECTORY" | $ROFI_CMD -p "Project")
 
 if [ -n "$choice" ]; then
-    $PROJECTS_EDITOR $PROJECTS_DIRECTORY/"$choice" & disown
+    $PROJECTS_EDITOR "$PROJECTS_DIRECTORY/$choice" & disown
     exit 0
 fi
 
