@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-contacts
+Name=Contacts
 Comment=
 Exec=rofi-contacts.sh
-Icon=applications-accessories
+Icon=preferences-contact-list
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Utility;Office;
