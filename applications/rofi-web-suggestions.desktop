@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=rofi-web-suggestions
-Comment=
-Exec=rofi-web-suggestions.sh
-Icon=applications-accessories
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;

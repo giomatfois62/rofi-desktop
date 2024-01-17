@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Display Layout
+Name=Display Configuration
 Comment=
 Exec=rofi-monitor-layout.sh
 Icon=video-display

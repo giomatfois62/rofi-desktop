@@ -2,7 +2,7 @@
 Name=Take Screenshot
 Comment=
 Exec=rofi-screenshot.sh
-Icon=folder-pictures
+Icon=camera-photo
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;

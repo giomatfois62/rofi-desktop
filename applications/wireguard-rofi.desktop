@@ -2,7 +2,7 @@
 Name=VPN
 Comment=
 Exec=rofi -modi VPN:wireguard-rofi.sh -show VPN
-Icon=applications-accessories
+Icon=network-wired
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Network;RemoteAccess;Security;

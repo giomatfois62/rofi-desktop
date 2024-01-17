@@ -2,7 +2,7 @@
 Name=Latest News
 Comment=
 Exec=rofi-news.sh
-Icon=internet-news-reader
+Icon=view-pim-news
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;News;

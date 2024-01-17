@@ -2,7 +2,7 @@
 Name=TNT Village Torrents
 Comment=
 Exec=rofi-tnt.sh
-Icon=download_manager
+Icon=edit-bomb
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;P2P;
