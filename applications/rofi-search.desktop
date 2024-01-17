@@ -1,8 +1,9 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
-Name=rofi-search
+Name=Search Files
 Comment=
 Exec=rofi-search.sh
-Icon=applications-accessories
+Icon=system-search
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Search;Filesystem;

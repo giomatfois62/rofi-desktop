@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-tv
+Name=Watch TV
 Comment=
 Exec=rofi-tv.sh
-Icon=applications-accessories
+Icon=video-television
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;AudioVideo;Video;TV;Tuner;

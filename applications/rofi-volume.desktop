@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-volume
+Name=Volume Controls
 Comment=
 Exec=rofi-volume.sh
-Icon=applications-accessories
+Icon=multimedia-volume-control
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Settings;AudioVideo;Audio;

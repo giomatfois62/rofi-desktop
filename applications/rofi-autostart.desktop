@@ -2,7 +2,7 @@
 Categories=Rofi;Desktop;Settings;
 Comment=
 Exec=rofi-autostart.sh
-Icon=cs-startup-programs
+Icon=media-playback-start
 MimeType=
 Name=Autostart Applications
 Path=

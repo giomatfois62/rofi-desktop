@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-top
+Name=Task Manager
 Comment=
 Exec=rofi-top.sh
-Icon=applications-accessories
+Icon=utilities-system-monitor
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;System;Monitor;

@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-timer
+Name=Set Timer
 Comment=
-Exec=rofi-timer.sh
-Icon=applications-accessories
+Exec=rofi -modi "Timer:rofi-timer.sh" -show Timer
+Icon=preferences-system-time
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Utility;Clock;

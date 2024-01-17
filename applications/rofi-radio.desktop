@@ -5,4 +5,4 @@ Exec=rofi-radio.sh
 Icon=radio
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;AudioVideo;Audio;
+Categories=Rofi;Desktop;AudioVideo;Audio;Tuner;

@@ -5,4 +5,4 @@ Exec=rofi-news.sh
 Icon=internet-news-reader
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;Utility;
+Categories=Rofi;Desktop;Utility;News;

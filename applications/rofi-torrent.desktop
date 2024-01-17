@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-torrent
+Name=1377x.to Torrents
 Comment=
 Exec=rofi-torrent.sh
-Icon=applications-accessories
+Icon=download_manager
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Search;Network;P2P

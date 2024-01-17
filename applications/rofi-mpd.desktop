@@ -5,4 +5,4 @@ Exec=rofi-mpd.sh
 Icon=mplayer
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;AudioVideo;Audio;Music;
+Categories=Rofi;Desktop;AudioVideo;Audio;Music;Player;

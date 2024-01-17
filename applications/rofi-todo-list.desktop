@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-todo-list
+Name=To-Do Lists
 Comment=
 Exec=rofi-todo-list.sh
-Icon=applications-accessories
+Icon=list-add
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;Utility;

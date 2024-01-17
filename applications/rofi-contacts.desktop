@@ -5,4 +5,4 @@ Exec=rofi-contacts.sh
 Icon=preferences-contact-list
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;Utility;Office;
+Categories=Rofi;Desktop;Utility;Office;Email;

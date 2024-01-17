@@ -5,4 +5,4 @@ Exec=rofi-livetv.sh
 Icon=video-television
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;Utility;
+Categories=Rofi;Desktop;Utility;Sports;TV;

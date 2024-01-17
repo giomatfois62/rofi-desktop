@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=rofi-systemd
+Name=System Services
 Comment=
 Exec=rofi-systemd.sh
-Icon=applications-accessories
+Icon=applications-system
 Terminal=false
 Type=Application
-Categories=Rofi;Desktop;
+Categories=Rofi;Desktop;System;Settings;
