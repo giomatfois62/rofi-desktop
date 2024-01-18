@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Weather Forecast
+Comment=
+Exec=rofi-weather.sh
+Icon=weather-few-clouds
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;News;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Wikipedia
+Comment=
+Exec=rofi-web-search.sh "wikipedia"
+Icon=globe
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Network;

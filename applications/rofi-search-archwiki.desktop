@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ArchWiki
+Comment=
+Exec=rofi-web-search.sh "archwiki"
+Icon=globe
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Network;

@@ -1,9 +1,9 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Name=Search Computer
+Name=Recently Used
 Comment=
-Exec=rofi-search.sh
-Icon=system-search
+Exec=rofi-search.sh "Recently Used"
+Icon=folder-favorites
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Filesystem;

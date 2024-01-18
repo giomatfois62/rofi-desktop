@@ -2,7 +2,7 @@
 Name=Color Picker
 Comment=
 Exec=rofi-color-picker.sh
-Icon=format-stroke-color
+Icon=color-picker
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;

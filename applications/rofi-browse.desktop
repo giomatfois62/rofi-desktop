@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Browse Files
+Comment=
+Exec=rofi -show-icons -show filebrowser
+Icon=system-file-manager
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Filesystem;FileManager;

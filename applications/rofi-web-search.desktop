@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=rofi-web-search
-Comment=
-Exec=rofi-web-search.sh
-Icon=applications-accessories
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;

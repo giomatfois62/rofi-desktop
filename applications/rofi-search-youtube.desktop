@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Youtube
+Comment=
+Exec=rofi-web-search.sh "youtube"
+Icon=globe
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Network;

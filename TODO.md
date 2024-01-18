@@ -17,6 +17,7 @@
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
+- Fix BBC news rss link
 
 # WAYLAND COMPAT
 - rofi-brightness.sh (must use gammastep, ddc, wlr-randr)

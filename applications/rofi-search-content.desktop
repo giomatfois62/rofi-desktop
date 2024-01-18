@@ -1,9 +1,9 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Name=Search Computer
+Name=File Contents
 Comment=
-Exec=rofi-search.sh
-Icon=system-search
+Exec=rofi-search.sh "File Contents"
+Icon=text-plain
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Filesystem;

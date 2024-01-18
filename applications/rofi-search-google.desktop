@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Google
+Comment=
+Exec=rofi-web-search.sh "google"
+Icon=globe
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Network;

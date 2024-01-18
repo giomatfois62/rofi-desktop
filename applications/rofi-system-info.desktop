@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=System Info
+Comment=
+Exec=rofi-system-info.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;System;Settings;

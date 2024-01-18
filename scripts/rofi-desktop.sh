@@ -11,7 +11,6 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
-SYSTEM_INFO="${SYSTEM_INFO:-inxi -c0 -v2}" # neofetch --stdout --color_blocks off
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
 CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
 
@@ -511,7 +510,7 @@ update_sys() {
 }
 
 system_info() {
-    eval "$SYSTEM_INFO" | $ROFI_CMD -p "System Info"
+    "$SCRIPT_PATH"/rofi-system-info.sh;
 }
 
 check_program() {

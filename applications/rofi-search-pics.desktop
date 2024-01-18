@@ -1,9 +1,9 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Name=Search Computer
+Name=Pictures
 Comment=
-Exec=rofi-search.sh
-Icon=system-search
+Exec=rofi-search.sh "Pictures"
+Icon=folder-image
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Filesystem;

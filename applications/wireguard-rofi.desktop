@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=VPN
+Name=Wireguard VPN
 Comment=
 Exec=rofi -modi VPN:wireguard-rofi.sh -show VPN
 Icon=network-wired
