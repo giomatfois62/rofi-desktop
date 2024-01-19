@@ -17,7 +17,6 @@
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
 - Fix link extraction for some rss feed providers
-- Fix BBC news rss link
 
 # WAYLAND COMPAT
 - rofi-brightness.sh (must use gammastep, ddc, wlr-randr)
@@ -78,6 +77,7 @@
 - Add custom keybindings to copy/paste/delete files in rofi-search (DONE)
 - Add more menu instructions using -mesg or placeholders (DONE)
 - Show error messages for dependencies not found (DONE)
+- Fix BBC news rss link (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
