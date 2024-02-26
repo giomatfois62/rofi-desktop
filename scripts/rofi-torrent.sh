@@ -24,12 +24,12 @@ if [ -z "$query" ]; then
   exit 1
 fi
 
-baseurl="https://1337x.to"
+baseurl="https://www.1337xx.to"
 query="$(sed 's/ /+/g' <<<$query)"
 counter=1
 
-#curl -s https://1337x.to/category-search/$query/Movies/1/ > $TORRENT_CACHE/tmp.html
-curl -s https://1337x.to/search/$query/$counter/ > $TORRENT_CACHE/tmp.html
+#curl -s $baseurl/category-search/$query/Movies/1/ > $TORRENT_CACHE/tmp.html
+curl -s $baseurl/search/$query/$counter/ > $TORRENT_CACHE/tmp.html
 
 # Get Titles
 grep -o '<a href="/torrent/.*</a>' $TORRENT_CACHE/tmp.html |
@@ -82,7 +82,7 @@ while torrent=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" | cut -d\- -f1 | a
 
   if [ "$torrent" = "More..." ]; then
     counter=$((counter+1))
-    curl -s https://1337x.to/search/$query/$counter/ >> $TORRENT_CACHE/tmp.html
+    curl -s $baseurl/search/$query/$counter/ >> $TORRENT_CACHE/tmp.html
 
     scrape_torrents
 
