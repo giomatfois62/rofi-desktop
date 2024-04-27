@@ -44,14 +44,14 @@ declare -A commands=(
     ["Reddit"]=browse_reddit
     ["Install Programs"]=browse_flathub
     ["Flathub"]=browse_flathub
-    ["Torrents"]=search_torrent
+    ["Torrents (1337x)"]=search_torrent
+    ["Torrents (bitsearch)"]=search_bitsearch
     ["Google"]=search_google
     ["YouTube"]=search_youtube
     ["Wikipedia"]=search_wikipedia
     ["ArchWiki"]=search_archwiki
     ["GitHub"]=search_github
     ["XKCD"]=xkcd
-    ["Torrents"]=search_torrent
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
@@ -111,7 +111,7 @@ appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
-web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents\nFlathub"
+web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents (1337x)\nTorrents (bitsearch)\nFlathub"
 
 custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
@@ -319,6 +319,10 @@ browse_reddit() {
 
 search_torrent() {
     "$SCRIPT_PATH"/rofi-torrent.sh && exit
+}
+
+search_bitsearch() {
+    "$SCRIPT_PATH"/rofi-bitsearch.sh && exit
 }
 
 search_google() {
