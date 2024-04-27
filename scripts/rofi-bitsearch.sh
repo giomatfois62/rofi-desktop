@@ -41,7 +41,7 @@ torrents="$torrents\nMore..."
 
 # display menu
 while selection=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" -format 'i s' -selected-row ${selected_row}); do
-    row=$(echo "$selection" | awk '{print $1;}')
+    row=$(($(echo "$selection" | awk '{print $1;}') + 1))
     torrent=$(echo "$selection" | cut -d' ' -f2-)
 
     if [ -z "$torrent" ]; then
