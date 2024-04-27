@@ -24,7 +24,7 @@ if [ -z "$query" ]; then
   exit 1
 fi
 
-baseurl="https://www.1337xx.to"
+baseurl="https://www.1337x.to"
 query="$(sed 's/ /+/g' <<<$query)"
 counter=1
 
