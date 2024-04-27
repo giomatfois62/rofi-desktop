@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Notifications
+Comment=
+Exec=rofication-gui.py
+Icon=notifications
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;System;

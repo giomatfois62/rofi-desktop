@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Calculator
 Comment=
-Exec=rofi -modi calc:rofi-calc.sh -show calc
+Exec=rofi -modi calc -show calc
 Icon=accessories-calculator
 Terminal=false
 Type=Application

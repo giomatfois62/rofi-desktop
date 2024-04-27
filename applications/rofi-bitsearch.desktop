@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Torrents (1337x)
+Name=Torrents (bitsearch)
 Comment=
-Exec=rofi-torrent.sh
+Exec=rofi-bitsearch.sh
 Icon=application-x-bittorrent
 Terminal=false
 Type=Application
