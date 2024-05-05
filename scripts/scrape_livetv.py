@@ -5,8 +5,8 @@ import json
 import os
 import sys
 
-base_url = "http://livetv.sx"
-url = "http://www.livetv.sx/en/allupcoming"
+base_url = "http://www.livetv782.me/"
+url = "http://www.livetv782.me/enx/allupcoming"
 
 if (len(sys.argv) > 1):
     filename = sys.argv[1]
