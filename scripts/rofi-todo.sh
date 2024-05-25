@@ -8,6 +8,7 @@
 # dependencies: rofi
 
 TODO_FILE="${TODO_FILE:-$HOME/.todos}"
+DONE_FILE="${DONE_FILE:-$HOME/.todos_done}"
 
 if [[ ! -a "${TODO_FILE}" ]]; then
     touch "${TODO_FILE}"
@@ -19,14 +20,18 @@ function add_todo() {
 
 function remove_todo() {
     if [[ ! -z "$DONE_FILE" ]]; then
-    	echo "${*}" >> "${DONE_FILE}"
+        echo "<s>${*}</s>" >> "${DONE_FILE}"
     fi
     sed -i "/^${*}$/d" "${TODO_FILE}"
+    # doesn't work
+    #awk -i inplace '/^${*}$/ { $0 = "<s>" $0 "</s>" }; 1' "${TODO_FILE}"
 }
 
 function get_todos() {
+    echo -en "\0markup-rows\x1ftrue\n"
     echo "Refresh List"
     echo "$(cat "${TODO_FILE}")"
+    echo "$(cat "${DONE_FILE}")"
 }
 
 if [ -z "$@" ]; then
@@ -37,7 +42,7 @@ else
     if [[ $LINE_UNESCAPED == +* ]]; then
         LINE_UNESCAPED=$(echo $LINE_UNESCAPED | sed s/^+//g |sed s/^\s+//g )
         add_todo ${LINE_UNESCAPED}
-    else
+    elif [[ $LINE_UNESCAPED != "<s>"* ]]; then
         MATCHING=$(grep "^${LINE_UNESCAPED}$" "${TODO_FILE}")
         if [[ -n "${MATCHING}" ]]; then
             remove_todo ${LINE_UNESCAPED}
