@@ -13,7 +13,7 @@ The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive 
 ./scripts/rofi-desktop.sh -a # shows all the menu entries
 ```
 
-The *config/environment* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
+The *scripts/config/environment* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
 
 Users can easily create custom menus editing the *rofi-desktop.sh* script or by putting simple json files, containing the list of entries with corresponding commands to run and optional icons to show, in the *scripts/menus* folder.  
 Visit the [rofi-json](https://github.com/luiscrjunior/rofi-json) repo for details on the syntax to use for custom entries.
@@ -37,19 +37,22 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
 - Search Web (rofi-web-search.sh, gives real time search suggestions when modi blocks is available)
   - Google
   - Wikipedia
-  - Youtube
   - Archwiki
+  - Youtube
+  - Youtube Feeds (rofi-youtube-feeds.sh, browse youtube channels feeds, based on [yt-feeder](https://github.com/xcdkz/YT-Feeder))
   - GitHub (rofi-github.sh, search github and clone or open repositories)
   - Reddit (rofi-reddit.sh, filter subreddits and display search results)
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
   - 1377x.to (rofi-torrent.sh, search torrents and open selected magnet links)
   - bitsearch.to (rofi-bitsearch.sh, search torrents and open selected magnet links)
   - xkcd (rofi-xkcd.sh, browse and view xkcd comics in rofi)
+  - Anime (rofi-anime.sh, stream anime with mpv, based on [ani-cli](https://github.com/pystardust/ani-cli))
 - Steam Games (rofi-steam.sh)
 - Sport Events (rofi-livetv.sh, show current and upcoming sport events with relative streaming links)
 - Podcasts (rofi-podcast.sh, browse and play podcasts from rss.com)
 - Latest News (rofi-news.sh, fetch rss news from bbc international and other providers)
 - Weather Forecast (curl wttr.in piped to rofi)
+- Watch Movies/Series (rofi-streaming.sh, stream movies/series with mpv, based on [lobster](https://github.com/justchokingaround/lobster))
 - Watch TV (rofi-tv.sh, stream TV channels with mpv)
 - Web Radio (rofi-radio.sh, stream Radios with mpv)
 - Utilities
@@ -71,6 +74,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - SSH Sessions (ssh modi)
   - Cheat Sheets (rofi-cheat.sh, show cheat.sh sheets)
   - Code Projects (rofi-projects.sh, browse code projects directory and open projects with preferred editor)
+  - Fortune (rofi-fortune.sh, show fortunes optionally with cowsay)
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - KeePassXC (rofi-keepassxc.sh)
@@ -113,6 +117,17 @@ File Search Menu
 Web Search Menu
 ![Web Search Menu](https://github.com/giomatfois62/rofi-desktop/blob/main/gallery/rofi_web.png)
 
+## drun Mode
+All scripts have an associated *.desktop* file in the *applications* folder, which can be used to show them in rofi's drun mode with all the other installed applications. Run the script *drun.sh* to show a drun menu that also includes all rofi-desktop scripts.  
+
+Custom icons and entry text can be set modifying the *Icon* and *Name* fields in the *.desktop* files. Moreover, additional custom scripts can be integrated easily by placing a new *.desktop* file in the *applications* folder.  
+
+Setting the *DRUN_CATEGORIES* shell variable before running the script will filter entries based on their category. for example:
+```
+DRUN_CATEGORIES=Rofi ./drun.sh          # shows only rofi-desktop scripts
+DRUN_CATEGORIES="Rofi,Game" ./drun.sh   # shows games and rofi-desktop scripts
+```
+
 ## Global Menu
 The script *scripts/rofi-hud.py* shows a rofi menu containing the application menu entries of the currently focused window, in a style similar to Ubuntu Unity's HUD or [plasma-hud](https://github.com/Zren/plasma-hud).  
 
@@ -138,6 +153,7 @@ Optional dependencies for some of the tools are:
 - jq
 - curl
 - wget
+- xmllint
 - mpv
 - rofi-blocks
 - rofi-calc
@@ -204,3 +220,6 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [wzykubek](https://github.com/wzykubek/rofi-mpd)
 - [HarHarLinks](https://github.com/HarHarLinks/wireguard-rofi-waybar)
 - [kriansa](https://github.com/kriansa/wmcompanion)
+- [xcdkz](https://github.com/xcdkz/YT-Feeder)
+- [justchokingaround](https://github.com/justchokingaround/lobster)
+- [pystardust](https://github.com/pystardust/ani-cli)
