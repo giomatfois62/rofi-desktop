@@ -1,0 +1,9 @@
+// Paste channel IDs here (https://www.streamweasels.com/tools/youtube-channel-id-and-user-id-convertor/)
+UC16niRr50-MSBwiO3YDb3RA
+UCNye-wNBqNL5ZzHSJj3l8Bg
+UCpVm7bg6pXKo1Pr6k5kxG9A
+UCwmZiChSryoWQCZMIQezgTg
+// Set custom command and download folders here
+DOWNLOAD|~/Videos/
+COMMAND|my_custom_command
+DOWNLOAD_AUDIO|~/Music/

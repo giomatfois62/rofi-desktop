@@ -1,0 +1,1415 @@
+[
+    {
+        "podcast_id": 2530,
+        "title": "Sonic Cinema Podcast",
+        "description": "Discussing movies and filmmaking with fans, critics and filmmakers. Whether it's modern movies or classics, the biggest hits or some of the worst movies of all-time, host Brian Skutle is passionate about looking at the breadth of movie history. You can read my written reviews and commentary on www.sonic-cinema.com.",
+        "language": "en",
+        "author_name": "Brian Skutle",
+        "slug": "soniccinemapod",
+        "cover": "20220922_110948_0e5fb30622ded1862fd2d304f3de0ffe.jpg"
+    },
+    {
+        "podcast_id": 3345,
+        "title": "For Your Infilmation with Zac and John",
+        "description": "A podcast for good movies, better cocktails, and best friends.",
+        "language": "en",
+        "author_name": "For Your Infilmation",
+        "slug": "infilmation4u",
+        "cover": "5d7c81018f633.jpg"
+    },
+    {
+        "podcast_id": 6394,
+        "title": "Our Man Ernest",
+        "description": "Hosts Frank and Jos discuss the life and times of Ernest P. Worrell!",
+        "language": "en",
+        "author_name": "Frank Mosley & Joslyn Jensen",
+        "slug": "ourmanernest",
+        "cover": "20200222_223228_5f835f88a51be956d3018eba0e95c7ad.jpeg"
+    },
+    {
+        "podcast_id": 6754,
+        "title": "Oscar Wild",
+        "description": "Oscar Wild is an entertainment podcast where Sophia Ciminello and Nick Ruhrkraut discuss the latest in film from new releases to old favorites, always counting down to next year's Oscars. ",
+        "language": "en",
+        "author_name": "Sophia Ciminello & Nick Ruhrkraut",
+        "slug": "oscarwild",
+        "cover": "20220721_040752_674e2e1c67c3d2ced26f0b2629a75118.jpg"
+    },
+    {
+        "podcast_id": 7736,
+        "title": "Watch With Jen\u2122",
+        "description": "3-time national award-winning writer & full time walking movie encyclopedia Jen Johans of FilmIntuition.com delivers a steady stream of great movie recommendations, thoughtful career deep dives, & first rate conversations with critics, authors, actors, journalists, filmmakers, and more on Watch With Jen.\u2122\ufe0f\n\nOriginally launched on Patreon (https://patreon.com/FilmIntuition), where new installments premiere first, once each episode is unlocked to the public, you'll be able to find every episode here as well.",
+        "language": "en-us",
+        "author_name": "Jen Johans",
+        "slug": "watchwithjen",
+        "cover": "20211218_051256_7fca9258f33dbd3fcebbafe0744f613e.jpg"
+    },
+    {
+        "podcast_id": 9476,
+        "title": "Shaken Not Stirred Podcast",
+        "description": "Shaken Not Stirred is the definitive James Bond movie podcast bringing together four totally unqualified idiots to discuss the most influential movie franchise\u2026 empirically!\n\nWhile many have tried to properly rank, discuss and debate the best and worst Bond movies throughout the history of the series - no group has ever broken down the bond formula into an easily rank-able metric\u2026.until now!",
+        "language": "en",
+        "author_name": "Shaken Not Stirred Podcast",
+        "slug": "shakennotstirredpod",
+        "cover": "20200609_024322_068c880bdead26fac2bca749dc80e7b6.jpeg"
+    },
+    {
+        "podcast_id": 10280,
+        "title": "Interjections: The Undiscovered Decade",
+        "description": "A podcast that looks back on the films of the 1990s, an \"undiscovered decade\" for the four co-hosts - Tristan More, Cory Taylor, James Milliron and Jeff Seesselberg. As they dive into a specific month per episode, they learn about the entertainment world around them as they were too young to know any better.",
+        "language": "en",
+        "author_name": "Tristan More",
+        "slug": "interjections",
+        "cover": "20200704_170404_d4ddc0f392fe4b9872fcb0dc75d9b587.jpg"
+    },
+    {
+        "podcast_id": 11091,
+        "title": "Views in Paradox Film Club",
+        "description": "A filmmaker, an actress, and usually a guest discuss a new film each week. Follow us on Instagram @viewsinparadox to find out what's to coming, and join our Facebook Group if you love to talk about film!",
+        "language": "en",
+        "author_name": "Jon Olson and Rochalle Racine",
+        "slug": "viewsinparadox",
+        "cover": "20200803_205012_c87524ee24d12eb13b393bccb5d86eca.jpg"
+    },
+    {
+        "podcast_id": 13023,
+        "title": "Medium Cool: A Movie Podcast",
+        "description": "Medium Cool: A Movie Podcast is a weekly show focused on discussing film like a bunch of nerds. Please subscribe to get film reviews, interviews, retrospectives on movies, genres, and filmmakers, and much more. Our host, Austin Glidden, will take you along for the ride as we explore the world on the silver screen. Don't just be cool... be medium cool. Are you ready? ",
+        "language": "en",
+        "author_name": "Medium Cool: A Movie Podcast",
+        "slug": "mediumcoolpod",
+        "cover": "20210204_022805_dd4405be260c315429cc26cffff29c54.jpg"
+    },
+    {
+        "podcast_id": 13615,
+        "title": "Ghouls On Film ",
+        "description": "In the grand tradition of Goth Talk & Men On Film comes GHOULS ON FILM, an interview based podcast from two lifelong horror gays. Step into the crypt with \ndirecting duo Roman Chimienti and Tyler Jensen (Scream, Queen! My Nightmare On Elm Street) as they sit down with a variety of creative friends and colleagues to discuss the thrills and horrors of bringing their nightmares to life. ",
+        "language": "en",
+        "author_name": "Roman Chimienti & Tyler Jensen",
+        "slug": "ghoulsonfilm",
+        "cover": "20201018_181548_8fe9c9046d7303a9e449a6a058d75188.jpg"
+    },
+    {
+        "podcast_id": 16286,
+        "title": "From The Deep",
+        "description": "Movies, cameras, action!",
+        "language": "en",
+        "author_name": "From The Deep",
+        "slug": "fromthedeep",
+        "cover": "20230202_110203_5df48095e3064b53518532cf29180638.jpg"
+    },
+    {
+        "podcast_id": 17263,
+        "title": "This Week in Disney History",
+        "description": "Each week we discuss events and happenings in the history of the Walt Disney Company. From Walt Disney's Birthday, to the opening day of Splash Mountain, to the World Premiere of Treasure Planet, we are chatting about it! Join us! ",
+        "language": "en",
+        "author_name": "Milo Beasley",
+        "slug": "thisweekindisneyhistory",
+        "cover": "20201205_232229_8a9ea5a9ac395688357a3c28f3c29681.jpg"
+    },
+    {
+        "podcast_id": 17573,
+        "title": "Secret Handshake ",
+        "description": "The podcast that covers the movies that help you identify your friends...and maybe make a few more along the way. Every week, Jacob, Cody, and Marten introduce a new title into their ever-growing collection of shared favorites, break them down to the basics, and decide whether or not they deserve to be bestowed with the oh-so-holy award of being a Certified Facemelter. What spine number will they cover this week? Tune in and find out. ",
+        "language": "en",
+        "author_name": "Jacob Knight, Marten Carlson & Cody Bouchard",
+        "slug": "secrethandshakepod",
+        "cover": "20210929_171102_989595d36c681615ef610e0f622c2d1a.jpg"
+    },
+    {
+        "podcast_id": 19877,
+        "title": "Bonus Features ",
+        "description": "Jacob and Marten bring you conversations with writers, directors, actors, academics, authors, podcast hosts, and fellow film freaks, delivering in-depth chats that, in one way or another, pair well with the movie(s) of the week. ",
+        "language": "en",
+        "author_name": "Jacob Knight and Marten Carlson ",
+        "slug": "secrethandshakebonusfeatures",
+        "cover": "20201221_071008_2a71ea3f8d67180567d2fce7ba5890d9.jpg"
+    },
+    {
+        "podcast_id": 21774,
+        "title": "Spoilers Welcome ",
+        "description": "Two guys who enjoy movies and enjoy talking about them just as much! When we talk about movies just be warned; spoilers welcome. ",
+        "language": "en",
+        "author_name": "Denton And Adam ",
+        "slug": "spoilerswelcome",
+        "cover": "20210103_022839_84b08259f8bab192da845263edb14517.jpg"
+    },
+    {
+        "podcast_id": 21950,
+        "title": "The Videostore Junkies",
+        "description": "A podcast about movies, and the experience of watching them. Every episode our panel of film addicts will get together to discuss a different film. From the actors and the characters they portray, to the creative forces behind the camera, we discuss every aspect of movies and, ultimately, pass our judgement on them.\n\nVisit us on the internets at www.videostorejunkies.com, or on the twitter at https://twitter.com/VideoJunkiesPod for more Friday night trips to the videostore!",
+        "language": "en",
+        "author_name": "The Videostore Junkies",
+        "slug": "videostorejunkies",
+        "cover": "20210108_053644_1aff32a6c789562563e36915aa8e7db1.jpg"
+    },
+    {
+        "podcast_id": 23305,
+        "title": "Travolting",
+        "description": "A weekly investigation into the strange filmographies of cinemas most fascinating careers. ",
+        "language": "en",
+        "author_name": "Jeff Sweeney & Stuart Elmore",
+        "slug": "travolting",
+        "cover": "20220731_020702_3312db125ed59f64e1b9818d65602105.jpg"
+    },
+    {
+        "podcast_id": 25181,
+        "title": "SuperImage, Ltd.",
+        "description": "Join Kyle and Carlos Plummer, the filmmaking duo of SuperImage, Ltd., as they interview and discuss filmmaking stories both past and present with fellow collaborators as well as industry professionals in this in-depth exploration of film, art and life in the modern age.",
+        "language": "en",
+        "author_name": "SuperImage, Ltd.",
+        "slug": "superimageltd",
+        "cover": "20210117_014323_ec9aa36e355ac05dc0f2a8a69cc5992e.jpg"
+    },
+    {
+        "podcast_id": 27311,
+        "title": "The Movie Boyz",
+        "description": "2 Boyz that love movies and love to talk about them even more! We cover a different movie each episode and leave everything out on the table! ",
+        "language": "en",
+        "author_name": "Tyler and Rowdy",
+        "slug": "themovieboyz",
+        "cover": "20210125_150042_0cb795dbe904a88e1d4d29a900ae376c.jpg"
+    },
+    {
+        "podcast_id": 27912,
+        "title": "Sala Se7en",
+        "description": "Somos el periodista, Marc Tio, y el programador de festivales (The Classics y The Colombian Film Festival), Juan Carvajal, dos amigos que, desde que nos conocimos en el festival de cine de Nueva York, hemos estado viviendo cine de todo el mundo y queremos contarles acerca de las buenas pel\u00edculas que no te puedes perder y algunas malas que puedes dejar pasar. Hablamos de cine de todos los g\u00e9neros y pa\u00edses pero damos especial atenci\u00f3n al iberoamericano. \n\nTodas las sugerencias que tengas son bienvenidas por email: salase7en@gmail.com y Twitter e Instagram en @salase7en. \u00a1Gracias por escuchar!  ",
+        "language": "es",
+        "author_name": "Juan Carvajal & Marc Tio",
+        "slug": "salase7en",
+        "cover": "20210213_181538_22f33bf58dd09e0ec4c11e125762ccff.jpg"
+    },
+    {
+        "podcast_id": 29381,
+        "title": "Cinemagic",
+        "description": "Cinemagic is a weekly look at the world of film and television. Ric and Janathan will look at everything from the current scene to past works. Each episode will bring something new from watch-alongs to interviews with industry professionals. ",
+        "language": "en",
+        "author_name": "Ric Acevedo",
+        "slug": "cinemagic",
+        "cover": "20210202_065734_5b93647bf2c98c953221c1bcc9b115fa.jpg"
+    },
+    {
+        "podcast_id": 30734,
+        "title": "VHSaturday",
+        "description": "The show where we discuss the strange, unusual, odd & obscure footage we find on VHS obtained through thrift, gift and grift.",
+        "language": "en",
+        "author_name": "Henry and Allison",
+        "slug": "vhsaturdaypodcast",
+        "cover": "20210207_041603_6d5d9e71cd1510984781c1805b8681f9.jpg"
+    },
+    {
+        "podcast_id": 30751,
+        "title": "The Hack and the Fraud",
+        "description": "<p>Nick and Ryan review the latest movie releases, as well as some old and modern classics.</p>",
+        "language": "en",
+        "author_name": "Ryan Curran and Nick Webeck",
+        "slug": "thehackandthefraud",
+        "cover": "20230606_110626_f21ccf2567821bafc8a62c1a4fa04868.jpg"
+    },
+    {
+        "podcast_id": 30827,
+        "title": "Listen To Lillian",
+        "description": "Listen To Lillian is a podcast about British cinema. Each episode I invite my guests to select a British film they think is interesting in its representation of women, or its approach to queerness, to discuss. This podcast is part of my ongoing blog: listentolillian.substack.com.",
+        "language": "en",
+        "author_name": "Lillian Crawford",
+        "slug": "listentolillian",
+        "cover": "20230125_120159_ef78ddec5e5b06998c8811e48fd368e3.jpg"
+    },
+    {
+        "podcast_id": 31306,
+        "title": "The Deeper Into Movies Podcast",
+        "description": "Conversations about cinema\nwith host Steven T. Hanley ",
+        "language": "en",
+        "author_name": "DEEPER INTO MOVIES",
+        "slug": "deeperintomovies",
+        "cover": "20210209_121757_65b95b9c06aaec3077ae8acb964072eb.jpg"
+    },
+    {
+        "podcast_id": 32111,
+        "title": "Murders Per Gallon of Popcorn",
+        "description": "Welcome to the M.P.G.P. Podcast! Where each week hosts Hayley and Craig discuss horror movies, especially ones where the kill count is higher than the production value! ",
+        "language": "en",
+        "author_name": "Hayley Zalkin and Craig Stewart",
+        "slug": "mpgppod",
+        "cover": "20210219_021815_cf8f10a0d9214600647de0900abccfbd.jpg"
+    },
+    {
+        "podcast_id": 34736,
+        "title": "The Ghastly Podcast",
+        "description": "Join horror fans Nick Hall and Johanna McNulty on a tour of some of the most gruesome, terrifying and downright diabolical films ever made! Listen with caution...",
+        "language": "en",
+        "author_name": "Nick Hall and Johanna McNulty ",
+        "slug": "ghastly",
+        "cover": "20210220_221926_23290a6b0150f2529fc2080f8721c404.jpg"
+    },
+    {
+        "podcast_id": 39867,
+        "title": "Nostalgia Fix",
+        "description": "Join Izzy and Kat for a comforting deep dive into all your favourite things of the nineties and noughties. \n\nWhere to find us:\nInstagram @nostalgiafixpodcast \nTwitter @NostalgiaFixPod\nEmail nostalgiafixpodcast@gmail.com",
+        "language": "en",
+        "author_name": "Katya Browne and Isabella Poole",
+        "slug": "nostalgiafix",
+        "cover": "20210308_215719_0897df28c40716f316cf6648bb7ec2a9.jpg"
+    },
+    {
+        "podcast_id": 42327,
+        "title": "Ramble Room",
+        "description": "<p>Melissa is a 26 year old with a deep love for musicals and making fun of her sister. Erriana is a 23 year old who describes herself as a doofus and has a knack for finding bad films. Enjoy a podcast of them rambling about everything but also talking about nothing.</p>",
+        "language": "en",
+        "author_name": "Melissa and Erriana",
+        "slug": "therambleroom",
+        "cover": "20230104_010132_c4eeea9a5a8816815d2fc13f1341e28c.jpg"
+    },
+    {
+        "podcast_id": 42900,
+        "title": "To the Stars with Wonder",
+        "description": "A podcast dedicated to exploring and understanding celebrities and our infatuation with them. Hosted by Brishauna and Kayla",
+        "language": "en",
+        "author_name": "Kayla  and Brishauna ",
+        "slug": "starswithwonder",
+        "cover": "20210320_024310_45e83d62e6242e4674f69f5ffbb4857c.jpg"
+    },
+    {
+        "podcast_id": 46329,
+        "title": "Very Friendly People",
+        "description": "A character analysis and in depth discussion for the very friendly people of FXs Fargo TV show.\nWith Host Thomas Potts & Co-host Jack Breedon\n\nAll future episodes on Sundays bi-weekly! A character analysis and in depth discussion of the very friendly people of FXs Fargo TV show.\n\nWith theme music composed and performed by George Colclough\n\nhttps://youtube.com/watch?v=GvNO3sfl_rY&feature=share\n\nhttps://m.soundcloud.com/georgieboy-2\n\nWith Incredible art work by Dan Rhys\n\n@rhysceri.illustrator on Insta\n\nShow contains strong language and spoilers for the Fargo Tv Show",
+        "language": "en",
+        "author_name": "Jack W Breedon",
+        "slug": "veryfriendlypeople",
+        "cover": "20210402_161316_30e20f819fff014d48ca8e66e856b420.jpg"
+    },
+    {
+        "podcast_id": 46822,
+        "title": "Podzilla: King Of The Casters",
+        "description": "Podzilla: King Of The Casters is a Weekly Podcast about Godzilla, his work friends, and other Kaiju media. Hosted by NB Nightingale and Branden, we're covering Godzilla (1954) to Clifford The Big Red Dog (2021).",
+        "language": "en",
+        "author_name": "Branden and NB",
+        "slug": "kingofthecasters",
+        "cover": "20210413_030406_256b6d0b59dac8ef722a1ac054856772.jpg"
+    },
+    {
+        "podcast_id": 49692,
+        "title": "Oscarbate",
+        "description": "we probably havent thought this through, but we aren\u2019t going to listen to the cop in our heads\u2026we have takes and we are goin to give them, with or without anyone else input. Lack of oxygen meets investigative reporting  meets the guests you know and love, meets fun recommendations meets hard driven attitudes, you don\u2019t wanna miss",
+        "language": "en-us",
+        "author_name": "Oscarbate",
+        "slug": "oscarbate",
+        "cover": "20220118_030130_08e2e5a303aaebc87b30ca271c79dc5c.jpg"
+    },
+    {
+        "podcast_id": 52873,
+        "title": "The Nitty Gritty Pro-Wrestling Show",
+        "description": "Weekly podcasts covering anything and everything involving professional wrestling!",
+        "language": "en",
+        "author_name": "Chad Webb",
+        "slug": "dailiestodownloads",
+        "cover": "20210526_182800_44412601139cf5ad934d8a91caf2888e.jpg"
+    },
+    {
+        "podcast_id": 53187,
+        "title": "Reel Collections w/ Edward Beasley",
+        "description": "A film history podcast that dives into the more obscure titles and filmmakers that helped shaped my love of cinema. ",
+        "language": "en",
+        "author_name": "Edward Beasley",
+        "slug": "reelcollections",
+        "cover": "20210429_184638_d56631a67158747f9a7d1e00f6526bad.jpg"
+    },
+    {
+        "podcast_id": 53468,
+        "title": "Cel Shade",
+        "description": "Like cartoons? Like hate watching? Like White Claw? Then have we got the podcast for you! Join Nick, Tyler, and Alfred the kitty as we discuss the wonderful world of animation.",
+        "language": "en",
+        "author_name": "Nick Pospisil",
+        "slug": "celshadepodcast",
+        "cover": "20210520_140921_bef26d4bd00e38398ea766b945a3784b.jpg"
+    },
+    {
+        "podcast_id": 56563,
+        "title": "Linda's Bumpy Ride on a Bumpy Road",
+        "description": "Many of you may know me as an actress in Michael Crichton\u2019s Premier film \u201cWestworld\u201d in which I played Arlette, robot prostitute who seduced & gave favors to Richard Benjamin. Now Richard was a fantastic actor to work with especially because he knew I was uncomfortable having to disrobe and undress. \n\nRichard might have been uncomfortable during that scene but I never noticed a hint of it. Off-screen he was a happily married man to a beautiful and highly talented actress Paula Prentiss, known for her comedy roles in many films. \n\nI\u2019d like to mention that when actors don't have any lines of dialogue, it\u2019s not as easy as you would think. Without words, the character has little to work with. As an audience, think about it and imagine what or how You would convey your thoughts to another person if you were unable to speak. Well, if you don\u2019t agree, try it sometime. It isn\u2019t easy my friends. \n\nAlso, it was inferred that handsome James Brolin was having his way with another saloon gal. FYI - As an aside, James Brolin is married to the iconic \u201cOut of this World\u201d Singer, Actress, Award-Winning Barbra Streisand. \n\nMeanwhile, Brolin's character was being pursued by the Man in Black, Gunslinger Yul Brynner who was brilliant, outstanding, and very scary. Mr. Brynner was best known for being the staunch King in the legendary film \"The King and I\" with Award-Winning actress Deborah Kerr.  \n\nNow regarding television, there was a well-known series called The Green Hornet (Green Hornet Music.. )in which you may know me as VAMA, the One and Only woman in history to \"ZAP\" the Great, Incomparable Bruce Lee as CATO.  During and between \"takes\" Bruce and I would talk at length about so many things but honestly He did most of the talking. He said he didn't easily open up to others but felt like he'd known me for a long time. That he felt safe & very comfortable. \n\nIn The Batman 66 series (Batman Music)  I was The Riddler's female villain \"MOTH\". I will be giving fans much to chew on when talking about the show's Hero Adam West, his sidekick Burt Ward and the forever Memorable Frank Gorshin. Certainly More to share at another time. \n\nThere are a slew of many other series such as Bewitched with Elizabeth Mongomery and Dick York, Lost in Space, Bonanza, and my Introductory and very first role in Ben Casey as well as many other roles in which I guest-starred.\n",
+        "language": "en",
+        "author_name": "Linda Gaye Scott",
+        "slug": "lindagayescott",
+        "cover": "20211219_071214_57b96dd0282da2cb1b090abca98682fa.jpg"
+    },
+    {
+        "podcast_id": 58908,
+        "title": "Slashers and Spirits ",
+        "description": "Welcome to Slashers and Spirits, a Horror Movie Podcast. In this show, Aaron and Kim, Long-time horror movie fans, show some of their favorites to AJ. A scaredy-cat who hated the genre until just recently. It's been a long-standing tradition to drink throughout this process, causing us to get a little off-topic. ",
+        "language": "en",
+        "author_name": "Slashers and Spirits",
+        "slug": "slashersandspirits",
+        "cover": "20210525_005149_74c26ed1a27959878680c85244782b3a.jpg"
+    },
+    {
+        "podcast_id": 60218,
+        "title": "The Reel Thrills Podcast with Jay and Eric",
+        "description": "Jay and Eric discuss their favorite movies through a series of segments. Focused on the Horror genre but not exclusive.",
+        "language": "en",
+        "author_name": "Reel thrills",
+        "slug": "reelthrills",
+        "cover": "20211019_205918_5bb55c613dc29ed4f12242fec774807b.jpg"
+    },
+    {
+        "podcast_id": 61486,
+        "title": "NAGYTOT\u00c1L",
+        "description": "3 bar\u00e1t filmekr\u0151l besz\u00e9lget:\n- Bal\u00e1zs - m\u00e9dia \u00e9s t\u00f6rt\u00e9nelem tan\u00e1rk\u00e9nt dolgozik m\u00e1r t\u00f6bb mint 10 \u00e9ve\n- Tomi - \u00e9veken \u00e1t dolgozott egy londoni VFX st\u00fadi\u00f3n\u00e1l, \u00edgy lehet\u0151s\u00e9ge volt belek\u00f3stolni a filmes kulissz\u00e1k m\u00f6g\u00f6tti vil\u00e1gba\n- Zoli - filmlelkes filmrajong\u00f3, szerkeszt\u0151",
+        "language": "hu",
+        "author_name": "Nagytot\u00e1l",
+        "slug": "nagytotal",
+        "cover": "20220805_060803_60a470b6d3f079f24b34ee22b4418e5a.jpg"
+    },
+    {
+        "podcast_id": 64199,
+        "title": "Beyond Bisexual Lighting",
+        "description": "Beyond Bisexual Lighting is a world queer cinema podcast that dissects the nuances of queer identity and challenges cinematic homonormativity, creating a space that navigates global flows with intimate desires. ",
+        "language": "en",
+        "author_name": "Carolina Mulvey Videla & Alex Bobet",
+        "slug": "beyondbisexuallighting",
+        "cover": "20220418_090442_a8baa7ec3f8d31ec5e2fc2f4656e53fb.jpg"
+    },
+    {
+        "podcast_id": 65109,
+        "title": "Movies For When",
+        "description": "Everyone always says \"Yes movies... but for WHEN?\" Denny and Greg are here to tell you when with their award winning podcast! Every week these two charming and infectious goofballs examine the most appropriate movies for unique situations, so movie lovers can ALWAYS be prepared for life's twists and turns.",
+        "language": "en",
+        "author_name": "Denny & Greg",
+        "slug": "moviesforwhen",
+        "cover": "20210717_012347_ff9a3a3642787626c87af3c8adc313b2.jpg"
+    },
+    {
+        "podcast_id": 67519,
+        "title": "Movie Night Extravaganza ",
+        "description": "<p>Movie Podcast! Hosted by Forrest Miller, J. Andrew World, Conan Neutron and Kristina Oakes! </p><p>Live Episodes: <a href=\"http://youtube.com/movienightextravaganza\">youtube.com/movienightextravaganza</a></p>",
+        "language": "en",
+        "author_name": "Forrest Miller",
+        "slug": "movienightextra",
+        "cover": "20230829_040849_f08c6d6d11204bdf9e14a217c7119dbf.jpg"
+    },
+    {
+        "podcast_id": 72155,
+        "title": "Cinema Alterno",
+        "description": "Cinema Alterno es un podcast de cine LGTBQIA+ que busca resaltar historias queer en la ficci\u00f3n y en la realidad. \u00a1Cont\u00e1ctanos para participar en pr\u00f3ximos episodios!\n\nInstagram: @cinema.alterno\nDiscord: https://discord.gg/HPVc2pSy\nFormulario de participante: https://forms.gle/tnLYq1iMYRJdbHBFA",
+        "language": "es",
+        "author_name": "Cinema Alterno",
+        "slug": "cinema-alterno",
+        "cover": "20210902_011649_fc549dcdcbad2a3770ff12425e52e2b5.jpg"
+    },
+    {
+        "podcast_id": 74478,
+        "title": "What Goddesses Watch",
+        "description": "What Goddeses Watch is a multi-cultural, feminist Film and TV podcast.\n\nFilm critic Soma Ghosh is joined by today's most fabulous feminine thinkers to deep-dive films about and by womxn. From hot releases to independent streamers, combining English & non-English speaking films, it's like a Cannes takeover by the cast of Pose & Audre Lorde, clever, fun & badly behaved.\n\n\n\n\n",
+        "language": "en",
+        "author_name": "The Demented Goddess Magazine",
+        "slug": "whatgoddesseswatch",
+        "cover": "20210922_091852_18a9c2ebeb358d3c9944e8641b9d68fc.jpg"
+    },
+    {
+        "podcast_id": 82094,
+        "title": "Behind The Timeline",
+        "description": "<p>Co-Hosts Lindsay and Scott travel the timeline year by year to examine, breakdown and recount their own experiences with the very films and tv shows that have helped shape the pop-culture scene! Don't see something you think they should've covered? Journey to the website to enter a \"Request the Timeline\" of any movie you think the show should investigate and they'll make it happen!</p>",
+        "language": "en",
+        "author_name": "Lindsay W, Scott S",
+        "slug": "behindthetimeline",
+        "cover": "20210928_220114_13c0cea238d2fd8864247300f99791a2.jpg"
+    },
+    {
+        "podcast_id": 82159,
+        "title": "The Film Degree",
+        "description": "A twenty something with a film degree finally gets to put it to good use by talking about a wide range of topics revolving around film.",
+        "language": "en",
+        "author_name": "Patrick Wright",
+        "slug": "thefilmdegree",
+        "cover": "20210929_034631_806403fc768000b67ec1b33b6d59c17a.jpg"
+    },
+    {
+        "podcast_id": 84010,
+        "title": "Here's Lookin' At You, Film",
+        "description": "A podcast for the vintage cinephile with modern sensibilities. Each week, we'll do a play by play on one of the old classics with fresh eyes.",
+        "language": "en",
+        "author_name": "Nikki Edwards",
+        "slug": "hereslookinpod",
+        "cover": "20211011_145345_5956aa1517fc1e4f4a1bd9706daac61a.jpg"
+    },
+    {
+        "podcast_id": 85382,
+        "title": "Sound in Motion",
+        "description": "A podcast at the intersection of filmmaking and film music. Hosted by percussionist and composer Peter Naughton.",
+        "language": "en",
+        "author_name": "Peter Naughton",
+        "slug": "soundinmotion",
+        "cover": "20211015_204556_a17231dbb209bcfdf97ca1fb996d1c38.jpg"
+    },
+    {
+        "podcast_id": 90285,
+        "title": "ReelHorrorShow ",
+        "description": "Join Lee and Mark, two lifelong horror fans and grumpy old gits, as they bring you news, reviews and interviews from the world of horror.",
+        "language": "en",
+        "author_name": "Lee Richmond Mark Green",
+        "slug": "reelhorrorshow",
+        "cover": "20220509_010543_eb0f77d25e32543d0bfbb9c13dfb6e0c.jpg"
+    },
+    {
+        "podcast_id": 90448,
+        "title": "MOVIES WITH MY MOTHER",
+        "description": "My mother and I sit down and watch a random cult classic movie, give listeners an overview and maybe a few opinions before we move on to talk about literally everything else. The gimmick is that I *love* movies and she hasn't seen a movie in a cinema since the 90s.",
+        "language": "en",
+        "author_name": "Alexis Norton and Laurel East",
+        "slug": "movieswithmymother",
+        "cover": "20211113_163453_b51c98acbd37eb84c51c50fec2f02843.jpg"
+    },
+    {
+        "podcast_id": 90867,
+        "title": "The Sound of Cinema",
+        "description": "Zonder muziek blijft er weinig over van een film. Want hoe eng is Jaws zonder geluid, hoe episch Star Wars zonder aanzwellend orkest? En hoe verliefd zijn Olivia Newton John en John Travolta zonder discobeat? Film schuurt, film knalt, film zucht, film klikt. En Filmhuis Den Haag laat het allemaal horen. In deze podcast reis je door de geschiedenis van de filmmuziek. Open je oren voor intiem pianospel, melancholische strijkers, opzwepende discobeats... of juist helemaal niets. Luister mee en je ziet meer!\n\nThe Sound of... is een klinkend programma dat schuurt, knalt, zucht en klikt. Met talks, podcasts, playlists, expo\u2019s en meer, open je je ogen voor alles wat film te bieden heeft. Nieuwe geluiden, vertrouwde geluiden, tegengeluiden \u2013 Filmhuis Den Haag laat ze weerklinken. Luister mee en je ziet meer!\n\nMeer weten? Ga naar https://filmhuisdenhaag.nl/the-sound-of-cinema",
+        "language": "nl",
+        "author_name": "Filmhuis Den Haag",
+        "slug": "fhdhthesoundofcinema",
+        "cover": "20211116_180414_ed8c0e56dbb73a7d65fb3bb839ec31f2.jpg"
+    },
+    {
+        "podcast_id": 91786,
+        "title": "Silver Screen Podcast/Hit or Miss: Star Trek Podcast",
+        "description": "HIT OR MISS: STAR TREK\n\nA Star Trek Podcast celebrating every visual part of the franchise, from 1966 to the present day. Honest but respectful reviews, episode discussions, general chat & interviews with Trekkies, Trekkers, prominent figures on Trek social media and anyone who's watched a Star Trek. Created by Michael Wilson. Hosted by Mike & D.K. Live long and enjoy! \n\nSILVER SCREEN\n\nFilm reviews and analysis from Film Studies BA graduate Michael Wilson, his knowledgeable but enigmatic co-host D.K and a host of fellow cinephile guests. In 60-90 minutes they'll review and analyse new releases, classics, guilty pleasures and films they love, hate, or love to hate.",
+        "language": "en",
+        "author_name": "Michael Wilson",
+        "slug": "silverscreen",
+        "cover": "20220220_120229_472056357997a853979e5b6e3dd5685c.jpg"
+    },
+    {
+        "podcast_id": 92205,
+        "title": "Couch Potato Critics",
+        "description": "Three friends discuss movies picked out by one another every week. Then they judge the films and one another.",
+        "language": "en",
+        "author_name": "Carleigh, Miriam, & Shirley",
+        "slug": "couchpotatocritics",
+        "cover": "20211123_224807_9d3df8c9de0efa1bd311753b9e6c9fde.jpg"
+    },
+    {
+        "podcast_id": 94123,
+        "title": "The Villains Cave",
+        "description": "Here we dive deep into all of comic history and find what makes a villain a bad guy, how heroes got to where they were and the important stories along the way.\n\n",
+        "language": "en",
+        "author_name": "Kade Cornaby, Jasen King, Cassie Welch",
+        "slug": "thevillainscave",
+        "cover": "20211205_021214_44680db4339d6ca88eb61b0a273b619a.jpg"
+    },
+    {
+        "podcast_id": 94298,
+        "title": "We Are Not Reviewers",
+        "description": "Tom Spoors and Aaron Murray, two passionate film fans, discuss films, the industry and more, all whilst barely knowing what they're talking about and not being qualified to do so!",
+        "language": "en",
+        "author_name": "Tom Spoors",
+        "slug": "wearenotreviewers",
+        "cover": "20211206_121254_ff281a12744ec210dd01b7d98f8eff73.jpg"
+    },
+    {
+        "podcast_id": 96082,
+        "title": "KINO EIZEN\u0160TEINS",
+        "description": "Filmu studija Mistrus Media sadarb\u012bb\u0101 ar Radio Naba, VKKF programmas Kult\u016brElpa ietvaros ir izveidojusi multimedi\u0101lu sarunu un videolekciju  projektu par kino  \u201cKino-Eizen\u0161teins\u201d.\n\n\u201cKino-Eizen\u0161teins\u201d veidots k\u0101 multimedi\u0101ls projekts, kura ietvaros izveidots lekciju \u2013 meistarkla\u0161u cikls ar Latvijas kino profesion\u0101\u013ciem pag\u0101tn\u0113 un m\u016bsdien\u0101s, un raidierakstu s\u0113riju cikls par kino tap\u0161anas aspektiem Latvij\u0101 un pasaul\u0113. Projekta ietvaros da\u017e\u0101d\u0101s internetplatform\u0101s tiks public\u0113tas 5 videolekcijas un 5 raidieraksti, kuros Latvijas kino industrijas p\u0101rst\u0101vji dal\u012bsies ar savu biogr\u0101fisko un profesion\u0101lo pieredzi kino jom\u0101, ietekm\u0113m. Videolekcijas un raidieraksti no 15. decembra  b\u016bs pieejami projekta m\u0101jaslap\u0101 https://www.kinoeizensteins.lv, kas iecer\u0113ta k\u0101 dokument\u0101lu materi\u0101lu kr\u0101tuve, spotify podk\u0101stu form\u0101t\u0101, k\u0101 ar\u012b radio raid\u012bjum\u0101 form\u0101t\u0101 tos var\u0113s dzird\u0113t Radio Naba no 2022. gada s\u0101kuma. \n",
+        "language": "lv",
+        "author_name": "Mistrus Media",
+        "slug": "kinoeize",
+        "cover": "20211216_081212_d7de13648e96db41ab672f97f27fb049.jpg"
+    },
+    {
+        "podcast_id": 96132,
+        "title": "Haven't Scene It: A Movie Podcast",
+        "description": "A movie podcast with a pun in the title\u2026 this hasn't been done before!  Join hosts Tim Sestito & Tommy Thevenet in 'Haven't Scene It: A Movie Podcast' where all of your favorite movies will be discussed with a twist!  \n\n\n\nEach movie featured on the show will have not been seen before by one of Tim or Tommy\u2026New & classic films, a wide range of genres will all be covered on this show.  \n\n\n\nIf you're looking for a podcast with a little insight into movies, a lot of laughs and a pinch of stubbornness, come listen to our show!\n\n\n\nFollow us on Twitter: @SceneItPod\nFollow us on Instagram: @SceneItPod\n\n\nCover Art by Vladik Sestito\nIntro Theme by Ryan the Oso",
+        "language": "en",
+        "author_name": "Tommy Thevenet & Tim Sestito",
+        "slug": "haventsceneit",
+        "cover": "20211216_091256_8fa0d53c2a42dfdcc3e1492f2181da58.jpg"
+    },
+    {
+        "podcast_id": 97592,
+        "title": "Podcast Part 3: The Part 3 Podcast",
+        "description": "What is it with *third* movies? Why can't trilogies ever seem to stick the landing? Why is it Part 3 when franchises gearshift to Tokyo Drifting or Season of the Witching? Why did it take three whole movies for Jason to find his hockey mask?!\n\nJoin hosts Will Morey and Sam Cherington as they break down the best and worst movies ever made that came after two other movies. Nothing is off limits... they're watching the good, the bad and the ugly. (Including The Good, the Bad and the Ugly!)",
+        "language": "en",
+        "author_name": "Sam Cherington & Will Morey",
+        "slug": "podcastpart3",
+        "cover": "20211228_021247_f9fc7e40e40bfa14172bb415e6809a19.jpg"
+    },
+    {
+        "podcast_id": 98177,
+        "title": "How Scary Is It?",
+        "description": "Let's review movies! Join us as we watch horror movies and try to answer the question \"How Scary Is It?\"",
+        "language": "en",
+        "author_name": "Anthony and Brie",
+        "slug": "re-view",
+        "cover": "20230107_090112_40ee7333d57499236e2ac40eb22d8474.jpg"
+    },
+    {
+        "podcast_id": 99680,
+        "title": "The Black Firehouse Podcast",
+        "description": "A two man show dedicated to discussing Ghostbusters props, costumes, sets and special effects.",
+        "language": "en",
+        "author_name": "Dan Harshman & Austin Young",
+        "slug": "blackfirehousepodcast",
+        "cover": "20220109_050135_ef49908cf5659f6dc996af94d57b5c3e.jpg"
+    },
+    {
+        "podcast_id": 100476,
+        "title": "Phil At The Movies",
+        "description": "<p><strong>For The Love of Movies.</strong></p><p><strong>Passionate monologues and cinematic discussions. New episodes dropping every Friday!</strong></p>",
+        "language": "en",
+        "author_name": "Phil Walsh",
+        "slug": "philcast",
+        "cover": "20230615_090621_e3c5ce278d2192dac8442e38e4b43a1d.jpg"
+    },
+    {
+        "podcast_id": 100972,
+        "title": "The Fun Of Halo Podcast!",
+        "description": "A podcast anything and everything about the Halo Game series! Hosted by Matt or FuntageryBM & Nate (BadTwinn)! A few things to expect from this series, will be an intro episode talking about who we are and how we got into halo etc., and also just lore of each game, and so much more banter!\nWhere to find the hosts:\nMatt: @FuntageryBM on all socials!\nNate: @Bad Twinn on Youtube!",
+        "language": "en",
+        "author_name": "Matt \"FuntageryBM\" & Nate \"BadTwinn\"",
+        "slug": "the-fun-of-halo",
+        "cover": "20220115_080148_2d78834a6a9ea9fa8d7f441848aeef7c.jpg"
+    },
+    {
+        "podcast_id": 102948,
+        "title": "Obscuria Filmcast",
+        "description": "There are currently close to half a million movies in circulation that date from the turn of the 20th century to the present day.  Obscuria Filmcast explores the countless films of note that have slipped through the cracks of history for one reason or another.  Our selections include box office flops that went on to become cult classics, made-for-TV movies that hold a special place in our hearts, groundbreaking documentaries that you've probably never heard of, as well as any obscure film with an emphasis on the strange, surreal, or grotesque.  Each week we rotate to a different host who presents a film for the other hosts to watch for the upcoming episode.  If you'd like to suggest a film for an upcoming episode and be featured as a guest on our special clubhouse edition of the podcast, feel free to email us at obscuriafilmpodcast@gmail.com.",
+        "language": "en",
+        "author_name": "Abram Kaplan",
+        "slug": "obscuriafilmcast",
+        "cover": "20220123_120157_f49c29b02708b9679156feda277b1275.jpg"
+    },
+    {
+        "podcast_id": 104862,
+        "title": "Amateur Movie Reviews ",
+        "description": "The show of shows\nBe ready be dazzled and amazed and maybe just learn something as three mates share their opinions on some of the biggest films worldwide.\n\nListen in as they provide some banter, some laughter and give you the opinions that you did not know you needed\n\nWelcome to AMR",
+        "language": "en",
+        "author_name": "Harry Lee, Sam Lake and Louis Davies",
+        "slug": "amateurmoviereviews",
+        "cover": "20220130_080155_348e6c4e28b945d05e4fe5c3f5c961e9.jpg"
+    },
+    {
+        "podcast_id": 106048,
+        "title": "Windsor Film Club",
+        "description": "COMING SOON",
+        "language": "en",
+        "author_name": "Reyna Cervantes, Steph Cozza, and Madison Fairchild",
+        "slug": "thewindsorfilmclub",
+        "cover": "20220808_060843_76576b98bd947b7cadd28afa0a587d70.jpg"
+    },
+    {
+        "podcast_id": 106110,
+        "title": "Can We Kick It?",
+        "description": "Two dudes talking everything TV.",
+        "language": "en",
+        "author_name": "Kickin It Media",
+        "slug": "canwekickit",
+        "cover": "20220205_010258_6731156ef54b44a68c7156b754754cce.jpg"
+    },
+    {
+        "podcast_id": 106384,
+        "title": "CINERDS",
+        "description": "El Podcast y Canal de Cine que Nadie Pidi\u00f3\n\nCon @Kaizzer, @Zomvieck, @ElGab y @Humberto_Ramos y producido por @iraamelnegro\n\nNoticias,  Cartelera del Cine, Recomendaciones de que ver en Netflix y en la Cartelera.\n\nVideo nuevo todos los Martes... en la noche. Ya cuando baje el solecito. ;)",
+        "language": "es",
+        "author_name": "Cinerds",
+        "slug": "cinerds",
+        "cover": "20220829_120821_9105631853086cc9de2b19b5ccfc969f.jpg"
+    },
+    {
+        "podcast_id": 108890,
+        "title": "Can We Pause it?",
+        "description": "A podcast where we watch movies and pause on parts to unpack them a little bit more before pressing play again.",
+        "language": "en",
+        "author_name": "Ty McCarthy",
+        "slug": "canwepauseit",
+        "cover": "20220215_050242_aa9d990e73faa038f957cb395d83ec02.jpg"
+    },
+    {
+        "podcast_id": 109798,
+        "title": "Filmoids",
+        "description": "Your hosts Jonah and Mahoney gather to discuss the cultural, political, aesthetic and historical aspects of only the finest kino. If you wish the irony-poisoned condescension dripping from every prolific Letterboxd reviewer could be piped directly into your ears, you've come to the right place.",
+        "language": "en",
+        "author_name": "Jonah Mahoney",
+        "slug": "filmoids",
+        "cover": "20220218_070252_b8bb35ae2ca5e97691f3009c376aa507.jpg"
+    },
+    {
+        "podcast_id": 113628,
+        "title": "Dezil & Reeser",
+        "description": "Each episode, hosts Stefan Dezil and Jeffrey Reeser explore two films from past and present, how they relate and differ and how the cinematic medium is continuing to evolve. \n\nJeffrey Reeser is a filmmaker and writer from Ojai, CA whose credits include the features \"Shadow of a Gun\", \"Take None Give None\", \"Super Heady\" and the forthcoming \"Snake Oil Song\". He currently resides in Los Angeles.\n\nHailing from NY and South FL, Stefan Dezil is an American genre filmmaker, actor and illustrator of Haitian descent. He has worked with Disney, 20th Digital, VICE, Noisey, and Soundcloud. For his film \"The Treadmill\", he was nominated for the prestigious international Lumen Prize in the moving image category.  His latest, \"THIRST\" is currently streaming on HULU. ",
+        "language": "en",
+        "author_name": "Stefan Dezil and Jeffrey Reeser",
+        "slug": "dezilreeser",
+        "cover": "20220311_060313_276860e9d051316d2446de8d1ab3116c.jpg"
+    },
+    {
+        "podcast_id": 118328,
+        "title": "Not The Final Cut",
+        "description": "Just a couple of guys here to talk about movies and have a good time!\nJoin Us!",
+        "language": "en",
+        "author_name": "Greg Susi and Sam Brown",
+        "slug": "notthefinalcut",
+        "cover": "20220409_030403_c74b99b9bb551b1185667ffdfb744951.jpg"
+    },
+    {
+        "podcast_id": 120054,
+        "title": "Whores For Horror",
+        "description": "Whores For Horror! A brand new queer made comedy podcast featuring\nTabs (tabaxii), Luci (midwestrogen) and Will (will_panicz) as they navigate the world of horror movies and their fascination with the genre. \n",
+        "language": "en",
+        "author_name": "Whores For Horror",
+        "slug": "whores4horror",
+        "cover": "20220405_020434_1437c945ae67f0f14da8eaffa93af3b6.jpg"
+    },
+    {
+        "podcast_id": 122341,
+        "title": "The Black Flame Society Podcast",
+        "description": "Gather 'round and join two of the world's biggest Hocus Pocus fans as we discuss all things Halloween and HP, including news, merchandise, behind the scenes info, those pesky deleted scenes and much, much more! \n\n",
+        "language": "en",
+        "author_name": "The Black Flame Society Podcast",
+        "slug": "theblackflamesocietypodcast",
+        "cover": "20220415_050403_3c3075ad12c4e2c00616b12cf9096e0e.jpg"
+    },
+    {
+        "podcast_id": 123001,
+        "title": "A MARVELous History",
+        "description": "We talk about the history of different marvel characters and their counterparts or multiverse",
+        "language": "en",
+        "author_name": "Pradyun Krishna Naidu",
+        "slug": "roktraccoon",
+        "cover": "20220420_030407_5750b4cce0c9aefe50edcb3cb8344f8c.jpg"
+    },
+    {
+        "podcast_id": 127122,
+        "title": "The CineMatch Podcast",
+        "description": "<p>A movie podcast pitting two of Hollywood's greatest movies against each other, every week, and rating each through a series of different categories such as their lead character, villain and soundtrack, to see which reigns supreme!</p>",
+        "language": "en",
+        "author_name": "Callum Altimas",
+        "slug": "convoswithcal",
+        "cover": "20230804_100822_e2893714345216ccf590eeb92601e5a4.jpg"
+    },
+    {
+        "podcast_id": 128508,
+        "title": "TCOW Podcast",
+        "description": "Ever watched a movie, played a game, binged a show and thought \"wow, I need to tell someone about this?\" So did we! Come on a journey with us and talk the best, the worst and just straight out awful that movies, tv and games have to offer, and maybe share in a moo or two for good measure.",
+        "language": "en",
+        "author_name": "David Hereford and Brodie Chillingham",
+        "slug": "tcowpodcast",
+        "cover": "20220522_100502_ce81d55c46be00a7595d61a68d2dc097.jpg"
+    },
+    {
+        "podcast_id": 129420,
+        "title": "Close Up with Ryan and Joe",
+        "description": "Ryan Walker and Joe Morin rave, review, and revel in their favourite entertainment for YOUR entertainment. Film, TV, and comic book discussions abound! So does laughter, passionate debate, and thoughtful discussion.",
+        "language": "en",
+        "author_name": "Thought Plane Media",
+        "slug": "closeup",
+        "cover": "20220706_010717_b64a2ff02f623eb38f1fbf56b0fac914.jpg"
+    },
+    {
+        "podcast_id": 129938,
+        "title": "Sugar Frosted Podcast",
+        "description": "Join Brian, Scott and John as we take a look at 20th century pop culture and get distracted along the way.",
+        "language": "en",
+        "author_name": "Brian Reaves, Scott Beiting & John Perdiue",
+        "slug": "sugarfrostedpodcast",
+        "cover": "20220523_070545_d7edaf826a505afde59b7bd46f93a711.jpg"
+    },
+    {
+        "podcast_id": 131047,
+        "title": "Speed Force Media Podcast",
+        "description": "Welcome to Speed Force Media, we talk about our favorite movies, tv shows, and games and If you enjoy our podcast, please leave us a five star review wherever you're listening and subscribe for more content. Please don't forget to check out our YouTube channel, Speed Force Media, and our sister podcast, Shipwreck Sunday!",
+        "language": "en",
+        "author_name": "Speed Force Media",
+        "slug": "slashersaturday",
+        "cover": "20220918_030919_2eb67ef335d3acf971ff301ca5072962.jpg"
+    },
+    {
+        "podcast_id": 132232,
+        "title": "Movie Rivals",
+        "description": "LateMrJ & Merrick Johnson discuss some of their favorite movies!\n\nLateMrJ is a former Blockbuster employee who has seen over 3400 films, some of his reviews can be found on Letterboxd; https://letterboxd.com/latemrj/\n\nMerrick Johnson is an Independent filmmaker with his Bachelor's degree in Film. He has also worked in the movie theater industry for over 10 years. https://letterboxd.com/Kingmerrick8/",
+        "language": "en",
+        "author_name": "Merrick Johnson",
+        "slug": "movierivals",
+        "cover": "20220605_070604_3477d9e7252a23115e13414d0a578a67.jpg"
+    },
+    {
+        "podcast_id": 134837,
+        "title": "historiando",
+        "description": "Un podcast dedicado a la historia y el proceso que involucra la materia, hablamos de producciones televisivas, cinematogr\u00e1ficas, novelas, historiadores y todo tipo de curiosidades.\nNos gusta el periodo Tudor, la \u00e9poca medieval y las curiosidades hist\u00f3ricas, acomp\u00e1\u00f1anos a descubrir datos que seguro que har\u00e1n pasar un buen rato.\n",
+        "language": "es",
+        "author_name": "Adriana Cortes y Jorge  L.",
+        "slug": "historiando",
+        "cover": "20220617_010612_ad68e3fa62ab6ee264af07d8851a343a.jpg"
+    },
+    {
+        "podcast_id": 136934,
+        "title": "The Cultworthy Cinema Podcast",
+        "description": "Here at The Cultworthy Cinema Podcast we celebrate obscure cinema, highlight cult films and discover new ones! Your host Antonio Palacios will bring you weekly reviews, cult film suggestions and insights to upcoming DVD and Blu-Ray releases. \n\n#film #cult #podcast #cinema #movies",
+        "language": "en",
+        "author_name": "Antonio Palacios",
+        "slug": "the-cultworthy-podcast",
+        "cover": "20221203_011257_01da124b2b62fba91c293d92166d5508.jpg"
+    },
+    {
+        "podcast_id": 137871,
+        "title": "Nerds With Vaginas ",
+        "description": "A podcast about a girl and her cat co-host Lucille FurBall just shooting the shit and talking about their nerdy lives. From our lips to your ears. Welcome to the NWV podcast. ",
+        "language": "en",
+        "author_name": "Nerds With Vaginas",
+        "slug": "nerdswithvaginas",
+        "cover": "20220701_040750_0bd298bd3184c574c9b85ba94257e3a0.jpg"
+    },
+    {
+        "podcast_id": 137887,
+        "title": "\u7cca\u7a7f\u5730\u5fc3 Downhill from Midway",
+        "description": "\u8001\u7535\u5f71\u7231\u597d\u8005\u548c\u63a8\u7406\u7231\u597d\u8005\u4ea4\u6d41\u4f60\u4e5f\u8bb8\u6c38\u8fdc\u4e0d\u4f1a\u770b\u7684\u5f71\u89c6",
+        "language": "zh",
+        "author_name": "HCDX",
+        "slug": "downhillfrommidway",
+        "cover": "20220917_090913_4321cac0860ece9edbb17ee17b009a5d.jpg"
+    },
+    {
+        "podcast_id": 138282,
+        "title": "Midnight Terrors",
+        "description": "A podcast hosted by two brothers-in-law celebrating all things horror! ",
+        "language": "en",
+        "author_name": "Kevin Roche",
+        "slug": "midnightterrorspodcast",
+        "cover": "20220703_010726_29852b0c73b07f81707568862a0a473a.jpg"
+    },
+    {
+        "podcast_id": 138498,
+        "title": "Scuttlebutt War Movie Review Podcast",
+        "description": "Welcome to Scuttlebutt, the war movie review podcast!  Join four aspiring filmmakers as we review Hollywood's depictions of conflict from the dawn of cinema to today's Blockbusters.  Every week we will analyze a different war movie and judge it on its historical accuracy, cinematography, and delivery of the narrative.  The four hosts approach each film with a wide range of experiences from Hollywood sound stages, museum curation, and the Iraq War.  New Episodes every Monday!",
+        "language": "en",
+        "author_name": "Scuttlebutt",
+        "slug": "scuttlebutt",
+        "cover": "20220704_040720_b4b216783dc39bff40fa00cb8562fb77.jpg"
+    },
+    {
+        "podcast_id": 139616,
+        "title": "Take Fountain",
+        "description": "A Podcast for the Ages!\nLISTEN TO NEW EPISODES OF TAKE FOUNTAIN ON THURSDAYS!\nTAKE FOUNTAIN is a conversation podcast about all things entertainment.   Showbiz insider recollections, mostly fact with a dash of fancy...\nHosts:\n- Bill Geddie, Former Producer of THE BARBARA WALTERS SPECIALS, Co-Creator, former Producer of THE VIEW \n- Thom Mount, former Universal Studios Worldwide President and Producer of such films as BULL DURHAM, TEQUILA SUNRISE, and FRANTIC.\n\nOn upcoming episodes, the guys discuss the creation of movies like BULL DURHAM, ANIMAL HOUSE, and FAST TIMES AT RIDGEMONT HIGH, along with the iconic morning show, THE VIEW.  There are interviews with GOOD MORNING AMERICA'S first host, David Hartman, Writer/Director, Ron Shelton, former DEA Agent and Film Technical Advisor, John Marcello, Actor and Comedian, Mario Cantone,  former Executive Producer of GOOD MORNING AMERICA and THE BARBARA WALTERS SPECIALS, Phyllis McGrady and Jennifer Pryor, widow of Comedian Richard Pryor, along with many others.  ",
+        "language": "en",
+        "author_name": "Bill Geddie & Thom Mount",
+        "slug": "take-fountain",
+        "cover": "20220829_110846_85fe513f6611afe81ff1f59282dff58d.jpg"
+    },
+    {
+        "podcast_id": 139866,
+        "title": "Gritty REboot ",
+        "description": "A podcast for every gritty to misguided movie reboot there has ever been. Join Pedro and Meredith as they dissect the grittiest of remakes, reboots, and rehashes. No retread is safe! Look for new episodes every Thursday. ",
+        "language": "en",
+        "author_name": "Pedro I Amador",
+        "slug": "grittyreboot",
+        "cover": "20220805_100805_75b094eb47dc9afa8143caceb862247b.jpg"
+    },
+    {
+        "podcast_id": 140842,
+        "title": "Just Another Movie Night ",
+        "description": "We are Jo and Scott, a married couple who have been watching way to much TV and Movies, for way to long. Finally we decided to get off our lazy Asses and start recording our nightly rants, reviews and conversations on all things entertainment (but mainly horror movies). We hope to turn this into a safe haven for all the things we love and love to hate, with the desire to create a space to meet and talk with like minded individuals like us. So join us on this trek. And maybe we can answer that age old question \"what really is the worst movie ever made\".",
+        "language": "en",
+        "author_name": "Jo and Scott",
+        "slug": "justanothermovienight",
+        "cover": "20220717_010708_7573413c8c8982a6bc4827acfe2cc3cf.jpg"
+    },
+    {
+        "podcast_id": 141239,
+        "title": "Cracking The Vault",
+        "description": "Three guys; Xander, Jake, and Trevor, crack open the infamous Walt Disney Vault to explore the history, story, and pop culture influences that each and every Disney Film presents.",
+        "language": "en",
+        "author_name": "Cracking the Vault",
+        "slug": "crackingthevault",
+        "cover": "20220719_030723_b51023ad8a91080faa83f1f0129a9c56.jpg"
+    },
+    {
+        "podcast_id": 142160,
+        "title": "Story Works Podcast",
+        "description": "Zac Gosen & Andrew Hull talk everything story driven! Dive in and explore lore, film, and enjoy guests with Story Works Podcast\nHosted by 626 Sound",
+        "language": "en",
+        "author_name": "Zac Gosen & Andrew Hull",
+        "slug": "storyworks",
+        "cover": "20220724_120741_a5f7f90eb31111e0d98f8fc3f0645197.jpg"
+    },
+    {
+        "podcast_id": 144150,
+        "title": "Vibe Talkin",
+        "description": "An exciting new podcast about films with off the charts vibes - films from the Golden Age of Adult Cinema. Turn down the lights, turn up the vibes, and get down with your hosts Vic Terry & Manny Velazquez as they take you on a journey through some of the hottest films of all time. This is no ordinary podcast, this is Vibe Talkin!",
+        "language": "en",
+        "author_name": "Good Vibe Cinema",
+        "slug": "vibetalkin",
+        "cover": "20220803_020811_f169f8191e632d175e76938bc02e0417.jpg"
+    },
+    {
+        "podcast_id": 145093,
+        "title": "FilmkhoonehRadio \u0631\u0627\u062f\u06cc\u0648 \u0641\u06cc\u0644\u0645\u200c\u062e\u0648\u0646\u0647 ",
+        "description": "<p>\u0634\u0645\u0627 \u0631\u0648 \u0628\u0647 \u0634\u0646\u06cc\u062f\u0646 \u062e\u0627\u0637\u0631\u0627\u062a\u06cc \u062f\u0639\u0648\u062a \u0645\u06cc\u200c\u06a9\u0646\u0645\u060c \u06a9\u0647 \u0634\u0627\u06cc\u062f \u062e\u0627\u0637\u0631\u0627\u062a \u0645\u0634\u062a\u0631\u06a9 \u0645\u0646\u0648 \u0634\u0645\u0627 \u0628\u0627\u0634\u0647... \u0631\u0627\u062f\u06cc\u0648 \u0641\u06cc\u0644\u0645\u200c\u062e\u0648\u0646\u0647 \u0627\u0632 \u0634\u0645\u0627 \u0639\u0632\u06cc\u0632\u0627\u0646 \u062f\u0639\u0648\u062a \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u062e\u0627\u0637\u0631\u0627\u062a \u0648 \u0645\u0633\u062a\u0646\u062f\u0627\u062a\u062a\u0648\u0646 \u0631\u0648 \u0627\u0632 \u0641\u06cc\u0644\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0634\u0646\u06cc\u062f\u0646 \u0645\u06cc\u0627\u0631\u0647 \u0628\u0627 \u0627\u06cc\u0645\u06cc\u0644 filmkhoonehradio@gmail.com \u062f\u0631 \u0645\u06cc\u0648\u0646 \u0628\u06af\u0630\u0627\u0631\u06cc\u062f. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0631\u0627\u062f\u06cc\u0648 \u0641\u06cc\u0644\u0645\u200c\u062e\u0648\u0646\u0647 \u0627\u0632 \u062a\u0645\u0627\u0645 \u062f\u0633\u062a\u200c\u0627\u0646\u062f\u0631\u06a9\u0627\u0631\u0627\u0646 \u0633\u0627\u062e\u062a \u0648 \u067e\u062e\u0634 \u0627\u06cc\u0646 \u0622\u062b\u0627\u0631 \u0686\u0647 \u0639\u0632\u06cc\u0632\u0627\u0646\u06cc \u06a9\u0647 \u0647\u0633\u062a\u0646\u062f \u0648 \u0686\u0647 \u0628\u0633\u062a\u06af\u0627\u0646 \u0648 \u0648\u0627\u0628\u0633\u062a\u06af\u0627\u0646 \u0639\u0632\u06cc\u0632\u0627\u0646\u06cc \u06a9\u0647 \u062f\u0631 \u0642\u06cc\u062f \u062d\u06cc\u0627\u062a \u0646\u06cc\u0633\u062a\u0646\u062f \u062f\u0639\u0648\u062a \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0646\u0627\u06af\u0641\u062a\u0647\u200c\u0647\u0627\u0634\u0648\u0646 \u0631\u0648 \u0627\u0632 \u0645\u0631\u0627\u062d\u0644 \u062a\u0647\u06cc\u0647\u060c \u0633\u0627\u062e\u062a \u0648 \u067e\u062e\u0634 \u0627\u06cc\u0646 \u0622\u062b\u0627\u0631 \u0628\u0627 \u0627\u06cc\u0646 \u067e\u0627\u062f\u06a9\u0633\u062a \u062f\u0631 \u0645\u06cc\u0648\u0646 \u0628\u06af\u0630\u0627\u0631\u0646 \u0628\u0627\u0634\u062f \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0622\u06cc\u0646\u062f\u06af\u0627\u0646 \u0627\u0632 \u062a\u0627\u0631\u06cc\u062e \u0647\u0646\u0631 \u0645\u0639\u0627\u0635\u0631 \u0686\u0631\u0627\u063a \u0631\u0648\u0634\u0646\u06cc \u0628\u0627\u0642\u06cc \u0628\u0645\u0627\u0646\u062f\u060c \u0686\u0631\u0627\u063a\u06cc \u06a9\u0647 \u062f\u0648\u0631\u0627\u0646 \u0631\u0648\u0634\u0646\u0627\u06cc\u06cc\u200c\u0627\u0634 \u0628\u0633\u06cc\u0627\u0631 \u06a9\u0648\u062a\u0627\u0647 \u0628\u0648\u062f.</p><p>t.me/filmkhoonehradio</p>",
+        "language": "en",
+        "author_name": "FilmkhoonehRadio ",
+        "slug": "filmkhooneh-radio",
+        "cover": "20220808_060856_b3bee2cef9cf4be4a585f4520456118e.jpg"
+    },
+    {
+        "podcast_id": 146307,
+        "title": "They Mostly Pod Out at Night.... Mostly",
+        "description": "Graveyard and Salem cover all things horror.  This includes weekly topics, discussions and movie reviews.",
+        "language": "en",
+        "author_name": "Matt Van Bodegraven",
+        "slug": "mostlypodoutatnight",
+        "cover": "20220816_110855_01eca4834c49906b2ecd1a9a07b55ec2.jpg"
+    },
+    {
+        "podcast_id": 147229,
+        "title": "Blockbrosters",
+        "description": "Join Caleb, Levi, and sometimes Zach as they discover what it means to become podcasters, in a new series, unprofessionalism, and stupid antics are the name of the game. You can Email us at Blockbrosters@gmail.com with suggestions or comments on how you think we're doing! ",
+        "language": "en",
+        "author_name": "Caleb & Levi",
+        "slug": "official-unofficial",
+        "cover": "20220818_040846_512a986b582bebc81f84c914822254e0.jpg"
+    },
+    {
+        "podcast_id": 148354,
+        "title": "Movie Marathon",
+        "description": "Join Andrew and Mike as they try to recapture the magic of the movie marathons from their youth. Email us at moviemarathonwam@gmail.com. Follow us on Twitter at @moviemarathonAM",
+        "language": "en",
+        "author_name": "Murph and Mike",
+        "slug": "moviemarathon",
+        "cover": "20220823_040807_52a7cdabe0073647fefc79eec2479861.jpg"
+    },
+    {
+        "podcast_id": 149220,
+        "title": "National Treasure",
+        "description": "Is Nicolas Cage een national treasure?\nIedere aflevering van deze podcast bespreek ik, samen met een gast, een film van Nicolas Cage om die vraag te beantwoorden.",
+        "language": "nl",
+        "author_name": "Brandon Calluy",
+        "slug": "nationaltreasure",
+        "cover": "20220827_080814_ef8c1357da0b1b12a105c0630df79b5a.jpg"
+    },
+    {
+        "podcast_id": 149866,
+        "title": "Fine Whine",
+        "description": "New episodes every Tuesday and Thusday! \nJoin me in exploring media - films, books, television series, and music, but mostly films - that has either aged like fine wine lest I whine about it. Granted I will likely do so anyways.",
+        "language": "en",
+        "author_name": "Henry Prime",
+        "slug": "finewhine",
+        "cover": "20220830_090835_286430c6d9f31a8c5fd90543f89253b1.jpg"
+    },
+    {
+        "podcast_id": 152121,
+        "title": "The CultWorthy Classic",
+        "description": "A cinema podcast dedicated to obscure films and cult classics made before 1970!",
+        "language": "en",
+        "author_name": "Antonio Palacios",
+        "slug": "thecultworthyclassic",
+        "cover": "20220911_020925_8c4e26aa401f34ff41dfabc7f2cabb7b.jpg"
+    },
+    {
+        "podcast_id": 153953,
+        "title": "EchoVideo Podcast",
+        "description": "Join us, as we discuss some of the strangest movies. The most talked about games and whatever else is happening in this crazy world.",
+        "language": "en",
+        "author_name": "Hunter Tapley",
+        "slug": "echovideo",
+        "cover": "20220916_050933_dd1b0e6ae1696450649b8476bd972339.jpg"
+    },
+    {
+        "podcast_id": 155298,
+        "title": "You Like That?",
+        "description": "We\u2019re Claire and Catie, and we want to talk to you about old smut. Claire is a Golden Age skin flick enthusiast, and Catie is naughty film newbie. Each episode, Claire will make Catie discuss an old-but-new-to-her f*ck film, while Claire provides historical context and anecdotes.",
+        "language": "en",
+        "author_name": "Heavy Ghost Media",
+        "slug": "youlikethat",
+        "cover": "20220922_090928_b1fc7f345cba9c07939edfe551d81327.jpg"
+    },
+    {
+        "podcast_id": 155695,
+        "title": "GRAYZONE",
+        "description": "A New Interview Podcast",
+        "language": "en",
+        "author_name": "Gray Barnard",
+        "slug": "grayzone",
+        "cover": "20220925_120933_592d1370d604ee8a5fc469b9ab3a14ec.jpg"
+    },
+    {
+        "podcast_id": 156105,
+        "title": "24 FPS",
+        "description": "El est\u00e1ndar actual para el cine son 24 fotogramas por segundo. Tambi\u00e9n el est\u00e1ndar son pel\u00edculas que no siempre est\u00e1n a la altura. En 24 FPS te recomendamos pel\u00edculas de calidad que quiz\u00e1s no conoc\u00edas, de todos los tipos y colores.",
+        "language": "es",
+        "author_name": "Ignacio Espinosa Fernandez",
+        "slug": "24fps",
+        "cover": "20220926_060907_39086b65cce4dbaba76a127cbe5ec7d2.jpg"
+    },
+    {
+        "podcast_id": 157269,
+        "title": "Highbrow / Lowbrow",
+        "description": "Welcome to Highbrow / Lowbrow!\n\nHighbrow: Scholarly. Rarefied. Refined.\nLowbrow: Lacking in taste, culture, intelligence.\n\nWhen it comes to the Silver Screen, some of our favorite actors have taken some BIG swings. Sometimes they hit it out of the park and even win an Oscar; other times, they almost ruin their careers\u2026!\n\nEach week, Matthew & Eddie will take one actor and talk about two of their movies: One, a glorious \"highbrow\" pinnacle of their career, and two, a puzzling \"lowbrow\" choice has confused the masses to no end!\n\nTune in every Friday as Highbrow / Lowbrow compares and contrasts the vast polarity of your favorite actors' filmography",
+        "language": "en",
+        "author_name": "Matthew McFarland & Eddie Estrada",
+        "slug": "highbrowlowbrow",
+        "cover": "20221028_101033_db8d5b5b0b1857ac81d17c9e2d6cda0a.jpg"
+    },
+    {
+        "podcast_id": 158336,
+        "title": "No Luck Podcast",
+        "description": "This podcast is a dedicated space to discuss things I really enjoy. Tattoos, Music, Film, Entrepreneurship, and absolutely taking risks is every day aspects of life. ",
+        "language": "en",
+        "author_name": "Chase Smith",
+        "slug": "noluckpodcast",
+        "cover": "20221217_021235_f67356a7ed4646b69ebe8f464acf90e6.jpg"
+    },
+    {
+        "podcast_id": 160118,
+        "title": "SpoilerOff",
+        "description": "Podcsat sobre cine y series. Comentamos las noticias de actualidad, analizamos los mejores t\u00edtulos y recordamos los que han ido pasando a lo largo de los a\u00f1os",
+        "language": "es",
+        "author_name": "Marc",
+        "slug": "spoileroff",
+        "cover": "20221013_031011_157c3709cdc46bd20fc76ab8c910a6eb.jpg"
+    },
+    {
+        "podcast_id": 160846,
+        "title": "Horror Study Hall",
+        "description": "If horror is your thing, listen to Horror Study Hall: the academic side of horror.  Where we examine research, books, and podcasts that study the horror genre.  ",
+        "language": "en",
+        "author_name": "M.A. Reynolds",
+        "slug": "horrorstudyhall",
+        "cover": "20221022_051045_4aab6696caa9bb97b7cc6099a48e9149.jpg"
+    },
+    {
+        "podcast_id": 162223,
+        "title": "The Random Cinematic Universe",
+        "description": "The Random Cinematic Universe is the podcast that lets a random film generator decide what films we watch and then discuss. We have no choice in the films we watch, and by golly there are some doosies out there! The RCU is hosted by Zach Jones, and his rotating team of cohorts: Nina Bournival, Jesse Nelson, Marc Nadeau, and Jacob Wideman. ",
+        "language": "en",
+        "author_name": "Metric Entertainment",
+        "slug": "therandomcinematicuniverse",
+        "cover": "20221021_071037_759e3bc982d72be8b1948f9a8dbd0cab.jpg"
+    },
+    {
+        "podcast_id": 164795,
+        "title": "Cinema At Random",
+        "description": "Cinema at Random explores the corners of 20th century cinema. We will be drawing through lines between movies that at first glance may not seem to have much in common and make a case for why they should be watched as a double bill. \n\nSo join your host Jonathan Niederer, an LA based filmmaker and movie lover for a cinema at random hang out experience chock full of passionate debates, outrageous takes, and exciting new cinema discoveries. The only rule: no movies made after 1999. ",
+        "language": "en",
+        "author_name": "Jonathan Niederer",
+        "slug": "cinemaatrandom",
+        "cover": "20221116_061149_9eff2e2022ec80d6a3ac718b25fb6f42.jpg"
+    },
+    {
+        "podcast_id": 165779,
+        "title": "Kimmell and Cox",
+        "description": "<p>Your source for all things entertainment! Join us each week as we discuss movies, television, music, pop culture, celebrities, and a whole lot of nostalgia! We\u2019ll also be sharing stories from our own experiences in the entertainment industry, particularly independent films. Guaranteed to be plenty of surprises along the way! So grab a seat and come along for the ride. We\u2019re gonna have a good time!!!</p>",
+        "language": "en",
+        "author_name": "Dylan Kimmell, Keith Cox",
+        "slug": "kimmellandcox",
+        "cover": "20230302_110343_3532a2e9cc45a0e10247d4a5843a5114.jpg"
+    },
+    {
+        "podcast_id": 167752,
+        "title": "De Nominerte: filmpodkast",
+        "description": "<p>Vi ser og diskuterer alle de tidligere nominerte og vinnere av Oscars\u2019 beste film! </p><p>F\u00f8rste Oscar utdeling ble holdt i 1929, og siden har det v\u00e6rt utdeling hvert \u00e5r. Vi skal for hver episode se alle filmene som har blitt nominert i kategorien \"beste film\" d\u00e9t \u00e5ret. S\u00e5 skal vi snakke om filmene, diskutere hva vi synes om de og hvilken film vi mener var den beste det \u00e5ret. </p><p>Episodene blir lagt ut fortl\u00f8pende, s\u00e5 snart vi har en episode klar. Dette er fordi vi dessverre ikke har kapasitet til \u00e5 lage episoder fast. </p>",
+        "language": "nb",
+        "author_name": "De Nominerte",
+        "slug": "denominerte",
+        "cover": "20221114_121117_a4e14047148529e4275ae01ebcc2f388.jpg"
+    },
+    {
+        "podcast_id": 170862,
+        "title": "MORONS - Men on Radio Offering Nonsensical Solutions",
+        "description": "We don't talk politics.  We don't talk sports.  But everything else is fair game.  We try not to get too serious.  Where's the fun in that?",
+        "language": "en",
+        "author_name": "Daryl Harris",
+        "slug": "252radio",
+        "cover": "20230130_050121_d72c54f53d5ba21249a1077a7057c4a7.jpg"
+    },
+    {
+        "podcast_id": 174246,
+        "title": "BUCKTOOTH GREMLINS",
+        "description": "<p>Three cousins from New York talk about Movies, TV and assorted other Pop Culture. Occasional 4th seats will join the trio as well. Questions &amp; Comments can be emailed to BUCKTOOTHGREMLINS@GMAIL.COM</p>",
+        "language": "en",
+        "author_name": "Kevin McDonnell, Peter Oddo & Sean ",
+        "slug": "bucktoothgremlins",
+        "cover": "20230706_120743_87abd4b99b711f6b37d7c6fb45f16820.jpg"
+    },
+    {
+        "podcast_id": 175112,
+        "title": "grp.film",
+        "description": "<p>grp.film is a roundtable discussion podcast where we dissect our favorite movies in a fun (but also hopefully intelligent) way.</p>",
+        "language": "en",
+        "author_name": "Steven, Brian & Andy",
+        "slug": "grpfilm",
+        "cover": "20230410_030457_b87f63e5dc70f186fc71bc77bfa7c504.jpg"
+    },
+    {
+        "podcast_id": 179614,
+        "title": "Afterimages",
+        "description": "<p>Afterimages is a podcast for cinephiles that takes a deep dive into moving images. Each episode features a special guest who is invited to explore a film of their choice with your hosts, film writers Franck Boul\u00e8gue and Marisa C. Hayes.</p>",
+        "language": "en",
+        "author_name": "Franck Boul\u00e8gue & Marisa C. Hayes",
+        "slug": "afterimages",
+        "cover": "20230614_070608_36ef7f49976c8846de6af21ad368c98e.jpg"
+    },
+    {
+        "podcast_id": 182445,
+        "title": "Lets Talk Entertainment And Media",
+        "description": "<p>Hey everyone we're Lets Talk Entertainment and media, we've been on youtube for a while now and we have decided to take our show and put out to podcast's as well. Well have two shows on here, Lets Talk Physical media and The Lets Talk Podcast. If you like the show we hope you subscribe and leave your comments.</p>",
+        "language": "en",
+        "author_name": "John Keefe and Faith Williams",
+        "slug": "letstalkentmt",
+        "cover": "20230121_080131_c86e4136abcb18487b977248e90cab5f.jpg"
+    },
+    {
+        "podcast_id": 183246,
+        "title": "The Good Film Archive ",
+        "description": "<p>TGFA is a platform for film lovers from the MENA region. We Journey through films from all over the world, trying to answer one simple question: What's a good film? </p>",
+        "language": "ar",
+        "author_name": "Karim El Dalil",
+        "slug": "thegoodfilmarchive",
+        "cover": "20230809_010805_611556985178340a556c704690af804c.jpg"
+    },
+    {
+        "podcast_id": 184295,
+        "title": "100 Yards Over The Rim",
+        "description": "Submitted for your approval: A Fan-Made Podcast covering the influence, iconography, and lasting impact... of The Twilight Zone.\n  We will be covering all incarnations of The Twilight Zone television series in this podcast, as well as a few films and series not limited to the walls of the 5th Dimension: Not exactly black and white as it is... Red or Green? \nWe will endeavor to post weekly, and we look forward to beginning this journey with those looking to... come wander with us.\n As always you'll find us... 100 Yards Over The Rim!",
+        "language": "en",
+        "author_name": "Jerome J Archuleta",
+        "slug": "100yotr",
+        "cover": "20230128_100143_69c65cc30d92fcc9d52f1ba7187da273.jpg"
+    },
+    {
+        "podcast_id": 184383,
+        "title": "Dying for Midnight",
+        "description": "DFM - Horror Movies Discussion and More Podcast:\nA quirky, quippy, sometimes awkward couple discuss their love for all things horror (while trying so hard not to get off track). ~~\n\nEvery DFM episode features 2 segments. ~~\n1st segment: Comfy Horror Review - Grab a blanket and a hoodie. We discuss everything from the poster artwork,  to favorite non-lead character and death, giving an overall reaction and rating and where possible, touch on other entries. ~~\n\n2nd segment: Horror Etc. - We'll cover a variety of horror topics including literature, personal haunts, horror history, etc, etc, etc.",
+        "language": "en",
+        "author_name": "Case and Carrie Zambelli",
+        "slug": "dfm",
+        "cover": "20230128_080154_911a5b07d97ed591c0dc96347b560ca4.jpg"
+    },
+    {
+        "podcast_id": 187540,
+        "title": "Frecuencia Nocturna ",
+        "description": "<p>Medio de entretenimineto. </p>",
+        "language": "es-mx",
+        "author_name": "Salvador Cese\u00f1a",
+        "slug": "frecuencianocturna",
+        "cover": "20230719_110706_49047b5504c84214345a1823c78fdbc0.jpg"
+    },
+    {
+        "podcast_id": 188127,
+        "title": "The Film Geeks",
+        "description": "<p>An international group of cinephiles who meet weekly to discuss film. We explore films from all over the world ranging from the birth of cinema to present day.</p>",
+        "language": "en",
+        "author_name": "The Film Geeks",
+        "slug": "thefilmgeeks",
+        "cover": "20230823_020833_c9aade3847d6d3cb543dff757d3d49c7.jpg"
+    },
+    {
+        "podcast_id": 189277,
+        "title": "TAKSH TALK SHOW",
+        "description": "<p>A Talk show from Taksh Entertainments &amp; Productions primarily for Telugu listeners, run by Jaya Kalyani &amp; Praveen Kumar who are singers, creative content makers, script writers and experienced podcasters.</p>",
+        "language": "te",
+        "author_name": "Taksh Entertainments & Productions",
+        "slug": "taksh-entertainments-productions",
+        "cover": "20230213_100234_799b48a14bcadfed5752881058df9615.jpg"
+    },
+    {
+        "podcast_id": 192334,
+        "title": "3 Euros per Movie",
+        "description": "<p>'3 Euros per Movie' is a Movie Podcast brought to you by Bia, Krit and Georg. We are three Europeans that have come together for in depth spoiler discussions on three thematically related movies. Episodes release bi-weekly and we hope to see you every episode! Social Links: <a href=\"https://linktr.ee/3euros\">https://linktr.ee/3euros</a></p>",
+        "language": "en",
+        "author_name": "Bia, Krit & Georg",
+        "slug": "3euros",
+        "cover": "20230225_120203_edcc0f9c4614ad770726cc8082797414.jpg"
+    },
+    {
+        "podcast_id": 192809,
+        "title": "History of Animation",
+        "description": "<p>This is a podcast about the amazing history of the animation medium.  We will look at the people, technology, and characters that have shaped animation till now.  So if you love animation or history please join us on this inspiring look through the past.</p>",
+        "language": "en",
+        "author_name": "Chelsea Thomas",
+        "slug": "historyofanimation",
+        "cover": "20230227_060250_5d78d7d8e79916db92aac360bb748881.jpg"
+    },
+    {
+        "podcast_id": 193230,
+        "title": "Adventurelings | The Adventure Movie Podcast",
+        "description": "<p>You know those people who talk through movies that everyone hates? That\u2019s us. Adventurelings is an unscripted podcast for adventure movie fans, hosted by siblings Mason and Emily Winsauer. If you\u2019re obsessed with adventure movies and love to hang around and talk about them with your friends, this is the podcast for you.</p><p>For more content, check us out on <a href=\"https://www.instagram.com/theadventurelings/\">Instagram</a> and <a href=\"https://www.patreon.com/adventurelings\">Patreon</a>, or visit <a href=\"http://theadventurelings.com\">theadventurelings.com</a> for everything, all in one place.</p>",
+        "language": "en",
+        "author_name": "Emily and Mason Winsauer",
+        "slug": "theadventurelings",
+        "cover": "20230516_120546_9912cc15d1c73e5aaa334bb006ff5fb7.jpg"
+    },
+    {
+        "podcast_id": 193489,
+        "title": "Theater Cleaners ",
+        "description": "<p>Welcome to Theater Cleaners - the podcast where we take a lighthearted look at the world of movies, hosted by Todd and Dom, two former film school students who now work in the industry.</p><p>Join us as we journey through the history of cinema, analyzing films from the earliest days of moving images through to modern-day blockbusters. We'll explore what makes certain movies influential and memorable, and what makes others forgettable.</p><p>Each episode, we'll take a deep dive into a specific film, the plot, characters, themes, and production elements, discussing what works and what doesn't, and we'll share our personal opinions and experiences along the way.</p><p></p><p>So whether you're a die-hard cinephile or a casual movie-goer, join us as we explore the world of cinema, one film at a time. You might even learn a thing or two along the way. Thanks for tuning in to Theater Cleaners!</p>",
+        "language": "en",
+        "author_name": "Twelve Midnight ",
+        "slug": "theater-cleaners",
+        "cover": "20230307_050341_4fbf21076ff0441565f1a465fb6360e7.jpg"
+    },
+    {
+        "podcast_id": 193533,
+        "title": "Pagal Janta: Bollywood Weekly",
+        "description": "<p>Join hosts Vishal, Sonu, and Shalu as they discuss all things Bollywood.</p><p>Don\u2019t forget to like and subscribe!</p>",
+        "language": "en",
+        "author_name": "Shaleen Mathur, Saloni Mathur, Vishal Mathur",
+        "slug": "pagaljanta",
+        "cover": "20230301_070348_8ff47426c676fdc7b3f34f2080edd96b.jpg"
+    },
+    {
+        "podcast_id": 197073,
+        "title": "Movies Are Good Podcast",
+        "description": "<p>Movies are good, and so we talk about them. A lot.</p>",
+        "language": "en",
+        "author_name": "The Mighty Pieman",
+        "slug": "moviesaregood",
+        "cover": "20230811_010835_6495755cf727fead66c12ae3981121e2.jpg"
+    },
+    {
+        "podcast_id": 197844,
+        "title": "Made for TV Mayhem Show",
+        "description": "<p>Welcome to the Made for TV Mayhem Show, where Amanda Reyes, Dan Budnick and Nathan Johnson discuss all things made for TV (but mostly TV movies). </p>",
+        "language": "en",
+        "author_name": "Amanda Reyes",
+        "slug": "madefortvmayhem",
+        "cover": "20230319_010326_684dc9c5ebaf19e0daaa1df6f4a09725.jpg"
+    },
+    {
+        "podcast_id": 197939,
+        "title": "Whispers from the Shadows",
+        "description": "<p>Unleash your fear with us! Come join us on our horror-oriented podcast as we dissect and critique all things horror! From new releases to your favorite slashers, we\u2019re here to discuss and explore the spookiest tales and topics. Join us for the journey into terror!</p>",
+        "language": "en",
+        "author_name": "Supa_Jimmy and Mizpleasure",
+        "slug": "whispers-from-the-shadows",
+        "cover": "20230319_110320_10a77072a86d47f55f552eba081c6eae.jpg"
+    },
+    {
+        "podcast_id": 200902,
+        "title": "Filmjitsu! The Podcast that wields films as deadly weapons",
+        "description": "<p>Every other week, two friends and unabashed film geeks whose relationship is based almost entirely on antagonism assign each other a horrible film to watch and review.</p><p><a href=\"https://filmjitsu.net\">Learn more at the website!</a></p>",
+        "language": "en",
+        "author_name": "Jason Santo and Michael Merrigan",
+        "slug": "filmjitsu",
+        "cover": "20230402_080416_0383068f752471af2f063f8233c2607e.jpg"
+    },
+    {
+        "podcast_id": 203594,
+        "title": "Geordie Film's Class",
+        "description": "<p><strong>Geordie Film's Class </strong>specialises in screenings and informative lectures around 'class' films, based out of the North-East. This includes a wide variety of genres, and often screens monthly at the Tyneside independent Cinema.</p>",
+        "language": "en",
+        "author_name": "Nathan Lunn",
+        "slug": "geordiefilmsclass",
+        "cover": "20230416_090450_42d4618114e674e5cbfa3b9cd1d2c00f.jpg"
+    },
+    {
+        "podcast_id": 205261,
+        "title": "Film Geek Time Machine",
+        "description": "<p>Welcome to Film Geek Time Machine! The Podcast where Austin Kennedy and Tim Kizer literally travel back in time to random dates of the past to watch movies in the theater, then talk about them. As they travel back to all decades from the 1920s to the 1990s, Austin and Tim will watch and discuss movies from every era and genre, taking a look at known classics, as well as hidden gems.  You can also check out our website below.  </p><p><a href=\"https://akfilmgeek.wixsite.com/filmgeektimemachine/\">https://akfilmgeek.wixsite.com/filmgeektimemachine/</a></p>",
+        "language": "en",
+        "author_name": "Austin Kennedy and Tim Kizer",
+        "slug": "filmgeektimemachine",
+        "cover": "20230424_090431_15bdaed27d89e7bcaf0f41724bf5846f.jpg"
+    },
+    {
+        "podcast_id": 210389,
+        "title": "Video City",
+        "description": "<p>Brent, Joe, and Travis rewatch their favorite childhood movies and try figure out where it all went wrong.</p>",
+        "language": "en",
+        "author_name": "Video City",
+        "slug": "videocity",
+        "cover": "20230520_070558_fb1e2881a4bff42bc4943add828ec7f4.jpg"
+    },
+    {
+        "podcast_id": 211458,
+        "title": "The Marvel of Horror",
+        "description": "<p>A podcast for horror enthusiasts created by horror enthusiasts.</p>",
+        "language": "en",
+        "author_name": "Bruce Marvel",
+        "slug": "themarvelofhorror",
+        "cover": "20230525_090537_6de01e8102d2c8955a15435056713e39.jpg"
+    },
+    {
+        "podcast_id": 212228,
+        "title": "Spoilers: The Movies We Love",
+        "description": "<p>Ever wonder why you can watch your favorite movie a hundred times and still love it? Is it the humor? Perhaps it's the plot or the acting. Join me and a featured guest each week while we (attempt to) get to the bottom of this question by doing a deep-dive on a groundbreaking film. We'll discuss everything we can, including fun facts, acting, soundtrack, cultural impact and more on our quest to figure out why, after so many views, people keep coming back to the same movies. </p>",
+        "language": "en",
+        "author_name": "Dominique Reid",
+        "slug": "spoilers",
+        "cover": "20230530_120527_fab30db54dc90f0f455423c4f8feedc8.jpg"
+    },
+    {
+        "podcast_id": 213034,
+        "title": "Pasillo del terror",
+        "description": "<p>Bienvenido al pasillo del terror deambulante, la idea de este podcast es desmenuzar diferentes pel\u00edculas de terror, darte datos curiosos sobre el film y en general hablar de una pel\u00edcula en particular que sea considera cl\u00e1sica, de culto o un estreno.</p><p>Suscr\u00edbite, estamos seguros que lo vas a disfrutar.</p>",
+        "language": "es-mx",
+        "author_name": "Pasillo del terror",
+        "slug": "pasillodelterror",
+        "cover": "20230604_020638_b69ff166fca8b06109c77f5e36da5a6b.jpg"
+    },
+    {
+        "podcast_id": 213125,
+        "title": "Just Cuz",
+        "description": "<p>Join two cousins as they discuss movies and things they love, just cuz</p>",
+        "language": "en",
+        "author_name": "Max Weissman and Sasha Kartman",
+        "slug": "justcuz",
+        "cover": "20230604_030621_c10745818bdf5e51146beebf8aa24f8c.jpg"
+    },
+    {
+        "podcast_id": 216065,
+        "title": "Massacre Radio with Membersonly Dave",
+        "description": "<p>Join Membersonly Dave, the baddest boy in Cleveland, as he jams your ears with MASSACRE RADIO! Terrifying guests of the horror film world and beyond! Spooky sketches! Silly Psyops! Are you ready?!</p>",
+        "language": "en",
+        "author_name": "Massacre Video",
+        "slug": "massacreradio",
+        "cover": "20230620_060621_ed73917cda70b00b3963866fa58dc6a3.jpg"
+    },
+    {
+        "podcast_id": 216318,
+        "title": "Coming Soon - Cigars & Shots",
+        "description": "<p>My name is ABee and Im a Filmmaker. lets do this!!</p>",
+        "language": "en",
+        "author_name": "ABee",
+        "slug": "cigarsandshots",
+        "cover": "20230622_120645_0ee98756a5c9ce5de2ca0cce58ab444c.jpg"
+    },
+    {
+        "podcast_id": 217283,
+        "title": "Souvenires Vitalicios",
+        "description": "<p>Souvenires Vitalicios are interviews and conversations recorded when I was a journalist in the 2000s. Some of them in microcassettes!   Since I most worked in Spanish language publications, la mayoria de las entrevistas son en espa\u00f1ol. These interviews give us a glimpse of Latina/o culture at the beginning of the twentieth first century.</p>",
+        "language": "en",
+        "author_name": "Jorge N Leal",
+        "slug": "souveniresvitalicios",
+        "cover": "20230629_050626_cdccb9a924db37b3abcc17958a113612.jpg"
+    },
+    {
+        "podcast_id": 217946,
+        "title": "3-2-1 Ghost!",
+        "description": "<p>2 friends discuss their shared love of horror movies, and rate their favorites using a patent-pending 5 BOO! Scale</p>",
+        "language": "en",
+        "author_name": "Natalie and Kyle",
+        "slug": "321ghostpod",
+        "cover": "20230813_070826_3791aefafce785d5459eab2365b07d29.jpg"
+    },
+    {
+        "podcast_id": 218714,
+        "title": "Post Credits with Gil Garcia",
+        "description": "<p>Post Credits is a weekly film podcast from a former television producer and avid film aficionado, Gil Garcia. The show will feature one movie per week, giving insight on the filmmaking process that went into it as well as a spoiler free review. More importantly, if you stay after the credits, the show will feature a spoiler-filled breakdown of the subject.</p>",
+        "language": "en",
+        "author_name": "Gil Garcia",
+        "slug": "pcwithgil",
+        "cover": "20230806_080808_fb8fac4f99a5c06482427c9045a4fe98.jpg"
+    },
+    {
+        "podcast_id": 218725,
+        "title": "Modes of Interpretation: Another Podcast about Film & TV",
+        "description": "<p>Another Podcast about Film &amp; TV that no one asked for, but one that we delivered anyway.</p>",
+        "language": "en",
+        "author_name": "Louis DeSalvio",
+        "slug": "modesofinterpretation",
+        "cover": "20230710_040734_401d62f33c775b1c27d210110cc67df6.jpg"
+    },
+    {
+        "podcast_id": 221446,
+        "title": "The Cutting Room Floor Podcast",
+        "description": "<p>Two friends sit down and discuss various movies and tv shows and their impact on their lives and perceptions of the world.</p>",
+        "language": "en",
+        "author_name": "James Hudson Dom Walker",
+        "slug": "thecuttingroomfloor",
+        "cover": "20230727_090740_f4f9020fecb1dff0654639d274980d03.jpg"
+    },
+    {
+        "podcast_id": 222521,
+        "title": "Powered By Game Unplugged Podcast",
+        "description": "<p>Tackling all aspects of the a filmmaker and giving the creators a platform to share their ideas, obstacles and methods which make them the great creatives that they are. We are unplugged, uncensored and unfiltered.</p>",
+        "language": "en",
+        "author_name": "PBG FILMS ",
+        "slug": "pbgunplugged",
+        "cover": "20230804_040828_ae5ebe782b1b9caaac000ce7cdcff6be.jpg"
+    },
+    {
+        "podcast_id": 222716,
+        "title": "Everything But The Little Fishies",
+        "description": "<p>A recorded conversation between mammals.</p>",
+        "language": "en",
+        "author_name": "Not Fishes",
+        "slug": "everythingbutthelittlefishies",
+        "cover": "20230805_090838_5f6b88b0147ed99e402c0dd3d6ca470a.jpg"
+    },
+    {
+        "podcast_id": 223404,
+        "title": "A Cinema Odyssey ",
+        "description": "<p>In this PODCAST I started for talking about good Cinema and underrated film and the directors way of story telling and new concepts in cinema </p>",
+        "language": "ta",
+        "author_name": "Dhineshdine ",
+        "slug": "dhineshdine",
+        "cover": "20230810_070835_db00b724c2831483f0d5708298917ff7.jpg"
+    },
+    {
+        "podcast_id": 223886,
+        "title": "Kanras : Wisdom nuggets by 90s human.",
+        "description": "<p>Kanras : Wisdom nuggets by 90s human.</p><ul><li>Why Mathuradas was correct in the Border movie?</li><li>Who wrote Dialogues for Border movie?</li><li>Who is the favorite actor of Amitabh Bachan?</li><li>For which movie Suniel Shetty got a request from his mother-in-law?</li></ul><p>Check out this podcast for more interesting movie trivias like that.</p><p>Follow us for future episodes of the Podcast as well.</p>",
+        "language": "hi",
+        "author_name": "Vibhu and Abhishek",
+        "slug": "kanras",
+        "cover": "20230813_050806_925360735943378a0cb7fb45bcee41d0.jpg"
+    },
+    {
+        "podcast_id": 224465,
+        "title": "Radio M\u00f3rbido",
+        "description": "<p>Lo m\u00e1s obscuro de la mente humana desde la cultura pop. M\u00e1s de</p>",
+        "language": "es",
+        "author_name": "Ibero90.9",
+        "slug": "radio-morbido-cbd",
+        "cover": "20230913_110936_f211164f14cb386efb8e691b55cbaff5.jpg"
+    },
+    {
+        "podcast_id": 225234,
+        "title": "The Ranking of the Stars ",
+        "description": "<p>2 hosts, 95 movies, and a compulsive need to numerically rank things. Welcome to The Ranking of the Stars, where two bright-eyed and bushy-tailed hosts are slowly ground down into a fine, quivering powder under the weight of watching every single movie that's won the Oscar for best picture, and ranking them based off however they happen to be feeling at the moment. Also did I tell you the hosts are married? The hosts are married. They love each other and its gross.</p>",
+        "language": "en",
+        "author_name": "Jack and Emeline ",
+        "slug": "rankingofthestars",
+        "cover": "20230822_030859_7fe3637937fe5eb9a65bc5feaec37bff.jpg"
+    },
+    {
+        "podcast_id": 226844,
+        "title": "Filmographies Podcast",
+        "description": "<p>Join host and filmmaker Jake Laystrom as he interviews independent filmmakers on specific works from their filmographies. From shorts to features, learn about filmmaker's inspirations, lessons learned, and experiences from Pre-Production to Distribution.</p>",
+        "language": "en",
+        "author_name": "Jake Laystrom",
+        "slug": "filmographiespodcast",
+        "cover": "20230901_040939_6d7db2565f7e64baa0585342b46e7b06.jpg"
+    },
+    {
+        "podcast_id": 228099,
+        "title": "Lounging with Lo",
+        "description": "<p>This is a podcast about movies and tv for those who love them like I do.</p>",
+        "language": "en",
+        "author_name": "Lauren Smith",
+        "slug": "loungingwithlo",
+        "cover": "20230911_020953_7173a8f48e6f20179a87da0bc67eda1f.jpg"
+    },
+    {
+        "podcast_id": 228837,
+        "title": "AllOuttaBubbleGum podcast",
+        "description": "<p>The official podcast of the AllOuttaBubbleGum website. For all things action cinema.</p><p>Join Brenton, Marteen, Stein, and others in discovering the good, bad and everything in between that action cinema has to offer.</p>",
+        "language": "en",
+        "author_name": "AllOuttaBubbleGum",
+        "slug": "allouttabubblegum",
+        "cover": "20230915_050954_98e57cc7119c53dc7fe0b82f2d4070b4.jpg"
+    },
+    {
+        "podcast_id": 228964,
+        "title": "The Lord of the Rings Disc 1",
+        "description": "<p>The Lord of the Rings is a series of three epic fantasy adventure films directed by Peter Jackson, based on the novel The Lord of the Rings by British author J. R. R. Tolkien. The films are subtitled The Fellowship of the Ring, The Two Towers, and The Return of the King</p>",
+        "language": "en",
+        "author_name": "Raghvendra Singh",
+        "slug": "the-lord-of-the-rings",
+        "cover": "20230916_070924_210baedf15578b2d1d50db2723759308.jpg"
+    },
+    {
+        "podcast_id": 229028,
+        "title": "\u0110\u00e1m c\u01b0\u1edbi Ho\u00e0ng Gia",
+        "description": "<p>\u0110\u00e1m c\u01b0\u1edbi Ho\u00e0ng gia</p>",
+        "language": "vi",
+        "author_name": "The Van",
+        "slug": "thevan",
+        "cover": "20230917_120952_1d349151e30c32e7e629c73d1a0cc9ac.jpg"
+    }
+]

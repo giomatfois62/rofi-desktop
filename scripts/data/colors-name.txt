@@ -1,0 +1,272 @@
+<span color='#D50000' weight='normal' fallback='true' lang='red'>  Red </span>  
+<span color='#C51162' weight='normal' fallback='true' lang='pink '>  Pink </span>
+<span color='#AA00FF' weight='normal' fallback='true' lang='purple'>  Purple </span>
+<span color='#6200EA' weight='normal' fallback='true' lang='deep purple'>  Deep Purple </span>
+<span color='#304FFE' weight='normal' fallback='true' lang='indigo'>  Indigo </span>
+<span color='#2962FF' weight='normal' fallback='true' lang='blue'>  Blue </span>
+<span color='#0091EA' weight='normal' fallback='true' lang='light blue'>  Light Blue </span>
+<span color='#AEEA00' weight='normal' fallback='true' lang='lime'>  Lime </span>
+<span color='#00B8D4' weight='normal' fallback='true' lang='cyan'>  Cyan </span>
+<span color='#00BFA5' weight='normal' fallback='true' lang='teal'>  Teal </span>
+<span color='#00C853' weight='normal' fallback='true' lang='green'>  Green </span>
+<span color='#64DD17' weight='normal' fallback='true' lang='light green '>  Light Green </span>
+<span color='#FF6D00' weight='normal' fallback='true' lang='orange'>  Orange </span>
+<span color='#DD2C00' weight='normal' fallback='true' lang='deep orange'>  Deep Orange</span>
+<span color='#3E2723' weight='normal' fallback='true' lang='brown'>  Brown</span>
+<span color='#212121' weight='normal' fallback='true' lang='grey'>  Grey</span>
+<span color='#263238' weight='normal' fallback='true' lang='blue grey'>  Blue Grey</span>
+<span color='#FFCDD2' weight='normal' fallback='true' lang='red 0'>  Red 0</span>  
+<span color='#EF9A9A' weight='normal' fallback='true' lang='red 1'>  Red 1</span>  
+<span color='#E57373' weight='normal' fallback='true' lang='red 2'>  Red 2</span>  
+<span color='#EF5350' weight='normal' fallback='true' lang='red 3'>  Red 3</span>  
+<span color='#F44336' weight='normal' fallback='true' lang='red 4'>  Red 4</span>  
+<span color='#E53935' weight='normal' fallback='true' lang='red 5'>  Red 5</span>  
+<span color='#D32F2F' weight='normal' fallback='true' lang='red 6'>  Red 6</span>  
+<span color='#C62828' weight='normal' fallback='true' lang='red 7'>  Red 7</span>  
+<span color='#B71C1C' weight='normal' fallback='true' lang='red 8'>  Red 8</span>  
+<span color='#FF8A80' weight='normal' fallback='true' lang='red 9'>  Red 9</span>  
+<span color='#FF5252' weight='normal' fallback='true' lang='red 10'>  Red 10</span>  
+<span color='#FF1744' weight='normal' fallback='true' lang='red 11'>  Red 11</span>  
+<span color='#D50000' weight='normal' fallback='true' lang='red 12'>  Red 12</span>  
+<span color='#FCE4EC' weight='normal' fallback='true' lang='pink 0'>  Pink 0</span>
+<span color='#F8BBD0' weight='normal' fallback='true' lang='pink 1'>  Pink 1</span>
+<span color='#F48FB1' weight='normal' fallback='true' lang='pink 2'>  Pink 2</span>
+<span color='#F06292' weight='normal' fallback='true' lang='pink 3'>  Pink 3</span>
+<span color='#EC407A' weight='normal' fallback='true' lang='pink 4'>  Pink 4</span>
+<span color='#E91E63' weight='normal' fallback='true' lang='pink 5'>  Pink 5</span>
+<span color='#D81B60' weight='normal' fallback='true' lang='pink 6'>  Pink 6</span>
+<span color='#C2185B' weight='normal' fallback='true' lang='pink 7'>  Pink 7</span>
+<span color='#AD1457' weight='normal' fallback='true' lang='pink 8'>  Pink 8</span>
+<span color='#880E4F' weight='normal' fallback='true' lang='pink 9'>  Pink 9</span>
+<span color='#FF80AB' weight='normal' fallback='true' lang='pink 10'>  Pink 10</span>
+<span color='#FF4081' weight='normal' fallback='true' lang='pink 11'>  Pink 11</span>
+<span color='#F50057' weight='normal' fallback='true' lang='pink 12'>  Pink 12</span>
+<span color='#C51162' weight='normal' fallback='true' lang='pink 13'>  Pink 13</span>
+<span color='#F3E5F5' weight='normal' fallback='true' lang='purple 0'>  Purple 0</span>
+<span color='#E1BEE7' weight='normal' fallback='true' lang='purple 1'>  Purple 1</span>
+<span color='#CE93D8' weight='normal' fallback='true' lang='purple 2'>  Purple 2</span>
+<span color='#BA68C8' weight='normal' fallback='true' lang='purple 3'>  Purple 3</span>
+<span color='#AB47BC' weight='normal' fallback='true' lang='purple 4'>  Purple 4</span>
+<span color='#9C27B0' weight='normal' fallback='true' lang='purple 5'>  Purple 5</span>
+<span color='#8E24AA' weight='normal' fallback='true' lang='purple 6'>  Purple 6</span>
+<span color='#7B1FA2' weight='normal' fallback='true' lang='purple 7'>  Purple 7</span>
+<span color='#6A1B9A' weight='normal' fallback='true' lang='purple 8'>  Purple 8</span>
+<span color='#4A148C' weight='normal' fallback='true' lang='purple 9'>  Purple 9</span>
+<span color='#EA80FC' weight='normal' fallback='true' lang='purple 10'>  Purple 10</span>
+<span color='#E040FB' weight='normal' fallback='true' lang='purple 11'>  Purple 11</span>
+<span color='#D500F9' weight='normal' fallback='true' lang='purple 12'>  Purple 12</span>
+<span color='#AA00FF' weight='normal' fallback='true' lang='purple 13'>  Purple 13</span>
+<span color='#EDE7F6' weight='normal' fallback='true' lang='deep purple 0'>  Deep Purple 0</span>
+<span color='#D1C4E9' weight='normal' fallback='true' lang='deep purple 1'>  Deep Purple 1</span>
+<span color='#B39DDB' weight='normal' fallback='true' lang='deep purple 2'>  Deep Purple 2</span>
+<span color='#9575CD' weight='normal' fallback='true' lang='deep purple 3'>  Deep Purple 3</span>
+<span color='#7E57C2' weight='normal' fallback='true' lang='deep purple 4'>  Deep Purple 4</span>
+<span color='#673AB7' weight='normal' fallback='true' lang='deep purple 5'>  Deep Purple 5</span>
+<span color='#5E35B1' weight='normal' fallback='true' lang='deep purple 6'>  Deep Purple 6</span>
+<span color='#512DA8' weight='normal' fallback='true' lang='deep purple 7'>  Deep Purple 7</span>
+<span color='#4527A0' weight='normal' fallback='true' lang='deep purple 8'>  Deep Purple 8</span>
+<span color='#311B92' weight='normal' fallback='true' lang='deep purple 9'>  Deep Purple 9</span>
+<span color='#B388FF' weight='normal' fallback='true' lang='deep purple 10'>  Deep Purple 10</span>
+<span color='#7C4DFF' weight='normal' fallback='true' lang='deep purple 11'>  Deep Purple 11</span>
+<span color='#651FFF' weight='normal' fallback='true' lang='deep purple 12'>  Deep Purple 12</span>
+<span color='#6200EA' weight='normal' fallback='true' lang='deep purple 13'>  Deep Purple 13</span>
+<span color='#E8EAF6' weight='normal' fallback='true' lang='indigo 0'>  Indigo 0</span>
+<span color='#C5CAE9' weight='normal' fallback='true' lang='indigo 1'>  Indigo 1</span>
+<span color='#9FA8DA' weight='normal' fallback='true' lang='indigo 2'>  Indigo 2</span>
+<span color='#7986CB' weight='normal' fallback='true' lang='indigo 3'>  Indigo 3</span>
+<span color='#5C6BC0' weight='normal' fallback='true' lang='indigo 4'>  Indigo 4</span>
+<span color='#3F51B5' weight='normal' fallback='true' lang='indigo 5'>  Indigo 5</span>
+<span color='#3949AB' weight='normal' fallback='true' lang='indigo 6'>  Indigo 6</span>
+<span color='#303F9F' weight='normal' fallback='true' lang='indigo 7'>  Indigo 7</span>
+<span color='#283593' weight='normal' fallback='true' lang='indigo 8'>  Indigo 8</span>
+<span color='#1A237E' weight='normal' fallback='true' lang='indigo 9'>  Indigo 9</span>
+<span color='#8C9EFF' weight='normal' fallback='true' lang='indigo 10'>  Indigo 10</span>
+<span color='#536DFE' weight='normal' fallback='true' lang='indigo 11'>  Indigo 11</span>
+<span color='#3D5AFE' weight='normal' fallback='true' lang='indigo 12'>  Indigo 12</span>
+<span color='#304FFE' weight='normal' fallback='true' lang='indigo 13'>  Indigo 13</span>
+<span color='#E3F2FD' weight='normal' fallback='true' lang='blue 0'>  Blue 0</span>
+<span color='#BBDEFB' weight='normal' fallback='true' lang='blue 1'>  Blue 1</span>
+<span color='#90CAF9' weight='normal' fallback='true' lang='blue 2'>  Blue 2</span>
+<span color='#64B5F6' weight='normal' fallback='true' lang='blue 3'>  Blue 3</span>
+<span color='#42A5F5' weight='normal' fallback='true' lang='blue 4'>  Blue 4</span>
+<span color='#2196F3' weight='normal' fallback='true' lang='blue 5'>  Blue 5</span>
+<span color='#1E88E5' weight='normal' fallback='true' lang='blue 6'>  Blue 6</span>
+<span color='#1976D2' weight='normal' fallback='true' lang='blue 7'>  Blue 7</span>
+<span color='#1565C0' weight='normal' fallback='true' lang='blue 8'>  Blue 8</span>
+<span color='#0D47A1' weight='normal' fallback='true' lang='blue 9'>  Blue 9</span>
+<span color='#82B1FF' weight='normal' fallback='true' lang='blue 10'>  Blue 10</span>
+<span color='#448AFF' weight='normal' fallback='true' lang='blue 11'>  Blue 11</span>
+<span color='#2979FF' weight='normal' fallback='true' lang='blue 12'>  Blue 12</span>
+<span color='#2962FF' weight='normal' fallback='true' lang='blue 13'>  Blue 13</span>
+<span color='#E1F5FE' weight='normal' fallback='true' lang='light blue 0'>  Light Blue 0</span>
+<span color='#B3E5FC' weight='normal' fallback='true' lang='light blue 1'>  Light Blue 1</span>
+<span color='#81D4FA' weight='normal' fallback='true' lang='light blue 2'>  Light Blue 2</span>
+<span color='#4FC3F7' weight='normal' fallback='true' lang='light blue 3'>  Light Blue 3</span>
+<span color='#29B6F6' weight='normal' fallback='true' lang='light blue 4'>  Light Blue 4</span>
+<span color='#03A9F4' weight='normal' fallback='true' lang='light blue 5'>  Light Blue 5</span>
+<span color='#039BE5' weight='normal' fallback='true' lang='light blue 6'>  Light Blue 6</span>
+<span color='#0288D1' weight='normal' fallback='true' lang='light blue 7'>  Light Blue 7</span>
+<span color='#0277BD' weight='normal' fallback='true' lang='light blue 8'>  Light Blue 8</span>
+<span color='#01579B' weight='normal' fallback='true' lang='light blue 9'>  Light Blue 9</span>
+<span color='#80D8FF' weight='normal' fallback='true' lang='light blue 10'>  Light Blue 10</span>
+<span color='#40C4FF' weight='normal' fallback='true' lang='light blue 11'>  Light Blue 11</span>
+<span color='#00B0FF' weight='normal' fallback='true' lang='light blue 12'>  Light Blue 12</span>
+<span color='#0091EA' weight='normal' fallback='true' lang='light blue 13'>  Light Blue 13</span>
+<span color='#E0F7FA' weight='normal' fallback='true' lang='cyan 0'>  Cyan 0</span>
+<span color='#B2EBF2' weight='normal' fallback='true' lang='cyan 1'>  Cyan 1</span>
+<span color='#80DEEA' weight='normal' fallback='true' lang='cyan 2'>  Cyan 2</span>
+<span color='#4DD0E1' weight='normal' fallback='true' lang='cyan 3'>  Cyan 3</span>
+<span color='#26C6DA' weight='normal' fallback='true' lang='cyan 4'>  Cyan 4</span>
+<span color='#00BCD4' weight='normal' fallback='true' lang='cyan 5'>  Cyan 5</span>
+<span color='#00ACC1' weight='normal' fallback='true' lang='cyan 6'>  Cyan 6</span>
+<span color='#0097A7' weight='normal' fallback='true' lang='cyan 7'>  Cyan 7</span>
+<span color='#00838F' weight='normal' fallback='true' lang='cyan 8'>  Cyan 8</span>
+<span color='#006064' weight='normal' fallback='true' lang='cyan 9'>  Cyan 9</span>
+<span color='#84FFFF' weight='normal' fallback='true' lang='cyan 10'>  Cyan 10</span>
+<span color='#18FFFF' weight='normal' fallback='true' lang='cyan 11'>  Cyan 11</span>
+<span color='#00E5FF' weight='normal' fallback='true' lang='cyan 12'>  Cyan 12</span>
+<span color='#00B8D4' weight='normal' fallback='true' lang='cyan 13'>  Cyan 13</span>
+<span color='#E0F2F1' weight='normal' fallback='true' lang='teal 0'>  Teal 0</span>
+<span color='#B2DFDB' weight='normal' fallback='true' lang='teal 1'>  Teal 1</span>
+<span color='#80CBC4' weight='normal' fallback='true' lang='teal 2'>  Teal 2</span>
+<span color='#4DB6AC' weight='normal' fallback='true' lang='teal 3'>  Teal 3</span>
+<span color='#26A69A' weight='normal' fallback='true' lang='teal 4'>  Teal 4</span>
+<span color='#009688' weight='normal' fallback='true' lang='teal 5'>  Teal 5</span>
+<span color='#00897B' weight='normal' fallback='true' lang='teal 6'>  Teal 6</span>
+<span color='#00796B' weight='normal' fallback='true' lang='teal 7'>  Teal 7</span>
+<span color='#00695C' weight='normal' fallback='true' lang='teal 8'>  Teal 8</span>
+<span color='#004D40' weight='normal' fallback='true' lang='teal 9'>  Teal 9</span>
+<span color='#A7FFEB' weight='normal' fallback='true' lang='teal 10'>  Teal 10</span>
+<span color='#64FFDA' weight='normal' fallback='true' lang='teal 11'>  Teal 11</span>
+<span color='#1DE9B6' weight='normal' fallback='true' lang='teal 12'>  Teal 12</span>
+<span color='#00BFA5' weight='normal' fallback='true' lang='teal 13'>  Teal 13</span>
+<span color='#E8F5E9' weight='normal' fallback='true' lang='green 0'>  Green 0</span>
+<span color='#C8E6C9' weight='normal' fallback='true' lang='green 1'>  Green 1</span>
+<span color='#A5D6A7' weight='normal' fallback='true' lang='green 2'>  Green 2</span>
+<span color='#81C784' weight='normal' fallback='true' lang='green 3'>  Green 3</span>
+<span color='#66BB6A' weight='normal' fallback='true' lang='green 4'>  Green 4</span>
+<span color='#4CAF50' weight='normal' fallback='true' lang='green 5'>  Green 5</span>
+<span color='#43A047' weight='normal' fallback='true' lang='green 6'>  Green 6</span>
+<span color='#388E3C' weight='normal' fallback='true' lang='green 7'>  Green 7</span>
+<span color='#2E7D32' weight='normal' fallback='true' lang='green 8'>  Green 8</span>
+<span color='#1B5E20' weight='normal' fallback='true' lang='green 9'>  Green 9</span>
+<span color='#B9F6CA' weight='normal' fallback='true' lang='green 10'>  Green 10</span>
+<span color='#69F0AE' weight='normal' fallback='true' lang='green 11'>  Green 11</span>
+<span color='#00E676' weight='normal' fallback='true' lang='green 12'>  Green 12</span>
+<span color='#00C853' weight='normal' fallback='true' lang='green 13'>  Green 13</span>
+<span color='#F9FBE7' weight='normal' fallback='true' lang='lime 0'>  Lime 0</span>
+<span color='#F0F4C3' weight='normal' fallback='true' lang='lime 1'>  Lime 1</span>
+<span color='#E6EE9C' weight='normal' fallback='true' lang='lime 2'>  Lime 2</span>
+<span color='#DCE775' weight='normal' fallback='true' lang='lime 3'>  Lime 3</span>
+<span color='#D4E157' weight='normal' fallback='true' lang='lime 4'>  Lime 4</span>
+<span color='#CDDC39' weight='normal' fallback='true' lang='lime 5'>  Lime 5</span>
+<span color='#C0CA33' weight='normal' fallback='true' lang='lime 6'>  Lime 6</span>
+<span color='#AFB42B' weight='normal' fallback='true' lang='lime 7'>  Lime 7</span>
+<span color='#9E9D24' weight='normal' fallback='true' lang='lime 8'>  Lime 8</span>
+<span color='#827717' weight='normal' fallback='true' lang='lime 9'>  Lime 9</span>
+<span color='#F4FF81' weight='normal' fallback='true' lang='lime 10'>  Lime 10</span>
+<span color='#EEFF41' weight='normal' fallback='true' lang='lime 11'>  Lime 11</span>
+<span color='#C6FF00' weight='normal' fallback='true' lang='lime 12'>  Lime 12</span>
+<span color='#AEEA00' weight='normal' fallback='true' lang='lime 13'>  Lime 13</span>
+<span color='#F1F8E9' weight='normal' fallback='true' lang='light green 0'>  Light Green 0</span>
+<span color='#DCEDC8' weight='normal' fallback='true' lang='light green 1'>  Light Green 1</span>
+<span color='#C5E1A5' weight='normal' fallback='true' lang='light green 2'>  Light Green 2</span>
+<span color='#AED581' weight='normal' fallback='true' lang='light green 3'>  Light Green 3</span>
+<span color='#9CCC65' weight='normal' fallback='true' lang='light green 4'>  Light Green 4</span>
+<span color='#8BC34A' weight='normal' fallback='true' lang='light green 5'>  Light Green 5</span>
+<span color='#7CB342' weight='normal' fallback='true' lang='light green 6'>  Light Green 6</span>
+<span color='#689F38' weight='normal' fallback='true' lang='light green 7'>  Light Green 7</span>
+<span color='#558B2F' weight='normal' fallback='true' lang='light green 8'>  Light Green 8</span>
+<span color='#33691E' weight='normal' fallback='true' lang='light green 9'>  Light Green 9</span>
+<span color='#CCFF90' weight='normal' fallback='true' lang='light green 10'>  Light Green 10</span>
+<span color='#B2FF59' weight='normal' fallback='true' lang='light green 11'>  Light Green 11</span>
+<span color='#76FF03' weight='normal' fallback='true' lang='light green 12'>  Light Green 12</span>
+<span color='#64DD17' weight='normal' fallback='true' lang='light green 13'>  Light Green 13</span>
+<span color='#FFFDE7' weight='normal' fallback='true' lang='yellow 0'>  Yellow 0</span>
+<span color='#FFF9C4' weight='normal' fallback='true' lang='yellow 1'>  Yellow 1</span>
+<span color='#FFF59D' weight='normal' fallback='true' lang='yellow 2'>  Yellow 2</span>
+<span color='#FFF176' weight='normal' fallback='true' lang='yellow 3'>  Yellow 3</span>
+<span color='#FFEE58' weight='normal' fallback='true' lang='yellow 4'>  Yellow 4</span>
+<span color='#FFEB3B' weight='normal' fallback='true' lang='yellow 5'>  Yellow 5</span>
+<span color='#FDD835' weight='normal' fallback='true' lang='yellow 6'>  Yellow 6</span>
+<span color='#FBC02D' weight='normal' fallback='true' lang='yellow 7'>  Yellow 7</span>
+<span color='#F9A825' weight='normal' fallback='true' lang='yellow 8'>  Yellow 8</span>
+<span color='#F57F17' weight='normal' fallback='true' lang='yellow 9'>  Yellow 9</span>
+<span color='#FFFF8D' weight='normal' fallback='true' lang='yellow 10'>  Yellow 10</span>
+<span color='#FFFF00' weight='normal' fallback='true' lang='yellow 11'>  Yellow 11</span>
+<span color='#FFEA00' weight='normal' fallback='true' lang='yellow 12'>  Yellow 12</span>
+<span color='#FFD600' weight='normal' fallback='true' lang='yellow 13'>  Yellow 13</span>
+<span color='#FFF8E1' weight='normal' fallback='true' lang='amber 0'>  Amber 0</span>
+<span color='#FFECB3' weight='normal' fallback='true' lang='amber 1'>  Amber 1</span>
+<span color='#FFE082' weight='normal' fallback='true' lang='amber 2'>  Amber 2</span>
+<span color='#FFD54F' weight='normal' fallback='true' lang='amber 3'>  Amber 3</span>
+<span color='#FFCA28' weight='normal' fallback='true' lang='amber 4'>  Amber 4</span>
+<span color='#FFC107' weight='normal' fallback='true' lang='amber 5'>  Amber 5</span>
+<span color='#FFB300' weight='normal' fallback='true' lang='amber 6'>  Amber 6</span>
+<span color='#FFA000' weight='normal' fallback='true' lang='amber 7'>  Amber 7</span>
+<span color='#FF8F00' weight='normal' fallback='true' lang='amber 8'>  Amber 8</span>
+<span color='#FF6F00' weight='normal' fallback='true' lang='amber 9'>  Amber 9</span>
+<span color='#FFE57F' weight='normal' fallback='true' lang='amber 10'>  Amber 10</span>
+<span color='#FFD740' weight='normal' fallback='true' lang='amber 11'>  Amber 11</span>
+<span color='#FFC400' weight='normal' fallback='true' lang='amber 12'>  Amber 12</span>
+<span color='#FFAB00' weight='normal' fallback='true' lang='amber 13'>  Amber 13</span>
+<span color='#FFF3E0' weight='normal' fallback='true' lang='orange 0'>  Orange 0</span>
+<span color='#FFE0B2' weight='normal' fallback='true' lang='orange 1'>  Orange 1</span>
+<span color='#FFCC80' weight='normal' fallback='true' lang='orange 2'>  Orange 2</span>
+<span color='#FFB74D' weight='normal' fallback='true' lang='orange 3'>  Orange 3</span>
+<span color='#FFA726' weight='normal' fallback='true' lang='orange 4'>  Orange 4</span>
+<span color='#FF9800' weight='normal' fallback='true' lang='orange 5'>  Orange 5</span>
+<span color='#FB8C00' weight='normal' fallback='true' lang='orange 6'>  Orange 6</span>
+<span color='#F57C00' weight='normal' fallback='true' lang='orange 7'>  Orange 7</span>
+<span color='#EF6C00' weight='normal' fallback='true' lang='orange 8'>  Orange 8</span>
+<span color='#E65100' weight='normal' fallback='true' lang='orange 9'>  Orange 9</span>
+<span color='#FFD180' weight='normal' fallback='true' lang='orange 10'>  Orange 10</span>
+<span color='#FFAB40' weight='normal' fallback='true' lang='orange 11'>  Orange 11</span>
+<span color='#FF9100' weight='normal' fallback='true' lang='orange 12'>  Orange 12</span>
+<span color='#FF6D00' weight='normal' fallback='true' lang='orange 13'>  Orange 13</span>
+<span color='#FBE9E7' weight='normal' fallback='true' lang='deep orange 0'>  Deep Orange 0</span>
+<span color='#FFCCBC' weight='normal' fallback='true' lang='deep orange 1'>  Deep Orange 1</span>
+<span color='#FFAB91' weight='normal' fallback='true' lang='deep orange 2'>  Deep Orange 2</span>
+<span color='#FF8A65' weight='normal' fallback='true' lang='deep orange 3'>  Deep Orange 3</span>
+<span color='#FF7043' weight='normal' fallback='true' lang='deep orange 4'>  Deep Orange 4</span>
+<span color='#FF5722' weight='normal' fallback='true' lang='deep orange 5'>  Deep Orange 5</span>
+<span color='#F4511E' weight='normal' fallback='true' lang='deep orange 6'>  Deep Orange 6</span>
+<span color='#E64A19' weight='normal' fallback='true' lang='deep orange 7'>  Deep Orange 7</span>
+<span color='#D84315' weight='normal' fallback='true' lang='deep orange 8'>  Deep Orange 8</span>
+<span color='#BF360C' weight='normal' fallback='true' lang='deep orange 9'>  Deep Orange 9</span>
+<span color='#FF9E80' weight='normal' fallback='true' lang='deep orange 10'>  Deep Orange 10</span>
+<span color='#FF6E40' weight='normal' fallback='true' lang='deep orange 11'>  Deep Orange 11</span>
+<span color='#FF3D00' weight='normal' fallback='true' lang='deep orange 12'>  Deep Orange 12</span>
+<span color='#DD2C00' weight='normal' fallback='true' lang='deep orange 13'>  Deep Orange 13</span>
+<span color='#EFEBE9' weight='normal' fallback='true' lang='brown 0'>  Brown 0</span>
+<span color='#D7CCC8' weight='normal' fallback='true' lang='brown 1'>  Brown 1</span>
+<span color='#BCAAA4' weight='normal' fallback='true' lang='brown 2'>  Brown 2</span>
+<span color='#A1887F' weight='normal' fallback='true' lang='brown 3'>  Brown 3</span>
+<span color='#8D6E63' weight='normal' fallback='true' lang='brown 4'>  Brown 4</span>
+<span color='#795548' weight='normal' fallback='true' lang='brown 5'>  Brown 5</span>
+<span color='#6D4C41' weight='normal' fallback='true' lang='brown 6'>  Brown 6</span>
+<span color='#5D4037' weight='normal' fallback='true' lang='brown 7'>  Brown 7</span>
+<span color='#4E342E' weight='normal' fallback='true' lang='brown 8'>  Brown 8</span>
+<span color='#3E2723' weight='normal' fallback='true' lang='brown 9'>  Brown 9</span>
+<span color='#FAFAFA' weight='normal' fallback='true' lang='grey 0'>  Grey 0</span>
+<span color='#F5F5F5' weight='normal' fallback='true' lang='grey 1'>  Grey 1</span>
+<span color='#EEEEEE' weight='normal' fallback='true' lang='grey 2'>  Grey 2</span>
+<span color='#E0E0E0' weight='normal' fallback='true' lang='grey 3'>  Grey 3</span>
+<span color='#BDBDBD' weight='normal' fallback='true' lang='grey 4'>  Grey 4</span>
+<span color='#9E9E9E' weight='normal' fallback='true' lang='grey 5'>  Grey 5</span>
+<span color='#757575' weight='normal' fallback='true' lang='grey 6'>  Grey 6</span>
+<span color='#616161' weight='normal' fallback='true' lang='grey 7'>  Grey 7</span>
+<span color='#424242' weight='normal' fallback='true' lang='grey 8'>  Grey 8</span>
+<span color='#212121' weight='normal' fallback='true' lang='grey 9'>  Grey 9</span>
+<span color='#ECEFF1' weight='normal' fallback='true' lang='blue grey 0'>  Blue Grey 0</span>
+<span color='#CFD8DC' weight='normal' fallback='true' lang='blue grey 1'>  Blue Grey 1</span>
+<span color='#B0BEC5' weight='normal' fallback='true' lang='blue grey 2'>  Blue Grey 2</span>
+<span color='#90A4AE' weight='normal' fallback='true' lang='blue grey 3'>  Blue Grey 3</span>
+<span color='#78909C' weight='normal' fallback='true' lang='blue grey 4'>  Blue Grey 4</span>
+<span color='#607D8B' weight='normal' fallback='true' lang='blue grey 5'>  Blue Grey 5</span>
+<span color='#546E7A' weight='normal' fallback='true' lang='blue grey 6'>  Blue Grey 6</span>
+<span color='#455A64' weight='normal' fallback='true' lang='blue grey 7'>  Blue Grey 7</span>
+<span color='#37474F' weight='normal' fallback='true' lang='blue grey 8'>  Blue Grey 8</span>
+<span color='#263238' weight='normal' fallback='true' lang='blue grey 9'>  Blue Grey 9</span>
+<span color='#FFFFFF' weight='normal' fallback='true' lang='white'>  White</span>
+<span color='#000000' weight='normal' fallback='true' lang='black'>  Black</span>

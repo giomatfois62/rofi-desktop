@@ -1,0 +1,848 @@
+[
+    {
+        "podcast_id": 8132,
+        "title": "ON AIR",
+        "description": "In connection with Ohio Hockey Digest, current Ohio high school hockey coaches Tim Sullivan and Jason Levanduski bring their ideas and opinions to the masses of the great state of Ohio.  The Ohio Hockey Digest On Air Podcast will focus on the greatest game going and all levels of hockey being played across the state, but also touching on pop culture, interviews, and other entertainment. Growing the game of hockey the best they can in the state of Ohio.  If you don\u2019t know, they will make you know! Produced by Daniel Humphrey.  New episodes released every Friday.",
+        "language": "en",
+        "author_name": "Ohio Hockey Digest",
+        "slug": "ohd-onair",
+        "cover": "20200424_131805_1c664abb9908bf75303fb586b6d3e64e.jpeg"
+    },
+    {
+        "podcast_id": 9896,
+        "title": "Drink at the Rink Podcast",
+        "description": "Let's grab a drink and hear some stories from the rink!",
+        "language": "en",
+        "author_name": "Drink at the Rink Podcast",
+        "slug": "datrpod",
+        "cover": "20200622_141149_e91fc558e2999e9368faaa87ef114140.jpeg"
+    },
+    {
+        "podcast_id": 10857,
+        "title": "One Play Podcast",
+        "description": "The One Play Podcast is the podcast that tells the stories of people who work all over the sports industry.",
+        "language": "en",
+        "author_name": "David Hevenor",
+        "slug": "oneplaypodcast",
+        "cover": "20200726_042532_56e53eace34e248179ad85cc7a41ac5b.jpg"
+    },
+    {
+        "podcast_id": 11150,
+        "title": "Three Cheers for Goaltender Interference",
+        "description": "a very late 20 something and washed up 30 year old discussing hockey, 2000s tv and pop-punk",
+        "language": "en",
+        "author_name": "Cat Silverman & Michael Radigan",
+        "slug": "threecheersforgoal",
+        "cover": "20200805_222549_ce8758f316c02ec1a17aa1be34671f33.jpg"
+    },
+    {
+        "podcast_id": 11233,
+        "title": "The Frontline",
+        "description": "<p>The Frontline is the official podcast of the Powassan Voodoos &amp; North Bay Battalion. Hosted by former Country 600 CKAT rinkside reporter and YourTV Host, Kortney Kenney, and Troops &amp; Voodoos super fan Ben Sargent! The Frontline is looking to track down the stories of North Bay's athletes of winter!</p><p>Part of the Echo North Bay Podcast Network</p>",
+        "language": "en",
+        "author_name": "The Frontline",
+        "slug": "fiveforchirping",
+        "cover": "20201122_180138_66c0be26c5e0b302673356cdedbd760b.jpg"
+    },
+    {
+        "podcast_id": 12438,
+        "title": "The Hockey House",
+        "description": "<p>A college hockey podcast highlighting the best of non-NCAA hockey in the United States. Showcasing the best of the ACHA and AAU College Hockey. New episodes every Friday.</p>",
+        "language": "en",
+        "author_name": "Mackenzie Murphy",
+        "slug": "thehockeyhouse",
+        "cover": "20220114_060142_2ec9e9030088df6cf372582b01e4fce3.jpg"
+    },
+    {
+        "podcast_id": 12696,
+        "title": "Overtime buzz",
+        "description": "Overtime Buzz is about all the latest news that is happening around the NFL and NHL. Hosted by Zach Miracle and Eph Bacquet, they both discuss weekly topics such as injuries, highlights, trade rumors, free agency, game picks, and much more. Tune in every week for new episodes. ",
+        "language": "en",
+        "author_name": "Ephraim Bacquet",
+        "slug": "redzone-powerplay-podcast",
+        "cover": "20210131_201735_8d2cbfdda0f602f5a6b2d7f9bc35913e.jpg"
+    },
+    {
+        "podcast_id": 17220,
+        "title": "ICEREAL:  The Official Podcast of the IEHL",
+        "description": "Hockey in the Holy Land?  Avishai Sol and Max Abrahams say \"YES\".  Talking about all the goings on when it comes to hockey on and off the Israeli ice, IEHL and beyond.",
+        "language": "en",
+        "author_name": "Avishai Sol",
+        "slug": "thesmallballpodcast",
+        "cover": "20220520_030548_cb2a642eb71b58f42f031b603f54e80f.jpg"
+    },
+    {
+        "podcast_id": 25112,
+        "title": "The Deke Snipe Celly Podcast ",
+        "description": "Hosted by Kylie Murrin, Chad Newman, Paddy Phillips & Ryan Gates. The DSC Podcast discusses the Toronto Maple Leafs and minor league affiliates as well as the NHL in general.",
+        "language": "en",
+        "author_name": "Ryan Gates, Kylie Murrin, Chad Newman, & Paddy Phillips",
+        "slug": "dekesnipecelly",
+        "cover": "20210116_200308_04bbf3c6493fe8bb873550978ffa19b2.jpg"
+    },
+    {
+        "podcast_id": 25901,
+        "title": "The Draft Board ",
+        "description": "The Draft Board is a new podcast launched and hosted by two Calgarians from different backgrounds who are united by their passion for sport. Listen in as freelance sports journalist David Song and lifelong hockey player Tyson Warkentin discuss relevant topics in the world of football, hockey and basketball.\n\nHere on The Draft Board, our goal is to provide listeners with in-depth content that goes beyond (and is not afraid to question) the narratives commonly found in mainstream sports media outlets. If you'd like to join a conversation that unpacks your favourite athletic topics and events in insightful new ways, then take your seat and join us for the ride!",
+        "language": "en",
+        "author_name": "David Song",
+        "slug": "thedraftboardpod",
+        "cover": "20210311_165736_fd4b9eb1ba597910409b568cdf98b871.jpg"
+    },
+    {
+        "podcast_id": 26257,
+        "title": "Never Odd or Even Presents: Friday Funhouse",
+        "description": "The Friday Funhouse podcast is an extension of the Friday Funhouse Fantasy Hockey series on my blog at itsnevereven.blogspot.com.",
+        "language": "en",
+        "author_name": "Anthony Porter",
+        "slug": "itsnevereven",
+        "cover": "20210121_014458_4729abb1d0a4f1e1aadbdcb852bc0274.jpg"
+    },
+    {
+        "podcast_id": 28908,
+        "title": "Ranger Things Have Happened ",
+        "description": "A Rangers podcast for fans, by fans. Join us as we rant, rave, and debate the ins and outs of the NY Rangers!",
+        "language": "en",
+        "author_name": "Billy Trotter",
+        "slug": "rthhpod",
+        "cover": "20210207_140347_a0b66cb378a80f55f42530a7b6097f2d.jpg"
+    },
+    {
+        "podcast_id": 29819,
+        "title": "Standing Room Only Podcast",
+        "description": "Based out of Uxbridge, Ontario. Your hosts Jay Simmonds & Matt Winnitoy will discuss relevant topics in the world of hockey, and feature some exciting guests along the way.",
+        "language": "en",
+        "author_name": "Jay Simmonds & Matt Winnitoy",
+        "slug": "standingroomonly",
+        "cover": "20210203_190641_5ff15eac2afc6fc4313184567b831548.jpg"
+    },
+    {
+        "podcast_id": 29867,
+        "title": "Ici c'est hockey",
+        "description": "Ici c'est hockey est un podcast anim\u00e9 par Mathieu Beaulne. ICH est diffus\u00e9 en direct sur Instagram et disponible en rediffusion sur Youtube, Facebook et Spotify.",
+        "language": "fr",
+        "author_name": "Mathieu Beaulne",
+        "slug": "icicesthockey",
+        "cover": "20210203_222501_7a080aea0ef3b37a4f1a36d53afc5b34.jpg"
+    },
+    {
+        "podcast_id": 30140,
+        "title": "Not Your Average Boston Sports Podcast",
+        "description": "Weekly podcast hosted and produced by Garrett Haydon. Analysis, news and weekly interviews with guests talking about the local Boston sports teams and much more.\n",
+        "language": "en",
+        "author_name": "Garrett Haydon",
+        "slug": "notyouraverageboston",
+        "cover": "20210205_014234_b2a294fce4fd93aed1c65d771c9fb199.jpg"
+    },
+    {
+        "podcast_id": 33541,
+        "title": "The Chirpin Yotes Podcast",
+        "description": "<p>A Coyotes centric podcast made by fans for fans! We discuss all things Coyotes hockey, ASU hockey and the NHL. A proud part of the Inside the Rink Network. New Episodes Weekly!</p>",
+        "language": "en",
+        "author_name": "The Chirpin Yotes",
+        "slug": "chirpinyotes",
+        "cover": "20210218_230607_d47d8080f8617f8a9f0a39fec4458f71.jpg"
+    },
+    {
+        "podcast_id": 35673,
+        "title": "Off The Record Sports ",
+        "description": "From the hardwood to the gridiron, we're breaking it all down and more! This is a weekly show by sports fans, for sports fans hosted by Kirsten Krull and Alexis Downie, and produced by Paige Jaeger. You can also catch our show on YouTube.\n\n.",
+        "language": "en",
+        "author_name": "Kirsten Krull and Alexis Downie",
+        "slug": "offtherecordsports",
+        "cover": "20210224_170813_bafa65076b396f356fc76b9218a05ae6.jpg"
+    },
+    {
+        "podcast_id": 35939,
+        "title": "Behind the Play",
+        "description": "<p>Behind the Play: Examining the sports world from different angles, through interviews, analysis and exciting sports discussions. Hosted by Alex Adams</p>",
+        "language": "en",
+        "author_name": "Alex Adams",
+        "slug": "passionproject",
+        "cover": "20220907_090946_06ad9a0e09e1910e566eefffa28d2e28.jpg"
+    },
+    {
+        "podcast_id": 42513,
+        "title": "Buncha Beauties",
+        "description": "Buncha Beauties is a weekly podcast discussing news around the hockey world and the experiences of women in sports. No topic is off-limits so join us as we dig deep into the hockey world and beyond! \n\nCheck us out at @beautiespod on Twitter for more!",
+        "language": "en",
+        "author_name": "Buncha Beauties Pod",
+        "slug": "buncha-beauties",
+        "cover": "20210908_141508_707b34e57c2ed02566418da7c437ec68.jpg"
+    },
+    {
+        "podcast_id": 51996,
+        "title": "House League Heroes",
+        "description": "Just two guys who think they know something about Hockey. They are the House League Heroes! ",
+        "language": "en",
+        "author_name": "Riley B & Tanner C",
+        "slug": "houseleagueheros",
+        "cover": "20221018_051033_7c914c5d18a2223a770318f598c34f9f.jpg"
+    },
+    {
+        "podcast_id": 58741,
+        "title": "Dump and Chase Podcast",
+        "description": "Want to waste a whole hour of your day listening to two guys talk about hockey?  Here you go.  You're welcome.  Hosted by Noah Elliott and Benjamin Werdal",
+        "language": "en",
+        "author_name": "Noah Elliott, Benjamin Werdal",
+        "slug": "dumpandchase",
+        "cover": "20210524_172144_609f033628b02a7dd352f77080de394f.jpg"
+    },
+    {
+        "podcast_id": 68360,
+        "title": "Hockey Press Pass",
+        "description": "Hosted by longtime NHL and NWHL PR executive and New York Times Hockey writer Chris Botta, the Hockey Press Pass Podcast shines a light on the hockey media like never before.\n\nEach week, Chris speaks with leading broadcasters, writers and executives around the NHL and all areas of hockey.  We will learn about how they got here, their process, their triumphs and challenges. And every so often at the end of the show, Chris shares some of his experiences as Communications VP of the New York Islanders, and from his days and nights on the hockey beat. \n\nWhether you\u2019re a dedicated and knowledgeable fan, interested in a career in sports or even just in what goes on behind the curtain, Hockey Press Pass is for you. Presented by InStat Hockey. ",
+        "language": "en",
+        "author_name": "Chris Botta",
+        "slug": "hockeypresspass",
+        "cover": "20210817_164030_2230bd68dc11108f08306842cc3483b0.jpg"
+    },
+    {
+        "podcast_id": 71119,
+        "title": "The Scott Hotaling Pod",
+        "description": "Scott Hotaling shares his thoughts on the biggest topics in basketball and the sports world.",
+        "language": "en",
+        "author_name": "Scott Hotaling",
+        "slug": "thescotthotalingpodcast",
+        "cover": "20210731_213919_0bb8dcc15717d6566752592fe26a608d.jpg"
+    },
+    {
+        "podcast_id": 75996,
+        "title": "The Buckpuster Podcast",
+        "description": "Where we talk about ANYTHING and EVERYTHING Hockey",
+        "language": "en",
+        "author_name": "BuckPuster Studios",
+        "slug": "buckpusters",
+        "cover": "20230109_040138_5560d2ce6ca408d5b0ad891883f1cf86.jpg"
+    },
+    {
+        "podcast_id": 78259,
+        "title": "Belmont Bunch",
+        "description": "New York Islanders hockey game recaps, news, and predictions. Tom does game recaps after every Isles game and weekly discussions with James and occasional guests from Isles Twitter.\nYouTube Channel: https://www.youtube.com/BelmontBunch",
+        "language": "en",
+        "author_name": "Thomas Carrozza and James St. John",
+        "slug": "belmontbunch",
+        "cover": "20210923_032953_f78016aa9b1c1d9e02e93e78971fb65c.jpg"
+    },
+    {
+        "podcast_id": 78332,
+        "title": "The Street Hockey Life",
+        "description": "Discussion of all things street hockey",
+        "language": "en",
+        "author_name": "Carl Ellis & Dan Ellis",
+        "slug": "thestreethockeylife",
+        "cover": "20210909_152404_11ad104b01cafe4c17b0d1a5bda814da.jpg"
+    },
+    {
+        "podcast_id": 82330,
+        "title": "Tougie's Take Podcast",
+        "description": "<p>A hockey podcast that is barely about hockey! A \"Hockey Fraudcast\" if you will! YouTuber, Twitch Streamer and hockey enthusiast Tougie24 is joined by fellow content creators EndoMills and CynFTWProductions to talk about anything and everything in the world of hockey! Join us every Monday and Thursday as we break down the news of the week.</p>",
+        "language": "en",
+        "author_name": "Tougie24",
+        "slug": "tougiestakepodcast",
+        "cover": "20211009_222021_f2aa3b3fe75bb195102da2b33fdabd14.jpg"
+    },
+    {
+        "podcast_id": 84349,
+        "title": "A View From Section C",
+        "description": "A View From Section C is a weekly podcast run by Lawrie Hill Junior and Senior discussing all things Dundee Stars related.",
+        "language": "en",
+        "author_name": "Lawrie Hill",
+        "slug": "avfsectionc",
+        "cover": "20211010_174051_53b9151bc419936f092c61a221da11d5.jpg"
+    },
+    {
+        "podcast_id": 87228,
+        "title": "The Future of Hippies",
+        "description": "Hippie(new): Physically, mentally and spiritually fit person. Be yourself, never a mold.\n\nHosted by Sahir Gill with guests that live congruent to a physical, mental and spiritual fitness-focused lifestyle.",
+        "language": "en",
+        "author_name": "Sahir Gill",
+        "slug": "coffeechewandchat",
+        "cover": "20221026_081042_7af775567ae8ff587d848e358a10a9ae.jpg"
+    },
+    {
+        "podcast_id": 96526,
+        "title": "DC Weekly Wrapped Podcast ",
+        "description": "Our Podcast talking about the INs and Outs of the NHL season. Weekly updates on all the news surrounding the hockey world. Posting every Saturday on Spotify and Youtube.",
+        "language": "en",
+        "author_name": "Carson Bellaire",
+        "slug": "dc-weekly-wrapped-podcast",
+        "cover": "20211219_091203_e43956fe7c07baff539cc267e8257dd9.jpg"
+    },
+    {
+        "podcast_id": 100069,
+        "title": "Hockey talk on the rock",
+        "description": "Two hockey fans chat about all things hockey. With a special focus on the hometown Vancouver Canucks. Coming to you live from Saltspring Island B.C. ",
+        "language": "en",
+        "author_name": "Hockey talk on the rock",
+        "slug": "hockeytalkontherock",
+        "cover": "20220207_060218_52fb061847b3263cb9db916bb1c34b96.jpg"
+    },
+    {
+        "podcast_id": 104741,
+        "title": "High Character - A UMass Hockey Podcast",
+        "description": "Welcome to High Character, a podcast all about UMass Hockey! On this podcast Cameron (@CameronGuzzo) and Evin (@Evin_Sully) will discuss everything about the 2021 National Champions, including game recaps, interviews, arena reviews, and much more. Stay tuned for all things #NewMass! (Not affiliated with UMass)",
+        "language": "en",
+        "author_name": "Cameron Guzzo",
+        "slug": "highcharacter",
+        "cover": "20221117_041110_042c09f342bde04e243fa6ddcdf51d57.jpg"
+    },
+    {
+        "podcast_id": 105164,
+        "title": "NSS Live!",
+        "description": "Frank D'Angelo and his cast of co-hosts including hockey legend Phil Esposito and Hockey mind Bill Watters... argue about anything known to mankind!",
+        "language": "en",
+        "author_name": "Frank D'Angelo",
+        "slug": "nextsportstar",
+        "cover": "20220131_040138_0515ab3695847ec1651c809ba17d0d45.jpg"
+    },
+    {
+        "podcast_id": 109991,
+        "title": "Les G\u00e9rants d'estrade du Vieux Georges",
+        "description": "<p>Podcast non-officiel des Saguen\u00e9ens de Chicoutimi, mettant en vedette deux partisans de longue date, Marc-Antoine Gagnon et Simon Gagn\u00e9.</p>",
+        "language": "fr",
+        "author_name": "Marc-Antoine Gagnon et Simon Gagn\u00e9",
+        "slug": "gevg",
+        "cover": "20230828_100844_99d98e60dfae6c20558e2c377ad9c05a.jpg"
+    },
+    {
+        "podcast_id": 113386,
+        "title": "Tipsy Twigs",
+        "description": "A hockey podcast with your average armchair refs, beer league, hockey lovers getting tipsy and having fun.",
+        "language": "en",
+        "author_name": "Nick Izzillo & Daniel Izzillo",
+        "slug": "tipsytwigs",
+        "cover": "20220306_070307_8b614abcce5d7bc2bff671e695443021.jpg"
+    },
+    {
+        "podcast_id": 115345,
+        "title": "The Katella Kast",
+        "description": "Hosted by Cy Miyake an OC native, this podcast dives into all things Angels Baseball & Ducks Hockey! From a true fan\u2019s perspective this is your one stop shop to listen to any news regarding the 2 Anaheim teams that share Katella Ave!",
+        "language": "en",
+        "author_name": "Cy Miyake",
+        "slug": "katellakast",
+        "cover": "20220317_030313_c26319b9a5a6cf8d8167cfddab350381.jpg"
+    },
+    {
+        "podcast_id": 122420,
+        "title": "HPC Podcast",
+        "description": "A podcast about nothing from four Saskatchewan boys. Tune in for some light hearted banter fueled by the most reasonably priced beer from the liquor board store. \n\nThe podcast features insight on senior sports in the province as well as a wide range of guests.",
+        "language": "en",
+        "author_name": "HPC Podcast",
+        "slug": "hpcpodcast",
+        "cover": "20230126_040149_6e734ad5e8e1dcb6df4bc15ca48d084c.jpg"
+    },
+    {
+        "podcast_id": 123646,
+        "title": "The North Notts Hockey Club Podcast ",
+        "description": "Pushing Back. The official podcast of Mansfield based Midlands Hockey League club, North Notts. News, views and features every episode. For club members past, present - and future! Find out about a club with over 60 years of history, and ambitions for development and success for many more!",
+        "language": "en",
+        "author_name": "North Notts pod",
+        "slug": "north-notts-hockey-pod",
+        "cover": "20220521_030545_dc3c37f24e3149af94a3e7465f1147fb.jpg"
+    },
+    {
+        "podcast_id": 124535,
+        "title": "The Couch Podcast Network",
+        "description": "<p>Ladies and gentlemen, welcome to the Couch Podcast Network. A safe place for you to come and listen to multiple shows on one feed that cover a wide range of sports and sports topics. If you miss those heated arguments that you have with your friends and family on the couch over sports, then you have come to the right place. With multiple different shows on one feed you are sure to find something you like. The couch show offers rotating hosts and guests who cover NBA, NFL, CFB, sports betting, and MLB analysis and segments, as well as coaching segments, where coaches from various college programs come on to break down X\u2019s and O\u2019s from their respective sports. For the UFC and MMA fans, there is the Uppercut podcast, where a trio of cousins (Mikey, Jeff and Max) interview professional UFC and MMA fighters, and preview and review every single UFC card, giving the picks and breaking down what happened and what they think will happen. For fantasy fiends, we have the Benchwarmers podcast, where Steven and Fantasy Football expert Ben discuss the most important moves and news you need to win your fantasy league. So, give us a chance, I think you will find something to like here, and as always have yourself a wonderful day! Link to all Socials, and Listening Options: https://linktr.ee/the.couch.podcast</p>",
+        "language": "en",
+        "author_name": "Max Lubelczyk, Jordan Dyer, Peyton Gravell, Michael Miller, Jeff Huston, Connor Butts, Alex Zwickau, Ryan Ledwith, and Steven Watson",
+        "slug": "lubcast",
+        "cover": "20230628_010628_1abc96a3c3668c471100794ce24d6a4b.jpg"
+    },
+    {
+        "podcast_id": 125397,
+        "title": "Crude Oil: An Uncensored Edmonton Oilers Podcast",
+        "description": "Join Sean and Greg for a weekly, uncensored podcast discussing everything that is the Edmonton Oilers",
+        "language": "en",
+        "author_name": "Sean & Greg",
+        "slug": "crudeoilpodcast",
+        "cover": "20220613_020640_70cc0481a2e05c13caa0c0b29c3b4126.jpg"
+    },
+    {
+        "podcast_id": 125627,
+        "title": "Coaching From the Couch",
+        "description": "A sports podcast where I, AJ talk about my take on certain sports topics, events, games, and more!",
+        "language": "en",
+        "author_name": "Andrew Forsyth",
+        "slug": "coachingfromthecouch",
+        "cover": "20220501_040522_4c8e7b42ed8d0dd016e31bd82cd2b85a.jpg"
+    },
+    {
+        "podcast_id": 125688,
+        "title": "J&R's PuckHouse",
+        "description": "Jack Farris & Rick Adams Bringing you the best hockey content completely uncensored and no filter . ",
+        "language": "en",
+        "author_name": "J&R's PuckHouse",
+        "slug": "jrspuckhouse",
+        "cover": "20220501_030533_54a41502e4bf0f7be609203feabcf282.jpg"
+    },
+    {
+        "podcast_id": 132681,
+        "title": "Fugazi Chattare - A New York Rangers Podcast",
+        "description": "A podcast covering New York Rangers news, team discussion, hockey, culture, and much more.",
+        "language": "en",
+        "author_name": "Fugazi Chattare - A New York Rangers Podcast",
+        "slug": "fugazichattare",
+        "cover": "20220607_040656_4ca22ab0e75ecd8c7d6f0116af2d2053.jpg"
+    },
+    {
+        "podcast_id": 133678,
+        "title": "#Packwatch",
+        "description": "Listen in on Co-hosts Jack Witter and Zack Jewel and their reactions to the world of sports.",
+        "language": "en",
+        "author_name": "Jack Witter and Zack Jewel",
+        "slug": "packwatchpodcast",
+        "cover": "20220611_050652_65316a4a86a6ac16041a695761c490cf.jpg"
+    },
+    {
+        "podcast_id": 135408,
+        "title": "Chippewa Hockey Download",
+        "description": "<p>A college hockey podcast discussing all things Central Michigan Hockey. Hosted by on-air broadcasters Devin Serra and Regan Cleves, along with personalities Joe Leazier, Parker Morrison of the CMU Club Hockey Network, this podcast dives into all things Men's D3 &amp; Women's club hockey teams, providing news and discussion about each of the squads. From game recaps, insight and analysis, guest interviews, and much more, the Chippewa Hockey Download is the place for everything Maroon and Gold.</p>",
+        "language": "en",
+        "author_name": "CCHN",
+        "slug": "chippewahockeydownload",
+        "cover": "20220623_020616_8861587256f02b2eec24d94096809187.jpg"
+    },
+    {
+        "podcast_id": 138336,
+        "title": "Asscasters Podcast ",
+        "description": "Andy, Schawe, Scrode, and Carlos tackle sports, betting, weekend mishaps, and life's vagaries. ",
+        "language": "en",
+        "author_name": "Asscasters",
+        "slug": "asscast",
+        "cover": "20220703_070708_7d9aa0b3cf3fb84877abf63e14ec0b87.jpg"
+    },
+    {
+        "podcast_id": 138578,
+        "title": "\"On the DL\" Podcast",
+        "description": "\"On the DL\" podcast hosted by founder of DL Sports, Sam Thornton. Thornton is a sports fanatic who talks about any and every kind of sport within episodes. Guest appearances, music takes, and more also play a role. Follow @dlsportscom on instagram for more content! ",
+        "language": "en",
+        "author_name": "Sam Thornton",
+        "slug": "dlsports",
+        "cover": "20220705_010713_eb024656fd998a7d16c3df137d3a9e75.jpg"
+    },
+    {
+        "podcast_id": 138737,
+        "title": "313 Hockey",
+        "description": "<p>What would happen if the worst people you ever met started a podcast? Jake Rivard and Mads Thee Stallion hope to answer this question. 313 Hockey is a Detroit Red Wings podcast first and foremost, but it's much more than that. It's home of the biggest egos in Hockeytown.</p>",
+        "language": "en",
+        "author_name": "Jake Rivard, Mads Thee Stallion",
+        "slug": "313hockey",
+        "cover": "20220706_120709_4357babc10374e4de6413950fffc0c2e.jpg"
+    },
+    {
+        "podcast_id": 139920,
+        "title": "The Mike Bartner Show",
+        "description": "<p>A 2-3 Time Weekly Live Show</p>",
+        "language": "en",
+        "author_name": "Michael Bartner",
+        "slug": "themikebartnershow",
+        "cover": "20230830_050845_0de074f0f6c7ff2cc708fa9b8206f7f4.jpg"
+    },
+    {
+        "podcast_id": 140047,
+        "title": "Bear Down",
+        "description": "Jared Martin and Sam Minton break down the Boston Bruins, the NHL and other sporting world happenings. And, maybe some other stuff if you catch us on a good day. Thanks for coming.",
+        "language": "en",
+        "author_name": "Jared Martin",
+        "slug": "thebeardownpodcast",
+        "cover": "20220712_090742_e24d52c05d837ef37813b87b4c81bd57.jpg"
+    },
+    {
+        "podcast_id": 146862,
+        "title": "Hey Corner Crew",
+        "description": "Two RIT fans talking everything tigers hockey",
+        "language": "en",
+        "author_name": "RIT Corner Crew",
+        "slug": "heycornercrew",
+        "cover": "20220816_040825_a9e0329c1ff2e0d71fbbfee5e73638bf.jpg"
+    },
+    {
+        "podcast_id": 147907,
+        "title": "One Timer Hockey",
+        "description": "Balado pour les amateurs d'hockey, de la LNH et du Canadien de Montr\u00e9al.\nAudio int\u00e9gral du show en direct de la chaine YouTube Frank Well et de la page Facebook One Timer Hockey.\nAnalyses, d\u00e9bats, lignes ouvertes sont aux rendez-vous.\n\n",
+        "language": "fr",
+        "author_name": "Frank Well",
+        "slug": "onetimerhockey",
+        "cover": "20220821_040842_e99d0961dbd41eb3e898932bcad4af31.jpg"
+    },
+    {
+        "podcast_id": 149928,
+        "title": "C String podcast",
+        "description": "A podcast with some variety. Consisting mostly of Classic Rock Talk and Pittsburgh Penguins prattle. With some historical deep dives sprinkled in.\nCover Art - Gracey :)",
+        "language": "en",
+        "author_name": "Jaks Visty",
+        "slug": "cstring",
+        "cover": "20221122_121159_c9c267cfbc830d2aa502b97bd68b802d.jpg"
+    },
+    {
+        "podcast_id": 153937,
+        "title": "Windmill Dynasty Hockey",
+        "description": "<p>A show that covers everything to do with the NHL draft, Dynasty Fantasy Hockey, and the world of hockey.</p>",
+        "language": "en",
+        "author_name": "Kevin Ostiguy",
+        "slug": "windmill-dynasty-hockey",
+        "cover": "20220916_040919_655e582a0748b656cc91726775ec8daf.jpg"
+    },
+    {
+        "podcast_id": 155082,
+        "title": "Busch League Beauties",
+        "description": "<p>a Hockey Podcast for hockey players by hockey players We will talk about beer league hockey all the way up to Professional Hockey</p><p><a href=\"http://heylink.me/BuschLeagueBeauties\">heylink.me/BuschLeagueBeauties</a></p>",
+        "language": "en",
+        "author_name": "Devin Roeder, and Jaydn Munnelly",
+        "slug": "buschleaguehockey",
+        "cover": "20220923_070907_84f3d467ecf904ccdd68f37d0253a955.jpg"
+    },
+    {
+        "podcast_id": 158778,
+        "title": "AK on the PK",
+        "description": "Welcome to the PodKast! Join Alexis (AK) as she talks about all things New York Rangers, Hockey, Women in Sports, and more!\n\nNew episodes every week.",
+        "language": "en",
+        "author_name": "AK",
+        "slug": "akonthepk",
+        "cover": "20221007_111027_a4bdd16de8e5d1cb8846417beb70e6a2.jpg"
+    },
+    {
+        "podcast_id": 161785,
+        "title": "The Hockey Toolkit",
+        "description": "<p>A bi-weekly show focused and centered around the amazing game of hockey at the youth to pro levels. Each episode the guys will talk shop and bring on special guests to discuss certain topics surrounding the game you love! Co-hosts: Andrew Trimble (Twitter @AndrewTrimble7) Trevor DiCarlo (Twitter @TDC_Hockey)</p>",
+        "language": "en",
+        "author_name": "Trevor DiCarlo & Andrew Trimble",
+        "slug": "thehockeytoolkit",
+        "cover": "20221020_121011_7b99aa30c0c809d4778faf2e15fbe34f.jpg"
+    },
+    {
+        "podcast_id": 163095,
+        "title": "Top Shelf: The KIJHL Podcast",
+        "description": "<p>Hosted by Mark Berry and Emanuel Sequeira, Top Shelf; The KIJHL Podcast features players, coaches and broadcasters from around Western Canada's biggest junior hockey league</p>",
+        "language": "en",
+        "author_name": "Mark Berry and Emanuel Sequeira",
+        "slug": "topshelf",
+        "cover": "20230727_080751_fdbed8af6566ff9a77ce9af1a31db576.jpg"
+    },
+    {
+        "podcast_id": 163937,
+        "title": "Bear With Me",
+        "description": "Joey Copponi and Rob Tocci talk everything Boston Bruins. Weekly breakdowns, previews, interviews, and much more",
+        "language": "en",
+        "author_name": "Joseph Copponi / Rob Tocci",
+        "slug": "bearwithmepod",
+        "cover": "20221029_011025_f065766c27efd29ea2dcb0f36109be7c.jpg"
+    },
+    {
+        "podcast_id": 164910,
+        "title": "TNP Hockey",
+        "description": "<p>T.N.P The Next Prospect We Train / Educate / Empower / and Network on how you can become The Next Prospect.</p>",
+        "language": "en",
+        "author_name": "TNP Hockey",
+        "slug": "tnphockey",
+        "cover": "20221214_111231_03ec8c446cc10ae88d48060f24d660fe.jpg"
+    },
+    {
+        "podcast_id": 167568,
+        "title": "The Neutral Zone ",
+        "description": "To catch up on your Ball Hockey News and Updates weekly!",
+        "language": "en",
+        "author_name": "The Neutral Zone",
+        "slug": "theneutralzone1",
+        "cover": "20221113_051112_49d2b5be5b7240d326a943f8d2d46861.jpg"
+    },
+    {
+        "podcast_id": 170405,
+        "title": "Hockey Prospect Radio",
+        "description": "Hockey Prospect Radio providing prospect analysis since 2005 in its 18th season on SiriusXM NHL Network Radio. Before they make the NHL, prospects are showcasing their talents in the many professional and junior leagues across North America and Europe. Wherever they're playing, we'll track them down in this two hour guide for young stars everywhere. You can find additional content on www.hockeyprospectradio.com and take a peek into the future with Hockey Prospect Radio - tomorrow's stars, today. ",
+        "language": "en",
+        "author_name": "Shane Malloy and Brad Allen",
+        "slug": "hockeyprospectradio",
+        "cover": "20221130_061116_e93b16cf8bc2b3bc63bf0c8c77706515.jpg"
+    },
+    {
+        "podcast_id": 173597,
+        "title": "Hockey on the Beach ",
+        "description": "<p>Sports. Hockey. Beach \ud83c\udfd6 \u0425\u043e\u043a\u043a\u0435\u0439 \u043d\u0430 \u043f\u043b\u044f\u0436\u0435</p><p>Focused on NHL, NCAA, AHL, ECHL and evaluation of hockey in Florida. To support diversity, we have episodes in English and Russian languages.</p>",
+        "language": "en",
+        "author_name": " Daria Mironova, NHL.Online",
+        "slug": "hockeyonthebeach",
+        "cover": "20230525_050556_99b9b1b3705b03179b4cc6811b65faf2.jpg"
+    },
+    {
+        "podcast_id": 175438,
+        "title": "Let\u2019s Talk WoHawkey",
+        "description": "<p>Join Beth as she talks all things women's hockey and the Chicago Blackhawks</p>",
+        "language": "en",
+        "author_name": "Five & Game Sports Network",
+        "slug": "lets-talk-wohawkey",
+        "cover": "20230223_060220_73746521ef12ce56ac5b27a241768393.jpg"
+    },
+    {
+        "podcast_id": 175506,
+        "title": "Mile High Pundit",
+        "description": "Denver based podcasting team. Covering all Denver sports. Episodes premier around 8am EST, on Saturday's with the occasional emergency podcast that will drop at the same time.",
+        "language": "en",
+        "author_name": "Five & Game Sports Network",
+        "slug": "mile-high-pundit",
+        "cover": "podcast_cover.jpg"
+    },
+    {
+        "podcast_id": 175662,
+        "title": "CHL TopX Show",
+        "description": "<p>Each week we check in with some of the biggest names across the Canadian Hockey League.</p>",
+        "language": "en",
+        "author_name": "Canadian Hockey League",
+        "slug": "chltopxshow",
+        "cover": "20221221_021247_93284cc9fa4a13ec42ff147af070298a.jpg"
+    },
+    {
+        "podcast_id": 178136,
+        "title": "Lets Get Nutz podcast",
+        "description": "feauture conversations with current/former hockey and golf personal",
+        "language": "en",
+        "author_name": "Ryan O'Donnell",
+        "slug": "episode-1-of-lets-get-nutz-copy",
+        "cover": "20230104_110109_9a852b70dea788284009a791a2e6dcca.jpg"
+    },
+    {
+        "podcast_id": 180745,
+        "title": "Jeff & Chris : Attaquants de puissance",
+        "description": "Avec franc-parler et humour, on d\u00e9cortique et commente l\u2019actualit\u00e9 sur le CH et dans la LNH.",
+        "language": "fr",
+        "author_name": "Christian Matte",
+        "slug": "jeffchrisattaquantspuissance",
+        "cover": "20230115_010133_c219c187fc510786d04cdd3d51bc0b8f.jpg"
+    },
+    {
+        "podcast_id": 181095,
+        "title": "Stilettos and Stouts",
+        "description": "Join Kristy, a credentialed Devils media member, and her co-host Ryan, a master NJ Craft brewer, for a weekly no-holds-barred inside look into all-things Devils hockey.\n\nhttps://podcasts.apple.com/us/podcast/stilettos-and-stouts/id1664634037\n\nMusicProvidedBy : Every Day Music\nvideo : https://youtu.be/aYoJJVNixxk\n\nProduced by: www.billaxt.com",
+        "language": "en",
+        "author_name": "Bill Axt",
+        "slug": "stilettosandstouts",
+        "cover": "20230116_080136_fc0c3c6d7b310e215c7a779309062920.jpg"
+    },
+    {
+        "podcast_id": 181599,
+        "title": "Ride The Pine Hockey",
+        "description": "The Official Podcast of the PAL Junior Islanders",
+        "language": "en",
+        "author_name": "Jack Ziskin and John John Lavecchia ",
+        "slug": "ridethepinehockey",
+        "cover": "20230118_030109_87cb3f5e418cdd01c20744e58f868442.jpg"
+    },
+    {
+        "podcast_id": 184581,
+        "title": "Outsider Sports Hockey Podcast",
+        "description": "Outsider Sports is excited to announce its hockey podcast. Hosted by Outsider Sports co-founder Ben Mandell, he's joined by Thomas Leone and Michael Diakunczak from the ZMT Sports Podcast. Each week, the team will break down news from around the NHL and give their takes, some hotter than others. ",
+        "language": "en",
+        "author_name": "Outsider Sports",
+        "slug": "outsidersports-hockey",
+        "cover": "20230129_050151_91ee87ec8ddc66c43d1e69f50ef0766d.jpg"
+    },
+    {
+        "podcast_id": 187434,
+        "title": "The Desert Shift Podcast",
+        "description": "Chase Beardsley and Tyler Kass talk everything hockey straight from Arizona.",
+        "language": "en",
+        "author_name": "Chase Beardsley & Tyler Kass",
+        "slug": "the-desert-shift-podcast",
+        "cover": "20230207_060240_13cd4c76b3429f5165678e3f6a258997.jpg"
+    },
+    {
+        "podcast_id": 187616,
+        "title": "Eh & B The PNW Sports Show",
+        "description": "From the Pacific Northwest of Whidbey Island, Washington, U.S.A and everywhere in-between! Join Sean and Brad as they give their take on what is happening in the world of sports, as they share a beer brewed locally in their areas. When you\u2019ve listened to the podcast, come visit us in our virtual sports bar, on our social media pages. Like us on facebook at www.facebook.com/guysbeersportspodcast Follow us on Instagram at www.instagram.com/guys.beer.sports and subscribe to our YouTube Channel at guys.beer.sports Watch for live conversations with Brad and Sean that happen throughout the week wher",
+        "language": "en-us",
+        "author_name": "Eh&B",
+        "slug": "eh-and-b",
+        "cover": "podcast_cover.jpeg"
+    },
+    {
+        "podcast_id": 192782,
+        "title": "Behind the Glass",
+        "description": "<p>Two sport fans on and from either sides of the US talk about their favorite aspects of the game in hockey.</p>",
+        "language": "en",
+        "author_name": "Hoodsie & Schatzi",
+        "slug": "behindtheglasshockey",
+        "cover": "20230418_110457_0ee27b680992993860e57c41fee937c4.jpg"
+    },
+    {
+        "podcast_id": 193557,
+        "title": "Mitchell Hawks Podcast ",
+        "description": "<p>Welcome to the The Mitchell Hawks Podcast!!! This is where we will discuss past and future events for the Mitchell Hawks.</p><p>The Mitchell Hawks are a Junior C Hockey team from Mitchell Ontario. They play in the PJHL in the North Pollock Division and are currently the defending Pollock Division Champions. For more Info on the Hawks go to the team website: <a href=\"https://www.mitchellhawks.com/\">https://www.mitchellhawks.com/</a></p><p>For the Video Versions of these podcasts head to our YouTube Channel: <a href=\"https://www.youtube.com/channel/UCf-viZO1CCdcEemZZzL9PLQ\">https://www.youtube.com/channel/UCf-viZO1CCdcEemZZzL9PLQ</a></p>",
+        "language": "en",
+        "author_name": "Stevie Daum and Scott Bridge ",
+        "slug": "mitchell-hawks",
+        "cover": "20230301_100341_a32d981ec08e8af7ece416cd0e622367.jpg"
+    },
+    {
+        "podcast_id": 194138,
+        "title": "Blue Line Breakdown",
+        "description": "<p>Welcome to the Blue Line Breakdown Podcast! Join your hosts, Jace, Alex and Harrison as they break down all the highlights and news from around the NHL!</p>",
+        "language": "en",
+        "author_name": "Jace, Alex and Harrison",
+        "slug": "bluelinebreakdownep1",
+        "cover": "20230303_080317_313e17418ed490c8b18f80d48b517840.jpg"
+    },
+    {
+        "podcast_id": 202480,
+        "title": "Pond Hockey Podcast",
+        "description": "<p>Welcome to the Pond Hockey Podcast where we talk all things hockey! Please let us know if there is a topic or a team that you want us to cover by following us on Twitter: @PondHockeyPod and on Instagram/Threads: @PondHockeyPodcast! Live shows on Mondays and Recorded shows on Tuesdays!</p>",
+        "language": "en",
+        "author_name": "Jimmy Kelly & Nicholas Fernbaugh",
+        "slug": "pondhockeypodcast",
+        "cover": "20230521_120538_4b9491ea26ad2f7efd70040559f14bfd.jpg"
+    },
+    {
+        "podcast_id": 203656,
+        "title": "The Shooter & Hooters Podcast",
+        "description": "<p>Join Don and Ebz Every week as they shoot the shit and discuss the 2023 NHL Playoffs.</p><p>The Official - Non Official Hockey Podcast</p>",
+        "language": "en",
+        "author_name": "Ebony & Don",
+        "slug": "shooterhooters",
+        "cover": "20230417_020414_7dccbf017af772d00c46ab24a63ec879.jpg"
+    },
+    {
+        "podcast_id": 208096,
+        "title": "LPB Sports",
+        "description": "<p>The English network of popular French podcast network La Poche Bleue, owned by ex-NHL players Guillaume Latendresse and Maxim Lapierre, LPB Sports is the new home for original English sports content. </p>",
+        "language": "en",
+        "author_name": "La Poche Bleue",
+        "slug": "lpb-sports",
+        "cover": "20230510_010546_663bc0f69c1670c25509b7f65b2203f5.jpg"
+    },
+    {
+        "podcast_id": 208400,
+        "title": "What A Save",
+        "description": "<p>A podcast for all things Hockey </p><p>From the Draft to the Stanley Cup With your hosts </p><p>Tyler &amp; Brandon </p><p>Listen on Spotify &amp; any other streaming platform!</p>",
+        "language": "en",
+        "author_name": "What A Save",
+        "slug": "whatasave",
+        "cover": "20230510_050528_85fcdf5919b1ef94986084602331a270.jpg"
+    },
+    {
+        "podcast_id": 212387,
+        "title": "Blueshirt Blueprint",
+        "description": "<p>A podcast covering everything New York Rangers. Hosted by longtime Ranger fan, Will Cohen.</p>",
+        "language": "en",
+        "author_name": "Will Cohen",
+        "slug": "blueshirtblueprint",
+        "cover": "20230531_030501_08b0a34151be0324ee488db18f7ab9e2.jpg"
+    },
+    {
+        "podcast_id": 212717,
+        "title": "Stick 'Em Up",
+        "description": "<p>The Stick 'Em Up Podcast is a Hockey based Podcast hosted by two brothers Braden &amp; Brandon. Stick 'Em Up focuses on all things surrounding hockey from debates, to previews, and even wild predictions. New Episodes drop Fridays 12:00pm MST</p>",
+        "language": "en",
+        "author_name": "Braden Corbiell & Brandon Corbiell",
+        "slug": "stick-em-up-podcast",
+        "cover": "20230601_100607_28bf924248e58fb981f535dcc7649b3f.jpg"
+    },
+    {
+        "podcast_id": 216238,
+        "title": "Trick Play Sports Podcast",
+        "description": "<p>Simon Szyszkowski and Caleb Peterson break down all the latest sports news that you will want to hear about.</p>",
+        "language": "en",
+        "author_name": "Simon Szyszkowski and Caleb Peterson",
+        "slug": "trickplay",
+        "cover": "20230621_090651_2c17e82aab91a9bffb32959837b15350.jpg"
+    },
+    {
+        "podcast_id": 217530,
+        "title": "Devils' Advocates",
+        "description": "<p>Come join hosts JP Gambatese, Jake McDonald, and TheBrattPack63 as we talk anything and everything New Jersey Devils. Tune in for news, analysis, opinions, banter, and special guests.</p>",
+        "language": "en",
+        "author_name": "JP Gambatese, Jake McDonald, TheBrattPack63",
+        "slug": "devilsadvocates",
+        "cover": "20230630_110622_d3d26067b7e7404cb4f9f9b4a9d77179.jpg"
+    },
+    {
+        "podcast_id": 217842,
+        "title": "The Buschy and Bobo Show",
+        "description": "<p>Two guys talking hockey</p>",
+        "language": "en",
+        "author_name": "The Buschy and Bobo Show",
+        "slug": "buschyandbobo",
+        "cover": "20230703_040711_8b6c85bf2ee09ebbe030ec5cac52ba4a.jpg"
+    },
+    {
+        "podcast_id": 218173,
+        "title": "Coffee and CHEL",
+        "description": "<p>Coffee and Chel covers the NHL video game, as well as current topics around the NHL. Hosted by NoSleeves and Daddy Padre</p>",
+        "language": "en",
+        "author_name": "Cameron Halbert",
+        "slug": "coffeeandchel",
+        "cover": "20230705_100751_0ddac1b9cd9fe3cd4dc1a63d01641903.jpg"
+    },
+    {
+        "podcast_id": 222987,
+        "title": "RinkSide",
+        "description": "<p>GOHLS Official Podcast. Featuring Pawtai Pawtai, Omni Supreme, Yodie Logic, and Jesse Pinkman</p>",
+        "language": "en",
+        "author_name": "Rinkside",
+        "slug": "gohlsrinkside",
+        "cover": "20230807_060844_b6df85ed97de813b1e7b61449b7d85d7.jpg"
+    },
+    {
+        "podcast_id": 223027,
+        "title": "Champa Bay Sports",
+        "description": "<p>Tampa Bay Sports Podcast Bucs, Lightning, &amp; Rays News Check us out on YouTube, Spotify, or wherever you get your podcasts. Email us at <a href=\"mailto:champabaypod@gmail.com\">champabaypod@gmail.com</a> #tampabaybuccaneers #tampabaylightning #tampabayrays</p>",
+        "language": "en",
+        "author_name": "Taylor Barich",
+        "slug": "champabaypodcast",
+        "cover": "20230808_120839_17b82d0282ed3cd469cfe2d8e0cb6a21.jpg"
+    },
+    {
+        "podcast_id": 223085,
+        "title": "Se on siell\u00e4!",
+        "description": "<p>T\u00e4m\u00e4 on reteesti oranssi, H\u00e4meenlinnan Pallokerhon virallinen podcast. Ajankohtaiset asiat, kuulijoiden kysymykset ja mielenkiintoisimmat vieraat. Jaksot julkaistaan parillisilla viikoilla tiistaisin.</p>",
+        "language": "fi",
+        "author_name": "HPK",
+        "slug": "seonsiella",
+        "cover": "20230808_080803_801ca403e209e264a07d2a0534ae98bd.jpg"
+    },
+    {
+        "podcast_id": 223346,
+        "title": "1973 Podcast",
+        "description": "<p><strong>Welcome to the \"1973 Podcast\"!</strong></p><p>Step back in time and join us as we journey through life with the wisdom and experiences of three friends who were born in the iconic year of 1973. If you're a part of the Generation X crowd or simply curious about the 70s, this podcast is tailor-made for you.</p><p>Join your hosts \u2013 \"Your Hockey Hero,\" \"The Professor,\" and \"Mouth of the South\" \u2013 as they bring you a unique and engaging perspective on the world. With half a century of life under their belts, they're here to share their insights, anecdotes, and observations on everything that has shaped our world.</p><p><strong>Main Topics and Themes:</strong></p><p>Dive into a variety of captivating subjects that have kept these lifelong friends engaged and intrigued:</p><p>\ud83c\udfd2 <strong>Hockey:</strong> Whether it's reminiscing about classic games, analyzing the current state of the NHL, or sharing personal hockey stories, you'll get your fill of puck talk.</p><p>\ud83e\udd3c <strong>Pro Wrestling:</strong> Step into the squared circle as the hosts relive legendary matches, discuss the evolution of wrestling, and offer a ringside seat to their favorite moments.</p><p>\ud83d\udcfa <strong>Pop Culture:</strong> From the music and movies that defined the era to the cultural shifts that continue to influence us today, explore the world of pop culture through the lens of the 70s.</p><p><strong>Tone and Style:</strong></p><p>Expect lively conversations, hearty laughs, and unfiltered opinions as these friends come together in a casual and conversational setting. You'll feel like you're hanging out with them, sharing stories and insights over your favorite drinks.</p><p><strong>Special Features and Unique Selling Points:</strong></p><p>What sets the \"1973 Podcast\" apart is the authentic and relatable perspective these hosts bring. They're not just pundits \u2013 they're real guys who've lived through it all. Get ready for a nostalgic trip down memory lane with individuals who've been there, done that, and are excited to share their journey with you.</p><p><strong>Join Us:</strong></p><p>Tune in weekly to catch a new episode where \"Your Hockey Hero,\" \"The Professor,\" and \"Mouth of the South\" take you on a captivating ride through their unique perspectives on hockey, pro wrestling, pop culture, and life in general.</p><p>So, if you're a fellow child of the 70s or simply intrigued by the Generation X experience, hit that subscribe button and get ready to be entertained, enlightened, and immersed in the world of the \"1973 Podcast\"!</p>",
+        "language": "en",
+        "author_name": "Andrew Clark",
+        "slug": "1973podcast",
+        "cover": "20230809_090848_bb202d02766eaea31bebf5b51c5567f2.jpg"
+    },
+    {
+        "podcast_id": 223954,
+        "title": "The Faceoff Podcast",
+        "description": "<p>A hockey podcast with news,takes and fun games</p>",
+        "language": "en",
+        "author_name": "The Faceoff",
+        "slug": "thefaceoffpod",
+        "cover": "20230814_020842_549278479f10dc523b39d0ea5dd523ad.jpg"
+    },
+    {
+        "podcast_id": 225296,
+        "title": "De Platte Driehoek",
+        "description": "<p>Of je nu een doorgewinterde hockeyfan bent of gewoon nieuwsgierig naar wat er gaande is in de wereld van de bal en de stick, Max en Thijs hebben je gedekt. Elke week lullen over hockey en andere zaken, van snelle rushes tot verbluffende saves, van schijnbewegingen die je hart sneller doen kloppen tot teamwork dat je kippenvel bezorgt. Ze bekijken niet alleen de actie, maar delen ook inzichten, grappige anekdotes en vooruitzichten voor het volgende hockeyweekend.</p><p>Mis geen enkel moment van de platte driehoek \u2013 de perfecte balans tussen snelheid, precisie en teamwerk. Abonneer je op \"De Platte Driehoek\" en laat Max en Thijs je meenemen op een geweldige reis door de wereld van (hockey)hoogtepunten!</p><p>Volg ons op sociale media en deel je eigen hoogtepunten met de hashtag #DePlatteDriehoek. Luister, geniet en blijf op de hoogte van alles wat er gaande is binnen en buiten de spannende wereld van het hockey!</p>",
+        "language": "nl",
+        "author_name": "Max & Thijs",
+        "slug": "deplattedriehoek",
+        "cover": "20230822_040830_45ef983f55d1d9ce4ee95320f80601f7.jpg"
+    },
+    {
+        "podcast_id": 225689,
+        "title": "Biscuits and Gravy Podcast",
+        "description": "<p>All things hockey from high school to the NHL</p>",
+        "language": "en",
+        "author_name": "Holden Willemsen and Sam Snyder",
+        "slug": "biscuitsandgravypod",
+        "cover": "20230824_050809_337554c9377f932e9ec67dc5c4a6ba1e.jpg"
+    },
+    {
+        "podcast_id": 227190,
+        "title": "WACHA Talkin' 'Bout",
+        "description": "<p>Chase Beardsley and Trey Matthews host a weekly show talking about the Arizona State University ACHA D1 women's hockey team.</p>",
+        "language": "en",
+        "author_name": "Chase Beardsley & Trey Matthews",
+        "slug": "wachatalkinbout",
+        "cover": "20230904_090927_462fb0123b7aeca8c839dc461d0f135a.jpg"
+    }
+]

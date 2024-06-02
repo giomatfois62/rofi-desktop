@@ -1,0 +1,2702 @@
+[
+    {
+        "podcast_id": 2518,
+        "title": "Monday Madness Podcasts",
+        "description": "Home of the That Was Liquid Football! Podcast, Jelly Filled Donut and more audible goodness from your friends at Monday Madness. Subscribe to us on Youtube to check out what games we're playing and follow us on Twitter to keep track of all our shenanigans. \nYoutube: https://www.youtube.com/channel/UCyH4DU1naTfMPtfR7CmHhAA\nTwitter: @MondayMadnessLP",
+        "language": "en",
+        "author_name": "Monday Madness",
+        "slug": "liquidfootball",
+        "cover": "20200303_210046_1941354ed466bdcf8b8907c4905435dd.jpeg"
+    },
+    {
+        "podcast_id": 2846,
+        "title": "Kickin It Stateside",
+        "description": "Just two guys who love talking soccer. Adam and Bryan meet at the Connecticut School of Broadcasting in Cherry Hill, NJ. It's there where they joined forces!",
+        "language": "en",
+        "author_name": "Adam Modic",
+        "slug": "kickinitstateside",
+        "cover": "5d7a8c658501b.png"
+    },
+    {
+        "podcast_id": 5215,
+        "title": "Di Stefano Talks",
+        "description": "DiStefanoTalks: Talking Scottish Football is a Glasgow based podcast centring on Scottish Football. Every Monday, Stefan, Lewis and regular contributors recap the lates fixtures on the Scottish Footballing calendar. Airs every Monday on Spotify, iTunes and Google Podcasts. ",
+        "language": "en",
+        "author_name": "Stefan Carlin",
+        "slug": "distefanotalks",
+        "cover": "20200311_000844_9beca1d624ed322e54efc45c6615aa3c.jpeg"
+    },
+    {
+        "podcast_id": 5740,
+        "title": "12th Man Podcast",
+        "description": "UK based football podcast hosted by Alec Riley and Harry Filby. \n\n",
+        "language": "en-gb",
+        "author_name": "12th Man Podcast",
+        "slug": "12thmanpod",
+        "cover": "20200119_180808_ca38879b2c154b60e15877a611b3467a.jpeg"
+    },
+    {
+        "podcast_id": 6044,
+        "title": "Here We Go Again",
+        "description": "The Official Bolton Wanderers Podcast",
+        "language": "en-gb",
+        "author_name": "Bolton Wanderers",
+        "slug": "officialbwfc",
+        "cover": "20200205_104746_e427e5042316ac0d8306c43269d5c5e9.jpeg"
+    },
+    {
+        "podcast_id": 7865,
+        "title": "The #LCRR Podcast ",
+        "description": "A dive into the world of sports broadcasting, comedy and life presented by the \"first real millennial sports announcer,\" Joey Zanaboni.",
+        "language": "en",
+        "author_name": "Joey Zanaboni",
+        "slug": "lcrr",
+        "cover": "20200417_050212_cb41f1d5725e82fbd33b690103f5337c.jpeg"
+    },
+    {
+        "podcast_id": 8090,
+        "title": "Coaching From The Sofa",
+        "description": "Football and everything in-between. #CoachingFromTheSofa",
+        "language": "en",
+        "author_name": "Shane Lord & Rob Harvey",
+        "slug": "coachingfromthesofa",
+        "cover": "20200423_161624_2dca0bb093d2aba104fb5957160a4c1c.jpeg"
+    },
+    {
+        "podcast_id": 9203,
+        "title": "Corner Kick ",
+        "description": "<p>Corner Kick is where witty banter and in depth soccer analysis collide. Join us for energetic, youthful, and well-researched discussions on the beautiful game. Hosted by Caleb Rhodes, Nathan Strauss, and Nick Govindan. Follow our written media as well, at cornerkickmedia.com.</p>",
+        "language": "en",
+        "author_name": "Nathan Strauss, Caleb Rhodes, Nick Govindan",
+        "slug": "cornerkick",
+        "cover": "20200529_185018_0689128d317689389892f89a5260e040.jpeg"
+    },
+    {
+        "podcast_id": 9768,
+        "title": "Bottled Soccer Talk",
+        "description": "Join co-hosts Nestor and Henry as they discuss everything within the world of the Greatest Game, Soccer... or Football - depending on your side of the world.",
+        "language": "en",
+        "author_name": "Bottled Soccer Talk",
+        "slug": "bottledtest",
+        "cover": "20200703_194309_f9b93fdd3ddb69709972ce33ff049e16.jpg"
+    },
+    {
+        "podcast_id": 9964,
+        "title": "Broken Hearts Podcast",
+        "description": "A weekly podcast on all things Hearts.",
+        "language": "en",
+        "author_name": "Hearts_Podcast",
+        "slug": "heartspodcast",
+        "cover": "20230125_050151_78569b45255d7f88bfbf4926c20c0700.jpg"
+    },
+    {
+        "podcast_id": 10163,
+        "title": "The COSAFA Show",
+        "description": "With football news, views and analysis from around Southern Africa, The COSAFA Show offers a unique window into what is happening on and off the pitch in the region. ",
+        "language": "en",
+        "author_name": "Mark Gleeson and Nick Said",
+        "slug": "thecosafashow",
+        "cover": "20200702_055741_f4edb8c0f367871ad95aa2332abc9113.jpg"
+    },
+    {
+        "podcast_id": 11212,
+        "title": "Los Cancheros",
+        "description": "Los Cancheros son esos futbolistas que est\u00e1n al l\u00edmite, que juegan con la tribuna, que hacen cosas que otros jugadores no se atreven, que no les gusta perder y lo m\u00e1s importante es ganar.  ",
+        "language": "es",
+        "author_name": "Caliente.mx ",
+        "slug": "calientemx",
+        "cover": "20200821_230130_4bcae0d1ac24a89314ad2ee50da080ed.jpg"
+    },
+    {
+        "podcast_id": 12287,
+        "title": "50+1 Football Show ",
+        "description": "<p>Join the resident football nerds, Billy and Louis, for all the latest news and stories from The Premier League and The Bundesliga. Your favourite Anglo-German football show. The perfect Blend of English and German football, with the occasional sprinkling of European Goodness, and even some guests!</p><p>So don't forget to Like, Share and Subscribe!</p>",
+        "language": "en",
+        "author_name": "Billy Andrews and Louis T\u00f6nnis ",
+        "slug": "50plus1footballpodcast",
+        "cover": "20230801_020806_c41706a05d552981cd29e9105e1438e9.jpg"
+    },
+    {
+        "podcast_id": 12427,
+        "title": "Heads in the Game ",
+        "description": "All the latest from the English Premier League and European Football, from the point of view of four American college students. Hosted by Charles Horn, four close friends and supporters of rival clubs antagonize each other and analyze the beautiful game each week. ",
+        "language": "en",
+        "author_name": "Heads in the Game",
+        "slug": "headsinthegame",
+        "cover": "20200915_230821_a586c50b2291a8e085ba8f566496fce6.jpg"
+    },
+    {
+        "podcast_id": 12534,
+        "title": "FPL Addicts Podcast",
+        "description": "Join us weekly during the Fantasy Premier League season as we review FPL game weeks, preview the upcoming fixtures whilst providing all latest news, tips and advice, who's hot and who's not, banter and nonsense as well as updates on performances in our leagues #fpl \n\n In the studio we discuss Hot topics, Team Selection, Captain Picks, Teams to Back, Form Players & Differentials, Scout11 with FPL Addicts  Elliot Craig, Jack Gillers, Chris Reid, Oli Walker-Peel, The Reverand Mikey and the Mullet, Charlie Roberts along with guests.\n\nVisit website www.fpladdicts.com.au to get involved in the community & leagues. Sponsored by Bonus Bank www.bonusbank.com.au",
+        "language": "en",
+        "author_name": "FPL Addicts",
+        "slug": "fpladdictxesportslivefantasyfootball",
+        "cover": "20220722_020727_f77b37ecba535a4babeefc79b6e41d3e.jpg"
+    },
+    {
+        "podcast_id": 12616,
+        "title": "The High Kicks Podcast",
+        "description": "<p>Are you a diehard football (soccer) fan, someone new to the game, or just trying to catch up on the weekly action? Then The High Kicks Podcast may be just for you. Hosted by Brian Coburn, Karl Witte, and CrushTalksSports; the show breaks down the action from the English Premier League each week and we share our opinions on the biggest news in the world's most popular sport. Tune in every Thursday to catch up on scores, transfers, injuries, opinions, banter, and more.</p>",
+        "language": "en",
+        "author_name": "Brian Coburn, Karl Witte, and Chad (CrushTalksSports)",
+        "slug": "highkickspod",
+        "cover": "20201202_053422_f435c439ebeb52155496603e6ddccbec.jpg"
+    },
+    {
+        "podcast_id": 12660,
+        "title": "Long Ball Futebol",
+        "description": "A weekly podcast by two brothers about all things football in Portugal \ud83c\uddf5\ud83c\uddf9\u26bd\ud83c\uddec\ud83c\udde7 Join us each week for Primeira Liga chat, and discussion about Portuguese clubs' exploits in Europe!",
+        "language": "en",
+        "author_name": "Long Ball Futebol",
+        "slug": "longballfutebol",
+        "cover": "20220806_050834_7289af2c0353a7146dee10245e1253bc.jpg"
+    },
+    {
+        "podcast_id": 14060,
+        "title": "The Football Intellectual Podcast",
+        "description": "Discussing all things football, bringing different viewpoints and opinions together topped with a touch of banter. \n",
+        "language": "en",
+        "author_name": "Football Intellectual",
+        "slug": "footballintellectual",
+        "cover": "20201030_162822_00db7a8bd422da8019912d7714a061a0.jpg"
+    },
+    {
+        "podcast_id": 14263,
+        "title": "Flienekes & Bienekes Ajax podcast",
+        "description": "2 vrienden die over AJAX lullen. ",
+        "language": "nl",
+        "author_name": "Buck Bijlsma",
+        "slug": "flienekesenbienekesajaxpodcast",
+        "cover": "20201105_173500_e3a4577560396b8fa948108486caa85e.jpg"
+    },
+    {
+        "podcast_id": 14414,
+        "title": "Dre & Daz Podcast",
+        "description": "Welcome to the Dre & Daz Podcast! Two light skin guys talking about anything to be honest (mainly football) Enjoy!",
+        "language": "en",
+        "author_name": "Dre Mbwese",
+        "slug": "dredazpocast",
+        "cover": "20201109_222441_ee72df8422fb15096c66e7f90fcb6eb3.jpg"
+    },
+    {
+        "podcast_id": 14968,
+        "title": "SoccerNotFootball",
+        "description": "Welcome to SoccerNotFootball! Hosts Dela Acolatse and Daniel Ratto discuss the in and outs of world football and any and all topic can get tackled! ",
+        "language": "en",
+        "author_name": "SoccerNotFootball",
+        "slug": "soccernotfootball",
+        "cover": "20201120_203751_c6bdf0db3edf8c80a5a750854ceb8c0e.jpg"
+    },
+    {
+        "podcast_id": 15436,
+        "title": "All In Yellow | The Official Norwich City Podcast",
+        "description": "Welcome to All In Yellow, the official Norwich City podcast. Hosts Alice Piper of Sky Sports News and Dan Wynne of the Community Sports Foundation will be joined by a host of your favourite Norwich City names over the coming weeks and months to lift the lid on some of the untold stories from their times at Carrow Road.",
+        "language": "en",
+        "author_name": "Norwich City FC",
+        "slug": "allinyellowdanielfarke",
+        "cover": "20201124_160544_cb619b9588f8ce098459d09f211f540d.jpg"
+    },
+    {
+        "podcast_id": 15759,
+        "title": "Who Scored Again?",
+        "description": "A weekly podcast dedicated towards the Premier League with an eye towards improving your Fantasy Squads.",
+        "language": "en",
+        "author_name": "Who Scored Again",
+        "slug": "wsa",
+        "cover": "20201127_095455_d7bf9271f6174c5ff7e18fedeb270305.jpg"
+    },
+    {
+        "podcast_id": 18168,
+        "title": "Colman's Podcast",
+        "description": "Welcome to St Colman's College Podcast- a podcast with a different chapter every week, including chats about hurling, soccer, gaming, music and much more. We interview sports stars, musicians, gamers and each other! Join the conversation with our podcast debut this Friday- \"Championship Sunday\" with some surprise guests! ",
+        "language": "en",
+        "author_name": "Colman's Podcast",
+        "slug": "435571",
+        "cover": "20210125_182439_522e1363bc87a6e8198fb79292ce6d10.jpg"
+    },
+    {
+        "podcast_id": 18293,
+        "title": "The Jesus Show (not that one)",
+        "description": "Every day conversation and interviews with people from my every day life. Soccer/f\u00fatbol fanatic with many friends that play and may come on the show to talk about their lives and insights on the world we live in. Comedy and extreme sarcasm all throughout. ",
+        "language": "en",
+        "author_name": "Jesus Velez",
+        "slug": "thejesushownotthatone",
+        "cover": "20210122_224953_07a32fc9f820d02c37dc97ab4fd3302a.jpg"
+    },
+    {
+        "podcast_id": 21685,
+        "title": "Game\u2019s Gone Soft Podcast ",
+        "description": "Joe and Jordan talk about the latest football news and stories. ",
+        "language": "en",
+        "author_name": "Joe and Jordan",
+        "slug": "ggs",
+        "cover": "20210102_161829_6f916986d28e45dfa951d93c6646ae8c.jpg"
+    },
+    {
+        "podcast_id": 27551,
+        "title": "Only Football Fans",
+        "description": "Football fan reaction & discussions, as well as in-depth interviews with professional footballers about their career.\n\nYou can contact us on our social media platforms:\nhttps://twitter.com/Only_Footy_Fans\nhttps://www.instagram.com/only_footy_fans/\n\nYou can also check out video episodes on our YouTube channel - 'Only Football Fans':\nhttps://www.youtube.com/channel/UCZpIcoG06jWZRSdQBA1gA-Q",
+        "language": "en",
+        "author_name": "Only Football Fans",
+        "slug": "onlyfootballfans",
+        "cover": "20210730_141323_8f92ffa0eab8956d39c11bd3b7f73a1b.jpg"
+    },
+    {
+        "podcast_id": 28034,
+        "title": "Kirnos and Turcios Podcast",
+        "description": "Welcome to the Kirnos and Turcios Podcast! This is a podcast where two ex-collegiate soccer players, who have an extreme passion for the beautiful game will dissect, analyze and judge the current state of the soccer. The content will be expansive covering the latest transfer rumor, managerial firing and signings, and analyzing the biggest games every week. We have a passion for this game that cannot be matched by any other, and we will give you the most honest and truthful analysis that you have never heard. ",
+        "language": "en",
+        "author_name": "Aaron Kirnos and Cristian Turcios ",
+        "slug": "kirnosandturcios",
+        "cover": "20210128_025423_9a72c75ca7e316faa0bf5fda6922670d.jpg"
+    },
+    {
+        "podcast_id": 29198,
+        "title": "Die Eintracht im Ohr",
+        "description": "<p>Immer wieder eine neue Podcast-Episode von der Eintracht \u2013 f\u00fcr Spieler, Trainer, Betreuer, Verantwortliche, Fans und alle Freunde des SC Eintracht Miersdorf/Zeuthen v. 1912</p>",
+        "language": "de",
+        "author_name": "SCEMZ 1912",
+        "slug": "eintracht",
+        "cover": "20210202_111419_24040550fb21b2e806681f4d4924e948.jpg"
+    },
+    {
+        "podcast_id": 30313,
+        "title": "The #PURE10 Podcast",
+        "description": "<p>A new, refreshing (and sometimes, controversial) outlook on weekly events going in the Premier League and beyond hosted by Sam Akpan. </p><p>LinkedIn: Samuel Akpan</p><p>Twitter: @_samakpan </p><p>Instagram: @sam.akpan</p>",
+        "language": "en",
+        "author_name": "Sam Akpan",
+        "slug": "pure10",
+        "cover": "20230605_120614_0e44b1b5cef2895ab5d7baa4d8f1f974.jpg"
+    },
+    {
+        "podcast_id": 35261,
+        "title": "The Coffeeha\u00fcs at 141 Studio",
+        "description": "Home of The Coffehaus and The Fieldhouse at 141 Studio.\n\nThe hopes and tears of the artists and writers who find a home at 141 Studio.",
+        "language": "en",
+        "author_name": "Ryan Whiting and Paul Cushing",
+        "slug": "coffeehausfootballcast",
+        "cover": "20230205_080214_6953e92c765255a32a7dd368dc987b31.jpg"
+    },
+    {
+        "podcast_id": 35844,
+        "title": "ONE2FOOTBALL PODCAST ",
+        "description": "Join the One2Football podcast every fortnight, as we break down footballs biggest topics and major talking points. \n\nFuelled by strong opinions and heated debates, this podcast leaves nothing to the imagination, as three football fans gossip, argue and laugh over the beautiful game. \n\nThis is the only football podcast you'll need. \n\nRegular presenters include, Nathan Smith, Ollie Barefoot and Kieran Horn. \n\nLet's get into it!",
+        "language": "en",
+        "author_name": "One2Football",
+        "slug": "one2football",
+        "cover": "20220731_040720_536a6b9b261f650433409127b7b46ec7.jpg"
+    },
+    {
+        "podcast_id": 37900,
+        "title": "1 DAD 3 MUMS",
+        "description": "Welcome to 1 DAD 3 MUMS! Being presented by Alfie, Gracey, Tomo and Cooper. Four young lads just having a conversation about the latest trends and topics.\n\n Step into are very empty and boring lives and see if you can relate to any of the madness we talk about! We bring weekly episodes ranging from sport, scenarios, assumptions, music, conspiracy theories followed by many more and just in general gossip. \n\nGet the kettle on, make a brew and sit down and give us a listen. \n\n",
+        "language": "en",
+        "author_name": "Alfie, Gracey and Cooper",
+        "slug": "whoareyalaughingat",
+        "cover": "20210831_135235_29aa4dd976aeaf71df3df6404e4df168.jpg"
+    },
+    {
+        "podcast_id": 40412,
+        "title": "The Pace and Power Podcast",
+        "description": "An unserious weekly discussion about the beautiful game. What is the best derby in the world? How you would fare in a Premier League game? Has the game gone? Every Wednesday, we discuss these absolutely critical questions, and much, much more. Come join us!",
+        "language": "en",
+        "author_name": "Pace and Power TV",
+        "slug": "pacenadpowerpodcast",
+        "cover": "20220810_050841_eaaded39e7de2071a39871f2a22dc81c.jpg"
+    },
+    {
+        "podcast_id": 43303,
+        "title": "Defend The North: A Minnesota Sports Podcast",
+        "description": "Cousins Dana & Isaac talk about Minnesota sports, including the Timberwolves, Vikings, Wild, Loons and Gophers. The two bring in conversation about national sports topics as well. ",
+        "language": "en",
+        "author_name": "Dana & Isaac",
+        "slug": "defendthenorth",
+        "cover": "20210322_171745_8622988cdd860d040960740d29bed21a.jpg"
+    },
+    {
+        "podcast_id": 43951,
+        "title": "cronistasportivo.it",
+        "description": "Raccontiamo lo sport locale attraverso ogni forma di comunicazione digitale, dal testo, all'audio, al video. \nDiventa anche tu un cronista sportivo con i nostri corsi professionali.\nProgetto prodotto da Fanner Srl",
+        "language": "it",
+        "author_name": "CronistaSportivo.it",
+        "slug": "cronistasportivo",
+        "cover": "20210324_112927_8b5f66be60a094fee3de96e357f0909b.jpg"
+    },
+    {
+        "podcast_id": 44274,
+        "title": "1903 Radio",
+        "description": "La emisora de radio en la que podr\u00e1s escuchar todas las novedades del Atl\u00e9tico de Madrid.",
+        "language": "es",
+        "author_name": "La Puerta Cero",
+        "slug": "1903radio",
+        "cover": "20210325_144759_0e43e9c06dbcdd5e13c9d9d4e89b09ae.jpg"
+    },
+    {
+        "podcast_id": 44599,
+        "title": "Allsvenskan FantasyPodden ",
+        "description": "<p>Av fantasyfantaster, f\u00f6r fantasyfantaster. En podcast om Allsvenskan Fantasy med nya avsnitt varje vecka.</p>",
+        "language": "sv",
+        "author_name": "Marcus Axelsson & Gustav Calderon ",
+        "slug": "allsvenskanfantasypodden",
+        "cover": "20210326_160158_411dc66e0ec74e317a533ec5972f6341.jpg"
+    },
+    {
+        "podcast_id": 45134,
+        "title": "Rotation podcast",
+        "description": "\u0397 \u03ba\u03b1\u03bb\u03cd\u03c4\u03b5\u03c1\u03b7 \u03b9\u03bd\u03c4\u03b5\u03c1\u03bd\u03b5\u03c4\u03b9\u03ba\u03ae \u03c0\u03b1\u03c1\u03ad\u03b1 \u03b3\u03b9\u03b1 \u03b5\u03c3\u03ad\u03bd\u03b1.\n\u03a4\u03b1 \u03c0\u03ac\u03bd\u03c4\u03b1 \u03b3\u03cd\u03c1\u03c9 \u03b1\u03c0\u03cc \u03c4\u03bf\u03bd \u03c7\u03ce\u03c1\u03bf \u03c4\u03bf\u03c5 \u03b1\u03b8\u03bb\u03b7\u03c4\u03b9\u03c3\u03bc\u03bf\u03cd \u03bc\u03b5 \u03b5\u03ba\u03c0\u03bf\u03bc\u03c0\u03ad\u03c2, \u03ac\u03c1\u03b8\u03c1\u03b1 \u03ba\u03b1\u03b9 \u03b1\u03bd\u03b1\u03bb\u03cd\u03c3\u03b5\u03b9\u03c2!",
+        "language": "el",
+        "author_name": "Rotation",
+        "slug": "giannisrozis",
+        "cover": "20220115_120139_1288d61f682999689f002f9da16db23a.jpg"
+    },
+    {
+        "podcast_id": 47868,
+        "title": "Estonian Football Podcast",
+        "description": "<p>Diving into the wonders that is Estonian Football.</p>",
+        "language": "en",
+        "author_name": "Reece and Nath Broughton",
+        "slug": "scandinavianfootballpodcast",
+        "cover": "20210627_200649_aa1528cffbe5035304a9fa149e2bd7be.jpg"
+    },
+    {
+        "podcast_id": 54190,
+        "title": "Abrazo Football Podcast",
+        "description": "We be chatting football innit",
+        "language": "en",
+        "author_name": "Blaine Gunn & Brooks Guerrero",
+        "slug": "12thman",
+        "cover": "20230119_030146_fbc07c1954b8f2d31eef60facea1df9d.jpg"
+    },
+    {
+        "podcast_id": 55589,
+        "title": "Metal United",
+        "description": "A (hopefully) HILARIOUS podcast that combines the fusion of metal music and football. Hosted by the world's least organised, most inept brothers. ",
+        "language": "en",
+        "author_name": "Joe Cocking & Max Cocking",
+        "slug": "metalunited",
+        "cover": "20210509_194047_3ba7cc5b0d98ef9c85ce4b4ced714244.jpg"
+    },
+    {
+        "podcast_id": 58315,
+        "title": "The Roll On Roll Off Podcast",
+        "description": "<p><strong>Thee Roll On Roll Off</strong> podcast is a unique platform that brings you good vibes and REAL opinions from three brothers. The pundits <em>Retired Marco, Uncle Kolo</em> and <em>On Form PJ</em> give their unique perspectives on not only what's happening in the football world but also, music and day to day lifestyle. You are guaranteed not only to hear differing points of view but also to be thoroughly entertained throughout the journey. For the 'non football lovers'... We've got you covered - listen and watch our episodes entitled <strong>XTRA TIME </strong>where we cover all news and topics <em>not</em> football related.</p><p><strong>If you're reading this, you're officially a #Roller. Welcome to the family !</strong></p><p><strong><em>INSTAGRAM</em></strong></p><p>rollonrolloff_</p><p>_unclekolo</p><p>peejaai</p><p><strong><em>YOUTUBE </em></strong>- Roll On Roll Off Podcast</p><p><strong><em>TIK TOK</em></strong> - rollonrolloff1</p><p><strong><em>TWITTER</em></strong> - PodcastRoRo</p><p><strong><em>TWITCH</em></strong> - rorounclekolo</p>",
+        "language": "en",
+        "author_name": "The Roll On Roll Off Podcast",
+        "slug": "therollonrolloffpodcast",
+        "cover": "20230628_040628_d1cef461d18d23b34cd6d9dc83498ed5.jpg"
+    },
+    {
+        "podcast_id": 59106,
+        "title": "Just Offside ",
+        "description": "<p>Mike Pavela and Keith Makubuya give their take on weekly soccer from around the world. Special interviews with players, coaches and everyone in between who offer their insight about the current game.</p>",
+        "language": "en",
+        "author_name": "Michael Pavela & Keith Makubuya",
+        "slug": "justoffsidepodcast",
+        "cover": "20220804_020831_2ec171c5f64b75eaa3e89d641d5008bc.jpg"
+    },
+    {
+        "podcast_id": 59248,
+        "title": "Time Out Podcast Egypt - \u062a\u0627\u064a\u0645 \u0622\u0648\u062a \u0628\u0648\u062f\u0643\u0627\u0633\u062a",
+        "description": "<p>\u062a\u0627\u064a\u0645 \u0622\u0648\u062a \u0628\u0648\u062f\u0643\u0627\u0633\u062a \u0639\u0628\u0627\u0631\u0629 \u0639\u0646 \u0628\u0648\u062f\u0643\u0627\u0633\u062a \u064a\u0633\u062a\u0636\u064a\u0641\u0647 \u0623\u062d\u0645\u062f \u0648\u0641\u0631\u062d \u060c \u0648\u0647\u0645\u0627 \u0627\u062a\u0646\u064a\u0646 \u0645\u0646 \u0639\u0634\u0627\u0642 \u0643\u0648\u0631\u0629 \u0627\u0644\u0642\u062f\u0645 \u060c \u0628\u064a\u062a\u0643\u0644\u0645\u0648\u0627 \u0639\u0646 \u0623\u0633\u0627\u0628\u064a\u0639 \u0627\u0644\u0645\u0628\u0627\u0631\u064a\u0627\u062a \u060c \u0648\u0627\u0644\u0645\u0648\u0627\u0639\u064a\u062f \u060c \u0648\u0627\u0644\u0646\u062a\u0627\u0626\u062c \u060c \u0648\u0623\u0643\u062b\u0631 \u0645\u0646 \u0643\u062f\u0629 \u0628\u0643\u062a\u064a\u0631 \u0639\u0646 \u0627\u0644\u0645\u0633\u0627\u0628\u0642\u0627\u062a \u0627\u0644\u0643\u0628\u0631\u0649 \u0641\u064a \u0639\u0627\u0644\u0645 \u0643\u0648\u0631\u0629 \u0627\u0644\u0642\u062f\u0645.</p>",
+        "language": "ar",
+        "author_name": "Ahmed & Farah",
+        "slug": "timeoutpodcastegypt",
+        "cover": "20230807_070800_b22e54e357d49246859a17f44010c439.jpg"
+    },
+    {
+        "podcast_id": 59268,
+        "title": "The Soccer Open",
+        "description": "a podcast hosted by Marcel Akhame and Josh Reynolds discussing soccer as we experience it. From Liverpool to Swansea, La Liga to the Bundesliga, we cover relevant news, tactics, and fixtures.",
+        "language": "en",
+        "author_name": "Josh Reynolds and Marcel Akhame",
+        "slug": "thesocceropen",
+        "cover": "20210526_153756_29fe7770e9f654b525864d9cdb88fe73.jpg"
+    },
+    {
+        "podcast_id": 62029,
+        "title": "Post Match Pint with Keane & Paddy",
+        "description": "Welcome to the Post Match Pint Podcast with Keane & Paddy. Each episode the host's will be joined by different guest(s) talking all things football. The first series is centred around the upcoming Euro 2020 championship, expect multiple episode's throughout the tournament. ",
+        "language": "en",
+        "author_name": "Paddy Holyday",
+        "slug": "postmatchpintwithkeaneandpaddy",
+        "cover": "20210609_203324_822e422936fc4136e480cf06a31917d3.jpg"
+    },
+    {
+        "podcast_id": 65935,
+        "title": "FootPod \u05e4\u05d5\u05d3\u05e7\u05d0\u05e1\u05d8 \u05d0\u05d5\u05d4\u05d3\u05d9 \u05d4\u05e4\u05e8\u05de\u05d9\u05d9\u05e8\u05dc\u05d9\u05d2 \u05d1\u05d9\u05e9\u05e8\u05d0\u05dc",
+        "description": "<p>\u05e4\u05d5\u05d3\u05e7\u05d0\u05e1\u05d8 \u05d4\u05d0\u05d5\u05d4\u05d3\u05d9\u05dd \u05e9\u05dc \u05d4\u05e4\u05e8\u05de\u05d9\u05d9\u05e8\u05dc\u05d9\u05d2 \u05d1\u05d9\u05e9\u05e8\u05d0\u05dc.</p><p>\u05de\u05d9\u05d5\u05e6\u05e8 \u05e2\"\u05d9 \u05d0\u05d5\u05d4\u05d3\u05d9\u05dd \u05d1\u05e9\u05d1\u05d9\u05dc \u05d0\u05d5\u05d4\u05d3\u05d9\u05dd.</p><p>\u05e8\u05d5\u05e6\u05d9\u05dd \u05dc\u05d1\u05d5\u05d0 \u05dc\u05d4\u05ea\u05d0\u05e8\u05d7 \u05d5\u05dc\u05d3\u05d1\u05e8 \u05e2\u05dc \u05d4\u05e7\u05d1\u05d5\u05e6\u05d4 \u05e9\u05dc\u05db\u05dd? \u05d3\u05d1\u05e8\u05d5 \u05d0\u05d9\u05ea\u05e0\u05d5</p>",
+        "language": "he",
+        "author_name": "Ran Shalom",
+        "slug": "footpod",
+        "cover": "20210701_115044_1693ec36680946c8ecd1df3a2b3af3e7.jpg"
+    },
+    {
+        "podcast_id": 70637,
+        "title": "No Filter Podcast",
+        "description": "We are two lads trying to spread our tales and views to the world. Here to keep you entertained as we go through life trying to figure it all out. Enjoy laughing at our expense and welcome to the No Filter Family!",
+        "language": "en",
+        "author_name": "Pedro and Hamzah",
+        "slug": "gotnofilterpodcast",
+        "cover": "20210729_004707_f56bd9ad506e447758a11666163e2090.jpg"
+    },
+    {
+        "podcast_id": 70752,
+        "title": "The Straight Red Card",
+        "description": "The Straight Red Card is a one stop shop for US soccer information.  We cover any and all American domestic and international players both for club and country.  While our criticism and credit is serious, we tend to lean on a light hearted approach.  Derek and Brett are long time fans of the sport.",
+        "language": "en",
+        "author_name": "The Straight Red Card",
+        "slug": "thestraightredcard",
+        "cover": "20210729_180048_d93fa471b836094d5d2e379d860203f0.jpg"
+    },
+    {
+        "podcast_id": 72394,
+        "title": "Upper 90",
+        "description": "Providing American coverage and opinions on all things football (soccer). Hosted by Justin Ruderman and Aubie Anderson.",
+        "language": "en",
+        "author_name": "Justin Ruderman and Aubie Anderson",
+        "slug": "upper90football",
+        "cover": "20220716_070702_4365f8e1ca5400bc70ea16795d637225.jpg"
+    },
+    {
+        "podcast_id": 72491,
+        "title": "HMP",
+        "description": "Help More People podcast! Just a girl in her 20\u2019s trying to share the conversations that she has in life that change her look on life. In honor of Henry Michael Plichta.",
+        "language": "en",
+        "author_name": "Keiragan Wall",
+        "slug": "hmp",
+        "cover": "20210808_183938_6406c3b67ac1e0e8e4255619fd74c646.jpg"
+    },
+    {
+        "podcast_id": 72900,
+        "title": "The Crossbar Podcast",
+        "description": "A podcast about all things European football. The tactics, stories, and players at the forefront of the game we all love. Because the beautiful game deserves beautiful storytelling. ",
+        "language": "en",
+        "author_name": "Alex Dieker",
+        "slug": "crossbarpost",
+        "cover": "20210817_132508_028d640edb1b10c2de942374f787eecb.jpg"
+    },
+    {
+        "podcast_id": 74114,
+        "title": "Africans Talk Football TV",
+        "description": "Welcome to Africans Talk Football TV. We are a few friends coming to you with the REAL about the English Premier League & world soccer news. We will be coming to you WEEKLY with loaded content mainly about the clubs we love & support: Arsenal, Chelsea, Liverpool, and Manchester United. \n\nWe are coming in with HOT TAKES, and views from current players and coaches. Show the ATFTV page some love by Liking, Subscribing, Commenting, and Sharing! \n\nFollow us on our socials!\n\n Instagram-@ATFTV\nTwitter- @_ATFTV\n\n@MrEndalew @MikeyGolloh @Coco_Pewu @Tnpewuu",
+        "language": "en",
+        "author_name": "Africans Talk Football Tv",
+        "slug": "atftv",
+        "cover": "20210818_014810_0fa879e4b46023f43f8d29e815ea224e.jpg"
+    },
+    {
+        "podcast_id": 75555,
+        "title": "Serie A Spotlight",
+        "description": "<p>Two brothers with a deep love for Calcio discuss every single Serie A match on a weekly basis over a bottle (or two) of red.</p>",
+        "language": "en",
+        "author_name": "Jake and Matt Fenech",
+        "slug": "serieaspotlight",
+        "cover": "20210825_172422_20d987625f7822e24186f3e5db3f661d.jpg"
+    },
+    {
+        "podcast_id": 75768,
+        "title": "La Calcioneta",
+        "description": "Podcast dedicado al f\u00fatbol italiano: previas, an\u00e1lisis, post partidos, actualidad, historias, noticias, entretenimiento, entrevistas... y mucho m\u00e1s en torno al Calcio. Por Adri\u00e1n Soria y Ant\u00f3n Arenas.\n\n\u00a1CADA MARTES y VIERNES NUEVOS EPISODIOS! \n\nS\u00edguenos en Twitter para estar al tanto de toda la actualidad del f\u00fatbol italiano: @LaCalcioneta\n",
+        "language": "es",
+        "author_name": "La Calcioneta",
+        "slug": "la-calcioneta-podcast",
+        "cover": "20210826_193810_5b039d959b58ab92506d28ed96e00768.jpg"
+    },
+    {
+        "podcast_id": 76887,
+        "title": "The CornerKicker Podcast",
+        "description": "A Weekly Podcast About the Latest Football News, Brought to you by the Creators of Cornerkicker.com!",
+        "language": "en",
+        "author_name": "Jonathan Skatoff and Others",
+        "slug": "cornerkickerpod",
+        "cover": "20220108_030138_a8ee41128dda31885a81cac3bc6b28b5.jpg"
+    },
+    {
+        "podcast_id": 77922,
+        "title": "Kicking Grass",
+        "description": "Soccer podcast hosted by @CTLFClobos + guest, covering Austin FC & MLS, San Antonio FC & USL-C, CenTex Lobos & GCPL, NISA, CONCACAF & Mexico/Honduras/El Salvador, & whatever!",
+        "language": "en",
+        "author_name": "David R Walding",
+        "slug": "kickinggrass",
+        "cover": "20220821_080822_f182be22a2c12df4390f19ac86012e41.jpg"
+    },
+    {
+        "podcast_id": 79414,
+        "title": "\u05ea\u05de\u05d9\u05d3 \u05d9\u05e9 \u05de\u05e9\u05d7\u05e7",
+        "description": "\u05db\u05d0\u05df \u05d7\u05d5\u05e9\u05d1\u05d9\u05dd \u05d5\u05de\u05d3\u05d1\u05e8\u05d9\u05dd \u05e2\u05dc \u05db\u05d3\u05d5\u05e8\u05d2\u05dc \u05d5-NBA \u05d5\u05d1\u05db\u05dc\u05dc \u05d0\u05d5\u05d4\u05d1\u05d9\u05dd \u05de\u05d0\u05d5\u05d3 \u05e1\u05e4\u05d5\u05e8\u05d8.",
+        "language": "he",
+        "author_name": "\u05d0\u05e1\u05d9 \u05d1\u05e8\u05d0\u05d5\u05dc\u05e4\u05df",
+        "slug": "assisgame",
+        "cover": "20210915_182339_0f8aa44462f9087d5a31ebde2630067e.jpg"
+    },
+    {
+        "podcast_id": 80378,
+        "title": "Prem Pals",
+        "description": "Prem Pals is an Australian podcast hosted by Heath & Jarred focused on premier league football. We delve into our guests roots to their premier league club, test their knowledge with a weekly trivia and keep the fun and banter to a premium.",
+        "language": "en",
+        "author_name": "Jarred Grainger",
+        "slug": "prempals",
+        "cover": "20210920_073240_6ddc44257ff55cd68b19f0e11de340a4.jpg"
+    },
+    {
+        "podcast_id": 80438,
+        "title": "The Football Chat Podcast",
+        "description": "<p>Welcome to The Football Chat Podcast - the greatest football podcast in history! We are brothers with a passion for the beautiful game and we can't shut up about it. We're bringing expert analysis, ridiculous predictions and terrible fantasy football teams! If our content interests you, make sure to follow for more!</p>",
+        "language": "en",
+        "author_name": "The Football Chat",
+        "slug": "thefootballchatpodcast",
+        "cover": "20210920_165135_052f5416b35637b2f0bcc8cc0f6e6b1c.jpg"
+    },
+    {
+        "podcast_id": 80500,
+        "title": "Cannonside Chats: An Arsenal Podcast",
+        "description": "3 Arsenal fans casually chatting everything Arsenal Football Club! We share our thoughts regarding the current state of the team, as well as a brief look into the Premier League as a whole. Weekly FPL is also given, but should it be taken? Listen to find out!\n\nAlso, get involved by following us on Instagram and Twitter!\n\nSam - @cannonsidechats \nQ - @CannonsideQ \nBecks - @afc_becks ",
+        "language": "en",
+        "author_name": "Cannonside Chats",
+        "slug": "cannonsidechats14",
+        "cover": "20210920_232451_9f04397ef46ae053527084cfa49953d4.jpg"
+    },
+    {
+        "podcast_id": 81242,
+        "title": "DOS POR LA BANDA",
+        "description": "Un show de deportes serio, pero muchas veces no. De entrevistas serias, pero muchas veces no. Con dos conductores serios, pero muchas veces no. Dos Por La Banda, el podcast de Juan Pablo Fern\u00e1ndez y Poncho Vera. A veces serio, pero muchas veces no.",
+        "language": "es",
+        "author_name": "Podbox Studios",
+        "slug": "dosporlabanda",
+        "cover": "podcast_cover.jpg"
+    },
+    {
+        "podcast_id": 81813,
+        "title": "Futbol catal\u00e0, amb Marc Marb\u00e0",
+        "description": "\u26bd Futbol explicat per gent de futbol.  \nDirigeix i presenta: Marc Marb\u00e0.\nEquip: Jordi Montalbo, Arnau Mart\u00ed, Samuel Homedes i Dani L\u00f3pez Bernal",
+        "language": "es",
+        "author_name": "Marc Marb\u00e0",
+        "slug": "futbolcatradio",
+        "cover": "20211104_072329_631bf279616d77968e50aa2ed0b99314.jpg"
+    },
+    {
+        "podcast_id": 83488,
+        "title": "Kings of Concacaf",
+        "description": "The Podcast for all things United States Mens National Team, the best team in Concacaf.",
+        "language": "en",
+        "author_name": "Nathan Rodgers",
+        "slug": "kingsofconcacafpod",
+        "cover": "20211008_041032_40a0e191113c449990eee45308772b12.jpg"
+    },
+    {
+        "podcast_id": 85749,
+        "title": "Music City Hammers",
+        "description": "A Nashville based, West Ham United centered podcast. Hosts Sam and Russell are giving their thoughts on every West Ham game since the podcast's start on October 17th, 2021. Entirely unofficial, this podcast consists of each hosts opinions of the players, team news, and other European football related stories.  ",
+        "language": "en",
+        "author_name": "Russell Scarborough & Sam McNeese",
+        "slug": "musiccityhammers",
+        "cover": "20211018_052211_7907d038adf38bf6514cdbd76103053f.jpg"
+    },
+    {
+        "podcast_id": 86344,
+        "title": "Burnley FC",
+        "description": "<p>Official audio content from Burnley Football Club</p>",
+        "language": "en",
+        "author_name": "Burnley Football Club",
+        "slug": "burnleyfc",
+        "cover": "20230904_020952_354e030b2db8134150b5253e6133ee96.jpg"
+    },
+    {
+        "podcast_id": 87490,
+        "title": "Matchweek: The Podcast",
+        "description": "Matchweek: The Podcast, is a weekly podcast that covers most of the news that occurs with soccer with most topics revolving around current events within the sport.  The host of the show is Ardi Emini and he traverses these topics with different guests to get the opinions of multiple audiences and not just one group of fans.",
+        "language": "en",
+        "author_name": "Ardi Emini",
+        "slug": "matchweek",
+        "cover": "20221221_051216_80ba963a609b4735463d474679a7eb3c.jpg"
+    },
+    {
+        "podcast_id": 87681,
+        "title": "Tubing's Truth",
+        "description": "\u03a3\u03c4\u03bf TUBING'S TRUTH \u03b8\u03b1 \u03b1\u03ba\u03bf\u03cd\u03b3\u03bf\u03bd\u03c4\u03b1\u03b9 \u03c4\u03b1 \u03c0\u03ac\u03bd\u03c4\u03b1 ...stay tuned",
+        "language": "el",
+        "author_name": "Tubing",
+        "slug": "tubingpod",
+        "cover": "20211028_205538_eaca61e7587539e28de9105498bc89c4.jpg"
+    },
+    {
+        "podcast_id": 89807,
+        "title": "The Calcio Nostro Podcast",
+        "description": "5 passionate fans of Italian soccer world sitting down to discuss all the chaos that is Serie A.  ",
+        "language": "en",
+        "author_name": "Marco Taormina",
+        "slug": "calcionostro",
+        "cover": "20211110_022503_b8623c5d4697cdbbdfc904dc70806209.jpg"
+    },
+    {
+        "podcast_id": 95131,
+        "title": "PAOK Today",
+        "description": "<p>\u0388\u03bd\u03b1 podcast \u03ac\u03ba\u03c1\u03c9\u03c2... \u03bb\u03bf\u03b3\u03b9\u03ba\u03cc \u03ba\u03b9' \u03b1\u03c3\u03c0\u03c1\u03cc\u03bc\u03b1\u03c5\u03c1\u03bf. \u039d\u03af\u03ba\u03bf\u03c2 \u03a4\u03bf\u03c3\u03ba\u03af\u03c4\u03c3\u03b7\u03c2 \u03ba\u03b1\u03b9 \u0391\u03bd\u03c4\u03ce\u03bd\u03b7\u03c2 \u03a4\u03c3\u03b1\u03ba\u03b1\u03bb\u03ad\u03b1\u03c2 \u03c3\u03c7\u03bf\u03bb\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd \u03cc\u03bb\u03b1 \u03cc\u03c3\u03b1 \u03c3\u03c5\u03bc\u03b2\u03b1\u03af\u03bd\u03bf\u03c5\u03bd \u03c3\u03c4\u03bf\u03bd \u03a0\u0391\u039f\u039a</p>",
+        "language": "el",
+        "author_name": "\u039d\u03af\u03ba\u03bf\u03c2 \u03a4\u03bf\u03c3\u03ba\u03af\u03c4\u03c3\u03b7\u03c2 - \u0391\u03bd\u03c4\u03ce\u03bd\u03b7\u03c2 \u03a4\u03c3\u03b1\u03ba\u03b1\u03bb\u03ad\u03b1\u03c2",
+        "slug": "paoktoday",
+        "cover": "20230518_080552_8cee7a31b787c4756626acea865dec9f.jpg"
+    },
+    {
+        "podcast_id": 97867,
+        "title": "The Front Page Football Podcast Network",
+        "description": "Join the Front Page Football team as they discuss all things Australian football in a casual, ad-libbed, and fun way on this podcast network. Across multiple shows, Aussie football truly does live here! They're top podcasts, produced by the next gen.",
+        "language": "en",
+        "author_name": "Front Page Football",
+        "slug": "frontpagefootball",
+        "cover": "20221102_121138_6239c1bc748e38d18815de7903c1a407.jpg"
+    },
+    {
+        "podcast_id": 99277,
+        "title": "Charlotte Soccer Show",
+        "description": "<p>Two supporters and media pros talk Charlotte as a Soccer City. John Hayes is an Executive Producer and Daniel Bramlette is a Sr. Producer at ESPN. Together they tackle Charlotte FC's inaugural season, telling fan stories &amp; paying tribute to the Carolinas' best brews. Each episode feels like trading tales over pints at the pub, pour yourself a glass and enjoy!</p>",
+        "language": "en",
+        "author_name": "Charlotte Soccer Show ",
+        "slug": "charlotte-soccer-show",
+        "cover": "20220328_060321_5045452ada599fc3fa91f9ef93a593f4.jpg"
+    },
+    {
+        "podcast_id": 99981,
+        "title": "TrollFoci",
+        "description": "A TrollFoci podcast csatorn\u00e1ja.",
+        "language": "hu",
+        "author_name": "TrollFoci",
+        "slug": "trollfoci",
+        "cover": "20220110_050107_aaf4fe16d65d28d00eac2e78af644627.jpg"
+    },
+    {
+        "podcast_id": 101707,
+        "title": "Lack of Depth Football Podcast",
+        "description": "Have you ever wondered what Match of the Day would sound like if it was hosted by Jackie Weaver?\n\nMe neither... But the aptly named \"Lack of Depth\" helps make this pipe dream a reality by coupling out of context football analytics with Delia Smith charisma.\n\nListen as we bridge the gap between a squealing Gary Neville and groaning football journalists by combining the minimally educational with the broadly offensive.",
+        "language": "en",
+        "author_name": "Lodpod Industries",
+        "slug": "lodpod",
+        "cover": "20220825_060858_0f43e30068791341c755c8435e40e425.jpg"
+    },
+    {
+        "podcast_id": 104462,
+        "title": "FOOTYTALKS",
+        "description": "Hello I am Henry Olmos. This is my podcast! I really enjoy the beautiful game of soccer, and love talking about it and also playing it. But here we are discussing anything and everything about soccer! Join me and my friends in the discussions and the news of soccer! ",
+        "language": "en",
+        "author_name": "Henry M Olmos",
+        "slug": "losmexicanos",
+        "cover": "20220526_020524_e04f9be570ccaf3c69f2d3531f5f70b6.jpg"
+    },
+    {
+        "podcast_id": 108405,
+        "title": "We Know Ball",
+        "description": "Footballing Geniuses in the United States give our opinions, have arguments, and overall banter over the World of Football. We host interesting guests, play games, and have a great time, it would be great to have you along! ",
+        "language": "en",
+        "author_name": "WKB Podcast",
+        "slug": "wkb",
+        "cover": "20220511_030513_15b5c33b600d10843150b9964690f3cb.jpg"
+    },
+    {
+        "podcast_id": 110024,
+        "title": "ARTETA'S ARSENAL",
+        "description": "<p>A football podcast for football fans. Passionate gunner with very strong love and admiration for the club and the current project being spearheaded by Mikel Arteta.</p>",
+        "language": "en",
+        "author_name": "Uyi Erhabor",
+        "slug": "artetasarsenal",
+        "cover": "20230415_090446_9535f544e2855986f5c6ad98e42857e4.jpg"
+    },
+    {
+        "podcast_id": 110745,
+        "title": "Glimt i \u00f8yet",
+        "description": "En fan-podcast om Bod\u00f8/Glimt med J\u00f8rn Sund-Henriksen, Per-Magnus Amdam Johansen, Bj\u00f8rn Einar \u00d8stensen og \u00d8ystein Parelius. Vi ranter, bantrer og diskuterer tema i og rundt (noen ganger ganske langt rundt) Glimt. \n\nProdusent: Webium\nSponsor: Adventure Tailor",
+        "language": "nb",
+        "author_name": "J\u00f8rn Sund-Henriksen, Bj\u00f8rn Einar \u00d8stensen, Per-Magnus Amdam Johansen og \u00d8ystein Parelius",
+        "slug": "glimtioyet",
+        "cover": "20220222_110250_1ed25d0191542ba80af9563826eda41d.jpg"
+    },
+    {
+        "podcast_id": 112565,
+        "title": "Lost In Possession Podcast",
+        "description": "Lost In Possession Football Podcast\n3 football mad friends discuss and debate all the latest topics in the world of football\nYoutube: https://www.youtube.com/channel/UCEE5YOtUSUiOpO5JRUgj22Q\nInstagram: https://www.instagram.com/lostinpossessionpodcast/",
+        "language": "en",
+        "author_name": "Jamie, Jordan and Reece",
+        "slug": "lostinpossession",
+        "cover": "20220318_090338_5487ed4d4cab533ccfdfa8c3f723dedc.jpg"
+    },
+    {
+        "podcast_id": 114492,
+        "title": "Supporters Section",
+        "description": "<p>Welcome to the Supporters Section! We are an American Soccer Channel focused on bringing you all the latest from the pitch. Being a part of the \"Supporter Section\" to us simply means getting to share the beautiful game together. Whether it is in the comment sections or in our content - we seek to offer fair criticism and unique viewpoints that others typically would not give. Stick around and check out our content as you make sure to subscribe while we deliver content weekly!</p>",
+        "language": "en",
+        "author_name": "Supporters Section",
+        "slug": "the-bad-fan",
+        "cover": "20230221_080205_ffbcdebed5e73e11e2808d9c64be764f.jpg"
+    },
+    {
+        "podcast_id": 115463,
+        "title": "La Rojinegra",
+        "description": "Historia, entrevistas, an\u00e9cdotas, invitados especiales. Este podcast nos transportar\u00e1 a la previa de la previa, al tercer tiempo, a aquellos momentos que compartimos quienes entendemos que el f\u00fatbol es la vida misma.\n\nEntregada, creativa, apasionada\u2026 fiel.\n\nLa Rojinegra sabe lo que es desayunar, comer y cenar f\u00fatbol. Entiende lo que es dejarlo todo para poder estar junto al equipo amado.",
+        "language": "es",
+        "author_name": "Livette Ruvalcaba",
+        "slug": "larojinegra",
+        "cover": "20220316_120331_75d89604d6891058477f6d53de077fa2.jpg"
+    },
+    {
+        "podcast_id": 115823,
+        "title": "Back Of The Net",
+        "description": "A football podcast for all football fans, monthly episodes with players, managers, directors and fans. Bringing you the inside stories from the game we love!",
+        "language": "en",
+        "author_name": "Ben Cooke",
+        "slug": "backofthenetwsm",
+        "cover": "20220317_010352_c18fe524d620c2a69d37b0ed0840d76c.jpg"
+    },
+    {
+        "podcast_id": 117341,
+        "title": "Carbs Corner ",
+        "description": "Is football your passion?\n\nJoin Joe Carbone, from Perth Western Australia in discussions concerning local, interstate and international football matters. \n\nA podcast for the love of the game. \n",
+        "language": "en",
+        "author_name": "Joe Carbone ",
+        "slug": "carbscorner",
+        "cover": "20220324_120302_4ea6438a965216b0729439beee2323f6.jpg"
+    },
+    {
+        "podcast_id": 117439,
+        "title": "\u0642\u0634\u0627\u0634",
+        "description": "\u0628\u0648\u062f\u0643\u0627\u0633\u062a \u064a\u0646\u0627\u0642\u0634 \u0634\u0624\u0648\u0646 \u0643\u0631\u0629 \u0627\u0644\u0642\u062f\u0645 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0648\u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629 \u0645\u0646 \u0627\u0644\u0646\u0627\u062d\u064a\u0629 \u0627\u0644\u0625\u062f\u0627\u0631\u064a\u0629 \u0648\u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629 \u0648\u0623\u062d\u064a\u0627\u0646\u064b\u0627 \u0627\u0644\u0641\u0646\u064a\u0629.",
+        "language": "ar",
+        "author_name": "\u0641\u0647\u062f \u0627\u0644\u0642\u0627\u0636\u064a",
+        "slug": "gashash",
+        "cover": "20220324_070346_47e87dc70248f1792f9af8da52dda112.jpg"
+    },
+    {
+        "podcast_id": 117472,
+        "title": "Overtid",
+        "description": "Overtid er PSG Fan Club Norways etter-kamp show.\nEpisodene spilles inn etter hver PSG-kamp med Dimitri Karam, Marie Aurdal og Rehan Khalid.\nVi analyserer kampen; snakke om de sterke og svake punktene; v\u00e5re reaksjoner og meninger om kampen, spillere og trenere; velger v\u00e5r Man of the Match, og mye mer...",
+        "language": "nb",
+        "author_name": "PSG Fan Club Norway",
+        "slug": "overtid",
+        "cover": "20220603_080601_4f58dfca47f265901e8a6d860a1eaba2.jpg"
+    },
+    {
+        "podcast_id": 117602,
+        "title": "Double A Podcast",
+        "description": "A podcast about the beautiful game by Holden Willemsen",
+        "language": "en",
+        "author_name": "Holden Willemsen",
+        "slug": "doubleacast",
+        "cover": "20220325_050324_544ba6677cc79e636c277718b2f6ed7c.jpg"
+    },
+    {
+        "podcast_id": 118222,
+        "title": "The Vibe Parlour",
+        "description": "disorderly ramblings of a silly little scotsman... sometimes with guests",
+        "language": "en",
+        "author_name": "Jacob Gunn",
+        "slug": "vibeparlour",
+        "cover": "20220328_100337_8c7fb37d93d091c6fe593b6b8ef58ef6.jpg"
+    },
+    {
+        "podcast_id": 118696,
+        "title": "Como Dice?",
+        "description": "X sujetos que se pitorrean de Mexico y su gente.\n",
+        "language": "en",
+        "author_name": "Daniel Buelna ",
+        "slug": "ah-plebes",
+        "cover": "20220330_060304_652e308e2a06d5728a0d808b9d9034f7.jpg"
+    },
+    {
+        "podcast_id": 119218,
+        "title": "Comocast",
+        "description": "Carvey, Ibnu and Marco's casual chat about the football team COMO 1907 with comments about last match, COMO 1907 players and our Indonesian x Italian long distance friendship.",
+        "language": "en",
+        "author_name": "Marco Melillo",
+        "slug": "comocast",
+        "cover": "20220401_100443_fd947cb29def3756c7497982f3444e25.jpg"
+    },
+    {
+        "podcast_id": 119284,
+        "title": "ATO - After the Whistle",
+        "description": "\"After the Whistle\u201d is the latest in a long line of fan-forward, innovative and informative Atl\u00e9tico Ottawa content created by the team at Capital City Supporters Group. Johnny McArthur and Patrick Dornan will host a weekly informal conversation where they let off some steam, dissect the key talking points as well as delve into some statistical data to provide an insight into how well (or poor) the club is doing. As always, the fans are vital to everything done here at CCSG so, if you would like to take part in one of our episodes, whether you caught the game at the stadium or from your sofa, don't hesitate and get in touch with us.\n\nAbout CCSG:\n\nAs Ottawa\u2019s newest and most active supporters group we believe that it is the responsibility to help create the best fan forward atmosphere on match day. We aim to reinvent what traditional supporters culture is by creating additional excitement for the club with quality digital content throughout the year for the fans by the fans. Our commitment to the club goes beyond match day as The Capital City Supporters Group is steadfast in doing our part in helping grow the beautiful game and the Atletico brand here in the Dominion City.\n\nJoin Us! Get involved, Let\u2019s start new traditions and help grow the game and support Atl\u00e9tico Ottawa!\n\nYou can be as involved as you like. Making noise and showing your colours on match day or volunteering your skills to help create some of the best fan content in the Canadian Premier League.",
+        "language": "en",
+        "author_name": "Capital City Supporters Group",
+        "slug": "ato-afterthewhistle",
+        "cover": "20220401_030405_c4b9700da8de21fadc6cd3bc92d0f5ef.jpg"
+    },
+    {
+        "podcast_id": 121213,
+        "title": "365Scores \u0628\u0648\u062f\u0643\u0627\u0633\u062a",
+        "description": "\u0628\u0648\u062f\u0643\u0627\u0633\u062a 365Scores \u0645\u062a\u062e\u0635\u0635 \u0628\u0627\u0644\u062d\u062f\u064a\u062b \u0639\u0646 \u0627\u0646\u062a\u0642\u0627\u0644\u0627\u062a \u0627\u0644\u0623\u0646\u062f\u064a\u0629 \u0627\u0644\u0643\u0628\u0631\u0649 \u0641\u064a \u0623\u0648\u0631\u0648\u0628\u0627 \u0648\u0633\u0631\u062f \u0642\u0635\u0635 \u062a\u0627\u0631\u064a\u062e \u0641\u0631\u0642 \u0643\u0631\u0629 \u0627\u0644\u0642\u062f\u0645 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629 \u0648\u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0645\u0646 \u062e\u0644\u0627\u0644 \u0628\u0648\u062f\u0643\u0627\u0633\u062a \u0622\u062e\u0631 \u0645\u062e\u062a\u0635 \u0628\u0642\u0635\u0635 \u0645\u062a\u0646\u0648\u0639\u0629 \u0641\u064a \u0643\u0631\u0629 \u0627\u0644\u0642\u062f\u0645.",
+        "language": "ar",
+        "author_name": "365ScoresArabic",
+        "slug": "365scoresarabic",
+        "cover": "20220626_110632_03456d00f8d133be26766c91944bc081.jpg"
+    },
+    {
+        "podcast_id": 121901,
+        "title": "Bryan Albores ",
+        "description": "M\u00fasica ",
+        "language": "en-us",
+        "author_name": "Bryan ",
+        "slug": "bryan",
+        "cover": "20220413_050402_2df7054c5945337d5708042b57c4ece2.jpg"
+    },
+    {
+        "podcast_id": 122551,
+        "title": "Kicks and Picks Podcast",
+        "description": "<p>Football. Soccer. C\u00e0lcio. Whatever you call it, the Kicks and Picks guys got it covered. Weekly discussions on all the top games and teams around Europe with a special focus on the English Premier League and Serie A. If you enjoy putting a little action on the games while you watch, the guys share their picks each week so you can ride (or fade) what they've staked. Subscribe, rate, review if you like what you hear!</p>",
+        "language": "en",
+        "author_name": "Kicks & Picks ",
+        "slug": "kicksandpickspod",
+        "cover": "20230325_030321_4bbd37002edc7fb27510ad5896beba55.jpg"
+    },
+    {
+        "podcast_id": 122675,
+        "title": "Lad and Dad Away Days ",
+        "description": "Lad and Dad Away Days are to remind people of the memories of football and talk about the experience of going to the football with your dad or lad. We talk all things Wembley and about our time of coming to Wembley. Niall (Lad) and Gary (Dad) have been following Manchester City together since Niall was 4 years old. His first game was Wembley in 1999 for the Division 2 playoff final and he and his Dad have had a season ticket since for Manchester City. \n\nListen to our podcast here and we don't want to talk too much about expectations of the game and about stats and facts just pure memories and stories of our time watching Manchester City as Lad and Dad. \n\nWe know many of our football friends go to football with their Dad and this is to remind us of those times we all have. \n\nFor now it will be about our time watching Manchester City Football Club only because that is who we support but who knows where we could get too in the long run as we would love to hear other Lad and Dad stories from other teams too. Just not Man United, Tottenham or Everton haha. \n\nEnjoy. Up Tha Blues! ",
+        "language": "en",
+        "author_name": "Niall Pickles",
+        "slug": "lad-and-dad-away-days",
+        "cover": "20220417_010426_c0258e93eb6ec67dae29026fb2dc3ea3.jpg"
+    },
+    {
+        "podcast_id": 122810,
+        "title": "Between The Sticks",
+        "description": "Joe and Grayson cover everything in the world of soccer, from upcoming games to title races to transfers. Listen in as we give our pointless thoughts on everything!",
+        "language": "en",
+        "author_name": "Joe Watts",
+        "slug": "betweenthesticks",
+        "cover": "20220418_040402_7e2c6c15a7f55d98b870c93494b99ce3.jpg"
+    },
+    {
+        "podcast_id": 124878,
+        "title": "Football Unscripted ",
+        "description": "My name is Kaleb Fulmer, and I host Football Unscripted. The goal of my show is to sit down with footballers and talk about real life as professional athletes and hear stories that don't make it to mainstream media.",
+        "language": "en",
+        "author_name": "Kaleb Fulmer",
+        "slug": "footballunscripted",
+        "cover": "20220427_030427_f3454e7344ae2df5fb36b53bd02471ce.jpg"
+    },
+    {
+        "podcast_id": 130697,
+        "title": "GO+bet Podcast",
+        "description": "Sportowe i bukmacherskie podcasty, znakomici go\u015bcie, ciekawi eksperci - to GO+bet Podcast! \n\nTutaj nas znajdziesz: https://linktr.ee/goplusbet\nPewniaki na dzi\u015b? https://www.goplusbet.pl/\n\n\nJeste\u015bmy legalnym, polskim bukmacherem, posiadamy zezwolenie Ministra Finans\u00f3w na urz\u0105dzanie zak\u0142ad\u00f3w wzajemnych. Hazard wi\u0105\u017ce si\u0119 z ryzykiem. Zakaz uczestnictwa w grze hazardowej dla os\u00f3b poni\u017cej 18. roku \u017cycia. ",
+        "language": "pl",
+        "author_name": "GO+bet",
+        "slug": "goplusbet",
+        "cover": "20220527_120520_b1476f3d7b1b4ffe3a8d18b4da204b60.jpg"
+    },
+    {
+        "podcast_id": 131417,
+        "title": "Mujeres en el Doporte ",
+        "description": "proyecto de antropolog\u00eda",
+        "language": "es",
+        "author_name": "jennifer",
+        "slug": "platicaconjenny",
+        "cover": "20220607_070653_2c74feff8c0082d72bfc9a215d910519.jpg"
+    },
+    {
+        "podcast_id": 131635,
+        "title": "Straight Like That",
+        "description": "Straight Like That is a futbol podcast for the fans of the beautiful game. Guests will appear on episodes to talk about their journey thus far through the game, problems at the youth level, & much more. Be sure to tune in, there will be a lot of free game kicked around.",
+        "language": "en",
+        "author_name": "Straight Like That",
+        "slug": "straightlikethat",
+        "cover": "20220601_060643_79c34965637529fa7477b5ed8b834ab1.jpg"
+    },
+    {
+        "podcast_id": 132223,
+        "title": "Total Recaps",
+        "description": "Total Recaps is the go to for any Miami sports fan. \n\nThere will be weekly updates on all your favorite Miami sports teams, though you'll see a heavy portion of it focused on the Miami Heat. We'll have interviews, debates and more with either big Miami media heads or your local fans. \n\nWe mix it up here at Total Recaps for your enjoyment. So signup and get ready to enjoy all the free and easy access for your Miami sports needs. ",
+        "language": "en",
+        "author_name": "Steven Melendez",
+        "slug": "totalrecaps",
+        "cover": "20220604_060604_8ab5d5ae6c78f7770e946ca87cc5cd3f.jpg"
+    },
+    {
+        "podcast_id": 132607,
+        "title": "Minuto 32",
+        "description": "Espacio de opini\u00f3n y entrevistas sobre la actualidad e historia del Real Zaragoza  y del deporte aragon\u00e9s presentado por Ortiz Remacha.",
+        "language": "es",
+        "author_name": "Francisco Ortiz Remacha",
+        "slug": "minuto32",
+        "cover": "20220606_080624_5449f87f56840a0ad3a2666c4958c25b.jpg"
+    },
+    {
+        "podcast_id": 132745,
+        "title": "Bore Draw Podcast",
+        "description": "<p>Bore Draw is two pals rambling about all things football. Focusing mainly on the Premier League, Champions League and International football! However we'll usually just go wherever the vibes take us. So sit down, grab a drink and have a listen!</p>",
+        "language": "en",
+        "author_name": "Bore Draw",
+        "slug": "boredrawpodcast",
+        "cover": "20220607_120635_9f72897efa1c76482aab99a2cb5e79a9.jpg"
+    },
+    {
+        "podcast_id": 132824,
+        "title": "Fuessballchr\u00e4nzli",
+        "description": "Wir sind Carlo und Cornel, Zwei begeisterte Fussballfans, welche ein mal im Monat \u00fcber ein Fussballteam aus der Serie A, der Bundesliga und der Premier League.\n\nFolge uns auf Instagram \"fuessballchraenzli.ch\" und gib uns dort Dein Feedback!",
+        "language": "de-ch",
+        "author_name": "Carlo und Cornel",
+        "slug": "fuessballchraenzli",
+        "cover": "20220607_080628_782a0b9fe4826412dd6da5f854e2f7ea.jpg"
+    },
+    {
+        "podcast_id": 135154,
+        "title": "Toontyme",
+        "description": "Discussing the recent news surrounding Newcastle United Football Club \n\nFind us at: \n\nhttps://toontyme.com\nhttps://twitter.com/Toontyme1892\nhttps://www.instagram.com/toontyme1892/?hl=en\nhttps://www.youtube.com/channel/UCCJHFWK4_4ZSqWDrH67gPIw",
+        "language": "en",
+        "author_name": "Toontyme",
+        "slug": "toontyme",
+        "cover": "20220630_070618_1af4414e36e51463cd3a72e3a2ef3444.jpg"
+    },
+    {
+        "podcast_id": 135304,
+        "title": "Como en el '96",
+        "description": "Como en el \u201896 es un podcast original de Dyve, la plataforma que te permite personalizar tus noticias de f\u00fatbol. Este podcast est\u00e1 100% dedicado a los guerreros del Santos Laguna, el equipo m\u00e1s grande de la Liga MX. Vamos a traer fan\u00e1ticos de otros equipos para debatir los partidos de cada semana. Tendremos invitados especiales que les van a volar la cabeza. Los nuevos episodios van a estar disponibles cada martes mientras Santos est\u00e9 peleando por el t\u00edtulo. ",
+        "language": "es-mx",
+        "author_name": "Dyve",
+        "slug": "comoenel96",
+        "cover": "20220619_040614_2c4a42cc8c6aa8f11c1f87be76ca653b.jpg"
+    },
+    {
+        "podcast_id": 137966,
+        "title": "Four Quarters, Two Halves",
+        "description": "Four Quarters, Two Halves - A one-of-a-kind incursion of Basketball and Football (Soccer). Join Sunil and Sudhish in discussing all things from the NBA and the top football leagues in Europe. ",
+        "language": "en",
+        "author_name": "Sudhish Poojary and Sunil Balendran",
+        "slug": "fourquarters",
+        "cover": "20220701_070745_3e1528ec1e6af55044dde017973ed5ef.jpg"
+    },
+    {
+        "podcast_id": 138336,
+        "title": "Asscasters Podcast ",
+        "description": "Andy, Schawe, Scrode, and Carlos tackle sports, betting, weekend mishaps, and life's vagaries. ",
+        "language": "en",
+        "author_name": "Asscasters",
+        "slug": "asscast",
+        "cover": "20220703_070708_7d9aa0b3cf3fb84877abf63e14ec0b87.jpg"
+    },
+    {
+        "podcast_id": 138729,
+        "title": "Futbol y humor en Tacos Sudados de Futbol",
+        "description": "<p>S\u00e1tira y sarcasmo deportivo, las noticias que son tendencias de la semana con harta salsa de humor negro.</p>",
+        "language": "es",
+        "author_name": "TSF",
+        "slug": "tacossudadosdefutbol",
+        "cover": "20220706_030701_df1e9ba19454797460c91ddc66e94e20.jpg"
+    },
+    {
+        "podcast_id": 139125,
+        "title": "HighonLAFC",
+        "description": "We aspire to be LAFC's biggest community where we talk and promote the team. We talk games, events, players move and anything associated with the club. Be a part of our LAFC family ",
+        "language": "en",
+        "author_name": "Dylan Monroy",
+        "slug": "highonlafc",
+        "cover": "20220929_060926_f67bb6d09b43cc2cea1127e3c5c7a505.jpg"
+    },
+    {
+        "podcast_id": 139463,
+        "title": "(Non) Esperti di calcio",
+        "description": "Una chiacchierata tra (non) esperti di calcio sui temi pi\u00f9 caldi del calcio nazionale e internazionale",
+        "language": "it",
+        "author_name": "Francesco Lembo, Leone Morziello e Gabriele Portolano",
+        "slug": "nonespertidicalcio",
+        "cover": "20220729_120706_56164a8494efb6c956a817625f5c6000.jpg"
+    },
+    {
+        "podcast_id": 140184,
+        "title": "No Off-Season Podcast",
+        "description": "We talk about all the sports on the Planet. CFB,CBB,NFL,NBA, and MLB you name it we talk about it as long as its a sport we talk about it.",
+        "language": "en",
+        "author_name": "Ryan & Nathaniel Rohaly",
+        "slug": "we-got-them-legdgen",
+        "cover": "20220825_020800_06d685838489da7511bc778c1135426f.jpg"
+    },
+    {
+        "podcast_id": 140390,
+        "title": "Fut en 11 ",
+        "description": "Creado por FUT 11. Este espacio contar\u00e1 con la participaci\u00f3n de periodistas, futbolistas, narradores, entre otros personajes protagonistas del f\u00fatbol mexicano y mundial, con el fin de saber sobre los distintos procesos por los que pasan para llegar a d\u00f3nde hoy en d\u00eda estan. ",
+        "language": "es-mx",
+        "author_name": "Fut 11 MX",
+        "slug": "fut11mx",
+        "cover": "20220717_110702_ce55389d9e9f5182837413161fdbdc6a.jpg"
+    },
+    {
+        "podcast_id": 141174,
+        "title": "The Magnus Effect",
+        "description": "A podcast about sport with Magnus Carlsen and Magnus Barstad",
+        "language": "en",
+        "author_name": "The Magnus Effect",
+        "slug": "the-magnus-effect",
+        "cover": "20220719_110717_7f03f81a5ec06cca55424d2867dccd21.jpg"
+    },
+    {
+        "podcast_id": 141518,
+        "title": "The Terriers Talk ",
+        "description": "<p>Welcome to The Terriers Talk. Subscribe to our channel for regular content covering all things Huddersfield Town. From weekly match previews and reviews, to guest shows featuring Town legends, join Jai and Ben as they keep you up to date with the latest at the club. You can also catch us on Spotify, Apple Music and all major streaming platforms by following the link below!</p>",
+        "language": "en",
+        "author_name": "Jai Singh and Ben Dixon",
+        "slug": "theterrierstalk",
+        "cover": "20230627_120615_5199bf649544fffcfaea23d44aa20e18.jpg"
+    },
+    {
+        "podcast_id": 142493,
+        "title": "Kit Nerd Corner ",
+        "description": "A podcast for nerds who love soccer shirts, featuring nerds who talk about soccer shirts. Or football shirts. Football kit. However you want to call it. We all live in Canada and watch soccer / football from around the world. \n\nGo to <a href=\"https://www.kitnerdcorner.ca\">www.kitnerdcorner.ca</a> for episode info and show notes. ",
+        "language": "en",
+        "author_name": "Brenton, Kristin, Mark, Rich",
+        "slug": "kit-nerd-corner",
+        "cover": "20220725_060703_11bd1e93311e0c8fbd31b59fbd7baf1d.jpg"
+    },
+    {
+        "podcast_id": 142885,
+        "title": "Fotbal a Ko\u0159alka",
+        "description": "Podcast o fotbalu. \nRozeb\u00edr\u00e1me nejv\u011bt\u0161\u00ed sv\u011btov\u00e9 ligy a kluby. Sumarizujeme pro v\u00e1s nejzaj\u00edmav\u011bj\u0161\u00ed a nejnov\u011bj\u0161\u00ed v\u011bci, co se na sv\u011btov\u00e9 fotbalov\u00e9 sc\u00e9n\u011b d\u011bj\u00ed a p\u0159id\u00e1v\u00e1me na\u0161e n\u00e1zory a post\u0159ehy. \n Jsme dva kluci, co se bav\u00ed o fotbale a maj\u00ed r\u00e1di tvrd\u00fd alkohol :D",
+        "language": "en",
+        "author_name": "Jan Bajer a Maty\u00e1\u0161 Babiak",
+        "slug": "fakpodcast",
+        "cover": "20220803_120849_6b5091bcc5e66f153ca40c9519057479.jpg"
+    },
+    {
+        "podcast_id": 143860,
+        "title": "Crusher Football Podcast",
+        "description": "A place to go every week to discuss the latest and greatest stories in the European Football game. We will go from discussing individual games to transfers or how a team needs to rebuild. So if you are here I hope you join us on this journey",
+        "language": "en",
+        "author_name": "Crusher Football Podcast",
+        "slug": "crusherfootballep1",
+        "cover": "20220801_050808_5f17660954cb391f0b5b4cf5c1acb252.jpg"
+    },
+    {
+        "podcast_id": 144404,
+        "title": "Heritage Agendas Football Podcast",
+        "description": "The Heritage Agendas Football Podcast with ibrahimbht and abdiisalah !\n\nLinks below!\n\nhttps://linktr.ee/heritageagendas\n",
+        "language": "en",
+        "author_name": "Heritage Agendas Football Podcast",
+        "slug": "hertiageagendasfp",
+        "cover": "20220804_060838_b6cbf142ffcbc18604ccd0ea4277cd01.jpg"
+    },
+    {
+        "podcast_id": 144716,
+        "title": "The Other 14 Podcast",
+        "description": "A podcast that celebrates The Other 14 teams in the premier league. Run by fans, and wanting fans' opinions. ",
+        "language": "en",
+        "author_name": "Other14 Productions",
+        "slug": "theother14pod",
+        "cover": "20220811_100803_42be547fa6a75170b0ce186e20a1ec31.jpg"
+    },
+    {
+        "podcast_id": 144724,
+        "title": "Igra\u010di Za Rotaciju",
+        "description": "Specijalizirani podcast o Premier Ligi",
+        "language": "hr",
+        "author_name": "Danijel Palai\u0107 & Ivan Krpan",
+        "slug": "igracizarotaciju",
+        "cover": "20220805_070843_acbdfe1cffb16552d063a1e93edee723.jpg"
+    },
+    {
+        "podcast_id": 145083,
+        "title": "FutTalks Podcast",
+        "description": "<p>Podcast de debate futbolero entre amigos con un toque de humor \u26bd\ufe0f\ud83c\udf99\ufe0f</p>",
+        "language": "es",
+        "author_name": "FutTalks Podcast",
+        "slug": "futtalkspodcast",
+        "cover": "20221205_011248_a9732e976c62a97117454d38c06d2bb4.jpg"
+    },
+    {
+        "podcast_id": 145568,
+        "title": "Sippin' Tea with Spurs",
+        "description": "A podcast with two mates from London and Mississippi who love to talk Tottenham Hotspur and good ole banter. ",
+        "language": "en",
+        "author_name": "T.J. Baggett and Callum Miles",
+        "slug": "sippintea",
+        "cover": "20220810_030826_3de91b61332febf9721dd456227607fa.jpg"
+    },
+    {
+        "podcast_id": 145803,
+        "title": "Field Of Play TV",
+        "description": "Two passionate Manchester United fans covering and speaking on real life footballing discussions and on topics going on in the world of football as they happen! \ud83d\udd34\ud83c\udf99\n",
+        "language": "en",
+        "author_name": "Sanch & T4",
+        "slug": "fieldofplaytv",
+        "cover": "20221028_101057_099a1d4b347769253cbc4fd7eb64a033.jpg"
+    },
+    {
+        "podcast_id": 145908,
+        "title": "The Palace Way",
+        "description": "Former football writer Alex and Palace-obsessed student Bruno discuss all things Crystal Palace, covering transfers, tactics, results and more.\n\nIf you're looking for a Palace-related podcast that endearingly tries a little bit of everything, with hosts that could not be more passionate about the beautiful game, then you\u2019re ready to discover The Palace Way.",
+        "language": "en",
+        "author_name": "The Palace Way",
+        "slug": "thepalaceway",
+        "cover": "20220911_070918_d6324db1d0963d296f5d021404ff3668.jpg"
+    },
+    {
+        "podcast_id": 147118,
+        "title": "Desportoa\u00f3licos",
+        "description": "<p>O Desporto sem modera\u00e7\u00e3o!</p>",
+        "language": "pt-pt",
+        "author_name": "Desportoa\u00f3licos",
+        "slug": "desportoaolicos",
+        "cover": "20230808_060840_01778c818389b16af6c26d3d79cb2e41.jpg"
+    },
+    {
+        "podcast_id": 148143,
+        "title": "The Hooligan's Pitch",
+        "description": "Where Chad and Michael talk Footy and our home-brewed EPL Fantasy League. \nwww.hooliganspitch.com",
+        "language": "en",
+        "author_name": "Michael & Chad",
+        "slug": "the-hooligans-pitch",
+        "cover": "20220822_050801_1f544d3ac9241781af06f6d06c9f83d1.jpg"
+    },
+    {
+        "podcast_id": 148337,
+        "title": "L'assistant coach",
+        "description": "<p>Podcast sur le football de la NFL</p>",
+        "language": "fr",
+        "author_name": "L'assistant coach",
+        "slug": "lassistantcoach",
+        "cover": "20220906_110940_6d3dfb2afc73e9ab49eac68e1f98bf02.jpg"
+    },
+    {
+        "podcast_id": 148462,
+        "title": "Football Lenses",
+        "description": "Two friends born and raised in Illinois. Giving our take on the sport that we love, known by most as football but by some as soccer. Join us on our weekly podcast where we discuss all things football. \nFollow us on our socials medias... \nTwitter: @Football_Lenses\nInstagram: football_lenses",
+        "language": "en",
+        "author_name": "Anthony Maitland, Luis Gerardo Baca",
+        "slug": "footballlenses",
+        "cover": "20220824_120800_18da65fd7ea5c7f95083c782d8f055da.jpg"
+    },
+    {
+        "podcast_id": 148749,
+        "title": "Top\u00e7ular Feribotu",
+        "description": "Ozan Can S\u00fcl\u00fcm ve Sava\u015f Birdal, haftadan haftaya Arsenal'\u0131 de\u011ferlendiriyor. Arada Premier Lig g\u00fcndemine de de\u011finmeden edemiyorlar.",
+        "language": "tr",
+        "author_name": "Savas Birdal, Ozan Can S\u00fcl\u00fcm",
+        "slug": "topcular",
+        "cover": "20220825_100829_b815b460c1efe09ecb51d4f57e1fef1b.jpg"
+    },
+    {
+        "podcast_id": 149979,
+        "title": "Come on, Redmen!",
+        "description": "<p>\"Come on Redmen!\" is the ultimate podcast for all Liverpool FC fans out there! This show is the perfect combination of fun, information and humor. Whether you're a die-hard fan or just a casual supporter, \"Come on Redmen!\" is the podcast you've been waiting for. With knowledgeable hosts and a passion for the beautiful game, this show is guaranteed to keep you entertained and informed. So why not sit back, relax and join us on a journey through the world of Liverpool FC? With a mix of analysis, lively debate, and plenty of laughs, \"Come on Redmen!\" is a must-listen for all fans of the Redmen. Don't take our word for it, hit that play button and see for yourself!</p>",
+        "language": "en",
+        "author_name": "Come on, Redmen",
+        "slug": "comeonredmen",
+        "cover": "20230919_020956_a14681a652891f5023b4144bcf1bae2e.jpg"
+    },
+    {
+        "podcast_id": 150677,
+        "title": "All Things FPL",
+        "description": "The #1 place for FPL Data, News, Previews, and more to help you be the best Fantasy Premier League player possible!",
+        "language": "en",
+        "author_name": "Spice",
+        "slug": "allthingsfpl",
+        "cover": "20220902_060923_36e15d501f61f1497b3a7effc92c00c4.jpg"
+    },
+    {
+        "podcast_id": 152568,
+        "title": "El Zaguero",
+        "description": "<p>Defensa de la opini\u00f3n argumentada. Tratando los temas con el respeto que merecen, con profundidad y sin falacias. Es posible dar una opini\u00f3n, pero no que sea leg\u00edtima; aqu\u00ed se busca la voz acreditada a base de sensatez, ser alguien que hable con la verdad por delante y con matices propios de una persona interesada por lo que habla. Adi\u00f3s a la ignorancia con El Zaguero, bienvenido a un espacio serio acerca de mundo del balompi\u00e9.</p>",
+        "language": "es",
+        "author_name": "El Zaguero",
+        "slug": "elzaguero",
+        "cover": "20220928_030929_d844ac8c8210fa432f8143f6d62dc977.jpg"
+    },
+    {
+        "podcast_id": 153506,
+        "title": "Premier League On Tap",
+        "description": "A Fantrax FPL Draft Podcast | Analyzing every fixture, every gameweek, giving you the edge to top the league table!",
+        "language": "en",
+        "author_name": "Premier League On Tap",
+        "slug": "premierleageontap",
+        "cover": "20220914_100950_0c1df421f69e4452395aed902cec922e.jpg"
+    },
+    {
+        "podcast_id": 153631,
+        "title": "BINK! ",
+        "description": "D\u00e9 onafhankelijke podcast voor en door STVV fans! ",
+        "language": "nl",
+        "author_name": "Jan & Niele",
+        "slug": "bink",
+        "cover": "20220915_050903_eab46e6cf314716e3665d749d220acf4.jpg"
+    },
+    {
+        "podcast_id": 153729,
+        "title": "El Lanclasico",
+        "description": "The world's only dedicated episodic podcast about the East Lancashire Derby, The Cotton Mills Derby, the greatest derby on earth, El Lanclasico - Blackburn Rovers vs Burnley.\nBrought to you by Pickles & Gravey (Tom Pickles and Mike Graveston)",
+        "language": "en",
+        "author_name": "Pickles & Gravey",
+        "slug": "lanclasico",
+        "cover": "20220915_070957_c5ba34eee148c2505e2422d537218e96.jpg"
+    },
+    {
+        "podcast_id": 154083,
+        "title": "El Santara \u0627\u0644\u0633\u0646\u062a\u0631\u0629",
+        "description": "\u0645\u064a\u0643\u0633 \u0645\u0646 \u0627\u0644\u0631\u063a\u064a \u0648 \u0627\u0644\u062a\u062d\u0644\u064a\u0644 \u0627\u0644\u0643\u0631\u0648\u064a\n",
+        "language": "ar",
+        "author_name": "Ahmed Gharib, Begad Dawaba & Hesham El Shafie",
+        "slug": "elsantara",
+        "cover": "20220917_020929_70dd6c96ab1e81c162ad59dc749528e4.jpg"
+    },
+    {
+        "podcast_id": 155461,
+        "title": "Moeda ao Ar",
+        "description": "Um podcast sobre a atualidade futebol\u00edstica.",
+        "language": "pt-pt",
+        "author_name": "Pedro Martins",
+        "slug": "moedaaoar",
+        "cover": "20220923_030916_b2258bf270144b9a73682286e97f31a2.jpg"
+    },
+    {
+        "podcast_id": 155804,
+        "title": "The Rovers Report",
+        "description": "A weekly podcast providing insight and updates surrounding all things Bristol Rovers.",
+        "language": "en",
+        "author_name": "The Rovers Report",
+        "slug": "theroversreport",
+        "cover": "20220925_110947_ca5856f1cc5a5775c89e8384fba825db.jpg"
+    },
+    {
+        "podcast_id": 156019,
+        "title": "90PLUS2",
+        "description": "Dies Ist der Offizielle Podcast von 90PLUS2",
+        "language": "de-ch",
+        "author_name": "Francesco Tirinato Miguel Fernandes",
+        "slug": "90plus2",
+        "cover": "20221109_031148_9e97327da2595aa32938d9df88fe0514.jpg"
+    },
+    {
+        "podcast_id": 156069,
+        "title": "bloke$",
+        "description": "Ethan Kamps and Miresh Patel are joining forces to create a partnership better than 10 am kickoffs and pints...blokes. A bit of footy, a bit of stories, TONS of takes. When they met each other on Ethan's 21st birthday they had little to no idea that: a) Ethan would proceed to get rejected by every girl in Manhattan and b) they'd start a podcast like every other dude in the country. Tune in weekly to join the blokes as they traverse their many adventures.",
+        "language": "en",
+        "author_name": "Miresh Patel & Ethan Kamps",
+        "slug": "blokes",
+        "cover": "20221117_081129_a3034bb384d7c183a877bad3f3d63324.jpg"
+    },
+    {
+        "podcast_id": 156101,
+        "title": "What Have You Got For Me?",
+        "description": "We are just 2 mates from the North West who love chatting football so we want to keep this as a show by Fans, for Fans. Keeping in line with our main principles, \u2018mates having a chat\u2019.\n\nTopics - We will be covering different topics each week.\nThe Mission - We aim to interview at least one fan each of the 92 professional teams across the UK\nPartnerships - We have partnered with a local charity, Two Pints Deep, a mental health charity with a very similar target audience",
+        "language": "en",
+        "author_name": "What Have You Got For Me?",
+        "slug": "whygfm",
+        "cover": "20220927_040928_db928d35f1041b54abeaa890246b6265.jpg"
+    },
+    {
+        "podcast_id": 156106,
+        "title": "Cal & Dom Talk Nonsense",
+        "description": "<p>Welcome to Cal &amp; Dom Talk Nonsense. Two old mates from University tackle the week's Football topics, along with some absolute nonsense along the way. Sit back, enjoy, get involved where and when you can!</p>",
+        "language": "en",
+        "author_name": "Dominic Meadowcroft",
+        "slug": "cal-and-dom-talk-nonsense",
+        "cover": "20230222_070252_1c33b149376ddb9913eff7750b1772c0.jpg"
+    },
+    {
+        "podcast_id": 156359,
+        "title": "MainStation",
+        "description": "<p>At MainStation we host a Podcast where we like to have a laugh and chat about whatever is going on in the world.We always have a new guest on every week as we are trying to build our own community.</p>",
+        "language": "en",
+        "author_name": "MainStation",
+        "slug": "mainstaion-youtube",
+        "cover": "20220927_100916_3615c54c45e131aa4cce53c5d3c87fee.jpg"
+    },
+    {
+        "podcast_id": 156798,
+        "title": "JOGA FC",
+        "description": "JOGA FC is een podcast waarin vier vrienden het Belgisch- en internationaal voetbal bespreken. ",
+        "language": "nl",
+        "author_name": "JOGA FC",
+        "slug": "jogafc",
+        "cover": "20220929_040940_1e9a22dc5208db31047a610810a40b15.jpg"
+    },
+    {
+        "podcast_id": 156898,
+        "title": "En Pelotas",
+        "description": "Desnudando el deporte.\nOpiniones personales, soliloquios de un aficionado con delirios de conocedor. ",
+        "language": "es",
+        "author_name": "Genaro Mendoza",
+        "slug": "enpelotas",
+        "cover": "20220929_110914_06fdb5b4e7fa9d79b4c93e3e37197f9e.jpg"
+    },
+    {
+        "podcast_id": 159378,
+        "title": "DOPPELPACK",
+        "description": "<p>Hi! Wir sind Samy und Johannes und quatschen f\u00fcr euch einmal pro Woche \u00fcber ALLES rund um die Themen Fu\u00dfball und die Welt des Sports. Wir hoffen euch gef\u00e4llt\u00b4s und w\u00fcnschen viel Spa\u00df bei der n\u00e4chsten Folge!</p>",
+        "language": "de",
+        "author_name": "Samy & Johannes",
+        "slug": "doppelpack",
+        "cover": "20230730_120732_08d01555c826e24bcd8440ca2e949b33.jpg"
+    },
+    {
+        "podcast_id": 160301,
+        "title": "Peoncast",
+        "description": "Charla distendida y peonzil que gira en torno al deporte y en el que todo cabe. ",
+        "language": "es",
+        "author_name": "Los Peonza Oficial",
+        "slug": "lospeonzaoficial",
+        "cover": "20221014_071022_3c07e8e90938c43ce2b61bd78bf4425c.jpg"
+    },
+    {
+        "podcast_id": 160344,
+        "title": "SLOVAN BRATISLAVA PODCAST",
+        "description": "Prv\u00fd podcast o \u0160K Slovan Bratislava. V na\u0161om podcaste v\u017edy rozober\u00e1me posledn\u00e9 z\u00e1pasy a pr\u00edpadne in\u00e9 zauj\u00edmav\u00e9 t\u00e9my o na\u0161om klube. P\u00f4sob\u00edme aj na Youtube, Instagrame a TikToku, kde n\u00e1jdete viac na\u0161eho obsahu o Slovane.",
+        "language": "sk",
+        "author_name": "Belas\u00fd podcast",
+        "slug": "belasypodcast",
+        "cover": "20221014_011035_5ebc881cabde422d3ff8918a101303e8.jpg"
+    },
+    {
+        "podcast_id": 160961,
+        "title": "Beverages with Beffa",
+        "description": "<p>Beverages with Beffa is about having a drink with friends where we talk about anything and everything from advice, to funny moments and lots more. Rachel Beffa is a Catholic, college student that isn't here for a long time but is here for a good time. Listen along to pass the time and hear all about the life of a college student that is anything but boring.</p>",
+        "language": "en",
+        "author_name": "Rachel Beffa",
+        "slug": "beverages-with-beffa",
+        "cover": "20230330_030350_ccfcc05e4ea038e975ac6827b7019622.jpg"
+    },
+    {
+        "podcast_id": 161219,
+        "title": "Novantesimo",
+        "description": "<p>Vi siete mai ritrovati al bar ad avere infinite discussioni sulle partite del fine settimana, ecco da dove nasce la nostra idea, tre amici che vogliono ricreare le chiacchiere da bar in un podcast. Il nostro argomento principale saranno i 900 minuti del week-end di Serie A, che cercheremo di riassumere ed analizzare in modo ironico e coinvolgente come se chi ci ascoltasse si sentisse al tavolo di un bar tra amici. Ci troverete ogni mattina seguente di campionato con le voci di Sergio, Valerio ed Emanuele. Vi aspettiamo al bancone.</p>",
+        "language": "it",
+        "author_name": "Bar Calcistico",
+        "slug": "barcalcistico",
+        "cover": "20230821_070852_27c644dfda2a2fc0429745427af89fb2.jpg"
+    },
+    {
+        "podcast_id": 162354,
+        "title": "[Box(II)Box] Game\u2019Cast",
+        "description": "Social & Tactical Soccer Coaching; \nData//Film Analysis; Run//Pass Option (RPO) Coordination: Speak\u2019n for the \u201cAverage American\u201d & Soccer Fan!! :))",
+        "language": "en",
+        "author_name": "Micheal Reese Barden",
+        "slug": "boxiibox-gamecast",
+        "cover": "20221022_031009_93b3ef5403a83d1100856f83124f8b95.jpg"
+    },
+    {
+        "podcast_id": 162758,
+        "title": "El podcast de Teika",
+        "description": "La actualidad de \"Juegan ellas, ganamos todos\" en el Podcast de Teika que dirige y presenta Esther Collado. La informaci\u00f3n de los 17 clubes que forman parte de la iniciativa \"Juegan ellas, ganamos todos\" cada martes, con todos los resultados, la agenda y las principales protagonistas.  ",
+        "language": "es",
+        "author_name": "Teika",
+        "slug": "el-podcast-de-teika",
+        "cover": "20221024_081004_d366bc2a47861bf9582eadb04513fdb4.jpg"
+    },
+    {
+        "podcast_id": 163576,
+        "title": "Shawt Al Jamaheer I \u0634\u0648\u0637 \u0627\u0644\u062c\u0645\u0627\u0647\u064a\u0631",
+        "description": "Podcast",
+        "language": "ar",
+        "author_name": "Shawt Al Jamaheer",
+        "slug": "shawtaljamaheer",
+        "cover": "20221029_101040_d0a93e2c574939fdc6e367b707088d36.jpg"
+    },
+    {
+        "podcast_id": 163583,
+        "title": "The FPL Scope Podcast",
+        "description": "Norway, Sweden, and Egypt combine to guide you through every gameweek in #FPL. ",
+        "language": "en",
+        "author_name": "The FPL Scope",
+        "slug": "thefplscope",
+        "cover": "20221102_081156_9c413f992e83e0ed34918cbddfa3b8bc.jpg"
+    },
+    {
+        "podcast_id": 163588,
+        "title": "The Mackem Football Show",
+        "description": "<p>Sunderland Fans Weekly Show as hosted by Anth The Mackem with other football fans. Discussing the previous weeks action, drama, and all things football focused.</p>",
+        "language": "en",
+        "author_name": "Anth The Mackem",
+        "slug": "anththemackem",
+        "cover": "20230827_060856_e02a841a896d886bc889032f9a22bb06.jpg"
+    },
+    {
+        "podcast_id": 163915,
+        "title": "What's the Score Podcast",
+        "description": "Hello! I am Stefano Esposito and I bring you, What's the Score Podcast. Where I cover sports such as WWE, AEW, and Formula 1 Racing! \nFormula 1 and any Wrestling PPV will come out on Monday\nRaw on Tuesday\nAEW Dynamite on Thursday\nSmackdown and Rampage on Saturday!",
+        "language": "en",
+        "author_name": "Stefano Esposito",
+        "slug": "whats-the-score-podcast",
+        "cover": "20221028_101058_e0f35f77d0d415f710cc445d0eedbefa.jpg"
+    },
+    {
+        "podcast_id": 164619,
+        "title": "The Football Zone",
+        "description": "In this podcast, the two hosts Peter and Hakeem will discuss the biggest, most relevant and controversial topics in the world\u2019s biggest leagues in order to provide an insight into the world of football. ",
+        "language": "en",
+        "author_name": "Peter & Hakeem",
+        "slug": "thefootballzonectbs",
+        "cover": "20221101_121132_2ce712e072b0dd6ac431a4de7bfaba31.jpg"
+    },
+    {
+        "podcast_id": 165454,
+        "title": "Netkick AMA & Podcast",
+        "description": "Welcome to the Netkick AMA & Podcast. We interview pros from around the MLS and other leagues about their journey, dealings with adversity, and how mental wellness has played an impact on their game.\n\nEach episode features 15 - 20 minutes of AMA questions for the pros from Netkick users. If you'd like to to have your questions featured, join our Discord over on our website: https://netkick.net ",
+        "language": "en",
+        "author_name": "Alexander Rando and Philip Horton ",
+        "slug": "netkick",
+        "cover": "20221104_061119_b8d09521b40d2643caf288c7516cd6c7.jpg"
+    },
+    {
+        "podcast_id": 165886,
+        "title": "Faz E Me Abra\u00e7a",
+        "description": "Um podcast n\u00e3o oficial onde dois idiotas discutem temas do futebol mundial com muita falta de categoria, deseleg\u00e2ncia, paix\u00e3o, e (acima de tudo) muito clubismo. Alegria!",
+        "language": "pt-br",
+        "author_name": "Jorge Castello e Matheus Dyckerhoff",
+        "slug": "fmapodcast",
+        "cover": "20221106_061134_834d0620636ea42cf0f95e0908fbe895.jpg"
+    },
+    {
+        "podcast_id": 166161,
+        "title": "The Real Football Podcast",
+        "description": "\"The Real Football Podcast\" is your go-to source for all things football! Hosted by a group of four Canadian boys with a passion for the beautiful game, this podcast is all about having fun while discussing the latest football news, debating the latest hot topics, and playing trivia games.\n\nEach episode, the hosts dive deep into the world of football, discussing everything from the top teams and players to the latest strategies and tactics. They also delve into the world of Canadian soccer, bringing you the latest news and updates on the Canadian national team and domestic leagues.\n\nBut it's not all serious talk, the podcast is filled with fun and games too. The host play trivia games to test their knowledge about the sport, and even have segments where they read some poetry about the sport, this all makes for a unique and entertaining listening experience.\n\nWhether you're a die-hard football fan or just looking for a fun and engaging podcast to listen to, \"The Real Football Podcast\" is the perfect choice. With their expert analysis and entertaining banter, the hosts will keep you entertained and informed on all things football.\n\n",
+        "language": "en",
+        "author_name": "RFP Productions",
+        "slug": "therealfootballpod",
+        "cover": "20221107_051158_6649095cf657677d149217a01fde42ca.jpg"
+    },
+    {
+        "podcast_id": 166398,
+        "title": "Loaded Sport",
+        "description": "<p>Skin, Adam, Sam, and Kemp discuss what's happening across the Sporting World with weekly reviews and previews mixed in with a lot of laughs!</p>",
+        "language": "en",
+        "author_name": "Ben Dawson",
+        "slug": "loadedsport",
+        "cover": "20230519_100519_1167eedd1267a5940ac323ff758c716c.jpg"
+    },
+    {
+        "podcast_id": 166430,
+        "title": "Beyond Balls On The Grass",
+        "description": "Whether you call it world football, football, soccer or whatever this is just two American lads discussing the sport. One who has been a fan of it for years and the other having just gotten into it in 2021.",
+        "language": "en",
+        "author_name": "Beyond Balls On The Grass",
+        "slug": "beyondballsonthegrass",
+        "cover": "20221109_041130_ab662fdf32e8cc159db65c29a2290f53.jpg"
+    },
+    {
+        "podcast_id": 168104,
+        "title": "The Touchline Podcast",
+        "description": "The best Football Podcast on spotify, where we will discuss the latest news and give our own predictions, opinions and more. Join us as we debate the hottest topics in the sport. ",
+        "language": "en",
+        "author_name": "The Touchline",
+        "slug": "thetouchlinepodcast",
+        "cover": "20221115_031149_73b48af18c7728f2f417091f3a3f2cc3.jpg"
+    },
+    {
+        "podcast_id": 168945,
+        "title": "Tutovka",
+        "description": "<p>Podcast dvou fanatik\u016f diskutuj\u00edc\u00edch o v\u0161em zaj\u00edmav\u00e9m (p\u0159ev\u00e1\u017en\u011b z fotbalov\u00e9ho sv\u011bta). Mimo moder\u00e1tor\u016f, kter\u00fdmi jsou Filip Vajdl a Mattia Mainolfi, se m\u016f\u017eete t\u011b\u0161it tak\u00e9 na velmi zaj\u00edmav\u00e9 hosty</p><p>Odkazy na v\u0161echno:</p><p><a href=\"https://li.sten.to/tutovka\"><strong>https://li.sten.to/tutovka</strong></a></p>",
+        "language": "cs",
+        "author_name": "Filip Vajdl, Mattia Mainolfi",
+        "slug": "tutovka",
+        "cover": "20221118_101130_74a3d36daab2a23e1be0d07850d5f5a9.jpg"
+    },
+    {
+        "podcast_id": 169283,
+        "title": "ConsideringTheWorldCup",
+        "description": "Everything World Cup by Holden Willemsen, Dash Tischler, and Bjorn Schaefer",
+        "language": "en",
+        "author_name": "Holden Willemsen",
+        "slug": "consideringwc",
+        "cover": "20221120_021119_3e7f302b2d1929c82a39fa53fb0a3f7c.jpg"
+    },
+    {
+        "podcast_id": 169500,
+        "title": "Between The Pitch",
+        "description": "Podcast about soccer. Passionate soccer fans talking about the world of soccer. World cup, champions league, EPL... Knowledge and nonsense ",
+        "language": "en",
+        "author_name": "Youssouph Dia",
+        "slug": "betweenthepitch",
+        "cover": "20221121_121122_913ff475d7c277c6b6714a292cb2a4df.jpg"
+    },
+    {
+        "podcast_id": 169685,
+        "title": "From The Stands: The US Soccer Podcast",
+        "description": "<p>Diving into all things American soccer. MLS, US National Team, and players abroad. Reach out to us! Email: fromthestands.us@gmail.com</p>",
+        "language": "en",
+        "author_name": "Alec Wojak & Alex Rodriguez",
+        "slug": "fromthestandsussoccer",
+        "cover": "20230210_060227_ea9702c8ee5764f19410497da44e0aab.jpg"
+    },
+    {
+        "podcast_id": 170136,
+        "title": "Five-a-side",
+        "description": "This is the Five-a-side pod, essentially a futbol podcast although once in a while we will delve into other topics such as lifestyle, social/political issues, history etc",
+        "language": "en",
+        "author_name": "Chukwudalu D Fab-Ukozor",
+        "slug": "maazi-ballers",
+        "cover": "20221202_031228_b6271c6c30ff818108868bc84728e931.jpg"
+    },
+    {
+        "podcast_id": 170770,
+        "title": "The Flyover Podcast ",
+        "description": "Welcome to our home of fan talks galore where you can find interesting takes from our panel, who take on the biggest footballing ideas in the past, present and what might come up in the future.",
+        "language": "en",
+        "author_name": "The Flyover Podcast ",
+        "slug": "theflyoverpodcast",
+        "cover": "20221127_041136_6c0461c17ab440bfee55c64042f38b02.jpg"
+    },
+    {
+        "podcast_id": 171682,
+        "title": "Qatar al d\u00eda",
+        "description": "Soy Fernando Mart\u00edn y pretendo contar el d\u00eda a d\u00eda de los partidos del Mundial de Qatar 2022. Analizar\u00e9 todos los encuentros. \u00bfOs apetece escucharme? ",
+        "language": "es-mx",
+        "author_name": "Fernando Mart\u00edn Rodr\u00edguez-Malo",
+        "slug": "qatar-al-dia",
+        "cover": "20221130_111134_ccf9c6878a7d4a3d23a4800b849f9c59.jpg"
+    },
+    {
+        "podcast_id": 174574,
+        "title": "Sounders Scuttlebutt",
+        "description": "<p>A Seattle Sounders FC biased podcast hosted professionally by Alliance Council President, Cameron Collins, and unprofessionally by a loud fan and ECS Pub League Newcomer of the Year, Aaron Lingley.</p>",
+        "language": "en-us",
+        "author_name": "Aaron Lingley & Cameron Collins",
+        "slug": "sounders-scuttlebutt",
+        "cover": "20230128_030124_449b203dfe1723f785657084e7705f2d.jpg"
+    },
+    {
+        "podcast_id": 174757,
+        "title": "\u05d4\u05e8\u05e6\u05d5\u05e2\u05d4 \u05d4\u05e6\u05d5\u05dc\u05d1\u05ea",
+        "description": "\u05d4\u05e8\u05e6\u05d5\u05e2\u05d4 \u05d4\u05e6\u05d5\u05dc\u05d1\u05ea, \u05e4\u05d5\u05d3\u05e7\u05d0\u05e1\u05d8 \u05e2\u05dc \u05e1\u05d9\u05e4\u05d5\u05e8\u05d9 \u05d4\u05e1\u05e4\u05d5\u05e8\u05d8 \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d1\u05e0\u05d9\u05ea\u05d5\u05d7 \u05d9\u05d5\u05e0\u05ea\u05df \u05e7\u05e8\u05d9\u05d0- \u05e4\u05d9\u05d6\u05d9\u05d5\u05ea\u05e8\u05e4\u05d9\u05e1\u05d8 \u05e1\u05e4\u05d5\u05e8\u05d8 \u05de\u05d4\u05e6\u05d3 \u05d4\u05e4\u05d9\u05d6\u05d9 \u05d5\u05d9\u05d5\u05e8\u05dd \u05d2\u05d5\u05d1\u05e8- \u05e4\u05e1\u05d9\u05db\u05d5\u05dc\u05d5\u05d2 \u05e7\u05dc\u05d9\u05e0\u05d9 \u05de\u05d4\u05e6\u05d3 \u05d4\u05e0\u05e4\u05e9\u05d9",
+        "language": "he",
+        "author_name": "Yonatan karrie",
+        "slug": "theacl",
+        "cover": "20230112_080121_b0b802b55ee3c6d6f2c7322732b64b58.jpg"
+    },
+    {
+        "podcast_id": 175172,
+        "title": "Villa On Tour Podcast",
+        "description": "A no-nonsense chat between a few mates about all things Aston Villa!\n\nMake sure to subscribe to Villa On Tour on YouTube and follow us on social media!\n\n@villaontour_\n",
+        "language": "en",
+        "author_name": "Max Stokes",
+        "slug": "villaontour",
+        "cover": "20230107_090118_8bdd3193bdc49538adfda09f6d0dad1a.jpg"
+    },
+    {
+        "podcast_id": 175308,
+        "title": "All in FPL",
+        "description": "FPL podcast featuring fantasy football champion Josh Wooldridge, back to back top 5k finisher Alex Doyle, and fantasy 'enthusiast' Jon B, with a fun take on the game featuring gameshows, bets, and more as they help you to win at fantasy football this season. ",
+        "language": "en",
+        "author_name": "Josh Wooldridge, Alex Doyle, Jon Brown",
+        "slug": "allinfpl",
+        "cover": "20221219_061215_fe683fb729e12e01adeef57bd68085a5.jpg"
+    },
+    {
+        "podcast_id": 176085,
+        "title": "The Pitch Pod",
+        "description": "<p>Programming features quick run-downs of scenarios, game analyses, and witty banter centered around content about our match of the week selection and other national &amp; international football competitions. Includes regular result predictions.</p>",
+        "language": "en",
+        "author_name": "Jeff Stebbins & Joseph Janner",
+        "slug": "thepitchpodusa",
+        "cover": "20221226_041216_3dd274eea1aa8d78a817e0bafbc5cc88.jpg"
+    },
+    {
+        "podcast_id": 177171,
+        "title": "EPL State of Mind",
+        "description": "An Arsenal, ManCity and Liverpool Fan from the Empire state talk about everything English Premier League and their love of the game. Whether you are an avid EPL follower already or are just getting into the beautiful game, this Podcast is a great listen to further your knowledge and passion. Brought to you in a exciting and interactive way from right here in the states our goal is to help grow the fanbase for English football everywhere and anywhere we can. ",
+        "language": "en",
+        "author_name": "James Tesoriero, Sean Larkin & Kyle Mansley ",
+        "slug": "eplstateofmind",
+        "cover": "20230110_020134_3253e2af86fd5d7a44e3d5226cc4b4d0.jpg"
+    },
+    {
+        "podcast_id": 177181,
+        "title": "An\u00e1lisis de Rayados y sus rivales #LIGAMX",
+        "description": "Intentamos analizar los partidos de Rayados y su siguiente rival.",
+        "language": "es",
+        "author_name": "Orlando Sosa",
+        "slug": "analisisfut-77",
+        "cover": "20221230_071246_ecb6417f4c1d8d78536a493a3c592af2.jpg"
+    },
+    {
+        "podcast_id": 178222,
+        "title": "Tylew Soccercast",
+        "description": "Yet another crazy fan who loves the beautiful game. In this podcast, I want to discuss the game we all love and provide different perspectives on events on and off the field. I will have many friends and fans join me as we set out to understand the complexity of our game. Join me as we explore the giant that is soccer and all the wonderful aspects that make it up.",
+        "language": "en",
+        "author_name": "Tyler Lewis",
+        "slug": "tylew-soccer",
+        "cover": "20230104_070108_3056a4a87fc2e5e79b259af35e34f2d9.jpg"
+    },
+    {
+        "podcast_id": 178801,
+        "title": "FC Time-out ",
+        "description": "<p>Jou wekelijkse nieuwtjes, analyses en sport gerelateerde zaken omtrent de Eredivisie, La liga, Premier League, Bundesliga, Formule 1 en nog veel meer!!! Je bent weer helemaal UP-TO-DATE met de FC Time-out podcast.</p>",
+        "language": "nl",
+        "author_name": "FC Time-out ",
+        "slug": "fctime-out",
+        "cover": "20230830_030818_521c0641962e7003024b280b46f01d02.jpg"
+    },
+    {
+        "podcast_id": 179397,
+        "title": "El Podcast del TRI",
+        "description": "<p>Aldo Maldonado y Oscar Campos comentan cada semana todo lo relacionado con la Selecci\u00f3n Mexicana de F\u00fatbol, as\u00ed como las actuaciones de sus jugadores tanto en Europa como en Liga MX. S\u00edguenos en twitter @ElPodcastDelTRI @Aldo_Maldonado @ocamposd_</p>",
+        "language": "es",
+        "author_name": "El Podcast del Tri",
+        "slug": "elpodcastdeltri",
+        "cover": "20230202_090242_a8af9f6575ebf201c81b7ecdf25e41a5.jpg"
+    },
+    {
+        "podcast_id": 179812,
+        "title": "It\u2019s Ooer e\u2019 Mert",
+        "description": "Forfar Athletic Football Club",
+        "language": "en",
+        "author_name": "Forfar Athletic",
+        "slug": "forfarathletic",
+        "cover": "20230111_060159_3dfaf87af7b8657ed6b767353fc1b04f.jpg"
+    },
+    {
+        "podcast_id": 179868,
+        "title": "JJV podcast - Pallon pintaa syvemm\u00e4lle",
+        "description": "<p>JJV podcast k\u00e4sittelee jalkapallon juniorivalmennuksen aiheita pelaajien ja valmentajien kautta. Vieraina ovat sek\u00e4 suomalaisia ett\u00e4 ulkomaisia jalkapalloon intohimoisesti suhtautuvia alan ammattilaisia. Tavoitteena on jakaa tietoa ja kehitt\u00e4\u00e4 suomalaisen jalkapallovalmennuksen osaamista.</p><p>JJV (Finnish Junior Football Coaches Association) Podcast focuses on junior football coaching from players' and coaches' points of view. Podcast guests are both Finnish coaches and coaches abroad. The main objective is to share up-to-date information and new ways of learning in the Finnish football coaching environment.</p>",
+        "language": "fi",
+        "author_name": "Jouko Riihim\u00e4ki, JJV",
+        "slug": "jjvpodcast",
+        "cover": "20230111_070152_522a988d8d612401c44c9e8b9c8e2d85.jpg"
+    },
+    {
+        "podcast_id": 179882,
+        "title": "Borrowed Mic Podcast",
+        "description": "Welcome to The Borrowed Mic football podcast where fans come first. Join our host, a football enthusiast, as they take you on a journey through the beautiful game. \nFrom the latest news and games, to the culture and community surrounding football, we'll cover it all. But what sets this podcast apart is that we'll be discussing the game from a Fan's point of view, giving you a relatable and fresh perspective on all things football. \nSo whether you're a hardcore fan or just starting to develop an interest in the sport, tune in every week for a dose of passion and enthusiasm for the game we all love.",
+        "language": "en",
+        "author_name": "Lebogang ",
+        "slug": "borrowedmic",
+        "cover": "20230111_080139_8aff7950da952fb0a111e4225a5ea3bc.jpg"
+    },
+    {
+        "podcast_id": 180103,
+        "title": "Goal Line",
+        "description": "Goal Cast: Il podcast di Goal Line, il podcast per chi ama il calcio.",
+        "language": "it",
+        "author_name": "Gaspare Tosi, Alberto Poma, Jacopo Bianco, Alberto Colombo",
+        "slug": "goalline",
+        "cover": "20230112_080140_59128135366d5f7b720a66e78fb7ce66.jpg"
+    },
+    {
+        "podcast_id": 181131,
+        "title": "Top Bins With Twins",
+        "description": "<p>Twins Luke and Paul are on a journey to analyze the weekly mayhem and madness of Fantasy Premier League (FPL). Looking for hidden differentials to boost your overall rank? Trying to find the best wildcard team? When is the best time to use your Bench Boost? Searching for an optimal captaincy option? Top Bins with Twins is the perfect podcasting spot for all of your FPL questions! Every week we will be providing our personal insights on how to get the best out of your FPL team week in and week out.</p>",
+        "language": "en",
+        "author_name": "Top Bins with Twins",
+        "slug": "topbinswithtwins",
+        "cover": "20230708_010702_d5c9742d60f026b39cec02ba51308979.jpg"
+    },
+    {
+        "podcast_id": 181567,
+        "title": "3 Kruizen",
+        "description": "3 Amsterdammers met een passie voor Ajax en de stad.\nMylee, Jock en Cl\u00e9 praten over hun geliefde Ajax. Geen politiek geneuzel maar gewoon vanuit het hart. ",
+        "language": "nl",
+        "author_name": "Cl\u00e9 Vos de Mooij, Mylee Vos de Mooij, Jock Olykan",
+        "slug": "3kruizen",
+        "cover": "20230201_020239_ea70e2247f4e422d8f2e7b3d764ef6cd.jpg"
+    },
+    {
+        "podcast_id": 182063,
+        "title": "11Hacks Podcast",
+        "description": "Nov\u00fd podcast analytick\u00e9 spole\u010dnosti 11Hacks, ve kter\u00e9m budeme prob\u00edrat fotbalov\u00e9 d\u011bn\u00ed ve sv\u011bt\u011b i u n\u00e1s. Moderuj\u00ed CEO Jakub Dobi\u00e1\u0161 a Head Scout Jan \u0158\u00edha.",
+        "language": "en",
+        "author_name": "11Hacks",
+        "slug": "11hacks",
+        "cover": "20230120_090152_38e431eec54eba16bc5175a08c7c069e.jpg"
+    },
+    {
+        "podcast_id": 184844,
+        "title": "SPORTGAMA",
+        "description": "Aqu\u00ed encontrareis much\u00edsima informaci\u00f3n sobre el deporte y sobre todo sobre el f\u00fatbol y el p\u00e1del!",
+        "language": "es",
+        "author_name": "Yasmine y Mateo",
+        "slug": "hablamosdefutbolypadel",
+        "cover": "20230130_090151_01bf691f51020a378a573e6385e2180c.jpg"
+    },
+    {
+        "podcast_id": 185051,
+        "title": "Eurofocus ",
+        "description": "Eurofocus - Football by the fans, for the fans. Weekly updates from across the continent",
+        "language": "en",
+        "author_name": "Cameron Smith",
+        "slug": "eurofocus",
+        "cover": "20230130_100149_f00b01676ac3cdf9893845f3e0043ba8.jpg"
+    },
+    {
+        "podcast_id": 185074,
+        "title": "This Is Futbol Podcast",
+        "description": "We debate #MLS #InternationalFootball #InterMiami and all local leagues in the US!",
+        "language": "en",
+        "author_name": "This Is Futbol Podcast",
+        "slug": "thisisfutbolpodcast",
+        "cover": "20230130_110135_a0c0f7e3089f317f0fce5c096b846c8e.jpg"
+    },
+    {
+        "podcast_id": 186303,
+        "title": "F\u00fatbol y Magia Cap. 1",
+        "description": "En su libro La Rama Dorada, James Frazer dice que si analizamos los principios del pensamiento en los que se funda la magia, encontraremos dos... Lo semejante provoca lo semejante, y lo que estuvo en contacto act\u00faa rec\u00edprocamente.\nF\u00fatbol y Magia, es una excusa para hablar de la magia del f\u00fatbol.  \n",
+        "language": "es-mx",
+        "author_name": "Estrella de Mar",
+        "slug": "futbolymagiacap1",
+        "cover": "20230203_090237_3788634d0e3b576cbbe86999a4277b9c.jpg"
+    },
+    {
+        "podcast_id": 187163,
+        "title": "Eat.Sleep.Chelsea.Repeat.",
+        "description": "Join co-hosts Chris, Craig and Brady for a weekly look at all things Chelsea F.C.\nLooking at all the main talking points of the week, tactical reviews/previews of matches and some good fun to be had in-between.",
+        "language": "en",
+        "author_name": "Chris, Craig and James",
+        "slug": "eatsleepchelsearepeat",
+        "cover": "20230206_090227_645807d2b1a77cbe79d68f7d09f7d22b.jpg"
+    },
+    {
+        "podcast_id": 187693,
+        "title": "Pre-Bet Show powered by Betano.pt",
+        "description": "O melhor do futebol nacional e internacional com Alex Brice (FC Wonderkid) e Pedro Azevedo, dispon\u00edvel semanalmente em todas as plataformas. Powered by Betano.pt",
+        "language": "pt-pt",
+        "author_name": "Betano Portugal",
+        "slug": "prebetshow",
+        "cover": "20230209_050258_abc0203124dcd0a46523b15ef07e17e4.jpg"
+    },
+    {
+        "podcast_id": 187870,
+        "title": "Ponle Hielo",
+        "description": "Dos camaradas hablando de Fut regio, Liga MX y dem\u00e1s temas del balompi\u00e9. Con calma, con pausa, con idea como un antiguo 10. No tenemos la m\u00e1s m\u00ednima intenci\u00f3n de ganchar a nadie.",
+        "language": "es",
+        "author_name": "Ponle Hielo Podcast",
+        "slug": "ponlehielo",
+        "cover": "20230208_100222_c20710e187eeebe504d140ae0140f342.jpg"
+    },
+    {
+        "podcast_id": 188274,
+        "title": "LOS MANDITO PLAYERS\ud83c\udfae",
+        "description": "<p>Hola a todos somos Los mandito players y este es nuestro canal de podcast\ud83c\udfae</p>",
+        "language": "es",
+        "author_name": "Nelson y Hugo",
+        "slug": "los-mandito-players",
+        "cover": "20230210_100245_6ae0d044d7a54f4928030ba9c3f5d3ff.jpg"
+    },
+    {
+        "podcast_id": 188495,
+        "title": "De Voetbalmoeder De Podcast: Niet Alleen Langs De Zijlijn",
+        "description": "De Voetbalmoeder: Alice de Boer over zoon Kees bij Ajax, Swansea en meer... -Aflevering 1\n",
+        "language": "nl",
+        "author_name": "De Voetbalmoeder - Marita van der Gouw",
+        "slug": "de-voetbalmoeder-de-podcast",
+        "cover": "20230211_030209_fcb76e0085673e907f70de5b3fadc23b.jpg"
+    },
+    {
+        "podcast_id": 188522,
+        "title": "BENCHED",
+        "description": "<p>14HQ boys Bobby, Charles and Khiszer lead the discussion in all the current affairs in the world of football, not just in the Premier League but from all over the world! We love this game!</p>",
+        "language": "en-gb",
+        "author_name": "14HQ",
+        "slug": "benchedpoduk",
+        "cover": "20230724_050718_6c6336dbe5cd6237a7ef3b58e64a4248.jpg"
+    },
+    {
+        "podcast_id": 188872,
+        "title": "Roma Happens",
+        "description": "<p>We are AS Roma fans unbiased towards or against anybody, regardless of the name on the back of the jersey - we just want to see Roma win.</p><p>Roma is not good at winning.</p><p>Bit of melancholy, self-deprecation, sarcastic optimism, and some lukewarm takes! Hosted by CharizardsRage and Greaves, and whatever random people we beg enough to join us.</p><p><a href=\"https://twitter.com/romahappens\">https://twitter.com/romahappens</a></p>",
+        "language": "en",
+        "author_name": "Greaves",
+        "slug": "romahappens",
+        "cover": "20230331_040342_87e7c4db72262cfb9b326727a54e25ab.jpg"
+    },
+    {
+        "podcast_id": 189199,
+        "title": "Beyond The Smokestacks",
+        "description": "<p>Official Fan-Centered podcast covering New York City Football Club. Hosted by Coach Joe and Davi along with Weekly Special Guests. We deep dive and talk ALL things NYCFC !</p>",
+        "language": "en",
+        "author_name": "@CoachJ0e, @CASmithNYC, @datboidavi",
+        "slug": "beyondthesmokestacks",
+        "cover": "20230213_060212_874ff3839383f99c87edff8f70ddd3ca.jpg"
+    },
+    {
+        "podcast_id": 189568,
+        "title": "Nashville Soundcheck",
+        "description": "<p>Spreading Nashville SC propaganda since 2014</p>",
+        "language": "en",
+        "author_name": "Has Been Entertainment",
+        "slug": "nashvillesoundcheck",
+        "cover": "20230214_100217_68da271566df5d023473a83428485ab7.jpg"
+    },
+    {
+        "podcast_id": 190048,
+        "title": "Aires de cambio ",
+        "description": "<p>Bienvenid@s a AIRES DE CAMBIO el podcast de FUTPRO. </p><p>Lleno de entrevistas, charlas y muchas experiencias con profesionales del f\u00fatbol femenino.</p><p>Cada mes hablando sin tapujos y sin miedos. \u00a1NO TE LO PUEDES PERDER! </p><p>Si quieres descubrir el sabor que es cada una, escuchalo hasta el final. </p>",
+        "language": "es",
+        "author_name": "FUTPRO",
+        "slug": "airesdecambio",
+        "cover": "20230216_040221_a7b42b5dc0eada6e0cfb3bdddc163009.jpg"
+    },
+    {
+        "podcast_id": 190088,
+        "title": "TSRP Sports Podcast",
+        "description": "<p>Welcome to the TSRP Podcast where we talk about a range of sports covering Rugby, Football, UFC, fantasy sports and more</p>",
+        "language": "en",
+        "author_name": "TSRP Sports Podcast",
+        "slug": "tsrpsportspodcast",
+        "cover": "20230216_060249_41daeca6ef10b4120ac11ec41e625afb.jpg"
+    },
+    {
+        "podcast_id": 190455,
+        "title": "Tachon Multitaco",
+        "description": "<p>\"El sabor del f\u00fatbol en cada mordida\"</p>",
+        "language": "es-mx",
+        "author_name": "TACHON MULTITACO",
+        "slug": "tachonmultitaco",
+        "cover": "20230218_020229_7efe4dbba98873f0e7df0301e0908fa3.jpg"
+    },
+    {
+        "podcast_id": 190928,
+        "title": "MLS NetBoys Show",
+        "description": "<p>Welcome to the MLS NetBoys Show! Join our hosts Jacob &amp; Chase as we'll be covering all things MLS once a week, including match results, analysis, transfer rumors, as well as some unique games and rankings! Contact us at mlsnetboys@gmail.com.</p>",
+        "language": "en",
+        "author_name": "MLS NetBoys Show",
+        "slug": "mlsnetboys",
+        "cover": "20230220_070218_843dd8b8453e13274949b960ec93cda2.jpg"
+    },
+    {
+        "podcast_id": 191280,
+        "title": "The Serie A-sly Good Podcast",
+        "description": "<p>Welcome to The Serie A-sly Good Podcast, your one-stop shop for all things happening in the Italian league.</p><p>Every week hosts Casey <a href=\"https://twitter.com/Casey_Evans_\">(@Casey_Evans_) </a>and Danny <a href=\"https://twitter.com/calcio_danny\">(@calcio_danny)</a> will dive into all things Serie A - what's happened that week in the league, a spotlight on a certain team or even going back in time for a Retro Rewind.</p><p>The Serie A-sly Good Podcast is available to listen to on <strong>Spotify, Apple Music or on Podfollow.</strong></p><p>Opening and Closing music - Bushwick Tarantella by Kevin MacLeod</p>",
+        "language": "en",
+        "author_name": "Casey Evans and Danny Corcoran",
+        "slug": "serieaslygoodpodcast",
+        "cover": "20230221_010238_5e46e0c462600648e8c1c9bd943c1ab1.jpg"
+    },
+    {
+        "podcast_id": 191367,
+        "title": "InterViews Podcast",
+        "description": "<p>Join Alessandro and Gianmarco as we discuss all things Inter Milan!</p>",
+        "language": "en",
+        "author_name": "Alex & Gianni",
+        "slug": "interviews-pod",
+        "cover": "20230224_040237_2c4077c361fd8a760d22cdbbabdc8fb6.jpg"
+    },
+    {
+        "podcast_id": 191574,
+        "title": "Union Soccer Podcast",
+        "description": "<p>Jon Jansen and Joe Tansey break down the latest news about the Philadelphia Union and Major League Soccer.</p>",
+        "language": "en",
+        "author_name": "Joe Tansey",
+        "slug": "unionsoccerpod",
+        "cover": "20230315_030327_ef89cb8ef462de1b07cfd58495e8d9cc.jpg"
+    },
+    {
+        "podcast_id": 191693,
+        "title": "The NPL Pep Talk",
+        "description": "<p>Talking all things NPL SA with Stevie Pepper &amp; Pep Baldino</p>",
+        "language": "en",
+        "author_name": "Stevie Pepper",
+        "slug": "not-availabale",
+        "cover": "20230223_120253_21d57dc9c1c14eb0b0c1663b1e4a69f6.jpg"
+    },
+    {
+        "podcast_id": 193324,
+        "title": "The Pep Talk: A Manchester City Podcast",
+        "description": "<p>A podcast about Manchester City from two bald frauds who don't live in Manchester</p>",
+        "language": "en",
+        "author_name": "Sam and Jason",
+        "slug": "outofthebluemcfc",
+        "cover": "20230304_100331_0746dcf0f795b28a2b6d709a8cbe8074.jpg"
+    },
+    {
+        "podcast_id": 194046,
+        "title": "\u05d2\u05d9\u05d7\u05d4 \u05dc\u05de\u05de\u05dc\u05db\u05d4",
+        "description": "<p>\u05e4\u05d5\u05d3\u05e7\u05d0\u05e1\u05d8 \u05d7\u05d3\u05e9 \u05e2\u05dc \u05d4\u05dc\u05d9\u05d2\u05d4 \u05d4\u05d8\u05d5\u05d1\u05d4 \u05d1\u05e2\u05d5\u05dc\u05dd</p>",
+        "language": "he",
+        "author_name": "\u05d2\u05d9\u05d7\u05d4 \u05dc\u05de\u05de\u05dc\u05db\u05d4 ",
+        "slug": "premierleague-podcast",
+        "cover": "20230506_060557_6b29c209ea60ed781108476d0205b827.jpg"
+    },
+    {
+        "podcast_id": 194297,
+        "title": "Everything Bola Show",
+        "description": "<p>Saturday Weekly Show where we talk about Local (Zambian) and International Football!</p>",
+        "language": "en",
+        "author_name": "Bolanews",
+        "slug": "everythingbola",
+        "cover": "20230305_050349_50c9a23ea740005e58e59b2595d2c741.jpg"
+    },
+    {
+        "podcast_id": 194528,
+        "title": "Empezando a futbolear",
+        "description": "<p>Hola, soy Dami\u00e1n y este es mi gran canal de podcast \ud83d\udc4c\ud83d\ude03.</p>",
+        "language": "es",
+        "author_name": "Dami\u00e1n",
+        "slug": "empezandoafutbolear",
+        "cover": "20230305_090330_18414fafb2d8987b000558f69d6141ee.jpg"
+    },
+    {
+        "podcast_id": 194737,
+        "title": "The Backline Soccer Podcast",
+        "description": "<p>Welcome everyone! We are Ian, Max, and Michael, and we are the hosts of The Backline Soccer Podcast! We are just three dudes who love the sport and love MLS.</p><p>We aim to help grow the sport here in the US and let our voices be heard. While we are all massive Sounders fans, we promise to try not to be too biased. So, come and hang with us!</p>",
+        "language": "en",
+        "author_name": "Ian Hawksford, Michael Martinez and Max Torres",
+        "slug": "backlinesoccerpod",
+        "cover": "20230306_070307_f662775ada10386b9af860f455a51f1e.jpg"
+    },
+    {
+        "podcast_id": 194814,
+        "title": "Stadeo",
+        "description": "<p>Stadeo significa espressione, condivisione, ma soprattutto passione! Il Calcio \u00e8 per noi pi\u00f9 di un gioco. \u00c8 ci\u00f2 che ci accomuna e al contempo ci rende unici, una vera spirale di emozioni. Nasce cos\u00ec il nostro daily podcast, ricco di contenuti accurati e avvincenti, perch\u00e9 Stadeo rappresenta: \u201cYour Voice - Your Vibe - Your Tribe\u201d</p><p>Download the Stadeo App for iOS and Android</p>",
+        "language": "it",
+        "author_name": "Stadeo Official",
+        "slug": "stadeo",
+        "cover": "20230306_020316_a64dc71e77186a471fe52faba9e07666.jpg"
+    },
+    {
+        "podcast_id": 194888,
+        "title": "Basement Ballers",
+        "description": "<p>The Basement Ballers Podcast is now officially out on Spotify and Youtube. Your hosts Kareem and Ibrahim, cousins and bitter football rivals, will be coming to you every Wednesday with news, analysis, special guests, and a whole lot of jokes.</p><p>Follow us!</p><p>Tiktok: <a href=\"https://www.tiktok.com/@basementballerspod?is_from_webapp=1&amp;sender_device=pc\">https://www.tiktok.com/@basementballerspod?is_from_webapp=1&amp;sender_device=pc</a></p><p>Instagram: <a href=\"https://www.instagram.com/basement_ballerspc/\">https://www.instagram.com/basement_ballerspc/</a></p><p>Twitter: <a href=\"https://twitter.com/BasementBPC\">https://twitter.com/BasementBPC</a></p>",
+        "language": "en",
+        "author_name": "Basement Ballers",
+        "slug": "basementballers",
+        "cover": "20230416_020450_379eec95735f1255273f5bb7b6dbb0e4.jpg"
+    },
+    {
+        "podcast_id": 194923,
+        "title": "The Sunday League Podcast",
+        "description": "<p>Welcome to a brand new podcast, where 3 bang average, at best, Sunday League footballers discuss the in\u2019s and outs of the most competitive, most watched and most entertaining league in the world and some other bits that we find interesting</p><p>There are only a few rules to the Sunday League podcast:</p><p>- <strong>Rule 1</strong> \u2013 Don\u2019t pretend you know what you are on about you\u2019ve never played the game professionally</p><p>- <strong>Rule 2</strong> \u2013 If we\u2019re going to discuss VAR, you need a pint, and we're going to have to discuss VAR</p><p>- <strong>Rule 3</strong> \u2013 Don\u2019t mess with Lisandro Martinez, he might be small but that man has seen things</p>",
+        "language": "en",
+        "author_name": "The Sunday League Podcast",
+        "slug": "tslpodcast",
+        "cover": "20230306_090302_4d85466c49de94f723b53590d1b38d15.jpg"
+    },
+    {
+        "podcast_id": 194983,
+        "title": "Blue Balls A Sporting KC Podcast",
+        "description": "<p>Two friends John and Alex discuss their MLS home team. Join in on the fun!</p>",
+        "language": "en",
+        "author_name": "Alex Siro",
+        "slug": "blueballs-sportingkc",
+        "cover": "20230307_120322_47111a40316d07d4b0788601dcf10bd7.jpg"
+    },
+    {
+        "podcast_id": 195418,
+        "title": "So Close, So VAR!",
+        "description": "<p>So Close, So VAR! is a podcast that delves into the compelling and often emotional stories of success and failure in sports.</p>",
+        "language": "en",
+        "author_name": "So Close, So VAR!",
+        "slug": "soclosesovar",
+        "cover": "20230308_020326_8f7328ee46c549c1b322aafac00bb578.jpg"
+    },
+    {
+        "podcast_id": 198375,
+        "title": "Canal Podcast ejercicio 2",
+        "description": "<p>Canal de podcast de futbol</p>",
+        "language": "es",
+        "author_name": "Alex Fernandez",
+        "slug": "e2podcast",
+        "cover": "20230321_110357_9f1df4fe52085e302065ace8ad47de22.jpg"
+    },
+    {
+        "podcast_id": 198614,
+        "title": "DMAS Podcast",
+        "description": "<p>DMAS Podcast AKA Don't Make A Scene Podcast is a new hub for sport!</p><p>Join us as we debate and discuss our favourite games!</p>",
+        "language": "en",
+        "author_name": "DMAS",
+        "slug": "dmaspodcast",
+        "cover": "20230322_120357_3214c338ce9ba5218e338661fd8a26db.jpg"
+    },
+    {
+        "podcast_id": 198682,
+        "title": "Tales From the Trail by MatchPlay",
+        "description": "<p>I started the <strong><em>Tales From The Trail Podcast from MatchPlay </em></strong>to bring highly valuable content to high school athletes who want to continue their careers in college. This can be a very overwhelming process and the goal of the podcast is to bring top college coaches and other experts together to discuss a wide range of topics relevant to the recruiting process.</p>",
+        "language": "en",
+        "author_name": "Scot Cooper",
+        "slug": "tales-from-the-trail-1",
+        "cover": "20230829_090847_38d417c3face6ff080cb60e7655c2eb5.jpg"
+    },
+    {
+        "podcast_id": 198857,
+        "title": "The Monday Kick Off",
+        "description": "<p>Bringing you the latest in the beautiful game \u26bd \ud83d\udd25 Honest discussion by admirers and players, footy challenges and quizzes and many more. Our content ranges from the Monday Kick Off podcast to various football skits, interviews, and challenges, on our YouTube channel. Enjoy,, like, comment and share - we love the interaction and discussion.</p>",
+        "language": "en",
+        "author_name": "Bench Warmers FC",
+        "slug": "realbenchwarmersfc",
+        "cover": "20230323_020353_537e7ba8c9c52a2b607a0eba220cb087.jpg"
+    },
+    {
+        "podcast_id": 200045,
+        "title": "Magia das Distritais",
+        "description": "<p>O Podcast menos profissional de todos!</p>",
+        "language": "pt-pt",
+        "author_name": "Bruno Costa",
+        "slug": "magiadasdistritais",
+        "cover": "20230622_050604_752fc180778d2ba9d4ca16fbef35066e.jpg"
+    },
+    {
+        "podcast_id": 202204,
+        "title": "Amateur Footy Network",
+        "description": "<p>Bringing more coverage to division 1 college soccer, while hearing stories from collegiate athletes and their experience of choosing their college or entering the transfer portal.</p>",
+        "language": "en",
+        "author_name": "Andrew Vannest",
+        "slug": "amateurfn",
+        "cover": "20230409_070416_66145a0810907b9e57d049781350d3bd.jpg"
+    },
+    {
+        "podcast_id": 202646,
+        "title": "Streets Won't Forget Podcast",
+        "description": "<p>The Streets Won't Forget Podcast honours football's finest. No, not Messi, Ronaldo and Maradona, rather Taarabt, Ben Arfa and Papiss Cisse, the undisputed, unforgettable kings of the streets.</p><p>Host Dan Mountney is joined by good friends and co-hosts, Ben Woolley and Harry Martinez, as they curate the Streets Won't Forget Hall of Fame.</p><p>Players you've forgotten, players you can never forget, screamers, God-awful opinions and plenty of laughs, this is the football podcast you've been waiting for.</p><p></p><p><strong>Follow us</strong></p><p></p><p><strong>Twitter - </strong><a href=\"https://twitter.com/SWF_Pod\"><strong>@SWF_Pod</strong></a></p><p></p><p><strong>Instagram - </strong><a href=\"https://www.instagram.com/streetswontforgetpodcast/\"><strong>streetswontforgetpodcast</strong></a></p><p></p><p><strong>Email - thestreetswontforgetpodcast@gmail.com</strong></p>",
+        "language": "en",
+        "author_name": "Dan Mountney, Ben Woolley and Harry Martinez",
+        "slug": "streets-wont-forget-podcast",
+        "cover": "20230411_050400_f9986453def60c767740b73d87a2ddca.jpg"
+    },
+    {
+        "podcast_id": 202685,
+        "title": "Switched",
+        "description": "<p>Oliver loves arsenal, Hayyan loves Arsenal. Both of their clubs fortunes seem to be changing.</p>",
+        "language": "en",
+        "author_name": "Oliver Stilwell",
+        "slug": "switchedpodcast",
+        "cover": "20230411_080440_c404071aa49912e791e8e020e1b1c921.jpg"
+    },
+    {
+        "podcast_id": 204138,
+        "title": "Fantasy Fanzone ",
+        "description": "<p>top 5 fantasy football pick up tips</p>",
+        "language": "en",
+        "author_name": "Simon Bennett",
+        "slug": "fantasy-fanzone",
+        "cover": "20230420_010443_289dde502523f20d15cff53caa2167f6.jpg"
+    },
+    {
+        "podcast_id": 204206,
+        "title": "Cambio de Ritmo",
+        "description": "<p>Welcome to Cambio de Ritmo's podcast.</p><p>Cambio de Ritmo directly translates to \u201cchange of rhythm\u201d but in sports, soccer especially, the same phrase would be \u201cchange of pace\u201d.</p><p>Cambio de ritmo is a phrase I heard a lot growing up, whether it was being advised to me by a coach to include more cambios de ritmo, changes of pace, into my game, or listening to commentators talk about how players like Riquelme, Messi, and Iniesta were masters at doing so.</p><p>In my own way of understanding it, a cambio de ritmo is a change of pace and/or direction in one\u2019s movement in order to disrupt and impede the speed and direction the opposing player and team are moving at in order to create distance from one or more of them, to create separation in order to receive a pass from a teammate, or open up space so one can make a pass or take a shot themselves. Along with other things you can imagine.</p><p>Changing your pace in the game, whether you have the ball or not, is crucial if you want to simply make any play happen</p><p>I\u2019ve experienced lots of \u201ccambios de ritmo\u201d, more-so looking at the translation as \u201cchange of rhythm\u201d. My playing career and life as a whole up to this point have gone through many changes of rhythm, sometimes willingly and sometimes not, as I\u2019m sure is true with those of my guests\u2019.</p><p>At Cambio de Ritmo, it is believed that these changes are essential in the improvement and sustainability of every athlete both in their sport and life. From having away-from-sport interests and goals to overcoming obstacles in sport, cambios de ritmo are what makes every person who they are.</p><p>One thing we know about cambios de ritmo is that they make it very hard for the opposing team to read one's movements and plays. However, this podcast aims to follow our guests' pathway very closely.</p>",
+        "language": "en",
+        "author_name": "Herminio Junior Padilla",
+        "slug": "cambioderitmo",
+        "cover": "20230808_060816_1229d51dc25efea9c8fb4718477a4e3e.jpg"
+    },
+    {
+        "podcast_id": 204426,
+        "title": "MLS Fashion Goals",
+        "description": "<p>Can we get a fit check? MLS Fashion Goals is a podcast where our hosts, Kelsey and Kate not so silently judge all your MLS fashion!  </p>",
+        "language": "en",
+        "author_name": "HasBeenSports",
+        "slug": "mlsfashiongoals",
+        "cover": "20230420_020447_4dea0abdf31f7c7ce5c7e45c522dd830.jpg"
+    },
+    {
+        "podcast_id": 204539,
+        "title": "No Red Cards Podcast",
+        "description": "<p>Manny B &amp; Roger Sosa talk Youth Soccer in the DFW/USA and its development. A podcast aimed at Soccer Players, Coaches and parents interested in the beautiful game. No Red Cards brings you Interviews with the top coaches and with this podcast anything goes without penalties.. Parents sorry sometimes a F#$% bomb or S#*% word can happen email Roger Sosa for complaints. </p>",
+        "language": "en",
+        "author_name": "Manny&Roger",
+        "slug": "noredcards",
+        "cover": "20230421_010404_f62422cf0535a4861e2a38508564869a.jpg"
+    },
+    {
+        "podcast_id": 207278,
+        "title": "BAR CANALETES BAR\u00c7A RADIO",
+        "description": "<p>PROGRAMA EN EL QUE ZERF, ARI MAILLOL Y DONGCAST REPASAREMOS SEMANALMENTE LA ACTUALIDAD DEL FC BARCELONA TRATANDO CON NUESTRO ESTILO TODO LO QUE RODEA A NUESTRO CLUB.</p><p>CON UN ESTILO VINTAGE Y MUCHOS PARTIDOS A NUESTRAS ESPALDAS ESPERAMOS SER UNA REFERENCIA INFORMATIVA PARA LOS MILLONES DE SEGUIDORES BLAUGRANA DE TODO EL MUNDO, TRASLADANDO EL AMOR POR NUESTROS COLORES Y NUESTRA HISTORIA.</p><p>BAR CANALETES. INFORMACI\u00d3N, OPINI\u00d3N, TRANSGRESI\u00d3N Y BARCELONISMO</p>",
+        "language": "es",
+        "author_name": "BAR CANALETES",
+        "slug": "barcanaletes",
+        "cover": "20230504_010530_096cd4308d586931d99740e619794d86.jpg"
+    },
+    {
+        "podcast_id": 208069,
+        "title": "The black Mambas of Football and Soccer",
+        "description": "<p>Latest Soccer News - Top Football Strikers Weekly - Best Goals of the week - Best Strike of the week - Top Performers - Black Mambas Strikers - Top Strikers - World Cup - Champion's League - Premier League - La Liga - Bundesliga - Ligue 1 - Serie A - Lionel Messi - Cristiano Ronaldo, Kylian Mbappe, Erling Halland, Pele</p>",
+        "language": "en",
+        "author_name": "Etienne Noumen",
+        "slug": "showupandplay",
+        "cover": "20230509_030557_6897ef96f152b39cde1fb121534ce73a.jpg"
+    },
+    {
+        "podcast_id": 210994,
+        "title": "All'angolino",
+        "description": "<p>Discussioni <strong>informali </strong>sul mondo del calcio a<strong> 360 gradi</strong> senza peli sulla lingua</p>",
+        "language": "it",
+        "author_name": "Enzo Serino, Adriano Livrieri, Donato Marvulli",
+        "slug": "allangolino",
+        "cover": "20230601_110652_24483a40aecfaaa3f4ac819a88360b2b.jpg"
+    },
+    {
+        "podcast_id": 211227,
+        "title": "\u05de\u05d3\u05d1\u05e8\u05d9\u05dd \u05d2\u05dd \u05e1\u05e4\u05d5\u05e8\u05d8",
+        "description": "<p>\u05d1\u05db\u05dc \u05e9\u05d1\u05d5\u05e2 \u05d0\u05e0\u05d9 (\u05e8\u05df) \u05d0\u05d0\u05e8\u05d7 \u05d3\u05de\u05d5\u05ea \u05de\u05e2\u05d5\u05dc\u05dd \u05d4\u05e1\u05e4\u05d5\u05e8\u05d8 (\u05e9\u05d7\u05e7\u05df, \u05de\u05d0\u05de\u05df, \u05e9\u05d5\u05e4\u05d8, \u05e2\u05d9\u05ea\u05d5\u05e0\u05d0\u05d9 \u05d0\u05d5 \u05e1\u05ea\u05dd \u05de\u05d9\u05e9\u05d4\u05d5 \u05e9\u05d0\u05d5\u05d4\u05d1 \u05dc\u05d3\u05d1\u05e8 \u05e1\u05e4\u05d5\u05e8\u05d8) \u05dc\u05e9\u05d9\u05d7\u05d4 \u05d0\u05d7\u05d3 \u05e2\u05dc \u05d0\u05d7\u05d3 \u05e9\u05d1\u05d4 \u05e0\u05d3\u05d1\u05e8 \u05e2\u05dc \u05d4\u05db\u05dc.</p><p>\u05d4\u05de\u05d8\u05e8\u05d4: \u05dc\u05d3\u05d1\u05e8 \u05e2\u05dc \u05d4\u05e2\u05d1\u05e8, \u05d4\u05d5\u05d5\u05d4, \u05e2\u05ea\u05d9\u05d3 \u05d5\u05d2\u05dd \u05e1\u05e4\u05d5\u05e8\u05d8. \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4: \u05de\u05e4\u05ea\u05d9\u05e2\u05d4</p>",
+        "language": "he",
+        "author_name": "\u05de\u05d3\u05d1\u05e8\u05d9\u05dd \u05d2\u05dd \u05e1\u05e4\u05d5\u05e8\u05d8",
+        "slug": "talking-also-sport1",
+        "cover": "20230613_090600_019a9149cdbbfc273607bbc5eb13deb2.jpg"
+    },
+    {
+        "podcast_id": 211305,
+        "title": "Casa Milan Persian Podcast \u06a9\u0627\u0632\u0627 \u0645\u06cc\u0644\u0627\u0646",
+        "description": "<p>\u067e\u0627\u062f\u06a9\u0633\u062a \u06a9\u0627\u0632\u0627 \u0645\u06cc\u0644\u0627\u0646 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0627\u0648\u0644\u06cc\u0646 \u067e\u0627\u06a9\u0633\u062a \u0627\u06cc\u0631\u0627\u0646\u06cc \u0645\u06cc\u0644\u0627\u0646\u06cc \u0627\u0632 \u0633\u0627\u0644 \u06f2\u06f0\u06f2\u06f0 \u062a\u0627 \u0628\u0647 \u0627\u0645\u0631\u0648\u0632, \u0639\u0636\u0648 \u06a9\u0648\u0686\u06a9\u06cc \u0627\u0632 \u062e\u0627\u0646\u0648\u0627\u062f\u0647\u0654 \u0627\u06cc\u0631\u0627\u0646\u06cc\u0627\u0646 \u0645\u06cc\u0644\u0627\u0646\u06cc .\u067e\u0627\u062f\u06a9\u0633\u062a \u06a9\u0627\u0632\u0627 \u0645\u06cc\u0644\u0627\u0646 \u0645\u062a\u0639\u0644\u0642 \u0628\u0647 \u0647\u06cc\u0686 \u06af\u0631\u0648\u0647\u060c \u067e\u06cc\u062c\u060c \u06cc\u0627 \u0633\u0627\u06cc\u062a\u06cc \u0646\u06cc\u0633\u062a. \u0627\u06cc\u0646 \u067e\u0627\u062f\u06a9\u0633\u062a \u062f\u0631 \u0633\u0627\u0644 \u06f2\u06f0\u06f2\u06f0 \u062a\u0648\u0633\u0637 \u067e\u0627\u0631\u0633\u0627 \u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 \u06a9\u0631\u062f\u0647 \u0648 \u062a\u0627 \u0628\u0647 \u0627\u0645\u0631\u0648\u0632 \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0645\u06cc\u0644\u0627\u0646 \u0641\u0646\u0627\u0633\u062a \u06a9\u0627\u0646\u0627\u0644 \u067e\u0627\u062f\u06a9\u0633\u062a \u0631\u0648 \u06cc\u0648\u062a\u06cc\u0648\u0628 \u062a\u0646\u0647\u0627 \u0645\u0646\u0628\u0639 \u0631\u0633\u0645\u06cc \u0645\u0627\u0633\u062a</p><p>: \u0627\u06cc\u0645\u06cc\u0644 \u0645\u0633\u062a\u0642\u06cc\u0645 \u067e\u0627\u062f\u06a9\u0633\u062a</p><p><a href=\"mailto:cmpersianpodcast@gmail.com\">cmpersianpodcast@gmail.com</a></p><p>The one and only official channel of the Casa Milan Persian Podcast. @casamilanpersianpodcast Casa Milan Persian Podcast or simply CMPP <a href=\"http://www.youtube.com/@casamilanpersianpodcast\">www.youtube.com/@casamilanpersianpodcast</a> Representing Milan Club Iran since 2020 The one and only official channel of the Casa Milan Persian Podcast.</p>",
+        "language": "fa",
+        "author_name": "Parsa Karami",
+        "slug": "cmpp",
+        "cover": "20230822_120818_5107e4d90fd3b2b7902bd574507e327c.jpg"
+    },
+    {
+        "podcast_id": 211963,
+        "title": "Pocos Pero Locos ",
+        "description": "<p>Get to know more of what goes on at the Oakland Roots tailgates, games, events and listen to personal experiences from members of the supporter groups.</p>",
+        "language": "en",
+        "author_name": "Jorge Bejarano",
+        "slug": "losroots",
+        "cover": "20230603_110625_d965ad184afa88d0cf1b782a77a55ccb.jpg"
+    },
+    {
+        "podcast_id": 212418,
+        "title": "Home&Away Days ",
+        "description": "<p>Join us as we discuss everything football straight from kick off. From welcoming travelling fans to being ones ourselves, you won't want to miss it.</p><p>But as always football is a game of 2 halves.</p><p>In the later stages of the game we talk pure football and as any good team should, we put a full shift in.</p><p>If you have any comments or questions please email</p><p><a href=\"mailto:homeandawaydaypod@gmail.com\">homeandawaydayspod@gmail.com</a></p><p>We hope you enjoy and get involved!</p>",
+        "language": "en",
+        "author_name": "Luke & James",
+        "slug": "homeandawaydayspod",
+        "cover": "20230531_100556_13326bd7f9cc7dbd5af4b8616b942969.jpg"
+    },
+    {
+        "podcast_id": 213911,
+        "title": "Raising Anchor",
+        "description": "<p>A podcast about Rhode Island FC, the United Soccer League Championship (USL), and all things soccer in Rhode Island.</p>",
+        "language": "en",
+        "author_name": "Hosts Matthew Entrekin and Jason Carey",
+        "slug": "raisinganchor",
+        "cover": "20230720_100744_efa6f3f2875b1aeb0ca882f5e603a5d0.jpg"
+    },
+    {
+        "podcast_id": 213922,
+        "title": "NYOMISTAS",
+        "description": "<p>#NYOMISTAS1</p>",
+        "language": "es",
+        "author_name": "Nyomistas",
+        "slug": "nyomistas",
+        "cover": "20230608_120626_0e045e93f2a442515c5df50421b0a81c.jpg"
+    },
+    {
+        "podcast_id": 214148,
+        "title": "Ballers Mindset Podcast",
+        "description": "<p>The Ballers Mindset Podcast is here with Ty and Ell as they dive deep into the mind of a baller and get to know their journey so far! Join the lads on their journey in meeting some of the hottest up and coming talent in UK football. Be sure to check out all our social media channels for unseen content. Subscribe if you ain't subscribed yet, You're tuned into the Ballers Mindset.</p>",
+        "language": "en",
+        "author_name": "Eliott Moreland and Ty Carter",
+        "slug": "ballersmindsetpodcast",
+        "cover": "20230823_050827_137e16e8354c99f38132dd08b8264d90.jpg"
+    },
+    {
+        "podcast_id": 215268,
+        "title": "The Footy Casuals",
+        "description": "<p>Hello and welcome to our sports podcast where we talk about the beautiful game also known as Football, Soccer, Futbol, or simply Footy. Me and my cousin talk about weekly rumors, big events, predictions, and much much more. We don't have an upload schedule but be sure to tune in every week for new episodes about everything Football around the world.</p>",
+        "language": "en",
+        "author_name": "Alfonso & Brian",
+        "slug": "the-footy-casuals",
+        "cover": "20230615_050648_46c43c2138a9be6ddbfd66f4c5ce506b.jpg"
+    },
+    {
+        "podcast_id": 215566,
+        "title": "\u0645\u064c\u062f\u0627\u0648\u0631\u0629",
+        "description": "<p>\u0628\u0648\u062f\u0643\u0627\u0633\u062a \u0645\u064f\u062f\u0627\u0648\u0631\u0629</p>",
+        "language": "ar",
+        "author_name": "\u0645\u064f\u062f\u0627\u0648\u0631\u0629",
+        "slug": "mudawarah",
+        "cover": "20230629_090640_c149ebc4ed1da3e1954b56ff2142c70e.jpg"
+    },
+    {
+        "podcast_id": 216157,
+        "title": "Football Fantasies ",
+        "description": "<p>Football has Fantasies</p>",
+        "language": "en",
+        "author_name": "Yaashwer Gobbi and Cheng Jun Hao",
+        "slug": "football-fantesies",
+        "cover": "20230621_090619_ce5a47a9b8062349ebabde3992645a2e.jpg"
+    },
+    {
+        "podcast_id": 216254,
+        "title": "@madcharrxs",
+        "description": "<p>Futbol y desinformaci\u00f3n es lo que nos define. Pasion por el balompie y las mentiras.</p>",
+        "language": "es",
+        "author_name": "Los Mad Charrxs",
+        "slug": "madcharrxs",
+        "cover": "20230621_110616_4913442b779eeabf13c159d3f77dafc4.jpg"
+    },
+    {
+        "podcast_id": 216272,
+        "title": "The Turf Tangent ",
+        "description": "<p>Talking about all things womens soccer</p>",
+        "language": "en",
+        "author_name": "Sydney Armstrong and Kat Stambaugh",
+        "slug": "turftangent",
+        "cover": "20230623_060654_87c25bf21d8cd08740035054b4aab5a3.jpg"
+    },
+    {
+        "podcast_id": 216626,
+        "title": "The Copa Club Podcast",
+        "description": "<p>South American football expert Nathan Joyes sits down with a new guest each episode, discussing all things going on in the continent. Interested in discovering the next Neymar, finding out about players linked with the Premier League, or simply more about the Brasileiro? Then you've found your podcast. Stay ahead of the curve and impress your mates with the knowledge you'll consume with a casual chat between two microphones.</p>",
+        "language": "en",
+        "author_name": "Nathan Joyes",
+        "slug": "e2de5ee4",
+        "cover": "20230624_100602_83fe3c1e383d7387bc40c5789a113243.jpg"
+    },
+    {
+        "podcast_id": 216689,
+        "title": "Slide tackle podcast",
+        "description": "<p>A weekly round up football matches, transfers, and hot takes on what's happening in the beautiful game</p>",
+        "language": "en",
+        "author_name": "Mando Lopez",
+        "slug": "slidetacklepod",
+        "cover": "20230624_100640_d0f3fdcc99c3a9448727d2e279399406.jpg"
+    },
+    {
+        "podcast_id": 216837,
+        "title": "Ipswich Town Social Club Podcast",
+        "description": "<p>A fan podcast dedicated to Ipswich Town Football Club.. Sometimes we talk about football, sometimes we talk about bears as we don\u2019t know enough about football.</p><p>Music by Lewis Barton</p><p>Production by Frank Nouble</p>",
+        "language": "en",
+        "author_name": "Drew and Dan",
+        "slug": "ipswichtownsocialclub",
+        "cover": "20230626_070646_ae855c1245f4d7a8afddae2afa19f6c7.jpg"
+    },
+    {
+        "podcast_id": 217191,
+        "title": "The FPL Draft Duo ",
+        "description": "<p>An untouched gem of FPL, the draft is a relatively new feature of the game but we believe it is the best. We are two guys who play numerous drafts per year &amp; want to show you everything the draft has to offer.</p><p>Join us on this journey to bring this unique game mode to the wider audience.</p>",
+        "language": "en",
+        "author_name": "Jacksie & Nolezy ",
+        "slug": "fpldraftduo",
+        "cover": "20230628_020633_f2890ad45741ac12dea078a1a5af6c95.jpg"
+    },
+    {
+        "podcast_id": 217450,
+        "title": "Bar Mercato",
+        "description": "<p>Cosa c'\u00e8 di pi\u00f9 bello del <strong>Calciomercato</strong>? Niente.</p><p>Emanuele, Sergio e Valerio, seduti al bancone del loro bar di fiducia, analizzano e discutono delle trattative che ci riserva la nostra amata Serie A.</p>",
+        "language": "it",
+        "author_name": "Bar Calcistico",
+        "slug": "barmercato",
+        "cover": "20230630_110646_48c0f00ad816ccd50198a1f4ff97b8f8.jpg"
+    },
+    {
+        "podcast_id": 217825,
+        "title": "Pitmen Pod",
+        "description": "<p>A new series of podcasts with Hednesford Town FC personnel, From current to former employees, hear behind the scenes news/views from Keys Park. Hosted by Ryan Hillback.</p>",
+        "language": "en-gb",
+        "author_name": "Hednesford Town Football Club",
+        "slug": "hednesfordtownfc",
+        "cover": "20230703_020740_215fc3a7716d12c6c92aa894d5b104a7.jpg"
+    },
+    {
+        "podcast_id": 218050,
+        "title": "Hacast",
+        "description": "<p>FC Hakan historiaan kuuluu isoja voittoja, katkeria tappioita ja lukuisia kotimaisen jalkapallon t\u00e4hti\u00e4. T\u00e4m\u00e4 podcast-sarja k\u00e4sittelee FC Hakaa \u2013 Suomen toiseksi menestyneint\u00e4 jalkapallojoukkuetta, joka pelaa Suomen kauneimmalla stadionilla, Tehtaan kent\u00e4ll\u00e4. Hakan tarinat, nyt ja aiemmin, k\u00e4yd\u00e4\u00e4n l\u00e4pi vaihtuvin, mutta aina mustavalkoisin is\u00e4nnin.</p>",
+        "language": "fi",
+        "author_name": "FC Haka",
+        "slug": "hacast",
+        "cover": "podcast_cover.jpg"
+    },
+    {
+        "podcast_id": 218498,
+        "title": "Uncut USMNT Podcast",
+        "description": "<p>3 co-hosts talking USMNT once a week for 30 minutes</p><p>Spencer (FcSt8tes Twitter + Youtube)</p><p>Danny (USMNT Takes (Twitter)</p><p>USMNT News (Twitter)</p>",
+        "language": "en",
+        "author_name": "St8tes FC, USMNT Takes, USMNT News",
+        "slug": "uncutusmntpodcast",
+        "cover": "20230708_030714_bef11d61cfc7c9d5ad7b6bae787d2b3e.jpg"
+    },
+    {
+        "podcast_id": 219038,
+        "title": "Gold Cup Semis. ",
+        "description": "<p>Hey guys welcome . my first episode so cut me some slack lol!!</p>",
+        "language": "en",
+        "author_name": "Martin Seis",
+        "slug": "the3rdgoal",
+        "cover": "20230712_010706_104a9e6e154bd78ed81051d281c19534.jpg"
+    },
+    {
+        "podcast_id": 219500,
+        "title": "The Raumdeuter Podcast",
+        "description": "<p>Tim Richards, despite living in England his whole life, is a season ticket holder for Bayern Munich. And now he's going to talk about it. At length and with seemingly no structure. Should be fun!</p>",
+        "language": "en",
+        "author_name": "Tim Richards",
+        "slug": "theraumdeuterpodcast",
+        "cover": "20230714_080725_e7ed279ce329588730d1d2f75c45917d.jpg"
+    },
+    {
+        "podcast_id": 219981,
+        "title": "Lutrija BiH - Joker Podcast",
+        "description": "<p>Lutrija BiH - Podcast</p>",
+        "language": "bs",
+        "author_name": "Joker Anel D\u017eankovi\u0107",
+        "slug": "jokeraneldzankovic",
+        "cover": "20230718_080735_186a2262c88277cc627dadc4663e5dbe.jpg"
+    },
+    {
+        "podcast_id": 220124,
+        "title": "The Line Breaker - A World Football Podcast",
+        "description": "<p>We're a Soccer/World Football Podcast based in NYC! Just two guys with a passion for the beautiful game.</p><p>We focus largely on everything happening in Europes Top 5 Leagues, with lots of sarcasm in between.</p><p><a href=\"https://linktr.ee/thelinebreaker_\">linktr.ee/thelinebreaker_</a></p>",
+        "language": "en",
+        "author_name": "The Line Breaker",
+        "slug": "thelinebreaker",
+        "cover": "20230724_030714_f814c2e4e5f10c127bd140c65fbd4ac0.jpg"
+    },
+    {
+        "podcast_id": 220371,
+        "title": "How To Get Scouted",
+        "description": "<p>Welcome to \u2018How To Get Scouted', the podcast that delves into the exciting, high stakes arena of player scouting in football (Soccer). Your host is Olu Quadri and he's spent his career living and breathing this beautiful game. Along with Producer and co-host Drew Rice, we'll give athletes and passionate football fans a closer look at what happens behind the scenes of this competitive sport.</p><p>In our first episode, we're addressing the question that gnaws at every budding athlete's mind: 'Am I good enough to get noticed by a scout?' We'll explore what it takes to stand out on the field and the strategies young players can employ to attract the attention of scouts.</p><p>In our second episode, we'll put ourselves in the shoes of a scout to understand the qualities they hunt for when they're in the stands, watching the magic unfold on the pitch.</p><p>In the third episode, we delve into the intricate process of getting scouted, helping to demystify this crucial, yet often misunderstood, path to a professional football career.</p><p>Next, we'll shift our focus to what exactly a player should be working on to pique the interest of scouts. It's not all about scoring goals, you know!</p><p>After a successful trial, life can change drastically. We'll give you an insider's view of what happens next in episode five.</p><p>Our sixth and seventh episodes are all about the numbers, the stats, the data. We'll investigate how data analysis has revolutionized scouting and why it is now a key player in recruitment decisions.</p><p>In episode eight, we're talking metrics. Which ones should players focus on? What numbers matter most to scouts? We'll give you the lowdown on this critical component of the scouting process.</p><p>Finally, along with sports psychologist and councellor Neal Trottman, we'll explore other exciting career options in the football business for those who don't make the grade as players. Football is a diverse world, and there are many ways to make your mark.</p><p>So, whether you're an aspiring player hoping to catch a scout's eye, a passionate fan wanting to understand the business side of your favourite sport, or just someone who loves a good underdog story, our Journey Into the Scouting World\u2019 has got something for you.</p><p>Any questions? Email - drewricemail@gmail.com</p><p>Join us as we navigate this fascinating journey into the heartbeat of football. Let's kick off!\"</p>",
+        "language": "en",
+        "author_name": "Drew Rice, Olu Quadri",
+        "slug": "howtogetscouted",
+        "cover": "20230906_110957_7f60b763d10df7a7948185b5d7fd19aa.jpg"
+    },
+    {
+        "podcast_id": 220466,
+        "title": "Mind of the Fans Podcast",
+        "description": "<p>Welcome to Mind of the Fans Podcast, your go-to-show for all things Premier League Football. We are your hosts David and Spi and every week we dissect the best and worst moments from each match, delivering insightful analysis and engaging discussions. From intense rivalries to top-notch performances, we got you covered. But it doesn't stop there! Stay tuned for updates on major European games and breaking news. Get ready for an unforgettable football experience on the Mind of the Fans Podcast. Let the games Begin!</p>",
+        "language": "en",
+        "author_name": "David and Spi",
+        "slug": "mindofthefanspodcast",
+        "cover": "20230720_110709_3847a2e3b2090883b675dfee0ce1165a.jpg"
+    },
+    {
+        "podcast_id": 220509,
+        "title": "Gol a Goal",
+        "description": "<p>Welcome y bienvenidos to the Gol a Goal bilingual sports podcast that connects honest opinions with hard-hitting facts. Es aqui donde el donde el Espa\u00f1ol y el Ingles se mezclan en una olla de deportes, con el futbol de Messi, al baloncesto de LeBron y los equipos mas controversial como los Dallas Cowboys y Manchester United. Let's cut through the noise, defy the sportsbook odds and unite or divide sports fans alike. Here, there are no limits only goals, transfers, touchdowns, buckets, and opinions. Si estan listos,</p>",
+        "language": "en",
+        "author_name": "Daniel Torres",
+        "slug": "golagoal",
+        "cover": "20230721_050742_cd946c4f26dcfd0c80f23ae397a7d0bb.jpg"
+    },
+    {
+        "podcast_id": 221044,
+        "title": "Fr. Smpad Talk's",
+        "description": "<p><strong><em>Every week, Fr. Smpad Talk's will bring you interesting talks in audio. Join host and pastor Very Reverend Father Smpad Saboundjian provoking ideas on every subject related to our daily life, from Christian to ethical values, and everything in between.  With Fr. Smpad Talk's, find some space in your day to strengthen your faith, and get closer to God.</em></strong></p>",
+        "language": "en",
+        "author_name": "Smpad Saboundjian",
+        "slug": "frsmpadtalks",
+        "cover": "20230725_070753_cc63d163a52cbb0e3bc9f1cc0de6048b.jpg"
+    },
+    {
+        "podcast_id": 221554,
+        "title": "2 Girls 1 Cup",
+        "description": "<p>Bri and Shelby talk about the 2023 FIFA Women's World Cup\u2122</p>",
+        "language": "en",
+        "author_name": "Bri Romero and Shelby Lopez",
+        "slug": "2girls1cup",
+        "cover": "20230728_020756_94573e811b8a49e7aed432619a086b7c.jpg"
+    },
+    {
+        "podcast_id": 221888,
+        "title": "The Boothen Roarcast",
+        "description": "<p>Hello everybody, your listening to The Boothen Roarcast.</p><p>This podcast is dedicated to Stoke City Football Club, where myself, Rori Thomas and a co-host of that episode will discuss the ins and outs of club fixtures, the academies fixtures and both first team Stoke City Women and the re-development squad!</p><p>We will also be covering international sides England Men and Women.</p><p>In each episode you will hear a divided opinion on the games, where views are each to their own person. Your views are welcome at anytime by simply commenting on our Facebook group or placing a message in the \"Chat\" section of the group messenger.</p><p>For more information, you can find us on Facebook where we also host open discussions and match day reviews, where you can express your opinions of the games.</p><p>Please find the link below or by simply searching \"The Boothen Roarcast\"</p><p><a href=\"https://www.facebook.com/groups/823161615766601/\">https://www.facebook.com/groups/823161615766601/</a></p>",
+        "language": "en",
+        "author_name": "The Boothen Roarcast",
+        "slug": "the-boothen-roarcast",
+        "cover": "20230731_040748_cb1a463680611f1b45e355ca5d7e81b5.jpg"
+    },
+    {
+        "podcast_id": 221926,
+        "title": "The Proper Chels Podcast",
+        "description": "<p>A podcast for Chelsea fans, hosted by David Rolls and Jamie Wilkinson. </p>",
+        "language": "en",
+        "author_name": "David Rolls",
+        "slug": "theproperchelspodcast",
+        "cover": "20230731_110753_988dfeca31abeefe684ae64fe86d1991.jpg"
+    },
+    {
+        "podcast_id": 222438,
+        "title": "C.D. Berriz",
+        "description": "<p>\u00a1Descubre nuestro emocionante podcast presentado por Lejano Oriente! Cada dos semanas, los domingos, te traemos lo \u00faltimo acerca del C.D. Berriz, momentos destacados de los equipos, charlas con aficionados y entrenadores, \u00a1y mucho m\u00e1s!</p>",
+        "language": "es",
+        "author_name": "Lejano Oriente",
+        "slug": "cd-berriz",
+        "cover": "20230804_100843_a4705c6a9a64bf8518d8c1cb01982d8d.jpg"
+    },
+    {
+        "podcast_id": 222661,
+        "title": "Football and Beyond Podcast",
+        "description": "<p>Hosted by Prashant Yaragatti, where he talks about Premier League Football. </p>",
+        "language": "en",
+        "author_name": "Prashant Yaragatti",
+        "slug": "footballandbeyondpodcast",
+        "cover": "20230805_090843_8e9cde1b312fd892ba1fa7cf02c09230.jpg"
+    },
+    {
+        "podcast_id": 222695,
+        "title": "DISKI FANS",
+        "description": "<p><strong>DISKI FANS</strong> provide all the news and views, twists and turns of the beautiful game.</p>",
+        "language": "en",
+        "author_name": "DISKI FANS TEAM",
+        "slug": "diskifans",
+        "cover": "20230805_060859_96482bc68b2bac31ce709cdb84969a20.jpg"
+    },
+    {
+        "podcast_id": 222752,
+        "title": "ForeignEPLpodcast",
+        "description": "<p>listen to WB and Thomas talk football.</p>",
+        "language": "en",
+        "author_name": "ForeignEPLpodcast",
+        "slug": "foreigneplpodcast",
+        "cover": "20230806_040837_82db779689f7a153db344dbf50051c59.jpg"
+    },
+    {
+        "podcast_id": 222789,
+        "title": "Chairboys Unfiltered - The Wycombe Wanderers Podcast",
+        "description": "<p>The Unofficial Wycombe Wanderers Podcast brought to you by Harrison Bond (WycombeBible) &amp; Jayden Wilkins. Interviewing Wanderers players &amp; discussing all things Wycombe</p>",
+        "language": "en",
+        "author_name": "WycombeBible",
+        "slug": "chairboysunfiltered",
+        "cover": "20230806_110844_696649cfd8c582e36177a4f2a1aba1e4.jpg"
+    },
+    {
+        "podcast_id": 223133,
+        "title": "Its that football show",
+        "description": "<p>A new podcast all about talking football. From the premier league down the football league I aim to cover reviews/previews/news and more. And i hope to do it with you guys featuring! I want to create a healthy community with fans from all clubs debating the beautiful game!</p>",
+        "language": "en",
+        "author_name": "Elliott booth",
+        "slug": "itsthatfootballshow",
+        "cover": "20230808_040843_95caeabb86492071d5596ad62d0d723a.jpg"
+    },
+    {
+        "podcast_id": 223320,
+        "title": "De Marta Donna's",
+        "description": "<p><a href=\"https://www.instagram.com/de_martadonnas/\"><em>De Marta Donna's!</em></a><em> D\u00e9 podcast waarin hero's uit het vrouwenvoetbal centraal staan. Speelsters, trainers, scheidsrechters, fysio\u2019s; iedereen schuift aan. Host</em><a href=\"https://www.instagram.com/kirstenvdwesteringh/\"><em> Kirsten van de Westeringh</em></a><em> neemt elke aflevering de carri\u00e8re van de betreffende gast onder de loep. Aan de hand van o.a. snelle vragen, anekdotes en vragen uit de grabbelbak leer je de gast kennen en hoor je de mooiste verhalen.</em></p><p><em>Met Marta als boegbeeld voor het vrouwenvoetbal en Maradona, baltovenaar a.k.a. pluisje, die het logo en naam mogen sieren van deze podcast. </em></p><p><em>Een productie van</em><a href=\"https://www.instagram.com/makerdistrict/\"><em> Maker District</em></a><em>.</em></p>",
+        "language": "nl",
+        "author_name": "Maker District",
+        "slug": "demartadonnas",
+        "cover": "20230809_060806_c9ff18651f6a96862e0bffababcce181.jpg"
+    },
+    {
+        "podcast_id": 223471,
+        "title": "Level 7",
+        "description": "<p>A podcast about everything NUFC. </p>",
+        "language": "en",
+        "author_name": "level 7",
+        "slug": "level7",
+        "cover": "20230810_050803_0dcd001b9e7637950dfd741049c28d6a.jpg"
+    },
+    {
+        "podcast_id": 223492,
+        "title": "Rivals on Air",
+        "description": "<p>Follow our social media accounts!</p><p>Instagram: @Rivalsonairpod</p><p>Twitter: @Rivalsonairpod</p><p>Tiktok: @Rivalsonairpod</p><p>Business email: Rivalsonairpod@gmail.com</p>",
+        "language": "en",
+        "author_name": "Yann Kouame & Joel Uwemedimo",
+        "slug": "rivalsonair",
+        "cover": "20230812_070830_24fb7de7e8378186e901edb57ec5eb25.jpg"
+    },
+    {
+        "podcast_id": 223551,
+        "title": "The Ballon D\u2019orks",
+        "description": "<p>A couple of dorks bringing the world of soccer to the United States</p>",
+        "language": "en",
+        "author_name": "Benji Villarreal and Jose Manrique-Becerril ",
+        "slug": "theballondorks",
+        "cover": "20230811_050832_49395e16173e2b0a610a5884cf1bf796.jpg"
+    },
+    {
+        "podcast_id": 223668,
+        "title": "Pabbies PL",
+        "description": "<p>Vi elsker Premier League</p><p>Hvis du elsker Fodbold, s\u00e5 lyt med vi snakker KUN om det</p><p>Conrad, Villads, Mads og Pabbie er jeres v\u00e6rter</p><p>Vi hygger os mens vi g\u00f8r det og m\u00e5let er at g\u00f8re vores podcast bedre, men det kr\u00e6ver folk lytter til det</p><p>VELKOMMEN!</p>",
+        "language": "da",
+        "author_name": "Villads Riis",
+        "slug": "pabbiepl",
+        "cover": "20230811_110805_28bf8b8d3331e6fb1393811080d44209.jpg"
+    },
+    {
+        "podcast_id": 223725,
+        "title": "Off The Post Podcast",
+        "description": "<p>The <a href=\"https://www.youtube.com/hashtag/%E2%83%A31%E2%83%A3\">#\ufe0f\u20e31\ufe0f\u20e3</a> Uncensored, Unadulterated &amp; Unparalleled Football Podcast \ud83c\udfa5 Giving you the very best weekly content <a href=\"https://www.youtube.com/hashtag/otp\">#OTP</a> - Enquiries \ud83d\udce7: <a href=\"mailto:Otppodcast1@gmail.com\">Otppodcast1@gmail.com</a></p>",
+        "language": "en",
+        "author_name": "Off The Post Podcast",
+        "slug": "otppod",
+        "cover": "20230812_100844_7fb6a10a1eb6d52316e9e31aff98cc5a.jpg"
+    },
+    {
+        "podcast_id": 223735,
+        "title": "Jogo Pelo Jogo | Solverde.pt",
+        "description": "<p>Tiago Almeida, Tom\u00e1s da Cunha e Vasco Elvas juntam-se todas as ter\u00e7as para responder \u00e0 pergunta: \"O que acontece quando juntamos 2 humoristas e 1 comentador s\u00e9rio para falarem de futebol?\"</p>",
+        "language": "pt-pt",
+        "author_name": "Solverde.pt",
+        "slug": "solverdept-jogoajogo",
+        "cover": "20230816_030814_d424fa7dae22bcdde3ffb9c4b830df16.jpg"
+    },
+    {
+        "podcast_id": 224340,
+        "title": "No Clean Sheets",
+        "description": "<p>Fantasy football and random pub chat</p>",
+        "language": "en",
+        "author_name": "Bruce Grant, Harry Scannell, Steve Edwards",
+        "slug": "no-clean-sheets",
+        "cover": "20230830_080826_752bf1f9fd042cdd9a584000f9c25259.jpg"
+    },
+    {
+        "podcast_id": 224407,
+        "title": "Keeping Up Appearances",
+        "description": "<p>Who played 389 games for Arsenal? Or 66 games for Newcastle? </p><p>We discuss one of this week\u2019s matches, before putting our obscure football knowledge to the test in our game, Keeping Up Appearances. </p><p>Follow us on X @keepingupapps.</p><p><a href=\"https://www.youtube.com/@KeepingUpAppearances\">https://www.youtube.com/@KeepingUpAppearances</a></p>",
+        "language": "en",
+        "author_name": "Shaun O'Hara",
+        "slug": "keepingupapps",
+        "cover": "20230816_070841_e6aaeb53803398d96ee87cb1feea3e3f.jpg"
+    },
+    {
+        "podcast_id": 224995,
+        "title": "RED DIVIDE",
+        "description": "<p>Yes, the age-old clash between Liverpool FC and Manchester United, A rivalry where a \"red card\" isn't just a warning, but also a fashion statement. Two cousins split by there allegiance to their clubs. On the one side you have Mark the Manchester United fan donning his kit like a knight donning his armour. On the other side you have Rei wrapped in his Liverpool FC jacket like a guardian of the Anfield gates! Whether it's cheeky banter about who's the bigger club or who's had more hair-raising moments on the field, this rivalry is as delightful as a well-timed nutmeg and as unpredictable as an English summer's day. So, let the banter begin, the tackles fly, and the good-natured insults flow.</p>",
+        "language": "en",
+        "author_name": "Mark Lalor",
+        "slug": "reddivide",
+        "cover": "20230820_080852_6c0dbbe51c00f8dcfec155c3201d0037.jpg"
+    },
+    {
+        "podcast_id": 225086,
+        "title": "Pyramid Podcast",
+        "description": "<p>Pyramid Pod with Murph, Lawro &amp; Tommo! We cover the Premier League, FPL, EFL, Non-League and the biggest stories from across the beautiful game.</p>",
+        "language": "en",
+        "author_name": "Pyramid Podcast",
+        "slug": "pyramidpodcast",
+        "cover": "20230821_120829_45dd022c2192c2a03befdbffe0dcec5d.jpg"
+    },
+    {
+        "podcast_id": 225109,
+        "title": "14 Sports Stories With 14thgunner",
+        "description": "<p>I talk about everything football here but specifically women's football.</p><p>14thgunner are mighty social media accounts created to promote women's sports, specifically women's football (soccer) because I love it and I saw an unnecessary gap that needs to be filled.</p>",
+        "language": "en",
+        "author_name": "14thgunner",
+        "slug": "14thgunner",
+        "cover": "20230821_060837_7d24840afec07cfff342b339c72dada4.jpg"
+    },
+    {
+        "podcast_id": 225290,
+        "title": "Dortmund Dispatch",
+        "description": "<p>A weekly podcast about Borussia Dortmund with a rotating lineup of commentators and journalists from around the globe.</p>",
+        "language": "en",
+        "author_name": "Eli Brand",
+        "slug": "dortmunddispatch",
+        "cover": "20230822_120805_0d2b1563b1dac5dd028504dcf334474a.jpg"
+    },
+    {
+        "podcast_id": 225306,
+        "title": "Josh Woogs\u2019 Live Chat and Podcasts",
+        "description": "<p>Chatting garbage about footy, boxing, mma and life.</p>",
+        "language": "en",
+        "author_name": "Josh Woogs",
+        "slug": "joshwoogs",
+        "cover": "20230831_110816_9814b9f90d92a85543b5734c77380947.jpg"
+    },
+    {
+        "podcast_id": 225412,
+        "title": "Americans Abroad Soccer",
+        "description": "<p>Americans Abroad is unabashedly pro USA soccer podcast. We will focus on USMNT players plying their trade overseas. We want to be a fans podcast produced by fans, no experts here! Go red, white, and blue! Follow us on Twitter - @usmntabroadpod</p>",
+        "language": "en",
+        "author_name": "Johnny & Cole Morton",
+        "slug": "aasoccer",
+        "cover": "20230823_090842_ca4563f6793f36a87e3fe98cde245d7f.jpg"
+    },
+    {
+        "podcast_id": 225586,
+        "title": "Speak Of The Devils",
+        "description": "<p>Speak Of The Devils is a podcast centered around Manchester United Football Club. While I am a fan of Manchester Untied, my goal is to be as objective as possible in my coverage of the team. That means I am completely comfortable both praising the club as well as criticizing it. Join me as we discuss the football club that always gives us something to talk about!</p>",
+        "language": "en",
+        "author_name": "William Birch",
+        "slug": "speakotd",
+        "cover": "20230824_030802_dd6784f26fa3787b4a1093ac78cfe3f0.jpg"
+    },
+    {
+        "podcast_id": 225745,
+        "title": "The Women's Soccer Podcast",
+        "description": "<p>Welcome to my podcast, The Women's Soccer Podcast. As a women's soccer enthusiast, I am pleased to present you with the podcast. This podcast will be perfect for all. It will have episodes primarily directed towards people who have finally caught on with the beautiful game, and other more detailed episodes for people who REALLY know your women's soccer, or woso as we may call it on this podcast. We will cover international and club matches all across the globe. You may hear us talking about Samantha Kerr leading Chelsea through the Women's Champion's League, or Alex Morgan banging in some goals for the San Diego Wave. We have everything from recaps, transfer rumors, detailed analyses, and question segments from you, the listeners. Lastly, we will have episodes discussing women's soccer's impact on and off the field. I hope that you listen to The Women's Soccer Podcast.</p>",
+        "language": "en",
+        "author_name": "Liam Greco",
+        "slug": "the-womens-soccer-podcast",
+        "cover": "20230825_120842_5022dbfcf71696f5838b2916291afc2c.jpg"
+    },
+    {
+        "podcast_id": 225782,
+        "title": "Glory Reds FC",
+        "description": "<p><strong>\"Introducing the Glory Reds Podcast, where your hosts Dee and Benito bring you the latest in Manchester United updates, tactical football analysis, and expert EPL Fantasy insights. Join us as we dissect match highlights, discuss player performances, and share winning strategies for your fantasy team. Whether you're a die-hard Red Devils fan or a football enthusiast, our podcast is your go-to destination for all things football. Tune in for engaging discussions, expert opinions, and a deeper dive into the world of the beautiful game!\"</strong></p>",
+        "language": "en",
+        "author_name": "Glory Reds",
+        "slug": "gloryredsfc",
+        "cover": "20230825_090842_6d62d21d2faff32d0343a15b635d8926.jpg"
+    },
+    {
+        "podcast_id": 225862,
+        "title": "Full Time Round Up ",
+        "description": "<p>Danny has Never Walked Alone since his youth days on the pitch, and Matt has been an American Chelsea fan for 20+ years. Together, they review the week that was in European Football and give you their takes on the teams, and players that stole the show.</p>",
+        "language": "en",
+        "author_name": "Full Time Round Up - Episode 1",
+        "slug": "fulltimeroundup",
+        "cover": "20230825_090830_f64e1afcad27c7b213a6167a81469ca3.jpg"
+    },
+    {
+        "podcast_id": 226034,
+        "title": "Juventus M\u00e9xico",
+        "description": "<p>Todo sobre el equipo m\u00e1s importante del calcio, la Juventus de Tur\u00edn</p>",
+        "language": "es",
+        "author_name": "Aldo Maldonado ",
+        "slug": "juventusmexico",
+        "cover": "20230827_050827_c8774b7d082208f92a241c0f6c3229f2.jpg"
+    },
+    {
+        "podcast_id": 226146,
+        "title": "De Arco a Arco: Metodolog\u00eda para la gesti\u00f3n de clubes de f\u00fatbol (Luis Belli)",
+        "description": "<p>Luis Belli Principe es Licenciado en Econom\u00eda por la Universidad de Buenos Aires (UBA). Posee una Maestr\u00eda en Finanzas y un Posgrado en Tributaci\u00f3n Internacional por la Universidad Torcuato Di Tella. Adem\u00e1s, es egresado Summa Cum Laude de la Maestr\u00eda en Administraci\u00f3n de Empresas (MBA) de la Universidad Cat\u00f3lica Argentina (UCA), con especializaci\u00f3n en gesti\u00f3n deportiva, en la que recibi\u00f3 el Premio Enrique Shaw al mejor promedio y trabajo final.</p><p>Cuenta con m\u00e1s de 10 a\u00f1os de experiencia profesional en empresas Fortune 100 y en Big 4s, desarroll\u00e1ndose principalmente en las \u00e1reas de impuestos y finanzas. Actualmente, combina su trabajo como speaker, investigador y consultor vinculado con el deporte, con su rol de VP Global de Tax Planning en una Fintech local.</p><p>En cuanto a su vinculaci\u00f3n con la industria del deporte, lider\u00f3 adquisiciones de clubes en Espa\u00f1a, fue Director General del Burgos Club de F\u00fatbol, asesor\u00f3 a dirigentes y clubes de diferentes pa\u00edses, fue miembro de la Comisi\u00f3n Fiscalizadora del Club Atl\u00e9tico River Plate y Candidato a Vicepresidente, y luego a Presidente, de dicha instituci\u00f3n. Adem\u00e1s, ocup\u00f3 diversos roles en otras asociaciones vinculadas con la industria deportiva.</p>",
+        "language": "es",
+        "author_name": "Luis Belli Principe",
+        "slug": "dearcoaarco",
+        "cover": "20230828_010843_6056d2bb75d8e13436eff6eb0864199b.jpg"
+    },
+    {
+        "podcast_id": 226147,
+        "title": "De Arco a Arco: Metodolog\u00eda para la gesti\u00f3n de clubes de f\u00fatbol (Luis Belli)",
+        "description": "<p>Parte 2.</p>",
+        "language": "es",
+        "author_name": "Luis Belli Principe",
+        "slug": "dearcoaarco2",
+        "cover": "20230828_010814_0848fa4333e0beec09c559c365937e5b.jpg"
+    },
+    {
+        "podcast_id": 226299,
+        "title": "Tactics and Tapas",
+        "description": "<p>A weekly show about everything La Liga.</p>",
+        "language": "en",
+        "author_name": "Lucas Garton",
+        "slug": "tacticsandtapas",
+        "cover": "20230829_120808_01760d9eadb6b2f17cbfb9681ad9f982.jpg"
+    },
+    {
+        "podcast_id": 226587,
+        "title": "1. El brujo de Mother Soccer ",
+        "description": "<p>Picks de partidos de f\u00fatbol soccer de ligas europeas, champions y liga mx</p>",
+        "language": "es",
+        "author_name": "Oscar M\u00e1rquez ",
+        "slug": "elbrujo",
+        "cover": "20230830_090853_d18c40dd436096b348b66b66aff45e49.jpg"
+    },
+    {
+        "podcast_id": 226592,
+        "title": "Unterschiedsspieler",
+        "description": "<p>Willkommen zu unserem fu\u00dfballverr\u00fcckten Podcast! Bei uns dreht sich alles um Taktik-Tiefschl\u00e4ge, Lacher \u00fcber kuriose Karrieren und die neuesten TikTok-Trends im Fu\u00dfball. Wir analysieren das Spielgeschehen so genau wie ein Schiedsrichter den Videobeweis studiert und nehmen uns dabei nicht zu ernst. Also schnall dich an, denn bei uns rollen nicht nur B\u00e4lle, sondern auch die Lachmuskeln! \u26bd\ufe0f\ud83c\udf89</p>",
+        "language": "de-ch",
+        "author_name": "Sagnik Dhar",
+        "slug": "unterschiedsspieler",
+        "cover": "20230830_060857_f64902af3d650dd80d94bd155933fe51.jpg"
+    },
+    {
+        "podcast_id": 227263,
+        "title": "The Zone LDN Podcast ",
+        "description": "<p>All the latest in Men and Women's football, NBA &amp; NFL all in one podcast </p>",
+        "language": "en",
+        "author_name": "Toni Afoke",
+        "slug": "thezone-ldn",
+        "cover": "20230905_050945_729f6a80c9e14cef21b9d64f067349d7.jpg"
+    },
+    {
+        "podcast_id": 227683,
+        "title": "F\u00fatbol Capital ",
+        "description": "<p>Julio Batista (Periodista) y Orlando CIsterna conversan sobre futbol, estrategia y t\u00e1cticas de las selecciones sudamericanas para el mundial de futbol 2026 y Copa America 2024.</p><p>S\u00f3lo en Capital Rock Media</p>",
+        "language": "es",
+        "author_name": "CAPITAL ROCK MEDIA",
+        "slug": "futbolcapital",
+        "cover": "20230907_070938_a563c77650ea3e158a5cff8a43eb8966.jpg"
+    },
+    {
+        "podcast_id": 227719,
+        "title": "Ballout Podcast",
+        "description": "<p>Two American kids yapping about European football</p>",
+        "language": "en",
+        "author_name": "Ballout Media Inc",
+        "slug": "balloutpod",
+        "cover": "20230908_010905_cf02ded709903dcf3f79a11313732a88.jpg"
+    },
+    {
+        "podcast_id": 228627,
+        "title": "NinethirtyPodcast",
+        "description": "<p>In Our Podcast we talk about how we want to be special and reach to all the society interests, so we target in our subjects whom has most expertise in that field. We in 9;30 Podcast aim to be the value of our content is tour he full benefit to the listener through the high standers of our guests. Our fields are <strong>(Sciences,Sport,Medical,Education,Islamic)</strong> </p><p>Our goal is to reach everyone all over the glob. </p>",
+        "language": "en",
+        "author_name": "Mohammed",
+        "slug": "ninethirty",
+        "cover": "20230914_110951_4f4fc52785f86d7967a16f28ff0aa726.jpg"
+    }
+]
