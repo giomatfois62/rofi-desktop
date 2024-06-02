@@ -1,7 +1,0 @@
-configuration {
-    hover-select: true;
-    me-select-entry: "";
-    me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
-}
-
-//@theme "~/.config/rofi/themes/onedark.rasi"
