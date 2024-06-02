@@ -2,7 +2,7 @@
 Name=Brightness
 Comment=
 Exec=rofi-brightness.sh
-Icon=video-display-brightness
+Icon=display-brightness
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Settings;

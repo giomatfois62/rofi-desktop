@@ -1,8 +1,7 @@
 [Desktop Entry]
 Name=Network
-Comment=
+GenericName=Networkmanager Settings
 Exec=networkmanager_dmenu
-Icon=preferences-system-network
-Terminal=false
+Icon=nm-device-wireless
 Type=Application
 Categories=Rofi;Desktop;Settings;Network;

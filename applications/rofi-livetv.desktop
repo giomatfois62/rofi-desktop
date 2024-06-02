@@ -2,7 +2,7 @@
 Name=Sport Events
 Comment=
 Exec=rofi-livetv.sh
-Icon=video-television
+Icon=event-new
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;Sports;TV;

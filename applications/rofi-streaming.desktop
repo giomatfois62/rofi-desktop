@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Watch Movies/Series
+Comment=
+Exec=rofi-streaming.sh --rofi
+Icon=media-playback-start
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;AudioVideo;Video;TV;Tuner;Web;Network;
