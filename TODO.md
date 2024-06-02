@@ -1,7 +1,5 @@
 # GENERAL
 - Implement or facilitate menus translation
-- Implement menu history in all scripts
-- Add icons to main menus with fontawesome or bundled resources
 
 # ADDITIONS
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
@@ -13,10 +11,12 @@
 - Add option to sort search by creation/modification date
 - Experiment with dynamic themes and transparency (https://davatorium.github.io/rofi/guides/DynamicThemes/dynamic_themes/)
 - Experiment with columns and tabs
+- Experiment with custom thumbnailers: rofi-flathub, rofi-radio, rofi-tv, rofi-podcasts, rofi-xkcd
+- Improve text thumbnailer (https://imagemagick.org/Usage/text/)
+- Use new recursivebrowser to search all files
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
-- Fix link extraction for some rss feed providers
 
 # WAYLAND COMPAT
 - rofi-brightness.sh (must use gammastep, ddc, wlr-randr)
@@ -78,6 +78,15 @@
 - Add more menu instructions using -mesg or placeholders (DONE)
 - Show error messages for dependencies not found (DONE)
 - Fix BBC news rss link (DONE)
+- Add icons to main menus with fontawesome or bundled resources (DONE) (using drun.sh script)
+- Implement menu history in all scripts (DONE) (using drun.sh script)
+- Use strikethrough markup to show done todos (DONE)
+- Sort wallpapers by time (DONE)
+- Add yt-feeder (DONE)
+- Add lobster (DONE)
+- Add ani-cli (DONE)
+- Fix link extraction for some rss feed providers (DONE) (using xmllint)
+- Add fortune script (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
