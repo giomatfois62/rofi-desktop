@@ -2,16 +2,18 @@
 #
 # this script fetches and show the latest news from bbc internationals rss
 # selecting an entry will open the corresponding web page
-# add other sources in the "../data/news" file using the format "PROVIDER_NAME=RSS_URL"
+# add other sources in the "$ROFI_DATA_DIR/news" file using the format "PROVIDER_NAME=RSS_URL"
 #
-# dependencies: rofi, curl
+# dependencies: rofi, curl, libxml2
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-RSS_FILE=${RSS_FILE:-"$SCRIPT_PATH/../data/news"}
-RSS_CACHE="${RSS_CACHE:-$HOME/.cache/news}"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 RSS_EXPIRATION_TIME=${RSS_EXPIRATION_TIME:-600} # refresh news file every ten minutes
+RSS_FILE="$ROFI_DATA_DIR/news"
+RSS_CACHE="$ROFI_CACHE_DIR/news"
 
 show_news() {
 	local provider_name="$1"
@@ -35,19 +37,18 @@ show_news() {
 		curl --silent "$rss_url" -o "$rss_cache_file"
 	fi
 
-	selected=$(grep -E '(title>|/title>)' "$rss_cache_file" |\
-		tail -n +4 | sed -e 's/^[ \t]*//' |\
-		sed -e 's/<title>//' -e 's/<\/title>//' -e 's/<description>/  /'\
-			-e 's/<\/description>//' -e 's/\!\[CDATA\[//' -e 's/\]\]//' |\
-		tr -d '<>,' |\
-		awk '$1=$1' |\
-		$ROFI_CMD -p "$provider_name")
+	titles=$(cat "$rss_cache_file" | xmllint --xpath '/rss/channel/item[*]/title/text()' - | sed -e 's/\!\[CDATA\[//' -e 's/\]\]//' | tr -d '<>,')
+
+	selected=$(echo "$titles" | $ROFI_CMD -p "$provider_name" -format 'i s')
 
 	# get selected news and open corresponding link in browser
 	if [ -n "$selected" ]; then
-		link=$(awk "/$selected/{getline;getline; print}" "$rss_cache_file")
+		selected_row=$(echo "$selected" | awk '{print $1;}')
+		selected_row=$(($selected_row+1)) # xpath arrays starts from 1
 
-		echo "$link" | sed -e 's/<link>//' -e 's/<\/link>//' | xargs -I {} xdg-open {}
+		link=$(cat "$rss_cache_file" | xmllint --xpath "/rss/channel/item[$selected_row]/link/text()" -)
+
+		xdg-open "$link"
 
 		exit 0;
 	fi
