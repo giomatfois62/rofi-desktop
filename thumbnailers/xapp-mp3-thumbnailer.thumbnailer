@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=thumbnail-xapp
+Exec=thumbnail-xapp -t mp3 -i %i -o %o -s %s
+MimeType=audio/mpeg;

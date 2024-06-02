@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=thumbnail-xapp
+Exec=thumbnail-xapp -t appimage -i %i -o %o -s %s
+MimeType=application/vnd.appimage;

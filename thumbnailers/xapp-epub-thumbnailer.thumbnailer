@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=thumbnail-xapp
+Exec=thumbnail-xapp -t epub -i %i -o %o -s %s
+MimeType=application/epub+zip;

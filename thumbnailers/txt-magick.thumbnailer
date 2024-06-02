@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=magick
+Exec=thumbnail-txt %i %o %s
+MimeType=text/plain;text/x-chdr;text/x-cmake;text/x-csh;text/x-shellscript;text/markdown;text/x-markdown;text/x-asm;text/x-c;text/x-fortran;text/x-java-source;text/x-pascal;text/x-python;text/css;text/csv;text/html;text/javascript

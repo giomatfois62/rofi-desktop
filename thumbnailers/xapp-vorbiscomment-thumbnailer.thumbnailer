@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=thumbnail-xapp
+Exec=thumbnail-xapp -t vorbis -i %i -o %o -s %s
+MimeType=audio/flac;audio/ogg;x-flac+ogg.xml;audio/x-opus+ogg;x-speex+ogg.xml;audio/x-vorbis+ogg

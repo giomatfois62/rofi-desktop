@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=convert
+Exec=thumbnail-pdf %i %o %s
+MimeType=application/pdf;application/x-pdf;
