@@ -14,4 +14,4 @@ export ROFI_CMD="rofi -dmenu -i -kb-screenshot Control+Shift+space"
 export PATH="$SCRIPT_PATH/scripts/:$PATH"
 export XDG_DATA_DIRS="$SCRIPT_PATH:/usr/local/share:/usr/share:$XDG_DATA_DIRS"
 
-rofi -show drun -show-icons $categories
+rofi -show drun -show-icons $categories -sidebar-mode
