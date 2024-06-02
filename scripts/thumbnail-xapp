@@ -1,0 +1,300 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import PIL.Image
+import PIL.ImageOps
+import subprocess
+import sys
+import time
+from io import BytesIO
+
+import gi
+gi.require_version('GdkPixbuf', '2.0') 
+from gi.repository import GdkPixbuf
+
+class Thumbnailer():
+
+    def __init__(self):
+        # Parse arguments
+        parser = argparse.ArgumentParser()
+        parser.add_argument('-t', '--type', type=str, required=True)
+        parser.add_argument('-i', '--input', type=str, required=True)
+        parser.add_argument('-o', '--output', type=str, required=True)
+        parser.add_argument('-s', '--size', type=int, required=True)
+        self.args = parser.parse_args()
+
+        if not os.path.exists(self.args.input):
+            print("File not found ", self.args.input)
+            sys.exit(1)
+
+    def save_path(self, path):
+        img = None
+
+        if path.endswith(".svg"):
+            img = self.svg_to_image(path)
+        else:
+            try:
+                img = PIL.Image.open(path)
+            except (PIL.UnidentifiedImageError, FileNotFoundError) as e:
+                print("xapp-thumbnails PIL load error: ", e)
+
+        if img:
+            self.save_pil(img)
+            return True
+
+        return False
+
+    def save_bytes(self, data):
+        img = PIL.Image.open(BytesIO(data))
+        self.save_pil(img)
+
+    def save_pil(self, img):
+        # Resize image
+        width, height = img.size
+        if height >= width:
+            percent = self.args.size / float(height)
+            wsize = int((float(width) * float(percent)))
+            img = img.resize((wsize, self.args.size), PIL.Image.LANCZOS)
+        else:
+            percent = self.args.size / float(width)
+            hsize = int((float(height) * float(percent)))
+            img = img.resize((self.args.size, hsize), PIL.Image.LANCZOS)
+        # Rotate image according to its EXIF rotation tag
+        try:
+            img = PIL.ImageOps.exif_transpose(img)
+        except Exception as e:
+            print(e)
+        img.save(self.args.output, "PNG")
+
+    def svg_to_image(self, path):
+        try:
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file(path)
+
+            data = pixbuf.get_pixels()
+
+            w = pixbuf.get_width()
+            h = pixbuf.get_height()
+            stride = pixbuf.get_rowstride()
+
+            mode = "RGB"
+            if pixbuf.get_has_alpha():
+                mode = "RGBA"
+
+            image = PIL.Image.frombytes(mode, (w, h), data, "raw", mode, stride)
+            return image
+        except Exception as e:
+            print("xapp-thumbnails svg to PIL error:", e)
+
+    def create_raw_thumbnail(self):        
+        try:
+            output = subprocess.check_output([
+                    'dcraw', '-c', '-e', '-w', self.args.input,
+                ])
+        except subprocess.CalledProcessError as e:
+            print(e)
+            sys.exit(1)
+
+        self.save_bytes(output)
+        sys.exit(0)
+    
+    def create_mp3_thumbnail(self):
+        import eyed3
+        
+        try:
+            audio_file = eyed3.load(self.args.input)
+            if audio_file.tag.images != None and len(audio_file.tag.images) > 0:
+                self.save_bytes(audio_file.tag.images[0].image_data)
+                sys.exit(0)
+        except AttributeError as e: # (audio_file is None)
+            pass
+        except Exception as e:
+            print(e)
+
+        sys.exit(1)
+    
+    def create_appimage_thumbnail(self):
+        import tempfile
+        from elftools.elf.elffile import ELFFile
+        
+        # Find the section header offset within the ELF file
+        with open(self.args.input, 'rb') as f:
+            elf = ELFFile(f)
+            app_image_offset = elf['e_shoff'] + (elf['e_shentsize'] * elf['e_shnum'])
+
+        def squashfs_lookup(filename):
+            return subprocess.check_output([
+                    'unsquashfs',
+                    '-o', str(app_image_offset),
+                    '-ll',
+                    self.args.input,
+                    filename
+                ]).decode()
+
+        # Find the location of the icon inside the squashfs
+        icon_path = '.DirIcon'
+        while True:
+            output = squashfs_lookup(icon_path)
+
+            if not output:
+                # File not found, fail
+                sys.exit(1)
+
+            if ' -> ' not in output:
+                # icon path is not a symlink, let's use it
+                break
+
+            icon_path = output.strip().split(' -> ')[1]
+            # Some appimages use local apppimage paths, e.g., ./usr/applications/...
+            if icon_path[0:2] == './':
+                icon_path = icon_path[2:]
+
+        # Extract the icon
+        with tempfile.TemporaryDirectory() as tmpdir:
+            outdir = os.path.join(tmpdir, 'out')
+            cmd = [
+                    'unsquashfs',
+                    '-o', str(app_image_offset),
+                    '-d', outdir,
+                    self.args.input,
+                    icon_path,
+                ]
+            subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            icon_path = os.path.join(outdir, icon_path)
+            success = self.save_path(icon_path)
+        sys.exit(0 if success else 1)
+    
+    def create_gimp_thumbnail(self):
+        # Adapted from https://askubuntu.com/questions/1250031/gimp-snap-and-thumbnails-for-xcf-files
+        try:
+            output = subprocess.run(
+                [
+                "gimp-console",
+                "-i", # no-interface
+                "-d", # Don't load patterns, gradients, etc...
+                "-f", # No fonts
+                "-c", # Console messages only
+                "-s", # No splash
+                "-b",
+                    f"""
+                     (let* ((image (car (gimp-file-load RUN-NONINTERACTIVE \"{self.args.input}\" \"{self.args.input}\")))
+                      (drawable   (car (gimp-image-active-drawable image)))
+                      (cur-width  (car (gimp-image-width image)))
+                      (cur-height (car (gimp-image-height image)))
+                      (ratio      (min (/ {self.args.size} cur-width) (/ {self.args.size} cur-height)))
+                      (width      (* ratio cur-width))
+                      (height     (* ratio cur-height))
+                     )
+
+                     (gimp-image-scale image width height)
+                     (file-png-save2 RUN-NONINTERACTIVE image drawable \"{self.args.output}\" \"{self.args.output}\" 0 9 0 0 0 0 0 0 0)
+                     (gimp-image-delete image)
+                     )
+                    """,
+                "-b",
+                    f"""
+                     (gimp-quit 1)
+                    """
+                ],
+                check=True,
+                capture_output=True
+            )
+        except (subprocess.CalledProcessError) as e:
+            print("Thumbnail generation failed: %s" % e)
+            sys.exit(1)
+
+        sys.exit(0)
+    
+    def create_epub_thumbnail(self):
+        import zipfile
+        from xml.dom import minidom
+        
+        archive = zipfile.ZipFile(self.args.input)
+
+        # Read the container to find the path of the root file
+        container = minidom.parseString(archive.open("META-INF/container.xml").read())
+        root_path = container.getElementsByTagName("rootfile")[0].getAttribute("full-path")
+
+        # Parse the root file...
+        root_file = minidom.parseString(archive.open(root_path).read())
+
+        # Find the cover ID if there is one..
+        cover_id = None
+        for meta in root_file.getElementsByTagName("meta"):
+            if meta.getAttribute("name") == "cover":
+                cover_id = meta.getAttribute("content")
+                break
+
+        # Look for the cover matching the ID, or any item which properties
+        # is "cover-image"
+        manifest = root_file.getElementsByTagName("manifest")[0]
+        cover_path = None
+        for item in manifest.getElementsByTagName("item"):
+            item_id = item.getAttribute("id")
+            if cover_id != None and item_id == cover_id:
+                cover_path = item.getAttribute("href")
+                break
+            elif item.getAttribute("properties") == "cover-image":
+                cover_path = item.getAttribute("href")
+                break
+
+        if cover_path != None:
+            cover_path = os.path.join(os.path.dirname(root_path), cover_path)
+            cover = archive.open(cover_path)
+            self.save_bytes(cover.read())
+            sys.exit(0)
+
+        sys.exit(1)
+        
+    def create_vorbis_thumbnail(self):
+        """Extracts the album cover of FLAC and OGG files using the mutagen library.
+        Other supported formats could be added in future.
+
+        Ref: https://mutagen.readthedocs.io/en/latest/user/vcomment.html
+        """
+        import base64
+        import mutagen
+        from mutagen.flac import FLAC, Picture
+        from mutagen.ogg import OggFileType
+        
+        try:
+            filename = self.args.input
+            file = mutagen.File(filename=filename)
+            cover_bytes: bytes
+
+            if isinstance(file, FLAC):
+                cover_bytes = file.pictures[0].data
+            elif isinstance(file, OggFileType):
+                cover_b64 = file.get('metadata_block_picture', [None])[0]
+                if not cover_b64:
+                    cover_b64 = file.get('coverart', [None])[0]  # check legacy attrib
+                cover_bytes = Picture(base64.b64decode(cover_b64)).data
+            else:
+                sys.exit(1)
+
+            self.save_bytes(cover_bytes)
+            sys.exit(0)
+        except Exception:
+            sys.exit(1)
+
+    def create_thumbnail(self):
+        file_type = self.args.type
+        
+        if (file_type == "raw"):
+            self.create_raw_thumbnail()
+        elif (file_type == "mp3"):
+            self.create_mp3_thumbnail()
+        elif (file_type == "appimage"):
+            self.create_appimage_thumbnail()
+        elif (file_type == "gimp"):
+            self.create_gimp_thumbnail()
+        elif (file_type == "epub"):
+            self.create_epub_thumbnail()
+        elif (file_type == "vorbis"):
+            self.create_vorbis_thumbnail()
+        else:
+            print("type not supported")
+            sys.exit(1)
+
+t = Thumbnailer()
+t.create_thumbnail()
