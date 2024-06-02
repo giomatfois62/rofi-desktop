@@ -8,8 +8,10 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-BASE_URL="https://www.reddit.com"
-SUB_FILE="$SCRIPT_PATH/../data/subreddits"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+SUB_FILE="$ROFI_DATA_DIR/subreddits"
+
+base_url="https://www.reddit.com/"
 
 search_subreddit() {
     subreddit_name="$1"
@@ -25,7 +27,7 @@ search_subreddit() {
             paste -d "|" - - | $ROFI_CMD -p "Results" | cut -d'|' -f 2 | xargs)
 
         if [ -n "$permalink" ]; then
-            xdg-open "$BASE_URL$permalink"
+            xdg-open "$base_url$permalink"
             exit 0
         fi
     else
@@ -55,7 +57,7 @@ while subreddit=$(cat "$SUB_FILE" | $ROFI_CMD -selected-row ${selected_row} -for
     fi
 
     if [ "$action" = "Open in Browser" ]; then
-        xdg-open $BASE_URL"/r/""$selected_subreddit"
+        xdg-open $base_url"/r/""$selected_subreddit"
         exit 0
     fi
 

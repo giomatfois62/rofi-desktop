@@ -12,15 +12,16 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 SHOW_HIDDEN_FILES=${SHOW_HIDDEN_FILES:-false}
-HISTORY_FILE="${HISTORY_FILE:-$HOME/.cache/rofi-search-history}"
+HISTORY_FILE="$ROFI_CACHE_DIR/rofi-search-history"
 MAX_HISTORY_ENTRIES=${MAX_HISTORY_ENTRIES:-100}
 SHOW_CONTEXT=${SHOW_CONTEXT:-}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
 
-SEARCH_SHORTCUTS_HELP=${SEARCH_SHORTCUTS_HELP:-"Press \"Enter\" to open selected file&#x0a;Press \"Alt+C\" to copy selected file to clipboard&#x0a;Press \"Alt+D\" to remove selected file"}
+SEARCH_SHORTCUTS_HELP="<b>Enter</b> open file | <b>Alt+C</b> copy to clipboard | <b>Alt+D</b> move to trash"
 
 search_shortcuts="-kb-custom-1 "Alt+c" -kb-custom-2 "Alt+d""
 
@@ -75,12 +76,10 @@ search_command() {
         #sort_cmd="--exec stat --printf=\"%Y\\t%n\\n\" | sort -nr | cut -f2"
 
         if [ "$SHOW_HIDDEN_FILES" = true ]; then
-            cmd="cd $folder && fd -H --type f $cmd_extensions"
+            cd $folder && fd -H --type f $cmd_extensions
         else
-            cmd="cd $folder && fd --type f $cmd_extensions"
+            cd $folder && fd --type f $cmd_extensions
         fi
-
-		echo "$cmd"
     else
         count=0
         for i in "${extensions[@]}"; do
@@ -92,13 +91,23 @@ search_command() {
             count=$((count+1))
         done
 
-        if [ "$SHOW_HIDDEN_FILES" = true ]; then
-            cmd="cd $folder && find . -type f $cmd_extensions"
+        if [ -n "$cmd_extensions" ]; then
+            if [ "$SHOW_HIDDEN_FILES" = true ]; then
+                #cd $folder && find . -not -path '*/.*' -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+                cd $folder && find . -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
+            else
+                #cd $folder && find . -not -path '*/.*' -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+                cd $folder && find . -not -path '*/.*' -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
+            fi
         else
-            cmd="cd $folder && find . -not -path '*/.*' -type f $cmd_extensions"
+            if [ "$SHOW_HIDDEN_FILES" = true ]; then
+                #cd $folder && find . -not -path '*/.*' -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+                cd $folder && find . -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
+            else
+                #cd $folder && find . -not -path '*/.*' -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+                cd $folder && find . -not -path '*/.*' -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
+            fi
         fi
-
-		echo "$cmd | cut -c 3-"
     fi
 }
 
@@ -143,7 +152,7 @@ open_file() {
 search_all() {
     local selected
 
-    selected=$(eval "$(search_command "$HOME")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "All Files")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "All Files")
     exit_code="$?"
 
 	if [ -n "$selected" ]; then
@@ -205,7 +214,7 @@ search_books() {
     local selected
     local extensions=("djvu" "epub" "mobi")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Books")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Books")
     exit_code="$?"
 
     if [ -n "$selected" ]; then
@@ -222,7 +231,7 @@ search_documents() {
     local selected
     local extensions=("pdf" "txt" "md" "xlsx" "doc" "docx")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Documents")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Documents")
 
     if [ -n "$selected" ]; then
         open_file "$HOME/$selected"
@@ -233,7 +242,7 @@ search_documents() {
 search_downloads() {
     local selected
 
-    selected=$(eval "$(search_command "$HOME"/Downloads)" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Downloads")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Downloads")
     exit_code="$?"
 
 	if [ -n "$selected" ]; then
@@ -245,7 +254,7 @@ search_downloads() {
 search_desktop() {
     local selected
 
-    selected=$(eval "$(search_command "$HOME"/Desktop)" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Desktop")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Desktop")
     exit_code="$?"
 
 	if [ -n "$selected" ]; then
@@ -258,7 +267,7 @@ search_music() {
     local selected
     local extensions=("mp3" "wav" "m3u" "aac" "flac" "ogg")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Music")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Music")
     exit_code="$?"
 
     if [ -n "$selected" ]; then
@@ -278,9 +287,9 @@ build_theme() {
 search_pics() {
     # TODO: change theme with keybind
     local selected
-    local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp")
+    local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp" "bmp" "xcf")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | while read A ; do echo -en "$A\x00icon\x1f$HOME/$A\n" ; done | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Pictures")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Pictures")
     exit_code="$?"
 
     if [ -n "$selected" ]; then
@@ -295,9 +304,9 @@ search_tnt() {
 
 search_videos() {
     local selected
-    local extensions=("mkv" "mp4")
+    local extensions=("mkv" "avi" "mp4" "mov" "webm" "yuv" "mpg" "mpeg" "m4v")
 
-    selected=$(eval "$(search_command "$HOME" "${extensions[@]}")" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Videos")
+    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Videos")
     exit_code="$?"
 
     if [ -n "$selected" ]; then

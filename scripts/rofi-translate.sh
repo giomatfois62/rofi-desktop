@@ -5,8 +5,7 @@
 # dependencies: rofi, translate-shell
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-
-TRANSLATE_PLACEHOLDER=${TRANSLATE_PLACEHOLDER:-"Type something and press \"Enter\" to translate"}
+TRANSLATE_PLACEHOLDER="Type something and press \"Enter\" to translate"
 
 if ! command -v trans &> /dev/null; then
 	rofi -e "Install translate-shell to enable the translation menu"

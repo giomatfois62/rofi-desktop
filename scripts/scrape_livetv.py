@@ -32,7 +32,7 @@ for ele in events:
     time = desc.split("\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t")[0]
     category = desc.split("\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t")[1]
     link = base_url+ele[0].get("href")
-    events_list.append({"name":name, "time":time, "category":category, "link":link})
+    events_list.append({"time":time, "category":category, "name":name, "link":link})
 
 events_list = sorted(events_list, key=lambda k: (k['time'], k['category']))
 

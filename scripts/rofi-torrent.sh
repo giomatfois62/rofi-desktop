@@ -8,9 +8,10 @@
 # dependencies: rofi, curl
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-TORRENT_CACHE=${TORRENT_CACHE:-"$HOME/.cache/torrents"}
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+TORRENT_CACHE="$ROFI_CACHE_DIR/torrents"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
-TORRENT_PLACEHOLDER=${TORRENT_PLACEHOLDER:-"Type something and press \"Enter\" to search"}
+TORRENT_PLACEHOLDER="Type something and press \"Enter\" to search torrents"
 
 mkdir -p "$TORRENT_CACHE"
 

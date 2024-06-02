@@ -5,8 +5,9 @@
 # dependencies: rofi, curl, jq
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-GITHUB_CACHE=${GITHUB_CACHE:-"$HOME/.cache/github.json"}
-GITHUB_PLACEHOLDER=${GITHUB_PLACEHOLDER:-"Type something and press \"Enter\" to search"}
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+GITHUB_CACHE="$ROFI_CACHE_DIR/github.json"
+GITHUB_PLACEHOLDER="Type something and press \"Enter\" to search repositories"
 CLONE_FOLDER=${CLONE_FOLDER:-"$HOME/Downloads/"}
 
 if [ -z $1 ]; then

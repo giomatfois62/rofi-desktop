@@ -8,7 +8,8 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-MIMETYPES_DIR=${MIMETYPES_DIR:-"$SCRIPT_PATH/../data/mimetypes"}
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+MIMETYPES_DIR="$ROFI_DATA_DIR/mimetypes"
 
 declare -A actions=(
     ["Web Browser"]=set_browser

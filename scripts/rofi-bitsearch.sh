@@ -8,14 +8,15 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-TORRENT_CACHE=${TORRENT_CACHE:-"$HOME/.cache/torrents"}
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
-TORRENT_PLACEHOLDER=${TORRENT_PLACEHOLDER:-"Type something and press \"Enter\" to search"}
+TORRENT_PLACEHOLDER="Type something and press \"Enter\" to search torrents"
+TORRENT_CACHE="$ROFI_CACHE_DIR/bitsearch"
 
-mkdir -p "$TORRENT_CACHE"
+mkdir -p "$ROFI_CACHE_DIR"
 
 if [ -z $1 ]; then
-    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrent")
+    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrents")
 else
     query=$1
 fi
@@ -28,15 +29,15 @@ fi
 counter=1
 selected_row=$((20*($counter-1)))
 
-"$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" > "$TORRENT_CACHE/bitsearch"
-result_count=$(cat "$TORRENT_CACHE/bitsearch" | wc -l)
+"$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" > "$TORRENT_CACHE"
+result_count=$(cat "$TORRENT_CACHE" | wc -l)
 
 if [ "$result_count" -lt 1 ]; then
     rofi -e "No results found, try again."
     exit 1
 fi
 
-torrents=$(cat "$TORRENT_CACHE/bitsearch" | cut -d' ' -f2-)
+torrents=$(cat "$TORRENT_CACHE" | cut -d' ' -f2-)
 torrents="$torrents\nMore..."
 
 # display menu
@@ -53,13 +54,13 @@ while selection=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" -format 'i s' -s
         counter=$((counter+1))
         selected_row=$((20*($counter-1)))
 
-        "$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" >> "$TORRENT_CACHE/bitsearch"
+        "$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" >> "$TORRENT_CACHE"
 
-        torrents=$(cat "$TORRENT_CACHE/bitsearch" | cut -d' ' -f2-)
+        torrents=$(cat "$TORRENT_CACHE" | cut -d' ' -f2-)
         torrents="$torrents\nMore..."
     else
         # open selected magnet link
-        magnet=$(sed "${row}q;d" "$TORRENT_CACHE/bitsearch" | cut -d' ' -f1)
+        magnet=$(sed "${row}q;d" "$TORRENT_CACHE" | cut -d' ' -f1)
 
         $TORRENT_CLIENT "$magnet" & disown
 

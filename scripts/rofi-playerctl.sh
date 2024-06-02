@@ -15,10 +15,14 @@ fi
 
 status_function () {
 	if playerctl status > /dev/null; then
-			echo "$(playerctl status -f "{{playerName}}"): $(playerctl metadata -f "{{trunc(default(title, \"[Unknown]\"), 25)}} by {{trunc(default(artist, \"[Unknown]\"), 25)}}") ($(playerctl status))"
-	else
-		echo "Nothing is playing"
-	fi
+        player_name=$(playerctl status -f "{{playerName}}")
+        player_metadata=$(playerctl metadata -f "{{trunc(default(title, \"[Unknown]\"), 25)}} by {{trunc(default(artist, \"[Unknown]\"), 25)}}")
+        player_status=$(playerctl status)
+
+        echo "$player_name: $player_metadata ($player_status)"
+    else
+        echo "Nothing is playing"
+    fi
 }
 
 status=$(status_function)

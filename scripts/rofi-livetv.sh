@@ -7,7 +7,8 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-LIVETV_FILE=${LIVETV_FILE:-"$HOME/.cache/livetv.json"}
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+LIVETV_FILE="$ROFI_CACHE_DIR/livetv.json"
 LIVETV_EXPIRATION_TIME=${LIVETV_EXPIRATION_TIME:-3600} # refresh livetv file every hour
 
 if [ -f "$LIVETV_FILE" ]; then
@@ -25,7 +26,7 @@ else
 	"$SCRIPT_PATH"/scrape_livetv.py "$LIVETV_FILE"
 fi
 
-while name=$(jq '.[] | "\(.name) {\(.time)} \(.category)"' "$LIVETV_FILE" | tr -d '"' |\
+while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$LIVETV_FILE" | tr -d '"' |\
         sort | $ROFI_CMD -p "LiveTV" -format 'i s'); do
 
     name_str=$(echo "$name" | cut -d' ' -f2- | cut -d"{" -f1 | sed 's/ *$//g')

@@ -2,7 +2,8 @@
 
 # https://github.com/luiscrjunior/rofi-json
 
-CACHE="$HOME/.cache/rofi-json"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+CACHE="$ROFI_CACHE_DIR/rofi-json"
 
 user_file="$(eval echo ${1})"
 

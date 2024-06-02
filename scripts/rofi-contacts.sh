@@ -12,8 +12,10 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-CONTACTS_FILE=${CONTACTS_FILE:-"$SCRIPT_PATH/../data/contacts.vcf"}
-CONTACTS_CACHE=${CONTACTS_CACHE:-"$HOME/.cache/contacts.json"}
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+CONTACTS_FILE="$ROFI_DATA_DIR/contacts.vcf"
+CONTACTS_CACHE="$ROFI_CACHE_DIR/contacts.json"
 
 # refresh contacts cache
 rm "$CONTACTS_CACHE"

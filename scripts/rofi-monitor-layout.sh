@@ -9,8 +9,9 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
 
-MONITORS_CACHE=${MONITORS_CACHE:-"$SCRIPT_PATH/../config/monitor-layout"}
+MONITORS_CACHE="$ROFI_CONFIG_DIR/monitor-layout"
 
 XRANDR=$(which xrandr)
 

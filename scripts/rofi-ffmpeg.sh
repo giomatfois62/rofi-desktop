@@ -33,7 +33,6 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 VIDEO_FOLDER="${VIDEO_FOLDER:-$HOME/Videos/record}"
 AUDIO_FOLDER="${AUDIO_FOLDER:-$HOME/Music/record}"
 VIDEO_CODEC="${VIDEO_CODEC:-libvpx}" # h264
-
 VIDEO_EXTENSION=".webm"
 
 if [ "$VIDEO_CODEC" = "h264" ]; then

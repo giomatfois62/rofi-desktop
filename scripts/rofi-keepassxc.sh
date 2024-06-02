@@ -7,6 +7,8 @@
 # dependencies: rofi, keepassxc-cli, xclip/wl-clipboard
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+CACHE="$ROFI_CACHE_DIR/rofi-keepassxc/"
 
 if ! command -v keypassxc-cli &> /dev/null; then
 	rofi -e "Install keypassxc-cli to enable the keypassxc menu"
@@ -192,7 +194,7 @@ while [ "$1" ]; do
 done
 
 [ ! "$timeout" ] && timeout=15
-CACHE=$HOME/.cache/rofi-keepassxc/
+
 mkdir -p "$CACHE"
 
 dbpass=$(m -p "Enter your database password" -l 0 -password)

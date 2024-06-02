@@ -8,7 +8,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 
-DICT_PLACEHOLDER=${DICT_PLACEHOLDER:-"Type a word and press \"Enter\" to lookup in dictionary"}
+DICT_PLACEHOLDER="Type a word and press \"Enter\" to lookup in dictionary"
 
 if ! command -v sdcv &> /dev/null; then
 	rofi -e "Install sdcv and links to enable the dictionary menu"
@@ -19,7 +19,7 @@ pag() {                                                 \
     sed -e 1d                                           \
         -e 's; _\([A-Z]\); \1;p'                        \
         -e '/^$/d' -e '/^-->/d'                         \
-    | eval "$ROFI_CMD" -p 'Done'
+    | eval "$ROFI_CMD" -p "Result"
 }
 
 while phrase="$(echo $src | $ROFI_CMD -theme-str "entry{placeholder:\"$DICT_PLACEHOLDER\";}" -markup -p 'Lookup')"; do

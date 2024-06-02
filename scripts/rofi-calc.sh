@@ -47,4 +47,4 @@ if [ ! -z "$@" ]; then
 fi
 
 # Change prompt
-echo -en "\0prompt\x1fcalc\n"
+echo -en "\0prompt\x1fCalculator\n"

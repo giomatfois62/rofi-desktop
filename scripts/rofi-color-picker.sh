@@ -5,7 +5,10 @@ AUTHOR="windwp"
 CONTACT='longtrieu.ls@live.com'
 CREATED="2020-06-01"
 UPDATED="2020-06-01"
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+COLORS_FILE="$ROFI_DATA_DIR/colors-name.txt"
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
     clip_cmd="wl-copy"
@@ -30,7 +33,6 @@ main(){
     esac
   done
 
-  COLORS_FILE="$DIR/../data/colors-name.txt"
 
   LISTFILE="${LISTFILE:-$COLORS_FILE}"
   ROFI_PROMPT="${ROFI_PROMPT:-""}"

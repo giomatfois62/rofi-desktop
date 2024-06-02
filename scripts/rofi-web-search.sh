@@ -8,9 +8,8 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-
-SEARCH_PLACEHOLDER=${SEARCH_PLACEHOLDER:-"Type a query and press \"Enter\" to search"}
-SEARCH_BLOCKS_PLACEHOLDER=${SEARCH_BLOCKS_PLACEHOLDER:-"Type to search"}
+SEARCH_PLACEHOLDER="Type a query and press \"Enter\" to search"
+SEARCH_BLOCKS_PLACEHOLDER="Type to search"
 
 API=$1
 

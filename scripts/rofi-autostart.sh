@@ -7,7 +7,8 @@
 # dependencies: rofi
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-AUTOSTART_DIR="${AUTOSTART_DIR:-$HOME/.cache/autostart}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+AUTOSTART_DIR="$ROFI_CACHE_DIR/autostart}"
 
 list_entries() {
     # handle empty XDG_CURRENT_DESKTOP env var

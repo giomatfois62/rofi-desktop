@@ -9,9 +9,10 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 NOTES_AUTHOR="${NOTES_AUTOR:-$(whoami)}"
-NOTES_FOLDER="${NOTES_FOLDER:-$SCRIPT_PATH/../data/notes}"
 NOTES_EDITOR="${NOTES_EDITOR:-xdg-open}"
+NOTES_FOLDER="$ROFI_DATA_DIR/notes"
 
 if [[ ! -d "${NOTES_FOLDER}" ]]; then
     mkdir -p "$NOTES_FOLDER"

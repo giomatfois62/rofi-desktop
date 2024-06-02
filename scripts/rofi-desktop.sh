@@ -9,6 +9,7 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
@@ -26,6 +27,8 @@ declare -A commands=(
     ["Contacts"]=contacts
     ["World Clocks"]=world_clocks
     ["Watch TV"]=tv
+    ["Watch Movies/Series"]=streaming
+    ["Anime"]=anime
     ["Sport Events"]=livetv
     ["Radio Stations"]=radio
     ["Podcasts"]=podcasts
@@ -55,8 +58,10 @@ declare -A commands=(
     ["Take Screenshot"]=screenshot
     ["Record Audio/Video"]=record
     ["Code Projects"]=code_projects
+    ["YouTube Feeds"]=youtube_feeds
     ["ToDo Lists"]=todo
     ["Color Picker"]=color_picker
+    ["Fortune"]=get_fortune
     ["Notes"]=notes
     ["Latest News"]=news
     ["Weather Forecast"]=weather
@@ -101,17 +106,17 @@ declare -A commands=(
     ["Updates"]=update_sys
 )
 
-main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nSteam Games\nLatest News\nWeather Forecast\nWatch TV\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
+main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWatch Movies/Series\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
+utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
-web_entries="Google\nWikipedia\nYouTube\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents (1337x)\nTorrents (bitsearch)\nFlathub"
+web_entries="Google\nWikipedia\nYouTube\nYouTube Feeds\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents (1337x)\nTorrents (bitsearch)\nFlathub\nAnime"
 
 custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
@@ -138,7 +143,7 @@ show_menu() {
             if [ -f "$custom_menu_file" ]; then
                 rofi "$SHOW_ICONS" -modi "$selected_text:$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
 
-                if [ -n "$(cat "$HOME"/.cache/rofi-json)" ]; then
+                if [ -n "$(cat $ROFI_CACHE_DIR/rofi-json)" ]; then
                     exit
                 fi
             fi
@@ -305,6 +310,18 @@ livetv() {
     "$SCRIPT_PATH"/rofi-livetv.sh && exit
 }
 
+streaming() {
+    "$SCRIPT_PATH"/rofi-streaming.sh --rofi && exit
+}
+
+anime() {
+    "$SCRIPT_PATH"/rofi-anime.sh --rofi && exit
+}
+
+get_fortune() {
+    "$SCRIPT_PATH"/rofi-fortune.sh
+}
+
 mpd_controls() {
     "$SCRIPT_PATH"/rofi-mpd.sh -a && exit
 }
@@ -423,6 +440,10 @@ translate() {
 
 char_picker() {
     "$SCRIPT_PATH"/rofi-characters.sh && exit
+}
+
+youtube_feeds() {
+    rofi -show "Youtube Feeds" -modi "Youtube Feeds:$SCRIPT_PATH/rofi-youtube-feeds.sh" && exit
 }
 
 keepassxc() {

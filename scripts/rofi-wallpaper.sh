@@ -9,8 +9,9 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
 WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
-WALLPAPER_CACHE="${WALLPAPER_CACHE:-$SCRIPT_PATH/../config/wallpaper}"
+WALLPAPER_CACHE="$ROFI_CONFIG_DIR/wallpaper"
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
@@ -26,12 +27,13 @@ build_theme() {
 # find image size to display (very slow)
 #echo $(identify -format '%[fx:w]x%[fx:h]\' ~/Pictures/$A 2>/dev/null)
 
-images=$(find "$WALLPAPERS_DIR" -type f -maxdepth 1 -printf "%f\x00icon\x1f$WALLPAPERS_DIR/%f\n")
-
-#ls $sort_by_time --escape "$WALLPAPERS_DIR"
+#images=$(find "$WALLPAPERS_DIR" -type f -maxdepth 1 -printf "%f\x00icon\x1f$WALLPAPERS_DIR/%f\n")
+images=$(find "$WALLPAPERS_DIR" -type f -maxdepth 1 \
+    -printf "%T@ %f\x00icon\x1f$WALLPAPERS_DIR/%f\n" |\
+    sort -rn | cut -d' ' -f2-)
 
 choice=$(\
-    echo -en "Random Choice\n""$images" | \
+    echo -en "Random Choice\n$images" | \
         $ROFI_CMD -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
 )
 

@@ -21,7 +21,8 @@ CREATE_EVENT_TEXT="${CREATE_EVENT_TEXT:-! add reminder !}"
 ROFI_CONFIG_FILE="${ROFI_CONFIG_FILE:-/dev/null}"
 BAR_POSITION="${BAR_POSITION:-bottom}"
 WEEK_START="${WEEK_START:-monday}"
-EVENTS_FILE="${EVENTS_FILE:-$SCRIPT_PATH/../data/events}"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+EVENTS_FILE="$ROFI_DATA_DIR/events"
 
 # get current date and set today header
 get_current_date() {
@@ -125,8 +126,8 @@ header=$(date "$DATEFTM")", "$(date "$TIMEFMT")
 
 #lines:'"$(echo "$month_page" | wc -l)"';width:22;
 
-while selected="$(echo "$month_page" | rofi -dmenu \
-	-markup-rows \
+while selected="$(echo "$month_page" |\
+	rofi -dmenu -i -markup-rows \
 	-theme-str 'entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}' \
 	-hide-scrollbar \
 	-p "$header")"; do

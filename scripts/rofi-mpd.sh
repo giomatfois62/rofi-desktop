@@ -5,16 +5,19 @@
 # dependencies: rofi, mpd, mpc
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-
-MPD_SHORTCUTS_HELP=${MPD_SHORTCUTS_HELP:-"Press \"Alt+Q\" to add the entry to the queue&#x0a;Press \"Alt+P\" to play/pause player&#x0a;Press \"Alt+J\" to play previous entry in queue&#x0a;Press \"Alt+K\" to play next entry in queue"}
+MPD_SHORTCUTS_HELP="<b>Alt+Q</b> add to queue | <b>Alt+P</b> play/pause | <b>Alt+J</b> previous song | <b>Alt+K</b> next song"
 
 mpd_shortcuts="-kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j""
 
 player_mesg() {
   # escape song name string
   # https://stackoverflow.com/questions/12873682/short-way-to-escape-html-in-bash
-  player_status=$(mpc status| head -n -1 | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
-  echo "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP"
+  player_status=$(mpc status | head -n -1 | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
+  if [ -n "$player_status" ]; then
+    echo "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP"
+  else
+    echo "$MPD_SHORTCUTS_HELP"
+  fi
 }
 
 toggle_player() {
