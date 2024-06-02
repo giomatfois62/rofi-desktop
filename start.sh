@@ -4,7 +4,8 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-CONFIG_DIR="$SCRIPT_PATH/config"
+CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/scripts/config}"
+CONFIG_DIR="$SCRIPT_PATH/scripts/config"
 STARTUP_FILE="$CONFIG_DIR/autostart"
 FIRST_RUN_FILE="$CONFIG_DIR/first-run"
 
