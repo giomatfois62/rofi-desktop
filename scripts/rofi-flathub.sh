@@ -5,11 +5,16 @@
 #
 # dependencies: rofi, flatpak, jq
 
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TERMINAL="${TERMINAL:-xterm}"
-FLATHUB_CACHE="${FLATHUB_CACHE:-$HOME/.cache/flathub.json}"
+FLATHUB_CACHE="$ROFI_CACHE_DIR/flathub.json"
 FLATHUB_EXPIRATION_TIME=${FLATHUB_EXPIRATION_TIME:-3600} # refresh applications list every hour
 FLATHUB_URL="https://flathub.org/api/v1/apps"
+FLATHUB_ICONS=${FLATHUB_ICONS:-}
+PREVIEW_CMD="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
 
 # TODO: do this job in background and display message
 if [ -f "$FLATHUB_CACHE" ]; then
@@ -27,12 +32,20 @@ else
     curl --silent "$FLATHUB_URL" -o "$FLATHUB_CACHE"
 fi
 
-selected=$(jq '.[] | .name + " - " + .summary' "$FLATHUB_CACHE" | tr -d '"' | $ROFI_CMD -p "Flatpak")
+if [ -n "$FLATHUB_ICONS" ]; then
+    #flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
+    flags="-show-icons"
+fi
+
+selected=$(jq '.[] | .name + " - " + .summary+"<ICON>"+.iconDesktopUrl' "$FLATHUB_CACHE" |\
+    sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
+    tr -d '"' |\
+    $ROFI_CMD $flags -preview-cmd "$PREVIEW_CMD" -p "Flatpak")
 
 if [ -n "$selected" ]; then
     # check flatpak cmd
     if ! command -v flatpak &> /dev/null; then
-        rofi -e "Install flatpak first"
+        rofi -e "Install flatpak"
         exit 1
     fi
 

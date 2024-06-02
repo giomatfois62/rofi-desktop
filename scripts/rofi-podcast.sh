@@ -4,16 +4,18 @@
 #
 # dependencies: rofi, curl, jq, mpv
 
-# TODO: fix default path to podcasts folder using script path or data path
-
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
-PODCAST_FOLDER=${PODCAST_FOLDER:-"$SCRIPT_PATH/../data/podcasts"}
-PODCAST_CACHE=${PODCAST_CACHE:-"$HOME/.cache/podcasts"}
-PODCAST_HISTORY=${PODCAST_HISTORY:-"$PODCAST_CACHE/recents"}
-PODCAST_EXPIRATION_TIME=${PODCAST_EXPIRATION_TIME:-3600} # refresh episodes files every hour
+PODCAST_EXPIRATION_TIME=${PODCAST_EXPIRATION_TIME:-3600} # refresh episodes every hour
+PODCAST_FOLDER="$ROFI_DATA_DIR/podcasts"
+PODCAST_CACHE="$ROFI_CACHE_DIR/podcasts"
+PODCAST_HISTORY="$PODCAST_CACHE/recents"
+PODCAST_ICONS=${PODCAST_ICONS:-}
+PREVIEW_CMD="$SCRIPT_PATH/download_podcast_icon.sh {input} {output} {size}"
 
 mkdir -p $PODCAST_CACHE
 
@@ -57,7 +59,6 @@ show_episodes() {
     if [ $episodes_count -gt 9 ]; then
         episodes="$episodes\nMore..."
     fi
-
 
     while episode=$(echo -en "$episodes" | $ROFI_CMD -mesg "$header" -p "Episode"); do
         if [ "$episode" = "More..." ]; then
@@ -105,9 +106,19 @@ while category=$(echo -en "Recently Played\n$categories" | $ROFI_CMD -p "Categor
     else
         podcast_file="$PODCAST_FOLDER/$category.json"
 
-        while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}"' "$podcast_file" | tr -d '"' | $ROFI_CMD -p "$category"); do
-            title=$(echo "$podcast" | cut -d"{" -f1 | sed 's/ *$//g')
+        if [ -n "$PODCAST_ICONS" ]; then
+            #flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
+            flags="-show-icons"
+        fi
 
+        # cover key contains the url to the icon to show
+        # url: https://img.rss.com/$SLUG/$SIZE/$COVER
+        while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}<ICON>\(.slug)/<SIZE>/\(.cover)"' "$podcast_file" |\
+            tr -d '"' |\
+            sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
+            $ROFI_CMD -p "$category" $flags -preview-cmd "$PREVIEW_CMD"); do
+
+            title=$(echo "$podcast" | cut -d"{" -f1 | sed 's/ *$//g')
             show_episodes "$title" "$podcast_file"
         done
     fi
