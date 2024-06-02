@@ -22,7 +22,9 @@ function remove_todo() {
     if [[ ! -z "$DONE_FILE" ]]; then
         echo "<s>${*}</s>" >> "${DONE_FILE}"
     fi
+
     sed -i "/^${*}$/d" "${TODO_FILE}"
+
     # doesn't work
     #awk -i inplace '/^${*}$/ { $0 = "<s>" $0 "</s>" }; 1' "${TODO_FILE}"
 }
