@@ -15,8 +15,7 @@ The main menu is accessed with *rofi-desktop.sh*, together with a comprehensive 
 
 The *scripts/config/environment* file contains the scripts' variables that can be customized by the user. Source this file somewhere (like in ~/.bashrc) to override their default values.
 
-Users can easily create custom menus editing the *rofi-desktop.sh* script or by putting simple json files, containing the list of entries with corresponding commands to run and optional icons to show, in the *scripts/menus* folder.  
-Visit the [rofi-json](https://github.com/luiscrjunior/rofi-json) repo for details on the syntax to use for custom entries.
+## Scripts
 
 All the scripts can be run on their own, perhaps binded to a keyboard shortcut, and are easy to inspect and modify. Currently implemented functionalities are:
 - Applications Menu (drun modi)
@@ -127,6 +126,11 @@ Setting the *DRUN_CATEGORIES* shell variable before running the script will filt
 DRUN_CATEGORIES=Rofi ./drun.sh          # shows only rofi-desktop scripts
 DRUN_CATEGORIES="Rofi,Game" ./drun.sh   # shows games and rofi-desktop scripts
 ```
+
+## Custom Menus
+
+Users can easily create custom menus editing the *rofi-desktop.sh* script or by putting simple json files, containing the list of entries with corresponding commands to run and optional icons to show, in the *scripts/menus* folder.  
+Visit the [rofi-json](https://github.com/luiscrjunior/rofi-json) repo for details on the syntax to use for custom entries.
 
 ## Global Menu
 The script *scripts/rofi-hud.py* shows a rofi menu containing the application menu entries of the currently focused window, in a style similar to Ubuntu Unity's HUD or [plasma-hud](https://github.com/Zren/plasma-hud).  
