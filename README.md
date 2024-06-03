@@ -150,6 +150,7 @@ Optional dependencies for some of the tools are:
 - wget
 - xmllint
 - mpv
+- yt-dlp
 - rofi-blocks
 - rofi-calc
 - bc
