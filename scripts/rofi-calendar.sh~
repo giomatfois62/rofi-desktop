@@ -129,7 +129,6 @@ header=$(date "$DATEFTM")", "$(date "$TIMEFMT")
 while selected="$(echo "$month_page" |\
 	rofi -dmenu -i -markup-rows \
 	-theme-str 'entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}' \
-	-kb-screenshot Control+Shift+space \
 	-hide-scrollbar \
 	-p "$header")"; do
   if [ $(echo "$selected" | grep "$NEXT_MONTH_TEXT") ]; then

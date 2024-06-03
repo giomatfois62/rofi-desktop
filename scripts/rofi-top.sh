@@ -32,4 +32,4 @@ execTop(){
 	done
 }
 
-execTop | rofi -modi blocks -show blocks "$@"
+execTop | rofi -kb-screenshot Control+Shift+space -modi blocks -show blocks "$@"

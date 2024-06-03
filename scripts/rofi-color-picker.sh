@@ -42,7 +42,7 @@ main(){
 
   (($#>1)) && shift $((--OPTIND))
 
-  ROFI_MAGIC='-dmenu -i -markup-rows'
+  ROFI_MAGIC='-dmenu -i -markup-rows -kb-screenshot Control+Shift+space'
 
   output=${1:-icon}
 

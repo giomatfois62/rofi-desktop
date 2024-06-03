@@ -359,7 +359,7 @@ search_archwiki() {
 }
 
 set_timer() {
-    rofi -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh"
+    rofi -kb-screenshot Control+Shift+space -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh"
 }
 
 weather() {
@@ -443,7 +443,7 @@ char_picker() {
 }
 
 youtube_feeds() {
-    rofi -show "Youtube Feeds" -modi "Youtube Feeds:$SCRIPT_PATH/rofi-youtube-feeds.sh" && exit
+    rofi -kb-screenshot Control+Shift+space -show "Youtube Feeds" -modi "Youtube Feeds:$SCRIPT_PATH/rofi-youtube-feeds.sh" && exit
 }
 
 keepassxc() {

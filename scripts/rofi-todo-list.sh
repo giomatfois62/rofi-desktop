@@ -27,5 +27,5 @@ while todo_file=$(cd "$TODO_FOLDER" && find * -type f -not -name "*_done" | xarg
 
     TODO_FILE="$TODO_FOLDER/$todo_file" \
     DONE_FILE="$TODO_FOLDER/$done_file" \
-    rofi -modi "ToDo $todo_file:$SCRIPT_PATH/rofi-todo.sh" -show "ToDo $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";}"
+    rofi -kb-screenshot Control+Shift+space -modi "ToDo $todo_file:$SCRIPT_PATH/rofi-todo.sh" -show "ToDo $todo_file" -theme-str "entry{placeholder:\"$TODO_PLACEHOLDER\";}"
 done
