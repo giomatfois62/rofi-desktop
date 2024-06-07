@@ -4,10 +4,11 @@
 
 # USAGE: rofi -show timer -modi timer:/path/to/rofi-timer.sh
 
-# TODO: find nice sound effects
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+
 # Sounds effects from soundbible.com
-TIMER_START_AUDIO="${TIMER_START_AUDIO:-$HOME/Media/sounds/sms-alert-1-daniel_simon.wav}"
-TIMER_STOP_AUDIO="${TIMER_STOP_AUDIO:-$HOME/Media/sounds/service-bell_daniel_simion.wav}"
+TIMER_START_AUDIO="${TIMER_START_AUDIO:-$SCRIPT_PATH/data/timer_start.wav}"
+TIMER_STOP_AUDIO="${TIMER_STOP_AUDIO:-$SCRIPT_PATH/data/timer_end.wav}"
 TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-5000}
 TIMER_PLACEHOLDER="Type <hours>h <minutes>m <seconds>s to set a custom timer"
 
