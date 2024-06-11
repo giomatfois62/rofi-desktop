@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Hangman
+Comment=
+Exec=rofi-hangman.sh
+Icon=applications-games
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;Games;
