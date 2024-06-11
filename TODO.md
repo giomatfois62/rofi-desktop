@@ -5,6 +5,8 @@
 - Integrate rofi-polkit-agent (needs cmd-polkit project)
 - Experiment with alt-tab binding to show window menu (https://github.com/davatorium/rofi/issues/1867)
 - Integrate a local LLM model menu instead of chatgpt
+- Add rofi-bibbrowser
+- File picker with drag drop
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -14,6 +16,9 @@
 - Experiment with custom thumbnailers: rofi-flathub, rofi-radio, rofi-tv, rofi-podcasts, rofi-xkcd
 - Improve text thumbnailer (https://imagemagick.org/Usage/text/)
 - Use new recursivebrowser to search all files
+- Add toggle file preview shortcut in search menu
+- Better file search results (2 lines)
+- Blacklist folders in search menu
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -87,11 +92,12 @@
 - Add ani-cli (DONE)
 - Fix link extraction for some rss feed providers (DONE) (using xmllint)
 - Add fortune script (DONE)
+- Add option to sort wallpapers by creation/modification date (DONE)
+- Create hangman game (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
 - Integrate rofi-ytm for youtube music with search suggestions (NO needs api key)
-- Add option to browse files in grid view with big thumbnails (NO does not display mimetype icons and thumbs)
 - Consider rofi-checklist as alternative to rofi-todo.sh (NO too complicated)
-- Add option to sort wallpapers by creation/modification date (MAYBE difficult using current implementation)
+
 
