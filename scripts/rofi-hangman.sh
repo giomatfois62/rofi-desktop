@@ -137,7 +137,7 @@ while category=$(ls "$WORDS_DIR" | $ROFI_CMD -p "Category"); do
                 mesg="${!name}"${guess[@]}
 
                 if [[ errors -gt 5 ]]; then
-                    mesg="$mesg   You Loose"
+                    mesg="$mesg   You Lose"
                     break
                 fi
 
