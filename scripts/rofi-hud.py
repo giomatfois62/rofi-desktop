@@ -31,6 +31,7 @@ rofi_process = None
 show_icons = True       # Requires rofi 1.5.3
 show_shortcuts = True   # Requires rofi 1.5.5?
 shortcut_fg_color = DEFAULT_SHORTCUT_FG_COLOR
+window_class = "HUD"
 
 
 ### general purpose functions and classes
@@ -109,7 +110,7 @@ def format_shortcut(text):
 
     # Add Color.
     # Make sure font is not monospace, which clips the Sans Serif characters.
-    text = '<span fgcolor="' + shortcut_fg_color + '" face="Sans Serif">' + text + '</span>'
+    text = '<span face="Sans Serif"><b>' + text + '</b></span>'
     return text
 
 def format_menuitem_label(path, shortcut):
@@ -137,7 +138,7 @@ def format_menuitem(formattedlabel, icon_name):
 def init_rofi():
     # Init rofi_procss so it starts capturing keystrokes while we slowly pipe in the dbus menu items.
     global rofi_process
-    rofi_process = subprocess.Popen(['rofi', '-dmenu', '-markup-rows', '-i', '-p', 'HUD'],
+    rofi_process = subprocess.Popen(['rofi', '-show-icons', '-dmenu', '-markup-rows', '-i', '-p', window_class],
                                     stdout=subprocess.PIPE, stdin=subprocess.PIPE)
 
 def write_menuitem(menu_item):
@@ -401,6 +402,9 @@ def main():
         logging.debug('ewmh.getActiveWindow returned None, giving up')
         return
     window_id = hex(ewmh._getProperty('_NET_ACTIVE_WINDOW')[0])
+    
+    global window_class
+    window_class = win.get_wm_class()[1]
 
     def get_prop_str(propKey):
         value = ewmh._getProperty(propKey, win)
