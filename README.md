@@ -44,6 +44,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Flathub (rofi-flathub.sh, filter applications list and install selected)
   - 1377x.to (rofi-torrent.sh, search torrents and open selected magnet links)
   - bitsearch.to (rofi-bitsearch.sh, search torrents and open selected magnet links)
+  - eBooks (rofi-books.sh, search books on annas-archive and open download page)
   - xkcd (rofi-xkcd.sh, browse and view xkcd comics in rofi)
   - Anime (rofi-anime.sh, stream anime with mpv, based on [ani-cli](https://github.com/pystardust/ani-cli))
 - Steam Games (rofi-steam.sh)

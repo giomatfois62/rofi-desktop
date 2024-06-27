@@ -49,6 +49,7 @@ declare -A commands=(
     ["Reddit"]=browse_reddit
     ["Install Programs"]=browse_flathub
     ["Flathub"]=browse_flathub
+    ["eBooks"]=search_ebooks
     ["Torrents (1337x)"]=search_torrent
     ["Torrents (bitsearch)"]=search_bitsearch
     ["Google"]=search_google
@@ -118,7 +119,7 @@ appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
 search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
 
-web_entries="Google\nWikipedia\nYouTube\nYouTube Feeds\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents (1337x)\nTorrents (bitsearch)\nFlathub\nAnime"
+web_entries="Google\nWikipedia\nYouTube\nYouTube Feeds\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents (1337x)\nTorrents (bitsearch)\neBooks\nFlathub\nAnime"
 
 custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
@@ -318,6 +319,10 @@ streaming() {
 
 anime() {
     "$SCRIPT_PATH"/rofi-anime.sh --rofi && exit
+}
+
+search_ebooks() {
+    "$SCRIPT_PATH"/rofi-books.sh && exit
 }
 
 get_fortune() {
