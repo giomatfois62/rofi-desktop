@@ -11,7 +11,7 @@ points = 0
 
 def call_rofi(choices, mesg):
     p1 = Popen(["echo", choices], stdout=PIPE)
-    p2 = Popen(["rofi", "-dmenu", "-mesg", mesg, "-i", "-p", "Answer"], stdin=p1.stdout, stdout=PIPE)
+    p2 = Popen(["rofi", "-kb-screenshot", "Control+Shift+space", "-dmenu", "-mesg", mesg, "-i", "-p", "Answer"], stdin=p1.stdout, stdout=PIPE)
     p1.stdout.close()
     
     answer = p2.communicate()[0].decode('utf8').rstrip()
