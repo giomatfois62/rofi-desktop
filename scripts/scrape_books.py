@@ -14,7 +14,7 @@ if (len(sys.argv) > 1):
 else:
     sys.exit()
 
-base_url = "https://annas-archive.gs"
+base_url = "https://annas-archive.se"
 
 if (page > 1):
     url = base_url + "/search?q=" + query.replace(" ","+") + "&page=" + str(page)
@@ -40,7 +40,8 @@ for b in books:
     title = book_info.getchildren()[1].text
     publisher = book_info.getchildren()[2].text
     author = book_info.getchildren()[3].text
-   
+    
+    # more book info (lang, size, type, source)
     book_info_parts = full_title.split(", ")
     
     if (" [" in book_info_parts[0]):
@@ -57,8 +58,12 @@ for b in books:
         
     if (author is not None):
         title = author + " - " + title
+    elif (publisher is not None):
+        title = publisher + " - " + title
 
-    line = "{} {} ({} {}) {}\\x00icon\\x1fthumbnail://{}".format(book_url,lang,file_type,file_size,title,book_thumb)
+    line = "{} {} {} {} - {}\\x00icon\\x1fthumbnail://{}".format(
+        book_url,lang,file_type,file_size,title,book_thumb)
+    
     print(line)
     
 
