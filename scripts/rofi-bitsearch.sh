@@ -25,47 +25,51 @@ if [ -z "$query" ]; then
     exit 1
 fi
 
-# search first results page
-counter=1
-selected_row=$((20*($counter-1)))
+while [ -n "$query" ]; do
+    # search first results page
+    counter=1
+    selected_row=$((20*($counter-1)))
 
-"$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" > "$TORRENT_CACHE"
-result_count=$(cat "$TORRENT_CACHE" | wc -l)
+    "$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" > "$TORRENT_CACHE"
+    result_count=$(cat "$TORRENT_CACHE" | wc -l)
 
-if [ "$result_count" -lt 1 ]; then
-    rofi -e "No results found, try again."
-    exit 1
-fi
-
-torrents=$(cat "$TORRENT_CACHE" | cut -d' ' -f2-)
-torrents="$torrents\nMore..."
-
-# display menu
-while selection=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" -format 'i s' -selected-row ${selected_row}); do
-    row=$(($(echo "$selection" | awk '{print $1;}') + 1))
-    torrent=$(echo "$selection" | cut -d' ' -f2-)
-
-    if [ -z "$torrent" ]; then
+    if [ "$result_count" -lt 1 ]; then
+        rofi -e "No results found, try again."
         exit 1
     fi
 
-    if [ "$torrent" = "More..." ]; then
-        # increment page counter and search again
-        counter=$((counter+1))
-        selected_row=$((20*($counter-1)))
+    torrents=$(cat "$TORRENT_CACHE" | cut -d' ' -f2-)
+    torrents="$torrents\nMore..."
 
-        "$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" >> "$TORRENT_CACHE"
+    # display menu
+    while selection=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" -format 'i s' -selected-row ${selected_row}); do
+        row=$(($(echo "$selection" | awk '{print $1;}') + 1))
+        torrent=$(echo "$selection" | cut -d' ' -f2-)
 
-        torrents=$(cat "$TORRENT_CACHE" | cut -d' ' -f2-)
-        torrents="$torrents\nMore..."
-    else
-        # open selected magnet link
-        magnet=$(sed "${row}q;d" "$TORRENT_CACHE" | cut -d' ' -f1)
+        if [ -z "$torrent" ]; then
+            exit 1
+        fi
 
-        $TORRENT_CLIENT "$magnet" & disown
+        if [ "$torrent" = "More..." ]; then
+            # increment page counter and search again
+            counter=$((counter+1))
+            selected_row=$((20*($counter-1)))
 
-        exit 0
-    fi
+            "$SCRIPT_PATH/scrape_bitsearch.py" "$query" "$counter" >> "$TORRENT_CACHE"
+
+            torrents=$(cat "$TORRENT_CACHE" | cut -d' ' -f2-)
+            torrents="$torrents\nMore..."
+        else
+            # open selected magnet link
+            magnet=$(sed "${row}q;d" "$TORRENT_CACHE" | cut -d' ' -f1)
+
+            $TORRENT_CLIENT "$magnet" & disown
+
+            exit 0
+        fi
+    done
+
+    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrents")
 done
 
 exit 1
