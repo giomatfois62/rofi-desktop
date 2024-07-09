@@ -55,14 +55,12 @@ for b in books:
     
     if (title is None):
         title = book_info_parts[-1]
-        
-    if (author is not None):
-        title = author + " - " + title
-    elif (publisher is not None):
-        title = publisher + " - " + title
+    
+    if (author is None):
+        author = publisher
 
-    line = "{} {} {} {} - {}\\x00icon\\x1fthumbnail://{}".format(
-        book_url,lang,file_type,file_size,title,book_thumb)
+    line = "{} {} {} {} {} || {}\\x00icon\\x1fthumbnail://{}".format(
+        book_url,lang,file_type,file_size,author,title,book_thumb)
     
     print(line)
     
