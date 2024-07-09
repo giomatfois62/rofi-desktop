@@ -6,7 +6,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-/home/mat/Programs/rofi/build/rofi -dmenu -i}"
+ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 BOOKS_PLACEHOLDER="Type something and press \"Enter\" to search books"
 BOOKS_CACHE="$ROFI_CACHE_DIR/books"
