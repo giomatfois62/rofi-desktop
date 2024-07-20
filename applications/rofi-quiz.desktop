@@ -2,7 +2,7 @@
 Name=Trivia
 Comment=
 Exec=rofi-quiz.py
-Icon=applications-games
+Icon=dialog-question
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;Games;

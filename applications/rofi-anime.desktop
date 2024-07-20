@@ -2,7 +2,7 @@
 Name=Anime
 Comment=
 Exec=rofi-anime.sh --rofi
-Icon=media-playback-start
+Icon=multimedia-video-player
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;AudioVideo;Video;TV;Tuner;Web;Network;

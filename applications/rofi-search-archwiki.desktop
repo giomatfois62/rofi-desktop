@@ -2,7 +2,7 @@
 Name=ArchWiki
 Comment=
 Exec=rofi-web-search.sh "archwiki"
-Icon=globe
+Icon=system-search
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Network;

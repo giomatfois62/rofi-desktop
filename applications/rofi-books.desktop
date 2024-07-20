@@ -2,7 +2,7 @@
 Name=eBooks
 Comment=
 Exec=rofi-books.sh
-Icon=accessories-dictionary
+Icon=application-x-mobipocket-ebook
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Books;

@@ -2,7 +2,7 @@
 Name=Wikipedia
 Comment=
 Exec=rofi-web-search.sh "wikipedia"
-Icon=globe
+Icon=preferences-system-network
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Network;

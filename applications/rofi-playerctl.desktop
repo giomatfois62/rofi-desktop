@@ -2,7 +2,7 @@
 Name=Media Controls
 Comment=
 Exec=rofi-playerctl.sh
-Icon=media-playback-start
+Icon=applications-multimedia
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;AudioVideo;Audio;Video;

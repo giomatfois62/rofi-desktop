@@ -2,7 +2,7 @@
 Name=Fortune
 Comment=
 Exec=rofi-fortune.sh
-Icon=accessories-dictionary
+Icon=application-vnd.comicbook+zip
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;

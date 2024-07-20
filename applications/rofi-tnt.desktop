@@ -2,7 +2,7 @@
 Name=TNT Village
 Comment=
 Exec=rofi-tnt.sh
-Icon=edit-bomb
+Icon=application-x-bittorrent
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;P2P;

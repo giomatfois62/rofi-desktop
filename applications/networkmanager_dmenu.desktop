@@ -2,6 +2,6 @@
 Name=Network
 GenericName=Networkmanager Settings
 Exec=networkmanager_dmenu
-Icon=nm-device-wireless
+Icon=network-wireless
 Type=Application
 Categories=Rofi;Desktop;Settings;Network;

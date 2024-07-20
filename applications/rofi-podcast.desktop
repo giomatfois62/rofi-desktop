@@ -2,7 +2,7 @@
 Name=Podcasts
 Comment=
 Exec=rofi-podcast.sh
-Icon=multimedia-player
+Icon=multimedia-player-ipod-touch
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;AudioVideo;Audio;

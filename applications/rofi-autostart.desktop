@@ -2,7 +2,7 @@
 Categories=Rofi;Desktop;Settings;
 Comment=
 Exec=rofi-autostart.sh
-Icon=media-playback-start
+Icon=xfce4-settings
 MimeType=
 Name=Autostart Applications
 Path=

@@ -2,7 +2,7 @@
 Name=Google
 Comment=
 Exec=rofi-web-search.sh "google"
-Icon=globe
+Icon=google
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Network;

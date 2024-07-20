@@ -2,7 +2,7 @@
 Name=Radio Stations
 Comment=
 Exec=rofi-radio.sh
-Icon=radio
+Icon=audio-headphones
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;AudioVideo;Audio;Tuner;

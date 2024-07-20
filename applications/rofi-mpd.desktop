@@ -2,7 +2,7 @@
 Name=Music Player
 Comment=
 Exec=rofi-mpd.sh
-Icon=folder-music
+Icon=gmusicbrowser
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;AudioVideo;Audio;Music;Player;

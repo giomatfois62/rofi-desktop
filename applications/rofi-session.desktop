@@ -2,7 +2,7 @@
 Name=Lock/Logout
 Comment=
 Exec=rofi-session.sh
-Icon=system-log-out
+Icon=org.xfce.session
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;System;

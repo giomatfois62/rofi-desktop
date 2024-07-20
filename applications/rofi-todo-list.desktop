@@ -2,7 +2,7 @@
 Name=ToDo Lists
 Comment=
 Exec=rofi-todo-list.sh
-Icon=list-add
+Icon=menu-editor
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;

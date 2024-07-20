@@ -3,7 +3,7 @@
 Name=Pictures
 Comment=
 Exec=rofi-search.sh "Pictures"
-Icon=folder-image
+Icon=multimedia-photo-manager
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Filesystem;

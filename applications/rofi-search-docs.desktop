@@ -3,7 +3,7 @@
 Name=Documents
 Comment=
 Exec=rofi-search.sh "Documents"
-Icon=folder-documents
+Icon=office-document
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Filesystem;
