@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-LOBSTER_VERSION="4.2.5"
+LOBSTER_VERSION="4.2.7"
 
 config_file="$HOME/.config/lobster/lobster_config.txt"
 lobster_editor=${VISUAL:-${EDITOR}}
@@ -97,9 +97,7 @@ trap cleanup EXIT INT TERM
             command -v "$dep" >/dev/null || exit 1
         done
     }
-
     #dep_ch "grep" "$sed" "curl" "fzf" || true
-
     if [ "$use_external_menu" = "1" ]; then
         dep_ch "rofi" || true
     fi
@@ -114,7 +112,7 @@ trap cleanup EXIT INT TERM
         [ -z "$base" ] && base="flixhq.to"
         [ -z "$player" ] && player="mpv"
         [ -z "$download_dir" ] && download_dir="$PWD"
-        [ -z "$provider" ] && provider="UpCloud"
+        [ -z "$provider" ] && provider="Vidcloud"
         [ -z "$history" ] && history=0
         [ -z "$subs_language" ] && subs_language="english"
         subs_language="$(printf "%s" "$subs_language" | cut -c2-)"
@@ -166,9 +164,9 @@ EOF
 
     prompt_to_continue() {
         if [ "$media_type" = "tv" ]; then
-            continue_choice=$(printf "Next Episode\nReplay Episode\nExit\nSearch" | launcher "Select")
+            continue_choice=$(printf "Next episode\nReplay episode\nExit\nSearch" | launcher "Select: ")
         else
-            continue_choice=$(printf "Exit\nSearch" | launcher "Select")
+            continue_choice=$(printf "Exit\nSearch" | launcher "Select: ")
         fi
     }
 
@@ -197,7 +195,7 @@ EOF
     --rofi, --dmenu, --external-menu
       Use rofi instead of fzf
     -p, --provider
-      Specify the provider to watch from (if no provider is provided, it defaults to UpCloud) (currently supported: Upcloud, Vidcloud)
+      Specify the provider to watch from (if no provider is provided, it defaults to Vidcloud) (currently supported: Vidcloud, UpCloud)
     -q, --quality
       Specify the video quality (if no quality is provided, it defaults to 1080)
     --quiet
@@ -238,7 +236,7 @@ EOF
             fi
         fi
         [ -n "$query" ] && query=$(echo "$query" | tr ' ' '-')
-        [ -z "$query" ] && exit 1
+        [ -z "$query" ] && send_notification "Error" "1000" "" "No query provided" && exit 1
     }
 
     download_thumbnails() {
@@ -293,12 +291,12 @@ EOF
 
     choose_episode() {
         if [ -z "$season_id" ]; then
-            tmp_season_id=$(curl -s "https://${base}/ajax/v2/tv/seasons/${media_id}" | $sed -nE "s@.*href=\".*-([0-9]*)\">(.*)</a>@\2\t\1@p" | launcher "Select Season" "1")
+            tmp_season_id=$(curl -s "https://${base}/ajax/v2/tv/seasons/${media_id}" | $sed -nE "s@.*href=\".*-([0-9]*)\">(.*)</a>@\2\t\1@p" | launcher "Select a season: " "1")
             [ -z "$tmp_season_id" ] && exit 1
             season_title=$(printf "%s" "$tmp_season_id" | cut -f1)
             season_id=$(printf "%s" "$tmp_season_id" | cut -f2)
             tmp_ep_id=$(curl -s "https://${base}/ajax/v2/season/episodes/${season_id}" | $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
-                $sed -nE "s@.*data-id=\"([0-9]*)\".*title=\"([^\"]*)\">.*@\2\t\1@p" | $hxunent | launcher "Select Episode" "1")
+                $sed -nE "s@.*data-id=\"([0-9]*)\".*title=\"([^\"]*)\">.*@\2\t\1@p" | $hxunent | launcher "Select an episode: " "1")
             [ -z "$tmp_ep_id" ] && exit 1
         fi
         [ -z "$episode_title" ] && episode_title=$(printf "%s" "$tmp_ep_id" | cut -f1)
@@ -343,7 +341,7 @@ EOF
         provider_link=$(printf "%s" "$parse_embed" | cut -f1)
         source_id=$(printf "%s" "$parse_embed" | cut -f3)
         embed_type=$(printf "%s" "$parse_embed" | cut -f2)
-        json_data=$(curl -s "http://provider.akt2.yatara.be:31077/rabbit/${source_id}")
+        json_data=$(curl -s "http://provider.akash-palmito.org:30174/rabbit/${source_id}")
         [ -n "$json_data" ] && extract_from_json
     }
 
@@ -526,7 +524,7 @@ EOF
             [ "$history" = 1 ] && save_history
             prompt_to_continue
             case "$continue_choice" in
-                "Next Episode")
+                "Next episode")
                     resume_from=""
                     [ "$history" = 0 ] && next_episode_exists
                     if [ -n "$next_episode" ]; then
@@ -540,7 +538,7 @@ EOF
                     fi
                     continue
                     ;;
-                "Replay Episode")
+                "Replay episode")
                     resume_from=""
                     continue
                     ;;
@@ -564,7 +562,7 @@ EOF
 
     main() {
         if [ -z "$response" ]; then
-            [ -z "$query" ] && get_input && exit 1
+            [ -z "$query" ] && get_input
             search "$query"
             [ -z "$response" ] && exit 1
         fi
@@ -575,7 +573,7 @@ EOF
             download_thumbnails "$response" "3"
             select_desktop_entry ""
         else
-            [ "$use_external_menu" = "1" ] && choice=$(printf "%s" "$response" | rofi -dmenu -i -p "Choose Movie/TV Show" -display-columns 1)
+            [ "$use_external_menu" = "1" ] && choice=$(printf "%s" "$response" | rofi -dmenu -i -p "Choose a Movie or TV Show" -display-columns 1)
             [ "$use_external_menu" = "0" ] && choice=$(printf "%s" "$response" | fzf --reverse --with-nth 1 -d "\t" --header "Choose a Movie or TV Show")
             title=$(printf "%s" "$choice" | $sed -nE "s@(.*) \((movie|tv)\).*@\1@p")
             media_type=$(printf "%s" "$choice" | $sed -nE "s@(.*) \((movie|tv)\).*@\2@p")
@@ -590,7 +588,7 @@ EOF
         [ ! -f "$histfile" ] && send_notification "No history file found" "5000" "" && exit 1
         [ "$watched_history" = 1 ] && exit 0
         watched_history=1
-        choice=$($sed -n "1h;1!{x;H;};\${g;p;}" "$histfile" | nl -w 1 | nth "Choose an Entry")
+        choice=$($sed -n "1h;1!{x;H;};\${g;p;}" "$histfile" | nl -w 1 | nth "Choose an entry:")
         [ -z "$choice" ] && exit 1
         media_type=$(printf "%s" "$choice" | cut -f4)
         title=$(printf "%s" "$choice" | cut -f1)
@@ -734,11 +732,11 @@ EOF
             -p | --provider)
                 provider="$2"
                 if [ -z "$provider" ]; then
-                    provider="UpCloud"
+                    provider="Vidcloud"
                     shift
                 else
                     if [ "${provider#-}" != "$provider" ]; then
-                        provider="UpCloud"
+                        provider="Vidcloud"
                         shift
                     else
                         shift 2
@@ -814,7 +812,7 @@ EOF
             [ ! -L "$applications" ] && ln -sf "/tmp/lobster/applications/" "$applications"
         fi
     fi
-    [ -z "$provider" ] && provider="UpCloud"
+    [ -z "$provider" ] && provider="Vidcloud"
     [ "$trending" = "1" ] && choose_from_trending
     [ "$recent" = "movie" ] && choose_from_recent_movie
     [ "$recent" = "tv" ] && choose_from_recent_tv
