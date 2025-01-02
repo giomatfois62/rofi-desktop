@@ -27,11 +27,11 @@ if (len(titles) == 0):
 
 for i in range(0, len(titles)):
     entry_num = 20*(int(page) - 1) + i + 1
-    entry_title = titles[i].text_content().replace("\n","").replace("⭐","").replace("✅","")
+    entry_title = titles[i].text_content().replace("\n","").replace("⭐","").replace("✅","").strip()
     entry_stats = stats[i].text_content().replace("\n"," ")
     entry_size = stats[i].getchildren()[1].text_content().replace("\n","")
-    entry_seeders = stats[i].getchildren()[2].text_content().replace("\n","")
-    entry_leechers = stats[i].getchildren()[3].text_content().replace("\n","")
+    entry_seeders = stats[i].getchildren()[2].text_content().replace("\n","").replace(" ","")
+    entry_leechers = stats[i].getchildren()[3].text_content().replace("\n","").replace(" ","")
     entry_magnet = magnets[i].attrib['href']
 
     entry_line = "{} {} - [{}] [S:{}, L:{}] {}".format(
