@@ -20,8 +20,8 @@ get_fortune() {
     fi
 }
 
-theme="listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
+theme="listview{lines:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
 
-while continue=$(echo -en "Next\x00icon\x1fgo-next" | $ROFI_CMD -p "Fortune" -theme-str "$theme" -mesg "$(get_fortune)"); do
+while continue=$(echo -en "Next\x00icon\x1fgo-next" | $ROFI_CMD -show-icons -p "Fortune" -theme-str "$theme" -mesg "$(get_fortune)"); do
     echo "next"
 done
