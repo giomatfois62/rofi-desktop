@@ -29,9 +29,12 @@ fi
 while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$LIVETV_FILE" | tr -d '"' |\
         sort | $ROFI_CMD -p "LiveTV" -format 'i s'); do
 
-    name_str=$(echo "$name" | cut -d' ' -f2- | cut -d"{" -f1 | sed 's/ *$//g')
-    link_sel=".[] | select(.name==\"$name_str\") | .link"
+    name_idx=$(echo "$name" | cut -d' ' -f1)
+    link_sel=".[$name_idx].link"
     event_link=$(jq "$link_sel" "$LIVETV_FILE" | tr -d '"')
+    
+    echo "$name"
+    echo "name: $name_str sel: $link_sel event: $event_link"
 
     # follow redirect with curl using -L
     streams=$(curl -L "$event_link" | grep "OnClick=\"show_webplayer" |\
