@@ -14,7 +14,7 @@ if (len(sys.argv) > 1):
 else:
     sys.exit()
 
-base_url = "https://annas-archive.se"
+base_url = "https://annas-archive.li"
 
 if (page > 1):
     url = base_url + "/search?q=" + query.replace(" ","+") + "&page=" + str(page)
@@ -24,8 +24,8 @@ else:
 r = requests.get(url)
 tree = html.fromstring(r.content)
 
-books = tree.xpath('//div[@class="h-[125] flex flex-col justify-center "]/a')
-books_hidden = tree.xpath('//div[@class="h-[125] flex flex-col justify-center js-scroll-hidden"]')
+books = tree.xpath('//div[@class="h-[110px] flex flex-col justify-center "]/a')
+books_hidden = tree.xpath('//div[@class="h-[110px] flex flex-col justify-center js-scroll-hidden"]')
 
 for b in books_hidden:
     b = ((html.tostring(b, encoding=str)).replace("<!-- ","").replace("-->",""))
