@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Rofi Sounds
+Comment=
+Exec=rofi-sounds.sh
+Icon=multimedia-volume-control
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Settings;AudioVideo;Audio;
