@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=Search Computer
 Comment=
-Exec=rofi-search.sh
+Exec=rofi-search.sh -m
 Icon=system-search
 Terminal=false
 Type=Application

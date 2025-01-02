@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=Downloads
 Comment=
-Exec=rofi-search.sh "Downloads"
+Exec=rofi-search.sh -t "Downloads"
 Icon=folder-download
 Terminal=false
 Type=Application

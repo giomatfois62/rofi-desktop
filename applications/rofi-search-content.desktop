@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=File Contents
 Comment=
-Exec=rofi-search.sh "File Contents"
+Exec=rofi-search.sh -t "Content"
 Icon=text-plain
 Terminal=false
 Type=Application

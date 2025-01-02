@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=All Files
 Comment=
-Exec=rofi-search.sh "All Files"
+Exec=rofi-search.sh -t "All"
 Icon=system-file-manager
 Terminal=false
 Type=Application

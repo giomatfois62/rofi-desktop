@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=Recently Used
 Comment=
-Exec=rofi-search.sh "Recently Used"
+Exec=rofi-search.sh -t "Recent"
 Icon=folder-recent
 Terminal=false
 Type=Application

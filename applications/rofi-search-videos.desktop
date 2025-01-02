@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=Videos
 Comment=
-Exec=rofi-search.sh "Videos"
+Exec=rofi-search.sh -t "Videos"
 Icon=multimedia-video-player
 Terminal=false
 Type=Application

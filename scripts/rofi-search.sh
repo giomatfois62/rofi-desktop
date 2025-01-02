@@ -1,320 +1,336 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # this script contains many searching functions for files in the computer
 # it remembers recently used files and diplays images in a grid of thumbnails
 #
 # dependencies: rofi, find, grep
-# optional: fd, ripgrep, xlip/wl-clipboard
+# optional: ripgrep, xclip/wl-clipboard
 
 # TODO: add more file extensions
 # TODO: order results by date
+# TODO: trash cmd & shortcut
 
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
-
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
-ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-SHOW_HIDDEN_FILES=${SHOW_HIDDEN_FILES:-false}
-HISTORY_FILE="$ROFI_CACHE_DIR/rofi-search-history"
-MAX_HISTORY_ENTRIES=${MAX_HISTORY_ENTRIES:-100}
-SHOW_CONTEXT=${SHOW_CONTEXT:-}
+ROFI="${ROFI:-$HOME/Programs/rofi/build/rofi}"
+SEARCH_ICONS=${SEARCH_ICONS:-}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
 ICON_SIZE=${ICON_SIZE:-6}
 
-SEARCH_SHORTCUTS_HELP="<b>Enter</b> open file | <b>Alt+C</b> copy to clipboard | <b>Alt+D</b> move to trash"
+# search params
+initial_path="/home/mat"
+path="$initial_path"
+initial_regex=".*"
+regex="$initial_regex" #".*\.\(jpg\|png\|zip\)"
+query=""
+recent_files=""
+file_contents=""
+search_type=""
+show_menu=""
+paste_clip=""
+skip_hidden=""
 
-search_shortcuts="-kb-custom-1 "Alt+c" -kb-custom-2 "Alt+d""
+# rofi params
+prompt="Search"
+message="<b>Enter</b> open file | <b>Alt+C</b> copy to clipboard"
+shortcuts="-kb-custom-1 Alt+c"
+theme=""
+theme_icons="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$ICON_SIZE.0em;}listview{lines:$GRID_ROWS;columns:$GRID_COLS;}"
+theme_list="element-icon{size:3em;}element-text{vertical-align:0.5;}listview{lines:7;}"
+theme_preview="mainbox{children:[wrap,listview-split];}wrap{expand:false;orientation:vertical;children:[inputbar,message];}icon-current-entry{expand:true;size:40%;}element-icon{size:3em;}element-text{vertical-align:0.5;}listview-split{orientation:horizontal;children:[listview,icon-current-entry];}listview{lines:7;}"
 
-declare -A commands=(
-    ["All Files"]=search_all
-    ["Recently Used"]=search_recent
-    ["File Contents"]=search_contents
-    ["Bookmarks"]=search_bookmarks
-    ["Books"]=search_books
-    ["Documents"]=search_documents
-    ["Desktop"]=search_desktop
-    ["Downloads"]=search_downloads
-    ["Music"]=search_music
-    ["Pictures"]=search_pics
-    ["TNT Village"]=search_tnt
-    ["Videos"]=search_videos
-)
+if [ -n "$SEARCH_ICONS" ]; then
+    theme="$theme_list"
+    message="$message | <b>Alt+Q</b> list-view | <b>Alt+W</b> icons-view | <b>Alt+E</b> list+preview"
+    shortcuts="$shortcuts -kb-custom-2 Alt+q -kb-custom-3 Alt+w -kb-custom-4 Alt+e"
+    flags="-show-icons -eh 2 -sep | -markup-rows"
+fi
 
-search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos\nTNT Village"
-
-search_menu() {
-    if [ -n "$1" ]; then
-         ${commands["$1"]}
-    else
-        # remember last entry chosen
-        local selected_text=0
-        local selected_text
-
-        while choice=$(echo -en "$search_entries" | $ROFI_CMD -matching fuzzy -selected-row ${selected_text} -format 'i s' -p "Search"); do
-            selected_text=$(echo "$choice" | awk '{print $1;}')
-            selected_text=$(echo "$choice" | cut -d' ' -f2-)
-
-            ${commands[$selected_text]};
-        done
-    fi
-}
-
-search_command() {
-    local folder="$1" # Save first argument in a variable
-    shift # Shift all arguments to the left
-    local extensions=("$@") # Rebuild the array with rest of arguments
-
-    local cmd
-    local cmd_extensions
-
-    if command -v fd &> /dev/null; then
-        for i in "${extensions[@]}"; do
-            cmd_extensions=$cmd_extensions" -e $i"
-        done
-
-        # sort by mtime is very slow with many files
-        #sort_cmd="--exec stat --printf=\"%Y\\t%n\\n\" | sort -nr | cut -f2"
-
-        if [ "$SHOW_HIDDEN_FILES" = true ]; then
-            cd $folder && fd -H --type f $cmd_extensions
-        else
-            cd $folder && fd --type f $cmd_extensions
-        fi
-    else
-        count=0
-        for i in "${extensions[@]}"; do
-            if [ $count -eq 0 ]; then
-                cmd_extensions=$cmd_extensions" -iname *.$i"
+format_filename() {
+    while read -r path; do
+        if [ -f "$path" ]; then
+            if [[ -n "$SEARCH_ICONS" || $search_type = "Pictures" ]]; then
+                local name=$(basename "$path")
+                local dir=$(dirname "$path")
+                printf "<b>%s</b>\n<i>%s</i><ICON>%s|" "$name" "$dir" "$path"
             else
-                cmd_extensions=$cmd_extensions" -o -iname *.$i"
-            fi
-            count=$((count+1))
-        done
-
-        if [ -n "$cmd_extensions" ]; then
-            if [ "$SHOW_HIDDEN_FILES" = true ]; then
-                #cd $folder && find . -not -path '*/.*' -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
-                cd $folder && find . -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
-            else
-                #cd $folder && find . -not -path '*/.*' -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
-                cd $folder && find . -not -path '*/.*' -type f \( $cmd_extensions \) -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
-            fi
-        else
-            if [ "$SHOW_HIDDEN_FILES" = true ]; then
-                #cd $folder && find . -not -path '*/.*' -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
-                cd $folder && find . -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
-            else
-                #cd $folder && find . -not -path '*/.*' -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
-                cd $folder && find . -not -path '*/.*' -type f -printf "%p<ICON>$folder/%p\n" | cut -c 3- | sed -e "s/<ICON>/\x00icon\x1f/g"
+                echo "$path"
             fi
         fi
-    fi
+    done
 }
 
-add_to_history() {
-    touch "$HISTORY_FILE"
-    grep -Fxq "$1" "$HISTORY_FILE" || echo "$1" >> "$HISTORY_FILE"
-
-    if [ "$(wc -l "$HISTORY_FILE" | awk '{ print $1 }')" -gt $MAX_HISTORY_ENTRIES ]; then
-        tmp_file="$HISTORY_FILE"".tmp"
-        tail -n +2 "$HISTORY_FILE" > "$tmp_file"
-        mv "$tmp_file" "$HISTORY_FILE"
-    fi
+compose_filename() {
+    echo "$@" \
+        | awk 'BEGIN{ RS = "" ; FS = "\n" }{print $2"/"$1}' \
+        | sed "s/'\/'/\//" \
+        | sed "s/<b>//g;s/<\/b>//g;s/<i>//g;s/<\/i>//g"
 }
 
-copy_cmd() {
-    if [ -n "$WAYLAND_DISPLAY" ]; then
-        wl-copy "$1"
-    elif [ -n "$DISPLAY" ]; then
-        echo "$1" | xclip -selection clipboard
-    fi
-}
+search_folder() {
+    local folder="$1"
+    local regex="$2"
+    
+    #fd -a \
+    #    -t f \
+    #    --full-path "$@" "$@" | \
+    #    format_filename | \
+    #    sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
 
-trash_cmd() {
-    if command -v kioclient5 &> /dev/null; then
-        kioclient5 move "$1" trash:/
-    elif command -v gio &> /dev/null; then
-        gio trash "$1"
-    fi
-}
-
-open_file() {
-    exit_code="$1"
-    filename="$2"
-
-    add_to_history "$filename"
-
-    [ "$exit_code" -eq 0 ] && xdg-open "$filename"
-    [ "$exit_code" -eq 10 ] && copy_cmd "$filename"
-    [ "$exit_code" -eq 11 ] && trash_cmd "$filename"
-}
-
-search_all() {
-    local selected
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "All Files")
-    exit_code="$?"
-
-	if [ -n "$selected" ]; then
-        open_file "$exit_code" "$HOME/$selected"
-        exit 0
-    fi
+    find "$folder" \
+        -path "*/.*" -prune -o \
+        -type f \
+        -regex "$regex" -print | \
+        format_filename | \
+        sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+        
+        #-printf "<b>%f</b>\n<i>%h</i><ICON>$folder/%P|" | \
+        #sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
 }
 
 search_recent() {
-    recently_used_file="$HOME/.local/share/recently-used.xbel"
-    recently_used=$(grep -oP '(?<=href=").*?(?=")' "$recently_used_file" | sort -r | sed 's/file:\/\///')
+    grep -oP '(?<=href=").*?(?=")' "$HOME/.local/share/recently-used.xbel" | \
+        sort -r | \
+        sed 's/file:\/\///' | \
+        format_filename | \
+        sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+}
 
-    list_recent() {
-        tac "$HISTORY_FILE"
-        echo -e "$recently_used"
-    }
+search_content() {
+    local folder="$1"
+    local query="$2"
 
-    selected=$(list_recent | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP"  -p "Recent Files")
-    exit_code="$?"
+    if command -v rg &> /dev/null; then
+        # with ripgrep, filename only
+        rg -il "$query" "$folder" | \
+            format_filename | \
+            sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
+    else
+        # with grep, context and line (-n)
+        #grep -riIn --exclude-dir='.*' -E -o ".{0,30}"$query".{0,30}" $folder
 
-    if [ -n "$selected" ]; then
-        open_file "$exit_code" "$selected"
-        exit 0
+        # with grep, filename only
+        grep -riIl --exclude-dir='.*' "$query" "$folder" | \
+            format_filename | \
+            sed -e "s/<ICON>/\x00icon\x1fthumbnail:\/\//g"
     fi
 }
 
-# show multiline context
-# grep -ri -E -o ".{0,40}hello.{0,40}" | sed 's/$/|/' | sed 's/:/\n/' | sed '/|$/{N;s/\n//}' | rofi -dmenu -i -eh 2 -sep "|" | head -n 1
-
-search_contents() {
-	# use a while loop to keep searching
-	while query=$(echo | $ROFI_CMD -p "String to Match"); do
-        [ -z "$query" ] && break
-
-        if command -v rg &> /dev/null; then
-            if [ -n "$SHOW_CONTEXT" ]; then
-                selected=$(cd "$HOME" && rg -i -e ".{0,30}${query}.{0,30}" | $ROFI_CMD -p "Matches" | cut -d':' -f1)
-            else
-                selected=$(cd "$HOME" && rg -i -l "${query}" | $ROFI_CMD -p "Matches")
-            fi
-        else
-            if [ -n "$SHOW_CONTEXT" ]; then
-                selected=$(cd "$HOME" && grep -ri --exclude-dir='.*' -E -o ".{0,30}${query}.{0,30}" | $ROFI_CMD -p "Matches" | cut -d':' -f1)
-            else
-                selected=$(cd "$HOME" && grep -ri --exclude-dir='.*' -m 1 -I -l "${query}" | $ROFI_CMD -p "Matches")
-            fi
-        fi
-
+menu_folder() {
+    local folder="$1"
+    local regex="$2"
+    
+    while true; do
+        selected=$(search_folder "$folder" "$regex" | \
+            $ROFI -dmenu -i \
+            $flags \
+            $shortcuts \
+            -theme-str "$theme" \
+            -p "$prompt" \
+            -mesg "$message")
+            
         exit_code="$?"
 
-        if [ -n "$selected" ]; then
-            open_file "$exit_code" "$HOME/$selected"
-            exit 0
+        [[ -n "$SEARCH_ICONS" || "$search_type" = "Pictures" ]] && selected=$(compose_filename "$selected")
+
+        [ "$exit_code" -eq 0 ] && xdg-open "$selected" && exit 0
+        [ "$exit_code" -eq 1 ] && break
+        [ "$exit_code" -eq 10 ] && copy_to_clip "$selected" && exit 0
+        [ "$exit_code" -eq 11 ] && theme="$theme_list"
+        [ "$exit_code" -eq 12 ] && theme="$theme_icons"
+        [ "$exit_code" -eq 13 ] && theme="$theme_preview"
+    done
+}
+
+menu_recent() {
+    while true; do
+        selected=$(search_recent | \
+            $ROFI -dmenu -i \
+            $flags \
+            $shortcuts \
+            -theme-str "$theme" \
+            -p "$prompt" \
+            -mesg "$message")
+            
+        exit_code="$?"
+
+        [ -n "$SEARCH_ICONS" ] && selected=$(compose_filename "$selected")
+
+        [ "$exit_code" -eq 0 ] && xdg-open "$selected" && exit 0
+        [ "$exit_code" -eq 1 ] && break
+        [ "$exit_code" -eq 10 ] && copy_to_clip "$selected" && exit 0
+        [ "$exit_code" -eq 11 ] && theme="$theme_list"
+        [ "$exit_code" -eq 12 ] && theme="$theme_icons"
+        [ "$exit_code" -eq 13 ] && theme="$theme_preview"
+    done
+}
+
+menu_content() {
+    local folder="$1"
+    local query="$2"
+    
+    while true; do
+        selected=$(search_content "$folder" "$query" | \
+            $ROFI -dmenu -i \
+            $flags \
+            $shortcuts \
+            -theme-str "$theme" \
+            -p "$prompt" \
+            -mesg "$message")
+            
+        exit_code="$?"
+
+        [ -n "$SEARCH_ICONS" ] && selected=$(compose_filename "$selected")
+
+        [ "$exit_code" -eq 0 ] && xdg-open "$selected" && exit 0
+        [ "$exit_code" -eq 1 ] && break
+        [ "$exit_code" -eq 10 ] && copy_to_clip "$selected"
+        [ "$exit_code" -eq 11 ] && theme="$theme_list"
+        [ "$exit_code" -eq 12 ] && theme="$theme_icons"
+        [ "$exit_code" -eq 13 ] && theme="$theme_preview"
+    done
+}
+
+copy_to_clip() {
+    if [ -n "$WAYLAND_DISPLAY" ]; then
+        wl-copy "$@"
+    elif [ -n "$DISPLAY" ]; then
+        echo "$@" | xclip -selection clipboard
+        [ -n "$paste_clip" ] && coproc ( sleep 0.5; xdotool key "ctrl+v" )
+    fi
+    
+    exit 0
+}
+
+init_search() {
+    if [ -n "$search_type" ]; then
+        case "$search_type" in
+            "All")
+                regex=".*" ;;
+            "Books")
+                regex=".*\.\(djvu\|epub\|mobi\|cbr\)" ;;
+            "Content")
+                file_contents="1" ;;
+            "Desktop")
+                path="$HOME/Desktop" ;;
+            "Documents")
+                regex=".*\.\(pdf\|txt\|md\|csv\|xlsx\|doc\|docx\)" ;;
+            "Downloads")
+                path="$HOME/Downloads" ;;
+            "Music")
+                regex=".*\.\(mp3\|wav\|m3u\|acc\|flac\|ogg\)" ;;
+            "Pictures")
+                # always show preview for images
+                flags="-show-icons -eh 2 -sep | -markup-rows"
+                theme="$theme_icons"
+                regex=".*\.\(jpg\|jpeg\|png\|tif\|tiff\|nef\|raw\|dng\|webp\|bmp\|xcf\)" ;;
+            "Recent")
+                recent_files="1" ;;
+            "Videos")
+                regex=".*\.\(mkv\|avi\|mp4\|mov\|webm\|yuv\|mpg\|mpeg\|m4v\)" ;;
+            *)
+                echo "Invalid search type:" "$search_type"
+                print_help && exit 1 ;;
+        esac
+    fi
+}
+
+do_search() {
+    if [ -n "$recent_files" ]; then
+        menu_recent
+    elif [ -n "$file_contents" ]; then
+        if [ -n "$query" ]; then
+            menu_content "$path" "$query"
+        else
+            while query=$(echo | $ROFI -dmenu -i -p "String to Match"); do
+                menu_content "$path" "$query"
+            done
         fi
-	done
-}
-
-search_books() {
-    local selected
-    local extensions=("djvu" "epub" "mobi")
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Books")
-    exit_code="$?"
-
-    if [ -n "$selected" ]; then
-        open_file "$exit_code" "$HOME/$selected"
-        exit 0
+    else
+        menu_folder "$path" "$regex"
     fi
 }
 
-search_bookmarks() {
-    "$SCRIPT_PATH"/rofi-firefox.sh && exit 0
+search_menu() {
+    local search_entries="All\nRecent\nContent\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos"
+    
+    # remember last entry chosen
+    local selected_row=0
+    
+    while choice=$(echo -en "$search_entries" | \
+        $ROFI -dmenu -i \
+            -selected-row ${selected_row} \
+            -format 'i s' \
+            -p "$prompt"); do
+
+        # reset
+        recent_files=""
+        file_contents=""
+        path="$initial_path"
+        regex="$initial_regex"
+
+        [ -z "$SEARCH_ICONS" ] && theme=""
+        [ -z "$SEARCH_ICONS" ] && flags=""
+        
+        selected_row=$(echo "$choice" | awk '{print $1;}')
+        search_type=$(echo "$choice" | cut -d' ' -f2-)
+        
+        init_search
+        do_search
+    done
+    
+    exit 1
 }
 
-search_documents() {
-    local selected
-    local extensions=("pdf" "txt" "md" "xlsx" "doc" "docx")
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Documents")
-
-    if [ -n "$selected" ]; then
-        open_file "$HOME/$selected"
-        exit 0
-    fi
+print_help() {
+    echo "Available options: [-h|H|p|q|r|R|t|v]"
+    echo
+    echo "-h     Print this help."
+    echo "-H     Include hidden files."
+    echo "-m     Show menu with all search types"
+    echo "-p     Path to search."
+    echo "-q     Query to search in file contents. Overrides all options except path."
+    echo "-r     Regex to filter file extensions, eg. \".*\.\(jpg\|png\|zip\)\"."
+    echo "-R     Search recently used files. Overrides all options."
+    echo "-t     Search file type (All,Books,Desktop,Documents,Downloads,Content,Music,Pictures,Recent,Videos)."
+    echo "-v     Paste clipboard when copy shortcut is pressed"
+    echo "       Can override path or regex."
+    echo
 }
 
-search_downloads() {
-    local selected
+while getopts ":hHmRr:p:q:t:v" option; do
+    case $option in
+        h) # display help
+            print_help && exit 1;;
+        H) # include hidden files
+            skip_hidden="" ;;
+        m) # show menu with all search types
+            show_menu="1" ;;
+        p) # path to search
+            initial_path="$OPTARG" 
+            path="$initial_path" ;;
+        q) # content to search
+            file_contents="1"
+            query="$OPTARG" ;;
+        r) # regex to filter files
+            initial_regex="$OPTARG" 
+            regex="$initial_regex" ;;
+        R) # search recent files
+            recent_files="1" ;;
+        t) # search file type
+            search_type="$OPTARG" ;;
+        v) # auto paste clipboard
+            paste_clip="1" ;;
+        \?) # display help and exit
+            echo "Invalid option:" "$1"
+            print_help && exit 1 ;;
+    esac
+done
 
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Downloads")
-    exit_code="$?"
-
-	if [ -n "$selected" ]; then
-        open_file "$exit_code"  "$HOME/Downloads/$selected"
-        exit 0
-    fi
-}
-
-search_desktop() {
-    local selected
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Desktop")
-    exit_code="$?"
-
-	if [ -n "$selected" ]; then
-        open_file "$exit_code" "$HOME/Desktop/$selected"
-        exit 0
-    fi
-}
-
-search_music() {
-    local selected
-    local extensions=("mp3" "wav" "m3u" "aac" "flac" "ogg")
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Music")
-    exit_code="$?"
-
-    if [ -n "$selected" ]; then
-        open_file "$exit_code" "$HOME/$selected"
-        exit 0
-    fi
-}
-
-build_theme() {
-    rows=$1
-    cols=$2
-    icon_size=$3
-
-    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
-}
-
-search_pics() {
-    # TODO: change theme with keybind
-    local selected
-    local extensions=("jpg" "jpeg" "png" "tif" "tiff" "nef" "raw" "dng" "webp" "bmp" "xcf")
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD -show-icons -theme-str "$(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)" $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Pictures")
-    exit_code="$?"
-
-    if [ -n "$selected" ]; then
-        open_file "$exit_code" "$HOME/$selected"
-        exit 0
-    fi
-}
-
-search_tnt() {
-    "$SCRIPT_PATH"/rofi-tnt.sh && exit 0
-}
-
-search_videos() {
-    local selected
-    local extensions=("mkv" "avi" "mp4" "mov" "webm" "yuv" "mpg" "mpeg" "m4v")
-
-    selected=$(search_command "$HOME" "${extensions[@]}" | $ROFI_CMD $search_shortcuts -mesg "$SEARCH_SHORTCUTS_HELP" -p "Videos")
-    exit_code="$?"
-
-    if [ -n "$selected" ]; then
-        open_file "$exit_code" "$HOME/$selected"
-        exit 0
-    fi
-}
-
-search_menu "$1"
+if [ -n "$show_menu" ]; then
+    search_menu
+else
+    init_search
+    do_search
+fi
 
 exit 1

@@ -92,6 +92,7 @@ declare -A commands=(
     ["Bluetooth"]=bluetooth
     ["Display"]=display
     ["Volume"]=volume
+    ["Rofi Sounds"]=sounds
     ["Brightness"]=brightness
     ["Keyboard Layout"]=kb_layout
     ["Timezone"]=world_clocks
@@ -111,7 +112,7 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWatch Movies/Series\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
 utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
 
@@ -230,51 +231,51 @@ shortcuts() {
 }
 
 search_all() {
-    "$SCRIPT_PATH"/rofi-search.sh "All Files" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "All" && exit
 }
 
 search_recent() {
-    "$SCRIPT_PATH"/rofi-search.sh "Recently Used" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Recent" && exit
 }
 
 search_contents() {
-    "$SCRIPT_PATH"/rofi-search.sh "File Contents" && exit
-}
-
-search_bookmarks() {
-    "$SCRIPT_PATH"/rofi-search.sh "Bookmarks" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Content" && exit
 }
 
 search_books() {
-    "$SCRIPT_PATH"/rofi-search.sh "Books" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Books" && exit
 }
 
 search_documents() {
-    "$SCRIPT_PATH"/rofi-search.sh "Documents" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Documents" && exit
 }
 
 search_downloads() {
-    "$SCRIPT_PATH"/rofi-search.sh "Downloads" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Downloads" && exit
 }
 
 search_desktop() {
-    "$SCRIPT_PATH"/rofi-search.sh "Desktop" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Desktop" && exit
 }
 
 search_music() {
-    "$SCRIPT_PATH"/rofi-search.sh "Music" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Music" && exit
 }
 
 search_pics() {
-    "$SCRIPT_PATH"/rofi-search.sh "Pictures" && exit
-}
-
-search_tnt() {
-    "$SCRIPT_PATH"/rofi-search.sh "TNT Village" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Pictures" && exit
 }
 
 search_videos() {
-    "$SCRIPT_PATH"/rofi-search.sh "Videos" && exit
+    "$SCRIPT_PATH"/rofi-search.sh -t "Videos" && exit
+}
+
+search_bookmarks() {
+    "$SCRIPT_PATH"/rofi-firefox.sh && exit
+}
+
+search_tnt() {
+    "$SCRIPT_PATH"/rofi-tnt.sh && exit
 }
 
 cheat_sh() {
@@ -519,6 +520,10 @@ display() {
 
 volume() {
     "$SCRIPT_PATH"/rofi-volume.sh
+}
+
+sounds() {
+    "$SCRIPT_PATH"/rofi-sounds.sh
 }
 
 set_lang() {

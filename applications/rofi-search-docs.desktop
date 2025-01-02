@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=Documents
 Comment=
-Exec=rofi-search.sh "Documents"
+Exec=rofi-search.sh -t "Documents"
 Icon=office-document
 Terminal=false
 Type=Application
