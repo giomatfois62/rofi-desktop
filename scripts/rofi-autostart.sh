@@ -8,7 +8,7 @@
 
 ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-AUTOSTART_DIR="$ROFI_CACHE_DIR/autostart}"
+AUTOSTART_DIR="$ROFI_CACHE_DIR/autostart"
 
 list_entries() {
     # handle empty XDG_CURRENT_DESKTOP env var
@@ -50,13 +50,13 @@ gen_entry_menu() {
 
     file_name=$(echo "$1" | cut -f1 -d" ")
     file_path="$AUTOSTART_DIR/$file_name".desktop
-    proc_name=$(grep "Exec=" $file_path | cut -f2 -d"=" | head -n 1)
+    proc_name=$(grep "Exec=" $file_path | cut -f2- -d"=" | head -n 1)
     proc_running=$(pgrep -f "$proc_name")
 
     if [ -n "$proc_running" ]; then
 	    echo "Stop" " " "$proc_name"
     else
-	    echo "Start" " " "($proc_name)"
+	    echo "Start" " " "$proc_name"
     fi
 
     echo "Edit"
@@ -90,14 +90,14 @@ disable_app() {
 
 start_app() {
     desktop_file="$AUTOSTART_DIR/$1".desktop
-    cmd=$(grep "Exec=" $desktop_file | cut -f2 -d"=" | head -n 1)
+    cmd=$(grep "Exec=" $desktop_file | cut -f2- -d"=" | head -n 1)
 
     $cmd &
 }
 
 stop_app() {
     desktop_file="$AUTOSTART_DIR/$1".desktop
-    cmd=$(grep "Exec=" $desktop_file | cut -f2 -d"=" | head -n 1)
+    cmd=$(grep "Exec=" $desktop_file | cut -f2- -d"=" | head -n 1)
 
     pkill -f $cmd
 }
