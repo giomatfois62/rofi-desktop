@@ -14,11 +14,13 @@
 - Experiment with dynamic themes and transparency (https://davatorium.github.io/rofi/guides/DynamicThemes/dynamic_themes/)
 - Experiment with columns and tabs
 - Experiment with custom thumbnailers: rofi-flathub, rofi-radio, rofi-tv, rofi-podcasts, rofi-xkcd
-- Improve text thumbnailer (https://imagemagick.org/Usage/text/)
+- Improve text thumbnailer (https://imagemagick.org/Usage/text/ - use head of text files to produce preview)
 - Use new recursivebrowser to search all files
-- Add toggle file preview shortcut in search menu
-- Better file search results (2 lines)
 - Blacklist folders in search menu
+- Move github repo description in submenu
+- Scrape using xmllint as much as possible to remove python dependencies
+- Toggle preview/grid in rofi-xkcd
+- Use mesg box to display instructions in rofi-todo and rofi-notes
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -94,6 +96,8 @@
 - Add fortune script (DONE)
 - Add option to sort wallpapers by creation/modification date (DONE)
 - Create hangman game (DONE)
+- Add toggle file preview shortcut in search menu (DONE)
+- Better file search results (2 lines) (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
