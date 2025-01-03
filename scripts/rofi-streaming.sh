@@ -1,14 +1,15 @@
 #!/usr/bin/env sh
 
-LOBSTER_VERSION="4.3.0"
+LOBSTER_VERSION="4.3.4"
 
 ### General Variables ###
 config_file="$HOME/.config/lobster/lobster_config.sh"
 lobster_editor=${VISUAL:-${EDITOR}}
-tmp_dir="/tmp/lobster" && mkdir -p "$tmp_dir"
-lobster_socket="/tmp/lobster.sock"                     # Used by mpv (check the play_video function)
+tmp_dir="${TMPDIR:-/tmp}/lobster" && mkdir -p "$tmp_dir"
+lobster_socket="${TMPDIR:-/tmp}/lobster.sock" # Used by mpv (check the play_video function)
+lobster_logfile="${TMPDIR:-/tmp}/lobster.log"
 applications="$HOME/.local/share/applications/lobster" # Used for external menus (for now just rofi)
-images_cache_dir="/tmp/lobster/lobster-images"         # Used for storing downloaded images of movie covers
+images_cache_dir="$tmp_dir/lobster-images"             # Used for storing downloaded images of movie covers
 
 ### Notifications ###
 command -v notify-send >/dev/null 2>&1 && notify="true" || notify="false" # check if notify-send is installed
@@ -40,13 +41,14 @@ presence="$tmp_dir/presence"                   # Used by the rich presence funct
 small_image="https://www.pngarts.com/files/9/Juvenile-American-Lobster-PNG-Transparent-Image.png"
 
 ### OS Specific Variables ###
-separator=':'   # default value
-path_thing="\\" # default value
-sed='sed'       # default value
+separator=':'             # default value
+path_thing="\\"           # default value
+sed='sed'                 # default value
+ueberzugpp_tmp_dir="/tmp" # for some reason ueberzugpp only uses $TMPDIR on Darwin
 # shellcheck disable=SC2249
 case "$(uname -s)" in
     MINGW* | *Msys) separator=';' && path_thing='' ;;
-    *arwin) sed="gsed" ;;
+    *arwin) sed="gsed" && ueberzugpp_tmp_dir="${TMPDIR:-/tmp}" ;;
 esac
 
 # Checks if any of the provided arguments are -e or --edit
@@ -67,12 +69,12 @@ rpc_cleanup() {
     rm "$handshook" "$ipclog" "$presence" >/dev/null
 }
 cleanup() {
-    [ "$debug" != "true" ] && rm -rf /tmp/lobster/
-    [ "$remove_tmp_lobster" = "true" ] && rm -rf /tmp/lobster/
+    [ "$debug" != "true" ] && rm -rf "$tmp_dir"
+    [ "$remove_tmp_lobster" = "true" ] && rm -rf "$tmp_dir"
 
     if [ "$image_preview" = "true" ] && [ "$use_external_menu" = "false" ] && [ "$use_ueberzugpp" = "true" ]; then
         killall ueberzugpp 2>/dev/null
-        rm -f /tmp/ueberzugpp-*
+        rm -f "$ueberzugpp_tmp_dir"/ueberzugpp-*
     fi
     set +x && exec 2>&-
 }
@@ -118,7 +120,7 @@ usage() {
     -v, -V, --version
       Show the version of the script
     -x, --debug
-      Enable debug mode (prints out debug info to stdout and also saves it to /tmp/lobster.log)
+      Enable debug mode (prints out debug info to stdout and also saves it to \$TEMPDIR/lobster.log)
 
   Note:
     All arguments can be specified in the config file as well.
@@ -192,10 +194,10 @@ configuration() {
 # The reason I use additional file descriptors is because of the use of tee
 # which when piped into would hijack the terminal, which was unwanted behavior
 # since there are SSH use cases for mpv and since I wanted to have a logging mechanism
-exec 3>&1 4>&2 1>/tmp/lobster.log 2>&1
+exec 3>&1 4>&2 1>"$lobster_logfile" 2>&1
 {
     # check that the necessary programs are installed
-    dep_ch "grep" "$sed" "curl" || true
+    #dep_ch "grep" "$sed" "curl" "fzf" || true
     if [ "$use_external_menu" = "true" ]; then
         dep_ch "rofi" || true
     fi
@@ -302,7 +304,7 @@ EOF
             cover_url=$(printf "%s" "$cover_url" | sed -E 's/\/[[:digit:]]+x[[:digit:]]+\//\/1000x1000\//')
             curl -s -o "$images_cache_dir/  $title ($type)  $id.jpg" "$cover_url" &
             if [ "$use_external_menu" = "true" ]; then
-                entry=/tmp/lobster/applications/"$id.desktop"
+                entry="$tmp_dir/applications/$id.desktop"
                 # The reason for the spaces is so that only the title can be displayed when using rofi
                 # or fzf, while still keeping the id and type in the string after it's selected
                 generate_desktop "$title ($type)" "$images_cache_dir/  $title ($type)  $id.jpg" >"$entry" &
@@ -313,14 +315,14 @@ EOF
     # defaults to chafa
     image_preview_fzf() {
         if [ "$use_ueberzugpp" = "true" ]; then
-            UB_PID_FILE="/tmp/lobster/.$(uuidgen)"
+            UB_PID_FILE="$tmp_dir.$(uuidgen)"
             if [ -z "$ueberzug_output" ]; then
                 ueberzugpp layer --no-stdin --silent --use-escape-codes --pid-file "$UB_PID_FILE"
             else
                 ueberzugpp layer -o "$ueberzug_output" --no-stdin --silent --use-escape-codes --pid-file "$UB_PID_FILE"
             fi
             UB_PID="$(cat "$UB_PID_FILE")"
-            LOBSTER_UEBERZUG_SOCKET=/tmp/ueberzugpp-"$UB_PID".socket
+            LOBSTER_UEBERZUG_SOCKET="$ueberzugpp_tmp_dir/ueberzugpp-$UB_PID.socket"
             choice=$(find "$images_cache_dir" -type f -exec basename {} \; | fzf -i -q "$1" --cycle --preview-window="$preview_window_size" --preview="ueberzugpp cmd -s $LOBSTER_UEBERZUG_SOCKET -i fzfpreview -a add -x $ueberzug_x -y $ueberzug_y --max-width $ueberzug_max_width --max-height $ueberzug_max_height -f $images_cache_dir/{}" --reverse --with-nth 2 -d "  ")
             ueberzugpp cmd -s "$LOBSTER_UEBERZUG_SOCKET" -a exit
         else
@@ -352,7 +354,7 @@ EOF
             episode_id=$(printf "%s" "$movie_page" | $sed -nE "s_.*-([0-9]*)\.([0-9]*)\$_\2_p")
         fi
         # request to get the embed
-        embed_link=$(curl -s "https://${base}/ajax/sources/${episode_id}" | $sed -nE "s_.*\"link\":\"([^\"]*)\".*_\1_p")
+        embed_link=$(curl -s "https://${base}/ajax/episode/sources/${episode_id}" | $sed -nE "s_.*\"link\":\"([^\"]*)\".*_\1_p")
         if [ -z "$embed_link" ]; then
             send_notification "Error" "Could not get embed link"
             exit 1
@@ -373,15 +375,9 @@ EOF
         [ -z "$subs_links" ] && send_notification "No subtitles found"
     }
     json_from_id() {
-        # json_data=$(curl -s "http://localhost:8888/.netlify/functions/decrypt?id=${source_id}")
-        json_data=$(curl -s "https://lobster-decryption.netlify.app/decrypt?id=${source_id}")
+        json_data=$(curl -s "https://testing-embed-decrypt.harc6r.easypanel.host/embed?embed_url=${embed_link}&referrer=https://${base}")
     }
     get_json() {
-        # get the juicy links
-        parse_embed=$(printf "%s" "$embed_link" | $sed -nE "s_(.*)/embed-(4|6)/(.*)\?z=\$_\1\t\2\t\3_p")
-        _provider_link=$(printf "%s" "$parse_embed" | cut -f1)
-        source_id=$(printf "%s" "$parse_embed" | cut -f3)
-        _embed_type=$(printf "%s" "$parse_embed" | cut -f2)
         json_from_id
         if [ -n "$json_data" ]; then
             extract_from_json
@@ -591,6 +587,7 @@ EOF
                 wait
                 save_progress
                 ;;
+            mpv_android) nohup am start --user 0 -a android.intent.action.VIEW -d "$video_link" -n is.xyz.mpv/.MPVActivity -e "title" "$displayed_title" >/dev/null 2>&1 & ;;
             *yncpla*) nohup "syncplay" "$video_link" -- --force-media-title="${displayed_title}" >/dev/null 2>&1 & ;;
             *) $player "$video_link" ;;
         esac
@@ -742,7 +739,7 @@ EOF
             select_desktop_entry ""
         else
             if [ "$use_external_menu" = "true" ]; then
-                choice=$(printf "%s" "$response" | rofi -dmenu -i -p "Choose a Movie or TV Show" -display-columns 4)
+                choice=$(printf "%s" "$response" | rofi -dmenu -i -p "" -mesg "Choose a Movie or TV Show" -display-columns 4)
             else
                 choice=$(printf "%s" "$response" | fzf --reverse --with-nth 4 -d "\t" --header "Choose a Movie or TV Show")
             fi
@@ -758,10 +755,12 @@ EOF
 
     configuration
 
-    # Edge case for Windows, just exits with dep_ch's error message if it can't find mpv.exe either
+    # Edge case for Windows and Android, just exits with dep_ch's error message if it can't find mpv.exe or not on Android either
     if [ "$player" = "mpv" ] && ! command -v mpv >/dev/null; then
         if command -v mpv.exe >/dev/null; then
             player="mpv.exe"
+        elif uname -a | grep -q "ndroid" 2>/dev/null; then
+            player="mpv_android"
         else
             dep_ch mpv.exe
         fi
@@ -883,8 +882,8 @@ EOF
     if [ "$image_preview" = "true" ]; then
         test -d "$images_cache_dir" || mkdir -p "$images_cache_dir"
         if [ "$use_external_menu" = "true" ]; then
-            mkdir -p "/tmp/lobster/applications/"
-            [ ! -L "$applications" ] && ln -sf "/tmp/lobster/applications/" "$applications"
+            mkdir -p "$tmp_dir/applications/"
+            [ ! -L "$applications" ] && ln -sf "$tmp_dir/applications/" "$applications"
         fi
     fi
     [ -z "$provider" ] && provider="Vidcloud"
@@ -894,5 +893,5 @@ EOF
 
     main
 
-} 2>&1 | tee /tmp/lobster.log >&3 2>&4
+} 2>&1 | tee "$lobster_logfile" >&3 2>&4
 exec 1>&3 2>&4
