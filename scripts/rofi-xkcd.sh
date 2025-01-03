@@ -20,6 +20,18 @@ ICON_SIZE=${ICON_SIZE:-6}
 
 mkdir -p "$XKCD_CACHE"
 
+get_comic_list() {
+    curl -s "https://xkcd.com/archive/" -o "$XKCD_CACHE/archive"
+
+    cat "$XKCD_CACHE/archive" | \
+        xmllint --html --xpath '//div[@id="middleContainer"]//a/@href' - | \
+        sed -n 's/.*href="\([^"]*\).*/\1/p' | \
+        sed 's/\///g' > "$XKCD_CACHE/refs"
+    cat "$XKCD_CACHE/archive" | \
+        xmllint --html --xpath '//div[@id="middleContainer"]//a/text()' - > "$XKCD_CACHE/names"
+    paste -d' ' "$XKCD_CACHE/refs" "$XKCD_CACHE/names" > "$XKCD_FILE"
+}
+
 if [ -f "$XKCD_FILE" ]; then
     # compute time delta between current date and news file date
 	news_date=$(date -r "$XKCD_FILE" +%s)
@@ -29,10 +41,10 @@ if [ -f "$XKCD_FILE" ]; then
 
 	# refresh xkcd file if it's too old
 	if [ $delta -gt $XKCD_EXPIRATION_TIME ]; then
-		"$SCRIPT_PATH"/scrape_xkcd.py "$XKCD_FILE"
+		get_comic_list
 	fi
 else
-	"$SCRIPT_PATH"/scrape_xkcd.py "$XKCD_FILE"
+	get_comic_list
 fi
 
 build_theme() {
@@ -47,9 +59,9 @@ if [ -n "$XKCD_THUMBNAILS" ]; then
     theme_flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
 fi
 
-while comic=$(cat "$XKCD_FILE" |\
+while comic=$(echo -e "Random\n$(cat ${XKCD_FILE})" |\
     awk '{print $N"\x00icon\x1fthumbnail://"$1}' |\
-    $ROFI_CMD -p "XKCD" $theme_flags -preview-cmd "$PREVIEW_CMD"); do
+    $ROFI_CMD -p "XKCD" -markup-rows $theme_flags -preview-cmd "$PREVIEW_CMD"); do
 
     if [ "$comic" = "Random" ]; then
         comic=$(shuf -n 1 "$XKCD_FILE")
