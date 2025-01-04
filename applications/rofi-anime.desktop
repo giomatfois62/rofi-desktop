@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Anime
+Name=Watch Anime
 Comment=
 Exec=rofi-anime.sh --rofi
 Icon=multimedia-video-player

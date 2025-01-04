@@ -405,7 +405,7 @@ while [ $# -gt 0 ]; do
 done
 [ "$use_external_menu" = "0" ] && multi_selection_flag="${ANI_CLI_MULTI_SELECTION:-"-m"}"
 [ "$use_external_menu" = "1" ] && multi_selection_flag="${ANI_CLI_MULTI_SELECTION:-"-multi-select"}"
-printf "\33[2K\r\033[1;34mChecking dependencies...\033[0m\n"
+#printf "\33[2K\r\033[1;34mChecking dependencies...\033[0m\n"
 dep_ch "curl" "sed" "grep" || true
 [ "$skip_intro" = 1 ] && (dep_ch "ani-skip" || true)
 if [ -z "$ANI_CLI_NON_INTERACTIVE" ]; then dep_ch fzf || true; fi
@@ -427,7 +427,7 @@ case "$search" in
         anime_list=$(while read -r ep_no id title; do process_hist_entry & done <"$histfile")
         wait
         [ -z "$anime_list" ] && die "No unwatched series in history!"
-        [ -z "${index##*[!0-9]*}" ] && id=$(printf "%s" "$anime_list" | nl -w 2 | sed 's/^[[:space:]]//' | nth "Select anime: " | cut -f1)
+        [ -z "${index##*[!0-9]*}" ] && id=$(printf "%s" "$anime_list" | nl -w 2 | sed 's/^[[:space:]]//' | nth "Select anime" | cut -f1)
         [ -z "${index##*[!0-9]*}" ] || id=$(printf "%s" "$anime_list" | sed -n "${index}p" | cut -f1)
         [ -z "$id" ] && exit 1
         title=$(printf "%s" "$anime_list" | grep "$id" | cut -f2 | sed 's/ - episode.*//')
@@ -441,7 +441,7 @@ case "$search" in
                 printf "\33[2K\r\033[1;36mSearch anime: \033[0m" && read -r query
             done
         else
-            [ -z "$query" ] && query=$(printf "" | external_menu "" "Search anime: ")
+            [ -z "$query" ] && query=$(printf "" | external_menu "" "Search anime")
             [ -z "$query" ] && exit 1
         fi
         # for checking new releases by specifying anime name
@@ -451,13 +451,13 @@ case "$search" in
         anime_list=$(search_anime "$query")
         [ -z "$anime_list" ] && die "No results found!"
         [ "$index" -eq "$index" ] 2>/dev/null && result=$(printf "%s" "$anime_list" | sed -n "${index}p")
-        [ -z "$index" ] && result=$(printf "%s" "$anime_list" | nl -w 2 | sed 's/^[[:space:]]//' | nth "Select anime: ")
+        [ -z "$index" ] && result=$(printf "%s" "$anime_list" | nl -w 2 | sed 's/^[[:space:]]//' | nth "Select anime")
         [ -z "$result" ] && exit 1
         title=$(printf "%s" "$result" | cut -f2)
         allanime_title="$(printf "%s" "$title" | cut -d'(' -f1 | tr -d '[:punct:]')"
         id=$(printf "%s" "$result" | cut -f1)
         ep_list=$(episodes_list "$id")
-        [ -z "$ep_no" ] && ep_no=$(printf "%s" "$ep_list" | nth "Select episode: " "$multi_selection_flag")
+        [ -z "$ep_no" ] && ep_no=$(printf "%s" "$ep_list" | nth "Select episode" "$multi_selection_flag")
         [ -z "$ep_no" ] && exit 1
         ;;
 esac
@@ -477,7 +477,7 @@ while cmd=$(printf "next\nreplay\nprevious\nselect\nchange_quality\nquit" | nth 
         next) ep_no=$(printf "%s" "$ep_list" | sed -n "/^${ep_no}$/{n;p;}") 2>/dev/null ;;
         replay) episode="$replay" ;;
         previous) ep_no=$(printf "%s" "$ep_list" | sed -n "/^${ep_no}$/{g;1!p;};h") 2>/dev/null ;;
-        select) ep_no=$(printf "%s" "$ep_list" | nth "Select episode: " "$multi_selection_flag") ;;
+        select) ep_no=$(printf "%s" "$ep_list" | nth "Select episode" "$multi_selection_flag") ;;
         change_quality)
             episode=$(printf "%s" "$links" | launcher)
             quality=$(printf "%s" "$episode" | grep -oE "^[0-9]+")
