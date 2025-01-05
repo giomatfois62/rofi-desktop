@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Trivia
 Comment=
-Exec=rofi-quiz.py
+Exec=rofi-quiz.sh
 Icon=dialog-question
 Terminal=false
 Type=Application

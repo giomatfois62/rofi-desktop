@@ -76,7 +76,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Code Projects (rofi-projects.sh, browse code projects directory and open projects with preferred editor)
   - Fortune (rofi-fortune.sh, show fortunes optionally with cowsay)
   - Hangman (rofi-hangman.sh, play hangman with many word categories)
-  - Trivia (rofi-quiz.py, answer trivia questions from Open Trivia DB)
+  - Trivia (rofi-quiz.sh, answer trivia questions from Open Trivia DB)
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - KeePassXC (rofi-keepassxc.sh)

@@ -335,7 +335,7 @@ hangman() {
 }
 
 trivia() {
-    "$SCRIPT_PATH"/rofi-quiz.py
+    "$SCRIPT_PATH"/rofi-quiz.sh
 }
 
 mpd_controls() {
