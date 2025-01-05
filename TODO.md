@@ -17,8 +17,8 @@
 - Improve text thumbnailer (https://imagemagick.org/Usage/text/ - use head of text files to produce preview)
 - Use new recursivebrowser to search all files
 - Blacklist folders in search menu
-- Move github repo description in submenu
-- Scrape using xmllint as much as possible to remove python dependencies
+- Move github repo descriptions in submenu
+- Scrape using xmllint as much as possible to remove python dependencies (books, livetv, vcf)
 - Toggle preview/grid in rofi-xkcd
 - Use mesg box to display instructions in rofi-todo and rofi-notes
 
@@ -98,6 +98,7 @@
 - Create hangman game (DONE)
 - Add toggle file preview shortcut in search menu (DONE)
 - Better file search results (2 lines) (DONE)
+- Rewrite rofi-quiz in bash (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
