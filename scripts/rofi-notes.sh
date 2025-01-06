@@ -58,7 +58,7 @@ note_context() {
 }
 
 new_note() {
-    local title=$(echo -e "Cancel" | rofi -dmenu -p "Input title: ")
+    local title=$(echo -e "Cancel" | rofi -dmenu -p "Note title")
 
     case "$title" in
         "Cancel")
@@ -95,7 +95,7 @@ main()
         first_menu="New Note\n${all_notes}"
     fi
 
-    local note=$(echo -e "$first_menu"  | $ROFI_CMD -p "Note: ")
+    local note=$(echo -e "$first_menu"  | $ROFI_CMD -p "Notes")
 
     case $note in
         "New Note")
