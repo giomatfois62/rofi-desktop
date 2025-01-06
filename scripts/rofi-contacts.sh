@@ -23,7 +23,7 @@ rm "$CONTACTS_CACHE"
 "$SCRIPT_PATH/scrape_vcf.py" "$CONTACTS_FILE" "$CONTACTS_CACHE"
 
 if [ ! -f "$CONTACTS_CACHE" ]; then
-    echo "Failed to scrape contacts list, check $CONTACTS_FILE exists and is valid"
+    rofi -e "Failed to scrape contacts list, make sure $CONTACTS_FILE exists and is valid"
     exit 1
 fi
 
@@ -33,7 +33,7 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
 elif [ -n "$DISPLAY" ]; then
     clip_cmd="xclip -sel clip"
 else
-    echo "Error: No Wayland or X11 display detected. Clipboard actions will not work" >&2
+    rofi -e "Error: No Wayland or X11 display detected. Clipboard actions will not work"
 fi
 
 # show menu
