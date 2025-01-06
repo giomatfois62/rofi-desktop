@@ -16,9 +16,9 @@ function tmux_sessions() {
     tmux list-session -F '#S'
 }
 
-TMUX_SESSION=$( (echo new; tmux_sessions) | $ROFI_CMD -p "Session")
+TMUX_SESSION=$( (echo "New session"; tmux_sessions) | $ROFI_CMD -p "Session")
 
-if [[ x"new" = x"${TMUX_SESSION}" ]]; then
+if [[ x"New session" = x"${TMUX_SESSION}" ]]; then
     $TERMINAL -e tmux new-session &
 	exit 0
 elif [[ -z "${TMUX_SESSION}" ]]; then
