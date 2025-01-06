@@ -12,8 +12,14 @@ current_timezone="Current time zone: "$(readlink /etc/localtime | sed "s/\/usr\/
 current_time=$(date "+%H:%M, %a %d %b %Y")
 msg="$current_timezone&#x0a;$current_time"
 
-while timezone=$(cd /usr/share/zoneinfo/posix && find * -type f -or -type l |\
-    sort | xargs -I{} sh -c "echo -n {}': ' && TZ={} date \"+%H:%M, %a %d %b %Y\"" |\
+get_timezones() {
+    cd /usr/share/zoneinfo/posix &&
+    find * -type f -or -type l |\
+        sort |\
+        xargs -I{} sh -c "echo -n {}': ' && TZ={} date \"+%H:%M, %a %d %b %Y\""
+}
+
+while timezone=$(get_timezones |\
     $ROFI_CMD -p "Time Zone" -mesg "$msg"); do
     timezone_text=$(echo "$timezone" | cut -d':' -f1)
 
