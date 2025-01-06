@@ -37,7 +37,7 @@ select_channel(){
     
     # favicon key contains the url to the icon to show
     while name=$(\
-            jq '.[] | "\(.name) {\(.country)}<ICON>\(.favicon)"' "$RADIO_FILE" |\
+            jq '.[] | "[\(.countrycode)] \(.name)<ICON>\(.favicon)"' "$RADIO_FILE" |\
             tr -d '"' |\
             sort |\
             sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
@@ -47,7 +47,7 @@ select_channel(){
         index=$(echo "$name" | awk '{print $1;}')
         echo "$index" > "$RADIO_CACHE"
 
-        name_str=$(echo "$name" | cut -d' ' -f2- | cut -d"{" -f1 | sed 's/ *$//g')
+        name_str=$(echo "$name" | cut -d' ' -f3-)
         var=".[] | select(.name==\"$name_str\") | .url"
 
         play "$(jq "$var" "$RADIO_FILE" | tr -d '"')"
