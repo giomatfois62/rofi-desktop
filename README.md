@@ -91,6 +91,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - VPN (wireguard-rofi.sh, manages wireguard connections)
   - Bluetooth (rofi-bluetooth.sh)
   - Display (rofi-monitor-layout.sh)
+  - Battery (rofi-battery-info.sh)
   - Default Applications (rofi-mime.sh, set audio/video/images/PDF viewers and file manager)
   - Autostart Applications (rofi-autostart.sh, manage xdg/autostart desktop files)
   - Keyboard Layout (rofi-keyboard-layout.sh)
