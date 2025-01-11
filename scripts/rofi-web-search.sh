@@ -18,6 +18,7 @@ case "$API" in
     "youtube") api_url="https://www.youtube.com/results?search_query=" ;;
     "wikipedia") api_url="https://en.wikipedia.org/?curid=" ;;
     "archwiki") api_url="https://wiki.archlinux.org/index.php?search=" ;;
+    "maps") api_url="https://nominatim.openstreetmap.org/search?q=" ;;
     *) echo "unrecognized API" && exit 1 ;;
 esac
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+urlencode() {
+	echo ${@// /"%20"}
+}
+
+url="https://nominatim.openstreetmap.org/search?q=$(urlencode "$*")&format=json&limit=5"
+curl "$url" | jq ".[].display_name"
