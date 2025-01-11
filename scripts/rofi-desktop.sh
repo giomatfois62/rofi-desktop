@@ -94,6 +94,7 @@ declare -A commands=(
     ["Volume"]=volume
     ["Rofi Sounds"]=sounds
     ["Brightness"]=brightness
+    ["Battery"]=battery_info
     ["Keyboard Layout"]=kb_layout
     ["Timezone"]=world_clocks
     ["Default Applications"]=default_apps
@@ -112,7 +113,7 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWatch Movies/Series\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nBattery\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
 utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager"
 
@@ -556,6 +557,10 @@ update_sys() {
 
 system_info() {
     "$SCRIPT_PATH"/rofi-system-info.sh;
+}
+
+battery_info() {
+    "$SCRIPT_PATH"/rofi-battery-info.sh;
 }
 
 check_program() {
