@@ -37,6 +37,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Google
   - Wikipedia
   - Archwiki
+  - Maps
   - Youtube
   - Youtube Feeds (rofi-youtube-feeds.sh, browse youtube channels feeds, based on [yt-feeder](https://github.com/xcdkz/YT-Feeder))
   - GitHub (rofi-github.sh, search github and clone or open repositories)
