@@ -288,7 +288,7 @@ steam_games() {
 }
 
 search() {
-    "$SCRIPT_PATH"/rofi-search.sh && exit
+    "$SCRIPT_PATH"/rofi-search.sh -m && exit
 }
 
 podcasts() {
