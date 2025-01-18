@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Virtual Machines (VirtualBox)
+Comment=
+Exec=rofi-virtualbox.sh
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;

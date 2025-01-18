@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Containers (Docker)
+Comment=
+Exec=rofi-docker.sh
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;Containers;

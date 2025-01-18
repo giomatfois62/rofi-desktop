@@ -85,6 +85,9 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Notifications (uses rofication-daemon.py and rofication-gui.py)
   - Switch Window (window modi)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
+  - VirtualBox VMs (rofi-virtualbox.sh)
+  - libvirt VMs (rofi-libvirt-mode.sh)
+  - Docker Containers (rofi-docker.sh)
 - System Settings
   - Appearance (Qt, GTK, rofi style and wallpaper setter with big thumbnails)
   - Network (networkmanager_dmenu.sh)
@@ -224,3 +227,6 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [xcdkz](https://github.com/xcdkz/YT-Feeder)
 - [justchokingaround](https://github.com/justchokingaround/lobster)
 - [pystardust](https://github.com/pystardust/ani-cli)
+- [calebstewart](https://github.com/calebstewart/rofi-libvirt-mode)
+- [denpolischuk](https://github.com/denpolischuk/rofi-docker)
+- [okraits](https://github.com/okraits/rofi-tools)
