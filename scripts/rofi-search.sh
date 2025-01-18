@@ -10,7 +10,7 @@
 # TODO: order results by date
 # TODO: trash cmd & shortcut
 
-ROFI="${ROFI:-$HOME/Programs/rofi/build/rofi}"
+ROFI="${ROFI:-rofi}"
 SEARCH_ICONS=${SEARCH_ICONS:-}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
