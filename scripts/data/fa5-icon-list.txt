@@ -1,0 +1,1330 @@
+<span lang='500px' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf26e;</span>  500px
+<span lang='Accessible Icon' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf368;</span>  Accessible Icon
+<span lang='Accusoft' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf369;</span>  Accusoft
+<span lang='Acquisitions Incorporated' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf6af;</span>  Acquisitions Incorporated
+<span lang='Ad' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf641;</span>  Ad
+<span lang='Address Book' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2b9;</span>  Address Book
+<span lang='Address Card' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2bb;</span>  Address Card
+<span lang='adjust' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf042;</span>  adjust
+<span lang='App.net' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf170;</span>  App.net
+<span lang='Adobe' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf778;</span>  Adobe
+<span lang='Adversal' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf36a;</span>  Adversal
+<span lang='affiliatetheme' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf36b;</span>  affiliatetheme
+<span lang='Air Freshener' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5d0;</span>  Air Freshener
+<span lang='Algolia' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf36c;</span>  Algolia
+<span lang='align-center' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf037;</span>  align-center
+<span lang='align-justify' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf039;</span>  align-justify
+<span lang='align-left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf036;</span>  align-left
+<span lang='align-right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf038;</span>  align-right
+<span lang='Alipay' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf642;</span>  Alipay
+<span lang='Allergies' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf461;</span>  Allergies
+<span lang='Amazon' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf270;</span>  Amazon
+<span lang='Amazon Pay' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf42c;</span>  Amazon Pay
+<span lang='ambulance' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f9;</span>  ambulance
+<span lang='American Sign Language Interpreting' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a3;</span>  American Sign Language Interpreting
+<span lang='Amilia' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf36d;</span>  Amilia
+<span lang='Anchor' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf13d;</span>  Anchor
+<span lang='Android' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf17b;</span>  Android
+<span lang='AngelList' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf209;</span>  AngelList
+<span lang='Angle Double Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf103;</span>  Angle Double Down
+<span lang='Angle Double Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf100;</span>  Angle Double Left
+<span lang='Angle Double Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf101;</span>  Angle Double Right
+<span lang='Angle Double Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf102;</span>  Angle Double Up
+<span lang='angle-down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf107;</span>  angle-down
+<span lang='angle-left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf104;</span>  angle-left
+<span lang='angle-right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf105;</span>  angle-right
+<span lang='angle-up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf106;</span>  angle-up
+<span lang='Angry Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf556;</span>  Angry Face
+<span lang='Angry Creative' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf36e;</span>  Angry Creative
+<span lang='Angular' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf420;</span>  Angular
+<span lang='Ankh' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf644;</span>  Ankh
+<span lang='App Store' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf36f;</span>  App Store
+<span lang='iOS App Store' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf370;</span>  iOS App Store
+<span lang='Apper Systems AB' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf371;</span>  Apper Systems AB
+<span lang='Apple' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf179;</span>  Apple
+<span lang='Fruit Apple' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5d1;</span>  Fruit Apple
+<span lang='Apple Pay' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf415;</span>  Apple Pay
+<span lang='Archive' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf187;</span>  Archive
+<span lang='Archway' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf557;</span>  Archway
+<span lang='Alternate Arrow Circle Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf358;</span>  Alternate Arrow Circle Down
+<span lang='Alternate Arrow Circle Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf359;</span>  Alternate Arrow Circle Left
+<span lang='Alternate Arrow Circle Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf35a;</span>  Alternate Arrow Circle Right
+<span lang='Alternate Arrow Circle Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf35b;</span>  Alternate Arrow Circle Up
+<span lang='Arrow Circle Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ab;</span>  Arrow Circle Down
+<span lang='Arrow Circle Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a8;</span>  Arrow Circle Left
+<span lang='Arrow Circle Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a9;</span>  Arrow Circle Right
+<span lang='Arrow Circle Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0aa;</span>  Arrow Circle Up
+<span lang='arrow-down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf063;</span>  arrow-down
+<span lang='arrow-left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf060;</span>  arrow-left
+<span lang='arrow-right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf061;</span>  arrow-right
+<span lang='arrow-up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf062;</span>  arrow-up
+<span lang='Alternate Arrows' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0b2;</span>  Alternate Arrows
+<span lang='Alternate Arrows Horizontal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf337;</span>  Alternate Arrows Horizontal
+<span lang='Alternate Arrows Vertical' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf338;</span>  Alternate Arrows Vertical
+<span lang='Artstation' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf77a;</span>  Artstation
+<span lang='Assistive Listening Systems' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a2;</span>  Assistive Listening Systems
+<span lang='asterisk' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf069;</span>  asterisk
+<span lang='Asymmetrik, Ltd.' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf372;</span>  Asymmetrik, Ltd.
+<span lang='At' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1fa;</span>  At
+<span lang='Atlas' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf558;</span>  Atlas
+<span lang='Atlassian' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf77b;</span>  Atlassian
+<span lang='Atom' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5d2;</span>  Atom
+<span lang='Audible' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf373;</span>  Audible
+<span lang='Audio Description' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf29e;</span>  Audio Description
+<span lang='Autoprefixer' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf41c;</span>  Autoprefixer
+<span lang='avianex' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf374;</span>  avianex
+<span lang='Aviato' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf421;</span>  Aviato
+<span lang='Award' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf559;</span>  Award
+<span lang='Amazon Web Services (AWS)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf375;</span>  Amazon Web Services (AWS)
+<span lang='Baby' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf77c;</span>  Baby
+<span lang='Baby Carriage' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf77d;</span>  Baby Carriage
+<span lang='Backspace' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf55a;</span>  Backspace
+<span lang='backward' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf04a;</span>  backward
+<span lang='Balance Scale' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf24e;</span>  Balance Scale
+<span lang='ban' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf05e;</span>  ban
+<span lang='Band-Aid' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf462;</span>  Band-Aid
+<span lang='Bandcamp' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2d5;</span>  Bandcamp
+<span lang='barcode' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf02a;</span>  barcode
+<span lang='Bars' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c9;</span>  Bars
+<span lang='Baseball Ball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf433;</span>  Baseball Ball
+<span lang='Basketball Ball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf434;</span>  Basketball Ball
+<span lang='Bath' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2cd;</span>  Bath
+<span lang='Battery Empty' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf244;</span>  Battery Empty
+<span lang='Battery Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf240;</span>  Battery Full
+<span lang='Battery 1/2 Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf242;</span>  Battery 1/2 Full
+<span lang='Battery 1/4 Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf243;</span>  Battery 1/4 Full
+<span lang='Battery 3/4 Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf241;</span>  Battery 3/4 Full
+<span lang='Bed' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf236;</span>  Bed
+<span lang='beer' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0fc;</span>  beer
+<span lang='Behance' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1b4;</span>  Behance
+<span lang='Behance Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1b5;</span>  Behance Square
+<span lang='bell' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f3;</span>  bell
+<span lang='Bell Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1f6;</span>  Bell Slash
+<span lang='Bezier Curve' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf55b;</span>  Bezier Curve
+<span lang='Bible' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf647;</span>  Bible
+<span lang='Bicycle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf206;</span>  Bicycle
+<span lang='BIMobject' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf378;</span>  BIMobject
+<span lang='Binoculars' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e5;</span>  Binoculars
+<span lang='Biohazard' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf780;</span>  Biohazard
+<span lang='Birthday Cake' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1fd;</span>  Birthday Cake
+<span lang='Bitbucket' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf171;</span>  Bitbucket
+<span lang='Bitcoin' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf379;</span>  Bitcoin
+<span lang='Bity' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf37a;</span>  Bity
+<span lang='Font Awesome Black Tie' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf27e;</span>  Font Awesome Black Tie
+<span lang='BlackBerry' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf37b;</span>  BlackBerry
+<span lang='Blender' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf517;</span>  Blender
+<span lang='Blender Phone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6b6;</span>  Blender Phone
+<span lang='Blind' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf29d;</span>  Blind
+<span lang='Blog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf781;</span>  Blog
+<span lang='Blogger' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf37c;</span>  Blogger
+<span lang='Blogger B' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf37d;</span>  Blogger B
+<span lang='Bluetooth' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf293;</span>  Bluetooth
+<span lang='Bluetooth' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf294;</span>  Bluetooth
+<span lang='bold' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf032;</span>  bold
+<span lang='Lightning Bolt' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0e7;</span>  Lightning Bolt
+<span lang='Bomb' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e2;</span>  Bomb
+<span lang='Bone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5d7;</span>  Bone
+<span lang='Bong' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf55c;</span>  Bong
+<span lang='book' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf02d;</span>  book
+<span lang='Book of the Dead' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6b7;</span>  Book of the Dead
+<span lang='Book Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf518;</span>  Book Open
+<span lang='Book Reader' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5da;</span>  Book Reader
+<span lang='bookmark' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf02e;</span>  bookmark
+<span lang='Bowling Ball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf436;</span>  Bowling Ball
+<span lang='Box' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf466;</span>  Box
+<span lang='Box Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf49e;</span>  Box Open
+<span lang='Boxes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf468;</span>  Boxes
+<span lang='Braille' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a1;</span>  Braille
+<span lang='Brain' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5dc;</span>  Brain
+<span lang='Briefcase' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0b1;</span>  Briefcase
+<span lang='Medical Briefcase' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf469;</span>  Medical Briefcase
+<span lang='Broadcast Tower' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf519;</span>  Broadcast Tower
+<span lang='Broom' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf51a;</span>  Broom
+<span lang='Brush' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf55d;</span>  Brush
+<span lang='BTC' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf15a;</span>  BTC
+<span lang='Bug' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf188;</span>  Bug
+<span lang='Building' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ad;</span>  Building
+<span lang='bullhorn' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a1;</span>  bullhorn
+<span lang='Bullseye' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf140;</span>  Bullseye
+<span lang='Burn' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf46a;</span>  Burn
+<span lang='Büromöbel-Experte GmbH & Co. KG.' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf37f;</span>  Büromöbel-Experte GmbH & Co. KG.
+<span lang='Bus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf207;</span>  Bus
+<span lang='Bus Alt' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf55e;</span>  Bus Alt
+<span lang='Business Time' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf64a;</span>  Business Time
+<span lang='BuySellAds' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf20d;</span>  BuySellAds
+<span lang='Calculator' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ec;</span>  Calculator
+<span lang='Calendar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf133;</span>  Calendar
+<span lang='Alternate Calendar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf073;</span>  Alternate Calendar
+<span lang='Calendar Check' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf274;</span>  Calendar Check
+<span lang='Calendar with Day Focus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf783;</span>  Calendar with Day Focus
+<span lang='Calendar Minus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf272;</span>  Calendar Minus
+<span lang='Calendar Plus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf271;</span>  Calendar Plus
+<span lang='Calendar Times' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf273;</span>  Calendar Times
+<span lang='Calendar with Week Focus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf784;</span>  Calendar with Week Focus
+<span lang='camera' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf030;</span>  camera
+<span lang='Retro Camera' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf083;</span>  Retro Camera
+<span lang='Campground' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6bb;</span>  Campground
+<span lang='Canadian Maple Leaf' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf785;</span>  Canadian Maple Leaf
+<span lang='Candy Cane' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf786;</span>  Candy Cane
+<span lang='Cannabis' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf55f;</span>  Cannabis
+<span lang='Capsules' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf46b;</span>  Capsules
+<span lang='Car' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1b9;</span>  Car
+<span lang='Alternate Car' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5de;</span>  Alternate Car
+<span lang='Car Battery' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5df;</span>  Car Battery
+<span lang='Car Crash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5e1;</span>  Car Crash
+<span lang='Car Side' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5e4;</span>  Car Side
+<span lang='Caret Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0d7;</span>  Caret Down
+<span lang='Caret Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0d9;</span>  Caret Left
+<span lang='Caret Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0da;</span>  Caret Right
+<span lang='Caret Square Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf150;</span>  Caret Square Down
+<span lang='Caret Square Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf191;</span>  Caret Square Left
+<span lang='Caret Square Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf152;</span>  Caret Square Right
+<span lang='Caret Square Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf151;</span>  Caret Square Up
+<span lang='Caret Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0d8;</span>  Caret Up
+<span lang='Carrot' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf787;</span>  Carrot
+<span lang='Shopping Cart Arrow Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf218;</span>  Shopping Cart Arrow Down
+<span lang='Add to Shopping Cart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf217;</span>  Add to Shopping Cart
+<span lang='Cash Register' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf788;</span>  Cash Register
+<span lang='Cat' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6be;</span>  Cat
+<span lang='Amazon Pay Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf42d;</span>  Amazon Pay Credit Card
+<span lang='American Express Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1f3;</span>  American Express Credit Card
+<span lang='Apple Pay Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf416;</span>  Apple Pay Credit Card
+<span lang='Diner's Club Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf24c;</span>  Diner's Club Credit Card
+<span lang='Discover Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1f2;</span>  Discover Credit Card
+<span lang='JCB Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf24b;</span>  JCB Credit Card
+<span lang='MasterCard Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1f1;</span>  MasterCard Credit Card
+<span lang='Paypal Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1f4;</span>  Paypal Credit Card
+<span lang='Stripe Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1f5;</span>  Stripe Credit Card
+<span lang='Visa Credit Card' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1f0;</span>  Visa Credit Card
+<span lang='Centercode' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf380;</span>  Centercode
+<span lang='Centos' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf789;</span>  Centos
+<span lang='certificate' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a3;</span>  certificate
+<span lang='Chair' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6c0;</span>  Chair
+<span lang='Chalkboard' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf51b;</span>  Chalkboard
+<span lang='Chalkboard Teacher' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf51c;</span>  Chalkboard Teacher
+<span lang='Charging Station' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5e7;</span>  Charging Station
+<span lang='Area Chart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1fe;</span>  Area Chart
+<span lang='Bar Chart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf080;</span>  Bar Chart
+<span lang='Line Chart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf201;</span>  Line Chart
+<span lang='Pie Chart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf200;</span>  Pie Chart
+<span lang='Check' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf00c;</span>  Check
+<span lang='Check Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf058;</span>  Check Circle
+<span lang='Check Double' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf560;</span>  Check Double
+<span lang='Check Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf14a;</span>  Check Square
+<span lang='Chess' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf439;</span>  Chess
+<span lang='Chess Bishop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf43a;</span>  Chess Bishop
+<span lang='Chess Board' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf43c;</span>  Chess Board
+<span lang='Chess King' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf43f;</span>  Chess King
+<span lang='Chess Knight' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf441;</span>  Chess Knight
+<span lang='Chess Pawn' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf443;</span>  Chess Pawn
+<span lang='Chess Queen' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf445;</span>  Chess Queen
+<span lang='Chess Rook' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf447;</span>  Chess Rook
+<span lang='Chevron Circle Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf13a;</span>  Chevron Circle Down
+<span lang='Chevron Circle Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf137;</span>  Chevron Circle Left
+<span lang='Chevron Circle Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf138;</span>  Chevron Circle Right
+<span lang='Chevron Circle Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf139;</span>  Chevron Circle Up
+<span lang='chevron-down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf078;</span>  chevron-down
+<span lang='chevron-left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf053;</span>  chevron-left
+<span lang='chevron-right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf054;</span>  chevron-right
+<span lang='chevron-up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf077;</span>  chevron-up
+<span lang='Child' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ae;</span>  Child
+<span lang='Chrome' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf268;</span>  Chrome
+<span lang='Church' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf51d;</span>  Church
+<span lang='Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf111;</span>  Circle
+<span lang='Circle Notched' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ce;</span>  Circle Notched
+<span lang='City' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf64f;</span>  City
+<span lang='Clipboard' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf328;</span>  Clipboard
+<span lang='Clipboard with Check' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf46c;</span>  Clipboard with Check
+<span lang='Clipboard List' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf46d;</span>  Clipboard List
+<span lang='Clock' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf017;</span>  Clock
+<span lang='Clone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf24d;</span>  Clone
+<span lang='Closed Captioning' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf20a;</span>  Closed Captioning
+<span lang='Cloud' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c2;</span>  Cloud
+<span lang='Alternate Cloud Download' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf381;</span>  Alternate Cloud Download
+<span lang='Cloud with (a chance of) Meatball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf73b;</span>  Cloud with (a chance of) Meatball
+<span lang='Cloud with Moon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6c3;</span>  Cloud with Moon
+<span lang='Cloud with Moon and Rain' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf73c;</span>  Cloud with Moon and Rain
+<span lang='Cloud with Rain' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf73d;</span>  Cloud with Rain
+<span lang='Cloud with Heavy Showers' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf740;</span>  Cloud with Heavy Showers
+<span lang='Cloud with Sun' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6c4;</span>  Cloud with Sun
+<span lang='Cloud with Sun and Rain' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf743;</span>  Cloud with Sun and Rain
+<span lang='Alternate Cloud Upload' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf382;</span>  Alternate Cloud Upload
+<span lang='cloudscale.ch' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf383;</span>  cloudscale.ch
+<span lang='Cloudsmith' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf384;</span>  Cloudsmith
+<span lang='cloudversify' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf385;</span>  cloudversify
+<span lang='Cocktail' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf561;</span>  Cocktail
+<span lang='Code' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf121;</span>  Code
+<span lang='Code Branch' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf126;</span>  Code Branch
+<span lang='Codepen' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1cb;</span>  Codepen
+<span lang='Codie Pie' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf284;</span>  Codie Pie
+<span lang='Coffee' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f4;</span>  Coffee
+<span lang='cog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf013;</span>  cog
+<span lang='cogs' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf085;</span>  cogs
+<span lang='Coins' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf51e;</span>  Coins
+<span lang='Columns' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0db;</span>  Columns
+<span lang='comment' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf075;</span>  comment
+<span lang='Alternate Comment' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf27a;</span>  Alternate Comment
+<span lang='Comment Dollar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf651;</span>  Comment Dollar
+<span lang='Comment Dots' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4ad;</span>  Comment Dots
+<span lang='Comment Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4b3;</span>  Comment Slash
+<span lang='comments' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf086;</span>  comments
+<span lang='Comments Dollar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf653;</span>  Comments Dollar
+<span lang='Compact Disc' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf51f;</span>  Compact Disc
+<span lang='Compass' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf14e;</span>  Compass
+<span lang='Compress' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf066;</span>  Compress
+<span lang='Alternate Compress Arrows' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf78c;</span>  Alternate Compress Arrows
+<span lang='Concierge Bell' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf562;</span>  Concierge Bell
+<span lang='Confluence' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf78d;</span>  Confluence
+<span lang='Connect Develop' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf20e;</span>  Connect Develop
+<span lang='Contao' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf26d;</span>  Contao
+<span lang='Cookie' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf563;</span>  Cookie
+<span lang='Cookie Bite' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf564;</span>  Cookie Bite
+<span lang='Copy' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c5;</span>  Copy
+<span lang='Copyright' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1f9;</span>  Copyright
+<span lang='Couch' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4b8;</span>  Couch
+<span lang='cPanel' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf388;</span>  cPanel
+<span lang='Creative Commons' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf25e;</span>  Creative Commons
+<span lang='Creative Commons Attribution' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4e7;</span>  Creative Commons Attribution
+<span lang='Creative Commons Noncommercial' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4e8;</span>  Creative Commons Noncommercial
+<span lang='Creative Commons Noncommercial (Euro Sign)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4e9;</span>  Creative Commons Noncommercial (Euro Sign)
+<span lang='Creative Commons Noncommercial (Yen Sign)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4ea;</span>  Creative Commons Noncommercial (Yen Sign)
+<span lang='Creative Commons No Derivative Works' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4eb;</span>  Creative Commons No Derivative Works
+<span lang='Creative Commons Public Domain' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4ec;</span>  Creative Commons Public Domain
+<span lang='Alternate Creative Commons Public Domain' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4ed;</span>  Alternate Creative Commons Public Domain
+<span lang='Creative Commons Remix' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4ee;</span>  Creative Commons Remix
+<span lang='Creative Commons Share Alike' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4ef;</span>  Creative Commons Share Alike
+<span lang='Creative Commons Sampling' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f0;</span>  Creative Commons Sampling
+<span lang='Creative Commons Sampling +' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f1;</span>  Creative Commons Sampling +
+<span lang='Creative Commons Share' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f2;</span>  Creative Commons Share
+<span lang='Creative Commons CC0' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f3;</span>  Creative Commons CC0
+<span lang='Credit Card' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf09d;</span>  Credit Card
+<span lang='Critical Role' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf6c9;</span>  Critical Role
+<span lang='crop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf125;</span>  crop
+<span lang='Alternate Crop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf565;</span>  Alternate Crop
+<span lang='Cross' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf654;</span>  Cross
+<span lang='Crosshairs' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf05b;</span>  Crosshairs
+<span lang='Crow' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf520;</span>  Crow
+<span lang='Crown' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf521;</span>  Crown
+<span lang='CSS 3 Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf13c;</span>  CSS 3 Logo
+<span lang='Alternate CSS3 Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf38b;</span>  Alternate CSS3 Logo
+<span lang='Cube' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1b2;</span>  Cube
+<span lang='Cubes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1b3;</span>  Cubes
+<span lang='Cut' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c4;</span>  Cut
+<span lang='Cuttlefish' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf38c;</span>  Cuttlefish
+<span lang='Dungeons & Dragons' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf38d;</span>  Dungeons & Dragons
+<span lang='D&D Beyond' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf6ca;</span>  D&D Beyond
+<span lang='DashCube' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf210;</span>  DashCube
+<span lang='Database' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c0;</span>  Database
+<span lang='Deaf' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a4;</span>  Deaf
+<span lang='Delicious Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a5;</span>  Delicious Logo
+<span lang='Democrat' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf747;</span>  Democrat
+<span lang='deploy.dog' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf38e;</span>  deploy.dog
+<span lang='Deskpro' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf38f;</span>  Deskpro
+<span lang='Desktop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf108;</span>  Desktop
+<span lang='DEV' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf6cc;</span>  DEV
+<span lang='deviantART' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1bd;</span>  deviantART
+<span lang='Dharmachakra' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf655;</span>  Dharmachakra
+<span lang='DHL' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf790;</span>  DHL
+<span lang='Diagnoses' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf470;</span>  Diagnoses
+<span lang='Diaspora' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf791;</span>  Diaspora
+<span lang='Dice' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf522;</span>  Dice
+<span lang='Dice D20' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6cf;</span>  Dice D20
+<span lang='Dice D6' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6d1;</span>  Dice D6
+<span lang='Dice Five' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf523;</span>  Dice Five
+<span lang='Dice Four' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf524;</span>  Dice Four
+<span lang='Dice One' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf525;</span>  Dice One
+<span lang='Dice Six' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf526;</span>  Dice Six
+<span lang='Dice Three' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf527;</span>  Dice Three
+<span lang='Dice Two' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf528;</span>  Dice Two
+<span lang='Digg Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a6;</span>  Digg Logo
+<span lang='Digital Ocean' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf391;</span>  Digital Ocean
+<span lang='Digital Tachograph' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf566;</span>  Digital Tachograph
+<span lang='Directions' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5eb;</span>  Directions
+<span lang='Discord' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf392;</span>  Discord
+<span lang='Discourse' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf393;</span>  Discourse
+<span lang='Divide' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf529;</span>  Divide
+<span lang='Dizzy Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf567;</span>  Dizzy Face
+<span lang='DNA' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf471;</span>  DNA
+<span lang='DocHub' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf394;</span>  DocHub
+<span lang='Docker' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf395;</span>  Docker
+<span lang='Dog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6d3;</span>  Dog
+<span lang='Dollar Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf155;</span>  Dollar Sign
+<span lang='Dolly' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf472;</span>  Dolly
+<span lang='Dolly Flatbed' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf474;</span>  Dolly Flatbed
+<span lang='Donate' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4b9;</span>  Donate
+<span lang='Door Closed' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf52a;</span>  Door Closed
+<span lang='Door Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf52b;</span>  Door Open
+<span lang='Dot Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf192;</span>  Dot Circle
+<span lang='Dove' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4ba;</span>  Dove
+<span lang='Download' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf019;</span>  Download
+<span lang='Draft2digital' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf396;</span>  Draft2digital
+<span lang='Drafting Compass' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf568;</span>  Drafting Compass
+<span lang='Dragon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6d5;</span>  Dragon
+<span lang='Draw Polygon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ee;</span>  Draw Polygon
+<span lang='Dribbble' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf17d;</span>  Dribbble
+<span lang='Dribbble Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf397;</span>  Dribbble Square
+<span lang='Dropbox' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf16b;</span>  Dropbox
+<span lang='Drum' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf569;</span>  Drum
+<span lang='Drum Steelpan' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf56a;</span>  Drum Steelpan
+<span lang='Drumstick with Bite Taken Out' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6d7;</span>  Drumstick with Bite Taken Out
+<span lang='Drupal Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a9;</span>  Drupal Logo
+<span lang='Dumbbell' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf44b;</span>  Dumbbell
+<span lang='Dumpster' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf793;</span>  Dumpster
+<span lang='Dumpster Fire' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf794;</span>  Dumpster Fire
+<span lang='Dungeon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6d9;</span>  Dungeon
+<span lang='Dyalog' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf399;</span>  Dyalog
+<span lang='Earlybirds' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf39a;</span>  Earlybirds
+<span lang='eBay' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f4;</span>  eBay
+<span lang='Edge Browser' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf282;</span>  Edge Browser
+<span lang='Edit' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf044;</span>  Edit
+<span lang='eject' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf052;</span>  eject
+<span lang='Elementor' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf430;</span>  Elementor
+<span lang='Horizontal Ellipsis' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf141;</span>  Horizontal Ellipsis
+<span lang='Vertical Ellipsis' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf142;</span>  Vertical Ellipsis
+<span lang='Ello' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5f1;</span>  Ello
+<span lang='Ember' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf423;</span>  Ember
+<span lang='Galactic Empire' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d1;</span>  Galactic Empire
+<span lang='Envelope' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0e0;</span>  Envelope
+<span lang='Envelope Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2b6;</span>  Envelope Open
+<span lang='Envelope Open-text' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf658;</span>  Envelope Open-text
+<span lang='Envelope Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf199;</span>  Envelope Square
+<span lang='Envira Gallery' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf299;</span>  Envira Gallery
+<span lang='Equals' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf52c;</span>  Equals
+<span lang='eraser' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf12d;</span>  eraser
+<span lang='Erlang' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf39d;</span>  Erlang
+<span lang='Ethereum' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf42e;</span>  Ethereum
+<span lang='Ethernet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf796;</span>  Ethernet
+<span lang='Etsy' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2d7;</span>  Etsy
+<span lang='Euro Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf153;</span>  Euro Sign
+<span lang='Alternate Exchange' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf362;</span>  Alternate Exchange
+<span lang='exclamation' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf12a;</span>  exclamation
+<span lang='Exclamation Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf06a;</span>  Exclamation Circle
+<span lang='Exclamation Triangle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf071;</span>  Exclamation Triangle
+<span lang='Expand' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf065;</span>  Expand
+<span lang='Alternate Expand Arrows' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf31e;</span>  Alternate Expand Arrows
+<span lang='ExpeditedSSL' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf23e;</span>  ExpeditedSSL
+<span lang='Alternate External Link' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf35d;</span>  Alternate External Link
+<span lang='Alternate External Link Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf360;</span>  Alternate External Link Square
+<span lang='Eye' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf06e;</span>  Eye
+<span lang='Eye Dropper' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1fb;</span>  Eye Dropper
+<span lang='Eye Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf070;</span>  Eye Slash
+<span lang='Facebook' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf09a;</span>  Facebook
+<span lang='Facebook F' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf39e;</span>  Facebook F
+<span lang='Facebook Messenger' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf39f;</span>  Facebook Messenger
+<span lang='Facebook Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf082;</span>  Facebook Square
+<span lang='Fantasy Flight-games' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf6dc;</span>  Fantasy Flight-games
+<span lang='fast-backward' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf049;</span>  fast-backward
+<span lang='fast-forward' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf050;</span>  fast-forward
+<span lang='Fax' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ac;</span>  Fax
+<span lang='Feather' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf52d;</span>  Feather
+<span lang='Alternate Feather' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf56b;</span>  Alternate Feather
+<span lang='FedEx' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf797;</span>  FedEx
+<span lang='Fedora' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf798;</span>  Fedora
+<span lang='Female' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf182;</span>  Female
+<span lang='fighter-jet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0fb;</span>  fighter-jet
+<span lang='Figma' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf799;</span>  Figma
+<span lang='File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf15b;</span>  File
+<span lang='Alternate File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf15c;</span>  Alternate File
+<span lang='Archive File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c6;</span>  Archive File
+<span lang='Audio File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c7;</span>  Audio File
+<span lang='Code File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c9;</span>  Code File
+<span lang='File Contract' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf56c;</span>  File Contract
+<span lang='File CSV' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6dd;</span>  File CSV
+<span lang='File Download' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf56d;</span>  File Download
+<span lang='Excel File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c3;</span>  Excel File
+<span lang='File Export' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf56e;</span>  File Export
+<span lang='Image File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c5;</span>  Image File
+<span lang='File Import' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf56f;</span>  File Import
+<span lang='File Invoice' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf570;</span>  File Invoice
+<span lang='File Invoice with US Dollar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf571;</span>  File Invoice with US Dollar
+<span lang='Medical File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf477;</span>  Medical File
+<span lang='Alternate Medical File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf478;</span>  Alternate Medical File
+<span lang='PDF File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c1;</span>  PDF File
+<span lang='Powerpoint File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c4;</span>  Powerpoint File
+<span lang='File Prescription' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf572;</span>  File Prescription
+<span lang='File Signature' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf573;</span>  File Signature
+<span lang='File Upload' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf574;</span>  File Upload
+<span lang='Video File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c8;</span>  Video File
+<span lang='Word File' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1c2;</span>  Word File
+<span lang='Fill' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf575;</span>  Fill
+<span lang='Fill Drip' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf576;</span>  Fill Drip
+<span lang='Film' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf008;</span>  Film
+<span lang='Filter' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0b0;</span>  Filter
+<span lang='Fingerprint' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf577;</span>  Fingerprint
+<span lang='fire' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf06d;</span>  fire
+<span lang='Alternate Fire' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7e4;</span>  Alternate Fire
+<span lang='fire-extinguisher' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf134;</span>  fire-extinguisher
+<span lang='Firefox' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf269;</span>  Firefox
+<span lang='First Aid' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf479;</span>  First Aid
+<span lang='First Order' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2b0;</span>  First Order
+<span lang='Alternate First Order' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf50a;</span>  Alternate First Order
+<span lang='firstdraft' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a1;</span>  firstdraft
+<span lang='Fish' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf578;</span>  Fish
+<span lang='Raised Fist' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6de;</span>  Raised Fist
+<span lang='flag' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf024;</span>  flag
+<span lang='flag-checkered' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf11e;</span>  flag-checkered
+<span lang='United States of America Flag' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf74d;</span>  United States of America Flag
+<span lang='Flask' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c3;</span>  Flask
+<span lang='Flickr' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf16e;</span>  Flickr
+<span lang='Flipboard' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf44d;</span>  Flipboard
+<span lang='Flushed Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf579;</span>  Flushed Face
+<span lang='Fly' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf417;</span>  Fly
+<span lang='Folder' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf07b;</span>  Folder
+<span lang='Folder Minus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf65d;</span>  Folder Minus
+<span lang='Folder Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf07c;</span>  Folder Open
+<span lang='Folder Plus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf65e;</span>  Folder Plus
+<span lang='font' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf031;</span>  font
+<span lang='Font Awesome' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2b4;</span>  Font Awesome
+<span lang='Alternate Font Awesome' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf35c;</span>  Alternate Font Awesome
+<span lang='Font Awesome Flag' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf425;</span>  Font Awesome Flag
+<span lang='Font Awesome Full Logo' weight="normal" fallback="true" face='font Awesome 5 regular'>&#xf4e6;</span>  Font Awesome Full Logo
+<span lang='Fonticons' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf280;</span>  Fonticons
+<span lang='Fonticons Fi' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a2;</span>  Fonticons Fi
+<span lang='Football Ball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf44e;</span>  Football Ball
+<span lang='Fort Awesome' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf286;</span>  Fort Awesome
+<span lang='Alternate Fort Awesome' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a3;</span>  Alternate Fort Awesome
+<span lang='Forumbee' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf211;</span>  Forumbee
+<span lang='forward' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf04e;</span>  forward
+<span lang='Foursquare' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf180;</span>  Foursquare
+<span lang='Free Code Camp' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2c5;</span>  Free Code Camp
+<span lang='FreeBSD' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a4;</span>  FreeBSD
+<span lang='Frog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf52e;</span>  Frog
+<span lang='Frowning Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf119;</span>  Frowning Face
+<span lang='Frowning Face With Open Mouth' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf57a;</span>  Frowning Face With Open Mouth
+<span lang='Fulcrum' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf50b;</span>  Fulcrum
+<span lang='Funnel Dollar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf662;</span>  Funnel Dollar
+<span lang='Futbol' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e3;</span>  Futbol
+<span lang='Galactic Republic' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf50c;</span>  Galactic Republic
+<span lang='Galactic Senate' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf50d;</span>  Galactic Senate
+<span lang='Gamepad' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf11b;</span>  Gamepad
+<span lang='Gas Pump' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf52f;</span>  Gas Pump
+<span lang='Gavel' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0e3;</span>  Gavel
+<span lang='Gem' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3a5;</span>  Gem
+<span lang='Genderless' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf22d;</span>  Genderless
+<span lang='Get Pocket' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf265;</span>  Get Pocket
+<span lang='GG Currency' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf260;</span>  GG Currency
+<span lang='GG Currency Circle' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf261;</span>  GG Currency Circle
+<span lang='Ghost' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6e2;</span>  Ghost
+<span lang='gift' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf06b;</span>  gift
+<span lang='Gifts' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf79c;</span>  Gifts
+<span lang='Git' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d3;</span>  Git
+<span lang='Git Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d2;</span>  Git Square
+<span lang='GitHub' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf09b;</span>  GitHub
+<span lang='Alternate GitHub' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf113;</span>  Alternate GitHub
+<span lang='GitHub Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf092;</span>  GitHub Square
+<span lang='GitKraken' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a6;</span>  GitKraken
+<span lang='GitLab' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf296;</span>  GitLab
+<span lang='Gitter' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf426;</span>  Gitter
+<span lang='Glass Cheers' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf79f;</span>  Glass Cheers
+<span lang='Martini Glass' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf000;</span>  Martini Glass
+<span lang='Alternate Glass Martini' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf57b;</span>  Alternate Glass Martini
+<span lang='Glass Whiskey' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7a0;</span>  Glass Whiskey
+<span lang='Glasses' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf530;</span>  Glasses
+<span lang='Glide' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2a5;</span>  Glide
+<span lang='Glide G' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2a6;</span>  Glide G
+<span lang='Globe' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ac;</span>  Globe
+<span lang='Globe with Africa shown' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf57c;</span>  Globe with Africa shown
+<span lang='Globe with Americas shown' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf57d;</span>  Globe with Americas shown
+<span lang='Globe with Asia shown' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf57e;</span>  Globe with Asia shown
+<span lang='Globe with Europe shown' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7a2;</span>  Globe with Europe shown
+<span lang='Gofore' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a7;</span>  Gofore
+<span lang='Golf Ball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf450;</span>  Golf Ball
+<span lang='Goodreads' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a8;</span>  Goodreads
+<span lang='Goodreads G' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3a9;</span>  Goodreads G
+<span lang='Google Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a0;</span>  Google Logo
+<span lang='Google Drive' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3aa;</span>  Google Drive
+<span lang='Google Play' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ab;</span>  Google Play
+<span lang='Google Plus' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2b3;</span>  Google Plus
+<span lang='Google Plus G' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf0d5;</span>  Google Plus G
+<span lang='Google Plus Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf0d4;</span>  Google Plus Square
+<span lang='Google Wallet' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1ee;</span>  Google Wallet
+<span lang='Gopuram' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf664;</span>  Gopuram
+<span lang='Graduation Cap' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf19d;</span>  Graduation Cap
+<span lang='Gratipay (Gittip)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf184;</span>  Gratipay (Gittip)
+<span lang='Grav' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2d6;</span>  Grav
+<span lang='Greater Than' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf531;</span>  Greater Than
+<span lang='Greater Than Equal To' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf532;</span>  Greater Than Equal To
+<span lang='Grimacing Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf57f;</span>  Grimacing Face
+<span lang='Grinning Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf580;</span>  Grinning Face
+<span lang='Alternate Grinning Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf581;</span>  Alternate Grinning Face
+<span lang='Grinning Face With Smiling Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf582;</span>  Grinning Face With Smiling Eyes
+<span lang='Grinning Face With Sweat' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf583;</span>  Grinning Face With Sweat
+<span lang='Smiling Face With Heart-Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf584;</span>  Smiling Face With Heart-Eyes
+<span lang='Grinning Squinting Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf585;</span>  Grinning Squinting Face
+<span lang='Rolling on the Floor Laughing' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf586;</span>  Rolling on the Floor Laughing
+<span lang='Star-Struck' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf587;</span>  Star-Struck
+<span lang='Face With Tears of Joy' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf588;</span>  Face With Tears of Joy
+<span lang='Face With Tongue' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf589;</span>  Face With Tongue
+<span lang='Squinting Face With Tongue' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf58a;</span>  Squinting Face With Tongue
+<span lang='Winking Face With Tongue' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf58b;</span>  Winking Face With Tongue
+<span lang='Grinning Winking Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf58c;</span>  Grinning Winking Face
+<span lang='Grip Horizontal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf58d;</span>  Grip Horizontal
+<span lang='Grip Lines' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7a4;</span>  Grip Lines
+<span lang='Grip Lines Vertical' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7a5;</span>  Grip Lines Vertical
+<span lang='Grip Vertical' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf58e;</span>  Grip Vertical
+<span lang='Gripfire, Inc.' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ac;</span>  Gripfire, Inc.
+<span lang='Grunt' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ad;</span>  Grunt
+<span lang='Guitar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7a6;</span>  Guitar
+<span lang='Gulp' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ae;</span>  Gulp
+<span lang='H Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0fd;</span>  H Square
+<span lang='Hacker News' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d4;</span>  Hacker News
+<span lang='Hacker News Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3af;</span>  Hacker News Square
+<span lang='Hackerrank' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5f7;</span>  Hackerrank
+<span lang='Hammer' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6e3;</span>  Hammer
+<span lang='Hamsa' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf665;</span>  Hamsa
+<span lang='Hand Holding' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4bd;</span>  Hand Holding
+<span lang='Hand Holding Heart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4be;</span>  Hand Holding Heart
+<span lang='Hand Holding US Dollar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4c0;</span>  Hand Holding US Dollar
+<span lang='Lizard (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf258;</span>  Lizard (Hand)
+<span lang='Paper (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf256;</span>  Paper (Hand)
+<span lang='Peace (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf25b;</span>  Peace (Hand)
+<span lang='Hand Pointing Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a7;</span>  Hand Pointing Down
+<span lang='Hand Pointing Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a5;</span>  Hand Pointing Left
+<span lang='Hand Pointing Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a4;</span>  Hand Pointing Right
+<span lang='Hand Pointing Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a6;</span>  Hand Pointing Up
+<span lang='Pointer (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf25a;</span>  Pointer (Hand)
+<span lang='Rock (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf255;</span>  Rock (Hand)
+<span lang='Scissors (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf257;</span>  Scissors (Hand)
+<span lang='Spock (Hand)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf259;</span>  Spock (Hand)
+<span lang='Hands' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4c2;</span>  Hands
+<span lang='Helping Hands' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4c4;</span>  Helping Hands
+<span lang='Handshake' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2b5;</span>  Handshake
+<span lang='Hanukiah' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6e6;</span>  Hanukiah
+<span lang='Hashtag' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf292;</span>  Hashtag
+<span lang='Wizard's Hat' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6e8;</span>  Wizard's Hat
+<span lang='Haykal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf666;</span>  Haykal
+<span lang='HDD' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0a0;</span>  HDD
+<span lang='heading' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1dc;</span>  heading
+<span lang='headphones' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf025;</span>  headphones
+<span lang='Alternate Headphones' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf58f;</span>  Alternate Headphones
+<span lang='Headset' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf590;</span>  Headset
+<span lang='Heart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf004;</span>  Heart
+<span lang='Heart Broken' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7a9;</span>  Heart Broken
+<span lang='Heartbeat' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf21e;</span>  Heartbeat
+<span lang='Helicopter' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf533;</span>  Helicopter
+<span lang='Highlighter' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf591;</span>  Highlighter
+<span lang='Hiking' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6ec;</span>  Hiking
+<span lang='Hippo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6ed;</span>  Hippo
+<span lang='Hips' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf452;</span>  Hips
+<span lang='HireAHelper' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b0;</span>  HireAHelper
+<span lang='History' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1da;</span>  History
+<span lang='Hockey Puck' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf453;</span>  Hockey Puck
+<span lang='Holly Berry' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7aa;</span>  Holly Berry
+<span lang='home' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf015;</span>  home
+<span lang='Hooli' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf427;</span>  Hooli
+<span lang='Hornbill' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf592;</span>  Hornbill
+<span lang='Horse' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6f0;</span>  Horse
+<span lang='Horse Head' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7ab;</span>  Horse Head
+<span lang='hospital' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f8;</span>  hospital
+<span lang='Alternate Hospital' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf47d;</span>  Alternate Hospital
+<span lang='Hospital Symbol' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf47e;</span>  Hospital Symbol
+<span lang='Hot Tub' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf593;</span>  Hot Tub
+<span lang='Hotel' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf594;</span>  Hotel
+<span lang='Hotjar' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b1;</span>  Hotjar
+<span lang='Hourglass' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf254;</span>  Hourglass
+<span lang='Hourglass End' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf253;</span>  Hourglass End
+<span lang='Hourglass Half' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf252;</span>  Hourglass Half
+<span lang='Hourglass Start' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf251;</span>  Hourglass Start
+<span lang='Damaged House' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6f1;</span>  Damaged House
+<span lang='Houzz' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf27c;</span>  Houzz
+<span lang='Hryvnia' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6f2;</span>  Hryvnia
+<span lang='HTML 5 Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf13b;</span>  HTML 5 Logo
+<span lang='HubSpot' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b2;</span>  HubSpot
+<span lang='I Beam Cursor' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf246;</span>  I Beam Cursor
+<span lang='Icicles' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7ad;</span>  Icicles
+<span lang='Identification Badge' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2c1;</span>  Identification Badge
+<span lang='Identification Card' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2c2;</span>  Identification Card
+<span lang='Alternate Identification Card' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf47f;</span>  Alternate Identification Card
+<span lang='Igloo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7ae;</span>  Igloo
+<span lang='Image' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf03e;</span>  Image
+<span lang='Images' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf302;</span>  Images
+<span lang='IMDB' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2d8;</span>  IMDB
+<span lang='inbox' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf01c;</span>  inbox
+<span lang='Indent' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf03c;</span>  Indent
+<span lang='Industry' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf275;</span>  Industry
+<span lang='Infinity' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf534;</span>  Infinity
+<span lang='Info' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf129;</span>  Info
+<span lang='Info Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf05a;</span>  Info Circle
+<span lang='Instagram' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf16d;</span>  Instagram
+<span lang='Intercom' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7af;</span>  Intercom
+<span lang='Internet-explorer' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf26b;</span>  Internet-explorer
+<span lang='InVision' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7b0;</span>  InVision
+<span lang='ioxhost' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf208;</span>  ioxhost
+<span lang='italic' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf033;</span>  italic
+<span lang='iTunes' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b4;</span>  iTunes
+<span lang='Itunes Note' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b5;</span>  Itunes Note
+<span lang='Java' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4e4;</span>  Java
+<span lang='Jedi' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf669;</span>  Jedi
+<span lang='Jedi Order' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf50e;</span>  Jedi Order
+<span lang='Jenkis' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b6;</span>  Jenkis
+<span lang='Jira' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7b1;</span>  Jira
+<span lang='Joget' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b7;</span>  Joget
+<span lang='Joint' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf595;</span>  Joint
+<span lang='Joomla Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1aa;</span>  Joomla Logo
+<span lang='Journal of the Whills' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf66a;</span>  Journal of the Whills
+<span lang='JavaScript (JS)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b8;</span>  JavaScript (JS)
+<span lang='JavaScript (JS) Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3b9;</span>  JavaScript (JS) Square
+<span lang='jsFiddle' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1cc;</span>  jsFiddle
+<span lang='Kaaba' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf66b;</span>  Kaaba
+<span lang='Kaggle' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5fa;</span>  Kaggle
+<span lang='key' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf084;</span>  key
+<span lang='Keybase' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f5;</span>  Keybase
+<span lang='Keyboard' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf11c;</span>  Keyboard
+<span lang='KeyCDN' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ba;</span>  KeyCDN
+<span lang='Khanda' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf66d;</span>  Khanda
+<span lang='Kickstarter' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3bb;</span>  Kickstarter
+<span lang='Kickstarter K' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3bc;</span>  Kickstarter K
+<span lang='Kissing Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf596;</span>  Kissing Face
+<span lang='Kissing Face With Smiling Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf597;</span>  Kissing Face With Smiling Eyes
+<span lang='Face Blowing a Kiss' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf598;</span>  Face Blowing a Kiss
+<span lang='Kiwi Bird' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf535;</span>  Kiwi Bird
+<span lang='KORVUE' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf42f;</span>  KORVUE
+<span lang='Landmark' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf66f;</span>  Landmark
+<span lang='Language' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ab;</span>  Language
+<span lang='Laptop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf109;</span>  Laptop
+<span lang='Laptop Code' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5fc;</span>  Laptop Code
+<span lang='Laravel' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3bd;</span>  Laravel
+<span lang='last.fm' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf202;</span>  last.fm
+<span lang='last.fm Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf203;</span>  last.fm Square
+<span lang='Grinning Face With Big Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf599;</span>  Grinning Face With Big Eyes
+<span lang='Laugh Face with Beaming Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf59a;</span>  Laugh Face with Beaming Eyes
+<span lang='Laughing Squinting Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf59b;</span>  Laughing Squinting Face
+<span lang='Laughing Winking Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf59c;</span>  Laughing Winking Face
+<span lang='Layer Group' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5fd;</span>  Layer Group
+<span lang='leaf' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf06c;</span>  leaf
+<span lang='Leanpub' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf212;</span>  Leanpub
+<span lang='Lemon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf094;</span>  Lemon
+<span lang='Less' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf41d;</span>  Less
+<span lang='Less Than' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf536;</span>  Less Than
+<span lang='Less Than Equal To' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf537;</span>  Less Than Equal To
+<span lang='Alternate Level Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3be;</span>  Alternate Level Down
+<span lang='Alternate Level Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3bf;</span>  Alternate Level Up
+<span lang='Life Ring' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1cd;</span>  Life Ring
+<span lang='Lightbulb' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0eb;</span>  Lightbulb
+<span lang='Line' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3c0;</span>  Line
+<span lang='Link' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c1;</span>  Link
+<span lang='LinkedIn' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf08c;</span>  LinkedIn
+<span lang='LinkedIn In' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf0e1;</span>  LinkedIn In
+<span lang='Linode' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2b8;</span>  Linode
+<span lang='Linux' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf17c;</span>  Linux
+<span lang='Turkish Lira Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf195;</span>  Turkish Lira Sign
+<span lang='List' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf03a;</span>  List
+<span lang='Alternate List' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf022;</span>  Alternate List
+<span lang='list-ol' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0cb;</span>  list-ol
+<span lang='list-ul' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ca;</span>  list-ul
+<span lang='location-arrow' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf124;</span>  location-arrow
+<span lang='lock' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf023;</span>  lock
+<span lang='Lock Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3c1;</span>  Lock Open
+<span lang='Alternate Long Arrow Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf309;</span>  Alternate Long Arrow Down
+<span lang='Alternate Long Arrow Left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf30a;</span>  Alternate Long Arrow Left
+<span lang='Alternate Long Arrow Right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf30b;</span>  Alternate Long Arrow Right
+<span lang='Alternate Long Arrow Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf30c;</span>  Alternate Long Arrow Up
+<span lang='Low Vision' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a8;</span>  Low Vision
+<span lang='Luggage Cart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf59d;</span>  Luggage Cart
+<span lang='lyft' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3c3;</span>  lyft
+<span lang='Magento' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3c4;</span>  Magento
+<span lang='magic' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0d0;</span>  magic
+<span lang='magnet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf076;</span>  magnet
+<span lang='Mail Bulk' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf674;</span>  Mail Bulk
+<span lang='Mailchimp' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf59e;</span>  Mailchimp
+<span lang='Male' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf183;</span>  Male
+<span lang='Mandalorian' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf50f;</span>  Mandalorian
+<span lang='Map' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf279;</span>  Map
+<span lang='Map Marked' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf59f;</span>  Map Marked
+<span lang='Alternate Map Marked' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a0;</span>  Alternate Map Marked
+<span lang='map-marker' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf041;</span>  map-marker
+<span lang='Alternate Map Marker' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3c5;</span>  Alternate Map Marker
+<span lang='Map Pin' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf276;</span>  Map Pin
+<span lang='Map Signs' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf277;</span>  Map Signs
+<span lang='Markdown' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf60f;</span>  Markdown
+<span lang='Marker' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a1;</span>  Marker
+<span lang='Mars' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf222;</span>  Mars
+<span lang='Mars Double' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf227;</span>  Mars Double
+<span lang='Mars Stroke' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf229;</span>  Mars Stroke
+<span lang='Mars Stroke Horizontal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf22b;</span>  Mars Stroke Horizontal
+<span lang='Mars Stroke Vertical' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf22a;</span>  Mars Stroke Vertical
+<span lang='Mask' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6fa;</span>  Mask
+<span lang='Mastodon' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f6;</span>  Mastodon
+<span lang='MaxCDN' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf136;</span>  MaxCDN
+<span lang='Medal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a2;</span>  Medal
+<span lang='MedApps' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3c6;</span>  MedApps
+<span lang='Medium' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf23a;</span>  Medium
+<span lang='Medium M' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3c7;</span>  Medium M
+<span lang='medkit' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0fa;</span>  medkit
+<span lang='MRT' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3c8;</span>  MRT
+<span lang='Meetup' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2e0;</span>  Meetup
+<span lang='Megaport' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5a3;</span>  Megaport
+<span lang='Neutral Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf11a;</span>  Neutral Face
+<span lang='Face Without Mouth' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a4;</span>  Face Without Mouth
+<span lang='Face With Rolling Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a5;</span>  Face With Rolling Eyes
+<span lang='Memory' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf538;</span>  Memory
+<span lang='Mendeley' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7b3;</span>  Mendeley
+<span lang='Menorah' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf676;</span>  Menorah
+<span lang='Mercury' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf223;</span>  Mercury
+<span lang='Meteor' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf753;</span>  Meteor
+<span lang='Microchip' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2db;</span>  Microchip
+<span lang='microphone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf130;</span>  microphone
+<span lang='Alternate Microphone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3c9;</span>  Alternate Microphone
+<span lang='Alternate Microphone Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf539;</span>  Alternate Microphone Slash
+<span lang='Microphone Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf131;</span>  Microphone Slash
+<span lang='Microscope' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf610;</span>  Microscope
+<span lang='Microsoft' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ca;</span>  Microsoft
+<span lang='minus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf068;</span>  minus
+<span lang='Minus Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf056;</span>  Minus Circle
+<span lang='Minus Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf146;</span>  Minus Square
+<span lang='Mitten' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7b5;</span>  Mitten
+<span lang='Mix' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3cb;</span>  Mix
+<span lang='Mixcloud' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf289;</span>  Mixcloud
+<span lang='Mizuni' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3cc;</span>  Mizuni
+<span lang='Mobile Phone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf10b;</span>  Mobile Phone
+<span lang='Alternate Mobile' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3cd;</span>  Alternate Mobile
+<span lang='MODX' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf285;</span>  MODX
+<span lang='Monero' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d0;</span>  Monero
+<span lang='Money Bill' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0d6;</span>  Money Bill
+<span lang='Alternate Money Bill' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3d1;</span>  Alternate Money Bill
+<span lang='Wavy Money Bill' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf53a;</span>  Wavy Money Bill
+<span lang='Alternate Wavy Money Bill' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf53b;</span>  Alternate Wavy Money Bill
+<span lang='Money Check' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf53c;</span>  Money Check
+<span lang='Alternate Money Check' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf53d;</span>  Alternate Money Check
+<span lang='Monument' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a6;</span>  Monument
+<span lang='Moon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf186;</span>  Moon
+<span lang='Mortar Pestle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5a7;</span>  Mortar Pestle
+<span lang='Mosque' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf678;</span>  Mosque
+<span lang='Motorcycle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf21c;</span>  Motorcycle
+<span lang='Mountain' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6fc;</span>  Mountain
+<span lang='Mouse Pointer' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf245;</span>  Mouse Pointer
+<span lang='Mug Hot' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7b6;</span>  Mug Hot
+<span lang='Music' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf001;</span>  Music
+<span lang='Napster' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d2;</span>  Napster
+<span lang='Neos' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf612;</span>  Neos
+<span lang='Wired Network' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6ff;</span>  Wired Network
+<span lang='Neuter' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf22c;</span>  Neuter
+<span lang='Newspaper' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ea;</span>  Newspaper
+<span lang='Nimblr' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5a8;</span>  Nimblr
+<span lang='Nintendo Switch' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf418;</span>  Nintendo Switch
+<span lang='Node.js' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf419;</span>  Node.js
+<span lang='Node.js JS' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d3;</span>  Node.js JS
+<span lang='Not Equal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf53e;</span>  Not Equal
+<span lang='Medical Notes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf481;</span>  Medical Notes
+<span lang='npm' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d4;</span>  npm
+<span lang='NS8' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d5;</span>  NS8
+<span lang='Nutritionix' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d6;</span>  Nutritionix
+<span lang='Object Group' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf247;</span>  Object Group
+<span lang='Object Ungroup' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf248;</span>  Object Ungroup
+<span lang='Odnoklassniki' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf263;</span>  Odnoklassniki
+<span lang='Odnoklassniki Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf264;</span>  Odnoklassniki Square
+<span lang='Oil Can' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf613;</span>  Oil Can
+<span lang='Old Republic' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf510;</span>  Old Republic
+<span lang='Om' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf679;</span>  Om
+<span lang='OpenCart' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf23d;</span>  OpenCart
+<span lang='OpenID' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf19b;</span>  OpenID
+<span lang='Opera' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf26a;</span>  Opera
+<span lang='Optin Monster' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf23c;</span>  Optin Monster
+<span lang='Open Source Initiative' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf41a;</span>  Open Source Initiative
+<span lang='Otter' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf700;</span>  Otter
+<span lang='Outdent' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf03b;</span>  Outdent
+<span lang='page4 Corporation' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d7;</span>  page4 Corporation
+<span lang='Pagelines' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf18c;</span>  Pagelines
+<span lang='Paint Brush' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1fc;</span>  Paint Brush
+<span lang='Paint Roller' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5aa;</span>  Paint Roller
+<span lang='Palette' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf53f;</span>  Palette
+<span lang='Palfed' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d8;</span>  Palfed
+<span lang='Pallet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf482;</span>  Pallet
+<span lang='Paper Plane' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1d8;</span>  Paper Plane
+<span lang='Paperclip' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c6;</span>  Paperclip
+<span lang='Parachute Box' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4cd;</span>  Parachute Box
+<span lang='paragraph' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1dd;</span>  paragraph
+<span lang='Parking' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf540;</span>  Parking
+<span lang='Passport' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ab;</span>  Passport
+<span lang='Pastafarianism' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf67b;</span>  Pastafarianism
+<span lang='Paste' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ea;</span>  Paste
+<span lang='Patreon' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3d9;</span>  Patreon
+<span lang='pause' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf04c;</span>  pause
+<span lang='Pause Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf28b;</span>  Pause Circle
+<span lang='Paw' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1b0;</span>  Paw
+<span lang='Paypal' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1ed;</span>  Paypal
+<span lang='Peace' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf67c;</span>  Peace
+<span lang='Pen' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf304;</span>  Pen
+<span lang='Alternate Pen' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf305;</span>  Alternate Pen
+<span lang='Pen Fancy' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ac;</span>  Pen Fancy
+<span lang='Pen Nib' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ad;</span>  Pen Nib
+<span lang='Pen Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf14b;</span>  Pen Square
+<span lang='Alternate Pencil' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf303;</span>  Alternate Pencil
+<span lang='Pencil Ruler' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ae;</span>  Pencil Ruler
+<span lang='Penny Arcade' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf704;</span>  Penny Arcade
+<span lang='People Carry' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4ce;</span>  People Carry
+<span lang='Percent' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf295;</span>  Percent
+<span lang='Percentage' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf541;</span>  Percentage
+<span lang='Periscope' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3da;</span>  Periscope
+<span lang='Person Entering Booth' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf756;</span>  Person Entering Booth
+<span lang='Phabricator' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3db;</span>  Phabricator
+<span lang='Phoenix Framework' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3dc;</span>  Phoenix Framework
+<span lang='Phoenix Squadron' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf511;</span>  Phoenix Squadron
+<span lang='Phone' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf095;</span>  Phone
+<span lang='Phone Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3dd;</span>  Phone Slash
+<span lang='Phone Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf098;</span>  Phone Square
+<span lang='Phone Volume' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a0;</span>  Phone Volume
+<span lang='PHP' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf457;</span>  PHP
+<span lang='Pied Piper Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2ae;</span>  Pied Piper Logo
+<span lang='Alternate Pied Piper Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a8;</span>  Alternate Pied Piper Logo
+<span lang='Pied Piper-hat' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4e5;</span>  Pied Piper-hat
+<span lang='Pied Piper PP Logo (Old)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a7;</span>  Pied Piper PP Logo (Old)
+<span lang='Piggy Bank' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4d3;</span>  Piggy Bank
+<span lang='Pills' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf484;</span>  Pills
+<span lang='Pinterest' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf0d2;</span>  Pinterest
+<span lang='Pinterest P' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf231;</span>  Pinterest P
+<span lang='Pinterest Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf0d3;</span>  Pinterest Square
+<span lang='Place of Worship' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf67f;</span>  Place of Worship
+<span lang='plane' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf072;</span>  plane
+<span lang='Plane Arrival' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5af;</span>  Plane Arrival
+<span lang='Plane Departure' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b0;</span>  Plane Departure
+<span lang='play' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf04b;</span>  play
+<span lang='Play Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf144;</span>  Play Circle
+<span lang='PlayStation' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3df;</span>  PlayStation
+<span lang='Plug' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e6;</span>  Plug
+<span lang='plus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf067;</span>  plus
+<span lang='Plus Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf055;</span>  Plus Circle
+<span lang='Plus Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0fe;</span>  Plus Square
+<span lang='Podcast' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2ce;</span>  Podcast
+<span lang='Poll' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf681;</span>  Poll
+<span lang='Poll H' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf682;</span>  Poll H
+<span lang='Poo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2fe;</span>  Poo
+<span lang='Poo Storm' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf75a;</span>  Poo Storm
+<span lang='Poop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf619;</span>  Poop
+<span lang='Portrait' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3e0;</span>  Portrait
+<span lang='Pound Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf154;</span>  Pound Sign
+<span lang='Power Off' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf011;</span>  Power Off
+<span lang='Pray' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf683;</span>  Pray
+<span lang='Praying Hands' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf684;</span>  Praying Hands
+<span lang='Prescription' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b1;</span>  Prescription
+<span lang='Prescription Bottle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf485;</span>  Prescription Bottle
+<span lang='Alternate Prescription Bottle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf486;</span>  Alternate Prescription Bottle
+<span lang='print' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf02f;</span>  print
+<span lang='Procedures' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf487;</span>  Procedures
+<span lang='Product Hunt' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf288;</span>  Product Hunt
+<span lang='Project Diagram' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf542;</span>  Project Diagram
+<span lang='Pushed' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e1;</span>  Pushed
+<span lang='Puzzle Piece' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf12e;</span>  Puzzle Piece
+<span lang='Python' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e2;</span>  Python
+<span lang='QQ' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d6;</span>  QQ
+<span lang='qrcode' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf029;</span>  qrcode
+<span lang='Question' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf128;</span>  Question
+<span lang='Question Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf059;</span>  Question Circle
+<span lang='Quidditch' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf458;</span>  Quidditch
+<span lang='QuinScape' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf459;</span>  QuinScape
+<span lang='Quora' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2c4;</span>  Quora
+<span lang='quote-left' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf10d;</span>  quote-left
+<span lang='quote-right' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf10e;</span>  quote-right
+<span lang='Quran' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf687;</span>  Quran
+<span lang='R Project' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f7;</span>  R Project
+<span lang='Radiation' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7b9;</span>  Radiation
+<span lang='Alternate Radiation' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7ba;</span>  Alternate Radiation
+<span lang='Rainbow' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf75b;</span>  Rainbow
+<span lang='random' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf074;</span>  random
+<span lang='Raspberry Pi' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7bb;</span>  Raspberry Pi
+<span lang='Ravelry' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2d9;</span>  Ravelry
+<span lang='React' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf41b;</span>  React
+<span lang='ReactEurope' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf75d;</span>  ReactEurope
+<span lang='ReadMe' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4d5;</span>  ReadMe
+<span lang='Rebel Alliance' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d0;</span>  Rebel Alliance
+<span lang='Receipt' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf543;</span>  Receipt
+<span lang='Recycle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1b8;</span>  Recycle
+<span lang='red river' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e3;</span>  red river
+<span lang='reddit Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a1;</span>  reddit Logo
+<span lang='reddit Alien' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf281;</span>  reddit Alien
+<span lang='reddit Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a2;</span>  reddit Square
+<span lang='Redhat' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7bc;</span>  Redhat
+<span lang='Redo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf01e;</span>  Redo
+<span lang='Alternate Redo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2f9;</span>  Alternate Redo
+<span lang='Registered Trademark' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf25d;</span>  Registered Trademark
+<span lang='Renren' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf18b;</span>  Renren
+<span lang='Reply' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3e5;</span>  Reply
+<span lang='reply-all' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf122;</span>  reply-all
+<span lang='replyd' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e6;</span>  replyd
+<span lang='Republican' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf75e;</span>  Republican
+<span lang='Researchgate' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f8;</span>  Researchgate
+<span lang='Resolving' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e7;</span>  Resolving
+<span lang='Restroom' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7bd;</span>  Restroom
+<span lang='Retweet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf079;</span>  Retweet
+<span lang='Rev.io' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5b2;</span>  Rev.io
+<span lang='Ribbon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4d6;</span>  Ribbon
+<span lang='Ring' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf70b;</span>  Ring
+<span lang='road' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf018;</span>  road
+<span lang='Robot' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf544;</span>  Robot
+<span lang='rocket' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf135;</span>  rocket
+<span lang='Rocket.Chat' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e8;</span>  Rocket.Chat
+<span lang='Rockrms' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e9;</span>  Rockrms
+<span lang='Route' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4d7;</span>  Route
+<span lang='rss' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf09e;</span>  rss
+<span lang='RSS Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf143;</span>  RSS Square
+<span lang='Ruble Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf158;</span>  Ruble Sign
+<span lang='Ruler' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf545;</span>  Ruler
+<span lang='Ruler Combined' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf546;</span>  Ruler Combined
+<span lang='Ruler Horizontal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf547;</span>  Ruler Horizontal
+<span lang='Ruler Vertical' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf548;</span>  Ruler Vertical
+<span lang='Running' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf70c;</span>  Running
+<span lang='Indian Rupee Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf156;</span>  Indian Rupee Sign
+<span lang='Crying Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b3;</span>  Crying Face
+<span lang='Loudly Crying Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b4;</span>  Loudly Crying Face
+<span lang='Safari' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf267;</span>  Safari
+<span lang='Sass' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf41e;</span>  Sass
+<span lang='Satellite' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7bf;</span>  Satellite
+<span lang='Satellite Dish' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7c0;</span>  Satellite Dish
+<span lang='Save' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c7;</span>  Save
+<span lang='SCHLIX' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ea;</span>  SCHLIX
+<span lang='School' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf549;</span>  School
+<span lang='Screwdriver' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf54a;</span>  Screwdriver
+<span lang='Scribd' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf28a;</span>  Scribd
+<span lang='Scroll' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf70e;</span>  Scroll
+<span lang='Sd Card' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7c2;</span>  Sd Card
+<span lang='Search' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf002;</span>  Search
+<span lang='Search Dollar' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf688;</span>  Search Dollar
+<span lang='Search Location' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf689;</span>  Search Location
+<span lang='Search Minus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf010;</span>  Search Minus
+<span lang='Search Plus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf00e;</span>  Search Plus
+<span lang='Searchengin' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3eb;</span>  Searchengin
+<span lang='Seedling' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4d8;</span>  Seedling
+<span lang='Sellcast' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2da;</span>  Sellcast
+<span lang='Sellsy' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf213;</span>  Sellsy
+<span lang='Server' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf233;</span>  Server
+<span lang='Servicestack' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ec;</span>  Servicestack
+<span lang='Shapes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf61f;</span>  Shapes
+<span lang='Share' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf064;</span>  Share
+<span lang='Alternate Share' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e0;</span>  Alternate Share
+<span lang='Alternate Share Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e1;</span>  Alternate Share Square
+<span lang='Share Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf14d;</span>  Share Square
+<span lang='Shekel Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf20b;</span>  Shekel Sign
+<span lang='Alternate Shield' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3ed;</span>  Alternate Shield
+<span lang='Ship' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf21a;</span>  Ship
+<span lang='Shipping Fast' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf48b;</span>  Shipping Fast
+<span lang='Shirts in Bulk' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf214;</span>  Shirts in Bulk
+<span lang='Shoe Prints' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf54b;</span>  Shoe Prints
+<span lang='Shopping Bag' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf290;</span>  Shopping Bag
+<span lang='Shopping Basket' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf291;</span>  Shopping Basket
+<span lang='shopping-cart' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf07a;</span>  shopping-cart
+<span lang='Shopware' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5b5;</span>  Shopware
+<span lang='Shower' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2cc;</span>  Shower
+<span lang='Shuttle Van' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b6;</span>  Shuttle Van
+<span lang='Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4d9;</span>  Sign
+<span lang='Alternate Sign In' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2f6;</span>  Alternate Sign In
+<span lang='Sign Language' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2a7;</span>  Sign Language
+<span lang='Alternate Sign Out' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2f5;</span>  Alternate Sign Out
+<span lang='signal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf012;</span>  signal
+<span lang='Signature' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b7;</span>  Signature
+<span lang='SIM Card' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7c4;</span>  SIM Card
+<span lang='SimplyBuilt' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf215;</span>  SimplyBuilt
+<span lang='SISTRIX' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ee;</span>  SISTRIX
+<span lang='Sitemap' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0e8;</span>  Sitemap
+<span lang='Sith' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf512;</span>  Sith
+<span lang='Skating' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7c5;</span>  Skating
+<span lang='Sketch' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7c6;</span>  Sketch
+<span lang='Skiing' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7c9;</span>  Skiing
+<span lang='Skiing Nordic' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7ca;</span>  Skiing Nordic
+<span lang='Skull' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf54c;</span>  Skull
+<span lang='Skull & Crossbones' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf714;</span>  Skull & Crossbones
+<span lang='skyatlas' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf216;</span>  skyatlas
+<span lang='Skype' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf17e;</span>  Skype
+<span lang='Slack Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf198;</span>  Slack Logo
+<span lang='Slack Hashtag' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3ef;</span>  Slack Hashtag
+<span lang='Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf715;</span>  Slash
+<span lang='Sleigh' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7cc;</span>  Sleigh
+<span lang='Horizontal Sliders' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1de;</span>  Horizontal Sliders
+<span lang='Slideshare' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1e7;</span>  Slideshare
+<span lang='Smiling Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf118;</span>  Smiling Face
+<span lang='Beaming Face With Smiling Eyes' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5b8;</span>  Beaming Face With Smiling Eyes
+<span lang='Winking Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4da;</span>  Winking Face
+<span lang='Smog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf75f;</span>  Smog
+<span lang='Smoking' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf48d;</span>  Smoking
+<span lang='Smoking Ban' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf54d;</span>  Smoking Ban
+<span lang='SMS' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7cd;</span>  SMS
+<span lang='Snapchat' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2ab;</span>  Snapchat
+<span lang='Snapchat Ghost' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2ac;</span>  Snapchat Ghost
+<span lang='Snapchat Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2ad;</span>  Snapchat Square
+<span lang='Snowboarding' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7ce;</span>  Snowboarding
+<span lang='Snowflake' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2dc;</span>  Snowflake
+<span lang='Snowman' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7d0;</span>  Snowman
+<span lang='Snowplow' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7d2;</span>  Snowplow
+<span lang='Socks' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf696;</span>  Socks
+<span lang='Solar Panel' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ba;</span>  Solar Panel
+<span lang='Sort' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0dc;</span>  Sort
+<span lang='Sort Alpha Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf15d;</span>  Sort Alpha Down
+<span lang='Sort Alpha Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf15e;</span>  Sort Alpha Up
+<span lang='Sort Amount Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf160;</span>  Sort Amount Down
+<span lang='Sort Amount Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf161;</span>  Sort Amount Up
+<span lang='Sort Down (Descending)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0dd;</span>  Sort Down (Descending)
+<span lang='Sort Numeric Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf162;</span>  Sort Numeric Down
+<span lang='Sort Numeric Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf163;</span>  Sort Numeric Up
+<span lang='Sort Up (Ascending)' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0de;</span>  Sort Up (Ascending)
+<span lang='SoundCloud' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1be;</span>  SoundCloud
+<span lang='Sourcetree' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7d3;</span>  Sourcetree
+<span lang='Spa' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5bb;</span>  Spa
+<span lang='Space Shuttle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf197;</span>  Space Shuttle
+<span lang='Speakap' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3f3;</span>  Speakap
+<span lang='Spider' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf717;</span>  Spider
+<span lang='Spinner' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf110;</span>  Spinner
+<span lang='Splotch' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5bc;</span>  Splotch
+<span lang='Spotify' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1bc;</span>  Spotify
+<span lang='Spray Can' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5bd;</span>  Spray Can
+<span lang='Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c8;</span>  Square
+<span lang='Square Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf45c;</span>  Square Full
+<span lang='Alternate Square Root' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf698;</span>  Alternate Square Root
+<span lang='Squarespace' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5be;</span>  Squarespace
+<span lang='Stack Exchange' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf18d;</span>  Stack Exchange
+<span lang='Stack Overflow' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf16c;</span>  Stack Overflow
+<span lang='Stamp' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5bf;</span>  Stamp
+<span lang='Star' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf005;</span>  Star
+<span lang='Star and Crescent' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf699;</span>  Star and Crescent
+<span lang='star-half' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf089;</span>  star-half
+<span lang='Alternate Star Half' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c0;</span>  Alternate Star Half
+<span lang='Star of David' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf69a;</span>  Star of David
+<span lang='Star of Life' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf621;</span>  Star of Life
+<span lang='StayLinked' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3f5;</span>  StayLinked
+<span lang='Steam' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1b6;</span>  Steam
+<span lang='Steam Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1b7;</span>  Steam Square
+<span lang='Steam Symbol' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3f6;</span>  Steam Symbol
+<span lang='step-backward' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf048;</span>  step-backward
+<span lang='step-forward' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf051;</span>  step-forward
+<span lang='Stethoscope' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f1;</span>  Stethoscope
+<span lang='Sticker Mule' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3f7;</span>  Sticker Mule
+<span lang='Sticky Note' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf249;</span>  Sticky Note
+<span lang='stop' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf04d;</span>  stop
+<span lang='Stop Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf28d;</span>  Stop Circle
+<span lang='Stopwatch' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2f2;</span>  Stopwatch
+<span lang='Store' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf54e;</span>  Store
+<span lang='Alternate Store' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf54f;</span>  Alternate Store
+<span lang='Strava' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf428;</span>  Strava
+<span lang='Stream' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf550;</span>  Stream
+<span lang='Street View' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf21d;</span>  Street View
+<span lang='Strikethrough' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0cc;</span>  Strikethrough
+<span lang='Stripe' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf429;</span>  Stripe
+<span lang='Stripe S' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf42a;</span>  Stripe S
+<span lang='Stroopwafel' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf551;</span>  Stroopwafel
+<span lang='Studio Vinari' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3f8;</span>  Studio Vinari
+<span lang='StumbleUpon Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a4;</span>  StumbleUpon Logo
+<span lang='StumbleUpon Circle' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1a3;</span>  StumbleUpon Circle
+<span lang='subscript' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf12c;</span>  subscript
+<span lang='Subway' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf239;</span>  Subway
+<span lang='Suitcase' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f2;</span>  Suitcase
+<span lang='Suitcase Rolling' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c1;</span>  Suitcase Rolling
+<span lang='Sun' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf185;</span>  Sun
+<span lang='Superpowers' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2dd;</span>  Superpowers
+<span lang='superscript' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf12b;</span>  superscript
+<span lang='Supple' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3f9;</span>  Supple
+<span lang='Hushed Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c2;</span>  Hushed Face
+<span lang='Suse' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7d6;</span>  Suse
+<span lang='Swatchbook' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c3;</span>  Swatchbook
+<span lang='Swimmer' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c4;</span>  Swimmer
+<span lang='Swimming Pool' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c5;</span>  Swimming Pool
+<span lang='Synagogue' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf69b;</span>  Synagogue
+<span lang='Sync' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf021;</span>  Sync
+<span lang='Alternate Sync' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2f1;</span>  Alternate Sync
+<span lang='Syringe' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf48e;</span>  Syringe
+<span lang='table' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ce;</span>  table
+<span lang='Table Tennis' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf45d;</span>  Table Tennis
+<span lang='tablet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf10a;</span>  tablet
+<span lang='Alternate Tablet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3fa;</span>  Alternate Tablet
+<span lang='Tablets' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf490;</span>  Tablets
+<span lang='Alternate Tachometer' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3fd;</span>  Alternate Tachometer
+<span lang='tag' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf02b;</span>  tag
+<span lang='tags' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf02c;</span>  tags
+<span lang='Tape' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4db;</span>  Tape
+<span lang='Tasks' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ae;</span>  Tasks
+<span lang='Taxi' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1ba;</span>  Taxi
+<span lang='TeamSpeak' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf4f9;</span>  TeamSpeak
+<span lang='Teeth' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf62e;</span>  Teeth
+<span lang='Teeth Open' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf62f;</span>  Teeth Open
+<span lang='Telegram' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2c6;</span>  Telegram
+<span lang='Telegram Plane' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3fe;</span>  Telegram Plane
+<span lang='High Temperature' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf769;</span>  High Temperature
+<span lang='Low Temperature' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf76b;</span>  Low Temperature
+<span lang='Tencent Weibo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d5;</span>  Tencent Weibo
+<span lang='Tenge' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7d7;</span>  Tenge
+<span lang='Terminal' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf120;</span>  Terminal
+<span lang='text-height' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf034;</span>  text-height
+<span lang='text-width' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf035;</span>  text-width
+<span lang='th' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf00a;</span>  th
+<span lang='th-large' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf009;</span>  th-large
+<span lang='th-list' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf00b;</span>  th-list
+<span lang='The Red Yeti' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf69d;</span>  The Red Yeti
+<span lang='Theater Masks' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf630;</span>  Theater Masks
+<span lang='Themeco' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5c6;</span>  Themeco
+<span lang='ThemeIsle' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2b2;</span>  ThemeIsle
+<span lang='Thermometer' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf491;</span>  Thermometer
+<span lang='Thermometer Empty' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2cb;</span>  Thermometer Empty
+<span lang='Thermometer Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2c7;</span>  Thermometer Full
+<span lang='Thermometer 1/2 Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2c9;</span>  Thermometer 1/2 Full
+<span lang='Thermometer 1/4 Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2ca;</span>  Thermometer 1/4 Full
+<span lang='Thermometer 3/4 Full' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2c8;</span>  Thermometer 3/4 Full
+<span lang='Think Peaks' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf731;</span>  Think Peaks
+<span lang='thumbs-down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf165;</span>  thumbs-down
+<span lang='thumbs-up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf164;</span>  thumbs-up
+<span lang='Thumbtack' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf08d;</span>  Thumbtack
+<span lang='Alternate Ticket' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf3ff;</span>  Alternate Ticket
+<span lang='Times' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf00d;</span>  Times
+<span lang='Times Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf057;</span>  Times Circle
+<span lang='tint' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf043;</span>  tint
+<span lang='Tint Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c7;</span>  Tint Slash
+<span lang='Tired Face' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c8;</span>  Tired Face
+<span lang='Toggle Off' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf204;</span>  Toggle Off
+<span lang='Toggle On' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf205;</span>  Toggle On
+<span lang='Toilet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7d8;</span>  Toilet
+<span lang='Toilet Paper' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf71e;</span>  Toilet Paper
+<span lang='Toolbox' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf552;</span>  Toolbox
+<span lang='Tools' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7d9;</span>  Tools
+<span lang='Tooth' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5c9;</span>  Tooth
+<span lang='Torah' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6a0;</span>  Torah
+<span lang='Torii Gate' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6a1;</span>  Torii Gate
+<span lang='Tractor' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf722;</span>  Tractor
+<span lang='Trade Federation' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf513;</span>  Trade Federation
+<span lang='Trademark' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf25c;</span>  Trademark
+<span lang='Traffic Light' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf637;</span>  Traffic Light
+<span lang='Train' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf238;</span>  Train
+<span lang='Tram' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf7da;</span>  Tram
+<span lang='Transgender' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf224;</span>  Transgender
+<span lang='Alternate Transgender' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf225;</span>  Alternate Transgender
+<span lang='Trash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1f8;</span>  Trash
+<span lang='Alternate Trash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2ed;</span>  Alternate Trash
+<span lang='Tree' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1bb;</span>  Tree
+<span lang='Trello' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf181;</span>  Trello
+<span lang='TripAdvisor' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf262;</span>  TripAdvisor
+<span lang='trophy' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf091;</span>  trophy
+<span lang='truck' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0d1;</span>  truck
+<span lang='Truck Loading' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4de;</span>  Truck Loading
+<span lang='Truck Monster' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf63b;</span>  Truck Monster
+<span lang='Truck Moving' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4df;</span>  Truck Moving
+<span lang='Truck Side' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf63c;</span>  Truck Side
+<span lang='T-Shirt' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf553;</span>  T-Shirt
+<span lang='TTY' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1e4;</span>  TTY
+<span lang='Tumblr' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf173;</span>  Tumblr
+<span lang='Tumblr Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf174;</span>  Tumblr Square
+<span lang='Television' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf26c;</span>  Television
+<span lang='Twitch' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1e8;</span>  Twitch
+<span lang='Twitter' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf099;</span>  Twitter
+<span lang='Twitter Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf081;</span>  Twitter Square
+<span lang='Typo3' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf42b;</span>  Typo3
+<span lang='Uber' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf402;</span>  Uber
+<span lang='Ubuntu' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7df;</span>  Ubuntu
+<span lang='UIkit' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf403;</span>  UIkit
+<span lang='Umbrella' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0e9;</span>  Umbrella
+<span lang='Umbrella Beach' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ca;</span>  Umbrella Beach
+<span lang='Underline' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0cd;</span>  Underline
+<span lang='Undo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0e2;</span>  Undo
+<span lang='Alternate Undo' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2ea;</span>  Alternate Undo
+<span lang='Uniregistry' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf404;</span>  Uniregistry
+<span lang='Universal Access' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf29a;</span>  Universal Access
+<span lang='University' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf19c;</span>  University
+<span lang='unlink' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf127;</span>  unlink
+<span lang='unlock' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf09c;</span>  unlock
+<span lang='Alternate Unlock' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf13e;</span>  Alternate Unlock
+<span lang='Untappd' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf405;</span>  Untappd
+<span lang='Upload' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf093;</span>  Upload
+<span lang='UPS' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7e0;</span>  UPS
+<span lang='USB' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf287;</span>  USB
+<span lang='User' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf007;</span>  User
+<span lang='Alternate User' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf406;</span>  Alternate User
+<span lang='Alternate User Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4fa;</span>  Alternate User Slash
+<span lang='User Astronaut' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4fb;</span>  User Astronaut
+<span lang='User Check' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4fc;</span>  User Check
+<span lang='User Circle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2bd;</span>  User Circle
+<span lang='User Clock' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4fd;</span>  User Clock
+<span lang='User Cog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4fe;</span>  User Cog
+<span lang='User Edit' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4ff;</span>  User Edit
+<span lang='User Friends' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf500;</span>  User Friends
+<span lang='User Graduate' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf501;</span>  User Graduate
+<span lang='User Injured' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf728;</span>  User Injured
+<span lang='User Lock' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf502;</span>  User Lock
+<span lang='user-md' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0f0;</span>  user-md
+<span lang='User Minus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf503;</span>  User Minus
+<span lang='User Ninja' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf504;</span>  User Ninja
+<span lang='User Plus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf234;</span>  User Plus
+<span lang='User Secret' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf21b;</span>  User Secret
+<span lang='User Shield' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf505;</span>  User Shield
+<span lang='User Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf506;</span>  User Slash
+<span lang='User Tag' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf507;</span>  User Tag
+<span lang='User Tie' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf508;</span>  User Tie
+<span lang='Remove User' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf235;</span>  Remove User
+<span lang='Users' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0c0;</span>  Users
+<span lang='Users Cog' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf509;</span>  Users Cog
+<span lang='United States Postal Service' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7e1;</span>  United States Postal Service
+<span lang='us-Sunnah Foundation' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf407;</span>  us-Sunnah Foundation
+<span lang='Utensil Spoon' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2e5;</span>  Utensil Spoon
+<span lang='Utensils' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2e7;</span>  Utensils
+<span lang='Vaadin' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf408;</span>  Vaadin
+<span lang='Vector Square' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5cb;</span>  Vector Square
+<span lang='Venus' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf221;</span>  Venus
+<span lang='Venus Double' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf226;</span>  Venus Double
+<span lang='Venus Mars' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf228;</span>  Venus Mars
+<span lang='Viacoin' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf237;</span>  Viacoin
+<span lang='Video' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2a9;</span>  Video
+<span lang='Video Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2aa;</span>  Video Square
+<span lang='Vial' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf492;</span>  Vial
+<span lang='Vials' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf493;</span>  Vials
+<span lang='Viber' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf409;</span>  Viber
+<span lang='Video' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf03d;</span>  Video
+<span lang='Video Slash' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4e2;</span>  Video Slash
+<span lang='Vihara' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6a7;</span>  Vihara
+<span lang='Vimeo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf40a;</span>  Vimeo
+<span lang='Vimeo Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf194;</span>  Vimeo Square
+<span lang='Vimeo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf27d;</span>  Vimeo
+<span lang='Vine' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1ca;</span>  Vine
+<span lang='VK' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf189;</span>  VK
+<span lang='VNV' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf40b;</span>  VNV
+<span lang='Volleyball Ball' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf45f;</span>  Volleyball Ball
+<span lang='Volume Down' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf027;</span>  Volume Down
+<span lang='Volume Mute' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6a9;</span>  Volume Mute
+<span lang='Volume Off' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf026;</span>  Volume Off
+<span lang='Volume Up' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf028;</span>  Volume Up
+<span lang='Vote Yea' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf772;</span>  Vote Yea
+<span lang='Cardboard VR' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf729;</span>  Cardboard VR
+<span lang='Vue.js' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf41f;</span>  Vue.js
+<span lang='Walking' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf554;</span>  Walking
+<span lang='Wallet' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf555;</span>  Wallet
+<span lang='Warehouse' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf494;</span>  Warehouse
+<span lang='Water' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf773;</span>  Water
+<span lang='Weebly' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5cc;</span>  Weebly
+<span lang='Weibo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf18a;</span>  Weibo
+<span lang='Weight' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf496;</span>  Weight
+<span lang='Hanging Weight' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5cd;</span>  Hanging Weight
+<span lang='Weixin (WeChat)' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1d7;</span>  Weixin (WeChat)
+<span lang='What's App' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf232;</span>  What's App
+<span lang='What's App Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf40c;</span>  What's App Square
+<span lang='Wheelchair' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf193;</span>  Wheelchair
+<span lang='WHMCS' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf40d;</span>  WHMCS
+<span lang='WiFi' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf1eb;</span>  WiFi
+<span lang='Wikipedia W' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf266;</span>  Wikipedia W
+<span lang='Wind' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf72e;</span>  Wind
+<span lang='Window Close' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf410;</span>  Window Close
+<span lang='Window Maximize' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2d0;</span>  Window Maximize
+<span lang='Window Minimize' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2d1;</span>  Window Minimize
+<span lang='Window Restore' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf2d2;</span>  Window Restore
+<span lang='Windows' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf17a;</span>  Windows
+<span lang='Wine Bottle' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf72f;</span>  Wine Bottle
+<span lang='Wine Glass' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf4e3;</span>  Wine Glass
+<span lang='Alternate Wine Glas' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf5ce;</span>  Alternate Wine Glas
+<span lang='Wix' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf5cf;</span>  Wix
+<span lang='Wizards of the Coast' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf730;</span>  Wizards of the Coast
+<span lang='Wolf Pack Battalion' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf514;</span>  Wolf Pack Battalion
+<span lang='Won Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf159;</span>  Won Sign
+<span lang='WordPress Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf19a;</span>  WordPress Logo
+<span lang='Wordpress Simple' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf411;</span>  Wordpress Simple
+<span lang='WPBeginner' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf297;</span>  WPBeginner
+<span lang='WPExplorer' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2de;</span>  WPExplorer
+<span lang='WPForms' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf298;</span>  WPForms
+<span lang='wpressr' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf3e4;</span>  wpressr
+<span lang='Wrench' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf0ad;</span>  Wrench
+<span lang='X-Ray' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf497;</span>  X-Ray
+<span lang='Xbox' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf412;</span>  Xbox
+<span lang='Xing' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf168;</span>  Xing
+<span lang='Xing Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf169;</span>  Xing Square
+<span lang='Y Combinator' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf23b;</span>  Y Combinator
+<span lang='Yahoo Logo' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf19e;</span>  Yahoo Logo
+<span lang='Yandex' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf413;</span>  Yandex
+<span lang='Yandex International' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf414;</span>  Yandex International
+<span lang='Yarn' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf7e3;</span>  Yarn
+<span lang='Yelp' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf1e9;</span>  Yelp
+<span lang='Yen Sign' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf157;</span>  Yen Sign
+<span lang='Yin Yang' weight="normal" fallback="true" face='font Awesome 5 solid'>&#xf6ad;</span>  Yin Yang
+<span lang='Yoast' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf2b1;</span>  Yoast
+<span lang='YouTube' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf167;</span>  YouTube
+<span lang='YouTube Square' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf431;</span>  YouTube Square
+<span lang='Zhihu' weight="normal" fallback="true" face='font Awesome 5 brands'>&#xf63f;</span>  Zhihu
