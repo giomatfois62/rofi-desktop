@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=FontAwesome
+Comment=
+Exec=rofi-fontawesome.sh
+Icon=accessories-character-map
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;

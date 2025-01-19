@@ -71,6 +71,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Set Timer (rofi-timer.sh)
   - Characters (rofi-characters.sh, utf-8 char and emoji picker)
   - Icons (rofi-icons.sh, icon themes browser)
+  - FontAwesome (rofi-fontawesome.sh, fontawesome icons browser)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH Sessions (ssh modi)
@@ -231,3 +232,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [calebstewart](https://github.com/calebstewart/rofi-libvirt-mode)
 - [denpolischuk](https://github.com/denpolischuk/rofi-docker)
 - [okraits](https://github.com/okraits/rofi-tools)
+- [wmstam88](https://github.com/wstam88/rofi-fontawesome)

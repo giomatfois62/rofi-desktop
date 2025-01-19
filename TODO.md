@@ -7,7 +7,6 @@
 - Integrate a local LLM model menu instead of chatgpt
 - Add rofi-bibbrowser
 - File picker with drag drop
-- Fontawesome icons browser
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -103,6 +102,7 @@
 - Add toggle file preview shortcut in search menu (DONE)
 - Better file search results (2 lines) (DONE)
 - Rewrite rofi-quiz in bash (DONE)
+- Fontawesome icons browser (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
