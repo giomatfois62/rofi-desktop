@@ -500,7 +500,7 @@ calculator() {
     if [ -n "$(rofi -dump-config | grep calc)" ]; then
         $ROFI -show calc
     else
-        $ROFI -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
+        $ROFI -modi calc:"$SCRIPT_PATH"/rofi-calc-mode.sh -show calc
     fi
 }
 
