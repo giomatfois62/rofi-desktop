@@ -7,6 +7,7 @@
 - Integrate a local LLM model menu instead of chatgpt
 - Add rofi-bibbrowser
 - File picker with drag drop
+- Fontawesome icons browser
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -17,10 +18,13 @@
 - Improve text thumbnailer (https://imagemagick.org/Usage/text/ - use head of text files to produce preview)
 - Use new recursivebrowser to search all files
 - Blacklist folders in search menu
-- Move github repo descriptions in submenu
+- Move github repo descriptions in submenu or 2nd row in rofi-github
 - Scrape using xmllint as much as possible to remove python dependencies (books, livetv, vcf)
 - Toggle preview/grid in rofi-xkcd
 - Use mesg box to display instructions in rofi-todo and rofi-notes
+- Use more standard icons in small menus
+- Customizable common shortcuts
+- Avatar icons in rofi-github
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
