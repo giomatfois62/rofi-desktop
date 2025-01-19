@@ -4,14 +4,14 @@
 #
 # dependencies: rofi, curl, jq
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 GITHUB_CACHE="$ROFI_CACHE_DIR/github.json"
 GITHUB_PLACEHOLDER="Type something and press \"Enter\" to search repositories"
 CLONE_FOLDER=${CLONE_FOLDER:-"$HOME/Downloads/"}
 
 if [ -z $1 ]; then
-  query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$GITHUB_PLACEHOLDER\";"} -p "Search GitHub")
+  query=$(echo "" | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$GITHUB_PLACEHOLDER\";"} -p "Search GitHub")
 else
   query=$1
 fi
@@ -41,7 +41,7 @@ fi
 
 selected_row=0
 
-while repo=$(echo -en "$repos" | tr -d '"' |  $ROFI_CMD -format 'i s' -selected-row "$selected_row" -p "Repository"); do
+while repo=$(echo -en "$repos" | tr -d '"' |  $ROFI -dmenu -i -format 'i s' -selected-row "$selected_row" -p "Repository"); do
     selected_row=$(echo "$repo" | cut -d' ' -f1)
     repo=$(echo "$repo" | cut -d' ' -f2-)
 
@@ -64,7 +64,7 @@ while repo=$(echo -en "$repos" | tr -d '"' |  $ROFI_CMD -format 'i s' -selected-
     else
         repo_name=$(echo "$repo" | cut -d' ' -f2)
 
-        action=$(echo -en "Open in Browser\nClone" | $ROFI_CMD -p "Action")
+        action=$(echo -en "Open in Browser\nClone" | $ROFI -dmenu -i -p "Action")
 
         if [ "$action" = "Open in Browser" ]; then
             repo_url=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .html_url" "$GITHUB_CACHE" | tr -d '"')

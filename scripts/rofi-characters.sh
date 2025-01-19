@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 CHAR_FILE="$ROFI_DATA_DIR/unicode.txt"
 
@@ -23,7 +23,7 @@ else
     exit 1
 fi
 
-selected=$(cat "$CHAR_FILE" | $ROFI_CMD -p "Characters")
+selected=$(cat "$CHAR_FILE" | $ROFI -dmenu -i -p "Characters")
 
 if [ -n "$selected" ]; then
     echo "$selected" | awk '{print $1;}' | $xdotool

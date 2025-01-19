@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
 TNT_FILE="$ROFI_DATA_DIR/tntvillage-release-dump.csv"
@@ -25,7 +25,7 @@ fi
 
 selected=$(\
     awk -F "\"*,\"*" 'NR>1 {print $6 $7" - " $2}' "$TNT_FILE" |\
-    $ROFI_CMD -p "Torrent" | rev | cut -d " " -f 1 | rev |\
+    $ROFI -dmenu -i -p "Torrent" | rev | cut -d " " -f 1 | rev |\
     awk '{print "magnet:?xt=urn:btih:"$1"&dn=&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopentor.org%3A2710&tr=udp%3A%2F%2Ftracker.ccc.de%3A80&tr=udp%3A%2F%2Ftracker.blackunicorn.xyz%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969"}'\
 )
 

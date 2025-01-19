@@ -2,10 +2,12 @@
 
 version_number="4.8.10"
 
+ROFI="${ROFI:-rofi}"
+
 # UI
 
 external_menu() {
-    rofi "$1" -sort -dmenu -i -p "$2"
+    $ROFI "$1" -sort -dmenu -i -p "$2"
 }
 
 launcher() {

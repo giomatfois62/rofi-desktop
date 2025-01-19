@@ -4,7 +4,7 @@
 #
 # dependencies: rofi, curl, jq
 
-ROFI_CMD="${ROFI_CMD:-/home/mat/Programs/rofi/build/rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 url="https://opentdb.com/api.php?amount=1"
 points=0
@@ -18,7 +18,7 @@ while [ True ]; do
     quiz=$(curl -s "$url" | jq ".results[0]")
 
     if [ "$quiz" = "null" ] || [ -z "$quiz" ]; then
-        rofi -e "Error downloading quiz."
+        $ROFI -e "Error downloading quiz."
         exit 1
     fi
 
@@ -32,7 +32,7 @@ while [ True ]; do
 
     choice=$(echo -e "$correct_answer\n$incorrect_answers" | \
         shuf | \
-        $ROFI_CMD -markup -markup-rows -p "Answer" -mesg "$mesg")
+        $ROFI -dmenu -i -markup -markup-rows -p "Answer" -mesg "$mesg")
 
     [ -z "$choice" ] && break
         
@@ -50,7 +50,7 @@ while [ True ]; do
     fi
 
     choice=$(echo -e "Play Again\nExit" | \
-        $ROFI_CMD -markup -p "Answer" -mesg "$mesg")
+        $ROFI -dmenu -i -markup -p "Answer" -mesg "$mesg")
 
     if [ -z "$choice" ] || [ "$choice" = "Exit" ]; then
         break

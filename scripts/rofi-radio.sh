@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 RADIO_ICONS="${RADIO_ICONS:-}"
@@ -41,7 +41,7 @@ select_channel(){
             tr -d '"' |\
             sort |\
             sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-            $ROFI_CMD -p "Radio" -selected-row "${selected_row}" -format 'i s' $flags -preview-cmd "$PREVIEW_CMD" \
+            $ROFI -dmenu -i -p "Radio" -selected-row "${selected_row}" -format 'i s' $flags -preview-cmd "$PREVIEW_CMD" \
         ); do
 
         index=$(echo "$name" | awk '{print $1;}')

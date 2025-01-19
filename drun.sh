@@ -12,7 +12,7 @@ fi
 
 export BOOK_ICONS=1
 export SEARCH_ICONS=1
-export ROFI_CMD="rofi -dmenu -i" # -kb-screenshot Control+Shift+space
+export ROFI="rofi" # -kb-screenshot Control+Shift+space
 export PATH="$SCRIPT_PATH/scripts/:$PATH"
 export XDG_DATA_DIRS="$SCRIPT_PATH:/usr/local/share:/usr/share:$XDG_DATA_DIRS"
 

@@ -6,7 +6,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
@@ -60,7 +60,7 @@ show_episodes() {
         episodes="$episodes\nMore..."
     fi
 
-    while episode=$(echo -en "$episodes" | $ROFI_CMD -mesg "$header" -p "Episode"); do
+    while episode=$(echo -en "$episodes" | $ROFI -dmenu -i -mesg "$header" -p "Episode"); do
         if [ "$episode" = "More..." ]; then
             counter=$((counter+1))
             series_url="https://apollo.rss.com/podcasts/$slug/episodes?limit=10&page="$counter
@@ -94,9 +94,9 @@ show_episodes() {
 
 categories=$(cd "$PODCAST_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
-while category=$(echo -en "Recently Played\n$categories" | $ROFI_CMD -p "Category"); do
+while category=$(echo -en "Recently Played\n$categories" | $ROFI -dmenu -i -p "Category"); do
     if [ "$category" = "Recently Played" ]; then
-        while entry=$(cat "$PODCAST_HISTORY" | $ROFI_CMD -p "Podcast"); do
+        while entry=$(cat "$PODCAST_HISTORY" | $ROFI -dmenu -i -p "Podcast"); do
             IFS='/' read -r category title <<< "$entry"
 
             podcast_file="$PODCAST_FOLDER/$category.json"
@@ -116,7 +116,7 @@ while category=$(echo -en "Recently Played\n$categories" | $ROFI_CMD -p "Categor
         while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}<ICON>\(.slug)/<SIZE>/\(.cover)"' "$podcast_file" |\
             tr -d '"' |\
             sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-            $ROFI_CMD -p "$category" $flags -preview-cmd "$PREVIEW_CMD"); do
+            $ROFI -dmenu -i -p "$category" $flags -preview-cmd "$PREVIEW_CMD"); do
 
             title=$(echo "$podcast" | cut -d"{" -f1 | sed 's/ *$//g')
             show_episodes "$title" "$podcast_file"

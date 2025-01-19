@@ -5,10 +5,10 @@
 # dependencies: rofi, fortune
 # optional: cowsay
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 if ! command -v fortune &> /dev/null; then
-    rofi -e "Install fortune"
+    $ROFI -e "Install fortune"
     exit 1
 fi
 
@@ -22,6 +22,6 @@ get_fortune() {
 
 theme="listview{lines:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
 
-while continue=$(echo -en "Next\x00icon\x1fgo-next" | $ROFI_CMD -show-icons -p "Fortune" -theme-str "$theme" -mesg "$(get_fortune)"); do
+while continue=$(echo -en "Next\x00icon\x1fgo-next" | $ROFI -dmenu -i -show-icons -p "Fortune" -theme-str "$theme" -mesg "$(get_fortune)"); do
     echo "next"
 done

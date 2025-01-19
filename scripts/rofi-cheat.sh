@@ -5,7 +5,7 @@
 #
 # dependencies: rofi, curl, xclip/wl-clipboard
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 CHEAT_MSG="Type your query and press \"Enter\" to search cheat.sh.&#x0a;Type \":list\" to list available language cheat sheets.&#x0a;Type \":learn\" to get the language basics."
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
@@ -20,8 +20,8 @@ fi
 base_url="cheat.sh"
 all_entries=$(curl "cheat.sh/:list")
 
-while entry=$(echo -en "$all_entries" | $ROFI_CMD -p "Entry"); do
-    while query=$((echo) | $ROFI_CMD -p "Query" -mesg "$CHEAT_MSG"); do
+while entry=$(echo -en "$all_entries" | $ROFI -dmenu -i -p "Entry"); do
+    while query=$((echo) | $ROFI -dmenu -i -p "Query" -mesg "$CHEAT_MSG"); do
         encoded_query=${query// /"+"}
 
         if [ "$query" != ":list" ]; then
@@ -36,7 +36,7 @@ while entry=$(echo -en "$all_entries" | $ROFI_CMD -p "Entry"); do
 
         cheat=$(curl "$url")
 
-        choice=$(echo -en "Copy to Clipboard\n\n$cheat" | $ROFI_CMD -p "$query")
+        choice=$(echo -en "Copy to Clipboard\n\n$cheat" | $ROFI -dmenu -i -p "$query")
 
         if [ "$choice" = "Copy to Clipboard" ]; then
             echo "$cheat" | $clip_cmd

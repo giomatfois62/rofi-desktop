@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TV_ICONS="${TV_ICONS:-}"
@@ -34,7 +34,7 @@ selected_row=$(cat "$TV_CACHE")
 while channel=$(\
     grep "#EXTINF" "$TV_FILE" | rev | cut -d"," -f1  | rev | awk '{print $0"<ICON>"$0}' |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-    $ROFI_CMD $flags -preview-cmd "$PREVIEW_CMD" -selected-row "${selected_row}" -format 'i s' -p "Channel"); do
+    $ROFI -dmenu -i $flags -preview-cmd "$PREVIEW_CMD" -selected-row "${selected_row}" -format 'i s' -p "Channel"); do
 
     channel_index=$(echo "$channel" | awk '{print $1;}')
     channel_name=$(echo "$channel" | cut -d' ' -f2-)

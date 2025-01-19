@@ -8,7 +8,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
@@ -141,7 +141,7 @@ show_menu() {
     local selected_text
 
     while selected=$(echo -en "$menu_entries" |\
-            $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "$menu_prompt"); do
+            $ROFI -dmenu -i -selected-row ${selected_row} -format 'i s' -p "$menu_prompt"); do
         selected_row=$(echo "$selected" | awk '{print $1;}')
         selected_text=$(echo "$selected" | cut -d' ' -f2-)
 
@@ -219,12 +219,12 @@ run_cmd() {
 
 ssh_menu() {
     # TODO: intercept entry chosen to exit
-    rofi -show ssh && exit
+    $ROFI -show ssh && exit
 }
 
 browse_files() {
     # TODO: intercept entry chosen to exit (fixed in git)
-    rofi $SHOW_ICONS -show filebrowser && exit
+    $ROFI $SHOW_ICONS -show filebrowser && exit
 }
 
 window_menu() {
@@ -233,7 +233,7 @@ window_menu() {
 }
 
 shortcuts() {
-    rofi -show keys
+    $ROFI -show keys
 }
 
 search_all() {
@@ -389,7 +389,7 @@ search_archwiki() {
 }
 
 set_timer() {
-    rofi -kb-screenshot Control+Shift+space -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh"
+    $ROFI -show Timer -modi "Timer:$SCRIPT_PATH/rofi-timer.sh"
 }
 
 weather() {
@@ -461,7 +461,7 @@ vm_vbox() {
 }
 
 vm_libvirt() {
-    rofi -show libvirt -modi "libvirt:$SCRIPT_PATH/rofi-libvirt-mode.sh"
+    $ROFI -show libvirt -modi "libvirt:$SCRIPT_PATH/rofi-libvirt-mode.sh"
 }
 
 calendar() {
@@ -485,7 +485,7 @@ char_picker() {
 }
 
 youtube_feeds() {
-    rofi -kb-screenshot Control+Shift+space -show "Youtube Feeds" -modi "Youtube Feeds:$SCRIPT_PATH/rofi-youtube-feeds.sh" && exit
+    $ROFI -show "Youtube Feeds" -modi "Youtube Feeds:$SCRIPT_PATH/rofi-youtube-feeds.sh" && exit
 }
 
 keepassxc() {
@@ -493,14 +493,14 @@ keepassxc() {
 }
 
 wireguard() {
-    rofi -modi VPN:"$SCRIPT_PATH"/wireguard-rofi.sh -show VPN
+    $ROFI -modi VPN:"$SCRIPT_PATH"/wireguard-rofi.sh -show VPN
 }
 
 calculator() {
     if [ -n "$(rofi -dump-config | grep calc)" ]; then
-        rofi -show calc
+        $ROFI -show calc
     else
-        rofi -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
+        $ROFI -modi calc:"$SCRIPT_PATH"/rofi-calc.sh -show calc
     fi
 }
 
@@ -516,7 +516,7 @@ notifications() {
     if [ "$(ps aux | grep -c rofication-daemon)" -gt 1 ]; then
         "$SCRIPT_PATH"/rofication-gui.py
     else
-        rofi -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
+        $ROFI -e "Run \"$SCRIPT_PATH/rofication-daemon.py &\" to enable the notifications menu"
     fi
 }
 
@@ -525,7 +525,7 @@ clipboard() {
 }
 
 menu_config() {
-    menu_file=$(find "$SCRIPT_PATH" -type f | sort | $ROFI_CMD -p "Open File")
+    menu_file=$(find "$SCRIPT_PATH" -type f | sort | $ROFI -dmenu -i -p "Open File")
 
     if [ -n "$menu_file" ]; then
         xdg-open "$menu_file" && exit 0
@@ -590,7 +590,7 @@ battery_info() {
 
 check_program() {
     if ! command -v $1 &> /dev/null; then
-        rofi -e "Install $1"
+        $ROFI -e "Install $1"
     else
         $1
     fi

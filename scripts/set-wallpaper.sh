@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ROFI="${ROFI:-rofi}"
+
 wallpaper="$1"
 
 if [ -z "$1" ]; then
@@ -24,7 +26,7 @@ elif [ "$XDG_CURRENT_DESKTOP" = "sway" ]; then
 else
     # fallback on feh
     if ! command -v feh &> /dev/null; then
-        rofi -e "Install 'feh'"
+        $ROFI -e "Install 'feh'"
         exit 1
     fi
 

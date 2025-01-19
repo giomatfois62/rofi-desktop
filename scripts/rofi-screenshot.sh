@@ -4,7 +4,7 @@
 #
 # dependencies: rofi, scrot/grim, slurp/flameshot/spectacle/xfce4-screenshooter
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 SCREENSHOT_NAME="${SCREENSHOT_NAME:-Screenshot_%Y-%m-%d-%S-%H%M%S.png}"
 
 # check for available programs working in both wayland and x11
@@ -26,7 +26,7 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
     # fallback on grim
     if ! command -v grim &> /dev/null
     then
-        rofi -e "Install grim or a screenshot program for wayland."
+        $ROFI -e "Install grim or a screenshot program for wayland."
         exit 1
     fi
 
@@ -51,7 +51,7 @@ elif [ -n "$DISPLAY" ]; then
     # fallback on scrot
     if ! command -v scrot &> /dev/null
     then
-        rofi -e "Install scrot or a screenshot program for X11."
+        $ROFI -e "Install scrot or a screenshot program for X11."
         exit 1
     fi
 
@@ -73,7 +73,7 @@ fi
 
 options="Screen\nArea\nWindow"
 
-chosen="$(echo -e $options | $ROFI_CMD -p 'Screenshot')"
+chosen="$(echo -e $options | $ROFI -dmenu -i -p 'Screenshot')"
 
 case $chosen in
     "Screen")

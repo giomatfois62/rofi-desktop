@@ -6,7 +6,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 XKCD_EXPIRATION_TIME=${XKCD_EXPIRATION_TIME:-86400} # refresh xkcd file every day
 XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-25}
@@ -61,7 +61,7 @@ fi
 
 while comic=$(echo -e "Random\n$(cat ${XKCD_FILE})" |\
     awk '{print $N"\x00icon\x1fthumbnail://"$1}' |\
-    $ROFI_CMD -p "XKCD" -markup-rows $theme_flags -preview-cmd "$PREVIEW_CMD"); do
+    $ROFI -dmenu -i -p "XKCD" -markup-rows $theme_flags -preview-cmd "$PREVIEW_CMD"); do
 
     if [ "$comic" = "Random" ]; then
         comic=$(shuf -n 1 "$XKCD_FILE")
@@ -88,7 +88,7 @@ while comic=$(echo -e "Random\n$(cat ${XKCD_FILE})" |\
         echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
     }
 
-    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | $ROFI_CMD -show-icons -theme-str $(build_item_theme $XKCD_ICON_SIZE) -mesg "<b>$comic_title</b> ($comic_date)&#x0a;$comic_alt"
+    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | $ROFI -dmenu -i -show-icons -theme-str $(build_item_theme $XKCD_ICON_SIZE) -mesg "<b>$comic_title</b> ($comic_date)&#x0a;$comic_alt"
 
     [ "$?" -eq 0 ] && xdg-open "https://xkcd.com/$comic_id" && exit 0
 done

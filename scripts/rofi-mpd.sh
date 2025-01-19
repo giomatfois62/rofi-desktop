@@ -4,7 +4,7 @@
 #
 # dependencies: rofi, mpd, mpc
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 MPD_SHORTCUTS_HELP="<b>Alt+Q</b> add to queue | <b>Alt+P</b> play/pause | <b>Alt+J</b> previous song | <b>Alt+K</b> next song"
 
 mpd_shortcuts="-kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j""
@@ -59,7 +59,7 @@ select_entry() {
   while :
   do
     entry_chosen=$(search_music "$entry_type" | sort -f |\
-        $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "$entry_type")
+        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "$entry_type")
 
     exit_code=$?
     check_shortcuts $exit_code
@@ -85,7 +85,7 @@ search_library() {
   while :
   do
     artist=$(mpc list artist | sort -f |\
-        $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_artist -mesg "$(player_mesg)" -p "Artist")
+        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_artist -mesg "$(player_mesg)" -p "Artist")
 
     exit_code=$?
     check_shortcuts $exit_code
@@ -100,7 +100,7 @@ search_library() {
     while :
     do
       album=$(mpc list album artist "$artist" | sort -f |\
-          $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Album")
+          $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Album")
 
       exit_code=$?
       check_shortcuts $exit_code
@@ -139,7 +139,7 @@ select_mode() {
   while :
   do
     entry_chosen=$(printf "Library\nAlbum\nSong\nFiles" |\
-        $ROFI_CMD $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Music")
+        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Music")
 
     exit_code=$?
     check_shortcuts $exit_code
@@ -192,13 +192,13 @@ main() {
 }
 
 if ! command -v mpc &> /dev/null; then
-	rofi -e "Install mpd and mpc to enable the music player menu"
+	$ROFI -e "Install mpd and mpc to enable the music player menu"
 	exit 1
 fi
 
 # check mpd is running
 if [ -z "$(pidof mpd)" ]; then
-    rofi -e "MPD is not running."
+    $ROFI -e "MPD is not running."
     exit 1
 fi
 

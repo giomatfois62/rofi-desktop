@@ -2,6 +2,8 @@
 
 LOBSTER_VERSION="4.3.4"
 
+ROFI="${ROFI:-rofi}"
+
 ### General Variables ###
 config_file="$HOME/.config/lobster/lobster_config.sh"
 lobster_editor=${VISUAL:-${EDITOR}}
@@ -221,8 +223,8 @@ EOF
     launcher() {
         case "$use_external_menu" in
             "true")
-                [ -z "$2" ] && rofi -sort -dmenu -i -p "$1"
-                [ -n "$2" ] && rofi -sort -dmenu -i -p "$1" -display-columns "$2"
+                [ -z "$2" ] && $ROFI -sort -dmenu -i -p "$1"
+                [ -n "$2" ] && $ROFI -sort -dmenu -i -p "$1" -display-columns "$2"
                 ;;
             *)
                 [ -z "$2" ] && fzf --reverse --prompt "$1"
@@ -255,7 +257,7 @@ EOF
             printf "Search Movie/TV Show: " && read -r query
         else
             if [ -n "$rofi_prompt_config" ]; then
-                query=$(printf "" | rofi -theme "$rofi_prompt_config" -sort -dmenu -i -p "Search Movie/TV Show")
+                query=$(printf "" | $ROFI -theme "$rofi_prompt_config" -sort -dmenu -i -p "Search Movie/TV Show")
             else
                 query=$(printf "" | launcher "Search Movie/TV Show")
             fi
@@ -332,7 +334,7 @@ EOF
     }
     select_desktop_entry() {
         if [ "$use_external_menu" = "true" ]; then
-            [ -n "$image_config_path" ] && choice=$(rofi -show drun -drun-categories lobster -filter "$1" -show-icons -theme "$image_config_path" | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null || choice=$(rofi -show drun -drun-categories lobster -filter "$1" -show-icons | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null
+            [ -n "$image_config_path" ] && choice=$($ROFI -show drun -drun-categories lobster -filter "$1" -show-icons -theme "$image_config_path" | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null || choice=$($ROFI -show drun -drun-categories lobster -filter "$1" -show-icons | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null
             media_id=$(printf "%s" "$choice" | cut -d\  -f1)
             title=$(printf "%s" "$choice" | $sed -nE "s@[0-9]* (.*) \((tv|movie)\)@\1@p")
             media_type=$(printf "%s" "$choice" | $sed -nE "s@[0-9]* (.*) \((tv|movie)\)@\2@p")
@@ -739,7 +741,7 @@ EOF
             select_desktop_entry ""
         else
             if [ "$use_external_menu" = "true" ]; then
-                choice=$(printf "%s" "$response" | rofi -dmenu -i -p "" -mesg "Choose a Movie or TV Show" -display-columns 4)
+                choice=$(printf "%s" "$response" | $ROFI -dmenu -i -p "" -mesg "Choose a Movie or TV Show" -display-columns 4)
             else
                 choice=$(printf "%s" "$response" | fzf --reverse --with-nth 4 -d "\t" --header "Choose a Movie or TV Show")
             fi

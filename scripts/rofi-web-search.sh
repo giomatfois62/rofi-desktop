@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 SEARCH_PLACEHOLDER="Type a query and press \"Enter\" to search"
 SEARCH_BLOCKS_PLACEHOLDER="Type to search"
 
@@ -38,7 +38,7 @@ if [ -n "$have_blocks" ]; then
     mkdir -p "${logfile%suggestions.tmp}"
     echo "$API" > "$logfile"
 
-    rofi -theme-str "entry{placeholder:\"$SEARCH_BLOCKS_PLACEHOLDER\";}" -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$API" 2>/dev/null
+    $ROFI -theme-str "entry{placeholder:\"$SEARCH_BLOCKS_PLACEHOLDER\";}" -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$API" 2>/dev/null
 
     [ -f "$logfile" ] && query="$(cat "$logfile")" || exit 1
 
@@ -62,7 +62,7 @@ if [ -n "$have_blocks" ]; then
 	    exit 0
     fi
 else
-    query=$((echo) | $ROFI_CMD -theme-str "entry{placeholder:\"$SEARCH_PLACEHOLDER\";}" -p "$API");
+    query=$((echo) | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$SEARCH_PLACEHOLDER\";}" -p "$API");
 
     if [ -n "$query" ]; then
 	    url=$api_url$query

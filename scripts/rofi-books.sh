@@ -6,7 +6,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 BOOKS_PLACEHOLDER="Type something and press \"Enter\" to search books"
 BOOKS_CACHE="$ROFI_CACHE_DIR/books"
@@ -23,7 +23,7 @@ if [ -n "$BOOK_ICONS" ]; then
 fi
 
 if [ -z $1 ]; then
-    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$BOOKS_PLACEHOLDER\";"} -p "Search Books")
+    query=$(echo "" | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$BOOKS_PLACEHOLDER\";"} -p "Search Books")
 else
     query=$1
 fi
@@ -54,7 +54,7 @@ while [ -n "$query" ]; do
     result_count=$(cat "$BOOKS_CACHE" | wc -l)
 
     if [ "$result_count" -lt 1 ]; then
-        rofi -e "No results found, try again."
+        $ROFI -e "No results found, try again."
         exit 1
     fi
 
@@ -63,7 +63,7 @@ while [ -n "$query" ]; do
 
     # display menu
     while true; do
-        selection=$(echo -en "$books" | $ROFI_CMD -p "Book" -format 'i s' -sep "|" -eh 2 -selected-row ${selected_row} $SHORTCUTS -theme-str "$theme_str" $flags -mesg "$MESG" -preview-cmd "$PREVIEW_CMD")
+        selection=$(echo -en "$books" | $ROFI -dmenu -i -p "Book" -format 'i s' -sep "|" -eh 2 -selected-row ${selected_row} $SHORTCUTS -theme-str "$theme_str" $flags -mesg "$MESG" -preview-cmd "$PREVIEW_CMD")
         exit_code="$?"
         
         row=$(($(echo "$selection" | cut -d' ' -f1) + 1))
@@ -92,7 +92,7 @@ while [ -n "$query" ]; do
         fi
     done
 
-    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$BOOKS_PLACEHOLDER\";"} -p "Search Books")
+    query=$(echo "" | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$BOOKS_PLACEHOLDER\";"} -p "Search Books")
 done
 
 exit 1

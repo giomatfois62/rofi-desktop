@@ -2,7 +2,7 @@
 
 term=${TERMINAL-xterm}
 default_action=${SYSTEMD_DEFAULT_ACTION-"list_actions"}
-rofi_command=${ROFI_CMD-"rofi -dmenu -i"}
+rofi_command=${ROFI-"rofi"}
 truncate_length=${ROFI_SYSTEMD_TRUNCATE_LENGTH-60}
 files_jquery_columns=${ROFI_SYSTEMD_FILES_JQ_COLUMNS-'(.[0] + " " + .[1])'}
 running_jquery_columns=${ROFI_SYSTEMD_RUNNING_JQ_COLUMNS-'(.[0] + " " + .[3])'}
@@ -67,7 +67,7 @@ boot_logs
 list_actions"
 
 function select_service_and_act {
-	result=$($rofi_command -p "Unit" \
+	result=$($rofi_command -dmenu -i -p "Unit" \
 	              -kb-custom-1 "${enable}" \
 	              -kb-custom-2 "${disable}" \
 	              -kb-custom-3 "${stop}" \
@@ -144,7 +144,7 @@ function get_command_with_args {
 			echo "journalctl $user_arg -u '$service_name' --boot"
 			;;
 		"list_actions")
-			action=$(echo "$all_actions" | $rofi_command "Select action: ")
+			action=$(echo "$all_actions" | $rofi_command -dmenu -i -p "Select action: ")
 			get_command_with_args
 			;;
 		*)

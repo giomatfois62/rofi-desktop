@@ -6,7 +6,7 @@
 #
 # dependencies: rofi, virtualbox
 
-ROFI_CMD="rofi -dmenu -i"
+ROFI="${ROFI:-rofi}"
 OPTIONS="Start VM\nPower-off VM\nClone VM\nDelete VM"
 
 # function definitions
@@ -44,11 +44,11 @@ function deleteVM()
 while true
 do
   # select machine to control
-  vm=$(vmsList | $ROFI_CMD -p 'Select VM')
+  vm=$(vmsList | $ROFI -dmenu -i -p 'Select VM')
   retval=$?
   [ $retval -ne 0 ] && exit $retval
   # select action to be executed
-  option=$(echo -e $OPTIONS | $ROFI_CMD -p 'Select action')
+  option=$(echo -e $OPTIONS | $ROFI -dmenu -i -p 'Select action')
   retval=$?
   [ $retval -ne 0 ] && exit $retval
   case "$option" in

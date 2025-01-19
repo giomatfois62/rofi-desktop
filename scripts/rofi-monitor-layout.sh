@@ -8,17 +8,13 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
-
 MONITORS_CACHE="$ROFI_CONFIG_DIR/monitor-layout"
 
 XRANDR=$(which xrandr)
-
 MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
-
 NUM_MONITORS=${#MONITORS[@]}
-
 TITLES=()
 COMMANDS=()
 
@@ -99,7 +95,7 @@ function gen_entries()
 }
 
 # Call menu
-SEL=$( gen_entries | $ROFI_CMD -p "Monitor Setup" | awk '{print $1}' )
+SEL=$( gen_entries | $ROFI -dmenu -i -p "Monitor Setup" | awk '{print $1}' )
 
 # Call xrandr
 if [ "${COMMANDS[$SEL]}" != "true" ]; then

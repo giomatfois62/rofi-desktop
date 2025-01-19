@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 WORDS_DIR="$ROFI_DATA_DIR/hangman"
 
@@ -60,7 +60,7 @@ hangman6=" ____
 |   / \\
 |       "
 
-while category=$(ls "$WORDS_DIR" | $ROFI_CMD -p "Category"); do
+while category=$(ls "$WORDS_DIR" | $ROFI -dmenu -i -p "Category"); do
     while true; do
         letters="A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z"
         used=""
@@ -107,7 +107,7 @@ while category=$(ls "$WORDS_DIR" | $ROFI_CMD -p "Category"); do
             name="hangman$errors"
             mesg="${!name}"${guess[@]}
 
-            choice=$(echo $letters | $ROFI_CMD -sep "|" -mesg "$mesg" -p "$category" -theme-str "listview{columns:7;flow:horizontal;}")
+            choice=$(echo $letters | $ROFI -dmenu -i -sep "|" -mesg "$mesg" -p "$category" -theme-str "listview{columns:7;flow:horizontal;}")
 
             if [ -z "$choice" ]; then
                 exit
@@ -148,7 +148,7 @@ while category=$(ls "$WORDS_DIR" | $ROFI_CMD -p "Category"); do
             fi
         done
         
-        retry=$(echo -en "Play Again\nExit" | $ROFI_CMD -mesg "$mesg" -p "$category")
+        retry=$(echo -en "Play Again\nExit" | $ROFI -dmenu -i -mesg "$mesg" -p "$category")
         
         if [ -z "$retry" ]; then
             break

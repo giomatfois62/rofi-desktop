@@ -5,7 +5,7 @@
 # dependencies: rofi, systemd/elogind
 # optional: i3lock
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 USE_LOCKER="${USE_LOCKER:-false}"
 LOCKER="${LOCKER:-i3lock}"
 
@@ -24,7 +24,7 @@ confirm_action() {
     local choice
 
     choice=$(echo -e "Yes\nNo" |\
-        rofi -p "Are you sure?" -dmenu -a 0 -u 1 -selected-row 1)
+        $ROFI -p "Are you sure?" -dmenu -i -a 0 -u 1 -selected-row 1)
 
     if [ "$choice" == "Yes" ]; then
         echo "$choice"
@@ -38,7 +38,7 @@ shutdown_sys() { [ "$(confirm_action)" = "Yes" ] && loginctl poweroff; }
 suspend_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl suspend; }
 hibernate_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl hibernate; }
 
-while choice=$(echo -en "$entries" | $ROFI_CMD -p "Session"); do
+while choice=$(echo -en "$entries" | $ROFI -dmenu -i -p "Session"); do
     ${commands[$choice]};
 
     exit 0

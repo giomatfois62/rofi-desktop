@@ -5,7 +5,7 @@
 # dependencies: rofi
 # optional: timedatectl
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 #https://stackoverflow.com/questions/12521114/getting-the-canonical-time-zone-name-in-shell-script
 current_timezone="Current time zone: "$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
@@ -20,10 +20,10 @@ get_timezones() {
 }
 
 while timezone=$(get_timezones |\
-    $ROFI_CMD -p "Time Zone" -mesg "$msg"); do
+    $ROFI -dmenu -i -p "Time Zone" -mesg "$msg"); do
     timezone_text=$(echo "$timezone" | cut -d':' -f1)
 
-    choice=$(echo -e "Yes\nNo" | $ROFI_CMD -p "Set time zone to $timezone_text?")
+    choice=$(echo -e "Yes\nNo" | $ROFI -dmenu -i -p "Set time zone to $timezone_text?")
 
     if [ "$choice" = "Yes" ]; then
         if command -v timedatectl &> /dev/null; then

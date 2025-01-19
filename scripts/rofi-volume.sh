@@ -5,7 +5,7 @@
 # dependencies: rofi, pactl
 # optional: pavucontrol
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 gen_menu() {
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')
@@ -36,7 +36,7 @@ vol_mute() { pactl set-sink-mute @DEFAULT_SINK@ toggle; }
 
 vol_config() {
     if ! command -v pavucontrol &> /dev/null; then
-        rofi -e "Install 'pavucontrol'"
+        $ROFI -e "Install 'pavucontrol'"
     else
         pavucontrol
     fi
@@ -45,7 +45,7 @@ vol_config() {
 # remember last entry chosen
 choice_row=0
 
-while choice=$(gen_menu | $ROFI_CMD -show-icons -selected-row ${choice_row} -format 'i s' -p "Volume $(get_volume)"); do
+while choice=$(gen_menu | $ROFI -dmenu -i -show-icons -selected-row ${choice_row} -format 'i s' -p "Volume $(get_volume)"); do
     choice_row=$(echo "$choice" | awk '{print $1;}')
     choice_text=$(echo "$choice" | cut -d' ' -f2-)
 

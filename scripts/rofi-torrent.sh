@@ -7,7 +7,7 @@
 #
 # dependencies: rofi, curl
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TORRENT_CACHE="$ROFI_CACHE_DIR/torrents"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
@@ -16,7 +16,7 @@ TORRENT_PLACEHOLDER="Type something and press \"Enter\" to search torrents"
 mkdir -p "$TORRENT_CACHE"
 
 if [ -z $1 ]; then
-  query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrent")
+  query=$(echo "" | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrent")
 else
   query=$1
 fi
@@ -39,7 +39,7 @@ grep -o '<a href="/torrent/.*</a>' $TORRENT_CACHE/tmp.html |
 result_count=$(wc -l $TORRENT_CACHE/titles.bw | awk '{print $1}')
 
 if [ "$result_count" -lt 1 ]; then
-  rofi -e "No results found, try again."
+  $ROFI -e "No results found, try again."
   exit 1
 fi
 
@@ -76,7 +76,7 @@ torrents=$(paste -d\   $TORRENT_CACHE/size.bw $TORRENT_CACHE/seedleech.bw $TORRE
 torrents="$torrents\nMore..."
 
 # Getting the line number
-while torrent=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" | cut -d\- -f1 | awk '{$1=$1; print}'); do
+while torrent=$(echo -en "$torrents" | $ROFI -dmenu -i -p "Torrent" | cut -d\- -f1 | awk '{$1=$1; print}'); do
   if [ -z "$torrent" ]; then
     exit 1
   fi

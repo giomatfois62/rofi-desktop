@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+ROFI="${ROFI:-rofi}"
 TERMINAL="${TERMINAL:-xterm}"
 
 distro=$(grep "^NAME=" /etc/os-release | sed 's/NAME=//')
@@ -25,7 +26,7 @@ elif [ $(echo $distro | grep -i "slackware") ]; then
     update_cmd="slackpkg update && slackpkg install-new; slackpkg upgrade-all"
     echo "$update_cmd"
 else
-    rofi -e "$distro is not supported by the update-system script"
+    $ROFI -e "$distro is not supported by the update-system script"
     exit 1
 fi
 

@@ -8,7 +8,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 RSS_EXPIRATION_TIME=${RSS_EXPIRATION_TIME:-600} # refresh news file every ten minutes
@@ -39,7 +39,7 @@ show_news() {
 
 	titles=$(cat "$rss_cache_file" | xmllint --xpath '/rss/channel/item[*]/title/text()' - | sed -e 's/\!\[CDATA\[//' -e 's/\]\]//' | tr -d '<>,')
 
-	selected=$(echo "$titles" | $ROFI_CMD -p "$provider_name" -format 'i s')
+	selected=$(echo "$titles" | $ROFI -dmenu -i -p "$provider_name" -format 'i s')
 
 	# get selected news and open corresponding link in browser
 	if [ -n "$selected" ]; then
@@ -65,7 +65,7 @@ if [ $providers_count -gt 1 ]; then
 	# remember last entry chosen
 	provider_row=0
 
-	while provider=$(echo -en "$providers" | $ROFI_CMD -selected-row ${provider_row} -format 'i s' -p "News"); do
+	while provider=$(echo -en "$providers" | $ROFI -dmenu -i -selected-row ${provider_row} -format 'i s' -p "News"); do
 		provider_row=$(echo "$provider" | awk '{print $1;}')
 		provider_name=$(echo "$provider" | cut -d' ' -f2-)
 

@@ -4,6 +4,7 @@
 #
 # dependencies: rofi
 
+ROFI="${ROFI:-rofi}"
 SHOW_ICONS="${SHOW_ICONS:--show-icons}"
 SHOW_WINDOW_THUMBS="${SHOW_WINDOW_THUMBS:--window-thumbnail}"
 SHOW_THUMBNAILS_GRID="${SHOW_THUMBNAILS_GRID:-yes}"
@@ -20,7 +21,7 @@ build_theme() {
 }
 
 if [ "$SHOW_THUMBNAILS_GRID" = "yes" ]; then
-    rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window -theme-str $(build_theme $THUMB_GRID_ROWS $THUMB_GRID_COLS $THUMB_ICON_SIZE)
+    $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window -theme-str $(build_theme $THUMB_GRID_ROWS $THUMB_GRID_COLS $THUMB_ICON_SIZE)
 else
-    rofi $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window
+    $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBS -show window
 fi

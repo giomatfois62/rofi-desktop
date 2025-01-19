@@ -9,6 +9,7 @@
 
 SCRIPT_DIR=$(dirname $(realpath $0))
 
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 STEAM_ROOT="${STEAM_ROOT:-$HOME/.local/share/Steam}"
 GAME_LAUNCHER_CACHE="$ROFI_CACHE_DIR/rofi-game-launcher"
@@ -113,7 +114,7 @@ select_game() {
 
         logfile="$HOME/.cache/rofi-drun.log"
 
-        G_MESSAGES_DEBUG=Modes.DRun rofi -show drun -show-icons -p "Games" \
+        G_MESSAGES_DEBUG=Modes.DRun $ROFI -show drun -show-icons -p "Games" \
             -drun-categories SteamLibrary \
             -log "$logfile"\
             -cache-dir $GAME_LAUNCHER_CACHE \
@@ -160,7 +161,7 @@ game_menu() {
         esac
     }
 
-    SELECTION=$(list-icons | rofi -dmenu -i -p "Action")
+    SELECTION=$(list-icons | $ROFI -dmenu -i -p "Action")
 
     if [ ${#SELECTION} -gt 0 ]; then
         handle-option $SELECTION &

@@ -8,7 +8,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
 WALLPAPERS_DIR="${WALLPAPERS_DIR:-$HOME/Pictures}"
 WALLPAPER_CACHE="$ROFI_CONFIG_DIR/wallpaper"
@@ -34,7 +34,7 @@ images=$(find "$WALLPAPERS_DIR" -type f -maxdepth 1 \
 
 choice=$(\
     echo -en "Random Choice\n$images" | \
-        $ROFI_CMD -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
+        $ROFI -dmenu -i -show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE) -p "Wallpaper" \
 )
 
 if [ -z "$choice" ]; then

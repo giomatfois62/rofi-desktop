@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 SUB_FILE="$ROFI_DATA_DIR/subreddits"
 
@@ -24,14 +24,14 @@ search_subreddit() {
 
     if [ -n "$search_results" ] && [ "$no_link" -ne 0 ]; then
         permalink=$(jq '.data.children[] | .data["title", "permalink"]' <<< "$search_results" |\
-            paste -d "|" - - | $ROFI_CMD -p "Results" | cut -d'|' -f 2 | xargs)
+            paste -d "|" - - | $ROFI -dmenu -i -p "Results" | cut -d'|' -f 2 | xargs)
 
         if [ -n "$permalink" ]; then
             xdg-open "$base_url$permalink"
             exit 0
         fi
     else
-        rofi -e "No results found"
+        $ROFI -e "No results found"
     fi
 }
 
@@ -39,7 +39,7 @@ search_subreddit() {
 selected_row=0
 selected_subreddit=""
 
-while subreddit=$(cat "$SUB_FILE" | $ROFI_CMD -selected-row ${selected_row} -format 'i s' -p "Subreddit"); do
+while subreddit=$(cat "$SUB_FILE" | $ROFI -dmenu -i -selected-row ${selected_row} -format 'i s' -p "Subreddit"); do
     if [ ${#subreddit} = 0 ]; then
         continue
     fi
@@ -50,7 +50,7 @@ while subreddit=$(cat "$SUB_FILE" | $ROFI_CMD -selected-row ${selected_row} -for
     # remove spaces
     subreddit=$(echo "$subreddit" | sed "s/ //g")
 
-    action=$(echo -e "Open in Browser\nSearch Posts" | $ROFI_CMD -p "Action")
+    action=$(echo -e "Open in Browser\nSearch Posts" | $ROFI -dmenu -i -p "Action")
 
     if [ ${#action} = 0 ]; then
         continue
@@ -62,7 +62,7 @@ while subreddit=$(cat "$SUB_FILE" | $ROFI_CMD -selected-row ${selected_row} -for
     fi
 
     # search in selected subreddit
-    while search_term=$(echo | $ROFI_CMD -p "Search"); do
+    while search_term=$(echo | $ROFI -dmenu -i -p "Search"); do
         if [ ${#search_term} -gt 0 ]; then
             search_term=$(echo "$search_term" | sed "s/ /%20/g")
             search_subreddit "$selected_subreddit" "$search_term"

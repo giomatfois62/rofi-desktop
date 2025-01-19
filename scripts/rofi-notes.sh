@@ -8,7 +8,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 NOTES_AUTHOR="${NOTES_AUTOR:-$(whoami)}"
 NOTES_EDITOR="${NOTES_EDITOR:-xdg-open}"
@@ -29,7 +29,7 @@ edit_note() {
 
 delete_note() {
     local note=$1
-    local action=$(echo -e "Yes\nNo" | rofi -dmenu -p "Are you sure you want to delete $note? ")
+    local action=$(echo -e "Yes\nNo" | $ROFI -dmenu -p "Are you sure you want to delete $note? ")
 
     case $action in
         "Yes")
@@ -44,7 +44,7 @@ delete_note() {
 note_context() {
     local note=$1
     local note_location="$NOTES_FOLDER/$note"
-    local action=$(echo -e "Edit\nDelete" | rofi -dmenu -p "$note > ")
+    local action=$(echo -e "Edit\nDelete" | $ROFI -dmenu -p "$note > ")
     case $action in
         "Edit")
             edit_note "$note_location"
@@ -58,7 +58,7 @@ note_context() {
 }
 
 new_note() {
-    local title=$(echo -e "Cancel" | rofi -dmenu -p "Note title")
+    local title=$(echo -e "Cancel" | $ROFI -dmenu -p "Note title")
 
     case "$title" in
         "Cancel")
@@ -95,7 +95,7 @@ main()
         first_menu="New Note\n${all_notes}"
     fi
 
-    local note=$(echo -e "$first_menu"  | $ROFI_CMD -p "Notes")
+    local note=$(echo -e "$first_menu"  | $ROFI -dmenu -i -p "Notes")
 
     case $note in
         "New Note")

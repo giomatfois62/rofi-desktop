@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
 TORRENT_PLACEHOLDER="Type something and press \"Enter\" to search torrents"
@@ -50,7 +50,10 @@ get_torrents() {
 mkdir -p "$ROFI_CACHE_DIR"
 
 if [ -z $1 ]; then
-    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrents")
+    query=$(echo "" | \
+        $ROFI -dmenu -i \
+        -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} \
+        -p "Search Torrents")
 else
     query=$1
 fi
@@ -67,7 +70,7 @@ while [ -n "$query" ]; do
     results=$(get_torrents "$counter" "$query")
 
     if [ -z "$results" ]; then
-        rofi -e "No results found, try again."
+        $ROFI -e "No results found, try again."
         exit 1
     else
         echo "$results" > "$TORRENT_CACHE"
@@ -77,7 +80,12 @@ while [ -n "$query" ]; do
     torrents="$torrents\nMore..."
 
     # display menu
-    while selection=$(echo -en "$torrents" | $ROFI_CMD -p "Torrent" -format 'i s' -selected-row ${selected_row}); do
+    while selection=$(echo -en "$torrents" | \
+        $ROFI -dmenu -i \
+        -p "Torrent" \
+        -format 'i s' \
+        -selected-row ${selected_row}); do
+
         row=$(($(echo "$selection" | awk '{print $1;}') + 1))
         torrent=$(echo "$selection" | cut -d' ' -f2-)
 
@@ -110,7 +118,10 @@ while [ -n "$query" ]; do
         fi
     done
 
-    query=$(echo "" | $ROFI_CMD -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrents")
+    query=$(echo "" | \
+        $ROFI -dmenu -i \
+        -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} \
+        -p "Search Torrents")
 done
 
 exit 1

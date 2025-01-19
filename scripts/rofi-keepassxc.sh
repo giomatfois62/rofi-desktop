@@ -6,16 +6,16 @@
 #
 # dependencies: rofi, keepassxc-cli, xclip/wl-clipboard
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 CACHE="$ROFI_CACHE_DIR/rofi-keepassxc/"
 
 if ! command -v keypassxc-cli &> /dev/null; then
-	rofi -e "Install keypassxc-cli to enable the keypassxc menu"
+	$ROFI -e "Install keypassxc-cli to enable the keypassxc menu"
 	exit 1
 fi
 
-m() { $ROFI_CMD "$@" ;}
+m() { $ROFI -dmenu -i "$@" ;}
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
     clip_cmd="wl-copy"
@@ -109,7 +109,7 @@ edit_element() {
     echo "$dbpass" | keepassxc-cli edit --url "$NEW_URL" "$db" "$entry"
   elif echo "$element" | grep 'Notes: '
   then
-    rofi -e "You cannot edit notes for entries now."
+    $ROFI -e "You cannot edit notes for entries now."
   fi
 }
 
@@ -126,7 +126,7 @@ show_entry_info() {
 
 delete_entry() {
   echo "$dbpass" | keepassxc-cli rm "$db" "$entry"
-  rofi -e "Deleted \"$entry\" entry"
+  $ROFI -e "Deleted \"$entry\" entry"
 }
 
 add_entry() {
@@ -155,7 +155,7 @@ add_entry() {
       generate_password
       echo "$dbpass" | keepassxc-cli add "$db" "$entry" -u "$username" -g -L \
         "$(echo "$char_num $numbers$special$ext_ascii")"
-      rofi -e "Successfully added \"$entry\" entry"
+      $ROFI -e "Successfully added \"$entry\" entry"
       ;;
     *) exit 1
   esac
@@ -206,9 +206,9 @@ error_db='Failed to open database file'
 check_db=$(echo "$dbpass" | keepassxc-cli open "$db" >"$CACHE/tmp" 2>&1 && grep -oh "$error_db" "$CACHE/tmp")
 
 if [ "$check_pass" = "$error_pass" ]; then
-  rofi -e "$error_pass password"
+  $ROFI -e "$error_pass password"
 elif [ "$check_db" = "$error_db" ]; then
-  rofi -e "$error_db"
+  $ROFI -e "$error_db"
 else
   echo "$dbpass" | keepassxc-cli ls "$db" | grep -Ev 'Enter|?*/' | sort >"$CACHE/tmp"
   elements_num=$([ "$(wc -l < "$CACHE/tmp")" -gt 20 ] && echo 20)

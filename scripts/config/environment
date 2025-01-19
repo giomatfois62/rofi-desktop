@@ -1,8 +1,7 @@
-# rofi command used in most of the scripts
-# rofi -dmenu -i
-# rofi -dmenu -i -kb-accept-entry 'Alt+S'
-# rofi -dmenu -i -kb-screenshot Control+Shift+space"
-#ROFI_CMD="rofi -dmenu -i"
+# rofi command used in all scripts
+# rofi -kb-accept-entry 'Alt+S'
+# rofi -kb-screenshot Control+Shift+space"
+#ROFI="rofi"
 
 # path to rofi-desktop data directory
 #ROFI_DATA_DIR=/path/to/data

@@ -29,7 +29,7 @@
 # - pulseaudo/pipewire-pulse
 # - x264
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 VIDEO_FOLDER="${VIDEO_FOLDER:-$HOME/Videos/record}"
 AUDIO_FOLDER="${AUDIO_FOLDER:-$HOME/Music/record}"
 VIDEO_CODEC="${VIDEO_CODEC:-libvpx}" # h264
@@ -42,7 +42,7 @@ fi
 recordid="/tmp/recordid"
 
 function getInputAudio() {
-    pactl list | grep "Name" | grep "alsa" | awk '{print $2}' | $ROFI_CMD -p "Input Audio " -theme-str 'window {width: 30%;} listview {lines: 5;}'
+    pactl list | grep "Name" | grep "alsa" | awk '{print $2}' | $ROFI -dmenu -i -p "Input Audio " -theme-str 'window {width: 30%;} listview {lines: 5;}'
 }
 
 function audioVideo() {
@@ -105,7 +105,7 @@ function stream() {
 }
 
 function getStreamToken() {
-    $ROFI_CMD -p "Stream" -mesg "Insert $1 Token" -lines 0
+    $ROFI -dmenu -i -p "Stream" -mesg "Insert $1 Token" -lines 0
 }
 
 function startStreaming() {
@@ -154,7 +154,7 @@ function stoprecord() {
 
 function endrecord() {
     OPTIONS='["Yes", "No"]'
-    select=$(echo $OPTIONS | jq -r ".[]" | $ROFI_CMD -p "Record" -mesg "Stop Recording" -theme-str 'window {width: 30%;} listview {lines: 2;}')
+    select=$(echo $OPTIONS | jq -r ".[]" | $ROFI -dmenu -i -p "Record" -mesg "Stop Recording" -theme-str 'window {width: 30%;} listview {lines: 2;}')
     [ "$select" == "Yes" ] && stoprecord
 }
 
@@ -171,7 +171,7 @@ function startrecord() {
         ["Stream On Vimeo",    "streamOnVimeo"]
     ]
     '''
-    select=$(echo $OPTIONS | jq -r ".[][0]" | $ROFI_CMD -p "Record" -theme-str 'window {width: 30%;} listview {lines: 8;}')
+    select=$(echo $OPTIONS | jq -r ".[][0]" | $ROFI -dmenu -i -p "Record" -theme-str 'window {width: 30%;} listview {lines: 8;}')
 
     if [ ${#select} -gt 0 ]; then
         eval $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$select\") | .[1]")

@@ -8,6 +8,7 @@
 ###### Variables ######
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
+ROFI="${ROFI:-rofi}"
 DATEFTM="${DATEFTM:-+%a %d %b %Y}"
 TIMEFMT="${TIMEFMT:-+%H:%M}"
 SHORTFMT="${SHORTFMT:-+%d/%m/%Y}"
@@ -84,7 +85,7 @@ increment_month() {
 
 create_event() {
   suggested_date="$year.$month.$day "
-  event_text=$((echo) | rofi -dmenu -p "New Reminder" -filter "$suggested_date")
+  event_text=$((echo) | $ROFI -dmenu -p "New Reminder" -filter "$suggested_date")
   if [ ${#event_text} ]; then
     echo "$event_text" >> "$EVENTS_FILE"
   fi
@@ -127,7 +128,7 @@ header=$(date "$DATEFTM")", "$(date "$TIMEFMT")
 #lines:'"$(echo "$month_page" | wc -l)"';width:22;
 
 while selected="$(echo "$month_page" |\
-	rofi -dmenu -i -markup-rows \
+	$ROFI -dmenu -i -markup-rows \
 	-theme-str 'entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}' \
 	-kb-screenshot Control+Shift+space \
 	-hide-scrollbar \

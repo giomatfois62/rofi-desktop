@@ -4,7 +4,7 @@
 #
 # dependencies: rofi
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 GRID_ROWS=${GRID_ROWS:-4}
 GRID_COLS=${GRID_COLS:-5}
 GRID_ICON_SIZE=${GRID_ICON_SIZE:-4}
@@ -41,7 +41,7 @@ user_themes=$(ls $HOME/.local/share/icons | xargs -I{} echo "(user) {}")
 row=0
 
 while selected=$(echo -e "All Icons\n$system_themes\n$user_themes" | \
-    $ROFI_CMD \
+    $ROFI -dmenu -i \
     -p "Icon Themes" \
     -format 'i s' \
     -selected-row $row); do
@@ -58,7 +58,7 @@ while selected=$(echo -e "All Icons\n$system_themes\n$user_themes" | \
         icon=$(find $folder -type f -regex ".*\.\(jpg\|png\|svg\)" \
             -printf "%f\n<i>%h</i><ICON>%p|" | \
             sed -e "s/<ICON>/\x00icon\x1f/g" | \
-            $ROFI_CMD \
+            $ROFI -dmenu -i \
             $rofi_shortcuts \
             $rofi_flags \
             -theme-str "$rofi_theme" \

@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 MIMETYPES_DIR="$ROFI_DATA_DIR/mimetypes"
 
@@ -25,7 +25,7 @@ declare -A actions=(
 mime_menu() {
     categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player\nChoose File Type"
 
-    while choice=$(echo -en "$categories" | $ROFI_CMD -p "Default Applications"); do
+    while choice=$(echo -en "$categories" | $ROFI -dmenu -i -p "Default Applications"); do
         ${actions[$choice]};
     done
 }
@@ -36,26 +36,10 @@ seach_applications() {
 
 set_application() {
     xdg-mime default $2".desktop" $1
-
-    # hacky!!! modify mimeapps file manually
-    #MIME_FILE="$HOME/.config/mimeapps.list"
-    #line_exists=$(grep -F "$1" "$MIME_FILE")
-
-    # delete previous mimetype association
-    #if [ -n "$line_exists" ]; then
-    #    tmp_file="$HOME/.cache/mimeapps"
-    #    escaped_mimetype=$(echo "$1" | sed 's/\//\\\//g')
-
-    #    sed "/^$escaped_mimetype=/d" "$MIME_FILE" > "$tmp_file"
-    #    mv "$tmp_file" "$MIME_FILE"
-    #fi
-
-    # add new mimetype association
-    #echo "$1=$2"".desktop" >> "$MIME_FILE"
 }
 
 set_browser() {
-    selected=$(seach_applications "WebBrowser" | $ROFI_CMD -p "Web Browser")
+    selected=$(seach_applications "WebBrowser" | $ROFI -dmenu -i -p "Web Browser")
 
     if [ -n "$selected" ]; then
         set_application "application/x-extension-htm" "$selected";
@@ -69,7 +53,7 @@ set_browser() {
 }
 
 set_fm() {
-    selected=$(seach_applications 'FileManager' | $ROFI_CMD -p "File Manager")
+    selected=$(seach_applications 'FileManager' | $ROFI -dmenu -i -p "File Manager")
 
     if [ -n "$selected" ]; then
         set_application "inode/directory" "$selected";
@@ -77,7 +61,7 @@ set_fm() {
 }
 
 set_txt() {
-    selected=$(seach_applications 'TextEditor;' | $ROFI_CMD -p "Text Editor")
+    selected=$(seach_applications 'TextEditor;' | $ROFI -dmenu -i -p "Text Editor")
 
     if [ -n "$selected" ]; then
         set_application "text/plain" "$selected";
@@ -86,7 +70,7 @@ set_txt() {
 }
 
 set_pdf() {
-    selected=$(seach_applications 'PDF' | $ROFI_CMD -p "PDF Reader")
+    selected=$(seach_applications 'PDF' | $ROFI -dmenu -i -p "PDF Reader")
 
     if [ -n "$selected" ]; then
         set_application "application/pdf" "$selected";
@@ -94,7 +78,7 @@ set_pdf() {
 }
 
 set_image_viewer() {
-    selected=$(seach_applications 'Image Viewer' | $ROFI_CMD -p "Image Viewer")
+    selected=$(seach_applications 'Image Viewer' | $ROFI -dmenu -i -p "Image Viewer")
 
     if [ -n "$selected" ]; then
         set_application "image/bmp" "$selected";
@@ -107,7 +91,7 @@ set_image_viewer() {
 }
 
 set_audio_player() {
-    selected=$(seach_applications 'Player;' | $ROFI_CMD -p "Audio Player")
+    selected=$(seach_applications 'Player;' | $ROFI -dmenu -i -p "Audio Player")
 
     if [ -n "$selected" ]; then
         set_application "audio/aac" "$selected";
@@ -122,7 +106,7 @@ set_audio_player() {
 }
 
 set_video_player() {
-    selected=$(seach_applications 'Player;' | $ROFI_CMD -p "Video Player")
+    selected=$(seach_applications 'Player;' | $ROFI -dmenu -i -p "Video Player")
 
     if [ -n "$selected" ]; then
         set_application "video/webm" "$selected";
@@ -136,10 +120,10 @@ set_video_player() {
 }
 
 set_mimetype() {
-    selected_type=$(cat "$MIMETYPES_DIR/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2 | rofi -dmenu -i | cut -d',' -f2)
+    selected_type=$(cat "$MIMETYPES_DIR/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2 | $ROFI -dmenu -i | cut -d',' -f2)
 
     if [ -n "$selected_type" ]; then
-        selected_app=$(seach_applications "" | $ROFI_CMD -p "Applications")
+        selected_app=$(seach_applications "" | $ROFI -dmenu -i -p "Applications")
 
         if [ -n "$selected_type" ]; then
             set_application "$selected_type" "$selected_app";

@@ -35,7 +35,7 @@ run_program() {
 ask_user() {
     prompt="$1"
 
-    choice=$(echo -e "Yes\nNo" | $ROFI_CMD -p "$prompt")
+    choice=$(echo -e "Yes\nNo" | $ROFI -dmenu -i -p "$prompt")
 
     if [ "$choice" = "Yes" ]; then
         echo "$choice"

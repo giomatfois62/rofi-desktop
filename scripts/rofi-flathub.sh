@@ -7,7 +7,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TERMINAL="${TERMINAL:-xterm}"
 FLATHUB_CACHE="$ROFI_CACHE_DIR/flathub.json"
@@ -40,12 +40,12 @@ fi
 selected=$(jq '.[] | .name + " - " + .summary+"<ICON>"+.iconDesktopUrl' "$FLATHUB_CACHE" |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
     tr -d '"' |\
-    $ROFI_CMD $flags -preview-cmd "$PREVIEW_CMD" -p "Flatpak")
+    $ROFI -dmenu -i $flags -preview-cmd "$PREVIEW_CMD" -p "Flatpak")
 
 if [ -n "$selected" ]; then
     # check flatpak cmd
     if ! command -v flatpak &> /dev/null; then
-        rofi -e "Install flatpak"
+        $ROFI -e "Install flatpak"
         exit 1
     fi
 

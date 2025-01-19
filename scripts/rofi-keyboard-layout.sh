@@ -6,7 +6,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
 KEYMAP_CACHE="$ROFI_CONFIG_DIR/keyboard-layout"
 LAYOUT_FILE="/usr/share/X11/xkb/rules/evdev.lst"
@@ -16,7 +16,7 @@ msg="Current Layout: "$(setxkbmap -query | grep layout | cut -d':' -f2 | sed 's/
 selected=$(cat $LAYOUT_FILE |\
     grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' |\
     head -n -2 |\
-    $ROFI_CMD -p "Keyboard Layout" -mesg "$msg" |\
+    $ROFI -dmenu -i -p "Keyboard Layout" -mesg "$msg" |\
     awk '{print $1;}'
 )
 

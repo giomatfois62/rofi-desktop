@@ -11,7 +11,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 CONTACTS_FILE="$ROFI_DATA_DIR/contacts.vcf"
@@ -23,7 +23,7 @@ rm "$CONTACTS_CACHE"
 "$SCRIPT_PATH/scrape_vcf.py" "$CONTACTS_FILE" "$CONTACTS_CACHE"
 
 if [ ! -f "$CONTACTS_CACHE" ]; then
-    rofi -e "Failed to scrape contacts list, make sure $CONTACTS_FILE exists and is valid"
+    $ROFI -e "Failed to scrape contacts list, make sure $CONTACTS_FILE exists and is valid"
     exit 1
 fi
 
@@ -33,7 +33,7 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
 elif [ -n "$DISPLAY" ]; then
     clip_cmd="xclip -sel clip"
 else
-    rofi -e "Error: No Wayland or X11 display detected. Clipboard actions will not work"
+    $ROFI -e "Error: No Wayland or X11 display detected. Clipboard actions will not work"
 fi
 
 # show menu
@@ -42,7 +42,7 @@ selected_row=0
 while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_CACHE" |\
         tr -d '",\\' |\
         sort --ignore-case |\
-        $ROFI_CMD -format 'i s' -selected-row "$selected_row" -p Contacts); do
+        $ROFI -dmenu -i -format 'i s' -selected-row "$selected_row" -p Contacts); do
 
     selected_row=$(echo "$contact" | cut -d' ' -f1)
     contact=$(echo "$contact" | cut -d' ' -f2-)
@@ -57,7 +57,7 @@ while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_CACHE" |\
     [ -z "$numbers" ] && all_actions=$(echo "$all_actions" | sed 's/Copy Numbers\\n//')
     [ -z "$mails" ] && all_actions=$(echo "$all_actions" | sed 's/Copy Emails\\nWrite Email\\n//')
 
-    while action=$(echo -en "$all_actions" | $ROFI_CMD -p Action -mesg "$mesg"); do
+    while action=$(echo -en "$all_actions" | $ROFI -dmenu -i -p Action -mesg "$mesg"); do
         if [ "$action" = "Copy Numbers" ]; then
             echo "$numbers" | $clip_cmd
         elif [ "$action" = "Copy Emails" ]; then

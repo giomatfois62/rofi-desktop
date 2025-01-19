@@ -6,12 +6,12 @@
 #
 # dependencies: rofi, links, sdcv
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 DICT_PLACEHOLDER="Type a word and press \"Enter\" to lookup in dictionary"
 
 if ! command -v sdcv &> /dev/null; then
-	rofi -e "Install sdcv and links to enable the dictionary menu"
+	$ROFI -e "Install sdcv and links to enable the dictionary menu"
 	exit 1
 fi
 
@@ -19,10 +19,10 @@ pag() {                                                 \
     sed -e 1d                                           \
         -e 's; _\([A-Z]\); \1;p'                        \
         -e '/^$/d' -e '/^-->/d'                         \
-    | eval "$ROFI_CMD" -p "Result"
+    | eval "$ROFI" -dmenu -i -p "Result"
 }
 
-while phrase="$(echo $src | $ROFI_CMD -theme-str "entry{placeholder:\"$DICT_PLACEHOLDER\";}" -markup -p 'Lookup')"; do
+while phrase="$(echo $src | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$DICT_PLACEHOLDER\";}" -markup -p 'Lookup')"; do
     {
         sdcv -n --utf8-input --utf8-output "$phrase"
         printf "Urban\n"

@@ -6,7 +6,7 @@
 #
 # dependencies: rofi, firefox, sqlite
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 SQL="SELECT b.title, p.url  FROM moz_bookmarks b JOIN moz_places p ON b.fk = p.id WHERE b.fk is not null AND b.title <> '' AND url <> '' AND url NOT LIKE 'place:%'"
 
@@ -23,7 +23,7 @@ TMP_PLACES=$HOME/.cache/firefox-places
 
 #avoiding db lock
 cp -f ${PROFILE_DB} ${TMP_PLACES}
-ENTRIES=$(sqlite3 -separator " | " ${TMP_PLACES} "${SQL}" | $ROFI_CMD -p "Firefox")
+ENTRIES=$(sqlite3 -separator " | " ${TMP_PLACES} "${SQL}" | $ROFI -dmenu -i -p "Firefox")
 
 IFS=' | ' 
 read -ra ADDR <<< "$ENTRIES"

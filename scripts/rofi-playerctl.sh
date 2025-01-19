@@ -6,10 +6,10 @@
 #
 # dependencies: rofi, playerctl
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 if ! command -v playerctl &> /dev/null; then
-	rofi -e "Install playerctl to enable the media player controls menu"
+	$ROFI -e "Install playerctl to enable the media player controls menu"
 	exit 1
 fi
 
@@ -42,7 +42,7 @@ options="$toggle\n$next\n$prev\n$seekplus\n$seekminus\n$switch"
 selected_row=0
 
 # TODO: fix player change
-while chosen="$(echo -e "$options" | $ROFI_CMD -markup-rows -p "${status^}" -selected-row ${selected_row} -format 'i s')"; do
+while chosen="$(echo -e "$options" | $ROFI -dmenu -i -markup-rows -p "${status^}" -selected-row ${selected_row} -format 'i s')"; do
     selected_row=$(echo "$chosen" | awk '{print $1;}')
     selected_text=$(echo "$chosen" | cut -d' ' -f2-)
 

@@ -6,7 +6,7 @@
 #
 # dependencies: rofi, xrandr
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 current_bright() {
 	xrandr --verbose | grep Brightness | cut -d':' -f2 | sed 's/ //'
@@ -33,7 +33,7 @@ options="Increase\nDecrease\nOptimal"
 ## Main
 selected_row=0
 
-while chosen="$(echo -e "$options" | $ROFI_CMD -p "Brightness $(current_bright_perc)%" -selected-row $selected_row)"; do
+while chosen="$(echo -e "$options" | $ROFI -dmenu -i -p "Brightness $(current_bright_perc)%" -selected-row $selected_row)"; do
 	case $chosen in
 		"Increase")
 			set_bright $(increase_bright $(current_bright))

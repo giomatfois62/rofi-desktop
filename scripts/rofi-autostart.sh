@@ -6,7 +6,7 @@
 #
 # dependencies: rofi
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 AUTOSTART_DIR="$ROFI_CACHE_DIR/autostart"
 
@@ -23,12 +23,12 @@ list_entries() {
     not_show=$(grep -r -E -H -l "NotShowIn.*$desktop" "$AUTOSTART_DIR")
 
     # filter out entries that should not be shown in current environment
-    common_files=$(comm -13 <(echo "$not_show" | sort) <(echo "$all_files" | sort))
+    common=$(comm -13 <(echo "$not_show" | sort) <(echo "$all_files" | sort))
 
     # filter out entries that should be shown only in other environments
-    common_files=$(comm -13 <(echo "$only_show" | sort) <(echo "$common_files" | sort))
+    common=$(comm -13 <(echo "$only_show" | sort) <(echo "$common" | sort))
 
-    echo "$common_files"
+    echo "$common"
 }
 
 print_entry() {
@@ -125,7 +125,7 @@ EOF
 }
 
 add_entry() {
-    entry_name=$((echo) | $ROFI_CMD -p "Entry Name")
+    entry_name=$((echo) | $ROFI -dmenu -i -p "Entry Name")
 
     if [ -n "$entry_name" ]; then
         dst_file="$HOME/.config/autostart/$entry_name".desktop
@@ -157,7 +157,13 @@ export -f print_entry
 # remember last selected entry
 selected_row=0
 
-while selected=$(gen_menu | $ROFI_CMD -markup-rows -p "Autostart" -selected-row ${selected_row} -format 'i s'); do
+while selected=$(gen_menu | \
+    $ROFI -dmenu -i \
+    -markup-rows \
+    -p "Autostart" \
+    -selected-row ${selected_row} \
+    -format 'i s'); do
+    
     selected_row=$(echo "$selected" | awk '{print $1;}')
     selected_text=$(echo "$selected" | cut -d' ' -f2-)
     selected_entry=$(echo $selected_text | cut -f1 -d" ")
@@ -165,7 +171,8 @@ while selected=$(gen_menu | $ROFI_CMD -markup-rows -p "Autostart" -selected-row 
     if [ "$selected_text" == "Add Entry" ]; then
         add_entry
     else
-        action=$(gen_entry_menu "$selected_text" | $ROFI_CMD -p "$selected_entry")
+        action=$(gen_entry_menu "$selected_text" | \
+            $ROFI -dmenu -i -p "$selected_entry")
 
         if [ -n "$action" ]; then
             ${actions[$action]} "$selected_entry";

@@ -6,7 +6,7 @@
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 LIVETV_FILE="$ROFI_CACHE_DIR/livetv.json"
 LIVETV_EXPIRATION_TIME=${LIVETV_EXPIRATION_TIME:-3600} # refresh livetv file every hour
@@ -27,7 +27,7 @@ else
 fi
 
 while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$LIVETV_FILE" | tr -d '"' |\
-        sort | $ROFI_CMD -p "LiveTV" -format 'i s'); do
+        sort | $ROFI -dmenu -i -p "LiveTV" -format 'i s'); do
 
     name_idx=$(echo "$name" | cut -d' ' -f1)
     link_sel=".[$name_idx].link"
@@ -41,9 +41,9 @@ while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$LIVETV_FILE" | tr -
 		sed -E 's/^.*href/href/; s/>.*//' | sed -r 's/.*href="([^"]+).*/\1/g')
 
 	if [ -z "$streams" ]; then
-		rofi -e "No stream links available, retry later."
+		$ROFI -e "No stream links available, retry later."
 	else
-		selected_stream=$(echo -en "$streams" | $ROFI_CMD -p "Link")
+		selected_stream=$(echo -en "$streams" | $ROFI -dmenu -i -p "Link")
 
 		if [ -n "$selected_stream" ]; then
 

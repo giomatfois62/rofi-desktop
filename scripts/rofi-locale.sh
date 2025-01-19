@@ -5,10 +5,10 @@
 #
 # dependencies: rofi
 
-ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
+ROFI="${ROFI:-rofi}"
 
 current_locale=$(locale | head -n1)
-selected_locale=$(locale -a | $ROFI_CMD -no-custom -p "Language" -mesg "Current Language: $current_locale")
+selected_locale=$(locale -a | $ROFI -dmenu -i -no-custom -p "Language" -mesg "Current Language: $current_locale")
 
 if [ -n "$selected_locale" ]; then
     distro=$(grep "^NAME=" /etc/os-release | sed 's/NAME=//')
@@ -22,5 +22,5 @@ if [ -n "$selected_locale" ]; then
         echo "LC_ALL=\"$selected_locale\"" >> $HOME/.i18n
     fi
 
-    rofi -markup -e "Language set to <b>$selected_locale</b>. Logout to apply changes"
+    $ROFI -markup -e "Language set to <b>$selected_locale</b>. Logout to apply changes"
 fi
