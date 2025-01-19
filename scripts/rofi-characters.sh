@@ -9,7 +9,8 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
-CHAR_FILE="$ROFI_DATA_DIR/unicode.txt"
+
+characters_file="$ROFI_DATA_DIR/unicode.txt"
 
 # to use xclip instead of xdotool
 #xclip -selection clipboard
@@ -23,7 +24,7 @@ else
     exit 1
 fi
 
-selected=$(cat "$CHAR_FILE" | $ROFI -dmenu -i -p "Characters")
+selected=$(cat "$characters_file" | $ROFI -dmenu -i -p "Characters")
 
 if [ -n "$selected" ]; then
     echo "$selected" | awk '{print $1;}' | $xdotool

@@ -8,7 +8,8 @@ SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
-COLORS_FILE="$ROFI_DATA_DIR/colors-name.txt"
+
+colors_file="$ROFI_DATA_DIR/colors-name.txt"
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
     clip_cmd="wl-copy"
@@ -19,7 +20,7 @@ else
     exit 1
 fi
 
-selected=$(cat "$COLORS_FILE" | $ROFI -dmenu -i -markup-rows -p "Colors")
+selected=$(cat "$colors_file" | $ROFI -dmenu -i -markup-rows -p "Colors")
 
 if [ -n "$selected" ]; then
     echo -n "$(echo "$selected" \
