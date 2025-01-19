@@ -10,15 +10,15 @@ ROFI_CMD="${ROFI_CMD:-rofi -dmenu -i}"
 gen_menu() {
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')
 
-    echo -ne "Up\nDown"
+    echo -ne "Up\x00icon\x1faudio-volume-high\nDown\x00icon\x1faudio-volume-low"
 
     if [ "$is_muted" == "yes" ]; then
-        echo -ne "\nUnmute"
+        echo -ne "\nUnmute\x00icon\x1faudio-volume-muted"
     else
-        echo -ne "\nMute"
+        echo -ne "\nMute\x00icon\x1faudio-volume-muted"
     fi
 
-    echo -ne "\nVolume Configuration"
+    echo -ne "\nVolume Configuration\x00icon\x1fapplications-system"
 }
 
 declare -A commands=(
@@ -45,7 +45,7 @@ vol_config() {
 # remember last entry chosen
 choice_row=0
 
-while choice=$(gen_menu | $ROFI_CMD -selected-row ${choice_row} -format 'i s' -p "Volume $(get_volume)"); do
+while choice=$(gen_menu | $ROFI_CMD -show-icons -selected-row ${choice_row} -format 'i s' -p "Volume $(get_volume)"); do
     choice_row=$(echo "$choice" | awk '{print $1;}')
     choice_text=$(echo "$choice" | cut -d' ' -f2-)
 
