@@ -10,8 +10,8 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
-TORRENT_PLACEHOLDER="Type something and press \"Enter\" to search torrents"
-TORRENT_CACHE="$ROFI_CACHE_DIR/bitsearch"
+
+torrent_cache="$ROFI_CACHE_DIR/bitsearch"
 
 get_torrents() {
     page="$1"
@@ -52,7 +52,6 @@ mkdir -p "$ROFI_CACHE_DIR"
 if [ -z $1 ]; then
     query=$(echo "" | \
         $ROFI -dmenu -i \
-        -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} \
         -p "Search Torrents")
 else
     query=$1
@@ -73,10 +72,10 @@ while [ -n "$query" ]; do
         $ROFI -e "No results found, try again."
         exit 1
     else
-        echo "$results" > "$TORRENT_CACHE"
+        echo "$results" > "$torrent_cache"
     fi
 
-    torrents=$(cat "$TORRENT_CACHE" | cut -d'|' -f2- | column -s "|" -t)
+    torrents=$(cat "$torrent_cache" | cut -d'|' -f2- | column -s "|" -t)
     torrents="$torrents\nMore..."
 
     # display menu
@@ -103,14 +102,14 @@ while [ -n "$query" ]; do
             if [ -z "$results" ]; then
                 counter=$((counter-1))
             else
-                echo "$results" >> "$TORRENT_CACHE"
+                echo "$results" >> "$torrent_cache"
             fi
 
-            torrents=$(cat "$TORRENT_CACHE" | cut -d'|' -f2- | column -s "|" -t)
+            torrents=$(cat "$torrent_cache" | cut -d'|' -f2- | column -s "|" -t)
             torrents="$torrents\nMore..."
         else
             # open selected magnet link
-            magnet=$(sed "${row}q;d" "$TORRENT_CACHE" | cut -d'|' -f1)
+            magnet=$(sed "${row}q;d" "$torrent_cache" | cut -d'|' -f1)
 
             $TORRENT_CLIENT "$magnet" & disown
 
@@ -120,7 +119,7 @@ while [ -n "$query" ]; do
 
     query=$(echo "" | \
         $ROFI -dmenu -i \
-        -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} \
+        -theme-str "entry{placeholder:\"$torrent_mesg\";"} \
         -p "Search Torrents")
 done
 

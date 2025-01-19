@@ -8,7 +8,8 @@
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-AUTOSTART_DIR="$ROFI_CACHE_DIR/autostart"
+
+autostart_dir="$ROFI_CACHE_DIR/autostart"
 
 list_entries() {
     # handle empty XDG_CURRENT_DESKTOP env var
@@ -18,9 +19,9 @@ list_entries() {
 	    desktop="unknown"
     fi
 
-    all_files=$(find "$AUTOSTART_DIR" -type f -iname "*.desktop")
-    only_show=$(grep -r "OnlyShowIn" "$AUTOSTART_DIR" | grep -v "$desktop" | cut -f1 -d":")
-    not_show=$(grep -r -E -H -l "NotShowIn.*$desktop" "$AUTOSTART_DIR")
+    all_files=$(find "$autostart_dir" -type f -iname "*.desktop")
+    only_show=$(grep -r "OnlyShowIn" "$autostart_dir" | grep -v "$desktop" | cut -f1 -d":")
+    not_show=$(grep -r -E -H -l "NotShowIn.*$desktop" "$autostart_dir")
 
     # filter out entries that should not be shown in current environment
     common=$(comm -13 <(echo "$not_show" | sort) <(echo "$all_files" | sort))
@@ -49,7 +50,7 @@ gen_entry_menu() {
     fi
 
     file_name=$(echo "$1" | cut -f1 -d" ")
-    file_path="$AUTOSTART_DIR/$file_name".desktop
+    file_path="$autostart_dir/$file_name".desktop
     proc_name=$(grep "Exec=" $file_path | cut -f2- -d"=" | head -n 1)
     proc_running=$(pgrep -f "$proc_name")
 
@@ -71,7 +72,7 @@ declare -A actions=(
 )
 
 enable_app() {
-    original_file="$AUTOSTART_DIR/$1".desktop
+    original_file="$autostart_dir/$1".desktop
     dst_file="$HOME/.config/autostart/$1".desktop
 
     # remove line with "Hidden=true"
@@ -80,7 +81,7 @@ enable_app() {
 }
 
 disable_app() {
-    original_file="$AUTOSTART_DIR/$1".desktop
+    original_file="$autostart_dir/$1".desktop
     dst_file="$HOME/.config/autostart/$1".desktop
 
     # append line with "Hidden=true"
@@ -89,27 +90,27 @@ disable_app() {
 }
 
 start_app() {
-    desktop_file="$AUTOSTART_DIR/$1".desktop
+    desktop_file="$autostart_dir/$1".desktop
     cmd=$(grep "Exec=" $desktop_file | cut -f2- -d"=" | head -n 1)
 
     $cmd &
 }
 
 stop_app() {
-    desktop_file="$AUTOSTART_DIR/$1".desktop
+    desktop_file="$autostart_dir/$1".desktop
     cmd=$(grep "Exec=" $desktop_file | cut -f2- -d"=" | head -n 1)
 
     pkill -f $cmd
 }
 
 edit_app() {
-    original_file="$AUTOSTART_DIR/$1".desktop
+    original_file="$autostart_dir/$1".desktop
     dst_file="$HOME/.config/autostart/$1".desktop
 
     cp "$original_file" "$dst_file"
     xdg-open $dst_file
 
-    rm -rf "$AUTOSTART_DIR"
+    rm -rf "$autostart_dir"
 
     exit 0
 }
@@ -135,7 +136,7 @@ add_entry() {
         fi
 
         xdg-open "$dst_file"
-        rm -rf "$AUTOSTART_DIR"
+        rm -rf "$autostart_dir"
 
         exit 0
     fi
@@ -149,9 +150,9 @@ gen_menu() {
 # sort by Enabled(Disabled) state
 # sort -k2 (-r)
 
-mkdir -p "$AUTOSTART_DIR"
-cp /etc/xdg/autostart/*.desktop "$AUTOSTART_DIR/"
-cp "$HOME"/.config/autostart/*.desktop "$AUTOSTART_DIR/"
+mkdir -p "$autostart_dir"
+cp /etc/xdg/autostart/*.desktop "$autostart_dir/"
+cp "$HOME"/.config/autostart/*.desktop "$autostart_dir/"
 export -f print_entry
 
 # remember last selected entry
@@ -180,6 +181,6 @@ while selected=$(gen_menu | \
     fi
 done
 
-rm -rf "$AUTOSTART_DIR"
+rm -rf "$autostart_dir"
 
 exit 1
