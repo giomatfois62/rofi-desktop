@@ -8,7 +8,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-BOOK_ICONS="${BOOK_ICONS:-}"
+ROFI_BOOKS_ICONS="${ROFI_BOOKS_ICONS:-}"
 GRID_ROWS=${GRID_ROWS:-4}
 GRID_COLS=${GRID_COLS:-5}
 GRID_ICON_SIZE=${GRID_ICON_SIZE:-4}
@@ -26,7 +26,7 @@ rofi_theme="$rofi_theme_list"
 
 mkdir -p "$ROFI_CACHE_DIR"
 
-if [ -n "$BOOK_ICONS" ]; then
+if [ -n "$ROFI_BOOKS_ICONS" ]; then
     rofi_flags="$rofi_flags -show-icons"
 fi
 

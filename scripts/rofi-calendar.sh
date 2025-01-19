@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 #
 # a simple calendar and agenda inside a rofi menu
-# allows adding and displaying events and reminders stored locally in $EVENTS_FILE
+# allows adding and displaying events and reminders stored locally in $events_file
 #
 # dependencies: rofi
 
@@ -9,6 +9,7 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
+ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 DATEFTM="${DATEFTM:-+%a %d %b %Y}"
 TIMEFMT="${TIMEFMT:-+%H:%M}"
 SHORTFMT="${SHORTFMT:-+%d/%m/%Y}"
@@ -22,8 +23,9 @@ CREATE_EVENT_TEXT="${CREATE_EVENT_TEXT:-! add reminder !}"
 ROFI_CONFIG_FILE="${ROFI_CONFIG_FILE:-/dev/null}"
 BAR_POSITION="${BAR_POSITION:-bottom}"
 WEEK_START="${WEEK_START:-monday}"
-ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
-EVENTS_FILE="$ROFI_DATA_DIR/events"
+
+events_file="$ROFI_DATA_DIR/events"
+rofi_theme="entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}"
 
 # get current date and set today header
 get_current_date() {
@@ -87,7 +89,7 @@ create_event() {
   suggested_date="$year.$month.$day "
   event_text=$((echo) | $ROFI -dmenu -p "New Reminder" -filter "$suggested_date")
   if [ ${#event_text} ]; then
-    echo "$event_text" >> "$EVENTS_FILE"
+    echo "$event_text" >> "$events_file"
   fi
 }
 
@@ -102,7 +104,7 @@ format_event() {
 export -f format_event
 
 show_events() {
-  grep "^$year.$month" "$EVENTS_FILE" | sort -n | xargs -I {} bash -c "format_event {}"
+  grep "^$year.$month" "$events_file" | sort -n | xargs -I {} bash -c "format_event {}"
 }
 
 delete_event() {
@@ -114,7 +116,7 @@ delete_event() {
   line_to_delete="$year.$month.$event_day $event_text"
   echo "$line_to_delete"
 
-  sed -i "/$line_to_delete/d" "$EVENTS_FILE"
+  sed -i "/$line_to_delete/d" "$events_file"
 }
 
 ###### Main body ######
@@ -128,9 +130,9 @@ header=$(date "$DATEFTM")", "$(date "$TIMEFMT")
 #lines:'"$(echo "$month_page" | wc -l)"';width:22;
 
 while selected="$(echo "$month_page" |\
-	$ROFI -dmenu -i -markup-rows \
-	-theme-str 'entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}' \
-	-kb-screenshot Control+Shift+space \
+	$ROFI -dmenu -i \
+	-markup-rows \
+	-theme-str "$rofi_theme" \
 	-hide-scrollbar \
 	-p "$header")"; do
   if [ $(echo "$selected" | grep "$NEXT_MONTH_TEXT") ]; then
