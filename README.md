@@ -70,6 +70,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - ToDo Lists (rofi-todo-list.sh and rofi-todo.sh)
   - Set Timer (rofi-timer.sh)
   - Characters (rofi-characters.sh, utf-8 char and emoji picker)
+  - Icons (rofi-icons.sh, icon themes browser)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
   - SSH Sessions (ssh modi)
