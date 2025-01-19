@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Icons
+Comment=
+Exec=rofi-icons.sh
+Icon=preferences-desktop-theme
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Filesystem;Appearance;
