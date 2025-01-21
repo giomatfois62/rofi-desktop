@@ -18,7 +18,7 @@
 - Use new recursivebrowser to search all files
 - Blacklist folders in search menu
 - Move github repo descriptions in submenu or 2nd row in rofi-github
-- Scrape using xmllint as much as possible to remove python dependencies (books, livetv, vcf)
+- Scrape using xmllint as much as possible to remove python dependencies (books, livetv)
 - Toggle preview/grid in rofi-xkcd
 - Use mesg box to display instructions in rofi-todo and rofi-notes
 - Use more standard icons in small menus
