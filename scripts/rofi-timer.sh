@@ -7,8 +7,8 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 # Sounds effects from soundbible.com
-TIMER_START_SOUND="${TIMER_START_SOUND:-$SCRIPT_PATH/data/timer_start.wav}"
-TIMER_STOP_SOUND="${TIMER_STOP_SOUND:-$SCRIPT_PATH/data/timer_end.wav}"
+TIMER_START_SOUND="${TIMER_START_SOUND:-$SCRIPT_PATH/sounds/timer_start.wav}"
+TIMER_STOP_SOUND="${TIMER_STOP_SOUND:-$SCRIPT_PATH/sounds/timer_end.wav}"
 TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-5000}
 
 timer_placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
