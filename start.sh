@@ -86,7 +86,7 @@ startup() {
     # set wallpaper
     if [ -f "$WALLPAPER_CACHE" ]; then
         echo "Setting wallpaper"
-        "$SCRIPT_PATH/scripts/set-wallpaper.sh" "$WALLPAPER_CACHE"
+        "$SCRIPT_PATH/scripts/rofi-wallpaper.sh" "$WALLPAPER_CACHE"
     fi
 
     # set keyboard layout

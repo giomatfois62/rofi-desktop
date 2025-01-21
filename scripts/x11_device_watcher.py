@@ -364,7 +364,7 @@ class DeviceStatusReader:
 
         if os.path.exists(wallpaper_img):
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            wallpaper_script = os.path.join(script_dir, "set-wallpaper.sh")
+            wallpaper_script = os.path.join(script_dir, "rofi-wallpaper.sh")
 
             subprocess.call([wallpaper_script, wallpaper_img])
 
