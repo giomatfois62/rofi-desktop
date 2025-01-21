@@ -9,7 +9,8 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
-WORDS_DIR="$ROFI_DATA_DIR/hangman"
+
+words_dir="$ROFI_DATA_DIR/hangman"
 
 hangman0=" ____
 |    |
@@ -60,13 +61,13 @@ hangman6=" ____
 |   / \\
 |       "
 
-while category=$(ls "$WORDS_DIR" | $ROFI -dmenu -i -p "Category"); do
+while category=$(ls "$words_dir" | $ROFI -dmenu -i -p "Category"); do
     while true; do
         letters="A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z"
         used=""
         errors=0
 
-        word=$(shuf -n1 "$WORDS_DIR/$category" | tr a-z A-Z)
+        word=$(shuf -n1 "$words_dir/$category" | tr a-z A-Z)
         word_len=${#word}
         word_array=()
         guess=()

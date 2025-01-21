@@ -7,10 +7,11 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 # Sounds effects from soundbible.com
-TIMER_START_AUDIO="${TIMER_START_AUDIO:-$SCRIPT_PATH/data/timer_start.wav}"
-TIMER_STOP_AUDIO="${TIMER_STOP_AUDIO:-$SCRIPT_PATH/data/timer_end.wav}"
+TIMER_START_SOUND="${TIMER_START_SOUND:-$SCRIPT_PATH/data/timer_start.wav}"
+TIMER_STOP_SOUND="${TIMER_STOP_SOUND:-$SCRIPT_PATH/data/timer_end.wav}"
 TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-5000}
-TIMER_PLACEHOLDER="Type <hours>h <minutes>m <seconds>s to set a custom timer"
+
+timer_placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
 
 TIMERS="1 hour\n45 minutes\n30 minutes\n20 minutes\n15 minutes\n10 minutes\n5 minutes\n4 minutes\n3 minutes\n2 minutes\n1 minute\n45 seconds\n30 seconds"
 
@@ -31,12 +32,12 @@ declare -A SECONDS=(
 )
 
 startTimer() {
-    notify-send -t $TIMER_NOTIFICATION_TIMEOUT "$1 timer started" && paplay $TIMER_START_AUDIO
+    notify-send -t $TIMER_NOTIFICATION_TIMEOUT "$1 timer started" && paplay $TIMER_START_SOUND
 
     if command -v systemd-run &> /dev/null; then
-		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_AUDIO
+		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_SOUND
     elif command -v at &> /dev/null; then
-		echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_AUDIO" | at now
+		echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_SOUND" | at now
     fi
 }
 
@@ -68,7 +69,7 @@ then
 	fi
 else
 	#
-	echo -en "\0theme\x1fentry{placeholder:\"$TIMER_PLACEHOLDER\";}\n"
+	echo -en "\0theme\x1fentry{placeholder:\"$timer_placeholder\";}\n"
     echo -e "$TIMERS"
 fi
 

@@ -8,10 +8,10 @@ logfile="$HOME/.cache/suggestions.tmp"
 
 [ ! -f "$logfile" ] && echo "run the wrapper script instead" && exit 1
 
-API=$(cat "$logfile")
+api=$(cat "$logfile")
 rm "$logfile"
 
-get_suggestions="$SCRIPT_PATH/suggestions/$API"
+get_suggestions="$SCRIPT_PATH/suggestions/$api"
 allowExcess=true
 
 suggestions=""

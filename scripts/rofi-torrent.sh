@@ -9,14 +9,13 @@
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-TORRENT_CACHE="$ROFI_CACHE_DIR/torrents"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
-TORRENT_PLACEHOLDER="Type something and press \"Enter\" to search torrents"
 
-mkdir -p "$TORRENT_CACHE"
+torrent_cache="$ROFI_CACHE_DIR/torrents"
+mkdir -p "$torrent_cache"
 
 if [ -z $1 ]; then
-  query=$(echo "" | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$TORRENT_PLACEHOLDER\";"} -p "Search Torrent")
+  query=$(echo "" | $ROFI -dmenu -i -p "Search Torrent")
 else
   query=$1
 fi
@@ -29,14 +28,14 @@ baseurl="https://www.1337x.to"
 query="$(sed 's/ /+/g' <<<$query)"
 counter=1
 
-#curl -s $baseurl/category-search/$query/Movies/1/ > $TORRENT_CACHE/tmp.html
-curl -s $baseurl/search/$query/$counter/ > $TORRENT_CACHE/tmp.html
+#curl -s $baseurl/category-search/$query/Movies/1/ > $torrent_cache/tmp.html
+curl -s $baseurl/search/$query/$counter/ > $torrent_cache/tmp.html
 
 # Get Titles
-grep -o '<a href="/torrent/.*</a>' $TORRENT_CACHE/tmp.html |
-  sed 's/<[^>]*>//g' > $TORRENT_CACHE/titles.bw
+grep -o '<a href="/torrent/.*</a>' $torrent_cache/tmp.html |
+  sed 's/<[^>]*>//g' > $torrent_cache/titles.bw
 
-result_count=$(wc -l $TORRENT_CACHE/titles.bw | awk '{print $1}')
+result_count=$(wc -l $torrent_cache/titles.bw | awk '{print $1}')
 
 if [ "$result_count" -lt 1 ]; then
   $ROFI -e "No results found, try again."
@@ -45,34 +44,34 @@ fi
 
 scrape_torrents() {
   # Get Titles
-  grep -o '<a href="/torrent/.*</a>' $TORRENT_CACHE/tmp.html |
-  sed 's/<[^>]*>//g' > $TORRENT_CACHE/titles.bw
+  grep -o '<a href="/torrent/.*</a>' $torrent_cache/tmp.html |
+  sed 's/<[^>]*>//g' > $torrent_cache/titles.bw
 
   # Seeders and Leechers
-  grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' $TORRENT_CACHE/tmp.html |
-    sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' > $TORRENT_CACHE/seedleech.bw
+  grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' $torrent_cache/tmp.html |
+    sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' > $torrent_cache/seedleech.bw
 
   # Size
-  grep -o '<td class="coll-4 size.*</td>' $TORRENT_CACHE/tmp.html |
+  grep -o '<td class="coll-4 size.*</td>' $torrent_cache/tmp.html |
     sed 's/<span class="seeds">.*<\/span>//g' |
-    sed -e 's/<[^>]*>//g' > $TORRENT_CACHE/size.bw
+    sed -e 's/<[^>]*>//g' > $torrent_cache/size.bw
 
   # Links
-  grep -E '/torrent/' $TORRENT_CACHE/tmp.html |
+  grep -E '/torrent/' $torrent_cache/tmp.html |
     sed -E 's#.*(/torrent/.*)/">.*/#\1#' |
-    sed 's/td>//g' > $TORRENT_CACHE/links.bw
+    sed 's/td>//g' > $torrent_cache/links.bw
 
   # Clearning up some data to display
-  sed 's/\./ /g; s/\-/ /g' $TORRENT_CACHE/titles.bw |
-    sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/titles.bw
+  sed 's/\./ /g; s/\-/ /g' $torrent_cache/titles.bw |
+    sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > $torrent_cache/tmp && mv $torrent_cache/tmp $torrent_cache/titles.bw
 
-  awk '{print NR " - ["$0"]"}' $TORRENT_CACHE/size.bw > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/size.bw
-  awk '{print "[S:"$1 ", L:"$2"]" }' $TORRENT_CACHE/seedleech.bw > $TORRENT_CACHE/tmp && mv $TORRENT_CACHE/tmp $TORRENT_CACHE/seedleech.bw
+  awk '{print NR " - ["$0"]"}' $torrent_cache/size.bw > $torrent_cache/tmp && mv $torrent_cache/tmp $torrent_cache/size.bw
+  awk '{print "[S:"$1 ", L:"$2"]" }' $torrent_cache/seedleech.bw > $torrent_cache/tmp && mv $torrent_cache/tmp $torrent_cache/seedleech.bw
 }
 
 scrape_torrents
 
-torrents=$(paste -d\   $TORRENT_CACHE/size.bw $TORRENT_CACHE/seedleech.bw $TORRENT_CACHE/titles.bw)
+torrents=$(paste -d\   $torrent_cache/size.bw $torrent_cache/seedleech.bw $torrent_cache/titles.bw)
 torrents="$torrents\nMore..."
 
 # Getting the line number
@@ -83,20 +82,20 @@ while torrent=$(echo -en "$torrents" | $ROFI -dmenu -i -p "Torrent" | cut -d\- -
 
   if [ "$torrent" = "More..." ]; then
     counter=$((counter+1))
-    curl -s $baseurl/search/$query/$counter/ >> $TORRENT_CACHE/tmp.html
+    curl -s $baseurl/search/$query/$counter/ >> $torrent_cache/tmp.html
 
     scrape_torrents
 
-    torrents=$(paste -d\   $TORRENT_CACHE/size.bw $TORRENT_CACHE/seedleech.bw $TORRENT_CACHE/titles.bw)
+    torrents=$(paste -d\   $torrent_cache/size.bw $torrent_cache/seedleech.bw $torrent_cache/titles.bw)
     torrents="$torrents\nMore..."
   else
     # Building the url to scrape
-    url=$(head -n $torrent $TORRENT_CACHE/links.bw | tail -n +$torrent)
+    url=$(head -n $torrent $torrent_cache/links.bw | tail -n +$torrent)
     fullURL="${baseurl}${url}/"
 
     # Requesting page for magnet link
-    curl -s $fullURL > $TORRENT_CACHE/tmp.html
-    magnet=$(grep -Po "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" $TORRENT_CACHE/tmp.html | head -n 1)
+    curl -s $fullURL > $torrent_cache/tmp.html
+    magnet=$(grep -Po "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" $torrent_cache/tmp.html | head -n 1)
 
     $TORRENT_CLIENT "$magnet" & disown
 

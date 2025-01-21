@@ -1,17 +1,17 @@
 #!/usr/bin/bash
 #
-# this script search github repositories, offering to open results in browser or clone them locally
+# this script search github repositories, opens repositories in browser or clone them locally
 #
 # dependencies: rofi, curl, jq
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-GITHUB_CACHE="$ROFI_CACHE_DIR/github.json"
-GITHUB_PLACEHOLDER="Type something and press \"Enter\" to search repositories"
 CLONE_FOLDER=${CLONE_FOLDER:-"$HOME/Downloads/"}
 
+github_cache="$ROFI_CACHE_DIR/github.json"
+
 if [ -z $1 ]; then
-  query=$(echo "" | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$GITHUB_PLACEHOLDER\";"} -p "Search GitHub")
+  query=$(echo "" | $ROFI -dmenu -i -p "Search GitHub")
 else
   query=$1
 fi
@@ -29,11 +29,10 @@ counter=1
 per_page=50
 search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$counter"
 
-curl "$search_url" -o "$GITHUB_CACHE"
+curl "$search_url" -o "$github_cache"
 
-repos_count=$(jq '.total_count' "$GITHUB_CACHE")
-
-repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)](\(.description))"' "$GITHUB_CACHE")
+repos_count=$(jq '.total_count' "$github_cache")
+repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)](\(.description))"' "$github_cache")
 
 if [ "$repos_count" -gt $per_page ]; then
     repos="$repos\nMore..."
@@ -49,14 +48,14 @@ while repo=$(echo -en "$repos" | tr -d '"' |  $ROFI -dmenu -i -format 'i s' -sel
         counter=$((counter+1))
         search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$counter"
 
-        curl "$search_url" -o "$GITHUB_CACHE"$counter
+        curl "$search_url" -o "$github_cache"$counter
 
-        new_repos=$(jq -n '{ items: [ inputs.items ] | add }' "$GITHUB_CACHE" "$GITHUB_CACHE"$counter)
-        echo "$new_repos" > "$GITHUB_CACHE"
-        rm "$GITHUB_CACHE"$counter
+        new_repos=$(jq -n '{ items: [ inputs.items ] | add }' "$github_cache" "$github_cache"$counter)
+        echo "$new_repos" > "$github_cache"
+        rm "$github_cache"$counter
 
-        repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)](\(.description))"' "$GITHUB_CACHE")
-        new_count=$(jq '.items | length' "$GITHUB_CACHE")
+        repos=$(jq '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)](\(.description))"' "$github_cache")
+        new_count=$(jq '.items | length' "$github_cache")
 
         if [ "$new_count" -lt $repos_count ]; then
             repos="$repos\nMore..."
@@ -67,13 +66,13 @@ while repo=$(echo -en "$repos" | tr -d '"' |  $ROFI -dmenu -i -format 'i s' -sel
         action=$(echo -en "Open in Browser\nClone" | $ROFI -dmenu -i -p "Action")
 
         if [ "$action" = "Open in Browser" ]; then
-            repo_url=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .html_url" "$GITHUB_CACHE" | tr -d '"')
+            repo_url=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .html_url" "$github_cache" | tr -d '"')
 
             xdg-open "$repo_url"
             exit 0
         elif [ "$action" = "Clone" ]; then
-            repo_folder=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .name" "$GITHUB_CACHE" | tr -d '"')
-            clone_url=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .clone_url" "$GITHUB_CACHE" | tr -d '"')
+            repo_folder=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .name" "$github_cache" | tr -d '"')
+            clone_url=$(jq ".items | .[] | select(.full_name==\"$repo_name\") | .clone_url" "$github_cache" | tr -d '"')
 
             cd "$CLONE_FOLDER" && git clone "$clone_url" && xdg-open "$CLONE_FOLDER/$repo_folder"
             exit 0

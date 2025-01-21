@@ -5,10 +5,14 @@
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+
 CONFIG="$ROFI_DATA_DIR/yt-feeds"
-CACHE="${HOME}/.cache/yt-feeds"
-CACHE_RSS="${HOME}/.cache/yt-feeds/RSS"
-CACHE_WATCHED="${HOME}/.cache/yt-feeds/watched"
+CACHE="$ROFI_CACHE_DIR/yt-feeds"
+CACHE_RSS="$ROFI_CACHE_DIR/yt-feeds/RSS"
+CACHE_WATCHED="$ROFI_CACHE_DIR/yt-feeds/watched"
+
+mkdir -p "$CACHE"
 
 f_download () {
     if [[ $# == 2 ]]

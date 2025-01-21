@@ -12,14 +12,15 @@ ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 NOTES_AUTHOR="${NOTES_AUTOR:-$(whoami)}"
 NOTES_EDITOR="${NOTES_EDITOR:-xdg-open}"
-NOTES_FOLDER="$ROFI_DATA_DIR/notes"
 
-if [[ ! -d "${NOTES_FOLDER}" ]]; then
-    mkdir -p "$NOTES_FOLDER"
+notes_folder="$ROFI_DATA_DIR/notes"
+
+if [[ ! -d "${notes_folder}" ]]; then
+    mkdir -p "$notes_folder"
 fi
 
 get_notes() {
-    ls "${NOTES_FOLDER}"
+    ls "${notes_folder}"
 }
 
 edit_note() {
@@ -33,7 +34,7 @@ delete_note() {
 
     case $action in
         "Yes")
-            rm "$NOTES_FOLDER/$note"
+            rm "$notes_folder/$note"
             main
             ;;
         "No")
@@ -43,7 +44,7 @@ delete_note() {
 
 note_context() {
     local note=$1
-    local note_location="$NOTES_FOLDER/$note"
+    local note_location="$notes_folder/$note"
     local action=$(echo -e "Edit\nDelete" | $ROFI -dmenu -p "$note > ")
     case $action in
         "Edit")
@@ -77,7 +78,7 @@ author: $NOTES_AUTHOR
 END
             )
 
-            note_location="$NOTES_FOLDER/$file.md"
+            note_location="$notes_folder/$file.md"
             if [ "$title" != "" ]; then
                 echo "$template" > "$note_location" | edit_note "$note_location"
                 exit 0

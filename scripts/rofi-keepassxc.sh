@@ -8,7 +8,8 @@
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-CACHE="$ROFI_CACHE_DIR/rofi-keepassxc/"
+
+keypassxc_cache="$ROFI_CACHE_DIR/rofi-keepassxc/"
 
 if ! command -v keypassxc-cli &> /dev/null; then
 	$ROFI -e "Install keypassxc-cli to enable the keypassxc menu"
@@ -195,33 +196,33 @@ done
 
 [ ! "$timeout" ] && timeout=15
 
-mkdir -p "$CACHE"
+mkdir -p "$keypassxc_cache"
 
 dbpass=$(m -p "Enter your database password" -l 0 -password)
 [ ! "$dbpass" ] && exit 1
 
 error_pass='Error while reading the database'
-check_pass=$(echo "$dbpass" | keepassxc-cli open "$db" >"$CACHE/tmp" 2>&1 && grep -oh "$error_pass" "$CACHE/tmp")
+check_pass=$(echo "$dbpass" | keepassxc-cli open "$db" >"$keypassxc_cache/tmp" 2>&1 && grep -oh "$error_pass" "$keypassxc_cache/tmp")
 error_db='Failed to open database file'
-check_db=$(echo "$dbpass" | keepassxc-cli open "$db" >"$CACHE/tmp" 2>&1 && grep -oh "$error_db" "$CACHE/tmp")
+check_db=$(echo "$dbpass" | keepassxc-cli open "$db" >"$keypassxc_cache/tmp" 2>&1 && grep -oh "$error_db" "$keypassxc_cache/tmp")
 
 if [ "$check_pass" = "$error_pass" ]; then
   $ROFI -e "$error_pass password"
 elif [ "$check_db" = "$error_db" ]; then
   $ROFI -e "$error_db"
 else
-  echo "$dbpass" | keepassxc-cli ls "$db" | grep -Ev 'Enter|?*/' | sort >"$CACHE/tmp"
-  elements_num=$([ "$(wc -l < "$CACHE/tmp")" -gt 20 ] && echo 20)
+  echo "$dbpass" | keepassxc-cli ls "$db" | grep -Ev 'Enter|?*/' | sort >"$keypassxc_cache/tmp"
+  elements_num=$([ "$(wc -l < "$keypassxc_cache/tmp")" -gt 20 ] && echo 20)
 
-  entry=$(m -p "Entry list" -l "$elements_num" < "$CACHE/tmp")
+  entry=$(m -p "Entry list" -l "$elements_num" < "$keypassxc_cache/tmp")
 
-  if ! grep -q "$entry" "$CACHE/tmp"; then
+  if ! grep -q "$entry" "$keypassxc_cache/tmp"; then
     add_entry || exit 1
   else
     choose_action || exit 1
   fi
 fi
 
-rm -r "$CACHE/tmp"
+rm -r "$keypassxc_cache/tmp"
 
 ecit 1

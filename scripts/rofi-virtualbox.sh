@@ -7,7 +7,6 @@
 # dependencies: rofi, virtualbox
 
 ROFI="${ROFI:-rofi}"
-OPTIONS="Start VM\nPower-off VM\nClone VM\nDelete VM"
 
 # function definitions
 ######################
@@ -40,6 +39,7 @@ function deleteVM()
 
 # script execution starts here
 ##############################
+options="Start VM\nPower-off VM\nClone VM\nDelete VM"
 
 while true
 do
@@ -48,7 +48,7 @@ do
   retval=$?
   [ $retval -ne 0 ] && exit $retval
   # select action to be executed
-  option=$(echo -e $OPTIONS | $ROFI -dmenu -i -p 'Select action')
+  option=$(echo -e $options | $ROFI -dmenu -i -p 'Select action')
   retval=$?
   [ $retval -ne 0 ] && exit $retval
   case "$option" in

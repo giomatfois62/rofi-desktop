@@ -12,10 +12,11 @@ ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 RADIO_ICONS="${RADIO_ICONS:-}"
 RADIO_PLAYER="${RADIO_PLAYER:-mpv --no-resume-playback --force-window=immediate}"
-RADIO_FILE="$ROFI_DATA_DIR/radios.json"
-RADIO_CACHE="$ROFI_CACHE_DIR/rofi-radio"
-RADIO_URL="https://de1.api.radio-browser.info/json/stations/search?name="
-PREVIEW_CMD="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
+
+radio_file="$ROFI_DATA_DIR/radios.json"
+radio_cache="$ROFI_CACHE_DIR/rofi-radio"
+radio_url="https://de1.api.radio-browser.info/json/stations/search?name="
+radio_preview="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
 
 if [ -n "$RADIO_ICONS" ]; then
     flags="-show-icons"
@@ -33,24 +34,24 @@ select_channel(){
     local selected_row
     local show_favicon
 
-    selected_row=$(cat "$RADIO_CACHE")
+    selected_row=$(cat "$radio_cache")
     
     # favicon key contains the url to the icon to show
     while name=$(\
-            jq '.[] | "[\(.countrycode)] \(.name)<ICON>\(.favicon)"' "$RADIO_FILE" |\
+            jq '.[] | "[\(.countrycode)] \(.name)<ICON>\(.favicon)"' "$radio_file" |\
             tr -d '"' |\
             sort |\
             sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-            $ROFI -dmenu -i -p "Radio" -selected-row "${selected_row}" -format 'i s' $flags -preview-cmd "$PREVIEW_CMD" \
+            $ROFI -dmenu -i -p "Radio" -selected-row "${selected_row}" -format 'i s' $flags -preview-cmd "$radio_preview" \
         ); do
 
         index=$(echo "$name" | awk '{print $1;}')
-        echo "$index" > "$RADIO_CACHE"
+        echo "$index" > "$radio_cache"
 
         name_str=$(echo "$name" | cut -d' ' -f3-)
         var=".[] | select(.name==\"$name_str\") | .url"
 
-        play "$(jq "$var" "$RADIO_FILE" | tr -d '"')"
+        play "$(jq "$var" "$radio_file" | tr -d '"')"
 
         exit 0
     done
@@ -58,13 +59,13 @@ select_channel(){
     exit 1
 }
 
-mkdir -p "${RADIO_FILE%radios.json}"
+mkdir -p "${radio_file%radios.json}"
 
 # TODO: do this job in background and display message
-if [ ! -f "$RADIO_FILE" ];then
+if [ ! -f "$radio_file" ];then
     printf "Downloading channel list...\n";
 
-    wget -q --show-progress "$RADIO_URL" -O "$RADIO_FILE" ||\
+    wget -q --show-progress "$radio_url" -O "$radio_file" ||\
         print_error "Cannot download channel list" 
 fi
 

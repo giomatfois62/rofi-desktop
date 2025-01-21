@@ -9,15 +9,16 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
-PODCAST_EXPIRATION_TIME=${PODCAST_EXPIRATION_TIME:-3600} # refresh episodes every hour
-PODCAST_FOLDER="$ROFI_DATA_DIR/podcasts"
-PODCAST_CACHE="$ROFI_CACHE_DIR/podcasts"
-PODCAST_HISTORY="$PODCAST_CACHE/recents"
 PODCAST_ICONS=${PODCAST_ICONS:-}
-PREVIEW_CMD="$SCRIPT_PATH/download_podcast_icon.sh {input} {output} {size}"
+PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
 
-mkdir -p $PODCAST_CACHE
+podcast_refresh=3600 # refresh episodes every hour
+podcast_folder="$ROFI_DATA_DIR/podcasts"
+podcast_cache="$ROFI_CACHE_DIR/podcasts"
+podcast_history="$podcast_cache/recents"
+podcast_preview="$SCRIPT_PATH/download_podcast_icon.sh {input} {output} {size}"
+
+mkdir -p $podcast_cache
 
 show_episodes() {
     local title="$1"
@@ -32,7 +33,7 @@ show_episodes() {
     get_author=".[] | select(.title==\"$title\") | .author_name"
     author=$(jq -r "$get_author" "$podcast_file")
 
-    episodes_file="$PODCAST_CACHE/$slug"
+    episodes_file="$podcast_cache/$slug"
 
     counter=1
     series_url="https://apollo.rss.com/podcasts/$slug/episodes?limit=10&page="$counter
@@ -45,7 +46,7 @@ show_episodes() {
         delta=$((current_date - news_date))
 
         # refresh file if it's too old
-        if [ $delta -gt $PODCAST_EXPIRATION_TIME ]; then
+        if [ $delta -gt $podcast_refresh ]; then
             curl --silent "$series_url" -o "$episodes_file"
         fi
     else
@@ -76,14 +77,14 @@ show_episodes() {
             episode_url="https://media.rss.com/$slug/$episode_link"
 
             history_entry="$category/$title"
-            touch "$PODCAST_HISTORY"
+            touch "$podcast_history"
 
             # https://unix.stackexchange.com/questions/389482/unix-search-and-remove-variable-contains-slash-from-a-file
-            grep -Fv -f <(echo "$history_entry") "$PODCAST_HISTORY" > "$PODCAST_HISTORY".tmp
-            mv "$PODCAST_HISTORY".tmp "$PODCAST_HISTORY"
+            grep -Fv -f <(echo "$history_entry") "$podcast_history" > "$podcast_history".tmp
+            mv "$podcast_history".tmp "$podcast_history"
 
             #https://stackoverflow.com/questions/10587615/unix-command-to-prepend-text-to-a-file
-            printf '%s\n%s\n' "$history_entry" "$(cat "$PODCAST_HISTORY")" > "$PODCAST_HISTORY"
+            printf '%s\n%s\n' "$history_entry" "$(cat "$podcast_history")" > "$podcast_history"
 
             $PODCAST_PLAYER "$episode_url"
 
@@ -92,19 +93,19 @@ show_episodes() {
     done
 }
 
-categories=$(cd "$PODCAST_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
+categories=$(cd "$podcast_folder" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
 while category=$(echo -en "Recently Played\n$categories" | $ROFI -dmenu -i -p "Category"); do
     if [ "$category" = "Recently Played" ]; then
-        while entry=$(cat "$PODCAST_HISTORY" | $ROFI -dmenu -i -p "Podcast"); do
+        while entry=$(cat "$podcast_history" | $ROFI -dmenu -i -p "Podcast"); do
             IFS='/' read -r category title <<< "$entry"
 
-            podcast_file="$PODCAST_FOLDER/$category.json"
+            podcast_file="$podcast_folder/$category.json"
 
             show_episodes "$title" "$podcast_file"
         done
     else
-        podcast_file="$PODCAST_FOLDER/$category.json"
+        podcast_file="$podcast_folder/$category.json"
 
         if [ -n "$PODCAST_ICONS" ]; then
             #flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
@@ -116,7 +117,7 @@ while category=$(echo -en "Recently Played\n$categories" | $ROFI -dmenu -i -p "C
         while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}<ICON>\(.slug)/<SIZE>/\(.cover)"' "$podcast_file" |\
             tr -d '"' |\
             sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-            $ROFI -dmenu -i -p "$category" $flags -preview-cmd "$PREVIEW_CMD"); do
+            $ROFI -dmenu -i -p "$category" $flags -preview-cmd "$podcast_preview"); do
 
             title=$(echo "$podcast" | cut -d"{" -f1 | sed 's/ *$//g')
             show_episodes "$title" "$podcast_file"

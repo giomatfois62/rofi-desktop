@@ -5,8 +5,8 @@
 # dependencies: rofi, mpd, mpc
 
 ROFI="${ROFI:-rofi}"
-MPD_SHORTCUTS_HELP="<b>Alt+Q</b> add to queue | <b>Alt+P</b> play/pause | <b>Alt+J</b> previous song | <b>Alt+K</b> next song"
 
+mpd_shortcuts_help="<b>Alt+Q</b> add to queue | <b>Alt+P</b> play/pause | <b>Alt+J</b> previous song | <b>Alt+K</b> next song"
 mpd_shortcuts="-kb-custom-1 "Alt+q" -kb-custom-2 "Alt+p" -kb-custom-3 "Alt+k" -kb-custom-4 "Alt+j""
 
 player_mesg() {
@@ -14,9 +14,9 @@ player_mesg() {
   # https://stackoverflow.com/questions/12873682/short-way-to-escape-html-in-bash
   player_status=$(mpc status | head -n -1 | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
   if [ -n "$player_status" ]; then
-    echo "$player_status&#x0a;&#x0a;$MPD_SHORTCUTS_HELP"
+    echo "$player_status&#x0a;&#x0a;$mpd_shortcuts_help"
   else
-    echo "$MPD_SHORTCUTS_HELP"
+    echo "$mpd_shortcuts_help"
   fi
 }
 

@@ -12,8 +12,9 @@ SCRIPT_DIR=$(dirname $(realpath $0))
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 STEAM_ROOT="${STEAM_ROOT:-$HOME/.local/share/Steam}"
-GAME_LAUNCHER_CACHE="$ROFI_CACHE_DIR/rofi-game-launcher"
-GAME_APP_PATH="$GAME_LAUNCHER_CACHE/applications"
+
+game_launcher_cache="$ROFI_CACHE_DIR/rofi-game-launcher"
+game_app_path="$game_launcher_cache/applications"
 
 # Fetch all Steam library folders.
 steam-libraries() {
@@ -57,7 +58,7 @@ update-game-entries() {
         esac
     done
 
-    mkdir -p "$GAME_APP_PATH"
+    mkdir -p "$game_app_path"
 
     for library in $(steam-libraries); do
         # All installed Steam games correspond with an appmanifest_<appid>.acf file
@@ -68,7 +69,7 @@ update-game-entries() {
 
         for manifest in "$library"/steamapps/appmanifest_*.acf; do
             appid=$(basename "$manifest" | tr -dc "[0-9]")
-            entry=$GAME_APP_PATH/${appid}.desktop
+            entry=$game_app_path/${appid}.desktop
 
             # Don't update existing entries unless doing a full refresh
             if [ -z $update ] && [ -f "$entry" ]; then
@@ -110,14 +111,14 @@ select_game() {
         # Temporarily overwrite XDG_DATA_HOME so that Rofi looks for
         # .desktop files in $GAME_LAUNCHER/applications instead of
         # ~/.local/share/applications
-        export XDG_DATA_HOME=$GAME_LAUNCHER_CACHE
+        export XDG_DATA_HOME=$game_launcher_cache
 
         logfile="$HOME/.cache/rofi-drun.log"
 
         G_MESSAGES_DEBUG=Modes.DRun $ROFI -show drun -show-icons -p "Games" \
             -drun-categories SteamLibrary \
             -log "$logfile"\
-            -cache-dir $GAME_LAUNCHER_CACHE \
+            -cache-dir $game_launcher_cache \
             -theme-str "$(build_theme 3 4 7)"
 
         # very hacky!!! intercept exit code grepping log file

@@ -5,7 +5,6 @@
 # dependencies: rofi, translate-shell
 
 ROFI="${ROFI:-rofi}"
-TRANSLATE_PLACEHOLDER="Type something and press \"Enter\" to translate"
 
 if ! command -v trans &> /dev/null; then
 	$ROFI -e "Install translate-shell to enable the translation menu"
@@ -15,7 +14,7 @@ fi
 # <span font-size='small'>
 MESG="Type or paste the text to translate and press \"Enter\".&#x0a;Specify a language by prefixing the query with \":lang\" (default is english), for example&#x0a;\":fr Hello World\""
 
-while text=$((echo) | $ROFI -dmenu -i -p "Translate" -theme-str "entry{placeholder:\"$TRANSLATE_PLACEHOLDER\";"} -mesg "$MESG"); do
+while text=$((echo) | $ROFI -dmenu -i -p "Text to translate" -mesg "$MESG"); do
 	lang=""
 
 	if [[ $text == :* ]]; then

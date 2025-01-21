@@ -8,39 +8,43 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-XKCD_EXPIRATION_TIME=${XKCD_EXPIRATION_TIME:-86400} # refresh xkcd file every day
-XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-25}
-XKCD_CACHE="$ROFI_CACHE_DIR/xkcd"
-XKCD_FILE="$XKCD_CACHE/list"
 XKCD_THUMBNAILS=${XKCD_THUMBNAILS:-}
-PREVIEW_CMD=$SCRIPT_PATH'/download_xkcd_icon.sh "{input}" "{output}"'
+XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-25}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
-ICON_SIZE=${ICON_SIZE:-6}
+GRID_ICON_SIZE=${GRID_ICON_SIZE:-6}
 
-mkdir -p "$XKCD_CACHE"
+xkcd_refresh=86400 # refresh xkcd file every day
+xkcd_cache="$ROFI_CACHE_DIR/xkcd"
+xkcd_file="$xkcd_cache/list"
+xkcd_preview=$SCRIPT_PATH'/download_xkcd_icon.sh "{input}" "{output}"'
+
+rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$GRID_ICON_SIZE.0em;}listview{lines:$GRID_ROWS;columns:$GRID_COLS;}"
+rofi_theme_item="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$XKCD_ICON_SIZE.0em;}listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
+
+mkdir -p "$xkcd_cache"
 
 get_comic_list() {
-    curl -s "https://xkcd.com/archive/" -o "$XKCD_CACHE/archive"
+    curl -s "https://xkcd.com/archive/" -o "$xkcd_cache/archive"
 
-    cat "$XKCD_CACHE/archive" | \
+    cat "$xkcd_cache/archive" | \
         xmllint --html --xpath '//div[@id="middleContainer"]//a/@href' - | \
         sed -n 's/.*href="\([^"]*\).*/\1/p' | \
-        sed 's/\///g' > "$XKCD_CACHE/refs"
-    cat "$XKCD_CACHE/archive" | \
-        xmllint --html --xpath '//div[@id="middleContainer"]//a/text()' - > "$XKCD_CACHE/names"
-    paste -d' ' "$XKCD_CACHE/refs" "$XKCD_CACHE/names" > "$XKCD_FILE"
+        sed 's/\///g' > "$xkcd_cache/refs"
+    cat "$xkcd_cache/archive" | \
+        xmllint --html --xpath '//div[@id="middleContainer"]//a/text()' - > "$xkcd_cache/names"
+    paste -d' ' "$xkcd_cache/refs" "$xkcd_cache/names" > "$xkcd_file"
 }
 
-if [ -f "$XKCD_FILE" ]; then
+if [ -f "$xkcd_file" ]; then
     # compute time delta between current date and news file date
-	news_date=$(date -r "$XKCD_FILE" +%s)
+	news_date=$(date -r "$xkcd_file" +%s)
 	current_date=$(date +%s)
 
 	delta=$((current_date - news_date))
 
 	# refresh xkcd file if it's too old
-	if [ $delta -gt $XKCD_EXPIRATION_TIME ]; then
+	if [ $delta -gt $xkcd_refresh ]; then
 		get_comic_list
 	fi
 else
@@ -56,31 +60,31 @@ build_theme() {
 }
 
 if [ -n "$XKCD_THUMBNAILS" ]; then
-    theme_flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
+    theme_flags="-show-icons -theme-str $rofi_theme_grid"
 fi
 
-while comic=$(echo -e "Random\n$(cat ${XKCD_FILE})" |\
+while comic=$(echo -e "Random\n$(cat ${xkcd_file})" |\
     awk '{print $N"\x00icon\x1fthumbnail://"$1}' |\
-    $ROFI -dmenu -i -p "XKCD" -markup-rows $theme_flags -preview-cmd "$PREVIEW_CMD"); do
+    $ROFI -dmenu -i -p "XKCD" -markup-rows $theme_flags -preview-cmd "$xkcd_preview"); do
 
     if [ "$comic" = "Random" ]; then
-        comic=$(shuf -n 1 "$XKCD_FILE")
+        comic=$(shuf -n 1 "$xkcd_file")
     fi
 
     comic_id=$(echo "$comic" | cut -d' ' -f1)
     comic_title=$(echo "$comic" | cut -d' ' -f2-)
     comic_url="https://xkcd.com/$comic_id/info.0.json"
-    comic_file="$XKCD_CACHE/$comic_id"
+    comic_file="$xkcd_cache/$comic_id"
 
     if [ ! -f "$comic_file" ]; then
         curl --silent "$comic_url" -o "$comic_file"
         comic_image=$(jq -r '.img' "$comic_file")
-        curl --silent "$comic_image" -o "$XKCD_CACHE/$comic_id.png"
+        curl --silent "$comic_image" -o "$xkcd_cache/$comic_id.png"
     fi
 
     comic_alt=$(jq -r '.alt' "$comic_file")
     comic_date=$(jq -r '"\(.day)/\(.month)/\(.year)"' "$comic_file")
-    comic_image="$XKCD_CACHE/$comic_id.png"
+    comic_image="$xkcd_cache/$comic_id.png"
 
     build_item_theme() {
         icon_size=$1
@@ -88,7 +92,8 @@ while comic=$(echo -e "Random\n$(cat ${XKCD_FILE})" |\
         echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
     }
 
-    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | $ROFI -dmenu -i -show-icons -theme-str $(build_item_theme $XKCD_ICON_SIZE) -mesg "<b>$comic_title</b> ($comic_date)&#x0a;$comic_alt"
+    echo -en "Open in Browser\x00icon\x1f$comic_image\n" | \
+        $ROFI -dmenu -i -show-icons -theme-str "$rofi_theme_item" -mesg "<b>$comic_title</b> ($comic_date)&#x0a;$comic_alt"
 
     [ "$?" -eq 0 ] && xdg-open "https://xkcd.com/$comic_id" && exit 0
 done

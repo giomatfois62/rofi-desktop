@@ -5,28 +5,25 @@
 # dependencies: rofi
 # optional: rofi-blocks
 
+# TODO: implement other apis for suggestions
+
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
-SEARCH_PLACEHOLDER="Type a query and press \"Enter\" to search"
-SEARCH_BLOCKS_PLACEHOLDER="Type to search"
 
-API=$1
+search_help="Type a query and press \"Enter\" to search"
+search_blocks_help="Type to search"
 
-case "$API" in
+api=$1
+
+case "$api" in
     "google") api_url="https://www.google.com/search?q=" ;;
     "youtube") api_url="https://www.youtube.com/results?search_query=" ;;
     "wikipedia") api_url="https://en.wikipedia.org/?curid=" ;;
     "archwiki") api_url="https://wiki.archlinux.org/index.php?search=" ;;
     "maps") api_url="https://nominatim.openstreetmap.org/search?q=" ;;
-    *) echo "unrecognized API" && exit 1 ;;
+    *) echo "unrecognized api" && exit 1 ;;
 esac
-
-# TODO: implement other APIs for suggestions
-
-#SEARCH_URL="https://www.google.com/search?q="
-#SEARCH_URL=https://en.wikipedia.org/w/index.php?search=
-#SEARCH_URL=https://www.youtube.com/results?search_query=
 
 # detect rofi-blocks and integrate suggestions
 have_blocks=$(rofi -dump-config | grep blocks)
@@ -36,9 +33,9 @@ if [ -n "$have_blocks" ]; then
     blockfile="$SCRIPT_PATH/rofi-web-suggestions.sh"
 
     mkdir -p "${logfile%suggestions.tmp}"
-    echo "$API" > "$logfile"
+    echo "$api" > "$logfile"
 
-    $ROFI -theme-str "entry{placeholder:\"$SEARCH_BLOCKS_PLACEHOLDER\";}" -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$API" 2>/dev/null
+    $ROFI -theme-str "entry{placeholder:\"$search_blocks_help\";}" -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$api" 2>/dev/null
 
     [ -f "$logfile" ] && query="$(cat "$logfile")" || exit 1
 
@@ -46,7 +43,7 @@ if [ -n "$have_blocks" ]; then
 
     if [ -n "$query" ]; then
 	    # extract wikipedia page id from string
-	    if [ "$API" = "wikipedia" ]; then
+	    if [ "$api" = "wikipedia" ]; then
 		    word_count=$(echo "$query" | wc -w)
 
 		    if [ "$word_count" -gt 1 ]; then
@@ -62,7 +59,7 @@ if [ -n "$have_blocks" ]; then
 	    exit 0
     fi
 else
-    query=$((echo) | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$SEARCH_PLACEHOLDER\";}" -p "$API");
+    query=$((echo) | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$search_help\";}" -p "$api");
 
     if [ -n "$query" ]; then
 	    url=$api_url$query

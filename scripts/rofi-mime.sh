@@ -9,7 +9,8 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
-MIMETYPES_DIR="$ROFI_DATA_DIR/mimetypes"
+
+mimetypes="$ROFI_DATA_DIR/mimetypes"
 
 declare -A actions=(
     ["Web Browser"]=set_browser
@@ -120,7 +121,7 @@ set_video_player() {
 }
 
 set_mimetype() {
-    selected_type=$(cat "$MIMETYPES_DIR/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2 | $ROFI -dmenu -i | cut -d',' -f2)
+    selected_type=$(cat "$mimetypes/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2 | $ROFI -dmenu -i | cut -d',' -f2)
 
     if [ -n "$selected_type" ]; then
         selected_app=$(seach_applications "" | $ROFI -dmenu -i -p "Applications")

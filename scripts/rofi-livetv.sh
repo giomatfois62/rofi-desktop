@@ -8,30 +8,31 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-LIVETV_FILE="$ROFI_CACHE_DIR/livetv.json"
-LIVETV_EXPIRATION_TIME=${LIVETV_EXPIRATION_TIME:-3600} # refresh livetv file every hour
 
-if [ -f "$LIVETV_FILE" ]; then
+livetv_refresh=3600 # refresh livetv file every hour
+livetv_file="$ROFI_CACHE_DIR/livetv.json"
+
+if [ -f "$livetv_file" ]; then
     # compute time delta between current date and news file date
-	news_date=$(date -r "$LIVETV_FILE" +%s)
+	news_date=$(date -r "$livetv_file" +%s)
 	current_date=$(date +%s)
 
 	delta=$((current_date - news_date))
 
 	# refresh livetv file if it's too old
-	if [ $delta -gt $LIVETV_EXPIRATION_TIME ]; then
-		"$SCRIPT_PATH"/scrape_livetv.py "$LIVETV_FILE"
+	if [ $delta -gt $livetv_refresh ]; then
+		"$SCRIPT_PATH"/scrape_livetv.py "$livetv_file"
 	fi
 else
-	"$SCRIPT_PATH"/scrape_livetv.py "$LIVETV_FILE"
+	"$SCRIPT_PATH"/scrape_livetv.py "$livetv_file"
 fi
 
-while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$LIVETV_FILE" | tr -d '"' |\
+while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$livetv_file" | tr -d '"' |\
         sort | $ROFI -dmenu -i -p "LiveTV" -format 'i s'); do
 
     name_idx=$(echo "$name" | cut -d' ' -f1)
     link_sel=".[$name_idx].link"
-    event_link=$(jq "$link_sel" "$LIVETV_FILE" | tr -d '"')
+    event_link=$(jq "$link_sel" "$livetv_file" | tr -d '"')
     
     echo "$name"
     echo "name: $name_str sel: $link_sel event: $event_link"

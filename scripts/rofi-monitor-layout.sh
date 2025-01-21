@@ -10,7 +10,8 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
-MONITORS_CACHE="$ROFI_CONFIG_DIR/monitor-layout"
+
+monitors_cache="$ROFI_CONFIG_DIR/monitor-layout"
 
 XRANDR=$(which xrandr)
 MONITORS=( $( ${XRANDR} | awk '( $2 == "connected" ){ print $1 }' ) )
@@ -102,7 +103,7 @@ if [ "${COMMANDS[$SEL]}" != "true" ]; then
     $( ${COMMANDS[$SEL]} )
 
     # Save command to cache
-    echo "${COMMANDS[$SEL]}" > "$MONITORS_CACHE"
+    echo "${COMMANDS[$SEL]}" > "$monitors_cache"
 else
     echo "Cancel"
 fi

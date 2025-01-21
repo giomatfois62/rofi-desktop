@@ -14,7 +14,8 @@ ROFI="${ROFI:-rofi}"
 SEARCH_ICONS=${SEARCH_ICONS:-}
 GRID_ROWS=${GRID_ROWS:-3}
 GRID_COLS=${GRID_COLS:-5}
-ICON_SIZE=${ICON_SIZE:-6}
+GRID_ICON_SIZE=${GRID_ICON_SIZE:-6}
+LIST_ICON_SIZE=${LIST_ICON_SIZE:-3}
 
 # search params
 initial_path="/home/mat"
@@ -34,8 +35,8 @@ prompt="Search"
 message="<b>Enter</b> open file | <b>Alt+C</b> copy to clipboard"
 shortcuts="-kb-custom-1 Alt+c"
 theme=""
-theme_icons="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$ICON_SIZE.0em;}listview{lines:$GRID_ROWS;columns:$GRID_COLS;}"
-theme_list="element-icon{size:3em;}element-text{vertical-align:0.5;}listview{lines:7;}"
+theme_icons="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$GRID_ICON_SIZE.0em;}listview{lines:$GRID_ROWS;columns:$GRID_COLS;}"
+theme_list="element-icon{size:$LIST_ICON_SIZE.0em;}element-text{vertical-align:0.5;}listview{lines:7;}"
 theme_preview="mainbox{children:[wrap,listview-split];}wrap{expand:false;orientation:vertical;children:[inputbar,message];}icon-current-entry{expand:true;size:40%;}element-icon{size:3em;}element-text{vertical-align:0.5;}listview-split{orientation:horizontal;children:[listview,icon-current-entry];}listview{lines:7;}"
 
 if [ -n "$SEARCH_ICONS" ]; then
