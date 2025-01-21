@@ -9,8 +9,6 @@
 ROFI="${ROFI:-rofi}"
 TERMINAL="${TERMINAL:-xterm}"
 
-CUSTOM_SCRIPTS_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/custom"
-
 function execInTerminal {
     $TERMINAL -e $SHELL -c "$1"
 }

@@ -8,8 +8,6 @@
 
 ROFI="${ROFI:-rofi}"
 
-DICT_PLACEHOLDER="Type a word and press \"Enter\" to lookup in dictionary"
-
 if ! command -v sdcv &> /dev/null; then
 	$ROFI -e "Install sdcv and links to enable the dictionary menu"
 	exit 1
@@ -22,7 +20,7 @@ pag() {                                                 \
     | eval "$ROFI" -dmenu -i -p "Result"
 }
 
-while phrase="$(echo $src | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$DICT_PLACEHOLDER\";}" -markup -p 'Lookup')"; do
+while phrase="$(echo $src | $ROFI -dmenu -i -markup -p 'Word to search')"; do
     {
         sdcv -n --utf8-input --utf8-output "$phrase"
         printf "Urban\n"

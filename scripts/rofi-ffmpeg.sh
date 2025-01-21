@@ -33,10 +33,11 @@ ROFI="${ROFI:-rofi}"
 VIDEO_FOLDER="${VIDEO_FOLDER:-$HOME/Videos/record}"
 AUDIO_FOLDER="${AUDIO_FOLDER:-$HOME/Music/record}"
 VIDEO_CODEC="${VIDEO_CODEC:-libvpx}" # h264
-VIDEO_EXTENSION=".webm"
+
+extension=".webm"
 
 if [ "$VIDEO_CODEC" = "h264" ]; then
-    VIDEO_EXTENSION=".mp4"
+    extension=".mp4"
 fi
 
 recordid="/tmp/recordid"
@@ -46,7 +47,7 @@ function getInputAudio() {
 }
 
 function audioVideo() {
-    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S')"$VIDEO_EXTENSION
+    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S')"$extension
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
     audio=$(getInputAudio)
 
@@ -62,7 +63,7 @@ function audioVideo() {
 }
 
 function video() {
-    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S')"$VIDEO_EXTENSION
+    filename="$VIDEO_FOLDER/video-$(date '+%y%m%d-%H%M-%S')"$extension
     dimensions=$(xdpyinfo | grep dimensions | awk '{print $2;}')
 
     notify-send "Start Recording" "With:\nVideo On\nAudio Off"
