@@ -493,7 +493,7 @@ keepassxc() {
 }
 
 wireguard() {
-    $ROFI -modi VPN:"$SCRIPT_PATH"/wireguard-rofi.sh -show VPN
+    $ROFI -modi VPN:"$SCRIPT_PATH"/rofi-wireguard.sh -show VPN
 }
 
 calculator() {
@@ -577,7 +577,7 @@ wallpaper() {
 }
 
 update_sys() {
-    "$SCRIPT_PATH"/update-system.sh;
+    "$SCRIPT_PATH"/rofi-update-system.sh;
 }
 
 system_info() {

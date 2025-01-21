@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-
-# WireGuard custom menu script to manage NetworkManager WireGuard connections using rofi
+#
+# https://github.com/HarHarLinks/wireguard-rofi-waybar
+#
+# rofi menu script to manage NetworkManager WireGuard connections
 # install to the same directory as wireguard.sh
-# example usage with rofi: rofi -modi 'WireGuard:~/.config/rofi/wireguard-rofi.sh' -show WireGuard
+# example usage with rofi: rofi -modi 'WireGuard:~/.config/rofi/rofi-wireguard.sh' -show WireGuard
+#
+# dependencies: rofi, wireguard
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 if [[ $# != 0 ]]
 then
@@ -14,7 +18,7 @@ then
 	elif [[ "$1" != "Reload" ]]
 	then
 		connection=$(echo $1 | cut -d: -f1)
-		message="$($SCRIPT_DIR/wireguard.sh toggle $connection)"
+		message="$($SCRIPT_PATH/wireguard.sh toggle $connection)"
 		if command -v notify-send >/dev/null 2>&1; then
 			notify-send "wireguard" "$message"
 		fi
@@ -39,7 +43,7 @@ do
 		connection="$connection [$IP]"
 	fi
 	echo -en "$connection\0icon\x1fwireguard\n"
-done < <($SCRIPT_DIR/wireguard.sh menu)
+done < <($SCRIPT_PATH/wireguard.sh menu)
 
 if [[ $active -ge 0 ]]
 then
