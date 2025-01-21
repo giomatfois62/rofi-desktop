@@ -12,9 +12,13 @@ SCRIPT_DIR=$(dirname $(realpath $0))
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 STEAM_ROOT="${STEAM_ROOT:-$HOME/.local/share/Steam}"
+STEAM_GRID_ROWS=${THUMB_GRID_ROWS:-3}
+STEAM_GRID_COLS=${THUMB_GRID_COLS:-4}
+STEAM_ICON_SIZE=${THUMB_ICON_SIZE:-7}
 
 game_launcher_cache="$ROFI_CACHE_DIR/rofi-game-launcher"
 game_app_path="$game_launcher_cache/applications"
+rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$STEAM_ICON_SIZE.0em;}listview{lines:$STEAM_GRID_ROWS;columns:$STEAM_GRID_COLS;}"
 
 # Fetch all Steam library folders.
 steam-libraries() {
@@ -96,14 +100,6 @@ update-game-entries() {
     done
 }
 
-build_theme() {
-    rows=$1
-    cols=$2
-    icon_size=$3
-
-    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
-}
-
 select_game() {
     update-game-entries -q &
 
@@ -119,7 +115,7 @@ select_game() {
             -drun-categories SteamLibrary \
             -log "$logfile"\
             -cache-dir $game_launcher_cache \
-            -theme-str "$(build_theme 3 4 7)"
+            -theme-str "$rofi_theme_grid"
 
         # very hacky!!! intercept exit code grepping log file
         entry_chosen=$(grep "Parsed command:" "$logfile")
