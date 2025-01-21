@@ -119,7 +119,6 @@ while [ -n "$query" ]; do
 
     query=$(echo "" | \
         $ROFI -dmenu -i \
-        -theme-str "entry{placeholder:\"$torrent_mesg\";"} \
         -p "Search Torrents")
 done
 

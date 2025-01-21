@@ -12,16 +12,10 @@ THUMB_GRID_ROWS=${THUMB_GRID_ROWS:-2}
 THUMB_GRID_COLS=${THUMB_GRID_COLS:-3}
 THUMB_ICON_SIZE=${THUMB_ICON_SIZE:-10}
 
-build_theme() {
-    rows=$1
-    cols=$2
-    icon_size=$3
-
-    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
-}
+rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$THUMB_ICON_SIZE.0em;}listview{lines:$THUMB_GRID_ROWS;columns:$THUMB_GRID_COLS;}"
 
 if [ "$SHOW_THUMBNAILS_GRID" = "yes" ]; then
-    $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBNAILS -show window -theme-str $(build_theme $THUMB_GRID_ROWS $THUMB_GRID_COLS $THUMB_ICON_SIZE)
+    $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBNAILS -show window -theme-str "$rofi_theme_grid"
 else
     $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBNAILS -show window
 fi

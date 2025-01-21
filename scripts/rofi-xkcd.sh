@@ -51,14 +51,6 @@ else
 	get_comic_list
 fi
 
-build_theme() {
-    rows=$1
-    cols=$2
-    icon_size=$3
-
-    echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:$rows;columns:$cols;}"
-}
-
 if [ -n "$XKCD_THUMBNAILS" ]; then
     theme_flags="-show-icons -theme-str $rofi_theme_grid"
 fi
@@ -85,12 +77,6 @@ while comic=$(echo -e "Random\n$(cat ${xkcd_file})" |\
     comic_alt=$(jq -r '.alt' "$comic_file")
     comic_date=$(jq -r '"\(.day)/\(.month)/\(.year)"' "$comic_file")
     comic_image="$xkcd_cache/$comic_id.png"
-
-    build_item_theme() {
-        icon_size=$1
-
-        echo "element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$icon_size.0000em;}listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
-    }
 
     echo -en "Open in Browser\x00icon\x1f$comic_image\n" | \
         $ROFI -dmenu -i -show-icons -theme-str "$rofi_theme_item" -mesg "<b>$comic_title</b> ($comic_date)&#x0a;$comic_alt"

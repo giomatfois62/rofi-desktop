@@ -108,7 +108,6 @@ while category=$(echo -en "Recently Played\n$categories" | $ROFI -dmenu -i -p "C
         podcast_file="$podcast_folder/$category.json"
 
         if [ -n "$PODCAST_ICONS" ]; then
-            #flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
             flags="-show-icons"
         fi
 
