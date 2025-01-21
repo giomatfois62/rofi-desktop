@@ -11,11 +11,10 @@ TIMER_START_SOUND="${TIMER_START_SOUND:-$SCRIPT_PATH/sounds/timer_start.wav}"
 TIMER_STOP_SOUND="${TIMER_STOP_SOUND:-$SCRIPT_PATH/sounds/timer_end.wav}"
 TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-5000}
 
-timer_placeholder="Type <hours>h <minutes>m <seconds>s to set a custom timer"
+timer_help="Type <hours>h <minutes>m <seconds>s to set a custom timer"
+timers="30 seconds\n45 seconds\n1 minute\n2 minutes\n3 minutes\n4 minutes\n5 minutes\n10 minutes\n15 minutes\n20 minutes\n30 minutes\n45 minutes\n1 hour"
 
-TIMERS="1 hour\n45 minutes\n30 minutes\n20 minutes\n15 minutes\n10 minutes\n5 minutes\n4 minutes\n3 minutes\n2 minutes\n1 minute\n45 seconds\n30 seconds"
-
-declare -A SECONDS=(
+declare -A timer_seconds=(
     ["1 hour"]=3600
     ["45 minutes"]=2700
     ["30 minutes"]=1800
@@ -32,7 +31,7 @@ declare -A SECONDS=(
 )
 
 startTimer() {
-    notify-send -t $TIMER_NOTIFICATION_TIMEOUT "$1 timer started" && paplay $TIMER_START_SOUND
+    notify-send -t $TIMER_NOTIFICATION_TIMEOUT "$1 timer started" && coproc ( paplay $TIMER_START_SOUND )
 
     if command -v systemd-run &> /dev/null; then
 		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_SOUND
@@ -61,16 +60,16 @@ custom_timer() {
 
 if [ "$@" ]
 then
-	if [[ -v SECONDS["$@"] ]]; then
-    	startTimer "$@" ${SECONDS["$@"]}
+	if [[ -v timer_seconds["$@"] ]]; then
+    	startTimer "$@" ${timer_seconds["$@"]}
     	exit 0
 	else
 		custom_timer "$@"
 	fi
 else
 	#
-	echo -en "\0theme\x1fentry{placeholder:\"$timer_placeholder\";}\n"
-    echo -e "$TIMERS"
+	echo -en "\0theme\x1fentry{placeholder:\"$timer_help\";}\n"
+    echo -e "$timers"
 fi
 
 exit 1
