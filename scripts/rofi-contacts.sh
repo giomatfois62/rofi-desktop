@@ -3,29 +3,20 @@
 # this script scrapes a list of contacts from a .vcf file and shows it in rofi
 # selecting a contact opens a menu to copy numbers/mails to clipboard or send an email
 #
-# dependencies: rofi, jq
+# dependencies: rofi
 # optional: xclip/wl-clipboard
 
-# TODO: implement remove contact from vcf file
-# TODO: if multiple email addresses, ask user the one to send the mail
+# TODO: remove duplicate mails/numbers
+# TODO: implement edit contact
+# TODO: implement add contact
+# TODO: implement remove contact
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
-ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-CONTACTS_FILE="$ROFI_DATA_DIR/contacts.vcf"
-CONTACTS_CACHE="$ROFI_CACHE_DIR/contacts.json"
 
-# refresh contacts cache
-rm "$CONTACTS_CACHE"
-
-"$SCRIPT_PATH/scrape_vcf.py" "$CONTACTS_FILE" "$CONTACTS_CACHE"
-
-if [ ! -f "$CONTACTS_CACHE" ]; then
-    $ROFI -e "Failed to scrape contacts list, make sure $CONTACTS_FILE exists and is valid"
-    exit 1
-fi
+contacts_file="$ROFI_DATA_DIR/Contacts.vcf"
 
 # set clipboard commad to use
 if [ -n "$WAYLAND_DISPLAY" ]; then
@@ -37,39 +28,49 @@ else
 fi
 
 # show menu
-selected_row=0
+row=0
 
-while contact=$(jq '.[] | "\(.name)"' "$CONTACTS_CACHE" |\
-        tr -d '",\\' |\
-        sort --ignore-case |\
-        $ROFI -dmenu -i -format 'i s' -selected-row "$selected_row" -p Contacts); do
+while contact=$(echo -e "New Contact\n$(grep "FN:" "$contacts_file" | sort)" | \
+    cut -d: -f2 | \
+    $ROFI -dmenu -i \
+    -format 'i s' \
+    -selected-row "$row" \
+    -p "Contacts"); do
 
-    selected_row=$(echo "$contact" | cut -d' ' -f1)
-    contact=$(echo "$contact" | cut -d' ' -f2-)
+    row=$(echo "$contact" | cut -d' ' -f1)
+    contact_name=$(echo "$contact" | cut -d' ' -f2-)
+    contact_info=$(sed -n "/FN:$contact_name$/,/END:VCARD/p" "$contacts_file")
 
-    numbers=$(jq --compact-output ".[] | select(.name==\"$contact\") | .num" "$CONTACTS_CACHE" | tr -d '",[,]')
-    mails=$(jq --compact-output ".[] | select(.name==\"$contact\") | .mail" "$CONTACTS_CACHE" | tr -d '",[,]')
+    numbers=$(echo -e "$contact_info" | \
+        grep TEL | cut -d: -f2 | uniq)
+    mails=$(echo -e "$contact_info"| \
+        grep EMAIL | cut -d: -f2 | uniq)
 
-    mesg="<b>$contact</b>&#x0a;Numbers: $numbers&#x0a;Email: $mails"
+    mesg="<b>$contact_name</b>&#x0a;Numbers: $numbers&#x0a;Emails: $mails"
+    actions="Edit Contact\nCopy Number\nCopy Email\nWrite Email\nRemove Contact"
 
-    all_actions="Copy Numbers\nCopy Emails\nWrite Email\nRemove Contact"
+    [ -z "$numbers" ] && actions=$(echo "$actions" | sed 's/Copy Number\\n//')
+    [ -z "$mails" ] && actions=$(echo "$actions" | sed 's/Copy Email\\nWrite Email\\n//')
 
-    [ -z "$numbers" ] && all_actions=$(echo "$all_actions" | sed 's/Copy Numbers\\n//')
-    [ -z "$mails" ] && all_actions=$(echo "$all_actions" | sed 's/Copy Emails\\nWrite Email\\n//')
+    action=$(echo -en "$actions" | $ROFI -dmenu -i -p Action -mesg "$mesg")
 
-    while action=$(echo -en "$all_actions" | $ROFI -dmenu -i -p Action -mesg "$mesg"); do
-        if [ "$action" = "Copy Numbers" ]; then
-            echo "$numbers" | $clip_cmd
-        elif [ "$action" = "Copy Emails" ]; then
-            echo "$mails" | $clip_cmd
-        elif [ "$action" = "Write Email" ]; then
-            xdg-email mailto:$mails
-        elif [ "$action" = "Remove Contact" ]; then
-            echo "remove $contact"
-        fi
-
-        exit 0
-    done
+    if [ "$action" = "Copy Number" ]; then
+        [ $(echo -e "$numbers" | wc -l) -gt 1 ] && \
+            numbers=$(echo -e "$numbers" | $ROFI -dmenu -i -p "$contact_name Number")
+        [ -n "$numbers" ] && echo "$numbers" | $clip_cmd && exit 0
+    elif [ "$action" = "Copy Email" ]; then
+        [ $(echo -e "$mails" | wc -l) -gt 1 ] && \
+            mails=$(echo -e "$mails" | $ROFI -dmenu -i -p "$contact_name Email")
+        [ -n "$mails" ] && echo "$mails" | $clip_cmd && exit 0
+    elif [ "$action" = "Write Email" ]; then
+        [ $(echo -e "$mails" | wc -l) -gt 1 ] && \
+            mails=$(echo -e "$mails" | $ROFI -dmenu -i -p "$contact_name Email")
+        [ -n "$mails" ] && xdg-email mailto:$mails && exit 0
+    elif [ "$action" = "Remove Contact" ]; then
+        echo "remove $contact_name"
+    elif [ "$action" = "Edit Contact" ]; then
+        echo "edit $contact_name"
+    fi
 done
 
 exit 1
