@@ -10,26 +10,27 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TERMINAL="${TERMINAL:-xterm}"
-FLATHUB_CACHE="$ROFI_CACHE_DIR/flathub.json"
-FLATHUB_EXPIRATION_TIME=${FLATHUB_EXPIRATION_TIME:-3600} # refresh applications list every hour
-FLATHUB_URL="https://flathub.org/api/v1/apps"
 FLATHUB_ICONS=${FLATHUB_ICONS:-}
-PREVIEW_CMD="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
+
+flathub_refresh=3600 # refresh applications list every hour
+flathub_url="https://flathub.org/api/v2/appstream"
+flathub_cache="$ROFI_CACHE_DIR/flathub.json"
+flathub_preview="$SCRIPT_PATH/download_flathub_icon.sh {input} {output} {size}"
 
 # TODO: do this job in background and display message
-if [ -f "$FLATHUB_CACHE" ]; then
+if [ -f "$flathub_cache" ]; then
     # compute time delta between current date and news file date
-    file_date=$(date -r "$FLATHUB_CACHE" +%s)
+    file_date=$(date -r "$flathub_cache" +%s)
     current_date=$(date +%s)
 
     delta=$((current_date - file_date))
 
     # refresh news file if it's too old
-    if [ $delta -gt $FLATHUB_EXPIRATION_TIME ]; then
-        curl --silent "$FLATHUB_URL" -o "$FLATHUB_CACHE"
+    if [ $delta -gt $flathub_refresh ]; then
+        curl --silent "$flathub_url" -o "$flathub_cache"
     fi
 else
-    curl --silent "$FLATHUB_URL" -o "$FLATHUB_CACHE"
+    curl --silent "$flathub_url" -o "$flathub_cache"
 fi
 
 if [ -n "$FLATHUB_ICONS" ]; then
@@ -37,24 +38,36 @@ if [ -n "$FLATHUB_ICONS" ]; then
     flags="-show-icons"
 fi
 
-selected=$(jq '.[] | .name + " - " + .summary+"<ICON>"+.iconDesktopUrl' "$FLATHUB_CACHE" |\
+row=0
+while selected=$(jq -r '.[]' "$flathub_cache" | awk '{print $1"<ICON>"$1}' |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
     tr -d '"' |\
-    $ROFI -dmenu -i $flags -preview-cmd "$PREVIEW_CMD" -p "Flatpak")
+    $ROFI -dmenu -i $flags -format 'i s' -selected-row "$row" -preview-cmd "$flathub_preview" -p "Flatpak"); do
+    
+    row=$(echo "$selected" | cut -d' ' -f1)
+    app_id=$(echo "$selected" | cut -d' ' -f2)
 
-if [ -n "$selected" ]; then
-    # check flatpak cmd
-    if ! command -v flatpak &> /dev/null; then
-        $ROFI -e "Install flatpak"
-        exit 1
+    if [ -n "$app_id" ]; then
+        appstream=$(curl "$flathub_url/$app_id")
+
+        actions="Install\nOpen page in flathub.org"
+        mesg=$(echo "$appstream" | jq -r '"\(.summary)"')
+        action=$(echo -e "$actions" | $ROFI -dmenu -i -p "$app_id" -mesg "$mesg")
+
+        if [ "$action" = "Install" ]; then
+            # check flatpak cmd
+            if ! command -v flatpak &> /dev/null; then
+                $ROFI -e "Install flatpak"
+                exit 1
+            fi
+
+            $TERMINAL -e "flatpak install $app_id"
+            exit 0
+        elif [ "$action" = "Open page in flathub.org" ]; then
+            app_url="https://flathub.org/apps/$app_id"
+            xdg-open "$app_url" && exit 0
+        fi
     fi
-
-    app_name=$(echo "$selected" | awk '{print $1;}')
-    app_id=$(jq ".[] | select(.name==\"$app_name\") | .flatpakAppId" "$FLATHUB_CACHE" | tr -d '"')
-
-    $TERMINAL -e "flatpak install $app_id"
-
-    exit 0;
-fi
+done
 
 exit 1
