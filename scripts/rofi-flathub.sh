@@ -34,7 +34,6 @@ else
 fi
 
 if [ -n "$FLATHUB_ICONS" ]; then
-    #flags="-show-icons -theme-str $(build_theme $GRID_ROWS $GRID_COLS $ICON_SIZE)"
     flags="-show-icons"
 fi
 
@@ -48,7 +47,7 @@ while selected=$(jq -r '.[]' "$flathub_cache" | awk '{print $1"<ICON>"$1}' |\
     app_id=$(echo "$selected" | cut -d' ' -f2)
 
     if [ -n "$app_id" ]; then
-        appstream=$(curl "$flathub_url/$app_id")
+        appstream=$(curl --silent "$flathub_url/$app_id")
 
         actions="Install\nOpen page in flathub.org"
         mesg=$(echo "$appstream" | jq -r '"\(.summary)"')
