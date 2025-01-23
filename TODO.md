@@ -7,7 +7,6 @@
 - Integrate a local LLM model menu instead of chatgpt
 - Add rofi-bibbrowser
 - File picker with drag drop
-- Integrate clipster
 
 # ENHANCEMENTS
 - Enhance Search (search tags metadata, add tags to files, remove files, preview files)
@@ -21,8 +20,9 @@
 - Scrape using xmllint as much as possible to remove python dependencies (books, livetv)
 - Toggle preview/grid in rofi-xkcd
 - Use mesg box to display instructions in rofi-todo and rofi-notes
-- Use more standard icons in small menus
 - Customizable common shortcuts
+- Use first entry for new todo list and todo item
+- Display (todos/done) in todo list
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -104,6 +104,8 @@
 - Fontawesome icons browser (DONE)
 - Avatar icons in rofi-github (DONE)
 - Move github repo descriptions in submenu or 2nd row in rofi-github (DONE)
+- Integrate clipster (DONE)
+- Use more standard icons in small menus (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
