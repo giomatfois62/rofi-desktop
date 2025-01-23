@@ -24,7 +24,14 @@ declare -A actions=(
 )
 
 mime_menu() {
-    categories="Web Browser\x00icon\x1fapplications-internet\nFile Manager\x00icon\x1ffolder\nText Editor\x00icon\x1faccessories-text-editor\nPDF Reader\x00icon\x1fapplications-office\nImage Viewer\x00icon\x1fapplications-graphics\nAudio Player\x00icon\x1fapplications-multimedia\nVideo Player\x00icon\x1fapplications-multimedia\nChoose File Type\x00icon\x1fpreferences-system"
+    categories="Web Browser\x00icon\x1fapplications-internet
+File Manager\x00icon\x1ffolder
+Text Editor\x00icon\x1faccessories-text-editor
+PDF Reader\x00icon\x1fapplications-office
+Image Viewer\x00icon\x1fapplications-graphics
+Audio Player\x00icon\x1fapplications-multimedia
+Video Player\x00icon\x1fapplications-multimedia
+Choose File Type\x00icon\x1fpreferences-system"
 
     while choice=$(echo -en "$categories" | \
         $ROFI -dmenu -i -p "Default Applications"); do
