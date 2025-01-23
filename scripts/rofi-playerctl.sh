@@ -6,7 +6,9 @@
 #
 # dependencies: rofi, playerctl
 
-ROFI="${ROFI:-rofi}"
+# TODO: fix player change
+
+ROFI="${ROFI:-rofi -show-icons}"
 
 if ! command -v playerctl &> /dev/null; then
 	$ROFI -e "Install playerctl to enable the media player controls menu"
@@ -25,24 +27,29 @@ status_function () {
     fi
 }
 
-status=$(status_function)
 
 # Options
-toggle="⏯️ Play/Pause"
-next="⏭ Next"
-prev="⏮ Previous"
-seekminus="⏪ Go back 15 seconds"
-seekplus="⏩ Go ahead 15 seconds"
-switch="⏺ Change selected player"
+toggle="Play/Pause" # media-playback-start
+next="Next" # media-skip-forward
+prev="Previous" # media-skip-backward
+seekminus="Go back 15 seconds" # media-seek-backward
+seekplus="Go ahead 15 seconds" # media-seek-forward
+switch="Change selected player" # multimedia-player
 
 # Variable passed to rofi
-options="$toggle\n$next\n$prev\n$seekplus\n$seekminus\n$switch"
+print_options() {
+    echo -e "$toggle\x00icon\x1fmedia-playback-start"
+    echo -e "$next\x00icon\x1fmedia-skip-forward"
+    echo -e "$prev\x00icon\x1fmedia-skip-backward"
+    echo -e "$seekplus\x00icon\x1fmedia-seek-forward"
+    echo -e "$seekminus\x00icon\x1fmedia-seek-backward"
+    echo -e "$switch\x00icon\x1fmultimedia-player"
+}
 
-# remember last entry chosen
 selected_row=0
+status=$(status_function)
 
-# TODO: fix player change
-while chosen="$(echo -e "$options" | $ROFI -dmenu -i -markup-rows -p "${status^}" -selected-row ${selected_row} -format 'i s')"; do
+while chosen="$(print_options | $ROFI -dmenu -i -markup-rows -p "${status^}" -selected-row ${selected_row} -format 'i s')"; do
     selected_row=$(echo "$chosen" | awk '{print $1;}')
     selected_text=$(echo "$chosen" | cut -d' ' -f2-)
 
