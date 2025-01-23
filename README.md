@@ -83,7 +83,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Tmux Sessions (rofi-tmux.sh)
   - Password Manager (rofi-passmenu.sh)
   - KeePassXC (rofi-keepassxc.sh)
-  - Clipboard (rofi-clip.sh, uses greenclip in x11 or cliphist in wayland)
+  - Clipboard (rofi-clip.sh, uses clipster in x11 or cliphist in wayland)
   - Notifications (uses rofication-daemon.py and rofication-gui.py)
   - Switch Window (window modi)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
@@ -175,7 +175,7 @@ Optional dependencies for some of the tools are:
 - inxi
 - at
 - pass
-- greenclip/cliphist
+- clipster/cliphist
 - translate-shell
 - jsonpickle
 - FontAwesome
@@ -233,3 +233,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [denpolischuk](https://github.com/denpolischuk/rofi-docker)
 - [okraits](https://github.com/okraits/rofi-tools)
 - [wmstam88](https://github.com/wstam88/rofi-fontawesome)
+- [mrichar1](https://github.com/mrichar1/clipster)

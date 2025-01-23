@@ -78,7 +78,7 @@ wizard() {
         run_program "$SCRIPT_PATH/scripts/x11_device_watcher.py"
     fi
 
-    # TODO: run greenclip
+    # TODO: run clipster
     # TODO: run rofication-daemon
 }
 
@@ -108,7 +108,7 @@ startup() {
         run_program "$SCRIPT_PATH/scripts/x11_device_watcher.py"
     fi
 
-    # TODO: run greenclip
+    # TODO: run clipster
     # TODO: run rofication-daemon
 }
 

@@ -4,7 +4,7 @@
 # add custom entries in the "commands" array and in the "utils", "main_entries" and "settings_entries" variables
 #
 # dependencies: rofi
-# optional: inxi, rofi-calc, rofi-blocks, curl, greenclip, htop, at, qt5ct, lxappearance
+# optional: inxi, rofi-calc, rofi-blocks, curl, clipster, htop, at, qt5ct, lxappearance
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
@@ -521,7 +521,7 @@ notifications() {
 }
 
 clipboard() {
-    "$SCRIPT_PATH"/rofi-clip.sh
+    "$SCRIPT_PATH"/rofi-clip.sh && exit
 }
 
 menu_config() {
