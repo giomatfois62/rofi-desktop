@@ -24,23 +24,44 @@ declare -A actions=(
 )
 
 mime_menu() {
-    categories="Web Browser\nFile Manager\nText Editor\nPDF Reader\nImage Viewer\nAudio Player\nVideo Player\nChoose File Type"
+    categories="Web Browser\x00icon\x1fapplications-internet\nFile Manager\x00icon\x1ffolder\nText Editor\x00icon\x1faccessories-text-editor\nPDF Reader\x00icon\x1fapplications-office\nImage Viewer\x00icon\x1fapplications-graphics\nAudio Player\x00icon\x1fapplications-multimedia\nVideo Player\x00icon\x1fapplications-multimedia\nChoose File Type\x00icon\x1fpreferences-system"
 
-    while choice=$(echo -en "$categories" | $ROFI -dmenu -i -p "Default Applications"); do
+    while choice=$(echo -en "$categories" | \
+        $ROFI -dmenu -i -p "Default Applications"); do
         ${actions[$choice]};
     done
 }
 
-seach_applications() {
-    grep "$1" -H -l /usr/share/applications/* $HOME/.local/share/applications/* | xargs -I {} basename {} .desktop
+search_applications() {
+    local apps=$(grep -m 1 "$1" -H -l "$HOME/.local/share/applications/"*.desktop "/usr/share/applications/"*.desktop)
+
+    while read -r app; do
+        app_id=$(basename "$app" .desktop)
+        app_name=$(grep -m 1 "^Name=" "$app" | cut -d= -f2)
+        app_icon=$(grep -m 1 "^Icon=" "$app" | cut -d= -f2)
+        echo -e "$app_id ($app_name)\x00icon\x1f$app_icon"
+    done <<< "$apps"
 }
 
 set_application() {
-    xdg-mime default $2".desktop" $1
+    xdg-mime default $(echo "$2" | cut -d' ' -f1)".desktop" $1
+}
+
+get_mimetypes() {
+    cat "$mimetypes/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2
+}
+
+get_mimetypes_with_icons() {
+    local types=$(cat "$mimetypes/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2)
+
+    for mime in $types; do
+        mime_icon=$(echo $mime | cut -d',' -f2 | sed -e 's/\//-/g')
+        echo -e "$mime\x00icon\x1f$mime_icon"
+    done
 }
 
 set_browser() {
-    selected=$(seach_applications "WebBrowser" | $ROFI -dmenu -i -p "Web Browser")
+    selected=$(search_applications "WebBrowser" | $ROFI -dmenu -i -p "Web Browser")
 
     if [ -n "$selected" ]; then
         set_application "application/x-extension-htm" "$selected";
@@ -54,7 +75,7 @@ set_browser() {
 }
 
 set_fm() {
-    selected=$(seach_applications 'FileManager' | $ROFI -dmenu -i -p "File Manager")
+    selected=$(search_applications 'FileManager' | $ROFI -dmenu -i -p "File Manager")
 
     if [ -n "$selected" ]; then
         set_application "inode/directory" "$selected";
@@ -62,7 +83,7 @@ set_fm() {
 }
 
 set_txt() {
-    selected=$(seach_applications 'TextEditor;' | $ROFI -dmenu -i -p "Text Editor")
+    selected=$(search_applications 'TextEditor;' | $ROFI -dmenu -i -p "Text Editor")
 
     if [ -n "$selected" ]; then
         set_application "text/plain" "$selected";
@@ -71,7 +92,7 @@ set_txt() {
 }
 
 set_pdf() {
-    selected=$(seach_applications 'PDF' | $ROFI -dmenu -i -p "PDF Reader")
+    selected=$(search_applications 'PDF' | $ROFI -dmenu -i -p "PDF Reader")
 
     if [ -n "$selected" ]; then
         set_application "application/pdf" "$selected";
@@ -79,7 +100,7 @@ set_pdf() {
 }
 
 set_image_viewer() {
-    selected=$(seach_applications 'Image Viewer' | $ROFI -dmenu -i -p "Image Viewer")
+    selected=$(search_applications 'Image Viewer' | $ROFI -dmenu -i -p "Image Viewer")
 
     if [ -n "$selected" ]; then
         set_application "image/bmp" "$selected";
@@ -92,7 +113,7 @@ set_image_viewer() {
 }
 
 set_audio_player() {
-    selected=$(seach_applications 'Player;' | $ROFI -dmenu -i -p "Audio Player")
+    selected=$(search_applications 'Player;' | $ROFI -dmenu -i -p "Audio Player")
 
     if [ -n "$selected" ]; then
         set_application "audio/aac" "$selected";
@@ -107,7 +128,7 @@ set_audio_player() {
 }
 
 set_video_player() {
-    selected=$(seach_applications 'Player;' | $ROFI -dmenu -i -p "Video Player")
+    selected=$(search_applications 'Player;' | $ROFI -dmenu -i -p "Video Player")
 
     if [ -n "$selected" ]; then
         set_application "video/webm" "$selected";
@@ -121,12 +142,14 @@ set_video_player() {
 }
 
 set_mimetype() {
-    selected_type=$(cat "$mimetypes/"*.csv | sed '/Name,Template/d' | cut -d',' -f1-2 | $ROFI -dmenu -i | cut -d',' -f2)
+    selected_type=$(get_mimetypes | $ROFI -dmenu -i | cut -d',' -f2)
 
     if [ -n "$selected_type" ]; then
-        selected_app=$(seach_applications "" | $ROFI -dmenu -i -p "Applications")
-
-        if [ -n "$selected_type" ]; then
+        selected_app=$(search_applications "" | $ROFI -dmenu -i -p "Applications")
+        echo "$selected_type"
+        echo "$selected_app"
+        exit 1
+        if [ -n "$selected_app" ]; then
             set_application "$selected_type" "$selected_app";
         fi
     fi
