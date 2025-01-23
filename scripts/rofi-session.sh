@@ -9,7 +9,12 @@ ROFI="${ROFI:-rofi}"
 USE_LOCKER="${USE_LOCKER:-false}"
 LOCKER="${LOCKER:-i3lock}"
 
-entries="Lock Screen\nLog Out\nReboot\nShutdown\nSuspend\nHibernate"
+entries="Lock Screen\x00icon\x1fsystem-lock-screen
+Log Out\x00icon\x1fsystem-log-out
+Reboot\x00icon\x1fsystem-reboot
+Shutdown\x00icon\x1fsystem-shutdown
+Suspend\x00icon\x1fsystem-suspend
+Hibernate\x00icon\x1fsystem-suspend-hibernate"
 
 declare -A commands=(
     ["Lock Screen"]=lock_screen

@@ -252,7 +252,16 @@ do_search() {
 }
 
 search_menu() {
-    local search_entries="All\nRecent\nContent\nBooks\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nVideos"
+    local search_entries="All\x00icon\x1fcomputer
+Recent\x00icon\x1ffolder-recent
+Content\x00icon\x1ftext-x-generic
+Books\x00icon\x1fapplication-x-mobipocket-ebook
+Desktop\x00icon\x1fuser-desktop
+Documents\x00icon\x1ffolder-documents
+Downloads\x00icon\x1ffolder-download
+Music\x00icon\x1ffolder-music
+Pictures\x00icon\x1ffolder-pictures
+Videos\x00icon\x1ffolder-videos"
     
     # remember last entry chosen
     local selected_row=0

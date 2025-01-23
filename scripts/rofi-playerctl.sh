@@ -8,7 +8,7 @@
 
 # TODO: fix player change
 
-ROFI="${ROFI:-rofi -show-icons}"
+ROFI="${ROFI:-rofi}"
 
 if ! command -v playerctl &> /dev/null; then
 	$ROFI -e "Install playerctl to enable the media player controls menu"
