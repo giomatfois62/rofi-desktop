@@ -11,7 +11,6 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 
-search_help="Type a query and press \"Enter\" to search"
 search_blocks_help="Type to search"
 
 api=$1
@@ -35,7 +34,7 @@ if [ -n "$have_blocks" ]; then
     mkdir -p "${logfile%suggestions.tmp}"
     echo "$api" > "$logfile"
 
-    $ROFI -theme-str "entry{placeholder:\"$search_blocks_help\";}" -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$api" 2>/dev/null
+    $ROFI -modi blocks -show blocks -blocks-wrap "$blockfile" -display-blocks "$api" 2>/dev/null
 
     [ -f "$logfile" ] && query="$(cat "$logfile")" || exit 1
 
@@ -59,7 +58,7 @@ if [ -n "$have_blocks" ]; then
 	    exit 0
     fi
 else
-    query=$((echo) | $ROFI -dmenu -i -theme-str "entry{placeholder:\"$search_help\";}" -p "$api");
+    query=$((echo) | $ROFI -dmenu -i -p "$api");
 
     if [ -n "$query" ]; then
 	    url=$api_url$query

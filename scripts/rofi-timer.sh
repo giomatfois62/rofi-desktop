@@ -11,7 +11,7 @@ TIMER_START_SOUND="${TIMER_START_SOUND:-$SCRIPT_PATH/sounds/timer_start.wav}"
 TIMER_STOP_SOUND="${TIMER_STOP_SOUND:-$SCRIPT_PATH/sounds/timer_end.wav}"
 TIMER_NOTIFICATION_TIMEOUT=${TIMER_NOTIFICATION_TIMEOUT:-5000}
 
-timer_help="Type <hours>h <minutes>m <seconds>s to set a custom timer"
+timer_help="To set a custom timer, type for example: 1h 23m 53s"
 timers="30 seconds\n45 seconds\n1 minute\n2 minutes\n3 minutes\n4 minutes\n5 minutes\n10 minutes\n15 minutes\n20 minutes\n30 minutes\n45 minutes\n1 hour"
 
 declare -A timer_seconds=(
@@ -67,8 +67,7 @@ then
 		custom_timer "$@"
 	fi
 else
-	#
-	echo -en "\0theme\x1fentry{placeholder:\"$timer_help\";}\n"
+	echo -en "\0message\x1f$timer_help\n"
     echo -e "$timers"
 fi
 
