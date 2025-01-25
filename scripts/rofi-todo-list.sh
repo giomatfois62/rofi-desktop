@@ -28,9 +28,6 @@ while todo_file=$(echo -en "New ToDo List\n$(get_todo_lists)" |\
 
     [ -z "$todo_file" ] && exit 1
 
-    done_file="$todo_file""_done"
-
     TODO_FILE="$todo_dir/$todo_file" \
-    DONE_FILE="$todo_dir/$done_file" \
     $ROFI -modi "ToDo $todo_file:$SCRIPT_PATH/rofi-todo.sh" -show "ToDo $todo_file"
 done

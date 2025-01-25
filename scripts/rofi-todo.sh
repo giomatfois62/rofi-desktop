@@ -8,7 +8,6 @@
 # dependencies: rofi
 
 TODO_FILE="${TODO_FILE:-$HOME/.todos}"
-DONE_FILE="${DONE_FILE:-$HOME/.todos_done}"
 
 todo_help="Type something with a \"+\" prefix and press <b>Enter</b> to add a new item"
 
@@ -25,8 +24,8 @@ function remove_todo() {
         echo "<s>${*}</s>" >> "${DONE_FILE}"
     fi
 #     
-    sed -i "s|^${*}$||g" "${TODO_FILE}"
-    sed -i '/^$/d' "${TODO_FILE}"
+    sed -i "s|^${*}$|<s>${*}</s>|g" "${TODO_FILE}"
+    #sed -i '/^$/d' "${TODO_FILE}"
     
     # doesn't work
     #awk -i inplace '/^${*}$/ { $0 = "<s>" $0 "</s>" }; 1' "${TODO_FILE}"
@@ -35,8 +34,7 @@ function remove_todo() {
 function get_todos() {
     echo -en "\0markup-rows\x1ftrue\n"
     echo -en "\0message\x1f$todo_help\n"
-    echo "$(cat "${TODO_FILE}")"
-    echo "$(cat "${DONE_FILE}")"
+    echo "$(cat "${TODO_FILE}" | sort)"
 }
 
 if [ -z "$@" ]; then
