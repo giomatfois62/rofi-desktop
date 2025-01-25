@@ -43,7 +43,7 @@ fi
 recordid="/tmp/recordid"
 
 function getInputAudio() {
-    pactl list | grep "Name" | grep "alsa" | awk '{print $2}' | $ROFI -dmenu -i -p "Input Audio " -theme-str 'window {width: 30%;} listview {lines: 5;}'
+    pactl list | grep "Name" | grep "alsa" | awk '{print $2}' | $ROFI -dmenu -i -p "Input Audio"
 }
 
 function audioVideo() {
@@ -155,7 +155,7 @@ function stoprecord() {
 
 function endrecord() {
     OPTIONS='["Yes", "No"]'
-    select=$(echo $OPTIONS | jq -r ".[]" | $ROFI -dmenu -i -p "Record" -mesg "Stop Recording" -theme-str 'window {width: 30%;} listview {lines: 2;}')
+    select=$(echo $OPTIONS | jq -r ".[]" | $ROFI -dmenu -i -p "Record" -mesg "Stop Recording")
     [ "$select" == "Yes" ] && stoprecord
 }
 
@@ -172,7 +172,7 @@ function startrecord() {
         ["Stream On Vimeo",    "streamOnVimeo"]
     ]
     '''
-    select=$(echo $OPTIONS | jq -r ".[][0]" | $ROFI -dmenu -i -p "Record" -theme-str 'window {width: 30%;} listview {lines: 8;}')
+    select=$(echo $OPTIONS | jq -r ".[][0]" | $ROFI -dmenu -i -p "Record")
 
     if [ ${#select} -gt 0 ]; then
         eval $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$select\") | .[1]")
