@@ -19,9 +19,7 @@
 - Blacklist folders in search menu
 - Scrape using xmllint as much as possible to remove python dependencies (books, livetv)
 - Toggle preview/grid in rofi-xkcd
-- Use mesg box to display instructions in rofi-todo and rofi-notes
 - Customizable common shortcuts
-- Use first entry for new todo list and todo item
 - Display (todos/done) in todo list
 
 # BUGFIX
