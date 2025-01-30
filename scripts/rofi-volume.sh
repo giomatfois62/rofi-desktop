@@ -6,6 +6,11 @@
 # optional: pavucontrol
 
 ROFI="${ROFI:-rofi}"
+ROFI_ICONS="${ROFI_ICONS:-}"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
 
 gen_menu() {
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')
@@ -43,13 +48,13 @@ vol_config() {
 }
 
 # remember last entry chosen
-choice_row=0
+row=0
 
-while choice=$(gen_menu | $ROFI -dmenu -i -show-icons -selected-row ${choice_row} -format 'i s' -p "Volume $(get_volume)"); do
-    choice_row=$(echo "$choice" | awk '{print $1;}')
-    choice_text=$(echo "$choice" | cut -d' ' -f2-)
+while action=$(gen_menu | $ROFI -dmenu -i $rofi_flags -format 'i s' -selected-row ${row} -p "Volume $(get_volume)"); do
+    row=$(echo "$action" | awk '{print $1;}')
+    action_text=$(echo "$action" | cut -d' ' -f2-)
 
-    if [ -n "$choice_text" ]; then
-        ${commands[$choice_text]};
+    if [ -n "$action_text" ]; then
+        ${commands[$action_text]};
     fi
 done

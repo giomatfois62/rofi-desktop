@@ -5,17 +5,18 @@
 # dependencies: rofi
 
 ROFI="${ROFI:-rofi}"
-SHOW_ICONS="${SHOW_ICONS:--show-icons}"
-SHOW_WINDOW_THUMBNAILS="${SHOW_WINDOW_THUMBNAILS:--window-thumbnail}"
-SHOW_THUMBNAILS_GRID="${SHOW_THUMBNAILS_GRID:-yes}"
-THUMB_GRID_ROWS=${THUMB_GRID_ROWS:-2}
-THUMB_GRID_COLS=${THUMB_GRID_COLS:-3}
-THUMB_ICON_SIZE=${THUMB_ICON_SIZE:-10}
+ROFI_ICONS="${ROFI_ICONS:-}"
+WINDOWS_THUMBNAILS="${WINDOWS_THUMBNAILS:-}"
+WINDOWS_GRID="${WINDOWS_GRID:-}"
+WINDOWS_GRID_ROWS=${WINDOWS_GRID_ROWS:-${ROFI_GRID_ROWS:-2}}
+WINDOWS_GRID_COLS=${WINDOWS_GRID_COLS:-${ROFI_GRID_COLS:-4}}
+WINDOWS_GRID_ICON_SIZE=${WINDOWS_GRID_ICON_SIZE:-${ROFI_GRID_ICON_SIZE:-10}}
 
-rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$THUMB_ICON_SIZE.0em;}listview{lines:$THUMB_GRID_ROWS;columns:$THUMB_GRID_COLS;}"
+rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$WINDOWS_GRID_ICON_SIZE.0em;}listview{lines:$WINDOWS_GRID_ROWS;columns:$WINDOWS_GRID_COLS;}"
+rofi_flags=""
 
-if [ "$SHOW_THUMBNAILS_GRID" = "yes" ]; then
-    $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBNAILS -show window -theme-str "$rofi_theme_grid"
-else
-    $ROFI $SHOW_ICONS $SHOW_WINDOW_THUMBNAILS -show window
-fi
+[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
+[ -n "$ROFI_ICONS" ] && [ -n "$WINDOWS_THUMBNAILS" ] && rofi_flags="$rofi_flags -window-thumbnail"
+[ -n "$ROFI_ICONS" ] && [ -n "$WINDOWS_GRID" ] && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
+
+$ROFI -show window $rofi_flags -display-window "Window"

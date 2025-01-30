@@ -23,10 +23,11 @@ if [[ ! -z $selected_container ]]; then
     container_id=$(echo $selected_container | cut -d':' -f 1)
     container_name=$(echo $selected_container | cut -d ' ' -f 3)
     selected_action=$(echo -e "$container_attach\n$container_logs\n$container_restart\n$container_stop" | $ROFI -dmenu -i -p "Action")
+
     case $selected_action in 
         $container_attach)
             execInTerminal "docker exec -it ${container_id} /bin/sh" 
-            exit 0;;
+            exit 0 ;;
         $container_restart)
             msg=$(docker restart $container_id)
             $ROFI -e "Message from docker: $msg" ;;

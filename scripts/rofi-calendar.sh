@@ -25,9 +25,12 @@ BAR_POSITION="${BAR_POSITION:-bottom}"
 WEEK_START="${WEEK_START:-monday}"
 
 events_file="$ROFI_DATA_DIR/events"
-rofi_theme="entry{enabled:false;}inputbar{children:[prompt];}listview{ columns:7;}"
 
-# get current date and set today header
+rofi_theme="entry{enabled:false;}\
+inputbar{children:[prompt];}\
+listview{ columns:7;}"
+
+# get current date and set today rofi_prompt
 get_current_date() {
   year=$(date '+%Y')
   month=$(date '+%m')
@@ -75,19 +78,19 @@ increment_month() {
       (( month += 12 ))
     fi
   fi
-  # adjust header
+  # adjust rofi_prompt
   if (( delta == 0 )); then
     # today's month => show dd/mm/yyyy
-    header=$(date "$DATEFTM")
+    rofi_prompt=$(date "$DATEFTM")
   else
     # not today's month => show mm/yyyy
-    header=$(cal $month $year | sed -n '1s/^ *\(.*[^ ]\) *$/\1/p')
+    rofi_prompt=$(cal $month $year | sed -n '1s/^ *\(.*[^ ]\) *$/\1/p')
   fi
 }
 
 create_event() {
   suggested_date="$year.$month.$day "
-  event_text=$((echo) | $ROFI -dmenu -p "New Reminder" -filter "$suggested_date")
+  event_text=$($ROFI -dmenu -p "New Reminder" -filter "$suggested_date")
   if [ ${#event_text} ]; then
     echo "$event_text" >> "$events_file"
   fi
@@ -125,16 +128,10 @@ get_current_date
 # rofi pop up
 IFS=
 month_page=$(print_month $month $year)
-header=$(date "$DATEFTM")", "$(date "$TIMEFMT")
-
-#lines:'"$(echo "$month_page" | wc -l)"';width:22;
+rofi_prompt=$(date "$DATEFTM")", "$(date "$TIMEFMT")
 
 while selected="$(echo "$month_page" |\
-	$ROFI -dmenu -i \
-	-markup-rows \
-	-theme-str "$rofi_theme" \
-	-hide-scrollbar \
-	-p "$header")"; do
+	$ROFI -dmenu -i -markup-rows -hide-scrollbar -theme-str "$rofi_theme" -p "$rofi_prompt")"; do
   if [ $(echo "$selected" | grep "$NEXT_MONTH_TEXT") ]; then
     increment_month 1
     month_page=$(print_month $month $year)

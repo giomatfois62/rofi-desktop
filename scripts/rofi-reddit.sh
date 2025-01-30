@@ -10,7 +10,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 
-subreddit_file="$ROFI_DATA_DIR/subreddits"
+subreddits="$ROFI_DATA_DIR/subreddits"
 base_url="https://www.reddit.com/"
 
 search_subreddit() {
@@ -35,16 +35,15 @@ search_subreddit() {
     fi
 }
 
-# remember last selected sub
-selected_row=0
-selected_subreddit=""
+# remember last selection
+row=0
 
-while subreddit=$(cat "$subreddit_file" | $ROFI -dmenu -i -selected-row ${selected_row} -format 'i s' -p "Subreddit"); do
+while subreddit=$(cat "$subreddits" | $ROFI -dmenu -i -selected-row ${row} -format 'i s' -p "Subreddit"); do
     if [ ${#subreddit} = 0 ]; then
         continue
     fi
 
-    selected_row=$(echo "$subreddit" | awk '{print $1;}')
+    row=$(echo "$subreddit" | awk '{print $1;}')
     selected_subreddit=$(echo "$subreddit" | cut -d' ' -f2-)
 
     # remove spaces

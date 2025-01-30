@@ -9,27 +9,24 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 CLONE_FOLDER=${CLONE_FOLDER:-"$HOME/Downloads/"}
-GITHUB_ICONS=${GITHUB_ICONS:-}
-LIST_ICON_SIZE=${LIST_ICON_SIZE:-3}
+ROFI_ICONS=${ROFI_ICONS:-}
+ROFI_LIST_ICON_SIZE=${ROFI_LIST_ICON_SIZE:-3}
 
 github_preview="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
 github_cache="$ROFI_CACHE_DIR/github.json"
-rofi_theme_list="element-icon{size:$LIST_ICON_SIZE.0em;}element-text{vertical-align:0.5;}listview{lines:7;}"
+
+rofi_theme="element-icon{size:$ROFI_LIST_ICON_SIZE.0em;}\
+element-text{vertical-align:0.5;}\
+listview{lines:7;}"
+
 rofi_flags="-eh 2 -sep |"
 
-if [ -n "$GITHUB_ICONS" ]; then
-    rofi_flags="$rofi_flags -show-icons"
-fi
+[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
 
-if [ -z $1 ]; then
-  query=$(echo "" | $ROFI -dmenu -i -p "Search GitHub")
-else
-  query=$1
-fi
+query="$@"
 
-if [ -z "$query" ]; then
-  exit 1
-fi
+[ -z "$query" ] && query=$($ROFI -dmenu -i -p "Search GitHub")
+[ -z "$query" ] && exit 1
 
 # url_encode query
 urlencode() {
@@ -40,42 +37,36 @@ get_repos() {
     jq -r '.items | .[] | "🟊\(.stargazers_count) \(.full_name) [\(.language)]\\n\(.description)\\x00icon\\x1fthumbnail:\/\/\(.owner.avatar_url)"' "$github_cache" | paste -sd'|' -
 }
 
-counter=1
+page=1
 per_page=50
-search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$counter"
 
-curl --silent "$search_url" -o "$github_cache"
+search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$page"
+
+curl -s "$search_url" -o "$github_cache"
 
 repos_count=$(jq '.total_count' "$github_cache")
 repos=$(get_repos)
 
-if [ "$repos_count" -gt $per_page ]; then
-    repos="$repos|More..."
-fi
+[ "$repos_count" -gt $per_page ] && repos="$repos|More..."
 
-selected_row=0
+row=0
 
 while repo=$(echo -en "$repos" | \
-    $ROFI -dmenu -i \
-    $rofi_flags \
-    -preview-cmd "$github_preview" \
-    -format 'i s' \
-    -theme-str "$rofi_theme_list" \
-    -selected-row "$selected_row" \
-    -p "Repository"); do
+    $ROFI -dmenu -i $rofi_flags -preview-cmd "$github_preview" -format 'i s' -theme-str "$rofi_theme" -selected-row "$row" -p "Repository"); do
 
-    selected_row=$(echo "$repo" | cut -d' ' -f1)
+    row=$(echo "$repo" | cut -d' ' -f1)
     repo=$(echo "$repo" | cut -d' ' -f2-)
 
     if [ "$repo" = "More..." ]; then
-        counter=$((counter+1))
-        search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$counter"
+        page=$((page+1))
+        search_url="https://api.github.com/search/repositories?q=$(urlencode "$query")&per_page=$per_page&page=$page"
 
-        curl --silent "$search_url" -o "$github_cache"$counter
+        curl -s "$search_url" -o "$github_cache"$page
 
-        new_repos=$(jq -n '{ items: [ inputs.items ] | add }' "$github_cache" "$github_cache"$counter)
-        echo "$new_repos" > "$github_cache"
-        rm "$github_cache"$counter
+        repos=$(jq -n '{ items: [ inputs.items ] | add }' "$github_cache" "$github_cache"$page)
+        echo "$repos" > "$github_cache"
+
+        rm "$github_cache"$page
 
         repos=$(get_repos)
         new_count=$(jq '.items | length' "$github_cache")

@@ -8,19 +8,22 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+ROFI_ICONS="${ROFI_ICONS:-}"
+XKCD_GRID="${XKCD_GRID:-}"
+XKCD_GRID_ROWS=${XKCD_GRID_ROWS:-${ROFI_GRID_ROWS:-3}}
+XKCD_GRID_COLS=${XKCD_GRID_COLS:-${ROFI_GRID_COLS:-4}}
+XKCD_GRID_ICON_SIZE=${XKCD_GRID_ICON_SIZE:-${ROFI_GRID_ICON_SIZE:-10}}
 XKCD_THUMBNAILS=${XKCD_THUMBNAILS:-}
 XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-25}
-GRID_ROWS=${GRID_ROWS:-3}
-GRID_COLS=${GRID_COLS:-5}
-GRID_ICON_SIZE=${GRID_ICON_SIZE:-6}
 
 xkcd_refresh=86400 # refresh xkcd file every day
 xkcd_cache="$ROFI_CACHE_DIR/xkcd"
 xkcd_file="$xkcd_cache/list"
 xkcd_preview=$SCRIPT_PATH'/download_xkcd_icon.sh "{input}" "{output}"'
 
-rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$GRID_ICON_SIZE.0em;}listview{lines:$GRID_ROWS;columns:$GRID_COLS;}"
+rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$XKCD_GRID_ICON_SIZE.0em;}listview{lines:$XKCD_GRID_ROWS;columns:$XKCD_GRID_COLS;}"
 rofi_theme_item="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$XKCD_ICON_SIZE.0em;}listview{lines:1;columns:1;}entry{enabled:false;}mainbox{children:[message,listview];}"
+rofi_flags="-markup-rows"
 
 mkdir -p "$xkcd_cache"
 
@@ -51,13 +54,12 @@ else
 	get_comic_list
 fi
 
-if [ -n "$XKCD_THUMBNAILS" ]; then
-    theme_flags="-show-icons -theme-str $rofi_theme_grid"
-fi
+[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
+[ -n "$ROFI_ICONS" ] && [ -n "$XKCD_GRID" ] && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
 
-while comic=$(echo -e "Random\n$(cat ${xkcd_file})" |\
+while comic=$(echo -e "Random\x00icon\x1funknown\n$(cat ${xkcd_file})" |\
     awk '{print $N"\x00icon\x1fthumbnail://"$1}' |\
-    $ROFI -dmenu -i -p "XKCD" -markup-rows $theme_flags -preview-cmd "$xkcd_preview"); do
+    $ROFI -dmenu -i -p "XKCD" $rofi_flags -preview-cmd "$xkcd_preview"); do
 
     if [ "$comic" = "Random" ]; then
         comic=$(shuf -n 1 "$xkcd_file")

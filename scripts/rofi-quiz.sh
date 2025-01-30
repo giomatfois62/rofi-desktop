@@ -14,7 +14,7 @@ remove_quotes() {
     echo "${str:1:${#str}-2}"
 }
 
-while [ True ]; do
+while true; do
     quiz=$(curl -s "$url" | jq ".results[0]")
 
     if [ "$quiz" = "null" ] || [ -z "$quiz" ]; then
@@ -28,11 +28,10 @@ while [ True ]; do
     correct_answer=$(echo "$quiz" | jq '.correct_answer' | remove_quotes)
     incorrect_answers=$(echo "$quiz" | jq '.incorrect_answers | join("\n")' | remove_quotes)
 
-    mesg="<b>$category</b>&#x0a;&#x0a;$question"
+    rofi_mesg="<b>$category</b>&#x0a;&#x0a;$question"
 
-    choice=$(echo -e "$correct_answer\n$incorrect_answers" | \
-        shuf | \
-        $ROFI -dmenu -i -markup -markup-rows -p "Answer" -mesg "$mesg")
+    choice=$(echo -e "$correct_answer\n$incorrect_answers" | shuf | \
+        $ROFI -dmenu -i -markup -markup-rows -p "Answer" -mesg "$rofi_mesg")
 
     [ -z "$choice" ] && break
         
@@ -44,13 +43,14 @@ while [ True ]; do
         esac
         
         points=$((points+win))
-        mesg="$mesg&#x0a;&#x0a;<b>$choice</b>&#x0a;Correct! +$win Points ($points total)"
+
+        rofi_mesg="$rofi_mesg&#x0a;&#x0a;<b>$choice</b>&#x0a;Correct! +$win Points ($points total)"
     else
-        mesg="$mesg&#x0a;&#x0a;<b>$choice</b>&#x0a;Wrong! Correct Answer: <b>$correct_answer</b>"
+        rofi_mesg="$rofi_mesg&#x0a;&#x0a;<b>$choice</b>&#x0a;Wrong! Correct Answer: <b>$correct_answer</b>"
     fi
 
     choice=$(echo -e "Play Again\nExit" | \
-        $ROFI -dmenu -i -markup -p "Answer" -mesg "$mesg")
+        $ROFI -dmenu -i -markup -p "Answer" -mesg "$rofi_mesg")
 
     if [ -z "$choice" ] || [ "$choice" = "Exit" ]; then
         break

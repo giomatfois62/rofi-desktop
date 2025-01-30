@@ -6,8 +6,13 @@
 # optional: i3lock
 
 ROFI="${ROFI:-rofi}"
+ROFI_ICONS="${ROFI_ICONS:-}"
 USE_LOCKER="${USE_LOCKER:-false}"
 LOCKER="${LOCKER:-i3lock}"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 entries="Lock Screen\x00icon\x1fsystem-lock-screen
 Log Out\x00icon\x1fsystem-log-out
@@ -43,7 +48,7 @@ shutdown_sys() { [ "$(confirm_action)" = "Yes" ] && loginctl poweroff; }
 suspend_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl suspend; }
 hibernate_sys() { $($USE_LOCKER) && "$LOCKER"; loginctl hibernate; }
 
-while choice=$(echo -en "$entries" | $ROFI -dmenu -i -p "Session"); do
+while choice=$(echo -en "$entries" | $ROFI $rofi_flags -dmenu -i -p "Session"); do
     ${commands[$choice]};
 
     exit 0

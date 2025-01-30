@@ -10,13 +10,17 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-TV_ICONS="${TV_ICONS:-}"
+ROFI_ICONS="${ROFI_ICONS:-}"
 TV_PLAYER="${TV_PLAYER:-mpv --no-resume-playback --force-window=immediate}"
 
 tv_file="$ROFI_DATA_DIR/channels.m3u"
 tv_cache="$ROFI_CACHE_DIR/rofi-tv"
-tv_url="https://iptv-org.github.io/iptv/index.m3u"
 tv_preview=$SCRIPT_PATH'/download_tv_icon.sh "{input}" "{output}"'
+tv_url="https://iptv-org.github.io/iptv/index.m3u"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 if [ ! -f "$tv_file" ]; then
     printf "Downloading channel list...\n";
@@ -25,17 +29,13 @@ if [ ! -f "$tv_file" ]; then
         print_error "Cannot download channel list"
 fi
 
-if [ -n "$TV_ICONS" ]; then
-    flags="-show-icons"
-fi
-
-selected_row=$(cat "$tv_cache")
+row=$(cat "$tv_cache")
 
 # TODO: tvg-logo contains the url to the icon to show
 while channel=$(\
     grep "#EXTINF" "$tv_file" | rev | cut -d"," -f1  | rev | awk '{print $0"<ICON>"$0}' |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-    $ROFI -dmenu -i $flags -preview-cmd "$tv_preview" -selected-row "${selected_row}" -format 'i s' -p "Channel"); do
+    $ROFI -dmenu -i $rofi_flags -preview-cmd "$tv_preview" -selected-row "${row}" -format 'i s' -p "Channel"); do
 
     channel_index=$(echo "$channel" | awk '{print $1;}')
     channel_name=$(echo "$channel" | cut -d' ' -f2-)

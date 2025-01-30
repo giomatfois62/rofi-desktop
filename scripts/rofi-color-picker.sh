@@ -23,9 +23,7 @@ fi
 selected=$(cat "$colors_file" | $ROFI -dmenu -i -markup-rows -p "Colors")
 
 if [ -n "$selected" ]; then
-    echo -n "$(echo "$selected" \
-      | cut -d\' -f2)" \
-      | $clip_cmd
+    echo -n "$(echo "$selected" | cut -d\' -f2)" | $clip_cmd
     exit 0
 fi
 

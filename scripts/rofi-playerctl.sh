@@ -9,6 +9,11 @@
 # TODO: fix player change
 
 ROFI="${ROFI:-rofi}"
+ROFI_ICONS="${ROFI_ICONS:-}"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 if ! command -v playerctl &> /dev/null; then
 	$ROFI -e "Install playerctl to enable the media player controls menu"
@@ -46,11 +51,11 @@ print_options() {
     echo -e "$switch\x00icon\x1fmultimedia-player"
 }
 
-selected_row=0
+row=0
 status=$(status_function)
 
-while chosen="$(print_options | $ROFI -dmenu -i -markup-rows -p "${status^}" -selected-row ${selected_row} -format 'i s')"; do
-    selected_row=$(echo "$chosen" | awk '{print $1;}')
+while chosen="$(print_options | $ROFI -dmenu -i -p "Media Player" $rofi_flags -markup-rows -mesg "${status^}" -selected-row ${row} -format 'i s')"; do
+    row=$(echo "$chosen" | awk '{print $1;}')
     selected_text=$(echo "$chosen" | cut -d' ' -f2-)
 
     case "$selected_text" in

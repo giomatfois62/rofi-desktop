@@ -24,35 +24,30 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
 elif [ -n "$DISPLAY" ]; then
     clip_cmd="xclip -sel clip"
 else
-    $ROFI -e "Error: No Wayland or X11 display detected. Clipboard actions will not work"
+    echo "Error: No Wayland or X11 display detected" >&2
+    exit 1
 fi
 
 # show menu
 row=0
 
-while contact=$(echo -e "New Contact\n$(grep "FN:" "$contacts_file" | sort)" | \
-    cut -d: -f2 | \
-    $ROFI -dmenu -i \
-    -format 'i s' \
-    -selected-row "$row" \
-    -p "Contacts"); do
+while contact=$(echo -e "New Contact\n$(grep "FN:" "$contacts_file" | sort)" | cut -d: -f2 | \
+    $ROFI -dmenu -i -format 'i s' -selected-row "$row" -p "Contacts"); do
 
     row=$(echo "$contact" | cut -d' ' -f1)
     contact_name=$(echo "$contact" | cut -d' ' -f2-)
     contact_info=$(sed -n "/FN:$contact_name$/,/END:VCARD/p" "$contacts_file")
 
-    numbers=$(echo -e "$contact_info" | \
-        grep TEL | cut -d: -f2 | uniq)
-    mails=$(echo -e "$contact_info"| \
-        grep EMAIL | cut -d: -f2 | uniq)
+    numbers=$(echo -e "$contact_info" | grep TEL | cut -d: -f2 | uniq)
+    mails=$(echo -e "$contact_info"| grep EMAIL | cut -d: -f2 | uniq)
 
-    mesg="<b>$contact_name</b>&#x0a;Numbers: $numbers&#x0a;Emails: $mails"
+    rofi_mesg="<b>$contact_name</b>&#x0a;Numbers: $numbers&#x0a;Emails: $mails"
     actions="Edit Contact\nCopy Number\nCopy Email\nWrite Email\nRemove Contact"
 
     [ -z "$numbers" ] && actions=$(echo "$actions" | sed 's/Copy Number\\n//')
     [ -z "$mails" ] && actions=$(echo "$actions" | sed 's/Copy Email\\nWrite Email\\n//')
 
-    action=$(echo -en "$actions" | $ROFI -dmenu -i -p Action -mesg "$mesg")
+    action=$(echo -en "$actions" | $ROFI -dmenu -i -p Action -rofi_mesg "$rofi_mesg")
 
     if [ "$action" = "Copy Number" ]; then
         [ $(echo -e "$numbers" | wc -l) -gt 1 ] && \

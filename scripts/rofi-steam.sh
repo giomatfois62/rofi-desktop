@@ -11,14 +11,25 @@ SCRIPT_DIR=$(dirname $(realpath $0))
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+ROFI_ICONS="${ROFI_ICONS:-}"
+STEAM_GRID="${STEAM_GRID:-}"
+STEAM_GRID_ROWS=${STEAM_GRID_ROWS:-${ROFI_GRID_ROWS:-2}}
+STEAM_GRID_COLS=${STEAM_GRID_COLS:-${ROFI_GRID_COLS:-4}}
+STEAM_GRID_ICON_SIZE=${STEAM_GRID_ICON_SIZE:-${ROFI_GRID_ICON_SIZE:-10}}
 STEAM_ROOT="${STEAM_ROOT:-$HOME/.local/share/Steam}"
-STEAM_GRID_ROWS=${THUMB_GRID_ROWS:-3}
-STEAM_GRID_COLS=${THUMB_GRID_COLS:-4}
-STEAM_ICON_SIZE=${THUMB_ICON_SIZE:-7}
 
 game_launcher_cache="$ROFI_CACHE_DIR/rofi-game-launcher"
 game_app_path="$game_launcher_cache/applications"
-rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$STEAM_ICON_SIZE.0em;}listview{lines:$STEAM_GRID_ROWS;columns:$STEAM_GRID_COLS;}"
+
+rofi_theme_grid="element{orientation:vertical;}\
+element-text{horizontal-align:0.5;}\
+element-icon{size:$STEAM_GRID_ICON_SIZE.0em;}\
+listview{lines:$STEAM_GRID_ROWS;columns:$STEAM_GRID_COLS;}"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
+[ -n "$ROFI_ICONS" ] && [ -n "$STEAM_GRID" ] && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
 
 # Fetch all Steam library folders.
 steam-libraries() {
@@ -111,11 +122,10 @@ select_game() {
 
         logfile="$HOME/.cache/rofi-drun.log"
 
-        G_MESSAGES_DEBUG=Modes.DRun $ROFI -show drun -show-icons -p "Games" \
+        G_MESSAGES_DEBUG=Modes.DRun $ROFI $rofi_flags -show drun -display-drun "Games" \
             -drun-categories SteamLibrary \
             -log "$logfile"\
-            -cache-dir $game_launcher_cache \
-            -theme-str "$rofi_theme_grid"
+            -cache-dir $game_launcher_cache
 
         # very hacky!!! intercept exit code grepping log file
         entry_chosen=$(grep "Parsed command:" "$logfile")

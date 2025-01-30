@@ -14,7 +14,7 @@ todo_dir="$ROFI_DATA_DIR/todo"
 mkdir -p "$todo_dir"
 
 get_todo_lists() {
-    cd "$todo_dir" && find * -type f -not -name "*_done" | xargs -I{} wc -l {}
+    cd "$todo_dir" && find * -type f | xargs -I{} wc -l {}
 }
 
 while todo_file=$(echo -en "New ToDo List\n$(get_todo_lists)" |\

@@ -44,10 +44,10 @@ show_news() {
 
 	# get selected news and open corresponding link in browser
 	if [ -n "$selected" ]; then
-		selected_row=$(echo "$selected" | awk '{print $1;}')
-		selected_row=$(($selected_row+1)) # xpath arrays starts from 1
+		row=$(echo "$selected" | awk '{print $1;}')
+		row=$(($row+1)) # xpath arrays starts from 1
 
-		link=$(cat "$rss_cache_file" | xmllint --xpath "/rss/channel/item[$selected_row]/link/text()" -)
+		link=$(cat "$rss_cache_file" | xmllint --xpath "/rss/channel/item[$row]/link/text()" -)
 
 		xdg-open "$link"
 
@@ -74,6 +74,7 @@ if [ $providers_count -gt 1 ]; then
 	done
 else
 	provider_name=$(head -n 1 "$rss_file" | cut -d'=' -f1)
+
 	$(show_news "$provider_name") && exit 0
 fi
 

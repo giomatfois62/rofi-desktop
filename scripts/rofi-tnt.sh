@@ -14,8 +14,6 @@ TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
 tnt_file="$ROFI_DATA_DIR/tntvillage-release-dump.csv"
 tnt_url="https://raw.githubusercontent.com/edoardopigaiani/tntvillage-release-dump/master/tntvillage-release-dump.csv"
 
-mkdir -p "${tnt_file%tntvillage-release-dump.csv}"
-
 # TODO: do this job in background and display message
 if [ ! -f "$tnt_file" ];then
     printf "Downloading torrent list...\n";

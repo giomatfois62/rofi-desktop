@@ -7,7 +7,9 @@
 
 ROFI="${ROFI:-rofi}"
 
-rofi_mesg="Type your query and press \"Enter\" to search cheat.sh.&#x0a;Type \":list\" to list available language cheat sheets.&#x0a;Type \":learn\" to get the language basics."
+rofi_mesg="Type your query and press \"Enter\" to search cheat.sh.&#x0a;\
+Type \":list\" to list available language cheat sheets.&#x0a;\
+Type \":learn\" to get the language basics."
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
     clip_cmd="wl-copy"
@@ -19,14 +21,12 @@ else
 fi
 
 base_url="cheat.sh"
-all_entries=$(curl "cheat.sh/:list")
+all_entries=$(curl -s "cheat.sh/:list")
 
 while entry=$(echo -en "$all_entries" | \
-    $ROFI -dmenu -i \
-    -p "Entry"); do
+    $ROFI -dmenu -i -p "Topic"); do
     
-    while query=$((echo) | \
-        $ROFI -dmenu -i -p "Query" -mesg "$rofi_mesg"); do
+    while query=$($ROFI -dmenu -i -p "Query" -mesg "$rofi_mesg"); do
         
         encoded_query=${query// /"+"}
 
@@ -40,7 +40,7 @@ while entry=$(echo -en "$all_entries" | \
             url="$base_url/$entry/$encoded_query"
         fi
 
-        cheat=$(curl "$url")
+        cheat=$(curl -s "$url")
 
         choice=$(echo -en "Copy to Clipboard\n\n$cheat" | \
             $ROFI -dmenu -i -p "$query")

@@ -18,14 +18,14 @@ for cmd in "${programs[@]}"; do
         else
             $cmd
         fi
+
         exit 0
     fi
 done
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
     # fallback on grim
-    if ! command -v grim &> /dev/null
-    then
+    if ! command -v grim &> /dev/null; then
         $ROFI -e "Install grim or a screenshot program for wayland."
         exit 1
     fi
@@ -49,8 +49,7 @@ elif [ -n "$DISPLAY" ]; then
     fi
 
     # fallback on scrot
-    if ! command -v scrot &> /dev/null
-    then
+    if ! command -v scrot &> /dev/null; then
         $ROFI -e "Install scrot or a screenshot program for X11."
         exit 1
     fi

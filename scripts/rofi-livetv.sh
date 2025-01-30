@@ -33,7 +33,7 @@ while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$livetv_file" | tr -
     name_idx=$(echo "$name" | cut -d' ' -f1)
     link_sel=".[$name_idx].link"
     event_link=$(jq "$link_sel" "$livetv_file" | tr -d '"')
-    
+
     echo "$name"
     echo "name: $name_str sel: $link_sel event: $event_link"
 

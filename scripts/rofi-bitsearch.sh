@@ -12,6 +12,7 @@ ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 TORRENT_CLIENT=${TORRENT_CLIENT:-qbittorrent}
 
 torrent_cache="$ROFI_CACHE_DIR/bitsearch"
+query="$1"
 
 get_torrents() {
     page="$1"
@@ -40,36 +41,23 @@ get_torrents() {
         xmllint --html --xpath '//div[@class="stats"]/div[4]/font/text()' - | \
         sed 's/^/L:/')
 
-    #count=$(echo "$sizes" | wc -l)
-    #indices=$(seq $((20*(page - 1) + 1)) $((20*(page - 1) + count)))
     if [ -n "$titles" ]; then
         paste -d'|' <(echo "$magnets") <(echo "$sizes") <(echo "$seeders") <(echo "$leechers") <(echo "$titles")
     fi
 }
 
-mkdir -p "$ROFI_CACHE_DIR"
-
-if [ -z $1 ]; then
-    query=$(echo "" | \
-        $ROFI -dmenu -i \
-        -p "Search Torrents")
-else
-    query=$1
-fi
-
-if [ -z "$query" ]; then
-    exit 1
-fi
+[ -z "$query" ] && query=$($ROFI -dmenu -i -p "Search Torrents")
+[ -z "$query" ] && exit 1
 
 while [ -n "$query" ]; do
     # search first results page
-    counter=1
-    selected_row=$((20*($counter-1)))
+    page=1
+    row=$((20*($page-1)))
 
-    results=$(get_torrents "$counter" "$query")
+    results=$(get_torrents "$page" "$query")
 
     if [ -z "$results" ]; then
-        $ROFI -e "No results found, try again."
+        $ROFI -e "No torrents found, try again."
         exit 1
     else
         echo "$results" > "$torrent_cache"
@@ -78,29 +66,24 @@ while [ -n "$query" ]; do
     torrents=$(cat "$torrent_cache" | cut -d'|' -f2- | column -s "|" -t)
     torrents="$torrents\nMore..."
 
-    # display menu
+    # display torrents
     while selection=$(echo -en "$torrents" | \
-        $ROFI -dmenu -i \
-        -p "Torrent" \
-        -format 'i s' \
-        -selected-row ${selected_row}); do
+        $ROFI -dmenu -i -p "Torrent" -format 'i s' -selected-row ${row}); do
 
         row=$(($(echo "$selection" | awk '{print $1;}') + 1))
         torrent=$(echo "$selection" | cut -d' ' -f2-)
 
-        if [ -z "$torrent" ]; then
-            exit 1
-        fi
+        [ -z "$torrent" ] && exit 1
 
         if [ "$torrent" = "More..." ]; then
-            # increment page counter and search again
-            counter=$((counter+1))
-            selected_row=$((20*($counter-1)))
+            # increment page page and search again
+            page=$((page+1))
+            row=$((20*($page-1)))
 
-            results=$(get_torrents "$counter" "$query")
+            results=$(get_torrents "$page" "$query")
 
             if [ -z "$results" ]; then
-                counter=$((counter-1))
+                page=$((page-1))
             else
                 echo "$results" >> "$torrent_cache"
             fi
@@ -117,9 +100,7 @@ while [ -n "$query" ]; do
         fi
     done
 
-    query=$(echo "" | \
-        $ROFI -dmenu -i \
-        -p "Search Torrents")
+    query=$($ROFI -dmenu -i -p "Search Torrents")
 done
 
 exit 1

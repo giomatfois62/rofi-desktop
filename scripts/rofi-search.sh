@@ -11,11 +11,11 @@
 # TODO: trash cmd & shortcut
 
 ROFI="${ROFI:-rofi}"
-SEARCH_ICONS=${SEARCH_ICONS:-}
-GRID_ROWS=${GRID_ROWS:-3}
-GRID_COLS=${GRID_COLS:-5}
-GRID_ICON_SIZE=${GRID_ICON_SIZE:-6}
-LIST_ICON_SIZE=${LIST_ICON_SIZE:-3}
+ROFI_ICONS=${ROFI_ICONS:-}
+ROFI_GRID_ROWS=${ROFI_GRID_ROWS:-3}
+ROFI_GRID_COLS=${ROFI_GRID_COLS:-5}
+ROFI_GRID_ICON_SIZE=${ROFI_GRID_ICON_SIZE:-6}
+ROFI_LIST_ICON_SIZE=${ROFI_LIST_ICON_SIZE:-3}
 
 # search params
 initial_path="/home/mat"
@@ -31,25 +31,40 @@ paste_clip=""
 skip_hidden=""
 
 # rofi params
-prompt="Search"
-message="<b>Enter</b> open file | <b>Alt+C</b> copy to clipboard"
-shortcuts="-kb-custom-1 Alt+c"
-theme=""
-theme_icons="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$GRID_ICON_SIZE.0em;}listview{lines:$GRID_ROWS;columns:$GRID_COLS;}"
-theme_list="element-icon{size:$LIST_ICON_SIZE.0em;}element-text{vertical-align:0.5;}listview{lines:7;}"
-theme_preview="mainbox{children:[wrap,listview-split];}wrap{expand:false;orientation:vertical;children:[inputbar,message];}icon-current-entry{expand:true;size:40%;}element-icon{size:3em;}element-text{vertical-align:0.5;}listview-split{orientation:horizontal;children:[listview,icon-current-entry];}listview{lines:7;}"
+rofi_prompt="Search"
+rofi_mesg="<b>Enter</b> open file | <b>Alt+C</b> copy to clipboard"
+rofi_shortcuts="-kb-custom-1 Alt+c"
+rofi_flags=""
+rofi_search_flags=""
+rofi_theme=""
 
-if [ -n "$SEARCH_ICONS" ]; then
-    theme="$theme_list"
-    message="$message | <b>Alt+Q</b> list-view | <b>Alt+W</b> icons-view | <b>Alt+E</b> list+preview"
-    shortcuts="$shortcuts -kb-custom-2 Alt+q -kb-custom-3 Alt+w -kb-custom-4 Alt+e"
-    flags="-show-icons -eh 2 -sep | -markup-rows"
+rofi_theme_list="element-icon{size:$ROFI_LIST_ICON_SIZE.0em;}\
+element-text{vertical-align:0.5;}\
+listview{lines:7;}"
+rofi_theme_grid="element{orientation:vertical;}\
+element-text{horizontal-align:0.5;}\
+element-icon{size:$ROFI_GRID_ICON_SIZE.0em;}\
+listview{lines:$ROFI_GRID_ROWS;columns:$ROFI_GRID_COLS;}"
+rofi_theme_preview="mainbox{children:[wrap,listview-split];}\
+wrap{expand:false;orientation:vertical;children:[inputbar,message];}\
+icon-current-entry{expand:true;size:30%;}\
+element-icon{size:$ROFI_LIST_ICON_SIZE.0em;}\
+element-text{vertical-align:0.5;}\
+listview-split{orientation:horizontal;children:[listview,icon-current-entry];}\
+listview{lines:7;}"
+
+if [ -n "$ROFI_ICONS" ]; then
+    rofi_theme="$rofi_theme_list"
+    rofi_mesg="$rofi_mesg | <b>Alt+Q</b> list-view | <b>Alt+W</b> icons-view | <b>Alt+E</b> list+preview"
+    rofi_shortcuts="$rofi_shortcuts -kb-custom-2 Alt+q -kb-custom-3 Alt+w -kb-custom-4 Alt+e"
+    rofi_flags="-show-icons"
+    rofi_search_flags="-show-icons -eh 2 -sep | -markup-rows"
 fi
 
 format_filename() {
     while read -r path; do
         if [ -f "$path" ]; then
-            if [[ -n "$SEARCH_ICONS" || $search_type = "Pictures" ]]; then
+            if [[ -n "$ROFI_ICONS" || $search_type = "Pictures" ]]; then
                 local name=$(basename "$path")
                 local dir=$(dirname "$path")
                 printf "<b>%s</b>\n<i>%s</i><ICON>%s|" "$name" "$dir" "$path"
@@ -123,22 +138,22 @@ menu_folder() {
     while true; do
         selected=$(search_folder "$folder" "$regex" | \
             $ROFI -dmenu -i \
-            $flags \
-            $shortcuts \
-            -theme-str "$theme" \
-            -p "$prompt" \
-            -mesg "$message")
+            $rofi_search_flags \
+            $rofi_shortcuts \
+            -theme-str "$rofi_theme" \
+            -p "$rofi_prompt" \
+            -mesg "$rofi_mesg")
             
         exit_code="$?"
 
-        [[ -n "$SEARCH_ICONS" || "$search_type" = "Pictures" ]] && selected=$(compose_filename "$selected")
+        [[ -n "$ROFI_ICONS" || "$search_type" = "Pictures" ]] && selected=$(compose_filename "$selected")
 
         [ "$exit_code" -eq 0 ] && xdg-open "$selected" && exit 0
         [ "$exit_code" -eq 1 ] && break
         [ "$exit_code" -eq 10 ] && copy_to_clip "$selected" && exit 0
-        [ "$exit_code" -eq 11 ] && theme="$theme_list"
-        [ "$exit_code" -eq 12 ] && theme="$theme_icons"
-        [ "$exit_code" -eq 13 ] && theme="$theme_preview"
+        [ "$exit_code" -eq 11 ] && rofi_theme="$rofi_theme_list"
+        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_icons"
+        [ "$exit_code" -eq 13 ] && rofi_theme="$rofi_theme_preview"
     done
 }
 
@@ -146,22 +161,22 @@ menu_recent() {
     while true; do
         selected=$(search_recent | \
             $ROFI -dmenu -i \
-            $flags \
-            $shortcuts \
-            -theme-str "$theme" \
-            -p "$prompt" \
-            -mesg "$message")
+            $rofi_search_flags \
+            $rofi_shortcuts \
+            -theme-str "$rofi_theme" \
+            -p "$rofi_prompt" \
+            -mesg "$rofi_mesg")
             
         exit_code="$?"
 
-        [ -n "$SEARCH_ICONS" ] && selected=$(compose_filename "$selected")
+        [ -n "$ROFI_ICONS" ] && selected=$(compose_filename "$selected")
 
         [ "$exit_code" -eq 0 ] && xdg-open "$selected" && exit 0
         [ "$exit_code" -eq 1 ] && break
         [ "$exit_code" -eq 10 ] && copy_to_clip "$selected" && exit 0
-        [ "$exit_code" -eq 11 ] && theme="$theme_list"
-        [ "$exit_code" -eq 12 ] && theme="$theme_icons"
-        [ "$exit_code" -eq 13 ] && theme="$theme_preview"
+        [ "$exit_code" -eq 11 ] && rofi_theme="$rofi_theme_list"
+        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_icons"
+        [ "$exit_code" -eq 13 ] && rofi_theme="$rofi_theme_preview"
     done
 }
 
@@ -172,22 +187,22 @@ menu_content() {
     while true; do
         selected=$(search_content "$folder" "$query" | \
             $ROFI -dmenu -i \
-            $flags \
-            $shortcuts \
-            -theme-str "$theme" \
-            -p "$prompt" \
-            -mesg "$message")
+            $rofi_search_flags \
+            $rofi_shortcuts \
+            -theme-str "$rofi_theme" \
+            -p "$rofi_prompt" \
+            -mesg "$rofi_mesg")
             
         exit_code="$?"
 
-        [ -n "$SEARCH_ICONS" ] && selected=$(compose_filename "$selected")
+        [ -n "$ROFI_ICONS" ] && selected=$(compose_filename "$selected")
 
         [ "$exit_code" -eq 0 ] && xdg-open "$selected" && exit 0
         [ "$exit_code" -eq 1 ] && break
         [ "$exit_code" -eq 10 ] && copy_to_clip "$selected"
-        [ "$exit_code" -eq 11 ] && theme="$theme_list"
-        [ "$exit_code" -eq 12 ] && theme="$theme_icons"
-        [ "$exit_code" -eq 13 ] && theme="$theme_preview"
+        [ "$exit_code" -eq 11 ] && rofi_theme="$rofi_theme_list"
+        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_icons"
+        [ "$exit_code" -eq 13 ] && rofi_theme="$rofi_theme_preview"
     done
 }
 
@@ -221,8 +236,8 @@ init_search() {
                 regex=".*\.\(mp3\|wav\|m3u\|acc\|flac\|ogg\)" ;;
             "Pictures")
                 # always show preview for images
-                flags="-show-icons -eh 2 -sep | -markup-rows"
-                theme="$theme_icons"
+                rofi_search_flags="-show-icons -eh 2 -sep | -markup-rows"
+                rofi_theme="$rofi_theme_icons"
                 regex=".*\.\(jpg\|jpeg\|png\|tif\|tiff\|nef\|raw\|dng\|webp\|bmp\|xcf\)" ;;
             "Recent")
                 recent_files="1" ;;
@@ -268,9 +283,10 @@ Videos\x00icon\x1ffolder-videos"
     
     while choice=$(echo -en "$search_entries" | \
         $ROFI -dmenu -i \
+            $rofi_flags \
             -selected-row ${selected_row} \
             -format 'i s' \
-            -p "$prompt"); do
+            -p "$rofi_prompt"); do
 
         # reset
         recent_files=""
@@ -278,8 +294,8 @@ Videos\x00icon\x1ffolder-videos"
         path="$initial_path"
         regex="$initial_regex"
 
-        [ -z "$SEARCH_ICONS" ] && theme=""
-        [ -z "$SEARCH_ICONS" ] && flags=""
+        [ -z "$ROFI_ICONS" ] && rofi_theme=""
+        [ -z "$ROFI_ICONS" ] && rofi_search_flags=""
         
         selected_row=$(echo "$choice" | awk '{print $1;}')
         search_type=$(echo "$choice" | cut -d' ' -f2-)

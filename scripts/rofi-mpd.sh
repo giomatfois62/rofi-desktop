@@ -54,17 +54,17 @@ add_entry() {
 
 select_entry() {
   entry_type="$1"
-  selected_row=0
+  row=0
 
   while :
   do
     entry_chosen=$(search_music "$entry_type" | sort -f |\
-        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "$entry_type")
+        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $row -mesg "$(player_mesg)" -p "$entry_type")
 
     exit_code=$?
     check_shortcuts $exit_code
 
-    selected_row=$(echo "$entry_chosen" | cut -d' ' -f1)
+    row=$(echo "$entry_chosen" | cut -d' ' -f1)
     entry_chosen=$(echo "$entry_chosen" | cut -d' ' -f2-)
 
     if [ ! "$entry_chosen" ]; then
@@ -95,17 +95,17 @@ search_library() {
 
     [ ! "$artist" ] && break
 
-    selected_row=0
+    row=0
 
     while :
     do
       album=$(mpc list album artist "$artist" | sort -f |\
-          $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Album")
+          $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $row -mesg "$(player_mesg)" -p "Album")
 
       exit_code=$?
       check_shortcuts $exit_code
 
-      selected_row=$(echo "$album" | cut -d' ' -f1)
+      row=$(echo "$album" | cut -d' ' -f1)
       album=$(echo "$album" | cut -d' ' -f2-)
 
       if [ ! "$album" ]; then
@@ -134,17 +134,17 @@ search_files() {
 }
 
 select_mode() {
-  selected_row=0
+  row=0
 
   while :
   do
     entry_chosen=$(printf "Library\nAlbum\nSong\nFiles" |\
-        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $selected_row -mesg "$(player_mesg)" -p "Music")
+        $ROFI -dmenu -i $mpd_shortcuts -format 'i s' -selected-row $row -mesg "$(player_mesg)" -p "Music")
 
     exit_code=$?
     check_shortcuts $exit_code
 
-    selected_row=$(echo "$entry_chosen" | cut -d' ' -f1)
+    row=$(echo "$entry_chosen" | cut -d' ' -f1)
     entry_chosen=$(echo "$entry_chosen" | cut -d' ' -f2-)
 
     if [ ! "$entry_chosen" ]; then

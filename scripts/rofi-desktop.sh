@@ -10,10 +10,14 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-SHOW_ICONS="${SHOW_ICONS:--show-icons}"
+ROFI_ICONS="${ROFI_ICONS:-}"
 TASK_MANAGER="${TASK_MANAGER:-xterm -e htop}"
 KEEPASSXC_DATABASE="${KEEPASSXC_DATABASE:-}"
-CUSTOM_FOLDER="${CUSTOM_FOLDER:-$SCRIPT_PATH/menus}"
+CUSTOM_MENUS_FOLDER="${CUSTOM_MENUS_FOLDER:-$SCRIPT_PATH/menus}"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 declare -A commands=(
     ["Applications"]=run_app
@@ -128,7 +132,7 @@ search_entries="All Files\nRecently Used\nFile Contents\nBookmarks\nBooks\nDeskt
 
 web_entries="Google\nWikipedia\nYouTube\nYouTube Feeds\nArchWiki\nReddit\nGitHub\nXKCD\nTorrents (1337x)\nTorrents (bitsearch)\neBooks\nFlathub\nAnime"
 
-custom_entries=$(cd "$CUSTOM_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
+custom_entries=$(cd "$CUSTOM_MENUS_FOLDER" && find * -type f -name "*.json" | sed -e 's/\.json$//')
 
 all_entries="$main_entries\n$custom_entries\n$search_entries\n$web_entries\n$utilities_entries\n$settings_entries\n$appearance_entries"
 
@@ -148,10 +152,10 @@ show_menu() {
         if [ "${commands[$selected_text]+abc}" ]; then
             ${commands[$selected_text]};
         else
-            custom_menu_file="$CUSTOM_FOLDER/$selected_text.json"
+            custom_menu_file="$CUSTOM_MENUS_FOLDER/$selected_text.json"
 
             if [ -f "$custom_menu_file" ]; then
-                rofi "$SHOW_ICONS" -modi "$selected_text:$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
+                rofi "$rofi_flags" -modi "$selected_text:$SCRIPT_PATH/rofi-json.sh  \"$custom_menu_file\"" -show "$selected_text"
 
                 if [ -n "$(cat $ROFI_CACHE_DIR/rofi-json)" ]; then
                     exit
@@ -191,7 +195,7 @@ custom_menu() {
 
 run_app() {
     logfile="$HOME/.cache/rofi-drun.log"
-    G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $SHOW_ICONS -log "$logfile";
+    G_MESSAGES_DEBUG=Modes.DRun rofi -show drun $rofi_flags -log "$logfile";
 
     # very hacky!!! intercept exit code grepping log file
     entry_chosen=$(grep "Parsed command:" "$logfile")
@@ -205,7 +209,7 @@ run_app() {
 
 run_cmd() {
     logfile="$HOME/.cache/rofi-run.log"
-    G_MESSAGES_DEBUG=Modes.Run rofi -show run $SHOW_ICONS -log "$logfile";
+    G_MESSAGES_DEBUG=Modes.Run rofi -show run $rofi_flags -log "$logfile";
 
     # very hacky!!! intercept exit code grepping log file
     entry_chosen=$(grep "Parsed command:" "$logfile")
@@ -224,7 +228,7 @@ ssh_menu() {
 
 browse_files() {
     # TODO: intercept entry chosen to exit (fixed in git)
-    $ROFI $SHOW_ICONS -show filebrowser && exit
+    $ROFI $rofi_flags -show filebrowser && exit
 }
 
 window_menu() {

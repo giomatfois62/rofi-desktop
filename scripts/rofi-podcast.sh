@@ -9,7 +9,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
-PODCAST_ICONS=${PODCAST_ICONS:-}
+ROFI_ICONS="${ROFI_ICONS:-}"
 PODCAST_PLAYER=${PODCAST_PLAYER:-mpv --no-resume-playback --force-window=immediate}
 
 podcast_refresh=3600 # refresh episodes every hour
@@ -17,6 +17,10 @@ podcast_folder="$ROFI_DATA_DIR/podcasts"
 podcast_cache="$ROFI_CACHE_DIR/podcasts"
 podcast_history="$podcast_cache/recents"
 podcast_preview="$SCRIPT_PATH/download_podcast_icon.sh {input} {output} {size}"
+
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 mkdir -p $podcast_cache
 
@@ -107,16 +111,12 @@ while category=$(echo -en "Recently Played\n$categories" | $ROFI -dmenu -i -p "C
     else
         podcast_file="$podcast_folder/$category.json"
 
-        if [ -n "$PODCAST_ICONS" ]; then
-            flags="-show-icons"
-        fi
-
         # cover key contains the url to the icon to show
         # url: https://img.rss.com/$SLUG/$SIZE/$COVER
         while podcast=$(jq '.[] | "\(.title) {\(.author_name)} {\(.language)}<ICON>\(.slug)/<SIZE>/\(.cover)"' "$podcast_file" |\
             tr -d '"' |\
             sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-            $ROFI -dmenu -i -p "$category" $flags -preview-cmd "$podcast_preview"); do
+            $ROFI -dmenu -i -p "$category" $rofi_flags -preview-cmd "$podcast_preview"); do
 
             title=$(echo "$podcast" | cut -d"{" -f1 | sed 's/ *$//g')
             show_episodes "$title" "$podcast_file"

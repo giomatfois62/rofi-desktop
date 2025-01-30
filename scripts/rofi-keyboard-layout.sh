@@ -10,14 +10,14 @@ ROFI="${ROFI:-rofi}"
 ROFI_CONFIG_DIR="${ROFI_CONFIG_DIR:-$SCRIPT_PATH/config}"
 
 keymap_cache="$ROFI_CONFIG_DIR/keyboard-layout"
-keymaps_file="/usr/share/X11/xkb/rules/evdev.lst"
+keymaps="/usr/share/X11/xkb/rules/evdev.lst"
 
-msg="Current Layout: "$(setxkbmap -query | grep layout | cut -d':' -f2 | sed 's/ //g')
+rofi_mesg="Current Layout: "$(setxkbmap -query | grep layout | cut -d':' -f2 | sed 's/ //g')
 
-selected=$(cat $keymaps_file |\
+selected=$(cat $keymaps |\
     grep -Poz '(?<=layout\n)(.|\n)*(?=! variant)' |\
     head -n -2 |\
-    $ROFI -dmenu -i -p "Keyboard Layout" -mesg "$msg" |\
+    $ROFI -dmenu -i -p "Keyboard Layout" -mesg "$rofi_mesg" |\
     awk '{print $1;}'
 )
 

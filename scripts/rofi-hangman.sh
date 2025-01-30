@@ -12,6 +12,8 @@ ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 
 words_dir="$ROFI_DATA_DIR/hangman"
 
+rofi_theme="listview{columns:7;flow:horizontal;}"
+
 hangman0=" ____
 |    |
 |    
@@ -106,9 +108,9 @@ while category=$(ls "$words_dir" | $ROFI -dmenu -i -p "Category"); do
 
         while true; do
             name="hangman$errors"
-            mesg="${!name}"${guess[@]}
+            rofi_mesg="${!name}"${guess[@]}
 
-            choice=$(echo $letters | $ROFI -dmenu -i -sep "|" -mesg "$mesg" -p "$category" -theme-str "listview{columns:7;flow:horizontal;}")
+            choice=$(echo $letters | $ROFI -dmenu -i -sep "|" -rofi_mesg "$rofi_mesg" -p "$category" -theme-str "$rofi_theme")
 
             if [ -z "$choice" ]; then
                 exit
@@ -135,21 +137,21 @@ while category=$(ls "$words_dir" | $ROFI -dmenu -i -p "Category"); do
                 fi
                 
                 name="hangman$errors"
-                mesg="${!name}"${guess[@]}
+                rofi_mesg="${!name}"${guess[@]}
 
                 if [[ errors -gt 5 ]]; then
-                    mesg="$mesg   You Lose"
+                    rofi_mesg="$rofi_mesg   You Lose"
                     break
                 fi
 
                 if [[ win -eq 1 ]]; then
-                    mesg="$mesg   You Win"
+                    rofi_mesg="$rofi_mesg   You Win"
                     break
                 fi
             fi
         done
         
-        retry=$(echo -en "Play Again\nExit" | $ROFI -dmenu -i -mesg "$mesg" -p "$category")
+        retry=$(echo -en "Play Again\nExit" | $ROFI -dmenu -i -rofi_mesg "$rofi_mesg" -p "$category")
         
         if [ -z "$retry" ]; then
             break

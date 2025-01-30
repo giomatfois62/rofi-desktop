@@ -13,7 +13,7 @@ current_bright() {
 }
 
 current_bright_perc() {
-	xrandr --verbose | grep Brightness | cut -d':' -f2 | sed 's/ //' | awk '{print $1 * 100}'
+	current_bright | awk '{print $1 * 100}'
 }
 
 increase_bright() {
@@ -31,21 +31,21 @@ set_bright() {
 options="Increase\nDecrease\nOptimal"
 
 ## Main
-selected_row=0
+row=0
 
-while chosen="$(echo -e "$options" | $ROFI -dmenu -i -p "Brightness $(current_bright_perc)%" -selected-row $selected_row)"; do
+while chosen="$(echo -e "$options" | $ROFI -dmenu -i -p "Brightness $(current_bright_perc)%" -selected-row $row)"; do
 	case $chosen in
 		"Increase")
 			set_bright $(increase_bright $(current_bright))
-			selected_row=0
+			row=0
 		    ;;
 		"Decrease")
 		    set_bright $(decrease_bright $(current_bright))
-			selected_row=1
+			row=1
 		    ;;
 		"Optimal")
 		    set_bright 0.75
-			selected_row=2
+			row=2
 		    ;;
 	esac
 done

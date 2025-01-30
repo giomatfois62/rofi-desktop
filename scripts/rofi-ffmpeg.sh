@@ -162,7 +162,7 @@ function endrecord() {
 function startrecord() {
     OPTIONS='''
     [
-        ["Audio & Video",        "audioVideo"],
+        ["Audio & Video",      "audioVideo"],
         ["Video Only",         "video"],
         ["Audio Only",         "audio"],
         ["Stream On Facebook", "streamOnFacebook"],

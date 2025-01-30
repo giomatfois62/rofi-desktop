@@ -25,10 +25,9 @@ fi
 selected=$(cat "$icons_file" | $ROFI -dmenu -i -markup-rows -p "Icons")
 
 if [ -n "$selected" ]; then
-    echo -ne "$(echo "$selected" \
-        | awk -F';' -v RS='>' '
-            NR==2{sub("&#x","",$1);print "\\u" $1;exit}'
-      )" |  $clip_cmd
+    echo -en "$(echo "$selected" | \
+        awk -F';' -v RS='>' 'NR==2{sub("&#x","",$1);print "\\u" $1;exit}'
+    )" |  $clip_cmd
     exit 0
 fi
 

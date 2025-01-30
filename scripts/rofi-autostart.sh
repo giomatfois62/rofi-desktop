@@ -151,21 +151,16 @@ gen_menu() {
 # sort -k2 (-r)
 
 mkdir -p "$autostart_dir"
-cp /etc/xdg/autostart/*.desktop "$autostart_dir/"
-cp "$HOME"/.config/autostart/*.desktop "$autostart_dir/"
+cp "$HOME"/.config/autostart/*.desktop /etc/xdg/autostart/*.desktop "$autostart_dir/"
 export -f print_entry
 
 # remember last selected entry
-selected_row=0
+row=0
 
 while selected=$(gen_menu | \
-    $ROFI -dmenu -i \
-    -markup-rows \
-    -p "Autostart" \
-    -selected-row ${selected_row} \
-    -format 'i s'); do
+    $ROFI -dmenu -i -markup-rows -p "Autostart" -selected-row ${row} -format 'i s'); do
     
-    selected_row=$(echo "$selected" | awk '{print $1;}')
+    row=$(echo "$selected" | awk '{print $1;}')
     selected_text=$(echo "$selected" | cut -d' ' -f2-)
     selected_entry=$(echo $selected_text | cut -f1 -d" ")
 
@@ -175,9 +170,7 @@ while selected=$(gen_menu | \
         action=$(gen_entry_menu "$selected_text" | \
             $ROFI -dmenu -i -p "$selected_entry")
 
-        if [ -n "$action" ]; then
-            ${actions[$action]} "$selected_entry";
-        fi
+        [ -n "$action" ] && ${actions[$action]} "$selected_entry"
     fi
 done
 

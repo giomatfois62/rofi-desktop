@@ -9,13 +9,16 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
+ROFI_ICONS=${ROFI_ICONS:-}
 TERMINAL="${TERMINAL:-xterm}"
-FLATHUB_ICONS=${FLATHUB_ICONS:-}
 
 flathub_refresh=3600 # refresh applications list every hour
 flathub_url="https://flathub.org/api/v2/appstream"
 flathub_cache="$ROFI_CACHE_DIR/flathub.json"
 flathub_preview="$SCRIPT_PATH/download_flathub_icon.sh {input} {output} {size}"
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 # TODO: do this job in background and display message
 if [ -f "$flathub_cache" ]; then
@@ -33,15 +36,11 @@ else
     curl --silent "$flathub_url" -o "$flathub_cache"
 fi
 
-if [ -n "$FLATHUB_ICONS" ]; then
-    flags="-show-icons"
-fi
-
 row=0
+
 while selected=$(jq -r '.[]' "$flathub_cache" | awk '{print $1"<ICON>"$1}' |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
-    tr -d '"' |\
-    $ROFI -dmenu -i $flags -format 'i s' -selected-row "$row" -preview-cmd "$flathub_preview" -p "Flatpak"); do
+    $ROFI -dmenu -i $rofi_flags -format 'i s' -selected-row "$row" -preview-cmd "$flathub_preview" -p "Flatpak"); do
     
     row=$(echo "$selected" | cut -d' ' -f1)
     app_id=$(echo "$selected" | cut -d' ' -f2)
@@ -60,8 +59,8 @@ while selected=$(jq -r '.[]' "$flathub_cache" | awk '{print $1"<ICON>"$1}' |\
                 exit 1
             fi
 
-            $TERMINAL -e "flatpak install $app_id"
-            exit 0
+            $TERMINAL -e "flatpak install $app_id" && exit 0
+
         elif [ "$action" = "Open page in flathub.org" ]; then
             app_url="https://flathub.org/apps/$app_id"
             xdg-open "$app_url" && exit 0

@@ -8,9 +8,9 @@
 ROFI="${ROFI:-rofi}"
 
 #https://stackoverflow.com/questions/12521114/getting-the-canonical-time-zone-name-in-shell-script
-current_timezone="Current time zone: "$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
+current_timezone=$(readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///" | sed "s/\..//g")
 current_time=$(date "+%H:%M, %a %d %b %Y")
-rofi_mesg="$current_timezone&#x0a;$current_time"
+rofi_mesg="Current time zone: $current_timezone&#x0a;$current_time"
 
 get_timezones() {
     cd /usr/share/zoneinfo/posix &&

@@ -9,8 +9,12 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
 ROFI="${ROFI:-rofi}"
 ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
+ROFI_ICONS="${ROFI_ICONS:-}"
 
 mimetypes="$ROFI_DATA_DIR/mimetypes"
+rofi_flags=""
+
+[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
 
 declare -A actions=(
     ["Web Browser"]=set_browser
@@ -34,7 +38,7 @@ Video Player\x00icon\x1fapplications-multimedia
 Choose File Type\x00icon\x1fpreferences-system"
 
     while choice=$(echo -en "$categories" | \
-        $ROFI -dmenu -i -p "Default Applications"); do
+        $ROFI $rofi_flags -dmenu -i -p "Default Applications"); do
         ${actions[$choice]};
     done
 }
@@ -68,7 +72,7 @@ get_mimetypes_with_icons() {
 }
 
 set_browser() {
-    selected=$(search_applications "WebBrowser" | $ROFI -dmenu -i -p "Web Browser")
+    selected=$(search_applications "WebBrowser" | $ROFI $rofi_flags -dmenu -i -p "Web Browser")
 
     if [ -n "$selected" ]; then
         set_application "application/x-extension-htm" "$selected";
@@ -82,7 +86,7 @@ set_browser() {
 }
 
 set_fm() {
-    selected=$(search_applications 'FileManager' | $ROFI -dmenu -i -p "File Manager")
+    selected=$(search_applications 'FileManager' | $ROFI $rofi_flags -dmenu -i -p "File Manager")
 
     if [ -n "$selected" ]; then
         set_application "inode/directory" "$selected";
@@ -90,7 +94,7 @@ set_fm() {
 }
 
 set_txt() {
-    selected=$(search_applications 'TextEditor;' | $ROFI -dmenu -i -p "Text Editor")
+    selected=$(search_applications 'TextEditor;' | $ROFI $rofi_flags -dmenu -i -p "Text Editor")
 
     if [ -n "$selected" ]; then
         set_application "text/plain" "$selected";
@@ -99,7 +103,7 @@ set_txt() {
 }
 
 set_pdf() {
-    selected=$(search_applications 'PDF' | $ROFI -dmenu -i -p "PDF Reader")
+    selected=$(search_applications 'PDF' | $ROFI $rofi_flags -dmenu -i -p "PDF Reader")
 
     if [ -n "$selected" ]; then
         set_application "application/pdf" "$selected";
@@ -107,7 +111,7 @@ set_pdf() {
 }
 
 set_image_viewer() {
-    selected=$(search_applications 'Image Viewer' | $ROFI -dmenu -i -p "Image Viewer")
+    selected=$(search_applications 'Image Viewer' | $ROFI $rofi_flags -dmenu -i -p "Image Viewer")
 
     if [ -n "$selected" ]; then
         set_application "image/bmp" "$selected";
@@ -120,7 +124,7 @@ set_image_viewer() {
 }
 
 set_audio_player() {
-    selected=$(search_applications 'Player;' | $ROFI -dmenu -i -p "Audio Player")
+    selected=$(search_applications 'Player;' | $ROFI $rofi_flags -dmenu -i -p "Audio Player")
 
     if [ -n "$selected" ]; then
         set_application "audio/aac" "$selected";
@@ -135,7 +139,7 @@ set_audio_player() {
 }
 
 set_video_player() {
-    selected=$(search_applications 'Player;' | $ROFI -dmenu -i -p "Video Player")
+    selected=$(search_applications 'Player;' | $ROFI $rofi_flags -dmenu -i -p "Video Player")
 
     if [ -n "$selected" ]; then
         set_application "video/webm" "$selected";
@@ -152,10 +156,8 @@ set_mimetype() {
     selected_type=$(get_mimetypes | $ROFI -dmenu -i | cut -d',' -f2)
 
     if [ -n "$selected_type" ]; then
-        selected_app=$(search_applications "" | $ROFI -dmenu -i -p "Applications")
-        echo "$selected_type"
-        echo "$selected_app"
-        exit 1
+        selected_app=$(search_applications "" | $ROFI $rofi_flags -dmenu -i -p "Applications")
+
         if [ -n "$selected_app" ]; then
             set_application "$selected_type" "$selected_app";
         fi
