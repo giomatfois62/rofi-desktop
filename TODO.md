@@ -20,7 +20,7 @@
 - Scrape using xmllint as much as possible to remove python dependencies (books, livetv)
 - Toggle preview/grid in rofi-xkcd
 - Customizable common shortcuts
-- Display (todos/done) in todo list
+- Update environment file
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
