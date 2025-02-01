@@ -18,9 +18,7 @@
 - Use new recursivebrowser to search all files
 - Blacklist folders in search menu
 - Scrape using xmllint as much as possible to remove python dependencies (books, livetv)
-- Toggle preview/grid in rofi-xkcd
 - Customizable common shortcuts
-- Update environment file
 
 # BUGFIX
 - Debug rofi-autostart script and make it work reliably
@@ -104,6 +102,8 @@
 - Move github repo descriptions in submenu or 2nd row in rofi-github (DONE)
 - Integrate clipster (DONE)
 - Use more standard icons in small menus (DONE)
+- Update environment file (DONE)
+- Toggle preview/grid in rofi-xkcd (DONE)
 
 # DISCARDED
 - Integrate rofi-monitor.py for better screen management (NO only works in i3wm)
