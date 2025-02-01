@@ -30,6 +30,6 @@ entry{enabled:false;}\
 mainbox{children:[message,listview];}"
 
 while continue=$(echo -en "Next\x00icon\x1fgo-next" | \
-    $ROFI -dmenu -i $rofi_flags -p "Fortune" -rofi_theme-str "$rofi_theme" -mesg "$(get_fortune)"); do
+    $ROFI -dmenu -i $rofi_flags -p "Fortune" -theme-str "$rofi_theme" -mesg "$(get_fortune)"); do
     echo "next"
 done
