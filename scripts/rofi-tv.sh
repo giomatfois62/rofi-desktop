@@ -20,7 +20,7 @@ tv_url="https://iptv-org.github.io/iptv/index.m3u"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 if [ ! -f "$tv_file" ]; then
     printf "Downloading channel list...\n";

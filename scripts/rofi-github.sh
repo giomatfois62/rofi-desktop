@@ -21,7 +21,7 @@ listview{lines:7;}"
 
 rofi_flags="-eh 2 -sep |"
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
+((ROFI_ICONS)) && rofi_flags="$rofi_flags -show-icons"
 
 query="$@"
 

@@ -28,8 +28,8 @@ listview{lines:$STEAM_GRID_ROWS;columns:$STEAM_GRID_COLS;}"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
-[ -n "$ROFI_ICONS" ] && [ -n "$STEAM_GRID" ] && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
+((ROFI_ICONS)) && rofi_flags="$rofi_flags -show-icons"
+((ROFI_ICONS)) && ((STEAM_GRID)) && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
 
 # Fetch all Steam library folders.
 steam-libraries() {

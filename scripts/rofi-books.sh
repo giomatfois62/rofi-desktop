@@ -42,8 +42,8 @@ listview{lines:7;}"
 # default theme
 rofi_theme="$rofi_theme_list"
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
-[ -n "$ROFI_ICONS" ] && rofi_mesg="$rofi_mesg | <b>Alt+Q</b> list-view | <b>Alt+W</b> icons-view | <b>Alt+E</b> list+preview"
+((ROFI_ICONS)) && rofi_flags="$rofi_flags -show-icons"
+((ROFI_ICONS)) && rofi_mesg="$rofi_mesg | <b>Alt+Q</b> list-view | <b>Alt+W</b> icons-view | <b>Alt+E</b> list+preview"
 
 [ -z "$book_query" ] && book_query=$($ROFI -dmenu -i -p "Search Books")
 [ -z "$book_query" ] && exit 1

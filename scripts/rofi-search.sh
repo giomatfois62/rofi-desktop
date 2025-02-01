@@ -53,7 +53,7 @@ element-text{vertical-align:0.5;}\
 listview-split{orientation:horizontal;children:[listview,icon-current-entry];}\
 listview{lines:7;}"
 
-if [ -n "$ROFI_ICONS" ]; then
+if ((ROFI_ICONS)); then
     rofi_theme="$rofi_theme_list"
     rofi_mesg="$rofi_mesg | <b>Alt+Q</b> list-view | <b>Alt+W</b> icons-view | <b>Alt+E</b> list+preview"
     rofi_shortcuts="$rofi_shortcuts -kb-custom-2 Alt+q -kb-custom-3 Alt+w -kb-custom-4 Alt+e"

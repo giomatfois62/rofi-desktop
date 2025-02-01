@@ -24,7 +24,7 @@ rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5
 
 rofi_flags="-show-icons"
 
-[ -n "$WALLPAPERS_GRID" ] && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
+((WALLPAPERS_GRID)) && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
 
 set_wallpaper() {
     if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then

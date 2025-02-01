@@ -15,8 +15,8 @@ WINDOWS_GRID_ICON_SIZE=${WINDOWS_GRID_ICON_SIZE:-${ROFI_GRID_ICON_SIZE:-10}}
 rofi_theme_grid="element{orientation:vertical;}element-text{horizontal-align:0.5;}element-icon{size:$WINDOWS_GRID_ICON_SIZE.0em;}listview{lines:$WINDOWS_GRID_ROWS;columns:$WINDOWS_GRID_COLS;}"
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
-[ -n "$ROFI_ICONS" ] && [ -n "$WINDOWS_THUMBNAILS" ] && rofi_flags="$rofi_flags -window-thumbnail"
-[ -n "$ROFI_ICONS" ] && [ -n "$WINDOWS_GRID" ] && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
+((ROFI_ICONS)) && rofi_flags="$rofi_flags -show-icons"
+((ROFI_ICONS)) && ((WINDOWS_THUMBNAILS)) && rofi_flags="$rofi_flags -window-thumbnail"
+((ROFI_ICONS)) && ((WINDOWS_GRID)) && rofi_flags="$rofi_flags -theme-str $rofi_theme_grid"
 
 $ROFI -show window $rofi_flags -display-window "Window"

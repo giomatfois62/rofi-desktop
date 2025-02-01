@@ -17,7 +17,7 @@ CUSTOM_MENUS_FOLDER="${CUSTOM_MENUS_FOLDER:-$SCRIPT_PATH/menus}"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 declare -A commands=(
     ["Applications"]=run_app

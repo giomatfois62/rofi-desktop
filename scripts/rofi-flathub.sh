@@ -16,9 +16,10 @@ flathub_refresh=3600 # refresh applications list every hour
 flathub_url="https://flathub.org/api/v2/appstream"
 flathub_cache="$ROFI_CACHE_DIR/flathub.json"
 flathub_preview="$SCRIPT_PATH/download_flathub_icon.sh {input} {output} {size}"
+
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 # TODO: do this job in background and display message
 if [ -f "$flathub_cache" ]; then

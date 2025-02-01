@@ -10,7 +10,7 @@ ROFI_ICONS="${ROFI_ICONS:-}"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="$rofi_flags -show-icons"
+((ROFI_ICONS)) && rofi_flags="$rofi_flags -show-icons"
 
 gen_menu() {
     is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $NF }')

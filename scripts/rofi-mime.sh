@@ -12,9 +12,10 @@ ROFI_DATA_DIR="${ROFI_DATA_DIR:-$SCRIPT_PATH/data}"
 ROFI_ICONS="${ROFI_ICONS:-}"
 
 mimetypes="$ROFI_DATA_DIR/mimetypes"
+
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 declare -A actions=(
     ["Web Browser"]=set_browser

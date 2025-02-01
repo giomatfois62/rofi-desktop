@@ -20,7 +20,7 @@ podcast_preview="$SCRIPT_PATH/download_podcast_icon.sh {input} {output} {size}"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 mkdir -p $podcast_cache
 

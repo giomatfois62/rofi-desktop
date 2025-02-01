@@ -13,7 +13,7 @@ ROFI_ICONS="${ROFI_ICONS:-}"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 if ! command -v playerctl &> /dev/null; then
 	$ROFI -e "Install playerctl to enable the media player controls menu"

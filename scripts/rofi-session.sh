@@ -12,7 +12,7 @@ LOCKER="${LOCKER:-i3lock}"
 
 rofi_flags=""
 
-[ -n "$ROFI_ICONS" ] && rofi_flags="-show-icons"
+((ROFI_ICONS)) && rofi_flags="-show-icons"
 
 entries="Lock Screen\x00icon\x1fsystem-lock-screen
 Log Out\x00icon\x1fsystem-log-out
