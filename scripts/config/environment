@@ -1,6 +1,6 @@
 # rofi command used in all scripts
-# rofi -kb-accept-entry 'Alt+S'
-# rofi -kb-screenshot Control+Shift+space"
+# example: rofi -kb-accept-entry 'Alt+S'
+# example: rofi -kb-screenshot Control+Shift+space"
 #ROFI="rofi"
 
 # path to rofi-desktop data directory
@@ -12,42 +12,22 @@
 # path to rofi-desktop cache directory
 #ROFI_CACHE_DIR=$HOME/.cache
 
+# show icons in menus, set empty or zero to disable icons
+ROFI_ICONS=1
+
+# grid theme rows and columns
+ROFI_GRID_ROWS=3
+ROFI_GRID_COLS=4
+
+# grid and list icon sizes
+ROFI_GRID_ICON_SIZE=8
+ROFI_LIST_ICON_SIZE=3
+
 # default terminal emulator
 #TERMINAL="xterm"
 
-# show icons in rofi-filebrowser, window switcher and custom menus, set empty to disable icons
-#SHOW_ICONS="-show-icons"
-
-# show windows thumbnails in window switcher, set empty to disable thumbnails
-#SHOW_WINDOW_THUMBS="-window-thumbnail"
-
-# show windows thumbnails in a grid, set empty show in list
-#SHOW_THUMBNAILS_GRID="yes"
-
-# task manager command
-#TASK_MANAGER="xterm -e htop"
-
-# system info command
-#SYSTEM_INFO="inxi -c0 -v2"  # neofetch --stdout --color_blocks off
-
-# code projects folder and preferred editor
-#PROJECTS_DIRECTORY="~/Programs"
-#PROJECTS_EDITOR="qtcreator"
-
-# output folders of video and audio recordings
-#VIDEO_FOLDER="$HOME/Videos/record"
-#AUDIO_FOLDER="$HOME/Music/record"
-#VIDEO_CODEC="libvpx" # h264
-
-# flathub cache file and expiration time to refresh it
-#FLATHUB_EXPIRATION_TIME=3600
-
-# latest news rss cache file and expiration time
-#RSS_EXPIRATION_TIME=600
-
-# notes author, path to file and default editor
-#NOTES_AUTHOR="$(whoami)"
-#NOTES_EDITOR="xdg-open"
+# default torrent client and cache for searches
+#TORRENT_CLIENT=qbittorrent
 
 # radio stations file, cache file and player command
 #RADIO_PLAYER="mpv --no-resume-playback --force-window=immediate"
@@ -55,22 +35,39 @@
 # tv stations file, cache file and player command
 #TV_PLAYER="mpv --no-resume-playback --force-window=immediate"
 
+# podcast player, folder, cache location and expiration time
+#PODCAST_PLAYER=-mpv --no-resume-playback --force-window=immediate
+
+# task manager command
+#TASK_MANAGER="xterm -e htop"
+
+# system info command
+#SYSTEM_INFO="inxi -c0 -v2"  # neofetch --stdout --color_blocks off
+
+# keypassxc database file
+#KEEPASSXC_DATABASE=path/to/database
+
+# custom json menus location
+#CUSTOM_MENUS_FOLDER=path/to/menus
+
+# output folders and codec of video and audio recordings
+#VIDEO_FOLDER="$HOME/Videos/record"
+#AUDIO_FOLDER="$HOME/Music/record"
+#VIDEO_CODEC="libvpx"
+
+# github search cache and default clone folder
+#CLONE_FOLDER="$HOME/Downloads/"
+
+# notes author, path to file and default editor
+#NOTES_AUTHOR="$(whoami)"
+#NOTES_EDITOR="xdg-open"
+
+# code projects folder and preferred editor
+#PROJECTS_DIR="~/Programs"
+#PROJECTS_EDITOR="qtcreator"
+
 # screenshots filename template (used by scrot)
 #SCREENSHOT_NAME="Screenshot_%Y-%m-%d-%S-%H%M%S.png"
-
-# search for hidden files
-#SHOW_HIDDEN_FILES=false
-
-# search history file path and max size
-#MAX_HISTORY_ENTRIES=100
-
-# show context characters in file contents search, set empty to show only filename
-#SHOW_CONTEXT="yes"
-
-# image thumbnails grid size options
-#GRID_ROWS=3
-#GRID_COLS=5
-#ICON_SIZE=6
 
 # screen locker in session management
 #USE_LOCKER=false
@@ -79,39 +76,37 @@
 # steam games path and caches
 #STEAM_ROOT="$HOME/.local/share/Steam"
 
+# show steam games in a grid, set to zero or empty to show a list
+STEAM_GRID=1
+
 # timer audio effects and notification timeout
-#TIMER_START_AUDIO="path/to/start_audio"
-#TIMER_STOP_AUDIO="path/to/stop-audio"
+#TIMER_START_SOUND="path/to/timer_start_sound"
+#TIMER_STOP_SOUND="path/to/timer_stop_sound"
 #TIMER_NOTIFICATION_TIMEOUT=5000
 
 # path to wallpapers directory
 #WALLPAPERS_DIR=$HOME/Pictures
 
+# show wallpapers in a grid, set to zero or empty to show a list
+WALLPAPERS_GRID=1
+
+# number of days of weather forecast
+#FORECAST_DAYS=2
+
+# show windows thumbnails in window switcher, set zero or empty to disable thumbnails
+WINDOWS_THUMBNAILS=1
+
+# show windows thumbnails in a grid, set zero or empty show in list
+WINDOWS_GRID=1
+
+# show xkcd comics in a grid
+#XKCD_GRID=1
+
+# xkcd comics icon size
+#XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-35}
+
 # systemd unit default action
 #SYSTEMD_DEFAULT_ACTION="list_actions" # enable/disable/stop/restart/tail
 
-# livetv events list file and expiration time
-#LIVETV_EXPIRATION_TIME=3600
-
-# podcast player, folder, cache location and expiration time
-#PODCAST_PLAYER=-mpv --no-resume-playback --force-window=immediate
-#PODCAST_EXPIRATION_TIME=3600
-
-# default torrent client and cache for searches
-#TORRENT_CLIENT=qbittorrent
-
-# livetv sports events cache location and expiration time
-#LIVETV_EXPIRATION_TIME=3600
-
-# keypassxc database file
-#KEEPASSXC_DATABASE=path/to/database
-
-# xkcd comics cache locations and expiration time
-#XKCD_EXPIRATION_TIME=86400 # refresh xkcd file every day
-#XKCD_ICON_SIZE=${XKCD_ICON_SIZE:-35}
-
-# github search cache and default clone folder
-#CLONE_FOLDER="$HOME/Downloads/"
-
-# custom menus location
-#CUSTOM_FOLDER=path/to/menus
+# categories to show in the drun.sh menu
+#DRUN_CATEGORIES=Rofi;Games;Settings;Utilities;
