@@ -17,7 +17,7 @@
 - Improve text thumbnailer (https://imagemagick.org/Usage/text/ - use head of text files to produce preview)
 - Use new recursivebrowser to search all files
 - Blacklist folders in search menu
-- Scrape using xmllint as much as possible to remove python dependencies (books, livetv)
+- Scrape using xmllint as much as possible to remove python dependencies (books)
 - Customizable common shortcuts
 
 # BUGFIX
