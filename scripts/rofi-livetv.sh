@@ -1,16 +1,25 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # this script scrape and show the list of upcoming sport events streamed on livetv.sx
 #
-# dependencies: rofi, jq, python3-lxml, python3-requests
-
-SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+# dependencies: rofi, jq, curl
 
 ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 
+livetv_url="https://webmaster.livetv.club/list.php?id=21&sport=&sp=&r=_ru"
 livetv_refresh=3600 # refresh livetv file every hour
-livetv_file="$ROFI_CACHE_DIR/livetv.json"
+livetv_file="$ROFI_CACHE_DIR/livetv"
+
+fix_link() {
+    local link="$1"
+
+    if [[ "$link" = "//"* ]]; then
+        echo "https://$link"
+    else
+        echo "$link"
+    fi
+}
 
 if [ -f "$livetv_file" ]; then
     # compute time delta between current date and news file date
@@ -21,38 +30,27 @@ if [ -f "$livetv_file" ]; then
 
 	# refresh livetv file if it's too old
 	if [ $delta -gt $livetv_refresh ]; then
-		"$SCRIPT_PATH"/scrape_livetv.py "$livetv_file"
+		curl -s "$livetv_url" -o "$livetv_file"
 	fi
 else
-	"$SCRIPT_PATH"/scrape_livetv.py "$livetv_file"
+	curl -s "$livetv_url" -o "$livetv_file"
 fi
 
-while name=$(jq '.[] | "{\(.time)} \(.category) \(.name)"' "$livetv_file" | tr -d '"' |\
-        sort | $ROFI -dmenu -i -p "LiveTV" -format 'i s'); do
+matches=$(cat "$livetv_file" | grep -o -P '(?<=ev_arr = ).*(?=;)')
+channels=$(cat "$livetv_file" | grep -o -P '(?<=chan_arr = ).*(?=;)')
 
-    name_idx=$(echo "$name" | cut -d' ' -f1)
-    link_sel=".[$name_idx].link"
-    event_link=$(jq "$link_sel" "$livetv_file" | tr -d '"')
+while match=$(echo "$matches" | jq -r '.[] | "\(.date) [\(.sport)]\(.match)"' | $ROFI -dmenu -i -p "Events"); do
+    match_name=$(echo "$match" | cut -d']' -f2-)
+    match_id=$(echo "$matches" | jq ".[] | select(.match==\"$match_name\") | .id")
+    match_links=$(echo "$channels" | jq -r ".[$match_id]" | jq -r ".[] | select(.type==\"Flash\") | .link")
 
-    echo "$name"
-    echo "name: $name_str sel: $link_sel event: $event_link"
-
-    # follow redirect with curl using -L
-    streams=$(curl -L "$event_link" | grep "OnClick=\"show_webplayer" |\
-		sed -E 's/^.*href/href/; s/>.*//' | sed -r 's/.*href="([^"]+).*/\1/g')
-
-	if [ -z "$streams" ]; then
-		$ROFI -e "No stream links available, retry later."
-	else
-		selected_stream=$(echo -en "$streams" | $ROFI -dmenu -i -p "Link")
-
-		if [ -n "$selected_stream" ]; then
-
-			xdg-open https:"$selected_stream"
-
-			exit 0
-		fi
-	fi
+    if [ -n "$match_links" ]; then
+        link=$(echo "$match_links" | $ROFI -dmenu -i -p "$match_name Links")
+        
+        [[ -n "$link" ]] && xdg-open $(fix_link "$link") && exit 0
+    else
+        rofi -e "No stream links available for "$match", retry later."
+    fi
 done
 
 exit 1
