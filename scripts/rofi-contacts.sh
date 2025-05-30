@@ -22,7 +22,7 @@ contacts_file="$ROFI_DATA_DIR/Contacts.vcf"
 if [ -n "$WAYLAND_DISPLAY" ]; then
     clip_cmd="wl-copy"
 elif [ -n "$DISPLAY" ]; then
-    clip_cmd="xclip -sel clip"
+    clip_cmd="xclip -sel clip -r"
 else
     echo "Error: No Wayland or X11 display detected" >&2
     exit 1

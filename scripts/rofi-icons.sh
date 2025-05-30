@@ -40,7 +40,7 @@ copy_to_clip() {
     if [ -n "$WAYLAND_DISPLAY" ]; then
         wl-copy "$@"
     elif [ -n "$DISPLAY" ]; then
-        echo "$@" | xclip -selection clipboard
+        echo "$@" | xclip -selection clipboard -r
         [ -n "$paste_clip" ] && coproc ( sleep 0.5; xdotool key "ctrl+v" )
     fi
 
