@@ -81,6 +81,7 @@ declare -A commands=(
     ["Cheat Sheets"]=cheat_sh
     ["Icons"]=browse_icons
     ["FontAwesome"]=browse_fa
+    ["Emojis"]=browse_emojis
     ["Set Timer"]=set_timer
     ["SSH Sessions"]=ssh_menu
     ["Tmux Sessions"]=tmux_menu
@@ -124,7 +125,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nBattery\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nIcons\nFontAwesome\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager\nContainers (Docker)\nVirtual Machines (VirtualBox)\nVirtual Machines (libvirt)"
+utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nIcons\nEmojis\nFontAwesome\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager\nContainers (Docker)\nVirtual Machines (VirtualBox)\nVirtual Machines (libvirt)"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -298,6 +299,10 @@ browse_icons() {
 
 browse_fa() {
     "$SCRIPT_PATH"/rofi-fontawesome.sh && exit
+}
+
+browse_emojis() {
+    "$SCRIPT_PATH"/rofi-emoji.sh && exit
 }
 
 steam_games() {

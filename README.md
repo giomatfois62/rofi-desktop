@@ -71,6 +71,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Set Timer (rofi-timer.sh)
   - Characters (rofi-characters.sh, utf-8 char and emoji picker)
   - Icons (rofi-icons.sh, icon themes browser)
+  - Emojis (rofi-emoji.sh, emojis browser)
   - FontAwesome (rofi-fontawesome.sh, fontawesome icons browser)
   - Take Screenshot (rofi-screenshot.sh, autodetects and uses various screenshot programs)
   - Record Audio/Video (rofi-ffmpeg.sh)
