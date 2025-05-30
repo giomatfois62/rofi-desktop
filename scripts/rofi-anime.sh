@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 version_number="4.8.10"
 
@@ -410,7 +410,7 @@ done
 #printf "\33[2K\r\033[1;34mChecking dependencies...\033[0m\n"
 dep_ch "curl" "sed" "grep" || true
 [ "$skip_intro" = 1 ] && (dep_ch "ani-skip" || true)
-if [ -z "$ANI_CLI_NON_INTERACTIVE" ]; then dep_ch fzf || true; fi
+#if [ -z "$ANI_CLI_NON_INTERACTIVE" ]; then dep_ch fzf || true; fi
 case "$player_function" in
     debug) ;;
     download) dep_ch "ffmpeg" "aria2c" ;;
@@ -443,7 +443,7 @@ case "$search" in
                 printf "\33[2K\r\033[1;36mSearch anime: \033[0m" && read -r query
             done
         else
-            [ -z "$query" ] && query=$(printf "" | external_menu "" "Search anime")
+            [ -z "$query" ] && query=$(printf "" | external_menu "" "Search Anime")
             [ -z "$query" ] && exit 1
         fi
         # for checking new releases by specifying anime name
