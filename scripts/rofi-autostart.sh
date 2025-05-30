@@ -33,10 +33,13 @@ list_entries() {
 }
 
 print_entry() {
+    app_icon=$(grep -i "Icon=" "$1" | cut -d'=' -f2-)
+    [[ -z "$app_icon" ]] && app_icon="application-x-executable"
+
     if [ $(grep -i "hidden=true" "$1") ]; then
-        echo $(basename "$1" .desktop) " " "Disabled"
+        echo $(basename "$1" .desktop)" Disabled\x00icon\x1f$app_icon"
     else
-        echo $(basename "$1" .desktop) " " "<b>Enabled</b>"
+        echo $(basename "$1" .desktop)" <b>Enabled</b>\x00icon\x1f$app_icon"
     fi
 }
 
@@ -104,11 +107,13 @@ stop_app() {
 }
 
 edit_app() {
+    text_editor=$(xdg-mime query default text/plain)
+
     original_file="$autostart_dir/$1".desktop
     dst_file="$HOME/.config/autostart/$1".desktop
 
     cp "$original_file" "$dst_file"
-    xdg-open $dst_file
+    gtk-launch $text_editor $dst_file
 
     rm -rf "$autostart_dir"
 
@@ -143,8 +148,8 @@ add_entry() {
 }
 
 gen_menu() {
-    echo "Add Entry"
-    echo "$(list_entries | xargs -I {} bash -c "print_entry {}" | column -t)"
+    echo -e "Add Entry\x00icon\x1flist-add"
+    echo -e "$(list_entries | xargs -I {} bash -c "print_entry {}" | column -t)"
 }
 
 # sort by Enabled(Disabled) state
@@ -158,7 +163,7 @@ export -f print_entry
 row=0
 
 while selected=$(gen_menu | \
-    $ROFI -dmenu -i -markup-rows -p "Autostart" -selected-row ${row} -format 'i s'); do
+    $ROFI -dmenu -i -show-icons -markup-rows -p "Autostart" -selected-row ${row} -format 'i s'); do
     
     row=$(echo "$selected" | awk '{print $1;}')
     selected_text=$(echo "$selected" | cut -d' ' -f2-)
@@ -167,8 +172,7 @@ while selected=$(gen_menu | \
     if [ "$selected_text" == "Add Entry" ]; then
         add_entry
     else
-        action=$(gen_entry_menu "$selected_text" | \
-            $ROFI -dmenu -i -p "$selected_entry")
+        action=$(gen_entry_menu "$selected_text" | $ROFI -dmenu -i -p "$selected_entry")
 
         [ -n "$action" ] && ${actions[$action]} "$selected_entry"
     fi
