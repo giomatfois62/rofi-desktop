@@ -30,13 +30,13 @@ declare -A timer_seconds=(
     ["30 seconds"]=30
 )
 
-startTimer() {
+start_timer() {
     notify-send -t $TIMER_NOTIFICATION_TIMEOUT "$1 timer started" && coproc ( paplay $TIMER_START_SOUND )
 
     if command -v systemd-run &> /dev/null; then
-		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c 'notify-send "Time Out!" ; paplay '$TIMER_STOP_SOUND
+		systemd-run --user --on-active=$2 --timer-property=AccuracySec=1000ms bash -c "coproc ( paplay $TIMER_STOP_SOUND ); notify-send -i 'clock' -u critical 'Time Out!';"
     elif command -v at &> /dev/null; then
-		echo "sleep $2 ; notify-send 'Time Out!' ; paplay $TIMER_STOP_SOUND" | at now
+		echo "sleep $2 ; coproc ( paplay $TIMER_STOP_SOUND ); notify-send -i 'clock' -u critical 'Time Out!'" | at now
     fi
 }
 
@@ -55,13 +55,13 @@ custom_timer() {
 	[[ ${#minutes} -gt 0 ]] && total_time=$(($total_time + 60*$minutes))
 	[[ ${#hours} -gt 0 ]] && total_time=$(($total_time + 3600*$hours))
 
-	startTimer "$@" $total_time
+	start_timer "$@" $total_time
 }
 
 if [ "$@" ]
 then
 	if [[ -v timer_seconds["$@"] ]]; then
-    	startTimer "$@" ${timer_seconds["$@"]}
+    	start_timer "$@" ${timer_seconds["$@"]}
     	exit 0
 	else
 		custom_timer "$@"
