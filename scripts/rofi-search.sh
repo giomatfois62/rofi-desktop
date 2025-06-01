@@ -12,9 +12,9 @@
 
 ROFI="${ROFI:-rofi}"
 ROFI_ICONS=${ROFI_ICONS:-}
-ROFI_GRID_ROWS=${ROFI_GRID_ROWS:-3}
+ROFI_GRID_ROWS=${ROFI_GRID_ROWS:-4}
 ROFI_GRID_COLS=${ROFI_GRID_COLS:-5}
-ROFI_GRID_ICON_SIZE=${ROFI_GRID_ICON_SIZE:-6}
+ROFI_GRID_ICON_SIZE=${ROFI_GRID_ICON_SIZE:-4}
 ROFI_LIST_ICON_SIZE=${ROFI_LIST_ICON_SIZE:-3}
 
 # search params
@@ -152,7 +152,7 @@ menu_folder() {
         [ "$exit_code" -eq 1 ] && break
         [ "$exit_code" -eq 10 ] && copy_to_clip "$selected" && exit 0
         [ "$exit_code" -eq 11 ] && rofi_theme="$rofi_theme_list"
-        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_icons"
+        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_grid"
         [ "$exit_code" -eq 13 ] && rofi_theme="$rofi_theme_preview"
     done
 }
@@ -175,7 +175,7 @@ menu_recent() {
         [ "$exit_code" -eq 1 ] && break
         [ "$exit_code" -eq 10 ] && copy_to_clip "$selected" && exit 0
         [ "$exit_code" -eq 11 ] && rofi_theme="$rofi_theme_list"
-        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_icons"
+        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_grid"
         [ "$exit_code" -eq 13 ] && rofi_theme="$rofi_theme_preview"
     done
 }
@@ -201,7 +201,7 @@ menu_content() {
         [ "$exit_code" -eq 1 ] && break
         [ "$exit_code" -eq 10 ] && copy_to_clip "$selected"
         [ "$exit_code" -eq 11 ] && rofi_theme="$rofi_theme_list"
-        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_icons"
+        [ "$exit_code" -eq 12 ] && rofi_theme="$rofi_theme_grid"
         [ "$exit_code" -eq 13 ] && rofi_theme="$rofi_theme_preview"
     done
 }
@@ -237,7 +237,7 @@ init_search() {
             "Pictures")
                 # always show preview for images
                 rofi_search_flags="-show-icons -eh 2 -sep | -markup-rows"
-                rofi_theme="$rofi_theme_icons"
+                rofi_theme="$rofi_theme_grid"
                 regex=".*\.\(jpg\|jpeg\|png\|tif\|tiff\|nef\|raw\|dng\|webp\|bmp\|xcf\)" ;;
             "Recent")
                 recent_files="1" ;;
