@@ -1,0 +1,3 @@
+cmddate_date +"%Y-%m-%d %H:%M"
+cmdepoch_date +%s
+cmduname_uname -r

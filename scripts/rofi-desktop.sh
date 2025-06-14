@@ -91,6 +91,7 @@ declare -A commands=(
     ["Password Manager"]=passwd_mgr
     ["KeePassXC"]=keepassxc
     ["Clipboard"]=clipboard
+    ["Snippets"]=snippets
     ["Translate Text"]=translate
     ["Task Manager"]=task_mgr
     ["Switch Window"]=window_menu
@@ -125,7 +126,7 @@ main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch W
 
 settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nBattery\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
 
-utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nIcons\nEmojis\nFontAwesome\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nNotifications\nSwitch Window\nTask Manager\nContainers (Docker)\nVirtual Machines (VirtualBox)\nVirtual Machines (libvirt)"
+utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nIcons\nEmojis\nFontAwesome\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nSnippets\nNotifications\nSwitch Window\nTask Manager\nContainers (Docker)\nVirtual Machines (VirtualBox)\nVirtual Machines (libvirt)"
 
 appearance_entries="Qt5 Appearance\nGTK Appearance\nRofi Style\nSet Wallpaper"
 
@@ -531,6 +532,10 @@ notifications() {
 
 clipboard() {
     "$SCRIPT_PATH"/rofi-clip.sh && exit
+}
+
+snippets() {
+    "$SCRIPT_PATH"/rofi-snippets.sh && exit
 }
 
 menu_config() {

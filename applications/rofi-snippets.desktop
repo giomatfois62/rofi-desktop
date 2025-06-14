@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Snippets
+Comment=
+Exec=rofi-snippets.sh
+Icon=edit-paste
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;

@@ -85,6 +85,7 @@ All the scripts can be run on their own, perhaps binded to a keyboard shortcut, 
   - Password Manager (rofi-passmenu.sh)
   - KeePassXC (rofi-keepassxc.sh)
   - Clipboard (rofi-clip.sh, uses clipster in x11 or cliphist in wayland)
+  - Snippets (rofi-snippets.sh, paste often used snippets)
   - Notifications (uses rofication-daemon.py and rofication-gui.py)
   - Switch Window (window modi)
   - Task Manager (launch htop or pipe it's output to rofi if modi blocks is available)
@@ -235,3 +236,4 @@ Some of the scripts in rofi-desktop where adapted from the work of the following
 - [okraits](https://github.com/okraits/rofi-tools)
 - [wmstam88](https://github.com/wstam88/rofi-fontawesome)
 - [mrichar1](https://github.com/mrichar1/clipster)
+- [raphaelfournier](https://github.com/raphaelfournier/rofi-modi-snippets)
