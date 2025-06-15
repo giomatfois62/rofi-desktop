@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-LOBSTER_VERSION="4.3.4"
+LOBSTER_VERSION="4.5.1"
 
 ROFI="${ROFI:-rofi}"
 
@@ -12,6 +12,14 @@ lobster_socket="${TMPDIR:-/tmp}/lobster.sock" # Used by mpv (check the play_vide
 lobster_logfile="${TMPDIR:-/tmp}/lobster.log"
 applications="$HOME/.local/share/applications/lobster" # Used for external menus (for now just rofi)
 images_cache_dir="$tmp_dir/lobster-images"             # Used for storing downloaded images of movie covers
+STATE=""                                               # Used for main state machine
+
+# Constants
+nl='
+' # Literal newline for use in pattern matching
+# These are not arbitrary, but determined by rofi kb-custom-1 and kb-custom-2 exit codes
+BACK_CODE=10
+FORWARD_CODE=11
 
 ### Notifications ###
 command -v notify-send >/dev/null 2>&1 && notify="true" || notify="false" # check if notify-send is installed
@@ -166,7 +174,7 @@ configuration() {
     [ -z "$use_external_menu" ] && use_external_menu="false"
     [ -z "$image_preview" ] && image_preview="false"
     [ -z "$debug" ] && debug="false"
-    [ -z "$preview_window_size" ] && preview_window_size=up:60%:wrap
+    [ -z "$preview_window_size" ] && preview_window_size=right:60%:wrap
     if [ -z "$use_ueberzugpp" ]; then
         use_ueberzugpp="false"
     elif [ "$use_ueberzugpp" = "true" ]; then
@@ -175,7 +183,6 @@ configuration() {
         [ -z "$ueberzug_max_width" ] && ueberzug_max_width=$(($(tput lines) / 2))
         [ -z "$ueberzug_max_height" ] && ueberzug_max_height=$(($(tput lines) / 2))
     fi
-    [ -z "$chafa_dims" ] && chafa_dims=30x40
     [ -z "$remove_tmp_lobster" ] && remove_tmp_lobster="true"
     [ -z "$json_output" ] && json_output="false"
     [ -z "$discord_presence" ] && discord_presence="false"
@@ -223,14 +230,28 @@ EOF
     launcher() {
         case "$use_external_menu" in
             "true")
-                [ -z "$2" ] && $ROFI -sort -dmenu -i -p "$1"
-                [ -n "$2" ] && $ROFI -sort -dmenu -i -p "$1" -display-columns "$2"
+                [ -z "$2" ] && $ROFI -kb-mode-next "" -kb-mode-previous "" -kb-custom-1 Shift+Left -kb-custom-2 Shift+Right -sort -dmenu -i -p "$1"
+                [ -n "$2" ] && $ROFI -kb-mode-next "" -kb-mode-previous "" -kb-custom-1 Shift+Left -kb-custom-2 Shift+Right -sort -dmenu -i -p "$1" -display-columns "$2"
+                # Gives rc=10 on pressing kb-custom-1 and rc=11 on pressing kb-custom-2
+                rc=$?
                 ;;
             *)
-                [ -z "$2" ] && fzf --reverse --prompt "$1"
-                [ -n "$2" ] && fzf --reverse --prompt "$1" --with-nth "$2" -d "\t"
+                [ -z "$2" ] && fzf_out=$(fzf --bind "shift-right:accept" --expect=shift-left --cycle --reverse --prompt "$1")
+                [ -n "$2" ] && fzf_out=$(fzf --bind "shift-right:accept" --expect=shift-left --cycle --reverse --prompt "$1" --with-nth "$2" -d "\t")
+                rc=$?
+                # Uses fzf expect to look for back button press
+                case $fzf_out in
+                    shift-left"$nl"*)
+                        rc="$BACK_CODE"
+                        fzf_out=${fzf_out#*"$nl"}
+                        ;;
+                    "$nl"*) fzf_out=${fzf_out#"$nl"} ;;
+                    *) exit 1 ;; # Should not reach here
+                esac
+                printf '%s\n' "$fzf_out"
                 ;;
         esac
+        return "$rc"
     }
     # helper function to be able to display only an "nth" column in fzf/rofi without altering the stdin
     nth() {
@@ -249,6 +270,8 @@ EOF
         else
             continue_choice=$(printf "Exit\nSearch" | launcher "Select: ")
         fi
+        rc=$?
+        [ "$rc" -eq "$BACK_CODE" ] && exit 0
     }
 
     ### Searching/Selecting ###
@@ -257,33 +280,133 @@ EOF
             printf "Search Movie/TV Show: " && read -r query
         else
             if [ -n "$rofi_prompt_config" ]; then
-                query=$(printf "" | $ROFI -theme "$rofi_prompt_config" -sort -dmenu -i -p "Search Movie/TV Show")
+                query=$(printf "" | $ROFI -kb-mode-next "" -kb-mode-previous "" -kb-custom-1 Shift+Left -theme "$rofi_prompt_config" -sort -dmenu -i -p "Search Movie/TV Show")
             else
                 query=$(printf "" | launcher "Search Movie/TV Show")
             fi
         fi
+        rc=$?
+        # rofi return exit code 1 when user submits custom text, so check >1 for exit
+        [ "$rc" -gt 1 ] && exit 0
         [ -n "$query" ] && query=$(echo "$query" | tr ' ' '-')
-        [ -z "$query" ] && send_notification "Error" "1000" "" "No query provided" && exit 1
+        if [ -z "$query" ]; then
+            send_notification "Error" "1000" "" "No query provided"
+            exit 1
+        fi
     }
     search() {
         response=$(curl -s "https://${base}/search/$1" | $sed ':a;N;$!ba;s/\n//g;s/class="flw-item"/\n/g' |
             $sed -nE "s@.*img data-src=\"([^\"]*)\".*<a href=\".*/(tv|movie)/watch-.*-([0-9]*)\".*title=\"([^\"]*)\".*class=\"fdi-item\">([^<]*)</span>.*@\1\t\3\t\2\t\4 [\5]@p")
         [ -z "$response" ] && send_notification "Error" "1000" "" "No results found" && exit 1
     }
-    choose_episode() {
-        if [ -z "$season_id" ]; then
-            tmp_season_id=$(curl -s "https://${base}/ajax/v2/tv/seasons/${media_id}" | $sed -nE "s@.*href=\".*-([0-9]*)\">(.*)</a>@\2\t\1@p" | launcher "Select a season: " "1")
-            [ -z "$tmp_season_id" ] && exit 1
-            season_title=$(printf "%s" "$tmp_season_id" | cut -f1)
-            season_id=$(printf "%s" "$tmp_season_id" | cut -f2)
-            tmp_ep_id=$(curl -s "https://${base}/ajax/v2/season/episodes/${season_id}" | $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
-                $sed -nE "s@.*data-id=\"([0-9]*)\".*title=\"([^\"]*)\">.*@\2\t\1@p" | $hxunent | launcher "Select an episode: " "1")
-            [ -z "$tmp_ep_id" ] && exit 1
+    choose_search() {
+        if [ -z "$response" ]; then
+            [ -z "$query" ] && get_input
+            search "$query"
+            [ -z "$response" ] && exit 1
         fi
-        [ -z "$episode_title" ] && episode_title=$(printf "%s" "$tmp_ep_id" | cut -f1)
-        [ -z "$data_id" ] && data_id=$(printf "%s" "$tmp_ep_id" | cut -f2)
-        episode_id=$(curl -s "https://${base}/ajax/v2/episode/servers/${data_id}" | $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
-            $sed -nE "s@.*data-id=\"([0-9]*)\".*title=\"([^\"]*)\".*@\1\t\2@p" | grep "$provider" | cut -f1)
+        STATE="MEDIA"
+    }
+    choose_media() {
+        if [ "$image_preview" = "true" ]; then
+            if [ "$use_external_menu" = "false" ] && [ "$use_ueberzugpp" = "true" ]; then
+                command -v "ueberzugpp" >/dev/null || send_notification "Please install ueberzugpp if you want to use it for image previews"
+                use_ueberzugpp="false"
+            fi
+            maybe_download_thumbnails "$response"
+            select_desktop_entry ""
+            rc=$?
+        else
+            if [ "$use_external_menu" = "true" ]; then
+                choice=$(printf "%s" "$response" | $ROFI -kb-mode-next "" -kb-mode-previous "" -kb-custom-1 Shift+Left -kb-custom-2 Shift+Right -dmenu -i -p "Choose a Movie or TV Show" -display-columns 4)
+                rc=$?
+            else
+                choice=$(printf "%s" "$response" | fzf --bind "shift-right:accept" --expect=shift-left --cycle --reverse --with-nth 4 -d "\t" --header "Choose a Movie or TV Show")
+                rc=$?
+                # Check for back-button
+                case $choice in
+                    shift-left"$nl"*)
+                        rc="$BACK_CODE"
+                        choice=${choice#*"$nl"}
+                        ;;
+                    "$nl"*) choice=${choice#"$nl"} ;;
+                    *) exit 1 ;;
+                esac
+            fi
+            image_link=$(printf "%s" "$choice" | cut -f1)
+            media_id=$(printf "%s" "$choice" | cut -f2)
+            title=$(printf "%s" "$choice" | $sed -nE "s@.* *(tv|movie)[[:space:]]*(.*) \[.*\]@\2@p")
+            media_type=$(printf "%s" "$choice" | $sed -nE "s@.* *(tv|movie)[[:space:]]*(.*) \[.*\]@\1@p")
+        fi
+
+        # Check if back button pressed
+        if [ "$rc" -eq "$BACK_CODE" ]; then
+            STATE="SEARCH"
+            response=""
+            query=""
+            choice=""
+            return 0
+        # Don't exit on rc="$FORWARD_CODE", it means rofi kb-custom-2 was pressed
+        elif [ "$rc" -ne 0 ] && [ "$rc" -ne "$FORWARD_CODE" ]; then
+            exit 0
+        fi
+
+        if [ "$media_type" = "tv" ]; then
+            STATE="SEASON"
+        else
+            keep_running="true"
+            STATE="PLAY"
+        fi
+    }
+    choose_season() {
+        season_line=$(
+            curl -s "https://${base}/ajax/v2/tv/seasons/${media_id}" |
+                $sed -nE 's@.*href=".*-([0-9]*)">(.*)</a>@\2\t\1@p' |
+                launcher "Select a season: " "1"
+        )
+        rc=$?
+        if [ "$rc" -eq "$BACK_CODE" ]; then
+            STATE="MEDIA"
+            return 0
+        elif [ "$rc" -ne 0 ] && [ "$rc" -ne "$FORWARD_CODE" ]; then
+            exit 0
+        fi
+
+        [ -z "$season_line" ] && exit 1
+
+        season_title=$(printf '%s' "$season_line" | cut -f1)
+        season_id=$(printf '%s' "$season_line" | cut -f2)
+        STATE="EPISODE"
+    }
+    choose_episode() {
+        ep_line=$(
+            curl -s "https://${base}/ajax/v2/season/episodes/${season_id}" |
+                $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
+                $sed -nE 's@.*data-id="([0-9]*)".*title="([^"]*)">.*@\2\t\1@p' |
+                $hxunent |
+                launcher "Select an episode: " "1"
+        )
+        rc=$?
+
+        if [ "$rc" -eq "$BACK_CODE" ]; then
+            STATE="SEASON"
+            return 0
+        elif [ "$rc" -ne 0 ] && [ "$rc" -ne "$FORWARD_CODE" ]; then
+            exit 0
+        fi
+
+        episode_title=$(printf '%s' "$ep_line" | cut -f1)
+        data_id=$(printf '%s' "$ep_line" | cut -f2)
+
+        episode_id=$(
+            curl -s "https://${base}/ajax/v2/episode/servers/${data_id}" |
+                $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
+                $sed -nE 's@.*data-id="([0-9]*)".*title="([^"]*)".*@\1\t\2@p' |
+                grep "$provider" | cut -f1 | head -n1
+        )
+
+        keep_running="true"
+        STATE="PLAY"
     }
     next_episode_exists() {
         episodes_list=$(curl -s "https://${base}/ajax/v2/season/episodes/${season_id}" | $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
@@ -300,19 +423,56 @@ EOF
     }
 
     ### Image Preview ###
+    maybe_download_thumbnails() {
+        # Only downloads thumbnails again if every thumbnail is not already in images_cache_dir
+        need_dl=0
+        tab="$(printf '\t')"
+
+        # keep the while-loop in the current shell
+        while IFS="$tab" read -r cover_url id type title; do
+            [ -z "$cover_url" ] && continue # skip empty lines
+            poster="$images_cache_dir/  $title ($type)  $id.jpg"
+            [ ! -f "$poster" ] && need_dl=1 && break # one miss is enough
+        done <<EOF
+$1
+EOF
+
+        if [ "$need_dl" -eq 1 ]; then
+            rm -f "$images_cache_dir"/* 2>/dev/null
+            download_thumbnails "$1"
+        fi
+    }
     download_thumbnails() {
-        echo "$1" >"$tmp_dir/image_links" # used for the discord rich presence thumbnail
-        printf "%s\n" "$1" | while read -r cover_url id type title; do
-            cover_url=$(printf "%s" "$cover_url" | sed -E 's/\/[[:digit:]]+x[[:digit:]]+\//\/1000x1000\//')
-            curl -s -o "$images_cache_dir/  $title ($type)  $id.jpg" "$cover_url" &
+        pids=""
+
+        # run the while-loop in the current shell
+        while IFS='	' read -r cover_url id type title; do
+            [ -z "$cover_url" ] && continue                    # skip empty lines
+            printf '%s\n' "$cover_url" >"$tmp_dir/image_links" # For Discord rich presence
+
+            # Sets res to 1000x1000
+            cover_url=$(printf '%s\n' "$cover_url" |
+                sed -E 's:/[0-9]+x[0-9]+/:/1000x1000/:')
+
+            poster_path="$images_cache_dir/  $title ($type)  $id.jpg"
+            curl -s -o "$poster_path" "$cover_url" &
+            pids="$pids $!"
+
             if [ "$use_external_menu" = "true" ]; then
                 entry="$tmp_dir/applications/$id.desktop"
                 # The reason for the spaces is so that only the title can be displayed when using rofi
                 # or fzf, while still keeping the id and type in the string after it's selected
-                generate_desktop "$title ($type)" "$images_cache_dir/  $title ($type)  $id.jpg" >"$entry" &
+                generate_desktop "$title ($type)  $id" "$poster_path" >"$entry" &
+                pids="$pids $!"
             fi
+        done <<EOF
+$1
+EOF
+
+        # Wait for background jobs to finish
+        for pid in $pids; do
+            wait "$pid" 2>/dev/null
         done
-        sleep "$2"
     }
     # defaults to chafa
     image_preview_fzf() {
@@ -325,26 +485,65 @@ EOF
             fi
             UB_PID="$(cat "$UB_PID_FILE")"
             LOBSTER_UEBERZUG_SOCKET="$ueberzugpp_tmp_dir/ueberzugpp-$UB_PID.socket"
-            choice=$(find "$images_cache_dir" -type f -exec basename {} \; | fzf -i -q "$1" --cycle --preview-window="$preview_window_size" --preview="ueberzugpp cmd -s $LOBSTER_UEBERZUG_SOCKET -i fzfpreview -a add -x $ueberzug_x -y $ueberzug_y --max-width $ueberzug_max_width --max-height $ueberzug_max_height -f $images_cache_dir/{}" --reverse --with-nth 2 -d "  ")
+            choice=$(find "$images_cache_dir" -type f -exec basename {} \; | fzf --bind "shift-right:accept" --expect=shift-left --cycle -i -q "$1" --cycle --preview-window="$preview_window_size" --preview="ueberzugpp cmd -s $LOBSTER_UEBERZUG_SOCKET -i fzfpreview -a add -x $ueberzug_x -y $ueberzug_y --max-width $ueberzug_max_width --max-height $ueberzug_max_height -f $images_cache_dir/{}" --reverse --with-nth 2 -d "  ")
+            rc=$?
+
+            case $choice in
+                shift-left"$nl"*)
+                    rc="$BACK_CODE"
+                    choice=${choice#*"$nl"}
+                    ;;
+                "$nl"*) choice=${choice#"$nl"} ;;
+                *) exit 1 ;;
+            esac
             ueberzugpp cmd -s "$LOBSTER_UEBERZUG_SOCKET" -a exit
         else
             dep_ch "chafa" || true
-            choice=$(find "$images_cache_dir" -type f -exec basename {} \; | fzf -i -q "$1" --cycle --preview-window="$preview_window_size" --preview="chafa -f sixels -s $chafa_dims $images_cache_dir/{}" --reverse --with-nth 2 -d "  ")
+            # shellcheck disable=SC2154
+            [ "$TERM_PROGRAM" = "vscode" ] && fmt="-f sixels --margin-bottom 8" || fmt=""
+            [ -n "$chafa_dims" ] && dim="-s $chafa_dims"
+            choice=$(find "$images_cache_dir" -type f -exec basename {} \; | fzf \
+                --bind "shift-right:accept" --expect=shift-left --cycle -i -q "$1" \
+                --preview-window="$preview_window_size" \
+                --preview="chafa $fmt $dim $images_cache_dir/{}" \
+                --reverse --with-nth 2 -d "  ")
+            rc=$?
+
+            case $choice in
+                shift-left"$nl"*)
+                    rc="$BACK_CODE"
+                    choice=${choice#*"$nl"}
+                    ;;
+                "$nl"*) choice=${choice#"$nl"} ;;
+                *) exit 1 ;;
+            esac
         fi
+        return "$rc"
     }
     select_desktop_entry() {
         if [ "$use_external_menu" = "true" ]; then
-            [ -n "$image_config_path" ] && choice=$($ROFI -show drun -drun-categories lobster -filter "$1" -show-icons -theme "$image_config_path" | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null || choice=$($ROFI -show drun -drun-categories lobster -filter "$1" -show-icons | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null
+            if [ -n "$image_config_path" ]; then
+                rofi_out=$($ROFI -show drun -drun-categories lobster -filter "$1" -show-icons -theme "$image_config_path")
+            else
+                rofi_out=$($ROFI -show drun -drun-categories lobster -filter "$1" -show-icons)
+            fi
+            rc=$?
+            choice=$(echo "$rofi_out" | $sed -nE "s@.*/([0-9]*)\.desktop@\1@p") 2>/dev/null
+
+            [ -z "$choice" ] && exit 0
+
             media_id=$(printf "%s" "$choice" | cut -d\  -f1)
             title=$(printf "%s" "$choice" | $sed -nE "s@[0-9]* (.*) \((tv|movie)\)@\1@p")
             media_type=$(printf "%s" "$choice" | $sed -nE "s@[0-9]* (.*) \((tv|movie)\)@\2@p")
         else
             image_preview_fzf "$1"
+            rc=$?
             tput reset
-            media_id=$(printf "%s" "$choice" | $sed -nE "s@.* ([0-9]*)\.jpg@\1@p")
-            title=$(printf "%s" "$choice" | $sed -nE "s@[[:space:]]* (.*) \[.*\] \((tv|movie)\)  [0-9]*\.jpg@\1@p")
-            media_type=$(printf "%s" "$choice" | $sed -nE "s@[[:space:]]* (.*) \[.*\] \((tv|movie)\)  [0-9]*\.jpg@\2@p")
+            media_id=$(printf "%s" "$choice" | $sed -nE 's@.* ([0-9]+)\.jpg@\1@p')
+            title=$(printf "%s" "$choice" | $sed -nE 's@^[[:space:]]*(.*) \((tv|movie)\)  [0-9]+\.jpg@\1@p')
+            media_type=$(printf "%s" "$choice" | $sed -nE 's@^[[:space:]]*(.*) \((tv|movie)\)  [0-9]+\.jpg@\2@p')
         fi
+        return "$rc"
     }
 
     ### Scraping/Decryption ###
@@ -362,8 +561,12 @@ EOF
             exit 1
         fi
     }
+
     extract_from_json() {
-        video_link=$(printf "%s" "$json_data" | tr '[' '\n' | $sed -nE 's@.*\"file\":\"(.*\.m3u8).*@\1@p' | head -1)
+        encrypted_video_link=$(printf "%s" "$json_data" | tr "{|}" "\n" | $sed -nE "s_.*\"sources\":\"([^\"]*)\".*_\1_p" | head -1)
+        key=$(curl -s "https://raw.githubusercontent.com/eatmynerds/key/refs/heads/e1/key.txt")
+        video_link=$(printf "%s" "$encrypted_video_link" | base64 -d | openssl enc -aes-256-cbc -d -md md5 -k "$key" 2>/dev/null | $sed -nE "s_.*\"file\":\"([^\"]*)\".*_\1_p")
+
         [ -n "$quality" ] && video_link=$(printf "%s" "$video_link" | $sed -e "s|/playlist.m3u8|/$quality/index.m3u8|")
 
         [ "$json_output" = "true" ] && printf "%s\n" "$json_data" && exit 0
@@ -376,17 +579,14 @@ EOF
         fi
         [ -z "$subs_links" ] && send_notification "No subtitles found"
     }
-    json_from_id() {
-        json_data=$(curl -s "https://decryptapi.broggl.farm/embed?embed_url=${embed_link}&referrer=https://${base}")
-    }
+
     get_json() {
-        json_from_id
-        if [ -n "$json_data" ]; then
-            extract_from_json
-        else
-            send_notification "Error" "Could not get json data"
-            exit 1
-        fi
+        # get the juicy links
+        parse_embed=$(printf "%s" "$embed_link" | $sed -nE "s_(.*)/embed-(1|2)/(.*)\?z=\$_\1\t\2\t\3_p")
+        provider_link=$(printf "%s" "$parse_embed" | cut -f1)
+        source_id=$(printf "%s" "$parse_embed" | cut -f3 | sed -E "s|.*/||")
+        json_data=$(curl -s "${provider_link}/embed-1/v2/e-1/getSources?id=${source_id}" -H "X-Requested-With: XMLHttpRequest")
+        [ -n "$json_data" ] && extract_from_json
     }
 
     ### History ###
@@ -420,6 +620,7 @@ EOF
         esac
     }
     save_history() {
+        [ -z "$image_link" ] && image_link="$(grep "$media_id" "$tmp_dir/image_links" | cut -f1)"
         case $media_type in
             movie)
                 if [ "$progress" -gt "90" ]; then
@@ -439,50 +640,84 @@ EOF
                 if [ "$progress" -gt "90" ]; then
                     next_episode_exists
                     if [ -n "$next_episode" ]; then
+                        position="00:00:00"
                         episode_title=$(printf "%s" "$next_episode" | cut -f1)
                         data_id=$(printf "%s" "$next_episode" | cut -f2)
                         episode_id=$(curl -s "https://${base}/ajax/v2/episode/servers/${data_id}" | $sed ':a;N;$!ba;s/\n//g;s/class="nav-item"/\n/g' |
                             $sed -nE "s@.*data-id=\"([0-9]*)\".*title=\"([^\"]*)\".*@\1\t\2@p" | grep "$provider" | cut -f1)
-                        $sed -i "s|\t[0-9:]*\t[0-9]*\ttv\t[0-9]*\t[0-9]*.*\t.*\t[0-9]*|\t00:00:00\t$media_id\ttv\t$season_id\t$episode_id\t$season_title\t$episode_title\t$data_id|1" "$histfile"
                         send_notification "Updated to next episode" "5000" "" "$episode_title"
                     else
-                        $sed -i "/$episode_id/d" "$histfile"
+                        $sed -i "/$media_id/d" "$histfile"
                         send_notification "Completed" "5000" "" "$title"
+                        return
                     fi
                 else
-                    if grep -q -- "$media_id" "$histfile" 2>/dev/null; then
-                        $sed -i "/$media_id/d" "$histfile"
-                        send_notification "Deleted from history" "5000" "" "$title"
-                    fi
+                    send_notification "Saved to history" "5000" "$images_cache_dir/  $title ($media_type)  $media_id.jpg" "$title"
+                fi
+
+                # If entry exists in hist file then update it, otherwise append new line
+                if grep -q -- "$media_id" "$histfile" 2>/dev/null; then
+                    $sed -i "s|^.*\t$media_id\t.*$|$title\t$position\t$media_id\t$media_type\t$season_id\t$episode_id\t$season_title\t$episode_title\t$data_id\t$image_link|" "$histfile"
+                else
                     printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n" "$title" "$position" "$media_id" "$media_type" \
                         "$season_id" "$episode_id" "$season_title" "$episode_title" "$data_id" "$image_link" >>"$histfile"
-                    send_notification "Saved to history" "5000" "$images_cache_dir/  $title ($media_type)  $media_id.jpg" "$title"
                 fi
                 ;;
             *) notify-send "Error" "Unknown media type" ;;
         esac
     }
-    # TODO: Add image_preview support
     play_from_history() {
         [ ! -f "$histfile" ] && send_notification "No history file found" "5000" "" && exit 1
         [ "$watched_history" = 1 ] && exit 0
         watched_history=1
-        choice=$($sed -n "1h;1!{x;H;};\${g;p;}" "$histfile" | nl -w 1 | nth "Choose an entry: ")
-        [ -z "$choice" ] && exit 1
-        media_type=$(printf "%s" "$choice" | cut -f4)
-        title=$(printf "%s" "$choice" | cut -f1)
-        resume_from=$(printf "%s" "$choice" | cut -f2)
-        media_id=$(printf "%s" "$choice" | cut -f3)
-        if [ "$media_type" = "tv" ]; then
-            season_id=$(printf "%s" "$choice" | cut -f5)
-            episode_id=$(printf "%s" "$choice" | cut -f6)
-            season_title=$(printf "%s" "$choice" | cut -f7)
-            episode_title=$(printf "%s" "$choice" | cut -f8)
-            data_id=$(printf "%s" "$choice" | cut -f9)
-            image_link=$(printf "%s" "$choice" | cut -f10)
-            choose_episode
+
+        if [ "$image_preview" = "true" ]; then
+            test -d "$images_cache_dir" || mkdir -p "$images_cache_dir"
+            if [ "$use_external_menu" = "true" ]; then
+                mkdir -p "$tmp_dir/applications/"
+                [ ! -L "$applications" ] && ln -sf "$tmp_dir/applications/" "$applications"
+            fi
+            history_response=$(
+                awk -F'\t' '
+                {
+                    title = $1
+                    id    = $3
+                    type  = $4
+                    cover_url = (type == "tv") ? $10 : $5
+                    print cover_url "\t" id "\t" type "\t" title  
+                }
+                ' "$histfile"
+            )
+
+            maybe_download_thumbnails "$history_response"
+            select_desktop_entry ""
+            if [ "$media_type" = "tv" ]; then
+                line=$(grep -m1 -F "$media_id" "$histfile")
+                season_id=$(printf "%s" "$line" | cut -f5)
+                episode_id=$(printf "%s" "$line" | cut -f6)
+                season_title=$(printf "%s" "$line" | cut -f7)
+                episode_title=$(printf "%s" "$line" | cut -f8)
+                data_id=$(printf "%s" "$line" | cut -f9)
+                image_link=$(printf "%s" "$line" | cut -f10)
+            fi
+        else
+            choice=$($sed -n "1h;1!{x;H;};\${g;p;}" "$histfile" | nl -w 1 | nth "Choose an entry: ")
+            [ -z "$choice" ] && exit 1
+            title=$(printf "%s" "$choice" | cut -f1)
+            resume_from=$(printf "%s" "$choice" | cut -f2)
+            media_id=$(printf "%s" "$choice" | cut -f3)
+            media_type=$(printf "%s" "$choice" | cut -f4)
+            if [ "$media_type" = "tv" ]; then
+                season_id=$(printf "%s" "$choice" | cut -f5)
+                episode_id=$(printf "%s" "$choice" | cut -f6)
+                season_title=$(printf "%s" "$choice" | cut -f7)
+                episode_title=$(printf "%s" "$choice" | cut -f8)
+                data_id=$(printf "%s" "$choice" | cut -f9)
+                image_link=$(printf "%s" "$choice" | cut -f10)
+            fi
         fi
-        keep_running="true" && loop
+
+        STATE="PLAY" && keep_running="true" && loop
     }
 
     ### Discord Rich Presence ###
@@ -689,6 +924,7 @@ EOF
                 update_rich_presence "00:00:00" &
             fi
             play_video
+            next_episode=""
             if [ -n "$position" ] && [ "$history" = "true" ]; then
                 save_history
             fi
@@ -696,7 +932,9 @@ EOF
             case "$continue_choice" in
                 "Next episode")
                     resume_from=""
-                    next_episode_exists
+                    if [ -z "$next_episode" ]; then
+                        next_episode_exists
+                    fi
                     if [ -n "$next_episode" ]; then
                         episode_title=$(printf "%s" "$next_episode" | cut -f1)
                         data_id=$(printf "%s" "$next_episode" | cut -f2)
@@ -729,32 +967,18 @@ EOF
         done
     }
     main() {
-        if [ -z "$response" ]; then
-            [ -z "$query" ] && get_input
-            search "$query"
-            [ -z "$response" ] && exit 1
-        fi
-        if [ "$image_preview" = "true" ]; then
-            if [ "$use_external_menu" = "false" ] && [ "$use_ueberzugpp" = "true" ]; then
-                command -v "ueberzugpp" >/dev/null || send_notification "Please install ueberzugpp if you want to use it for image previews"
-                use_ueberzugpp="false"
-            fi
-            download_thumbnails "$response" "3"
-            select_desktop_entry ""
-        else
-            if [ "$use_external_menu" = "true" ]; then
-                choice=$(printf "%s" "$response" | $ROFI -dmenu -i -p "" -mesg "Choose a Movie or TV Show" -display-columns 4)
-            else
-                choice=$(printf "%s" "$response" | fzf --reverse --with-nth 4 -d "\t" --header "Choose a Movie or TV Show")
-            fi
-            image_link=$(printf "%s" "$choice" | cut -f1)
-            media_id=$(printf "%s" "$choice" | cut -f2)
-            title=$(printf "%s" "$choice" | $sed -nE "s@.* *(tv|movie)[[:space:]]*(.*) \[.*\]@\2@p")
-            media_type=$(printf "%s" "$choice" | $sed -nE "s@.* *(tv|movie)[[:space:]]*(.*) \[.*\]@\1@p")
-        fi
-        [ "$media_type" = "tv" ] && choose_episode
-        keep_running="true"
-        loop
+        STATE="SEARCH"
+        while :; do
+            case "$STATE" in
+                SEARCH) choose_search ;;
+                MEDIA) choose_media ;;
+                SEASON) choose_season ;;
+                EPISODE) choose_episode ;;
+                PLAY) loop ;;
+                EXIT) break ;;
+                *) break ;;
+            esac
+        done
     }
 
     configuration
