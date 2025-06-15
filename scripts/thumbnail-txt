@@ -1,3 +1,6 @@
 #!/bin/bash
 
-magick -font Dejavu-Sans-Mono -size $3x text:$1[0] $2
+# use first 3000 chars of file to make preview
+head -c 3000 $1 > $2.txt
+magick -font Dejavu-Sans-Mono -size $3x text:$2.txt[0] $2
+rm $2.txt
