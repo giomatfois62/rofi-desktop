@@ -3,6 +3,7 @@
 # this script fetches and show the latest news from bbc internationals rss
 # selecting an entry will open the corresponding web page
 # add other sources in the "$ROFI_DATA_DIR/news" file using the format "PROVIDER_NAME=RSS_URL"
+# optionally add icons for sources as "$ROFI_DATA_DIR/<PROVIDE_NAME>.png"
 #
 # dependencies: rofi, curl, libxml2
 
@@ -57,16 +58,23 @@ show_news() {
 	exit 1
 }
 
+show_providers() {
+	while IFS= read -r line; do
+		provider=$(echo "$line" | cut -d'=' -f1)
+		provider_icon="$ROFI_DATA_DIR/$provider.png"
+		echo -en "$provider\x00icon\x1f$provider_icon\n"
+	done < "$rss_file"
+}
+
 mkdir -p "$rss_cache"
 
-providers=$(cat "$rss_file" | cut -d'=' -f1)
 providers_count=$(cat "$rss_file" | wc -l)
 
 if [ $providers_count -gt 1 ]; then
 	# remember last entry chosen
 	provider_row=0
 
-	while provider=$(echo -en "$providers" | $ROFI -dmenu -i -selected-row ${provider_row} -format 'i s' -p "News"); do
+	while provider=$(show_providers | $ROFI -show-icons -dmenu -i -selected-row ${provider_row} -format 'i s' -p "News"); do
 		provider_row=$(echo "$provider" | awk '{print $1;}')
 		provider_name=$(echo "$provider" | cut -d' ' -f2-)
 
