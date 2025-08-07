@@ -39,8 +39,8 @@ else
 	curl -s "$livetv_url" -o "$livetv_file"
 fi
 
-matches=$(cat "$livetv_file" | grep -o -P '(?<=ev_arr = ).*(?=;)')
-channels=$(cat "$livetv_file" | grep -o -P '(?<=chan_arr = ).*(?=;)')
+matches=$(grep -o -P '(?<=ev_arr = ).*(?=;)' "$livetv_file")
+channels=$(grep -o -P '(?<=chan_arr = ).*(?=;)' "$livetv_file")
 
 while match=$(echo "$matches" |\
     jq -r '.[] | "\(.date | sub(":00"; "")) [\(.sport)]\(.match)<ICON>\(.country)"' |\
@@ -53,9 +53,9 @@ while match=$(echo "$matches" |\
     if [ -n "$match_links" ]; then
         link=$(echo "$match_links" | $ROFI -dmenu -i -p "$match_name Links")
         
-        [[ -n "$link" ]] && xdg-open $(fix_link "$link") && exit 0
+        [[ -n "$link" ]] && xdg-open "$(fix_link "$link")" && exit 0
     else
-        rofi -e "No stream links available for "$match", retry later."
+        rofi -e "No stream links available for \"$match\", retry later."
     fi
 done
 
