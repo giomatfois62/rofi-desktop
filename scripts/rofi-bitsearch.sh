@@ -22,23 +22,24 @@ get_torrents() {
     bitsearch=$(curl -s "$url")
 
     titles=$(echo "$bitsearch" | \
-        xmllint --html --xpath '//h5[@class="title w-100 truncate"]/a/text()' -)
+        xmllint --html --xpath '//div[@class="flex-1 min-w-0"]//a/text()' - | \
+        xargs -I{} echo {})
 
     magnets=$(echo "$bitsearch" | \
-        xmllint --html --xpath '//a[@class="dl-magnet"]/@href' - | \
+        xmllint --html --xpath '//div[@class="hidden sm:flex flex-col space-y-2 ml-6"]/a[2]/@href' - | \
         sed -n 's/.*href="\([^"]*\).*/\1/p')
 
     sizes=$(echo "$bitsearch" | \
-        xmllint --html --xpath '//div[@class="stats"]/div[2]/text()' - | \
+        xmllint --html --xpath '//div[@class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3"]/span[2]//span/text()' - | \
         sed 's/^/\[/' | \
         sed 's/$/\]/')
 
     seeders=$(echo "$bitsearch" | \
-        xmllint --html --xpath '//div[@class="stats"]/div[3]/font/text()' - | \
+        xmllint --html --xpath '//div[@class="flex flex-wrap items-center gap-4 text-sm"]/span[1]/span[1]/text()' - | \
         sed 's/^/S:/')
 
     leechers=$(echo "$bitsearch" | \
-        xmllint --html --xpath '//div[@class="stats"]/div[4]/font/text()' - | \
+        xmllint --html --xpath '//div[@class="flex flex-wrap items-center gap-4 text-sm"]/span[2]/span[1]/text()' - | \
         sed 's/^/L:/')
 
     if [ -n "$titles" ]; then
