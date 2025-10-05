@@ -2,7 +2,7 @@
 #
 # this script scrape and show xkcd comics
 #
-# dependencies: rofi, jq, python3-lxml, python3-requests
+# dependencies: rofi, jq, xmllint
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
