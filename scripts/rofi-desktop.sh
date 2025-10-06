@@ -51,7 +51,8 @@ declare -A commands=(
     ["TNT Village"]=search_tnt
     ["Videos"]=search_videos
     ["Reddit"]=browse_reddit
-    ["Install Programs"]=browse_flathub
+    ["Install Programs (Flatpak)"]=browse_flathub
+    ["Install Programs (AppImage)"]=browse_appman
     ["Flathub"]=browse_flathub
     ["eBooks"]=search_ebooks
     ["Torrents (1337x)"]=search_torrent
@@ -124,7 +125,7 @@ declare -A commands=(
 
 main_entries="Applications\nRun Command\nBrowse Files\nSearch Computer\nSearch Web\nLatest News\nWeather Forecast\nWatch TV\nWatch Movies/Series\nRadio Stations\nSport Events\nPodcasts\nUtilities\nSystem Settings\nExit"
 
-settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nBattery\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs\nSystem Services\nUpdates\nSystem Info"
+settings_entries="Appearance\nNetwork\nVPN\nBluetooth\nDisplay\nVolume\nBrightness\nKeyboard Layout\nBattery\nRofi Shortcuts\nRofi Sounds\nDefault Applications\nAutostart Applications\nMenu Configuration\nLanguage\nTimezone\nInstall Programs (Flatpak)\nInstall Programs (AppImage)\nSystem Services\nUpdates\nSystem Info"
 
 utilities_entries="Calculator\nCalendar\nContacts\nWorld Clocks\nColor Picker\nDictionary\nSteam Games\nTranslate Text\nCharacters\nIcons\nEmojis\nFontAwesome\nMedia Controls\nMusic Player\nNotes\nToDo Lists\nSet Timer\nTake Screenshot\nRecord Audio/Video\nCode Projects\nFortune\nHangman\nTrivia\nCheat Sheets\nSSH Sessions\nTmux Sessions\nPassword Manager\nKeePassXC\nClipboard\nSnippets\nNotifications\nSwitch Window\nTask Manager\nContainers (Docker)\nVirtual Machines (VirtualBox)\nVirtual Machines (libvirt)"
 
@@ -368,6 +369,10 @@ mpd_controls() {
 
 browse_flathub() {
     "$SCRIPT_PATH"/rofi-flathub.sh && exit
+}
+
+browse_appman() {
+    "$SCRIPT_PATH"/rofi-appman.sh && exit
 }
 
 browse_reddit() {

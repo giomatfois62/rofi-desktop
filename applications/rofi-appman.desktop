@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=AppImages
+Comment=
+Exec=rofi-appman.sh
+Icon=application-gzip
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Network;System;PackageManager;
+Path=
+StartupNotify=false
