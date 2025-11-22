@@ -2,7 +2,7 @@
 #
 # this script scrape and show the list of upcoming sport events streamed on livetv.sx
 #
-# dependencies: rofi, jq, curl
+# dependencies: rofi, curl, xmllint
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
