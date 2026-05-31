@@ -3,7 +3,7 @@
 # this script download and show the list of appimages from https://portable-linux-apps.github.io
 # selecting an entry will launch a terminal with the command to install the appimage
 #
-# dependencies: rofi, curl, xmllint
+# dependencies: rofi, curl, jq
 
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 
@@ -14,8 +14,8 @@ TERMINAL="${TERMINAL:-xterm}"
 
 apps_refresh=3600 # refresh apps file every hour
 appman_url="https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER"
-apps_url="https://portable-linux-apps.github.io/apps"
-apps_file="$ROFI_CACHE_DIR/portable-apps"
+apps_url="https://portable-linux-apps.github.io/apps.json"
+apps_file="$ROFI_CACHE_DIR/portable-apps.json"
 apps_preview="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
 
 rofi_flags=""
@@ -35,27 +35,18 @@ if [ -f "$apps_file" ]; then
 
 	# refresh apps file if it's too old
 	if [ $delta -gt $apps_refresh ]; then
-		curl --insecure -s "$apps_url" -o "$apps_file"
+		curl -fsS "$apps_url" -o "$apps_file"
 	fi
 else
-	curl --insecure -s "$apps_url" -o "$apps_file"
+	curl -fsS "$apps_url" -o "$apps_file"
 fi
 
-all_apps=$(cat "$apps_file")
-
-app_names=$(echo "$all_apps" | xmllint --html --xpath '//tr/td/a/em/strong/text()' - |\
-    sed '/^splayer/d' |\
-    sed 's/^/<b>/' |\
-    sed 's/$/<\/b>/')
-app_descs=$(echo "$all_apps" | xmllint --html --xpath '//tr/td/em[1]/text()[1]' -)
-app_icons=$(echo "$all_apps" | xmllint --html --xpath '//tr/td/img/@src' - |\
-    sed '/icons\/splayer/d' |\
-    sed -e 's/^[^"]*"//' -e 's/"$//' |\
-    sed 's/^/https:\/\/portable-linux-apps.github.io\//g')
-app_descs=$(paste -d'|' <(echo "$app_descs" | awk '{$1=$1;print}') <(echo "$app_icons" | awk '{$1=$1;print}'))
-app_descs=$(echo "$app_descs" | sed 's/|/<ICON>/g')
-
-lines=$(paste -d'|' <(echo "$app_names") <(echo "$app_descs") | sed 's/|/ - /g')
+# Build rofi rows straight from the JSON feed, one per app:
+#   <b>name</b> - description<ICON>iconurl
+# Keeping fields together in jq removes the old line-by-line paste alignment.
+# splayer is excluded to match the previous behavior.
+lines=$(jq -r '.[] | select(.packageName != "splayer")
+    | "<b>\(.packageName)</b> - \(.description)<ICON>\(.icon)"' "$apps_file")
 
 while match=$(echo -en "$lines" |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
