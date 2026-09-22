@@ -18,7 +18,7 @@ ROFI_GRID_ICON_SIZE=${ROFI_GRID_ICON_SIZE:-4}
 ROFI_LIST_ICON_SIZE=${ROFI_LIST_ICON_SIZE:-3}
 
 # search params
-initial_path="/home/mat"
+initial_path="$HOME"
 path="$initial_path"
 initial_regex=".*"
 regex="$initial_regex" #".*\.\(jpg\|png\|zip\)"
