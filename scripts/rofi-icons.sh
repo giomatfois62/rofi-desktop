@@ -33,15 +33,14 @@ listview{lines:7;}"
 rofi_theme="$rofi_theme_list"
 
 # icon themes
-system_themes=$(ls /usr/share/icons | xargs -I{} echo "(system) {}")
-user_themes=$(ls "$HOME/.local/share/icons" | xargs -I{} echo "(user) {}")
+system_themes=$(find /usr/share/icons/ -mindepth 1 -maxdepth 1 -type d -printf "(system) %f\n" | sort)
+user_themes=$(find "$HOME/.local/share/icons" -mindepth 1 -maxdepth 1 -type d -printf "(user) %f\n" | sort)
 
 copy_to_clip() {
     if [ -n "$WAYLAND_DISPLAY" ]; then
         wl-copy "$@"
     elif [ -n "$DISPLAY" ]; then
         echo "$@" | xclip -selection clipboard -r
-        [ -n "$paste_clip" ] && coproc ( sleep 0.5; xdotool key "ctrl+v" )
     fi
 
     exit 0
