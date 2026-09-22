@@ -45,8 +45,7 @@ fi
 #   <b>name</b> - description<ICON>iconurl
 # Keeping fields together in jq removes the old line-by-line paste alignment.
 # splayer is excluded to match the previous behavior.
-lines=$(jq -r '.[] | select(.packageName != "splayer")
-    | "<b>\(.packageName)</b> - \(.description)<ICON>\(.icon)"' "$apps_file")
+lines=$(jq -r 'keys[] as $k | select($k != "splayer") | "<b>\($k)</b> - \(.[$k].description)<ICON>\(.icon)"' "$apps_file")
 
 while match=$(echo -en "$lines" |\
     sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
