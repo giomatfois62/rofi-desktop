@@ -3,7 +3,7 @@
 Name=Videos
 Comment=
 Exec=rofi-search.sh -t "Videos"
-Icon=multimedia-video-player
+Icon=applications-multimedia
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Filesystem;

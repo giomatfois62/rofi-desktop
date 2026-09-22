@@ -2,7 +2,7 @@
 Name=YouTube Feeds
 Comment=
 Exec=rofi -show "Youtube Feeds" -modi "Youtube Feeds:rofi-youtube-feeds.sh"
-Icon=youtube
+Icon=internet-web-browser
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;News;Web;Network;AudioVideo;Video;

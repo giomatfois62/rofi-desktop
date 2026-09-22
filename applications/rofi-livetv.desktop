@@ -2,7 +2,7 @@
 Name=Sport Events
 Comment=
 Exec=rofi-livetv.sh
-Icon=calendar
+Icon=view-calendar
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;Sports;TV;

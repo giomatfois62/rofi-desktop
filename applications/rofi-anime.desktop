@@ -2,7 +2,7 @@
 Name=Watch Anime
 Comment=
 Exec=rofi-anime.sh --rofi
-Icon=multimedia-video-player
+Icon=applications-multimedia
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;AudioVideo;Video;TV;Tuner;Web;Network;

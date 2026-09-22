@@ -2,7 +2,7 @@
 Name=Youtube
 Comment=
 Exec=rofi-web-search.sh "youtube"
-Icon=youtube
+Icon=internet-web-browser
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Search;Network;

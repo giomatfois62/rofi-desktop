@@ -2,7 +2,7 @@
 Name=Notes
 Comment=
 Exec=rofi-notes.sh
-Icon=xfce4-notes-plugin
+Icon=knotes
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;

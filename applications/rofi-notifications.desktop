@@ -2,7 +2,7 @@
 Name=Notifications
 Comment=
 Exec=rofication-gui.py
-Icon=plugin-notification
+Icon=preferences-desktop-notification
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;System;

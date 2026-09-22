@@ -2,7 +2,7 @@
 Name=Virtual Machines (VirtualBox)
 Comment=
 Exec=rofi-virtualbox.sh
-Icon=virtualbox
+Icon=video-display
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;Utility;

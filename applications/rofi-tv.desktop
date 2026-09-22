@@ -2,7 +2,7 @@
 Name=Watch TV
 Comment=
 Exec=rofi-tv.sh
-Icon=video-display-tv
+Icon=video-display
 Terminal=false
 Type=Application
 Categories=Rofi;Desktop;AudioVideo;Video;TV;Tuner;
