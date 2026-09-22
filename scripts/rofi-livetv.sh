@@ -10,7 +10,7 @@ ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 ROFI_ICONS="${ROFI_ICONS:-}"
 
-livetv_base="https://livetv.sx"
+livetv_base="https://livetv904.me"
 livetv_url=$livetv_base"/enx/allupcomingsports/"
 livetv_refresh=3600 # refresh livetv file every hour
 livetv_file="$ROFI_CACHE_DIR/livetv"
@@ -45,7 +45,8 @@ else
 	curl --insecure -s "$livetv_url" -o "$livetv_file"
 fi
 
-events=$(cat "$livetv_file")
+# remove newlines from event title and description
+events=$(cat "$livetv_file" | sed 's/<br>/ /g')
 names=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/a[@class="live"]/text()' -)
 links=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/a[@class="live"]/@href' -)
 icons=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td[@align="center"]/img/@src' - |\
