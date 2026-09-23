@@ -55,7 +55,7 @@ icons=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td[@
 descs=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/span[@class="evdesc"]/text()' - | xargs | sed 's/)/)\n/g')
 names=$(paste -d'|' <(echo "$names" | awk '{$1=$1;print}') <(echo "$icons" | awk '{$1=$1;print}'))
 names=$(echo "$names" | sed 's/|/<ICON>/g')
-lines=$(paste -d'|' <(echo "$descs"|awk '{$1=$1;print}') <(echo "$names" | awk '{$1=$1;print}') <(echo "$links" | awk '{$1=$1;print}'))
+lines=$(paste -d'|' <(echo "$descs"|awk '{$1=$1;print}'|awk 'length > 45{$0=substr($0,0,46)"..."}1') <(echo "$names" | awk '{$1=$1;print}') <(echo "$links" | awk '{$1=$1;print}'))
 
 while match=$(echo -en "$lines" |\
     sort | cut -d'|' -f1-2 | column -s "|" -t | sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
