@@ -13,6 +13,5 @@ current=$(basename "$current")
 theme=$(find "$sounds_dir" -maxdepth 1 -mindepth 1 -type d -printf "%f\n" | sed -e "s/$current/<b>$current<\/b>/g" | $ROFI -dmenu -i -p "Sounds" -markup-rows)
 
 if [ -d "$sounds_dir/$theme" ] && [ -n "$theme" ]; then
-    rm "$sounds_dir/current"
-    ln -s "$sounds_dir/$theme" "$sounds_dir/current"
+    cd $sounds_dir && rm current && ln -s "$theme" current
 fi
