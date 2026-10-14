@@ -52,7 +52,7 @@ links=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/a
 icons=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td[@align="center"]/img/@src' - |\
     sed -e 's/^[^"]*"//' -e 's/"$//' |\
     sed 's/^/https:/g')
-descs=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/span[@class="evdesc"]/text()' - | xargs | sed 's/)/)\n/g')
+descs=$(echo $events | sed 's/<br>//g' | xmllint --html --xpath '//table[@align="center"]//tr/td/span[@class="evdesc"]/text()' -)
 names=$(paste -d'|' <(echo "$names" | awk '{$1=$1;print}') <(echo "$icons" | awk '{$1=$1;print}'))
 names=$(echo "$names" | sed 's/|/<ICON>/g')
 lines=$(paste -d'|' <(echo "$descs"|awk '{$1=$1;print}'|awk 'length > 45{$0=substr($0,0,46)"..."}1') <(echo "$names" | awk '{$1=$1;print}') <(echo "$links" | awk '{$1=$1;print}'))
