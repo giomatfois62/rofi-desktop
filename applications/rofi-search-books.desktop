@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=eBooks (websearch)
+Comment=
+Exec=rofi-web-search.sh "ebooks"
+Icon=application-x-mobipocket-ebook
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Books;
