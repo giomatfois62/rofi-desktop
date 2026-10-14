@@ -21,6 +21,7 @@ case "$api" in
     "wikipedia") api_url="https://en.wikipedia.org/?curid=" ;;
     "archwiki") api_url="https://wiki.archlinux.org/index.php?search=" ;;
     "maps") api_url="https://nominatim.openstreetmap.org/search?q=" ;;
+    "ebooks") api_url="https://annas-archive.gd/search?q=" ;;
     *) echo "unrecognized api" && exit 1 ;;
 esac
 
