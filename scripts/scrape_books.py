@@ -14,7 +14,7 @@ if (len(sys.argv) > 1):
 else:
     sys.exit()
 
-base_url = "https://annas-archive.li"
+base_url = "https://annas-archive.gd"
 
 if (page > 1):
     url = base_url + "/search?q=" + query.replace(" ","+") + "&page=" + str(page)
