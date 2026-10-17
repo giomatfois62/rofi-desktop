@@ -10,9 +10,10 @@ ROFI="${ROFI:-rofi}"
 ROFI_CACHE_DIR="${ROFI_CACHE_DIR:-$HOME/.cache}"
 ROFI_ICONS="${ROFI_ICONS:-}"
 
-livetv_base="https://livetv904.me"
+livetv_base="https://livetv905.me"
 livetv_url=$livetv_base"/enx/allupcomingsports/"
-livetv_refresh=3600 # refresh livetv file every hour
+# refresh livetv file every hour
+livetv_refresh=3600
 livetv_file="$ROFI_CACHE_DIR/livetv"
 livetv_preview="$SCRIPT_PATH/download_icon.sh {input} {output} {size}"
 
@@ -45,24 +46,29 @@ else
 	curl --insecure -s "$livetv_url" -o "$livetv_file"
 fi
 
-# remove newlines from event title and description
+# remove newlinesfrom event title and description
 events=$(cat "$livetv_file" | sed 's/<br>/ /g')
-names=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/a[@class="live"]/text()' -)
-links=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td/a[@class="live"]/@href' -)
-icons=$(echo $events | xmllint --html --xpath '//table[@align="center"]//tr/td[@align="center"]/img/@src' - |\
-    sed -e 's/^[^"]*"//' -e 's/"$//' |\
-    sed 's/^/https:/g')
-descs=$(echo $events | sed 's/<br>//g' | xmllint --html --xpath '//table[@align="center"]//tr/td/span[@class="evdesc"]/text()' -)
-names=$(paste -d'|' <(echo "$names" | awk '{$1=$1;print}') <(echo "$icons" | awk '{$1=$1;print}'))
-names=$(echo "$names" | sed 's/|/<ICON>/g')
-lines=$(paste -d'|' <(echo "$descs"|awk '{$1=$1;print}'|awk 'length > 45{$0=substr($0,0,46)"..."}1') <(echo "$names" | awk '{$1=$1;print}') <(echo "$links" | awk '{$1=$1;print}'))
 
-while match=$(echo -en "$lines" |\
+# extract events data
+names_xpath='//table[@align="center"]//tr/td/a[@class="live"]/text()'
+links_xpath='//table[@align="center"]//tr/td/a[@class="live"]/@href'
+desc_xpath='//table[@align="center"]//tr/td/span[@class="evdesc"]/text()'
+icons_xpath='//table[@align="center"]//tr/td[@align="center"]/img/@src'
+names=$(echo $events | xmllint --html --xpath $names_xpath -)
+links=$(echo $events | xmllint --html --xpath $links_xpath -)
+descs=$(echo $events | xmllint --html --xpath $desc_xpath -)
+icons=$(echo $events | xmllint --html --xpath $icons_xpath - | sed -e 's/^[^"]*"//' -e 's/"$//' | sed 's/^/https:/g')
+
+# format rofi entries
+names=$(paste -d'|' <(echo "$names" | awk '{$1=$1;print}') <(echo "$icons" | awk '{$1=$1;print}') | sed 's/|/<ICON>/g')
+entries=$(paste -d'|' <(echo "$descs" | awk '{$1=$1;print}' | awk 'length > 45{$0=substr($0,0,46)"..."}1') <(echo "$names" | awk '{$1=$1;print}') <(echo "$links" | awk '{$1=$1;print}'))
+
+while match=$(echo -en "$entries" |\
     sort | cut -d'|' -f1-2 | column -s "|" -t | sed -e "s/<ICON>/\\x00icon\\x1fthumbnail:\/\//g" |\
     $ROFI $rofi_flags -preview-cmd "$livetv_preview" -dmenu -i -p "Events" -format 'i s'); do
     match_index=$(echo "$match" | cut -d' ' -f1)
     match_index=$((match_index+1))
-	match_link=$(echo "$lines" |\
+	match_link=$(echo "$entries" |\
        sort | sed -n "$match_index p" |\
        cut -d'|' -f3 |\
        sed -e 's/^[^"]*"//' -e 's/"$//')
