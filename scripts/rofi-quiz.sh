@@ -9,11 +9,6 @@ ROFI="${ROFI:-rofi}"
 url="https://opentdb.com/api.php?amount=1"
 points=0
 
-remove_quotes() {
-    local str=${*:-$(</dev/stdin)}
-    echo "${str:1:${#str}-2}"
-}
-
 while true; do
     quiz=$(curl -s "$url" | jq ".results[0]")
 
@@ -22,13 +17,13 @@ while true; do
         exit 1
     fi
 
-    category=$(echo "$quiz" | jq '.category' | remove_quotes)
-    difficulty=$(echo "$quiz" | jq '.difficulty' | remove_quotes)
-    question=$(echo "$quiz" | jq '.question' | remove_quotes)
-    correct_answer=$(echo "$quiz" | jq '.correct_answer' | remove_quotes)
-    incorrect_answers=$(echo "$quiz" | jq '.incorrect_answers | join("\n")' | remove_quotes)
+    category=$(echo "$quiz" | jq -r '.category')
+    difficulty=$(echo "$quiz" | jq -r '.difficulty')
+    question=$(echo "$quiz" | jq -r '.question')
+    correct_answer=$(echo "$quiz" | jq -r '.correct_answer')
+    incorrect_answers=$(echo "$quiz" | jq -r '.incorrect_answers | join("\n")')
 
-    rofi_mesg="<b>$category</b>&#x0a;&#x0a;$question"
+    rofi_mesg="<b>$category</b>&#x0a;$question"
 
     choice=$(echo -e "$correct_answer\n$incorrect_answers" | shuf | \
         $ROFI -dmenu -i -markup -markup-rows -p "Answer" -mesg "$rofi_mesg")
@@ -44,9 +39,9 @@ while true; do
         
         points=$((points+win))
 
-        rofi_mesg="$rofi_mesg&#x0a;&#x0a;<b>$choice</b>&#x0a;Correct! +$win Points ($points total)"
+        rofi_mesg="$rofi_mesg <b>$choice</b>&#x0a;Correct! +$win Points ($points total)"
     else
-        rofi_mesg="$rofi_mesg&#x0a;&#x0a;<b>$choice</b>&#x0a;Wrong! Correct Answer: <b>$correct_answer</b>"
+        rofi_mesg="$rofi_mesg <b>$choice</b>&#x0a;Wrong! Correct Answer: <b>$correct_answer</b>"
     fi
 
     choice=$(echo -e "Play Again\nExit" | \
