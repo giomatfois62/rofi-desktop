@@ -17,7 +17,7 @@ query="$1"
 get_torrents() {
     page="$1"
     query=$(echo "$2" | sed 's/ /+/g')
-    url="https://bitsearch.to/search?q=$query&page=$page"
+    url="https://bitsearch.eu/search?q=$query&page=$page"
 
     bitsearch=$(curl -s "$url")
 
